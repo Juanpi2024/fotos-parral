@@ -7,7 +7,45 @@
     <title>Relatos y Tradiciones – Archivos en Movimiento</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link <section class="container" style="padding: 4rem 1rem;">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-area">
+                <h1><a href="index.html">Archivos en Movimiento</a></h1>
+                <p class="subtitle">Patrimonio Vivo de Parral</p>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="relatos.html" class="active">Relatos</a></li>
+                    <li><a href="deportistas.html">Deportistas</a></li>
+                    <li><a href="educacion.html">Educación</a></li>
+                    <li><a href="historia.html">Historia</a></li>
+                    <li><a href="mapa.html">Mapa</a></li>
+                    <li><a href="participa.html" class="btn-nav">¡Participa!</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Relatos y Tradiciones</h2>
+            <p>La voz viva de nuestra gente</p>
+        </div>
+    </section>
+
+    <section class="container" style="padding: 4rem 1rem;">
     <h3 style="text-align: left; margin-bottom: 2rem;">Personajes Ilustres</h3>
     <div class="grid-galeria">
         <div class="card-testimonio">
@@ -46,6 +84,13 @@
             <p>&copy; 2025 Archivos en Movimiento. Patrimonio Vivo de Parral.</p>
         </div>
     </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.main-nav').classList.toggle('show');
+        });
+    </script>
     </body>
 
 </html>
