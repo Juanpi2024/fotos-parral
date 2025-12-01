@@ -180,7 +180,7 @@ header nav a:not(.btn-nav):hover::after {
 
 /* Hero Section */
 .hero {
-    background: var(--gradient-hero);
+    background: var(--gradient-hero); /* Fallback */
     color: var(--color-surface);
     text-align: center;
     display: flex;
@@ -188,6 +188,32 @@ header nav a:not(.btn-nav):hover::after {
     justify-content: center;
     position: relative;
     overflow: hidden;
+    min-height: 500px; /* Asegura altura suficiente para las imágenes */
+}
+
+.hero-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(44, 82, 130, 0.6); /* Color secundario con transparencia */
+    background: linear-gradient(135deg, rgba(44, 82, 130, 0.8), rgba(192, 86, 33, 0.7)); /* Gradiente similar al original pero transparente */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Encima del slider y overlay */
 }
 
 .hero h2 {
@@ -578,6 +604,7 @@ header nav ul {
     border-radius: var(--radius-lg);
     border-left: 5px solid var(--color-secondary);
 }
+/* Home Background Slider Styles */
 /* Home Slider Styles */
 .home-slider-section {
     padding: 2rem 0;
@@ -599,6 +626,9 @@ header nav ul {
     display: none;
     width: 100%;
     height: 100%;
+    position: absolute; /* Needed for stacking in hero */
+    top: 0;
+    left: 0;
 }
 
 .slide.active {
@@ -609,6 +639,8 @@ header nav ul {
 .slide img {
     width: 100%;
     height: 100%;
+    object-fit: cover; /* Cover entire background */
+    object-position: center;
     object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
 }
 
@@ -672,6 +704,9 @@ header nav ul {
 
 /* Animación Fade */
 @keyframes fade {
+  from {opacity: 0.4}
+  to {opacity: 1}
+}
   from {opacity: .4}
   to {opacity: 1}
 }

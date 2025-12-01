@@ -40,7 +40,20 @@
     </header>
 
     <section class="hero">
-        <div class="container">
+        <!-- Hero Background Slider -->
+        <div class="hero-slider">
+            <div class="slide active">
+                <img src="images/slider-tren.jpg" alt="Tren Histórico de Parral">
+            </div>
+            <div class="slide">
+                <img src="images/slider-generic.png" alt="Imagen Histórica de Parral">
+            </div>
+            <!-- Overlay to ensure text readability -->
+            <div class="hero-overlay"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="container hero-content">
             <h2>Descubre Parral</h2>
             <p>Un viaje por nuestra historia e identidad</p>
             <br>
@@ -148,6 +161,9 @@
                 slides[i].style.display = "none";
                 slides[i].classList.remove('active');
             }
+
+            slides[slideIndex-1].style.display = "block";
+            slides[slideIndex-1].classList.add('active');
             for (i = 0; i < dots.length; i++) {
                 dots[i].className = dots[i].className.replace(" active", "");
             }
