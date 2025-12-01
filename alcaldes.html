@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alcaldes de Parral – Archivos en Movimiento</title>
+
+  <!-- Google Fonts del Sitio -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- CSS Global -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      corePlugins: {
+        preflight: false, // Desactivar reset global para no romper el navbar/footer existente
+      },
+    }
+  </script>
+
+  <style>
+    /* Estilos específicos para la sección de Alcaldes */
+    .alcaldes-container {
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial;
+      /* Fondo profesional (degradados suaves + textura sutil) */
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(14,165,233,.12), transparent 60%),
+        radial-gradient(1000px 500px at 110% 10%, rgba(2,132,199,.10), transparent 55%),
+        linear-gradient(180deg, #f8fafc 0%, #eef2f7 60%, #e9f3fb 100%);
+      color: #0f172a;
+    }
+
+    :root {
+      --brand: #0ea5e9;        /* sky-500/600 */
+      --brand-dark: #0284c7;   /* sky-700 */
+      --ink: #0f172a;          /* slate-900 */
+      --muted: #475569;        /* slate-600 */
+      --card: #ffffff;
+      --line: #e2e8f0;         /* slate-200 */
+    }
+
+    /* Contenedor de línea de tiempo */
+    .timeline { position:relative; }
+    .timeline::before {
+      content:""; position:absolute; left:24px; top:0; bottom:0; width:3px;
+      background: linear-gradient(180deg, #c7d2fe 0, var(--brand) 35%, #bae6fd 70%, #cbd5e1 100%);
+      border-radius: 2px;
+      box-shadow: 0 0 0 1px #e2e8f0 inset;
+    }
+    .dot {
+      width:14px; height:14px; border-radius:999px; background:linear-gradient(180deg, #38bdf8, #0284c7);
+      border:2px solid white; box-shadow: 0 0 0 4px rgba(2,132,199,.15);
+    }
+
+    /* Tarjetas */
+    .card {
+      background:var(--card);
+      border:1px solid #e5e7eb;
+      border-radius:18px;
+      padding:18px;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+      box-shadow: 0 8px 22px rgba(2,8,23,.06);
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 34px rgba(2,8,23,.10);
+      border-color:#cbd5e1;
+    }
+
+    /* Botones primarios/seguros */
+    .btn {
+      display:inline-flex; align-items:center; gap:.5rem;
+      border-radius:12px; padding:.55rem .9rem; font-weight:600; font-size:.925rem;
+      transition: all .15s ease;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn-primary {
+      color:white; background: linear-gradient(180deg, var(--brand), var(--brand-dark));
+      border:1px solid rgba(2,132,199,.6);
+      box-shadow: 0 6px 16px rgba(14,165,233,.28), inset 0 1px 0 rgba(255,255,255,.15);
+    }
+    .btn-primary:hover { filter: brightness(1.03); transform: translateY(-1px); color: white; }
+    .btn-ghost {
+      color: var(--ink); background: #f8fafc; border:1px solid #e2e8f0;
+    }
+    .btn-ghost:hover { background:#eef2f7; color: var(--ink); }
+
+    /* Etiquetas/chips */
+    .chip { display:inline-flex; align-items:center; gap:6px; padding:4px 10px; border-radius:999px;
+      border:1px solid #e2e8f0; font-size:12px; color:#0f172a; background:#f8fafc; }
+
+    /* Impresión únicamente de la ficha */
+    @media print {
+      body { background:white !important; }
+      header:not(#toolbar), footer, #app, .no-print, .mobile-menu-btn { display:none !important; }
+      #printArea { display:block !important; }
+    }
+
+    /* Toolbar adaptation */
+    .toolbar-section {
+        background-color: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid #e2e8f0;
+        position: sticky;
+        top: 0;
+        z-index: 40; /* Lower than global nav if sticky, but here we might just let it be under */
+    }
+  </style>
+</head>
+<body class="alcaldes-container text-slate-900">
+
+  <!-- HEADER GLOBAL -->
+  <header>
+      <div class="container">
+          <div class="logo-area">
+              <h1><a href="index.html">Archivos en Movimiento</a></h1>
+              <p class="subtitle">Patrimonio Vivo de Parral</p>
+          </div>
+          <button class="mobile-menu-btn" aria-label="Menú">
+              <span></span>
+              <span></span>
+              <span></span>
+          </button>
+          <nav class="main-nav">
+              <ul>
+                  <li><a href="index.html">Inicio</a></li>
+                  <li><a href="galeria.html">Galería</a></li>
+                  <li><a href="relatos.html" class="active">Relatos</a></li>
+                  <li><a href="deportistas.html">Deportistas</a></li>
+                  <li><a href="educacion.html">Educación</a></li>
+                  <li><a href="historia.html">Historia</a></li>
+                  <li><a href="mapa.html">Mapa</a></li>
+                  <li><a href="participa.html" class="btn-nav">¡Participa!</a></li>
+              </ul>
+          </nav>
+      </div>
+  </header>
+
+  <!-- Encabezado / Toolbar de la sección Alcaldes -->
+  <section id="toolbar" class="toolbar-section">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
+      <div>
+        <h1 class="text-xl md:text-2xl font-extrabold tracking-tight text-slate-900" style="font-family: 'Inter', sans-serif;">Alcaldes de Parral – Línea de Tiempo</h1>
+        <p class="text-sm text-slate-600">
+          Compendio de autoridades comunales (énfasis cultural y patrimonial).
+          <span class="ml-2">Actualizado: <span class="font-semibold" id="lastUpdated"></span></span>
+        </p>
+      </div>
+      <div class="flex gap-2">
+        <button id="btnExportResumen" class="btn btn-ghost no-print" title="Exportar la lista visible a PDF">
+          <!-- ícono -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M12 3v12m0 0l4-4m-4 4l-4-4"/><path d="M20 21H4a2 2 0 0 1-2-2v-5"/>
+          </svg>
+          Exportar Resumen (PDF)
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contenido -->
+  <main id="app" class="max-w-6xl mx-auto px-4 py-8">
+    <!-- SIN FILTROS: sólo la línea de tiempo completa -->
+    <section id="timelineContainer" class="timeline space-y-6"></section>
+
+    <div class="mt-12 text-center">
+        <a href="relatos.html" class="inline-flex items-center text-lg font-medium text-slate-700 hover:text-sky-600 no-underline transition-colors">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+            Volver a Relatos
+        </a>
+    </div>
+  </main>
+
+  <!-- Área de impresión (ficha individual) -->
+  <section id="printArea" class="hidden"></section>
+
+  <!-- Pie GLOBAL -->
+  <footer>
+      <div class="container">
+          <p>&copy; 2025 Archivos en Movimiento. Patrimonio Vivo de Parral.</p>
+          <p class="text-sm text-slate-400 mt-2">Compilación para fines de rescate cultural. Si cuentas con antecedentes verificables, por favor remitir para su incorporación.</p>
+      </div>
+  </footer>
+
+  <script>
+    // Header Logic (Mobile Menu)
+    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+        document.querySelector('.main-nav').classList.toggle('show');
+    });
+
+    // Set updated date
+    const now = new Date();
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById('lastUpdated').textContent = now.toLocaleDateString('es-ES', options);
+
+    // ===========================
+    // 1) Datos (editar según necesidad)
+    // ===========================
+    const ALCALDES = [
+      { id:"solar-urrutia-1912", nombre:"Domingo Antonio Solar Urrutia", periodo:"1912–1918", inicio:1912, fin:1918, genero:"M",
+        etiquetas:["origen"],
+        resumen:"Primer alcalde de Parral (1912–1918). Luego diputado por la zona; sin antecedentes formativos verificados.",
+        impacto:"Consolidación inicial de la institucionalidad municipal.",
+        fuentes:["Registro municipal y biografías parlamentarias."] },
+      { id:"benavente-1938", nombre:"Víctor Benavente Tapia", periodo:"1938–1939", inicio:1938, fin:1939, genero:"M",
+        etiquetas:[], resumen:"Ejerció en 1938–1939. No se hallaron antecedentes biográficos adicionales.",
+        impacto:"No documentado.", fuentes:["Listado comunal."] },
+      { id:"urrutia-sotta-1939", nombre:"Ignacio Urrutia de la Sotta", periodo:"1939–1940", inicio:1939, fin:1940, genero:"M",
+        etiquetas:[], resumen:"Contador y agricultor. Alcalde 1939–1940. Luego diputado por varios periodos.",
+        impacto:"Proyección a nivel nacional; sin registro patrimonial local específico.", fuentes:["Biografía parlamentaria."] },
+      { id:"sepulveda-1940", nombre:"José Sepúlveda Cofré", periodo:"1940–1941", inicio:1940, fin:1941, genero:"M",
+        etiquetas:[], resumen:"Sin antecedentes biográficos documentados.",
+        impacto:"No documentado.", fuentes:["Listado comunal."] },
+      { id:"spoerer-1953", nombre:"Nieves Spoerer Ferrier", periodo:"1953–1956", inicio:1953, fin:1956, genero:"F",
+        etiquetas:["mujer"], resumen:"Primera mujer alcaldesa de Parral (1953–1956). Liderazgo comunitario recordado.",
+        impacto:"Hito de género en la administración local.", fuentes:["Prensa local; registros comunales."] },
+      { id:"matta-1958", nombre:"José Matta Callejón", periodo:"1958–1960", inicio:1958, fin:1960, genero:"M",
+        etiquetas:[], resumen:"Alcalde 1958–1960. Dirigente local; una escuela lleva su nombre.",
+        impacto:"Vinculación comunitaria y educativa.", fuentes:["Archivo escolar local."] },
+      { id:"morales-1960", nombre:"Joaquín Morales Rodríguez", periodo:"1960–1961", inicio:1960, fin:1961, genero:"M",
+        etiquetas:[], resumen:"Sin antecedentes biográficos documentados.",
+        impacto:"No documentado.", fuentes:["Listado comunal."] },
+      { id:"aqueveque-1961", nombre:"Carolina Aqueveque Castro", periodo:"1961–1962", inicio:1961, fin:1962, genero:"F",
+        etiquetas:["mujer"], resumen:"Sin antecedentes biográficos documentados.",
+        impacto:"No documentado.", fuentes:["Listado comunal."] },
+      { id:"belmar-1962", nombre:"Guillermo Belmar Hernández", periodo:"1962–1963", inicio:1962, fin:1963, genero:"M",
+        etiquetas:[], resumen:"Dirigente local; posteriormente alcalde 1992–1996.",
+        impacto:"Gestiones en periodos de transición política.", fuentes:["Registros municipales."] },
+      { id:"spoerer-1963", nombre:"Nieves Spoerer Ferrier", periodo:"1963–1964", inicio:1963, fin:1964, genero:"F",
+        etiquetas:["mujer"], resumen:"Reelegida por breve periodo; liderazgo cívico.",
+        impacto:"Representación femenina sostenida.", fuentes:["Registros municipales."] },
+      { id:"albornoz-1964", nombre:"Manuel Albornoz Hernández", periodo:"1964–1967", inicio:1964, fin:1967, genero:"M",
+        etiquetas:[], resumen:"Sin antecedentes biográficos documentados.",
+        impacto:"No documentado.", fuentes:["Listado comunal."] },
+      { id:"astorga-1967", nombre:"Enrique Astorga Barriga", periodo:"1967–1971", inicio:1967, fin:1971, genero:"M",
+        etiquetas:[], resumen:"Sin antecedentes biográficos documentados.",
+        impacto:"No documentado.", fuentes:["Listado comunal."] },
+      { id:"zorrilla-1971", nombre:"Enrique Zorrilla Concha", periodo:"1971–1972", inicio:1971, fin:1972, genero:"M",
+        etiquetas:[], resumen:"Sin antecedentes biográficos documentados.",
+        impacto:"No documentado.", fuentes:["Listado comunal."] },
+      { id:"urrutia-silva-1972", nombre:"Arturo Urrutia Silva", periodo:"1972–1973", inicio:1972, fin:1973, genero:"M",
+        etiquetas:[], resumen:"Sin antecedentes biográficos documentados.",
+        impacto:"No documentado.", fuentes:["Listado comunal."] },
+      { id:"spoerer-1973", nombre:"Nieves Spoerer Ferrier", periodo:"1973", inicio:1973, fin:1973, genero:"F",
+        etiquetas:["mujer"], resumen:"Gestión muy breve en 1973.",
+        impacto:"No documentado.", fuentes:["Listado comunal."] },
+      { id:"fuentes-1973", nombre:"Enrique Fuentes Vásquez", periodo:"1973–1975", inicio:1973, fin:1975, genero:"M",
+        etiquetas:[], resumen:"Alcalde durante régimen militar. Sin más antecedentes.",
+        impacto:"No documentado.", fuentes:["Listado comunal."] },
+      { id:"rojas-1975", nombre:"Eliana Rojas de Baladrón", periodo:"1975–1977", inicio:1975, fin:1977, genero:"F",
+        etiquetas:["mujer"], resumen:"Alcaldesa designada. Sin más antecedentes.",
+        impacto:"No documentado.", fuentes:["Listado comunal."] },
+      { id:"opazo-1978", nombre:"Luis Humberto Opazo Rodríguez", periodo:"1978–1981", inicio:1978, fin:1981, genero:"M",
+        etiquetas:[], resumen:"Militar designado. Sin más antecedentes.",
+        impacto:"No documentado.", fuentes:["Listado comunal."] },
+      { id:"villablanca-1981", nombre:"Ernesto Villablanca Hernández", periodo:"1981–1984", inicio:1981, fin:1984, genero:"M",
+        etiquetas:[], resumen:"Renuncia en octubre de 1984. Sin más antecedentes.",
+        impacto:"No documentado.", fuentes:["Listado comunal."] },
+      { id:"gonzalez-1984", nombre:"Gladys del Carmen González Espinoza", periodo:"1984–1986", inicio:1984, fin:1986, genero:"F",
+        etiquetas:["mujer"], resumen:"Interina 1984–1986. Sin más antecedentes.",
+        impacto:"No documentado.", fuentes:["Listado comunal."] },
+      { id:"rodriguez-1986", nombre:"Alfonso Rodríguez del Río", periodo:"1986–1988", inicio:1986, fin:1988, genero:"M",
+        etiquetas:[], resumen:"Interino previo a procesos electorales. Sin más antecedentes.",
+        impacto:"No documentado.", fuentes:["Listado comunal."] },
+      { id:"bravo-1988", nombre:"Claudio Bravo Araya", periodo:"1988–1992", inicio:1988, fin:1992, genero:"M",
+        etiquetas:[], resumen:"Figuración en la transición democrática; luego nuevo periodo 1996–2004.",
+        impacto:"Reorganización municipal post-dictadura (sin proyectos patrimoniales especificados).",
+        fuentes:["Registros municipales."] },
+      { id:"belmar-1992", nombre:"Guillermo Belmar Hernández", periodo:"1992–1996", inicio:1992, fin:1996, genero:"M",
+        etiquetas:[], resumen:"Alcalde electo en la restauración democrática.",
+        impacto:"No documentado.", fuentes:["Registros municipales."] },
+      { id:"bravo-1996", nombre:"Claudio Bravo Araya", periodo:"1996–2004", inicio:1996, fin:2004, genero:"M",
+        etiquetas:[], resumen:"Largo periodo hasta 2004.",
+        impacto:"No documentado.", fuentes:["Registros municipales."] },
+      { id:"urrutia-2004", nombre:"Israel Urrutia Escobar", periodo:"2004–2012", inicio:2004, fin:2012, genero:"M",
+        etiquetas:["impacto"], resumen:"Impulsó Teatro Municipal (2011) y remodelación de Biblioteca Pública ‘Neftalí Reyes Basoalto’ (2012).",
+        impacto:"Infraestructura cultural clave para la comuna.", fuentes:["Prensa institucional; Biblioredes."] },
+      { id:"retamal-2012", nombre:"Paula Retamal Urrutia", periodo:"2012–2024", inicio:2012, fin:2024, genero:"F",
+        etiquetas:["mujer"], resumen:"Profesora; programas sociales, mejoramiento de espacios públicos y barrios.",
+        impacto:"Continuidad de festividades y fortalecimiento social.",
+        fuentes:["Prensa regional."] },
+      { id:"ojeda-2024", nombre:"Patricio Ojeda Alarcón", periodo:"2024–presente", inicio:2024, fin:2025, genero:"M",
+        etiquetas:[], resumen:"Ingeniero; gestión en curso desde dic. 2024.",
+        impacto:"A la fecha, sin hitos patrimoniales publicados.", fuentes:["Municipalidad y prensa local."] },
+    ].sort((a,b)=> a.inicio - b.inicio);
+
+    // ===========================
+    // 2) Render de la línea de tiempo (sin filtros)
+    // ===========================
+    function renderTimeline(list){
+      const container = document.getElementById('timelineContainer');
+      container.innerHTML = '';
+
+      list.forEach(item=>{
+        const row = document.createElement('div');
+        row.className = 'relative pl-14';
+        row.innerHTML = `
+          <div class="absolute left-1 top-2">
+            <span class="dot"></span>
+          </div>
+          <article class="card">
+            <div class="flex flex-wrap items-start gap-3 justify-between">
+              <div>
+                <h3 class="text-lg font-extrabold text-slate-900">${item.nombre}</h3>
+                <p class="text-sm text-slate-600">${item.periodo}</p>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                ${item.genero === 'F' ? `<span class="chip">Alcaldesa</span>`:''}
+                ${item.etiquetas?.includes('impacto') ? `<span class="chip">Impacto patrimonial</span>`:''}
+                ${item.inicio <= 1918 ? `<span class="chip">Orígenes</span>`:''}
+                ${item.inicio >= 2004 ? `<span class="chip">Reciente</span>`:''}
+              </div>
+            </div>
+
+            <p class="mt-3 text-slate-800">${item.resumen}</p>
+            <div class="mt-2 text-sm text-slate-600">
+              <strong>Impacto:</strong> ${item.impacto}
+            </div>
+            <details class="mt-3 bg-slate-50/70 border border-slate-200 rounded-lg px-3 py-2">
+              <summary class="text-sm text-slate-700 cursor-pointer">Fuentes y notas</summary>
+              <ul class="list-disc ml-5 text-sm text-slate-700">
+                ${item.fuentes.map(f=>`<li>${f}</li>`).join("")}
+              </ul>
+            </details>
+
+            <div class="mt-4 flex flex-wrap gap-2">
+              <button class="btn btn-primary" onclick="verFicha('${item.id}')">
+                <!-- ícono ojo -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/>
+                </svg>
+                Ver ficha
+              </button>
+              <button class="btn btn-ghost" onclick="descargarFicha('${item.id}')" title="Guardar PDF">
+                <!-- ícono imprimir -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/>
+                </svg>
+                Descargar ficha (PDF)
+              </button>
+            </div>
+          </article>
+        `;
+        container.appendChild(row);
+      });
+    }
+
+    // ===========================
+    // 3) Fichas (ver/descargar)
+    // ===========================
+    function buildFichaHTML(h){
+      const updatedDate = document.getElementById('lastUpdated').textContent;
+      return `
+        <div style="max-width:780px;margin:0 auto;padding:32px; font-family: Inter, system-ui; color:#0f172a;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start; gap:16px;">
+            <div>
+              <h1 style="font-size:22px; font-weight:800; margin:0;">${h.nombre}</h1>
+              <p style="margin:4px 0 0; color:#334155;">${h.periodo}</p>
+            </div>
+            <div style="text-align:right; color:#64748b; font-size:12px;">
+              Ficha patrimonial · Parral <br/> Generado: ${updatedDate}
+            </div>
+          </div>
+          <hr style="margin:16px 0; border:none; border-top:1px solid #e2e8f0;" />
+          <p style="margin:0 0 8px;"><strong>Resumen:</strong> ${h.resumen}</p>
+          <p style="margin:0 0 8px;"><strong>Impacto:</strong> ${h.impacto}</p>
+          <div style="margin:12px 0;">
+            <strong>Fuentes / notas:</strong>
+            <ul style="margin:6px 0 0 18px; color:#475569;">
+              ${h.fuentes.map(f=>`<li>${f}</li>`).join("")}
+            </ul>
+          </div>
+          <div style="margin-top:18px; font-size:12px; color:#64748b;">
+            Uso educativo y de rescate cultural. Si cuenta con antecedentes verificables adicionales, por favor remitir para su incorporación.
+          </div>
+        </div>
+      `;
+    }
+
+    function verFicha(id){
+      const h = ALCALDES.find(x => x.id === id);
+      if(!h) return;
+      const area = document.getElementById('printArea');
+      area.innerHTML = buildFichaHTML(h);
+      area.classList.remove('hidden');
+      window.scrollTo({top:0, behavior:'smooth'});
+      // Oculta la previsualización después de unos segundos
+      setTimeout(()=>{ area.classList.add('hidden'); area.innerHTML = ''; }, 4500);
+    }
+
+    function descargarFicha(id){
+      const h = ALCALDES.find(x => x.id === id);
+      if(!h) return;
+      const w = window.open('', '_blank', 'width=840,height=1000');
+      w.document.write(`
+        <html><head>
+          <meta charset="utf-8"/>
+          <title>Ficha – ${h.nombre}</title>
+          <style>@page { size: A4; margin: 16mm; } body{ background:white; font-family: sans-serif; }</style>
+        </head><body>
+          ${buildFichaHTML(h)}
+          <script>window.onload = () => { window.print(); setTimeout(()=>window.close(), 500); }<\/script>
+        </body></html>
+      `);
+      w.document.close();
+    }
+
+    // Exportar resumen de la lista (sin botones de acción)
+    function exportarResumen(){
+      const container = document.getElementById('timelineContainer').cloneNode(true);
+      // Eliminar botones de acción en la exportación
+      container.querySelectorAll('button').forEach(b => b.remove());
+      const updatedDate = document.getElementById('lastUpdated').textContent;
+
+      const w = window.open('', '_blank', 'width=900,height=1200');
+      w.document.write(`
+        <html><head>
+          <meta charset="utf-8"/>
+          <title>Resumen – Alcaldes de Parral</title>
+          <style>
+            @page { size: A4; margin: 14mm; }
+            body { font-family: Inter, system-ui; color:#0f172a; }
+            h1{ font-size:20px; margin:0 0 6px; font-weight:800; }
+            h2{ font-size:14px; color:#334155; margin:0 0 16px; }
+            .relative{ page-break-inside: avoid; }
+            .card{ border:1px solid #e5e7eb; border-radius:12px; padding:12px; margin:10px 0; }
+            .dot{ display:none; } /* ocultamos puntos en PDF de resumen */
+            .chip { display:inline-block; padding:2px 6px; border:1px solid #ccc; font-size:10px; border-radius:4px; margin-right:4px; }
+            ul { margin-top: 5px; margin-bottom: 5px; }
+          </style>
+        </head><body>
+          <h1>Alcaldes de Parral – Resumen</h1>
+          <h2>Generado: ${updatedDate}</h2>
+          ${container.innerHTML}
+          <script>window.onload = ()=>{ window.print(); setTimeout(()=>window.close(), 500); }<\/script>
+        </body></html>
+      `);
+      w.document.close();
+    }
+
+    // ===========================
+    // 4) Inicio
+    // ===========================
+    function init(){
+      renderTimeline(ALCALDES);
+      const btnExport = document.getElementById('btnExportResumen');
+      if(btnExport) btnExport.addEventListener('click', exportarResumen);
+    }
+    document.addEventListener('DOMContentLoaded', init);
+  </script>
+</body>
+</html>
