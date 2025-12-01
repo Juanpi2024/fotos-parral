@@ -40,7 +40,20 @@
     </header>
 
     <section class="hero">
-        <div class="container">
+        <!-- Hero Background Slider -->
+        <div class="hero-slider">
+            <div class="slide active">
+                <img src="images/slider-tren.jpg" alt="Tren Histórico de Parral">
+            </div>
+            <div class="slide">
+                <img src="images/slider-generic.png" alt="Imagen Histórica de Parral">
+            </div>
+            <!-- Overlay to ensure text readability -->
+            <div class="hero-overlay"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="container hero-content">
             <h2>Descubre Parral</h2>
             <p>Un viaje por nuestra historia e identidad</p>
             <br>
@@ -93,6 +106,51 @@
         document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
             document.querySelector('.main-nav').classList.toggle('show');
         });
+
+        /* --- Slider Logic --- */
+        let slideIndex = 1;
+        let slideInterval;
+
+        // Iniciar el slider
+        showSlides(slideIndex);
+        startAutoplay();
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+            resetAutoplay();
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+            resetAutoplay();
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+                slides[i].classList.remove('active');
+            }
+
+            slides[slideIndex-1].style.display = "block";
+            slides[slideIndex-1].classList.add('active');
+        }
+
+        function startAutoplay() {
+            slideInterval = setInterval(() => {
+                plusSlides(1);
+            }, 5000); // Cambia cada 5 segundos
+        }
+
+        function resetAutoplay() {
+            clearInterval(slideInterval);
+            startAutoplay();
+        }
     </script>
     </body>
 
