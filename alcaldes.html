@@ -112,6 +112,12 @@
         top: 0;
         z-index: 40; /* Lower than global nav if sticky, but here we might just let it be under */
     }
+
+    /* Fix layout issues caused by global CSS */
+    .alcaldes-container section {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
   </style>
 </head>
 <body class="alcaldes-container text-slate-900">
@@ -180,6 +186,20 @@
 
   <!-- Área de impresión (ficha individual) -->
   <section id="printArea" class="hidden"></section>
+
+  <!-- Modal Ficha -->
+  <div id="fichaModal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-slate-900/50 backdrop-blur-sm p-4 print:hidden">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
+      <button onclick="closeModal()" class="absolute top-4 right-4 p-2 bg-slate-100 rounded-full hover:bg-slate-200 transition-colors z-10" aria-label="Cerrar">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <div id="modalContent" class="p-6 md:p-8">
+        <!-- Content inject here -->
+      </div>
+    </div>
+  </div>
 
   <!-- Pie GLOBAL -->
   <footer>
@@ -387,13 +407,31 @@
     function verFicha(id){
       const h = ALCALDES.find(x => x.id === id);
       if(!h) return;
-      const area = document.getElementById('printArea');
-      area.innerHTML = buildFichaHTML(h);
-      area.classList.remove('hidden');
-      window.scrollTo({top:0, behavior:'smooth'});
-      // Oculta la previsualización después de unos segundos
-      setTimeout(()=>{ area.classList.add('hidden'); area.innerHTML = ''; }, 4500);
+
+      const modal = document.getElementById('fichaModal');
+      const content = document.getElementById('modalContent');
+
+      content.innerHTML = buildFichaHTML(h);
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden'; // Evitar scroll de fondo
     }
+
+    function closeModal(){
+      const modal = document.getElementById('fichaModal');
+      modal.classList.add('hidden');
+      document.getElementById('modalContent').innerHTML = '';
+      document.body.style.overflow = '';
+    }
+
+    // Close on click outside
+    document.getElementById('fichaModal').addEventListener('click', function(e){
+      if(e.target === this) closeModal();
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape') closeModal();
+    });
 
     function descargarFicha(id){
       const h = ALCALDES.find(x => x.id === id);
