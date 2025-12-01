@@ -7,7 +7,44 @@
     <title>Galería Digital – Archivos en Movimiento</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link </div>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Merriweather:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-area">
+                <h1><a href="index.html">Archivos en Movimiento</a></h1>
+                <p class="subtitle">Patrimonio Vivo de Parral</p>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="galeria.html" class="active">Galería</a></li>
+                    <li><a href="relatos.html">Relatos</a></li>
+                    <li><a href="deportistas.html">Deportistas</a></li>
+                    <li><a href="educacion.html">Educación</a></li>
+                    <li><a href="historia.html">Historia</a></li>
+                    <li><a href="mapa.html">Mapa</a></li>
+                    <li><a href="participa.html" class="btn-nav">¡Participa!</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Galería Digital</h2>
+            <p>Revive momentos históricos de Parral</p>
+        </div>
     </section>
 
     <section class="container" style="padding: 4rem 1rem;">
@@ -15,13 +52,12 @@
             <!-- Fila 1 -->
             <div class="card-foto">
                 <div class="card-foto-img-container">
-                    <img src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?auto=format&fit=crop&w=600&q=80"
-                        alt="Plaza de Armas">
+                    <img src="img/plaza-color.png" alt="Plaza de Armas">
                 </div>
                 <div class="card-foto-content">
                     <h3>Plaza de Armas</h3>
                     <p>El Corazón Cívico</p>
-                    <a href="detalle.html" class="btn-card">Ver Colección</a>
+                    <a href="detalle-plaza.html" class="btn-card">Ver Colección</a>
                 </div>
             </div>
             <div class="card-foto">
@@ -99,13 +135,12 @@
             <!-- Fila 2 -->
             <div class="card-foto">
                 <div class="card-foto-img-container">
-                    <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=600&q=80"
-                        alt="Arroz">
+                    <img src="img/arroz-color.png" alt="Arroz">
                 </div>
                 <div class="card-foto-content">
                     <h3>Hombres en el Arroz</h3>
                     <p>Identidad Agrícola</p>
-                    <a href="detalle.html" class="btn-card">Ver Colección</a>
+                    <a href="detalle-arroz.html" class="btn-card">Ver Colección</a>
                 </div>
             </div>
             <div class="card-foto">
@@ -287,6 +322,13 @@
             <p>&copy; 2025 Archivos en Movimiento. Patrimonio Vivo de Parral.</p>
         </div>
     </footer>
-    </body>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+            document.querySelector('.main-nav').classList.toggle('show');
+        });
+    </script>
+</body>
 
 </html>
