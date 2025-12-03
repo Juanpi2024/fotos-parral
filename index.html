@@ -61,25 +61,7 @@
         </div>
     </section>
 
-    <!-- Nueva sección del slider -->
-    <section class="home-slider-section">
-        <div class="slider-container">
-            <div class="slide active">
-                <img src="images/slider-tren.jpg" alt="Tren Histórico de Parral">
-            </div>
-            <div class="slide">
-                <img src="images/slider-generic.png" alt="Imagen Histórica de Parral">
-            </div>
-            <!-- Botones de navegación (opcional, pero buena práctica) -->
-            <button class="slider-btn prev" aria-label="Anterior">&#10094;</button>
-            <button class="slider-btn next" aria-label="Siguiente">&#10095;</button>
-            <!-- Indicadores -->
-            <div class="slider-indicators">
-                <span class="dot active" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-            </div>
-        </div>
-    </section>
+    <!-- Nueva sección del slider eliminada por redundancia -->
 
     <section class="container" style="padding: 4rem 1rem;">
         <div class="grid-galeria">
@@ -111,6 +93,7 @@
         </div>
     </footer>
 
+    <script src="menu.js"></script>
     <script>
         // Header scroll effect
         window.addEventListener('scroll', function () {
@@ -122,67 +105,34 @@
             }
         });
 
-        // Mobile Menu Toggle
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-            document.querySelector('.main-nav').classList.toggle('show');
-        });
-
         /* --- Slider Logic --- */
-        let slideIndex = 1;
+        let slideIndex = 0;
         let slideInterval;
 
         // Iniciar el slider
-        showSlides(slideIndex);
+        showSlides();
         startAutoplay();
 
-        // Controles siguiente/anterior
-        document.querySelector('.prev').addEventListener('click', () => plusSlides(-1));
-        document.querySelector('.next').addEventListener('click', () => plusSlides(1));
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-            resetAutoplay();
-        }
-
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-            resetAutoplay();
-        }
-
-        function showSlides(n) {
+        function showSlides() {
             let i;
             let slides = document.getElementsByClassName("slide");
-            let dots = document.getElementsByClassName("dot");
-
-            if (n > slides.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = slides.length}
-
+            
             for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
                 slides[i].classList.remove('active');
             }
 
-            slides[slideIndex-1].style.display = "block";
-            slides[slideIndex-1].classList.add('active');
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
 
             slides[slideIndex-1].style.display = "block";
-            // Forzamos un reflow pequeño o simplemente agregamos la clase para futuras animaciones CSS si se desea
             slides[slideIndex-1].classList.add('active');
-            dots[slideIndex-1].className += " active";
         }
 
         function startAutoplay() {
             slideInterval = setInterval(() => {
-                plusSlides(1);
+                showSlides();
             }, 5000); // Cambia cada 5 segundos
-        }
-
-        function resetAutoplay() {
-            clearInterval(slideInterval);
-            startAutoplay();
         }
     </script>
     </body>
