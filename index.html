@@ -13,31 +13,7 @@
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <div class="logo-area">
-                <h1><a href="index.html">Archivos en Movimiento</a></h1>
-                <p class="subtitle">Patrimonio Vivo de Parral</p>
-            </div>
-            <button class="mobile-menu-btn" aria-label="Menú">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html" class="active">Inicio</a></li>
-                    <li><a href="galeria.html">Galería</a></li>
-                    <li><a href="relatos.html">Relatos</a></li>
-                    <li><a href="deportistas.html">Deportistas</a></li>
-                    <li><a href="educacion.html">Educación</a></li>
-                    <li><a href="historia.html">Historia</a></li>`n                    <li><a href="ecos.html">Ecos</a></li>
-                    <li><a href="mapa.html">Mapa</a></li>
-                    <li><a href="participa.html" class="btn-nav">¡Participa!</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    {% include header.html %}
 
     <section class="hero">
         <!-- Hero Background Slider -->
@@ -60,8 +36,6 @@
             <a href="galeria.html" class="btn-principal">Explorar Galería</a>
         </div>
     </section>
-
-    <!-- Nueva sección del slider eliminada por redundancia -->
 
     <section class="container" style="padding: 4rem 1rem;">
         <div class="grid-galeria">
@@ -86,55 +60,7 @@
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Archivos en Movimiento. Patrimonio Vivo de Parral.</p>
-            <p style="font-size: 0.9rem;">Modelo replicable para la gestión cultural municipal.</p>
-        </div>
-    </footer>
-
-    <script src="menu.js"></script>
-    <script>
-        // Header scroll effect
-        window.addEventListener('scroll', function () {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        /* --- Slider Logic --- */
-        let slideIndex = 0;
-        let slideInterval;
-
-        // Iniciar el slider
-        showSlides();
-        startAutoplay();
-
-        function showSlides() {
-            let i;
-            let slides = document.getElementsByClassName("slide");
-            
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-                slides[i].classList.remove('active');
-            }
-
-            slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}
-
-            slides[slideIndex-1].style.display = "block";
-            slides[slideIndex-1].classList.add('active');
-        }
-
-        function startAutoplay() {
-            slideInterval = setInterval(() => {
-                showSlides();
-            }, 5000); // Cambia cada 5 segundos
-        }
-    </script>
-    </body>
+    {% include footer.html %}
+</body>
 
 </html>
