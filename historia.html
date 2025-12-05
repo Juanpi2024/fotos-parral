@@ -2,510 +2,470 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historia – Archivos en Movimiento</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Historia – Archivos en Movimiento</title>
 
-    <!-- Fuentes originales -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <!-- Fuentes del Snippet (Inter) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- CSS Original -->
+  <link rel="stylesheet" href="style.css">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        // Desactiva preflight para no romper estilos globales existentes (navbar/footer)
-        corePlugins: {
-            preflight: false,
-        },
-        theme: {
-          extend: {
-            fontFamily: {
-                sans: ['Inter', 'system-ui', 'sans-serif'],
-            },
-            colors: {
-              maule: {
-                50: '#fdf6f0',
-                100: '#fce9d7',
-                200: '#f9d4b0',
-                300: '#f4b982',
-                400: '#e99a55',
-                500: '#d17a3a',
-                600: '#b35d2d',
-                700: '#8c4623',
-                800: '#6b341b',
-                900: '#4a2313',
-              },
-              verde: {
-                50: '#f8fbf9',
-                100: '#e8f3ec',
-                500: '#4a7c59',
-              },
-              azul: {
-                50: '#f6f9fc',
-                100: '#e0eaf4',
-                500: '#2c5e7d',
-              }
-            }
-          }
-        }
-      }
-    </script>
+  <style>
+    /* Estilos para la presentación de épocas */
+    .epocas-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      font-family: 'Merriweather', serif;
+    }
 
-    <!-- CSS Original -->
-    <link rel="stylesheet" href="style.css">
+    .slide {
+      display: none;
+      animation: fadeIn 0.5s;
+    }
 
-    <!-- CSS del Snippet -->
-    <style>
-      /* Variables locales y ajustes para el componente timeline */
-      .timeline-wrapper {
-        --brand: #d17a3a;
-        --ink: #2d3748;
-        font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-        color: #4a2313; /* maule-900 fallback */
+    .slide.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
       }
 
-      .tl-line {
-        position: absolute;
-        left: 1.25rem;
-        top: 0;
-        bottom: 0;
-        width: 2px;
-        background: linear-gradient(180deg, #e99a55, #b35d2d);
+      to {
+        opacity: 1;
       }
-      .tl-dot {
-        position: absolute;
-        left: 0.9rem;
-        width: 12px;
-        height: 12px;
-        border-radius: 9999px;
-        background: var(--brand);
-        box-shadow: 0 0 0 4px rgba(209, 122, 58, 0.2);
-      }
-      .card {
-        transition: box-shadow 0.2s ease, transform 0.2s ease;
-        border-left: 4px solid var(--brand);
-      }
-      .card:hover {
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-        transform: translateY(-2px);
+    }
+
+    .slide img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+    }
+
+    /* Navegación de slides */
+    .slide-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+
+    .slide-nav button {
+      padding: 0.75rem 1.5rem;
+      background: #8c4623;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: 'Lato', sans-serif;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .slide-nav button:hover {
+      background: #6b341b;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .slide-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* Indicadores de progreso */
+    .progress-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .progress-dots .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #ddd;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .progress-dots .dot.active {
+      background: #8c4623;
+      transform: scale(1.3);
+    }
+
+    .progress-dots .dot:hover {
+      background: #b35d2d;
+    }
+
+    /* Contador de slides */
+    .slide-counter {
+      text-align: center;
+      color: #6b341b;
+      font-family: 'Lato', sans-serif;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+
+    /* Controles de teclado info */
+    .keyboard-hint {
+      text-align: center;
+      color: #999;
+      font-size: 0.85rem;
+      margin-top: 1rem;
+      font-family: 'Lato', sans-serif;
+    }
+
+    /* Hero section */
+    .hero-historia {
+      background: linear-gradient(135deg, #fdf6f0 0%, #fce9d7 100%);
+      padding: 3rem 1rem;
+      text-align: center;
+      border-bottom: 3px solid #d17a3a;
+    }
+
+    .hero-historia h1 {
+      font-family: 'Merriweather', serif;
+      color: #4a2313;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-historia p {
+      font-family: 'Lato', sans-serif;
+      color: #6b341b;
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-historia h1 {
+        font-size: 1.8rem;
       }
 
-      /* Ajustes de impresión */
-      @media print {
-        body > *:not(#printArea) { display: none !important; }
-        #printArea { display: block !important; position: absolute; top: 0; left: 0; width: 100%; }
-        /* Restaurar visibilidad dentro de printArea */
-        #printArea, #printArea * { visibility: visible; }
+      .slide-nav {
+        gap: 0.5rem;
       }
 
-      /* Hero integrado */
-      .hero-timeline {
-        background: radial-gradient(1200px 400px at 20% -20%, rgba(209, 122, 58, 0.08), transparent),
-                    linear-gradient(180deg, #fdf6f0 0%, #fff 100%);
+      .slide-nav button {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
       }
-      .sep {
-        height: 1px;
-        background: linear-gradient(90deg, transparent, #e99a55, transparent);
-      }
+    }
 
-      /* Reset local para elementos dentro del timeline que podrían ser afectados por style.css global */
-      .timeline-wrapper h1,
-      .timeline-wrapper h2,
-      .timeline-wrapper h3,
-      .timeline-wrapper h4,
-      .timeline-wrapper p,
-      .timeline-wrapper button,
-      .timeline-wrapper input {
-          font-family: 'Inter', sans-serif;
-      }
+    /* Botón de descarga */
+    .download-section {
+      text-align: center;
+      margin: 2rem 0;
+      padding: 2rem;
+      background: #f9f9f9;
+      border-radius: 8px;
+    }
 
-      /* Asegurar que los botones de filtro se vean bien sin preflight */
-      .btn-filter {
-          cursor: pointer;
-          border-width: 1px;
-          border-style: solid;
-      }
-    </style>
+    .download-section h3 {
+      color: #4a2313;
+      margin-bottom: 1rem;
+      font-family: 'Merriweather', serif;
+    }
+
+    .download-section p {
+      color: #6b341b;
+      margin-bottom: 1.5rem;
+      font-family: 'Lato', sans-serif;
+    }
+
+    .btn-download {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: #d17a3a;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-family: 'Lato', sans-serif;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-download:hover {
+      background: #b35d2d;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+  </style>
 </head>
 
 <body>
 
-    <!-- HEADER ORIGINAL -->
-    <header>
-        <div class="container">
-            <div class="logo-area">
-                <h1><a href="index.html">Archivos en Movimiento</a></h1>
-                <p class="subtitle">Patrimonio Vivo de Parral</p>
-            </div>
-            <button class="mobile-menu-btn" aria-label="Menú">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="galeria.html">Galería</a></li>
-                    <li><a href="relatos.html">Relatos</a></li>
-                    <li><a href="deportistas.html">Deportistas</a></li>
-                    <li><a href="educacion.html">Educación</a></li>
-                    <li><a href="historia.html" class="active">Historia</a></li>
-                    <li><a href="mapa.html">Mapa</a></li>
-                    <li><a href="participa.html" class="btn-nav">¡Participa!</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <!-- HEADER ORIGINAL -->
+  <header>
+    <div class="container">
+      <div class="logo-area">
+        <h1><a href="index.html">Archivos en Movimiento</a></h1>
+        <p class="subtitle">Patrimonio Vivo de Parral</p>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="galeria.html">Galería</a></li>
+          <li><a href="relatos.html">Relatos</a></li>
+          <li><a href="deportistas.html">Deportistas</a></li>
+          <li><a href="educacion.html">Educación</a></li>
+          <li><a href="historia.html" class="active">Historia</a></li>
+          <li><a href="mapa.html">Mapa</a></li>
+          <li><a href="participa.html" class="btn-nav">¡Participa!</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <!-- WRAPPER TIMELINE -->
-    <div class="timeline-wrapper bg-maule-50">
+  <!-- HERO SECTION -->
+  <section class="hero-historia">
+    <h1>Archivos en Movimiento</h1>
+    <p>El Patrimonio Vivo de Parral<br>
+      Un viaje por la historia del trabajo en nuestra comunidad</p>
+  </section>
 
-        <!-- HERO SECTION (Reemplaza el hero original) -->
-        <section class="hero-timeline border-b border-maule-200">
-            <div class="max-w-6xl mx-auto px-4 py-10">
-                <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 rounded-2xl bg-maule-100 grid place-content-center ring-1 ring-maule-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-maule-600" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2Zm1 14.93V20h-2v-3.07A8.015 8.015 0 0 1 4.07 13H1v-2h3.07A8.015 8.015 0 0 1 11 4.07V1h2v3.07A8.015 8.015 0 0 1 19.93 11H23v-2h-3.07A8.015 8.015 0 0 1 13 16.93Z"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight text-maule-900" style="font-size: 2rem; margin-bottom: 0.5rem; line-height: 1.2;">Línea de Tiempo – Parral (Región del Maule)</h1>
-                        <p class="text-maule-600">Fundación colonial, hitos históricos y personajes ilustres. Fichas pedagógicas listas para descargar.</p>
-                    </div>
-                </div>
+  <!-- CONTENEDOR DE ÉPOCAS -->
+  <div class="epocas-container">
 
-                <!-- Filtros -->
-                <div class="mt-6 max-w-md">
-                    <div class="p-4 bg-white/80 backdrop-blur rounded-2xl shadow-sm border border-maule-200">
-                        <label class="block text-sm font-semibold mb-1 text-maule-900">Rango de años</label>
-                        <div class="flex items-center gap-3">
-                            <input id="yearMin" type="number" class="w-24 rounded-lg border border-maule-300 px-2 py-2" placeholder="Min"/>
-                            <span class="text-maule-500">—</span>
-                            <input id="yearMax" type="number" class="w-24 rounded-lg border border-maule-300 px-2 py-2" placeholder="Max"/>
-                            <button id="btnApplyYears" class="btn-filter ml-auto px-3 py-2 rounded-lg bg-maule-700 text-white text-sm hover:bg-maule-800 border-maule-700">Aplicar</button>
-                            <button id="btnReset" class="btn-filter px-3 py-2 rounded-lg border-maule-300 text-sm hover:bg-maule-50 bg-white text-maule-900">Reiniciar</button>
-                        </div>
-                        <p id="yearsHint" class="mt-2 text-xs text-maule-600"></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTENIDO TIMELINE -->
-        <main class="max-w-6xl mx-auto px-4 py-8">
-            <div class="sep mb-6"></div>
-            <section class="relative">
-                <div class="tl-line"></div>
-                <div id="timeline" class="space-y-8"></div>
-            </section>
-        </main>
+    <!-- Contador de slides -->
+    <div class="slide-counter">
+      <span id="currentSlide">1</span> / <span id="totalSlides">15</span>
     </div>
 
-    <!-- Área de impresión -->
-    <section id="printArea" class="print-area hidden"></section>
+    <!-- Indicadores de progreso -->
+    <div class="progress-dots" id="progressDots"></div>
 
-    <!-- FOOTER ORIGINAL -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Archivos en Movimiento. Patrimonio Vivo de Parral.</p>
-        </div>
-    </footer>
+    <!-- Slides -->
+    <div id="slidesContainer">
+      <!-- Slide 1: Portada -->
+      <div class="slide active">
+        <img src="images/epoca-portada.jpg" alt="Archivos en Movimiento - El Patrimonio Vivo de Parral">
+      </div>
 
-    <!-- LÓGICA DE DATOS Y TIMELINE -->
-    <script>
-    const DATA = [
-      {
-        id: 'huenutil-1754',
-        date: '1754-01-01',
-        year: 1754,
-        title: '1754 – Natividad de Huenutil (intento fundacional)',
-        summary: 'Intento de fundación del villorrio Natividad de Huenutil bajo la política borbónica. Inundaciones obligan a reubicar el asentamiento hacia “El Puquio”.',
-        context: 'La Corona impulsó nuevas villas en Chile central. Huenutil, entre los ríos Cato y Perquilauquén, sufrió crecidas; la experiencia condujo a elegir un sitio más seguro.',
-        relevance: 'Introducción al poblamiento colonial y relación territorio–sociedad.',
-        activities: '• Elaborar mapa histórico de fundaciones en el Maule. • Debate: ¿Por qué falló Huenutil?',
-        resources: 'Archivo Nacional de Chile; “Historia de Parral” (Municipalidad)'
-      },
-      {
-        id: 'fundacion-1795',
-        date: '1795-02-27',
-        year: 1795,
-        title: '1795 – Fundación de la Villa Reina Luisa del Parral',
-        summary: 'Ambrosio O’Higgins funda la villa junto a la vertiente El Puquio; nombre en honor a María Luisa de Parma. Terrenos donados por el sacerdote Bernardo de Barriga.',
-        context: 'Reformas borbónicas y creación de centros urbanos estratégicos. Parral nace como punto del Camino Real y base agrícola.',
-        relevance: 'Inicio de la institucionalidad local; identidad parralina.',
-        activities: '• Visita guiada al monumento fundacional. • Redactar una carta como si fueras un colono de 1795.',
-        resources: 'Museo Histórico de Parral; Biblioteca Nacional Digital'
-      },
-      {
-        id: 'independencia-1810',
-        date: '1810-01-01',
-        year: 1810,
-        title: '1810–1818 – Parral en la Independencia de Chile',
-        summary: 'Participación logística por ubicación en el Camino Real: paso de tropas patriotas y realistas; sin batallas mayores en la villa.',
-        context: 'La ruta conectaba Santiago y el sur; El Puquio surtió agua y víveres.',
-        relevance: 'Rol de localidades rurales en procesos nacionales.',
-        activities: '• Simulación histórica: “Diario de un parralino en 1814”. • Línea del tiempo comparada con otros pueblos del Maule.',
-        resources: 'Memoria Chilena – Bicentenario; Archivo Nacional'
-      },
-      {
-        id: 'pincheira-1825',
-        date: '1825-01-01',
-        year: 1825,
-        title: '1825 – Saqueo de los Hermanos Pincheira',
-        summary: 'La montonera realista saquea Parral en la inestabilidad postindependencia.',
-        context: 'Resistencia realista tardía; derrota definitiva en 1832.',
-        relevance: 'Desafíos del Estado naciente y seguridad rural.',
-        activities: '• Análisis de fuentes primarias sobre el saqueo. • Mapa de rutas de las montoneras en el sur.',
-        resources: '“Historia de Chile” de Francisco Antonio Encina; Archivo Regional del Maule'
-      },
-      {
-        id: 'ferrocarril-1874',
-        date: '1874-01-01',
-        year: 1874,
-        title: '1874 – Llega el Ferrocarril Central a Parral',
-        summary: 'Se inaugura la estación; Parral se integra a la Red Sur y dinamiza comercio y urbanización. Más tarde, ramal a Cauquenes (1897–1974).',
-        context: 'Modernización e integración nacional por vía férrea.',
-        relevance: 'Impacto del transporte en economía y ciudad.',
-        activities: '• Investigación: ¿Cómo cambió la vida cotidiana con el tren? • Entrevista a adultos mayores sobre recuerdos ferroviarios.',
-        resources: 'Ferrocarriles de Chile (EFE); Museo del Ferrocarril de Parral'
-      },
-      {
-        id: 'neruda-1904',
-        date: '1904-07-12',
-        year: 1904,
-        title: '1904 – Nace Pablo Neruda en Parral',
-        summary: 'Ricardo E. N. Reyes (Pablo Neruda) nace en una modesta casa parralina. Madre maestra; padre ferroviario; traslado temprano a Temuco.',
-        context: 'Poeta/diplomático/senador; obra fundamental en lengua española.',
-        relevance: 'Identidad local vinculada a la literatura mundial.',
-        activities: '• Lectura de “Odas Elementales”. • Crear un poema inspirado en el paisaje del Maule.',
-        resources: 'Fundación Neruda; Casa Museo Neruda (Parral)'
-      },
-      {
-        id: 'terremoto-1939',
-        date: '1939-01-24',
-        year: 1939,
-        title: '1939 – Terremoto de Chillán: daños en Parral',
-        summary: 'Sismo ~8,3 provoca derrumbes en templos y viviendas de adobe; gran destrucción regional.',
-        context: 'Origen de políticas nacionales de reconstrucción (CORFO).',
-        relevance: 'Cultura de prevención y memoria sísmica.',
-        activities: '• Comparar normas antisísmicas de 1939 vs. hoy. • Entrevista a testigos o familiares.',
-        resources: 'Archivo Nacional – CORFO; “El terremoto que cambió Chile” (Memoria Chilena)'
-      },
-      {
-        id: 'colonia-1961',
-        date: '1961-01-01',
-        year: 1961,
-        title: '1961 – Colonia Dignidad (hoy Villa Baviera)',
-        summary: 'Instalación de comunidad alemana; luego documentada como sitio de graves violaciones a DD. HH. durante la dictadura.',
-        context: 'Judicialización, memoria y reconversión turística parcial.',
-        relevance: 'Formación en derechos humanos y convivencia.',
-        activities: '• Debate ético: ¿Cómo abordar lugares con pasado oscuro? • Análisis de documentales sobre el tema.',
-        resources: 'Archivo de Derechos Humanos; Informes Valech y Rettig'
-      },
-      {
-        id: 'nobel-1971',
-        date: '1971-10-21',
-        year: 1971,
-        title: '1971 – Premio Nobel de Literatura a Pablo Neruda',
-        summary: 'Reconocimiento mundial al poeta nacido en Parral; hito cultural nacional.',
-        context: 'Proyección internacional de la comuna como cuna de un Nobel.',
-        relevance: 'Fomento lector y patrimonio literario.',
-        activities: '• Lectura dramatizada de “Canto General”. • Crear mural colectivo sobre Neruda.',
-        resources: 'Premio Nobel.org; Biblioteca Municipal de Parral'
-      },
-      {
-        id: '27f-2010',
-        date: '2010-02-27',
-        year: 2010,
-        title: '2010 – Terremoto del 27/F (Maule): Reconstrucción',
-        summary: 'Sismo 8,8 Mw afecta gravemente a Parral: viviendas, hospital, infraestructura. Reconstrucción urbana y social.',
-        context: 'Mejoras normativas antisísmicas y gestión de emergencias.',
-        relevance: 'Resiliencia comunitaria y planificación.',
-        activities: '• Plan escolar de emergencia. • Entrevista a bomberos o funcionarios municipales.',
-        resources: 'ONEMI; Plan de Reconstrucción Post-27F (Gobierno de Chile)'
-      },
-      {
-        id: '230-2025',
-        date: '2025-02-27',
-        year: 2025,
-        title: '2025 – 230° Aniversario de Parral',
-        summary: 'Conmemoración cívico-cultural y puesta en valor del patrimonio histórico y tradiciones.',
-        context: 'Refuerzo de identidad comunal y participación.',
-        relevance: 'Actividad integradora para proyectos de rescate cultural.',
-        activities: '• Feria patrimonial escolar. • Creación de podcast histórico local.',
-        resources: 'Municipalidad de Parral; Programa “Pueblos Patrimonio” (Minvu)'
+      <!-- Slide 2: Introducción -->
+      <div class="slide">
+        <img src="images/epoca-intro.jpg" alt="Las Manos que Construyeron Parral">
+      </div>
+
+      <!-- Slide 3: Timeline general -->
+      <div class="slide">
+        <img src="images/epoca-timeline.jpg" alt="Cuatro Épocas. Una Historia de Evolución">
+      </div>
+
+      <!-- Slide 4: Época 1 - Fundacional -->
+      <div class="slide">
+        <img src="images/epoca-1-fundacional.jpg" alt="Época Fundacional y Colonia (Siglos XVIII-XIX)">
+      </div>
+
+      <!-- Slide 5: Época 1 - Oficios -->
+      <div class="slide">
+        <img src="images/epoca-1-oficios.jpg" alt="Los Pilares de la Comunidad - Oficios Coloniales">
+      </div>
+
+      <!-- Slide 6: Época 2 - Introducción -->
+      <div class="slide">
+        <img src="images/epoca-2-intro.jpg" alt="Consolidación Agrícola (Principios del Siglo XX)">
+      </div>
+
+      <!-- Slide 7: Época 2 - Ferrocarril -->
+      <div class="slide">
+        <img src="images/epoca-2-ferrocarril.jpg" alt="El Sonido del Progreso: La Llegada del Ferrocarril">
+      </div>
+
+      <!-- Slide 8: Época 2 - Oficios -->
+      <div class="slide">
+        <img src="images/epoca-2-oficios.jpg" alt="Nuevos Oficios para un Nuevo Siglo">
+      </div>
+
+      <!-- Slide 9: Época 3 - Introducción -->
+      <div class="slide">
+        <img src="images/epoca-3-intro.jpg" alt="La Revolución Verde Llega al Campo">
+      </div>
+
+      <!-- Slide 10: Época 3 - Detalle -->
+      <div class="slide">
+        <img src="images/epoca-3-detalle.jpg" alt="Modernización y Agroindustria (Mediados y Finales del Siglo XX)">
+      </div>
+
+      <!-- Slide 11: Época 3 - Oficios -->
+      <div class="slide">
+        <img src="images/epoca-3-oficios.jpg" alt="La Cadena de Valor Agroindustrial">
+      </div>
+
+      <!-- Slide 12: Época 4 - Introducción -->
+      <div class="slide">
+        <img src="images/epoca-4-intro.jpg" alt="Época Contemporánea (Siglo XXI)">
+      </div>
+
+      <!-- Slide 13: Época 4 - Oficios -->
+      <div class="slide">
+        <img src="images/epoca-4-oficios.jpg" alt="El Mosaico Laboral de Hoy">
+      </div>
+
+      <!-- Slide 14: Época 4 - Digital -->
+      <div class="slide">
+        <img src="images/epoca-4-digital.jpg" alt="La Conexión Global: La Era Digital Despega">
+      </div>
+
+      <!-- Slide 15: Conclusión -->
+      <div class="slide">
+        <img src="images/epoca-conclusion.jpg" alt="El Hilo del Trabajo Nunca se Detiene">
+      </div>
+    </div>
+
+    <!-- Navegación -->
+    <div class="slide-nav">
+      <button id="prevBtn" onclick="changeSlide(-1)">← Anterior</button>
+      <button id="nextBtn" onclick="changeSlide(1)">Siguiente →</button>
+    </div>
+
+    <div class="keyboard-hint">
+      💡 Usa las flechas del teclado ← → para navegar
+    </div>
+
+    <!-- Sección de descarga -->
+    <div class="download-section">
+      <h3>📥 Descarga la Presentación Completa</h3>
+      <p>Obtén todas las imágenes de esta línea de tiempo histórica para uso educativo</p>
+      <a href="#" class="btn-download"
+        onclick="alert('Función de descarga próximamente disponible'); return false;">Descargar PDF</a>
+    </div>
+  </div>
+
+  <!-- FOOTER ORIGINAL -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Archivos en Movimiento. Patrimonio Vivo de Parral.</p>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const currentSlideSpan = document.getElementById('currentSlide');
+    const totalSlidesSpan = document.getElementById('totalSlides');
+    const progressDotsContainer = document.getElementById('progressDots');
+
+    // Inicializar
+    totalSlidesSpan.textContent = totalSlides;
+
+    // Crear dots de progreso
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement('div');
+      dot.className = 'dot';
+      if (i === 0) dot.classList.add('active');
+      dot.onclick = () => goToSlide(i);
+      progressDotsContainer.appendChild(dot);
+    }
+
+    const dots = document.querySelectorAll('.dot');
+
+    function showSlide(n) {
+      // Validar rango
+      if (n >= totalSlides) {
+        currentSlide = totalSlides - 1;
+      } else if (n < 0) {
+        currentSlide = 0;
+      } else {
+        currentSlide = n;
       }
-    ];
 
-    const $ = (sel, ctx = document) => ctx.querySelector(sel);
-    const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
+      // Ocultar todos los slides
+      slides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
 
-    // Paleta de fondos suaves para alternar
-    const BACKGROUNDS = [
-      'bg-maule-50',
-      'bg-verde-50',
-      'bg-azul-50',
-      'bg-maule-100',
-      'bg-white'
-    ];
+      // Mostrar slide actual
+      slides[currentSlide].classList.add('active');
+      dots[currentSlide].classList.add('active');
 
-    function toCard(h, index) {
-      const bg = BACKGROUNDS[index % BACKGROUNDS.length];
-      return `
-        <article class="relative pl-12">
-          <span class="tl-dot" style="top:12px"></span>
-          <div class="card ${bg} border border-maule-200 rounded-2xl shadow-sm p-5">
-            <div class="flex items-start justify-between gap-3">
-              <div>
-                <h3 class="text-lg font-bold text-maule-800">${h.title}</h3>
-                <p class="text-maule-600 text-sm">
-                  ${new Date(h.date).toLocaleDateString('es-CL', { year: 'numeric', month: 'long', day: 'numeric' })}
-                </p>
-              </div>
-            </div>
-            <p class="mt-3 leading-relaxed text-maule-700">${h.summary}</p>
+      // Actualizar contador
+      currentSlideSpan.textContent = currentSlide + 1;
 
-            <details class="mt-3">
-              <summary class="cursor-pointer text-maule-700 font-medium">Contexto histórico</summary>
-              <p class="mt-2 text-maule-700">${h.context}</p>
-            </details>
-            <details class="mt-2">
-              <summary class="cursor-pointer text-maule-700 font-medium">Relevancia educativa</summary>
-              <p class="mt-2 text-maule-700">${h.relevance}</p>
-            </details>
-            <details class="mt-2">
-              <summary class="cursor-pointer text-verde-600 font-medium">Actividades sugeridas</summary>
-              <p class="mt-2 text-maule-700">${h.activities}</p>
-            </details>
-            <details class="mt-2">
-              <summary class="cursor-pointer text-azul-600 font-medium">Recursos complementarios</summary>
-              <p class="mt-2 text-maule-700">${h.resources}</p>
-            </details>
+      // Actualizar botones
+      prevBtn.disabled = currentSlide === 0;
+      nextBtn.disabled = currentSlide === totalSlides - 1;
 
-            <div class="mt-4 flex flex-wrap gap-2">
-              <button class="px-3 py-2 rounded-lg bg-maule-600 text-white text-sm hover:bg-maule-700 btn-filter border-0" onclick="printFicha('${h.id}')">Descargar ficha (PDF)</button>
-            </div>
-          </div>
-        </article>
-      `;
+      // Scroll suave al inicio del slide
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    function decadeOf(y) { return Math.floor(y / 10) * 10; }
-    function decadeLabel(d) { return `${d}–${d + 9}`; }
-
-    function groupByDecade(arr) {
-      const map = new Map();
-      arr.forEach(it => {
-        const d = decadeOf(it.year);
-        if (!map.has(d)) map.set(d, []);
-        map.get(d).push(it);
-      });
-      return Array.from(map.entries()).sort((a, b) => a[0] - b[0]);
+    function changeSlide(direction) {
+      showSlide(currentSlide + direction);
     }
 
-    function buildPrintHTML(h) {
-      const date = new Date(h.date).toLocaleDateString('es-CL', { year: 'numeric', month: 'long', day: 'numeric' });
-      return `
-        <div class="p-8 font-sans">
-          <header class="mb-6">
-            <h1 class="text-2xl font-bold text-maule-800">${h.title}</h1>
-            <p class="text-maule-600">${date}</p>
-          </header>
-          <section class="space-y-4 text-maule-700">
-            <p><strong>Resumen:</strong> ${h.summary}</p>
-            <p><strong>Contexto histórico:</strong> ${h.context}</p>
-            <p><strong>Relevancia educativa:</strong> ${h.relevance}</p>
-            <p><strong>Actividades sugeridas:</strong> ${h.activities}</p>
-            <p><strong>Recursos complementarios:</strong> ${h.resources}</p>
-          </section>
-          <footer class="mt-8 text-xs text-maule-500">
-            Ficha pedagógica · Línea de Tiempo – Parral (Maule) · ${new Date().toLocaleDateString('es-CL')}
-          </footer>
-        </div>
-      `;
+    function goToSlide(n) {
+      showSlide(n);
     }
 
-    const state = {
-      min: Math.min(...DATA.map(d => d.year)),
-      max: Math.max(...DATA.map(d => d.year)),
-      yearMin: null,
-      yearMax: null
-    };
+    // Navegación con teclado
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        changeSlide(-1);
+      } else if (e.key === 'ArrowRight') {
+        changeSlide(1);
+      }
+    });
 
-    function applyFilters() {
-      const yMin = state.yearMin ?? state.min;
-      const yMax = state.yearMax ?? state.max;
+    // Navegación táctil (swipe)
+    let touchStartX = 0;
+    let touchEndX = 0;
 
-      const filtered = DATA.filter(d => {
-        return d.year >= yMin && d.year <= yMax;
-      }).sort((a, b) => new Date(a.date) - new Date(b.date));
+    document.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
 
-      const groups = groupByDecade(filtered);
-      let cardIndex = 0;
-      const html = groups.map(([dec, items]) => {
-        const head = `
-          <div class="relative pl-12 mb-2">
-            <div class="inline-flex items-center gap-2">
-              <div class="w-2 h-2 rounded-full bg-maule-500"></div>
-              <h4 class="text-xs tracking-wider uppercase text-maule-600 font-semibold">${decadeLabel(dec)}</h4>
-            </div>
-          </div>`;
-        const cards = items.map(item => {
-          const card = toCard(item, cardIndex);
-          cardIndex++;
-          return card;
-        }).join('');
-        return head + cards;
-      }).join('');
+    document.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    });
 
-      $('#timeline').innerHTML = html || `<p class="pl-12 text-maule-500">Sin resultados con los filtros actuales.</p>`;
-      $('#yearsHint').textContent = `Mostrando ${filtered.length} hitos · ${yMin}–${yMax}`;
+    function handleSwipe() {
+      const swipeThreshold = 50;
+      if (touchEndX < touchStartX - swipeThreshold) {
+        // Swipe left
+        changeSlide(1);
+      }
+      if (touchEndX > touchStartX + swipeThreshold) {
+        // Swipe right
+        changeSlide(-1);
+      }
     }
-
-    function initUI() {
-      $('#yearMin').value = state.min;
-      $('#yearMax').value = state.max;
-
-      $('#btnApplyYears').onclick = () => {
-        const vmin = parseInt($('#yearMin').value, 10);
-        const vmax = parseInt($('#yearMax').value, 10);
-        state.yearMin = isNaN(vmin) ? state.min : vmin;
-        state.yearMax = isNaN(vmax) ? state.max : vmax;
-        applyFilters();
-      };
-
-      $('#btnReset').onclick = () => {
-        state.yearMin = null; state.yearMax = null;
-        $('#yearMin').value = state.min; $('#yearMax').value = state.max;
-        applyFilters();
-      };
-
-      applyFilters();
-    }
-
-    function printFicha(id) {
-      const h = DATA.find(x => x.id === id);
-      if (!h) { alert('Hito no encontrado.'); return; }
-      const area = $('#printArea');
-      area.innerHTML = buildPrintHTML(h);
-      area.classList.remove('hidden');
-      requestAnimationFrame(() => window.print());
-      setTimeout(() => { area.innerHTML = ''; area.classList.add('hidden'); }, 500);
-    }
-
-    document.addEventListener('DOMContentLoaded', initUI);
 
     // Lógica del menú móvil (original del sitio)
-    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-        document.querySelector('.main-nav').classList.toggle('show');
+    document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+      document.querySelector('.main-nav').classList.toggle('show');
     });
-    </script>
+
+    // Inicializar primera slide
+    showSlide(0);
+  </script>
 </body>
 
 </html>
