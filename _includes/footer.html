@@ -4,26 +4,5 @@
         <p style="font-size: 0.9rem;">Modelo replicable para la gestión cultural municipal.</p>
     </div>
 </footer>
-
-<script>
-    // Header scroll effect
-    window.addEventListener('scroll', function () {
-        const header = document.querySelector('header');
-        if (header) {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        }
-    });
-
-    // Mobile Menu Toggle
-    const menuBtn = document.querySelector('.mobile-menu-btn');
-    if (menuBtn) {
-        menuBtn.addEventListener('click', function() {
-            const nav = document.querySelector('.main-nav');
-            if (nav) nav.classList.toggle('show');
-        });
-    }
-</script>
+<!-- Main JavaScript File -->
+<script src="{{ '/js/home.js' | relative_url }}"></script>
