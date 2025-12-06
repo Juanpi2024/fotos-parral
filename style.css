@@ -884,3 +884,20 @@ header nav ul {
         aspect-ratio: 4/3; /* Más cuadrado en móviles */
     }
 }
+
+/* Estilos para tarjetas de testimonio (restaurados) */
+.card-testimonio {
+    background-color: white;
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: var(--spacing-md);
+}
+
+/* Reset específico para tarjetas dentro de relatos para evitar doble caja */
+.card-foto .card-testimonio {
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+}
