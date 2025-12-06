@@ -63,13 +63,14 @@
             <span id="currentSlide">1</span> / <span id="totalSlides">15</span>
         </div>
 
-        <!-- Indicadores de progreso -->
-        <div class="presentation-dots" id="progressDots"></div>
-
-        <!-- Slides -->
+        <!-- Container del Slider (Grid Stack) -->
         <div id="slidesContainer">
+            <!-- Flechas de Navegación Overlay -->
+            <button class="presentation-arrow prev" id="prevBtn" onclick="changeSlide(-1)" aria-label="Anterior">&#10094;</button>
+            <button class="presentation-arrow next" id="nextBtn" onclick="changeSlide(1)" aria-label="Siguiente">&#10095;</button>
+
             <!-- Slide 1: Portada -->
-            <div class="presentation-slide active">
+            <div class="presentation-slide">
                 <img src="images/ecos-portada.jpg" alt="Cuna de Historias, Tierra de Futuro">
             </div>
 
@@ -144,11 +145,8 @@
             </div>
         </div>
 
-        <!-- Navegación -->
-        <div class="presentation-nav">
-            <button id="prevBtn" onclick="changeSlide(-1)">← Anterior</button>
-            <button id="nextBtn" onclick="changeSlide(1)">Siguiente →</button>
-        </div>
+        <!-- Indicadores de progreso -->
+        <div class="presentation-dots" id="progressDots"></div>
 
         <div class="keyboard-hint">
             💡 Usa las flechas del teclado ← → para navegar
@@ -180,48 +178,58 @@
         for (let i = 0; i < totalSlides; i++) {
             const dot = document.createElement('div');
             dot.className = 'dot';
-            if (i === 0) dot.classList.add('active');
             dot.onclick = () => goToSlide(i);
             progressDotsContainer.appendChild(dot);
         }
 
         const dots = progressDotsContainer.querySelectorAll('.dot');
 
-        function showSlide(n) {
-            // Validar rango
-            if (n >= totalSlides) {
-                currentSlide = totalSlides - 1;
-            } else if (n < 0) {
-                currentSlide = 0;
-            } else {
-                currentSlide = n;
-            }
+        function updateSlideClasses() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active', 'left', 'right');
 
-            // Ocultar todos los slides
-            slides.forEach(slide => slide.classList.remove('active'));
-            dots.forEach(dot => dot.classList.remove('active'));
+                if (index < currentSlide) {
+                    slide.classList.add('left');
+                } else if (index === currentSlide) {
+                    slide.classList.add('active');
+                } else {
+                    // Default is right
+                }
+            });
 
-            // Mostrar slide actual
-            slides[currentSlide].classList.add('active');
-            dots[currentSlide].classList.add('active');
+            // Update Dots
+            dots.forEach((dot, index) => {
+                if (index === currentSlide) dot.classList.add('active');
+                else dot.classList.remove('active');
+            });
 
-            // Actualizar contador
+            // Update Counter
             currentSlideSpan.textContent = currentSlide + 1;
 
-            // Actualizar botones
-            prevBtn.disabled = currentSlide === 0;
-            nextBtn.disabled = currentSlide === totalSlides - 1;
+            // Update Buttons
+            if (prevBtn) prevBtn.style.opacity = currentSlide === 0 ? '0.5' : '1';
+            if (prevBtn) prevBtn.style.pointerEvents = currentSlide === 0 ? 'none' : 'auto';
 
-            // Scroll suave al inicio del slide
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            if (nextBtn) nextBtn.style.opacity = currentSlide === totalSlides - 1 ? '0.5' : '1';
+            if (nextBtn) nextBtn.style.pointerEvents = currentSlide === totalSlides - 1 ? 'none' : 'auto';
         }
 
         function changeSlide(direction) {
-            showSlide(currentSlide + direction);
+            let next = currentSlide + direction;
+            if (next < 0) next = 0;
+            if (next >= totalSlides) next = totalSlides - 1;
+
+            if (next !== currentSlide) {
+                currentSlide = next;
+                updateSlideClasses();
+            }
         }
 
         function goToSlide(n) {
-            showSlide(n);
+            if (n >= 0 && n < totalSlides) {
+                currentSlide = n;
+                updateSlideClasses();
+            }
         }
 
         // Navegación con teclado
@@ -237,23 +245,25 @@
         let touchStartX = 0;
         let touchEndX = 0;
 
-        document.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        });
+        const sliderContainer = document.getElementById('slidesContainer');
 
-        document.addEventListener('touchend', (e) => {
+        sliderContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, {passive: true});
+
+        sliderContainer.addEventListener('touchend', (e) => {
             touchEndX = e.changedTouches[0].screenX;
             handleSwipe();
-        });
+        }, {passive: true});
 
         function handleSwipe() {
             const swipeThreshold = 50;
             if (touchEndX < touchStartX - swipeThreshold) {
-                // Swipe left
+                // Swipe left -> Next Slide
                 changeSlide(1);
             }
             if (touchEndX > touchStartX + swipeThreshold) {
-                // Swipe right
+                // Swipe right -> Prev Slide
                 changeSlide(-1);
             }
         }
@@ -263,8 +273,8 @@
             document.querySelector('.main-nav').classList.toggle('show');
         });
 
-        // Inicializar primera slide
-        showSlide(0);
+        // Inicializar
+        updateSlideClasses();
     </script>
 </body>
 
