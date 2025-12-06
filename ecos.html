@@ -16,162 +16,6 @@
 
     <!-- CSS Original -->
     <link rel="stylesheet" href="style.css">
-
-    <style>
-        /* Estilos para la presentación de épocas */
-        .epocas-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-            font-family: 'Merriweather', serif;
-        }
-
-        .slide {
-            display: none;
-            animation: fadeIn 0.5s;
-        }
-
-        .slide.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        .slide img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            margin-bottom: 2rem;
-        }
-
-        /* Navegación de slides */
-        .slide-nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1rem;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-        }
-
-        .slide-nav button {
-            padding: 0.75rem 1.5rem;
-            background: #8c4623;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-family: 'Lato', sans-serif;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .slide-nav button:hover {
-            background: #6b341b;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .slide-nav button:disabled {
-            background: #ccc;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        /* Indicadores de progreso */
-        .progress-dots {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            margin: 1.5rem 0;
-            flex-wrap: wrap;
-        }
-
-        .progress-dots .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #ddd;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .progress-dots .dot.active {
-            background: #8c4623;
-            transform: scale(1.3);
-        }
-
-        .progress-dots .dot:hover {
-            background: #b35d2d;
-        }
-
-        /* Contador de slides */
-        .slide-counter {
-            text-align: center;
-            color: #6b341b;
-            font-family: 'Lato', sans-serif;
-            margin: 1rem 0;
-            font-size: 0.9rem;
-        }
-
-        /* Controles de teclado info */
-        .keyboard-hint {
-            text-align: center;
-            color: #999;
-            font-size: 0.85rem;
-            margin-top: 1rem;
-            font-family: 'Lato', sans-serif;
-        }
-
-        /* Hero section */
-        .hero-historia {
-            background: linear-gradient(135deg, #fdf6f0 0%, #fce9d7 100%);
-            padding: 3rem 1rem;
-            text-align: center;
-            border-bottom: 3px solid #d17a3a;
-        }
-
-        .hero-historia h1 {
-            font-family: 'Merriweather', serif;
-            color: #4a2313;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero-historia p {
-            font-family: 'Lato', sans-serif;
-            color: #6b341b;
-            font-size: 1.1rem;
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-historia h1 {
-                font-size: 1.8rem;
-            }
-
-            .slide-nav {
-                gap: 0.5rem;
-            }
-
-            .slide-nav button {
-                padding: 0.6rem 1rem;
-                font-size: 0.9rem;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -205,103 +49,103 @@
     </header>
 
     <!-- HERO SECTION -->
-    <section class="hero-historia">
+    <section class="hero-presentation">
         <h1>Ecos de la Tierra y el Tiempo</h1>
         <p>Un viaje por los hitos que forjaron la identidad de Parral<br>
             Desde la fundación hasta nuestros días</p>
     </section>
 
     <!-- CONTENEDOR DE ÉPOCAS -->
-    <div class="epocas-container">
+    <div class="presentation-container">
 
         <!-- Contador de slides -->
-        <div class="slide-counter">
+        <div class="presentation-counter">
             <span id="currentSlide">1</span> / <span id="totalSlides">15</span>
         </div>
 
         <!-- Indicadores de progreso -->
-        <div class="progress-dots" id="progressDots"></div>
+        <div class="presentation-dots" id="progressDots"></div>
 
         <!-- Slides -->
         <div id="slidesContainer">
             <!-- Slide 1: Portada -->
-            <div class="slide active">
+            <div class="presentation-slide active">
                 <img src="images/ecos-portada.jpg" alt="Cuna de Historias, Tierra de Futuro">
             </div>
 
             <!-- Slide 2: 1823 - Delegación -->
-            <div class="slide">
+            <div class="presentation-slide">
                 <img src="images/ecos-delegacion.jpg" alt="1823: Nace una Delegación">
             </div>
 
             <!-- Slide 3: Ferrocarril -->
-            <div class="slide">
+            <div class="presentation-slide">
                 <img src="images/ecos-ferrocarril.jpg" alt="El Rugido del Progreso: El Ferrocarril">
             </div>
 
             <!-- Slide 4: Puente Perquilauquén -->
-            <div class="slide">
+            <div class="presentation-slide">
                 <img src="images/ecos-puente.jpg" alt="Puente Perquilauquén: Un Gigante de Acero (1896)">
             </div>
 
             <!-- Slide 5: Estación y Puente -->
-            <div class="slide">
+            <div class="presentation-slide">
                 <img src="images/ecos-estacion.jpg" alt="Estación y Puente Perquilauquén: Testigos del Tiempo">
             </div>
 
             <!-- Slide 6: Nacimiento de Neruda -->
-            <div class="slide">
+            <div class="presentation-slide">
                 <img src="images/ecos-neruda-nace.jpg" alt="12 de Julio de 1904: Nace un Poeta">
             </div>
 
             <!-- Slide 7: Legado de Neruda -->
-            <div class="slide">
+            <div class="presentation-slide">
                 <img src="images/ecos-neruda-legado.jpg" alt="El Legado de un Nobel">
             </div>
 
             <!-- Slide 8: Colonia Dignidad 1961 -->
-            <div class="slide">
+            <div class="presentation-slide">
                 <img src="images/ecos-colonia.jpg" alt="1961: Una Sombra en la Precordillera">
             </div>
 
             <!-- Slide 9: Sitio de Memoria -->
-            <div class="slide">
+            <div class="presentation-slide">
                 <img src="images/ecos-sitio-memoria.jpg" alt="Colonia Dignidad y la Dictadura: Sitio de Memoria">
             </div>
 
             <!-- Slide 10: Villa Baviera -->
-            <div class="slide">
+            <div class="presentation-slide">
                 <img src="images/ecos-villa-baviera.jpg" alt="Villa Baviera: Del Dolor a la Apertura">
             </div>
 
             <!-- Slide 11: Cultura Viva -->
-            <div class="slide">
+            <div class="presentation-slide">
                 <img src="images/ecos-cultura.jpg" alt="El Alma de Parral: Cultura Viva">
             </div>
 
             <!-- Slide 12: Naturaleza y Aventura -->
-            <div class="slide">
+            <div class="presentation-slide">
                 <img src="images/ecos-naturaleza.jpg" alt="El Latido de la Tierra: Naturaleza y Aventura">
             </div>
 
             <!-- Slide 13: Fiestas y Tradiciones -->
-            <div class="slide">
+            <div class="presentation-slide">
                 <img src="images/ecos-fiestas.jpg" alt="Fiestas y Tradiciones: El Encuentro de la Comunidad">
             </div>
 
             <!-- Slide 14: Invitación -->
-            <div class="slide">
+            <div class="presentation-slide">
                 <img src="images/ecos-invitacion.jpg" alt="Parral te invita a descubrir su historia">
             </div>
 
             <!-- Slide 15: Mosaico -->
-            <div class="slide">
+            <div class="presentation-slide">
                 <img src="images/ecos-mosaico.jpg" alt="Un Mosaico en Constante Creación">
             </div>
         </div>
 
         <!-- Navegación -->
-        <div class="slide-nav">
+        <div class="presentation-nav">
             <button id="prevBtn" onclick="changeSlide(-1)">← Anterior</button>
             <button id="nextBtn" onclick="changeSlide(1)">Siguiente →</button>
         </div>
@@ -322,7 +166,7 @@
     </footer>
 
     <!-- EXTERNAL SCRIPTS -->
-    <script src="menu.js"></script>
+    <script src="js/home.js"></script>
     <script src="js/slideshow.js"></script>
 </body>
 
