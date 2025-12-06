@@ -1200,3 +1200,50 @@ header nav ul {
         min-height: 250px;
     }
 }
+
+/* Card Testimonio (Restored) */
+.card-testimonio {
+    background-color: var(--color-surface);
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    transition: var(--transition-normal);
+    border: 1px solid rgba(0,0,0,0.05);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-testimonio:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--color-accent);
+}
+
+.card-testimonio h3, .card-testimonio h4 {
+    color: var(--color-secondary);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.card-testimonio p {
+    color: var(--color-text-light);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* Reset styles when inside card-foto to avoid double boxing in relatos.html */
+.card-foto .card-testimonio {
+    background: none;
+    box-shadow: none;
+    border: none;
+    padding: 1.5rem; /* Match card-body padding */
+    transform: none; /* Disable hover transform on inner element */
+}
+.card-foto:hover .card-testimonio {
+    transform: none;
+}
