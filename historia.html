@@ -15,6 +15,200 @@
 
   <!-- CSS Original -->
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Estilos para la presentación de épocas */
+    .epocas-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      font-family: 'Merriweather', serif;
+    }
+
+    .slide {
+      display: none;
+      animation: fadeIn 0.5s;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .slide img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+    }
+
+    /* Navegación de slides */
+    .slide-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+
+    .slide-nav button {
+      padding: 0.75rem 1.5rem;
+      background: #8c4623;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: 'Lato', sans-serif;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .slide-nav button:hover {
+      background: #6b341b;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .slide-nav button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* Indicadores de progreso */
+    .progress-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .progress-dots .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #ddd;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .progress-dots .dot.active {
+      background: #8c4623;
+      transform: scale(1.3);
+    }
+
+    .progress-dots .dot:hover {
+      background: #b35d2d;
+    }
+
+    /* Contador de slides */
+    .slide-counter {
+      text-align: center;
+      color: #6b341b;
+      font-family: 'Lato', sans-serif;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+
+    /* Controles de teclado info */
+    .keyboard-hint {
+      text-align: center;
+      color: #999;
+      font-size: 0.85rem;
+      margin-top: 1rem;
+      font-family: 'Lato', sans-serif;
+    }
+
+    /* Hero section */
+    .hero-historia {
+      background: linear-gradient(135deg, #fdf6f0 0%, #fce9d7 100%);
+      padding: 3rem 1rem;
+      text-align: center;
+      border-bottom: 3px solid #d17a3a;
+    }
+
+    .hero-historia h1 {
+      font-family: 'Merriweather', serif;
+      color: #4a2313;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-historia p {
+      font-family: 'Lato', sans-serif;
+      color: #6b341b;
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-historia h1 {
+        font-size: 1.8rem;
+      }
+
+      .slide-nav {
+        gap: 0.5rem;
+      }
+
+      .slide-nav button {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Botón de descarga */
+    .download-section {
+      text-align: center;
+      margin: 2rem 0;
+      padding: 2rem;
+      background: #f9f9f9;
+      border-radius: 8px;
+    }
+
+    .download-section h3 {
+      color: #4a2313;
+      margin-bottom: 1rem;
+      font-family: 'Merriweather', serif;
+    }
+
+    .download-section p {
+      color: #6b341b;
+      margin-bottom: 1.5rem;
+      font-family: 'Lato', sans-serif;
+    }
+
+    .btn-download {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: #d17a3a;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-family: 'Lato', sans-serif;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-download:hover {
+      background: #b35d2d;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+  </style>
 </head>
 
 <body>
@@ -38,8 +232,7 @@
           <li><a href="relatos.html">Relatos</a></li>
           <li><a href="deportistas.html">Deportistas</a></li>
           <li><a href="educacion.html">Educación</a></li>
-          <li><a href="historia.html" class="active">Historia</a></li>
-          <li><a href="ecos.html">Ecos</a></li>
+          <li><a href="historia.html" class="active">Historia</a></li>`n                    <li><a href="ecos.html">Ecos</a></li>
           <li><a href="mapa.html">Mapa</a></li>
           <li><a href="participa.html" class="btn-nav">¡Participa!</a></li>
         </ul>
@@ -48,103 +241,103 @@
   </header>
 
   <!-- HERO SECTION -->
-  <section class="hero-presentation">
+  <section class="hero-historia">
     <h1>Archivos en Movimiento</h1>
     <p>El Patrimonio Vivo de Parral<br>
       Un viaje por la historia del trabajo en nuestra comunidad</p>
   </section>
 
   <!-- CONTENEDOR DE ÉPOCAS -->
-  <div class="presentation-container">
+  <div class="epocas-container">
 
     <!-- Contador de slides -->
-    <div class="presentation-counter">
+    <div class="slide-counter">
       <span id="currentSlide">1</span> / <span id="totalSlides">15</span>
     </div>
 
     <!-- Indicadores de progreso -->
-    <div class="presentation-dots" id="progressDots"></div>
+    <div class="progress-dots" id="progressDots"></div>
 
     <!-- Slides -->
     <div id="slidesContainer">
       <!-- Slide 1: Portada -->
-      <div class="presentation-slide active">
+      <div class="slide active">
         <img src="images/epoca-portada.jpg" alt="Archivos en Movimiento - El Patrimonio Vivo de Parral">
       </div>
 
       <!-- Slide 2: Introducción -->
-      <div class="presentation-slide">
+      <div class="slide">
         <img src="images/epoca-intro.jpg" alt="Las Manos que Construyeron Parral">
       </div>
 
       <!-- Slide 3: Timeline general -->
-      <div class="presentation-slide">
+      <div class="slide">
         <img src="images/epoca-timeline.jpg" alt="Cuatro Épocas. Una Historia de Evolución">
       </div>
 
       <!-- Slide 4: Época 1 - Fundacional -->
-      <div class="presentation-slide">
+      <div class="slide">
         <img src="images/epoca-1-fundacional.jpg" alt="Época Fundacional y Colonia (Siglos XVIII-XIX)">
       </div>
 
       <!-- Slide 5: Época 1 - Oficios -->
-      <div class="presentation-slide">
+      <div class="slide">
         <img src="images/epoca-1-oficios.jpg" alt="Los Pilares de la Comunidad - Oficios Coloniales">
       </div>
 
       <!-- Slide 6: Época 2 - Introducción -->
-      <div class="presentation-slide">
+      <div class="slide">
         <img src="images/epoca-2-intro.jpg" alt="Consolidación Agrícola (Principios del Siglo XX)">
       </div>
 
       <!-- Slide 7: Época 2 - Ferrocarril -->
-      <div class="presentation-slide">
+      <div class="slide">
         <img src="images/epoca-2-ferrocarril.jpg" alt="El Sonido del Progreso: La Llegada del Ferrocarril">
       </div>
 
       <!-- Slide 8: Época 2 - Oficios -->
-      <div class="presentation-slide">
+      <div class="slide">
         <img src="images/epoca-2-oficios.jpg" alt="Nuevos Oficios para un Nuevo Siglo">
       </div>
 
       <!-- Slide 9: Época 3 - Introducción -->
-      <div class="presentation-slide">
+      <div class="slide">
         <img src="images/epoca-3-intro.jpg" alt="La Revolución Verde Llega al Campo">
       </div>
 
       <!-- Slide 10: Época 3 - Detalle -->
-      <div class="presentation-slide">
+      <div class="slide">
         <img src="images/epoca-3-detalle.jpg" alt="Modernización y Agroindustria (Mediados y Finales del Siglo XX)">
       </div>
 
       <!-- Slide 11: Época 3 - Oficios -->
-      <div class="presentation-slide">
+      <div class="slide">
         <img src="images/epoca-3-oficios.jpg" alt="La Cadena de Valor Agroindustrial">
       </div>
 
       <!-- Slide 12: Época 4 - Introducción -->
-      <div class="presentation-slide">
+      <div class="slide">
         <img src="images/epoca-4-intro.jpg" alt="Época Contemporánea (Siglo XXI)">
       </div>
 
       <!-- Slide 13: Época 4 - Oficios -->
-      <div class="presentation-slide">
+      <div class="slide">
         <img src="images/epoca-4-oficios.jpg" alt="El Mosaico Laboral de Hoy">
       </div>
 
       <!-- Slide 14: Época 4 - Digital -->
-      <div class="presentation-slide">
+      <div class="slide">
         <img src="images/epoca-4-digital.jpg" alt="La Conexión Global: La Era Digital Despega">
       </div>
 
       <!-- Slide 15: Conclusión -->
-      <div class="presentation-slide">
+      <div class="slide">
         <img src="images/epoca-conclusion.jpg" alt="El Hilo del Trabajo Nunca se Detiene">
       </div>
     </div>
 
     <!-- Navegación -->
-    <div class="presentation-nav">
+    <div class="slide-nav">
       <button id="prevBtn" onclick="changeSlide(-1)">← Anterior</button>
       <button id="nextBtn" onclick="changeSlide(1)">Siguiente →</button>
     </div>
@@ -172,8 +365,7 @@
   <!-- JAVASCRIPT -->
   <script>
     let currentSlide = 0;
-    // Updated selector
-    const slides = document.querySelectorAll('.presentation-slide');
+    const slides = document.querySelectorAll('.slide');
     const totalSlides = slides.length;
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
@@ -193,8 +385,7 @@
       progressDotsContainer.appendChild(dot);
     }
 
-    // Select dots within the specific container to avoid global conflicts if any
-    const dots = progressDotsContainer.querySelectorAll('.dot');
+    const dots = document.querySelectorAll('.dot');
 
     function showSlide(n) {
       // Validar rango
@@ -222,8 +413,6 @@
       nextBtn.disabled = currentSlide === totalSlides - 1;
 
       // Scroll suave al inicio del slide
-      // Changed to scroll to the top of the container instead of window to be less jarring?
-      // User asked for stability. But sticking to original behavior (window top) is safer for now unless requested.
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 

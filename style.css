@@ -197,6 +197,10 @@ footer {
     }
 }
 
+/* Estilos para tarjetas de testimonio (restaurados) */
+.card-testimonio {
+    background-color: white;
+    padding: var(--spacing-md);
 /* Presentation / Slideshow Component (History & Ecos) */
 .presentation-container {
     max-width: 1200px;
@@ -387,11 +391,17 @@ footer {
     color: white;
     text-decoration: none;
     border-radius: 8px;
-    font-family: 'Lato', sans-serif;
-    font-weight: 600;
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: var(--spacing-md);
 }
 
+/* Reset específico para tarjetas dentro de relatos para evitar doble caja */
+.card-foto .card-testimonio {
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+}
 .btn-download:hover {
     background: #b35d2d;
     transform: translateY(-2px);
