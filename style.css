@@ -1,24 +1,31 @@
 /* ---------------------------------- */
-/* 1. Reset Básico y Tipografía       */
+/* 1. RESET Y VARIABLES               */
 /* ---------------------------------- */
 :root {
-    --primary-color: #5D4037;
-    /* Marrón cálido */
-    --accent-color: #FFB74D;
-    /* Naranja cálido */
-    --accent-hover: #FF9800;
-    /* Naranja fuerte */
-    --text-color: #333;
-    /* Texto oscuro */
-    --bg-color: #f4f4f4;
-    /* Fondo claro */
-    --header-border: #D7CCC8;
-    /* Crema */
-    --hero-bg: #EFEBE9;
-    /* Crema claro */
-    --footer-bg: #333;
-    /* Footer oscuro */
+    /* Paleta de Colores */
+    --primary-color: #5D4037;   /* Marrón cálido */
+    --accent-color: #FFB74D;    /* Naranja cálido */
+    --accent-hover: #FF9800;    /* Naranja fuerte */
+    --text-color: #333;         /* Texto oscuro */
+    --bg-color: #f4f4f4;        /* Fondo claro */
+    --header-border: #D7CCC8;   /* Crema */
+    --hero-bg: #EFEBE9;         /* Crema claro */
+    --footer-bg: #333;          /* Footer oscuro */
     --white: #fff;
+
+    /* Espaciado */
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-xxl: 4rem;
+
+    /* Bordes y Sombras */
+    --radius-sm: 5px;
+    --radius-md: 8px;
+    --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 * {
@@ -28,75 +35,273 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Lato', Arial, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--bg-color);
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* ---------------------------------- */
-/* 2. Colores y Layout Principal      */
+/* 2. LAYOUT GENERAL                  */
 /* ---------------------------------- */
 .container {
     width: 90%;
     max-width: 1200px;
-    margin: auto;
-    overflow: hidden;
+    margin: 0 auto;
 }
 
+section {
+    padding: var(--spacing-xxl) 0;
+}
+
+/* ---------------------------------- */
+/* 3. HEADER & NAVEGACIÓN             */
+/* ---------------------------------- */
 header {
     background: var(--primary-color);
     color: var(--white);
-    padding-top: 20px;
+    padding: var(--spacing-md) 0;
     min-height: 70px;
     border-bottom: var(--header-border) 3px solid;
-    /* Línea de color crema */
-    /* Sticky Header Implementation */
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    /* Sombra suave para separar del contenido */
+    box-shadow: var(--shadow-sm);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 header h1 {
-    font-size: 2.5em;
-    margin-bottom: 5px;
+    font-family: 'Merriweather', serif;
+    font-size: 1.8rem;
+    margin: 0;
 }
 
-header h2 {
-    font-size: 1.2em;
-    font-weight: normal;
-    margin-bottom: 10px;
-}
-
-/* ---------------------------------- */
-/* 3. Navegación y Botones            */
-/* ---------------------------------- */
-header nav ul {
-    list-style: none;
-    padding-bottom: 10px;
-}
-
-header nav ul li {
-    display: inline;
-    padding: 0 10px 0 0;
-}
-
-header a {
+header h1 a {
     color: var(--white);
     text-decoration: none;
-    font-size: 16px;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: #dcdcdc;
+    margin-top: 0.2rem;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.mobile-menu-btn span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--white);
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+/* Navegación */
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--accent-color);
+}
+
+.main-nav .btn-nav {
+    background: var(--accent-color);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+}
+
+.main-nav .btn-nav:hover {
+    background: var(--accent-hover);
+    color: var(--white);
+}
+
+/* ---------------------------------- */
+/* 4. COMPONENTES: GRID MASONRY       */
+/* ---------------------------------- */
+.grid-galeria {
+    column-count: 3;
+    column-gap: var(--spacing-lg);
+    width: 100%;
+}
+
+.card-foto {
+    break-inside: avoid;
+    background: var(--white);
+    margin-bottom: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-foto:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.card-foto-img-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.card-foto img {
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.card-foto:hover img {
+    transform: scale(1.05);
+}
+
+.card-foto-content {
+    padding: var(--spacing-md);
+}
+
+.card-foto h3 {
+    font-family: 'Merriweather', serif;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.1rem;
+}
+
+.card-foto p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: var(--spacing-md);
+}
+
+.btn-card {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--accent-color);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    font-weight: 700;
+    transition: background 0.3s;
+}
+
+.btn-card:hover {
+    background: var(--accent-hover);
+}
+
+/* ---------------------------------- */
+/* 5. HERO & SECCIONES                */
+/* ---------------------------------- */
+.hero {
+    background: var(--hero-bg);
+    color: var(--text-color);
+    min-height: 350px;
+    padding: 60px 0;
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.hero h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+/* Hero Slider (Homepage) */
+.hero-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.hero-slider .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.hero-slider .slide.active {
+    opacity: 1;
+}
+
+.hero-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7); /* Capa clara para legibilidad */
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
 }
 
 .btn-principal {
     display: inline-block;
     background: var(--accent-color);
     color: var(--text-color);
-    padding: 10px 20px;
+    padding: 12px 24px;
     text-decoration: none;
-    border-radius: 5px;
-    margin: 20px 0;
+    border-radius: var(--radius-sm);
+    margin-top: 1rem;
+    font-weight: bold;
     transition: background 0.3s;
 }
 
@@ -105,77 +310,41 @@ header a {
 }
 
 /* ---------------------------------- */
-/* 4. Secciones y Footer              */
+/* 6. OTROS COMPONENTES               */
 /* ---------------------------------- */
-.hero {
-    background: var(--hero-bg);
-    color: var(--text-color);
-    min-height: 350px;
-    padding: 60px 0;
+/* Tarjetas de Testimonio (Index) */
+.card-testimonio {
+    background-color: white;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
     text-align: center;
+    margin-bottom: var(--spacing-md);
 }
 
-.seccion-fotos,
-.seccion-educativa {
-    padding: 30px 0;
-    border-bottom: #ccc 1px solid;
-    text-align: center;
-}
-
-.seccion-fotos h3,
-.seccion-educativa h3 {
+.card-testimonio h3 {
     color: var(--primary-color);
-    margin-bottom: 20px;
+    margin-bottom: 0.5rem;
 }
 
-footer {
-    background: var(--footer-bg);
-    color: var(--white);
-    text-align: center;
-    padding: 15px 0;
-    margin-top: 30px;
+/* Reset específico para tarjetas dentro de card-foto para evitar doble caja */
+.card-foto .card-testimonio {
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    text-align: left;
 }
 
-/* ---------------------------------- */
-/* 5. RESPONSIVO (Móviles)            */
-/* ---------------------------------- */
-/* Botón Volver Arriba */
-#backToTopBtn {
-    display: none;
-    /* Oculto por defecto */
-    position: fixed;
-    bottom: 20px;
-    right: 30px;
-    z-index: 99;
-    font-size: 18px;
-    border: none;
-    outline: none;
-    background-color: var(--accent-color);
-    color: white;
-    cursor: pointer;
-    padding: 15px;
-    border-radius: 50%;
-    /* Redondo */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-#backToTopBtn:hover {
-    background-color: var(--primary-color);
-    transform: scale(1.1);
-    /* Efecto hover */
-}
-
-/* ---------------------------------- */
-/* 6. Video Responsivo                */
-/* ---------------------------------- */
+/* Video Responsivo */
 .video-container {
     position: relative;
-    padding-bottom: 56.25%;
-    /* 16:9 ratio */
+    padding-bottom: 56.25%; /* 16:9 ratio */
     height: 0;
     overflow: hidden;
     max-width: 100%;
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-md);
 }
 
 .video-container iframe {
@@ -185,28 +354,45 @@ footer {
     width: 100%;
     height: 100%;
     border: 0;
-    border-radius: 8px;
-    /* Consistent with other inputs/images */
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .slider-container {
-        aspect-ratio: 4/3;
-        /* Más cuadrado en móviles */
-    }
+/* Footer */
+footer {
+    background: var(--footer-bg);
+    color: var(--white);
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+    margin-top: var(--spacing-xl);
 }
 
-/* Estilos para tarjetas de testimonio (restaurados) */
-.card-testimonio {
-    background-color: white;
-    padding: var(--spacing-md);
-/* Presentation / Slideshow Component (History & Ecos) */
+/* Botón Volver Arriba */
+#backToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 1.2rem;
+    border: none;
+    background-color: var(--accent-color);
+    color: white;
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: 50%;
+    box-shadow: var(--shadow-sm);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#backToTopBtn:hover {
+    background-color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+/* Presentation / Slideshow (Historia & Ecos) */
 .presentation-container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 2rem 1rem;
-    font-family: 'Merriweather', serif;
 }
 
 .presentation-slide {
@@ -218,37 +404,22 @@ footer {
     display: block;
 }
 
-/* Note: @keyframes fadeIn is already common, but ensure it exists if used. It was local before. */
-/* If fadeIn is not in style.css, we should add it. */
-/* Checking style.css... fadeInUp is there, but fadeIn? */
-/* The inline style had fadeIn. I will include it. */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .presentation-slide img {
-    width: auto;
-    max-width: 100%;
-    max-height: 80vh;
-    /* Responsive constraint */
-    display: block;
     margin: 0 auto 2rem auto;
+    max-height: 80vh;
     object-fit: contain;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
 }
 
-/* Navegación de slides */
 .presentation-nav {
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: 1rem;
     margin: 2rem 0;
     flex-wrap: wrap;
@@ -259,129 +430,46 @@ footer {
     background: #8c4623;
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: var(--radius-md);
     cursor: pointer;
-    font-family: 'Lato', sans-serif;
     font-weight: 600;
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
 .presentation-nav button:hover {
     background: #6b341b;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .presentation-nav button:disabled {
     background: #ccc;
     cursor: not-allowed;
-    transform: none;
 }
 
-/* Indicadores de progreso */
 .presentation-dots {
     display: flex;
     justify-content: center;
     gap: 0.5rem;
-    margin: 1.5rem 0;
-    flex-wrap: wrap;
+    margin-top: 1rem;
 }
 
 .presentation-dots .dot {
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background: #ddd;
     cursor: pointer;
-    transition: all 0.3s ease;
 }
 
 .presentation-dots .dot.active {
     background: #8c4623;
-    transform: scale(1.3);
 }
 
-.presentation-dots .dot:hover {
-    background: #b35d2d;
-}
-
-/* Contador de slides */
-.presentation-counter {
-    text-align: center;
-    color: #6b341b;
-    font-family: 'Lato', sans-serif;
-    margin: 1rem 0;
-    font-size: 0.9rem;
-}
-
-/* Controles de teclado info */
-.keyboard-hint {
-    text-align: center;
-    color: #999;
-    font-size: 0.85rem;
-    margin-top: 1rem;
-    font-family: 'Lato', sans-serif;
-}
-
-/* Hero section for presentation pages */
-.hero-presentation {
-    background: linear-gradient(135deg, #fdf6f0 0%, #fce9d7 100%);
-    padding: 3rem 1rem;
-    text-align: center;
-    border-bottom: 3px solid #d17a3a;
-}
-
-.hero-presentation h1 {
-    font-family: 'Merriweather', serif;
-    color: #4a2313;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.hero-presentation p {
-    font-family: 'Lato', sans-serif;
-    color: #6b341b;
-    font-size: 1.1rem;
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.6;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .hero-presentation h1 {
-        font-size: 1.8rem;
-    }
-
-    .presentation-nav {
-        gap: 0.5rem;
-    }
-
-    .presentation-nav button {
-        padding: 0.6rem 1rem;
-        font-size: 0.9rem;
-    }
-}
-
-/* Botón de descarga */
 .download-section {
     text-align: center;
-    margin: 2rem 0;
     padding: 2rem;
     background: #f9f9f9;
-    border-radius: 8px;
-}
-
-.download-section h3 {
-    color: #4a2313;
-    margin-bottom: 1rem;
-    font-family: 'Merriweather', serif;
-}
-
-.download-section p {
-    color: #6b341b;
-    margin-bottom: 1.5rem;
-    font-family: 'Lato', sans-serif;
+    border-radius: var(--radius-md);
+    margin-top: 2rem;
 }
 
 .btn-download {
@@ -390,20 +478,64 @@ footer {
     background: #d17a3a;
     color: white;
     text-decoration: none;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    margin-bottom: var(--spacing-md);
+    border-radius: var(--radius-md);
+    font-weight: bold;
 }
 
-/* Reset específico para tarjetas dentro de relatos para evitar doble caja */
-.card-foto .card-testimonio {
-    box-shadow: none;
-    padding: 0;
-    margin: 0;
-    background: transparent;
+/* ---------------------------------- */
+/* 7. RESPONSIVE DESIGN               */
+/* ---------------------------------- */
+@media (max-width: 1024px) {
+    .grid-galeria {
+        column-count: 2;
+    }
 }
-.btn-download:hover {
-    background: #b35d2d;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+@media (max-width: 768px) {
+    /* Header Mobile */
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .main-nav {
+        display: none;
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    .main-nav.show {
+        display: block;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        background: rgba(0,0,0,0.1); /* Ligero fondo para separar */
+        padding: 1rem;
+        border-radius: var(--radius-sm);
+    }
+
+    .main-nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .main-nav a {
+        display: block;
+        padding: 0.5rem;
+    }
+
+    /* Grid Mobile */
+    .grid-galeria {
+        column-count: 1;
+    }
+
+    /* Hero Mobile */
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    section {
+        padding: var(--spacing-lg) 0;
+    }
 }
