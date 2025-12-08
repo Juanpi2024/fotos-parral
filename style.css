@@ -40,6 +40,10 @@ body {
     color: var(--text-color);
     background-color: var(--bg-color);
     -webkit-font-smoothing: antialiased;
+    /* Flex Column Layout for Sticky Footer */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 img {
@@ -59,6 +63,13 @@ img {
 
 section {
     padding: var(--spacing-xxl) 0;
+}
+
+/* Main Content Area - Expands to push footer down */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 /* ---------------------------------- */
@@ -362,7 +373,8 @@ footer {
     color: var(--white);
     text-align: center;
     padding: var(--spacing-lg) 0;
-    margin-top: var(--spacing-xl);
+    margin-top: auto; /* Push to bottom in flex container */
+    width: 100%;
 }
 
 /* Botón Volver Arriba */

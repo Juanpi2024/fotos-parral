@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="es">
 
@@ -101,45 +103,32 @@
 
 <body class="oficios-container">
 
-    <!-- HEADER GLOBAL -->
-    <header>
-        <div class="container">
-            <div class="logo-area">
-                <h1><a href="index.html">Archivos en Movimiento</a></h1>
-                <p class="subtitle">Patrimonio Vivo de Parral</p>
+    {% include header.html %}
+
+    <!-- Contenido Principal -->
+    <main class="container mx-auto p-4 md:p-8">
+        <section class="text-center py-10 px-4">
+            <h1 class="text-4xl md:text-5xl font-bold text-amber-900 mb-8">Video Histórico de Parral</h1>
+
+            <div class="video-container shadow-lg rounded-lg overflow-hidden">
+                <iframe width="560" height="315"
+                    src="https://www.youtube.com/embed/gAi89JZfXEs?si=N-OuykZ7q6XJg2l_"
+                    title="Video Histórico de Parral" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
             </div>
-            <button class="mobile-menu-btn" aria-label="Menú">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <nav class="main-nav">
 
-                <!-- Contenido Principal -->
-                <main class="container mx-auto p-4 md:p-8">
-                    <section class="text-center py-10 px-4">
-                        <h1 class="text-4xl md:text-5xl font-bold text-amber-900 mb-8">Video Histórico de Parral</h1>
+            <p class="mt-8 text-lg text-amber-800">
+                Un recorrido audiovisual por nuestra historia.
+            </p>
+        </section>
+    </main>
 
-                        <div class="video-container shadow-lg rounded-lg overflow-hidden">
-                            <iframe width="560" height="315"
-                                src="https://www.youtube.com/embed/gAi89JZfXEs?si=N-OuykZ7q6XJg2l_"
-                                title="Video Histórico de Parral" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen></iframe>
-                        </div>
+    {% include footer.html %}
 
-                        <p class="mt-8 text-lg text-amber-800">
-                            Un recorrido audiovisual por nuestra historia.
-                        </p>
-                    </section>
-                </main>
-
-                <script>
-                    // Header Logic (Mobile Menu)
-                    document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
-                        document.querySelector('.main-nav').classList.toggle('show');
-                    });
-                </script>
+    <script>
+        // Header Logic (Mobile Menu) handled by header.html include
+    </script>
 </body>
 
 </html>
