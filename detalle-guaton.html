@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -103,32 +105,8 @@
 
 <body class="bg-slate-50 text-slate-800">
 
-  <!-- HEADER GLOBAL (Copiado de relatos.html) -->
-  <header>
-      <div class="container">
-          <div class="logo-area">
-              <h1><a href="index.html">Archivos en Movimiento</a></h1>
-              <p class="subtitle">Patrimonio Vivo de Parral</p>
-          </div>
-          <button class="mobile-menu-btn" aria-label="Menú">
-              <span></span>
-              <span></span>
-              <span></span>
-          </button>
-          <nav class="main-nav">
-              <ul>
-                  <li><a href="index.html">Inicio</a></li>
-                  <li><a href="galeria.html">Galería</a></li>
-                  <li><a href="relatos.html" class="active">Relatos</a></li>
-                  <li><a href="deportistas.html">Deportistas</a></li>
-                  <li><a href="educacion.html">Educación</a></li>
-                  <li><a href="historia.html">Historia</a></li>
-                  <li><a href="mapa.html">Mapa</a></li>
-                  <li><a href="participa.html" class="btn-nav">¡Participa!</a></li>
-              </ul>
-          </nav>
-      </div>
-  </header>
+  <!-- HEADER GLOBAL -->
+  {% include header.html %}
 
   <!-- Encabezado / Hero del Artículo -->
   <div class="article-content">
@@ -344,14 +322,7 @@
   </div>
 
   <!-- FOOTER GLOBAL -->
-  <footer class="border-t border-slate-200 bg-white">
-      <div class="max-w-5xl mx-auto px-4 py-6 text-sm text-slate-600">
-        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-2">
-          <p>© <span id="anio"></span> Archivos en Movimiento · Parral. Uso educativo y comunitario.</p>
-          <p class="text-slate-500">Diseño accesible · Compatible con Google Sites</p>
-        </div>
-      </div>
-  </footer>
+  {% include footer.html %}
 
   <!-- Botón volver arriba -->
   <button id="toTop" aria-label="Volver arriba">✦</button>

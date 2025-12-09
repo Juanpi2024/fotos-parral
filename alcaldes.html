@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -123,31 +125,7 @@
 <body class="alcaldes-container text-slate-900">
 
   <!-- HEADER GLOBAL -->
-  <header>
-      <div class="container">
-          <div class="logo-area">
-              <h1><a href="index.html">Archivos en Movimiento</a></h1>
-              <p class="subtitle">Patrimonio Vivo de Parral</p>
-          </div>
-          <button class="mobile-menu-btn" aria-label="Menú">
-              <span></span>
-              <span></span>
-              <span></span>
-          </button>
-          <nav class="main-nav">
-              <ul>
-                  <li><a href="index.html">Inicio</a></li>
-                  <li><a href="galeria.html">Galería</a></li>
-                  <li><a href="relatos.html" class="active">Relatos</a></li>
-                  <li><a href="deportistas.html">Deportistas</a></li>
-                  <li><a href="educacion.html">Educación</a></li>
-                  <li><a href="historia.html">Historia</a></li>`n                    <li><a href="ecos.html">Ecos</a></li>
-                  <li><a href="mapa.html">Mapa</a></li>
-                  <li><a href="participa.html" class="btn-nav">¡Participa!</a></li>
-              </ul>
-          </nav>
-      </div>
-  </header>
+  {% include header.html %}
 
   <!-- Encabezado / Toolbar de la sección Alcaldes -->
   <section id="toolbar" class="toolbar-section">
@@ -202,12 +180,7 @@
   </div>
 
   <!-- Pie GLOBAL -->
-  <footer>
-      <div class="container">
-          <p>&copy; 2025 Archivos en Movimiento. Patrimonio Vivo de Parral.</p>
-          <p class="text-sm text-slate-400 mt-2">Compilación para fines de rescate cultural. Si cuentas con antecedentes verificables, por favor remitir para su incorporación.</p>
-      </div>
-  </footer>
+  {% include footer.html %}
 
   <script>
     // Header Logic (Mobile Menu)
