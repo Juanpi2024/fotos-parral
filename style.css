@@ -29,6 +29,21 @@
     --card-radius-sm: 12px;
     --transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-fast: all 0.2s ease;
+
+    /* Configuración de Espaciado (Legacy/Global) */
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-xxl: 4rem;
+
+    /* Configuración de Bordes y Sombras (Legacy/Global) */
+    --radius-sm: 5px;
+    --radius-md: 8px;
+    --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.2);
+
 }
 
 * {
