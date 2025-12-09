@@ -8,12 +8,39 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Merriweather:wght@300;400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    {% include header.html %}
+    <header>
+        <div class="container">
+            <div class="logo-area">
+                <h1><a href="index.html">Archivos en Movimiento</a></h1>
+                <p class="subtitle">Patrimonio Vivo de Parral</p>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="relatos.html">Relatos</a></li>
+                    <li><a href="deportistas.html">Deportistas</a></li>
+                    <li><a href="educacion.html">Educación</a></li>
+                    <li><a href="historia.html">Historia</a></li>
+                    <li><a href="ecos.html">Ecos</a></li>
+                    <li><a href="mapa.html">Mapa</a></li>
+                    <li><a href="participa.html" class="btn-nav">¡Participa!</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
     <section class="hero">
         <!-- Hero Background Slider -->
@@ -60,7 +87,13 @@
         </div>
     </section>
 
-    {% include footer.html %}
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Archivos en Movimiento. Patrimonio Vivo de Parral.</p>
+            <p style="font-size: 0.9rem;">Modelo replicable para la gestión cultural municipal.</p>
+        </div>
+    </footer>
+    <script src="js/home.js"></script>
 </body>
 
 </html>

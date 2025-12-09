@@ -32,7 +32,8 @@
                     <li><a href="relatos.html">Relatos</a></li>
                     <li><a href="deportistas.html" class="active">Deportistas</a></li>
                     <li><a href="educacion.html">Educación</a></li>
-                    <li><a href="historia.html">Historia</a></li>`n                    <li><a href="ecos.html">Ecos</a></li>
+                    <li><a href="historia.html">Historia</a></li>
+                    <li><a href="ecos.html">Ecos</a></li>
                     <li><a href="mapa.html">Mapa</a></li>
                     <li><a href="participa.html" class="btn-nav">¡Participa!</a></li>
                 </ul>
@@ -54,7 +55,7 @@
                     oninput="applyFilters()">
             </div>
             <div class="filter-box">
-                <select id="nivelFilter" onchange="applyFilters()">
+                <select id="nivelFilter" onchange="applyFilters()" aria-label="Filtrar por nivel">
                     <option value="">Todos los Niveles</option>
                     <option value="Nacional">Nacional</option>
                     <option value="Regional">Regional</option>
@@ -222,7 +223,7 @@
         });
 
         // Mobile Menu Toggle
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
             document.querySelector('.main-nav').classList.toggle('show');
         });
     </script>
