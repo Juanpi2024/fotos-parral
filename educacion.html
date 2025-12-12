@@ -60,7 +60,7 @@
                 <p>Actividades descargables para estudiantes.</p>
                 <div class="galeria-placeholder" style="height: 150px; margin-top: 1rem;">📝</div>
             </div>
-            <div class="card-testimonio">
+            <div class="card-testimonio" onclick="openModal('colorearModal')" style="cursor: pointer;">
                 <h3>Para Colorear</h3>
                 <p>Láminas patrimoniales para los más pequeños.</p>
                 <div class="galeria-placeholder" style="height: 150px; margin-top: 1rem;">🎨</div>
@@ -113,7 +113,92 @@
         </div>
     </footer>
 
+    <!-- Modal Para Colorear -->
+    <div id="colorearModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('colorearModal')">&times;</span>
+            <div class="modal-header">
+                <h2>Láminas para Colorear</h2>
+                <p>Descarga estas ilustraciones inspiradas en nuestro patrimonio y dale vida con tus colores.</p>
+            </div>
+            <div class="modal-grid">
+                <!-- Colorear 1 -->
+                <div class="colorear-item">
+                    <div class="colorear-img-container">
+                        <img src="images/colorear-1.png" alt="Lámina para colorear 1" class="colorear-img">
+                    </div>
+                    <a href="images/colorear-1.png" download="Colorear_Parral_1.png"
+                        class="btn-download-sm">Descargar</a>
+                </div>
+                <!-- Colorear 2 -->
+                <div class="colorear-item">
+                    <div class="colorear-img-container">
+                        <img src="images/colorear-2.png" alt="Lámina para colorear 2" class="colorear-img">
+                    </div>
+                    <a href="images/colorear-2.png" download="Colorear_Parral_2.png"
+                        class="btn-download-sm">Descargar</a>
+                </div>
+                <!-- Colorear 3 -->
+                <div class="colorear-item">
+                    <div class="colorear-img-container">
+                        <img src="images/colorear-3.png" alt="Lámina para colorear 3" class="colorear-img">
+                    </div>
+                    <a href="images/colorear-3.png" download="Colorear_Parral_3.png"
+                        class="btn-download-sm">Descargar</a>
+                </div>
+                <!-- Colorear 4 -->
+                <div class="colorear-item">
+                    <div class="colorear-img-container">
+                        <img src="images/colorear-4.png" alt="Lámina para colorear 4" class="colorear-img">
+                    </div>
+                    <a href="images/colorear-4.png" download="Colorear_Parral_4.png"
+                        class="btn-download-sm">Descargar</a>
+                </div>
+                <!-- Colorear 5 -->
+                <div class="colorear-item">
+                    <div class="colorear-img-container">
+                        <img src="images/colorear-5.jpg" alt="Lámina para colorear 5" class="colorear-img">
+                    </div>
+                    <a href="images/colorear-5.jpg" download="Colorear_Parral_5.jpg"
+                        class="btn-download-sm">Descargar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
+        // ==========================================
+        // MODAL SYSTEM
+        // ==========================================
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.style.display = "block";
+                setTimeout(() => {
+                    modal.classList.add('show');
+                }, 10);
+                document.body.style.overflow = 'hidden'; // Prevent scrolling background
+            }
+        }
+
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.classList.remove('show');
+                setTimeout(() => {
+                    modal.style.display = "none";
+                    document.body.style.overflow = ''; // Restore scrolling
+                }, 300);
+            }
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function (event) {
+            if (event.target.classList.contains('modal')) {
+                closeModal(event.target.id);
+            }
+        }
+
         // ==========================================
         // BASE DE DATOS DE DEPORTISTAS
         // ==========================================
