@@ -11,6 +11,310 @@
         href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* ==========================================
+           INFOGRAFÍAS - ESTILOS ESPECÍFICOS
+        ========================================== */
+
+        .infografia-card {
+            max-width: 900px;
+            width: 100%;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .infografia-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .infografia-image-container {
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .infografia-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .infografia-image-container:hover img {
+            transform: scale(1.02);
+        }
+
+        .infografia-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(93, 64, 55, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .infografia-image-container:hover .infografia-overlay {
+            opacity: 1;
+        }
+
+        .infografia-overlay span {
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .infografia-overlay span::before {
+            content: "🔍";
+            font-size: 1.5rem;
+        }
+
+        .infografia-actions {
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f8f6f4;
+            border-top: 1px solid #e8e0da;
+        }
+
+        .infografia-title {
+            font-family: 'Merriweather', serif;
+            font-size: 1rem;
+            color: var(--primary-color, #5d4037);
+            margin: 0;
+        }
+
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            background: linear-gradient(135deg, var(--primary-color, #5d4037) 0%, #8d6e63 100%);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-download:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(93, 64, 55, 0.4);
+        }
+
+        .btn-download::before {
+            content: "⬇️";
+        }
+
+        /* ==========================================
+           LIGHTBOX MODAL
+        ========================================== */
+
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox-modal.show {
+            opacity: 1;
+        }
+
+        .lightbox-content {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .lightbox-image-wrapper {
+            max-width: 95%;
+            max-height: calc(100vh - 120px);
+            overflow: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-image-wrapper img {
+            max-width: 100%;
+            max-height: calc(100vh - 120px);
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 4px;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 10001;
+            transition: all 0.3s ease;
+            line-height: 1;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
+        }
+
+        .lightbox-actions {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+            z-index: 10001;
+        }
+
+        .lightbox-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary-color, #5d4037) 0%, #8d6e63 100%);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .lightbox-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(93, 64, 55, 0.5);
+        }
+
+        .lightbox-btn.secondary {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+        }
+
+        .lightbox-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Navegación del Lightbox */
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10001;
+        }
+
+        .lightbox-nav:hover {
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .lightbox-nav.prev {
+            left: 20px;
+        }
+
+        .lightbox-nav.next {
+            right: 20px;
+        }
+
+        .lightbox-counter {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+            font-weight: 500;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .infografia-actions {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .lightbox-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+
+            .lightbox-nav.prev {
+                left: 10px;
+            }
+
+            .lightbox-nav.next {
+                right: 10px;
+            }
+
+            .lightbox-actions {
+                flex-direction: column;
+                bottom: 20px;
+            }
+
+            .lightbox-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -42,50 +346,130 @@
     <section class="hero" style="padding: 4rem 0; min-height: 40vh;">
         <div class="container">
             <h2>Infografías Patrimoniales</h2>
-            <p>Material visual informativo para conocer nuestra historia.</p>
+            <p>Material visual informativo para conocer nuestra historia. Haz clic en cualquier infografía para verla en
+                pantalla completa.</p>
         </div>
     </section>
 
     <section class="container" style="padding: 4rem 1rem;">
         <div style="text-align: center; margin-bottom: 2rem;">
-            <p style="font-style: italic; color: #666;">Galería de infografías disponibles para descarga y
-                visualización.</p>
+            <p style="font-style: italic; color: #666;">
+                📌 Haz clic en una infografía para verla ampliada • Descárgalas en alta resolución
+            </p>
         </div>
 
         <div class="infografias-container"
-            style="display: flex; flex-direction: column; gap: 4rem; align-items: center;">
-            <div class="premium-card" style="max-width: 900px; width: 100%;">
-                <div class="premium-card-image" style="aspect-ratio: auto; padding: 1rem; background: #fff;">
-                    <img src="images/infografia-1.png" alt="Infografía 1"
-                        style="width: 100%; height: auto; object-fit: contain;">
+            style="display: flex; flex-direction: column; gap: 3rem; align-items: center;">
+
+            <!-- Infografía 1 -->
+            <div class="infografia-card">
+                <div class="infografia-image-container" onclick="openLightbox(0)">
+                    <img src="images/infografia-1.png" alt="Infografía sobre el Patrimonio de Parral" loading="lazy">
+                    <div class="infografia-overlay">
+                        <span>Ver en pantalla completa</span>
+                    </div>
+                </div>
+                <div class="infografia-actions">
+                    <h4 class="infografia-title">Infografía 1 - Patrimonio de Parral</h4>
+                    <a href="images/infografia-1.png" download="Infografia_Parral_1.png" class="btn-download">
+                        Descargar
+                    </a>
                 </div>
             </div>
-            <div class="premium-card" style="max-width: 900px; width: 100%;">
-                <div class="premium-card-image" style="aspect-ratio: auto; padding: 1rem; background: #fff;">
-                    <img src="images/infografia-2.png" alt="Infografía 2"
-                        style="width: 100%; height: auto; object-fit: contain;">
+
+            <!-- Infografía 2 -->
+            <div class="infografia-card">
+                <div class="infografia-image-container" onclick="openLightbox(1)">
+                    <img src="images/infografia-2.png" alt="Infografía Histórica" loading="lazy">
+                    <div class="infografia-overlay">
+                        <span>Ver en pantalla completa</span>
+                    </div>
+                </div>
+                <div class="infografia-actions">
+                    <h4 class="infografia-title">Infografía 2 - Historia Local</h4>
+                    <a href="images/infografia-2.png" download="Infografia_Parral_2.png" class="btn-download">
+                        Descargar
+                    </a>
                 </div>
             </div>
-            <div class="premium-card" style="max-width: 900px; width: 100%;">
-                <div class="premium-card-image" style="aspect-ratio: auto; padding: 1rem; background: #fff;">
-                    <img src="images/infografia-3.png" alt="Infografía 3"
-                        style="width: 100%; height: auto; object-fit: contain;">
+
+            <!-- Infografía 3 -->
+            <div class="infografia-card">
+                <div class="infografia-image-container" onclick="openLightbox(2)">
+                    <img src="images/infografia-3.png" alt="Infografía Cultural" loading="lazy">
+                    <div class="infografia-overlay">
+                        <span>Ver en pantalla completa</span>
+                    </div>
+                </div>
+                <div class="infografia-actions">
+                    <h4 class="infografia-title">Infografía 3 - Cultura Parralina</h4>
+                    <a href="images/infografia-3.png" download="Infografia_Parral_3.png" class="btn-download">
+                        Descargar
+                    </a>
                 </div>
             </div>
-            <div class="premium-card" style="max-width: 900px; width: 100%;">
-                <div class="premium-card-image" style="aspect-ratio: auto; padding: 1rem; background: #fff;">
-                    <img src="images/infografia-4.png" alt="Infografía 4"
-                        style="width: 100%; height: auto; object-fit: contain;">
+
+            <!-- Infografía 4 -->
+            <div class="infografia-card">
+                <div class="infografia-image-container" onclick="openLightbox(3)">
+                    <img src="images/infografia-4.png" alt="Infografía Educativa" loading="lazy">
+                    <div class="infografia-overlay">
+                        <span>Ver en pantalla completa</span>
+                    </div>
+                </div>
+                <div class="infografia-actions">
+                    <h4 class="infografia-title">Infografía 4 - Educación Patrimonial</h4>
+                    <a href="images/infografia-4.png" download="Infografia_Parral_4.png" class="btn-download">
+                        Descargar
+                    </a>
                 </div>
             </div>
-            <div class="premium-card" style="max-width: 900px; width: 100%;">
-                <div class="premium-card-image" style="aspect-ratio: auto; padding: 1rem; background: #fff;">
-                    <img src="images/infografia-5.png" alt="Infografía 5"
-                        style="width: 100%; height: auto; object-fit: contain;">
+
+            <!-- Infografía 5 -->
+            <div class="infografia-card">
+                <div class="infografia-image-container" onclick="openLightbox(4)">
+                    <img src="images/infografia-5.png" alt="Infografía Patrimonial" loading="lazy">
+                    <div class="infografia-overlay">
+                        <span>Ver en pantalla completa</span>
+                    </div>
+                </div>
+                <div class="infografia-actions">
+                    <h4 class="infografia-title">Infografía 5 - Patrimonio Vivo</h4>
+                    <a href="images/infografia-5.png" download="Infografia_Parral_5.png" class="btn-download">
+                        Descargar
+                    </a>
                 </div>
             </div>
+
         </div>
     </section>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="lightboxModal" class="lightbox-modal">
+        <div class="lightbox-content">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+
+            <div class="lightbox-counter">
+                <span id="lightboxCounter">1 / 5</span>
+            </div>
+
+            <button class="lightbox-nav prev" onclick="navigateLightbox(-1)">❮</button>
+            <button class="lightbox-nav next" onclick="navigateLightbox(1)">❯</button>
+
+            <div class="lightbox-image-wrapper">
+                <img id="lightboxImage" src="" alt="Infografía ampliada">
+            </div>
+
+            <div class="lightbox-actions">
+                <a id="lightboxDownload" href="" download="" class="lightbox-btn">
+                    ⬇️ Descargar Infografía
+                </a>
+                <button class="lightbox-btn secondary" onclick="closeLightbox()">
+                    ✕ Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
 
     <footer>
         <div class="container">
@@ -94,6 +478,91 @@
     </footer>
 
     <script>
+        // ==========================================
+        // LIGHTBOX SYSTEM
+        // ==========================================
+
+        const infografias = [
+            { src: 'images/infografia-1.png', title: 'Infografía 1 - Patrimonio de Parral', download: 'Infografia_Parral_1.png' },
+            { src: 'images/infografia-2.png', title: 'Infografía 2 - Historia Local', download: 'Infografia_Parral_2.png' },
+            { src: 'images/infografia-3.png', title: 'Infografía 3 - Cultura Parralina', download: 'Infografia_Parral_3.png' },
+            { src: 'images/infografia-4.png', title: 'Infografía 4 - Educación Patrimonial', download: 'Infografia_Parral_4.png' },
+            { src: 'images/infografia-5.png', title: 'Infografía 5 - Patrimonio Vivo', download: 'Infografia_Parral_5.png' }
+        ];
+
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            updateLightboxContent();
+
+            const modal = document.getElementById('lightboxModal');
+            modal.style.display = 'block';
+
+            // Pequeño delay para la animación
+            setTimeout(() => {
+                modal.classList.add('show');
+            }, 10);
+
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const modal = document.getElementById('lightboxModal');
+            modal.classList.remove('show');
+
+            setTimeout(() => {
+                modal.style.display = 'none';
+                document.body.style.overflow = '';
+            }, 300);
+        }
+
+        function updateLightboxContent() {
+            const info = infografias[currentIndex];
+
+            document.getElementById('lightboxImage').src = info.src;
+            document.getElementById('lightboxImage').alt = info.title;
+            document.getElementById('lightboxCounter').textContent = `${currentIndex + 1} / ${infografias.length}`;
+
+            const downloadBtn = document.getElementById('lightboxDownload');
+            downloadBtn.href = info.src;
+            downloadBtn.download = info.download;
+        }
+
+        function navigateLightbox(direction) {
+            currentIndex += direction;
+
+            // Circular navigation
+            if (currentIndex < 0) {
+                currentIndex = infografias.length - 1;
+            } else if (currentIndex >= infografias.length) {
+                currentIndex = 0;
+            }
+
+            updateLightboxContent();
+        }
+
+        // Cerrar al hacer clic fuera de la imagen
+        document.getElementById('lightboxModal').addEventListener('click', function (e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+
+        // Navegación con teclado
+        document.addEventListener('keydown', function (e) {
+            const modal = document.getElementById('lightboxModal');
+            if (modal.style.display === 'block') {
+                if (e.key === 'Escape') {
+                    closeLightbox();
+                } else if (e.key === 'ArrowLeft') {
+                    navigateLightbox(-1);
+                } else if (e.key === 'ArrowRight') {
+                    navigateLightbox(1);
+                }
+            }
+        });
+
         // Mobile Menu Toggle
         document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
             document.querySelector('.main-nav').classList.toggle('show');
