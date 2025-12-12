@@ -60,7 +60,7 @@
                 <p>Actividades descargables para estudiantes.</p>
                 <div class="galeria-placeholder" style="height: 150px; margin-top: 1rem;">📝</div>
             </div>
-            <div class="card-testimonio" onclick="openModal('colorearModal')" style="cursor: pointer;">
+            <div id="cardColorear" class="card-testimonio" style="cursor: pointer;">
                 <h3>Para Colorear</h3>
                 <p>Láminas patrimoniales para los más pequeños.</p>
                 <div class="galeria-placeholder" style="height: 150px; margin-top: 1rem;">🎨</div>
@@ -383,6 +383,14 @@
         // Inicialización
         document.addEventListener('DOMContentLoaded', () => {
             renderCards(DEPORTISTAS_DATA);
+
+            // Event listener para el modal de colorear
+            const cardColorear = document.getElementById('cardColorear');
+            if (cardColorear) {
+                cardColorear.addEventListener('click', function () {
+                    openModal('colorearModal');
+                });
+            }
         });
 
         // Mobile Menu Toggle
