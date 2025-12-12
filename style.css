@@ -1,49 +1,52 @@
 /* ---------------------------------- */
 /* 1. Reset Básico y Tipografía       */
 /* ---------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
 :root {
-    --primary-color: #5D4037;
-    /* Marrón cálido */
-    --accent-color: #FFB74D;
-    /* Naranja cálido */
-    --accent-hover: #FF9800;
-    /* Naranja fuerte */
-    --text-color: #333;
-    /* Texto oscuro */
-    --bg-color: #f4f4f4;
-    /* Fondo claro */
-    --header-border: #D7CCC8;
-    /* Crema */
-    --hero-bg: #EFEBE9;
-    /* Crema claro */
-    --footer-bg: #333;
-    /* Footer oscuro */
-    --white: #fff;
+    /* Paleta 'Museo Nacional' */
+    --primary-color: #1A1A1A;
+    /* Negro Carbón - Elegancia y Autoridad */
+    --secondary-color: #F9F9F7;
+    /* Blanco Marfil - Fondo Principal */
+    --accent-color: #C5A059;
+    /* Dorado Antiguo - Detalles Premium */
+    --accent-hover: #E5C376;
+    /* Dorado Claro - Interactive State */
+    --text-color: #333333;
+    /* Gris Oscuro - Legibilidad */
+    --text-light: #666666;
+    /* Gris Medio - Subtítulos */
+    --border-color: #E0E0E0;
+    /* Líneas sutiles */
 
-    /* Premium Card System */
-    --card-bg: #ffffff;
-    --card-border: rgba(93, 64, 55, 0.08);
-    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-    --card-shadow-hover: 0 12px 40px rgba(93, 64, 55, 0.15);
-    --card-radius: 16px;
-    --card-radius-sm: 12px;
-    --transition-smooth: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-fast: all 0.2s ease;
+    --bg-color: var(--secondary-color);
+    --header-bg: rgba(26, 26, 26, 0.95);
+    /* Semi-transparent dark header */
+    --footer-bg: #111111;
+    /* Footer casi negro */
+    --white: #ffffff;
 
-    /* Configuración de Espaciado (Legacy/Global) */
+    /* Typography */
+    --font-heading: 'Playfair Display', serif;
+    --font-display: 'Cinzel', serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* Spacing & Layout */
+    --container-width: 1400px;
     --spacing-sm: 0.5rem;
     --spacing-md: 1rem;
     --spacing-lg: 2rem;
-    --spacing-xl: 3rem;
-    --spacing-xxl: 4rem;
+    --spacing-xl: 4rem;
 
-    /* Configuración de Bordes y Sombras (Legacy/Global) */
-    --radius-sm: 5px;
-    --radius-md: 8px;
-    --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.2);
-    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.2);
-
+    /* Premium Card System (Updated) */
+    --card-bg: #ffffff;
+    --card-border: 1px solid rgba(0, 0, 0, 0.05);
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    --card-shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    --card-radius: 4px;
+    /* Más cuadrado/elegante */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {
@@ -53,10 +56,23 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-family: var(--font-body);
+    line-height: 1.8;
     color: var(--text-color);
     background-color: var(--bg-color);
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--primary-color);
 }
 
 /* ---------------------------------- */
@@ -64,24 +80,32 @@ body {
 /* ---------------------------------- */
 .container {
     width: 90%;
-    max-width: 1200px;
-    margin: auto;
-    overflow: hidden;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
 }
 
 header {
-    background: var(--primary-color);
+    background: var(--header-bg);
     color: var(--white);
-    padding-top: 20px;
-    min-height: 70px;
-    border-bottom: var(--header-border) 3px solid;
-    /* Línea de color crema */
-    /* Sticky Header Implementation */
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    /* Sombra suave para separar del contenido */
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
 header h1 {
@@ -103,41 +127,133 @@ header nav ul {
     padding-bottom: 10px;
 }
 
+/* Navigation Links */
 header nav ul li {
-    display: inline;
-    padding: 0 10px 0 0;
+    display: inline-block;
+    margin-left: 2rem;
 }
 
 header a {
-    color: var(--white);
+    color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
-    font-size: 16px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-family: var(--font-body);
 }
 
+header a:hover,
+header a.active {
+    color: var(--accent-color);
+}
+
+/* Primary Button */
 .btn-principal {
     display: inline-block;
     background: var(--accent-color);
-    color: var(--text-color);
-    padding: 10px 20px;
+    color: var(--white);
+    /* Contrast fix */
+    padding: 12px 28px;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 2px;
+    /* Minimalist */
     margin: 20px 0;
-    transition: background 0.3s;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid transparent;
 }
 
 .btn-principal:hover {
-    background: var(--accent-hover);
+    background: transparent;
+    border-color: var(--accent-color);
+    color: var(--accent-color);
 }
 
 /* ---------------------------------- */
 /* 4. Secciones y Footer              */
 /* ---------------------------------- */
+/* Hero Section Redesign */
 .hero {
-    background: var(--hero-bg);
-    color: var(--text-color);
-    min-height: 350px;
-    padding: 60px 0;
+    position: relative;
+    height: 85vh;
+    /* Cine-like height */
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: var(--white);
     text-align: center;
+    background: #000;
+    /* Fallback */
+}
+
+.hero-slider,
+.slide,
+.slide img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.3) 0%,
+            rgba(0, 0, 0, 0.5) 50%,
+            rgba(0, 0, 0, 0.8) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: 2rem;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero h2 {
+    font-family: var(--font-display);
+    /* Cinzel */
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: var(--white);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 2px;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .seccion-fotos,
@@ -155,10 +271,16 @@ header a {
 
 footer {
     background: var(--footer-bg);
-    color: var(--white);
+    color: #888;
     text-align: center;
-    padding: 15px 0;
-    margin-top: 30px;
+    padding: 3rem 0;
+    margin-top: 4rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin-bottom: 0.5rem;
 }
 
 /* ---------------------------------- */
@@ -540,55 +662,67 @@ footer {
 }
 
 /* Legacy Card Support - Enhanced */
+/* Legacy Card Support - Refined for Museo Style */
 .card-foto {
     background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: var(--card-radius);
-    box-shadow: var(--card-shadow);
-    overflow: hidden;
-    transition: var(--transition-smooth);
+    border: 1px solid var(--border-color);
+    /* Subtle border */
+    box-shadow: none;
+    /* Flat elegant look initially */
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    position: relative;
 }
 
 .card-foto:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--card-shadow-hover);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-color: var(--accent-color);
 }
 
 .card-foto-img-container {
     position: relative;
     overflow: hidden;
     aspect-ratio: 16 / 10;
+    margin: 0;
+    /* No margin */
 }
 
 .card-foto-img-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: var(--transition-smooth);
+    transition: transform 0.7s ease;
+    filter: sepia(20%) contrast(105%);
+    /* Vintage/Gallery feel */
 }
 
 .card-foto:hover .card-foto-img-container img {
     transform: scale(1.05);
+    filter: sepia(0%) contrast(100%);
 }
 
 .card-foto-content {
-    padding: 1.25rem;
+    padding: 1.5rem;
+    text-align: center;
+    /* Center align for gallery feel */
 }
 
 .card-foto-content h3 {
-    font-family: 'Merriweather', serif;
-    font-size: 1.1rem;
-    font-weight: 700;
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
     color: var(--primary-color);
-    margin: 0 0 0.4rem 0;
 }
 
 .card-foto-content p {
+    font-family: var(--font-body);
     font-size: 0.9rem;
-    color: var(--text-color);
-    opacity: 0.8;
-    margin: 0 0 1rem 0;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    font-style: italic;
 }
+
+
 
 .btn-card {
     display: inline-flex;
@@ -937,4 +1071,17 @@ footer {
 /* Smooth Scroll */
 html {
     scroll-behavior: smooth;
+}
+
+/* Detail Page Hero Override */
+.hero-detalle {
+    height: 40vh;
+    min-height: 300px;
+    background: #111;
+}
+
+.hero-detalle h2 {
+    font-size: 2.5rem;
+    font-family: var(--font-heading);
+    color: var(--accent-color);
 }
