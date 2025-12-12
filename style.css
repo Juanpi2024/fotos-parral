@@ -4,49 +4,62 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
 
 :root {
-    /* Paleta 'Museo Nacional' */
+    /* Paleta 'El Archivo Vivo' - Museo Premium */
     --primary-color: #1A1A1A;
     /* Negro Carbón - Elegancia y Autoridad */
-    --secondary-color: #F9F9F7;
-    /* Blanco Marfil - Fondo Principal */
+    --secondary-color: #FCFAF7;
+    /* Alabastro Cálido - Fondo papel */
     --accent-color: #C5A059;
-    /* Dorado Antiguo - Detalles Premium */
-    --accent-hover: #E5C376;
-    /* Dorado Claro - Interactive State */
-    --text-color: #333333;
-    /* Gris Oscuro - Legibilidad */
-    --text-light: #666666;
+    /* Oro Antiguo - Detalles Premium */
+    --accent-hover: #D4AF37;
+    /* Oro Tenue - Interactive State */
+    --accent-warm: #A0522D;
+    /* Siena Tostado - Enlaces/CTAs alternativos */
+    --text-color: #2E2E2E;
+    /* Carbón suave - Legibilidad mejorada */
+    --text-light: #5C5C5C;
     /* Gris Medio - Subtítulos */
-    --border-color: #E0E0E0;
-    /* Líneas sutiles */
+    --border-color: #E8E4DF;
+    /* Líneas cálidas sutiles */
 
     --bg-color: var(--secondary-color);
-    --header-bg: rgba(26, 26, 26, 0.95);
-    /* Semi-transparent dark header */
-    --footer-bg: #111111;
+    --header-bg: rgba(26, 26, 26, 0.97);
+    /* Header más opaco para legibilidad */
+    --footer-bg: #0F0F0F;
     /* Footer casi negro */
     --white: #ffffff;
 
-    /* Typography */
-    --font-heading: 'Playfair Display', serif;
-    --font-display: 'Cinzel', serif;
-    --font-body: 'Inter', sans-serif;
+    /* Typography - Sistema dual Serif/Sans */
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-display: 'Cinzel', 'Times New Roman', serif;
+    --font-body: 'Inter', 'Helvetica Neue', sans-serif;
 
     /* Spacing & Layout */
     --container-width: 1400px;
+    --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
     --spacing-md: 1rem;
     --spacing-lg: 2rem;
     --spacing-xl: 4rem;
+    --spacing-xxl: 6rem;
 
-    /* Premium Card System (Updated) */
+    /* Premium Card System - Museo Style */
     --card-bg: #ffffff;
-    --card-border: 1px solid rgba(0, 0, 0, 0.05);
-    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    --card-shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-    --card-radius: 4px;
-    /* Más cuadrado/elegante */
+    --card-bg-warm: #FDFBF7;
+    /* Fondo papel antiguo */
+    --card-border: 1px solid rgba(0, 0, 0, 0.06);
+    --card-border-warm: 1px solid #EADDCF;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04);
+    --card-shadow-hover: 0 20px 30px -8px rgba(0, 0, 0, 0.12);
+    --card-radius: 3px;
+    /* Más cuadrado = más elegante */
+    --card-radius-sm: 2px;
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.25s ease;
+
+    /* Museo Gallery Filters */
+    --image-filter-default: sepia(15%) contrast(102%);
+    --image-filter-hover: sepia(0%) contrast(100%);
 }
 
 * {
@@ -1310,4 +1323,145 @@ html {
 .btn-download-sm:hover {
     background: var(--accent-hover);
     color: var(--primary-color);
+}
+
+/* ---------------------------------- */
+/* 12. Museo "Frameless" Cards        */
+/* ---------------------------------- */
+/* Tarjetas sin marco estilo galería */
+
+.card-museo {
+    position: relative;
+    background: transparent;
+    border: none;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+}
+
+.card-museo-image {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 3 / 4;
+    /* Portrait like gallery paintings */
+}
+
+.card-museo-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: var(--image-filter-default);
+    transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.card-museo:hover .card-museo-image img {
+    filter: var(--image-filter-hover);
+    transform: scale(1.03);
+}
+
+.card-museo-caption {
+    padding: 1.5rem 0.5rem;
+    text-align: center;
+}
+
+.card-museo-title {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0 0 0.3rem 0;
+    letter-spacing: 0.02em;
+}
+
+.card-museo-meta {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-light);
+    margin: 0;
+}
+
+.card-museo-link {
+    display: inline-block;
+    margin-top: 1rem;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-warm);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid transparent;
+    transition: var(--transition-fast);
+}
+
+.card-museo-link:hover {
+    color: var(--accent-color);
+    border-bottom-color: var(--accent-color);
+}
+
+/* Grid for Museo Cards */
+.grid-museo {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 3rem;
+    padding: var(--spacing-xl) 0;
+}
+
+@media (min-width: 768px) {
+    .grid-museo {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4rem 3rem;
+    }
+}
+
+/* ---------------------------------- */
+/* 13. Section Dividers & Pull Quotes */
+/* ---------------------------------- */
+
+.section-divider {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: var(--spacing-xxl) auto;
+    max-width: 200px;
+}
+
+.pull-quote {
+    max-width: 800px;
+    margin: var(--spacing-xxl) auto;
+    padding: var(--spacing-xl) var(--spacing-lg);
+    text-align: center;
+    position: relative;
+}
+
+.pull-quote::before {
+    content: '"';
+    font-family: var(--font-display);
+    font-size: 5rem;
+    color: var(--accent-color);
+    opacity: 0.3;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    line-height: 1;
+}
+
+.pull-quote p {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--primary-color);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.pull-quote cite {
+    display: block;
+    margin-top: 1rem;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-style: normal;
+    color: var(--text-light);
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
