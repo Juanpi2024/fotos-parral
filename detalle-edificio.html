@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Sitio – Archivos en Movimiento</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ============================================
+           DETALLE EDIFICIO - ESTILOS PREMIUM
+           ============================================ */
+
+        .detalle-hero {
+            background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+            padding: 3rem 1rem;
+            position: relative;
+        }
+
+        .detalle-hero .container {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+        }
+
+        .hero-back {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .hero-back:hover {
+            color: var(--accent-color, #C5A059);
+        }
+
+        .hero-info {
+            flex: 1;
+        }
+
+        .hero-category {
+            color: var(--accent-color, #C5A059);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 0.5rem;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #fff;
+            margin: 0 0 0.5rem 0;
+            line-height: 1.2;
+        }
+
+        .hero-address {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Layout Principal */
+        .detalle-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 3rem 1rem;
+        }
+
+        .detalle-main {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .detalle-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        /* Galería de Fotos */
+        .galeria-section {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .galeria-main-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .galeria-main-img:hover {
+            transform: scale(1.02);
+        }
+
+        .galeria-thumbnails {
+            display: flex;
+            gap: 0.5rem;
+            padding: 1rem;
+            overflow-x: auto;
+        }
+
+        .galeria-thumb {
+            width: 80px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 6px;
+            cursor: pointer;
+            opacity: 0.6;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .galeria-thumb:hover,
+        .galeria-thumb.active {
+            opacity: 1;
+            border-color: var(--accent-color, #C5A059);
+        }
+
+        /* Sección de Contenido */
+        .content-section {
+            background: #fff;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .content-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            margin: 0 0 1.5rem 0;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .content-section h2 .accent {
+            color: var(--accent-color, #C5A059);
+        }
+
+        .content-text {
+            font-family: 'Lato', sans-serif;
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .content-text p {
+            margin-bottom: 1rem;
+        }
+
+        /* Info Cards (Sidebar) */
+        .info-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        }
+
+        .info-card h3 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.1rem;
+            color: #1a1a1a;
+            margin: 0 0 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .info-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .info-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.9rem;
+        }
+
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+
+        .info-list .label {
+            color: #888;
+        }
+
+        .info-list .value {
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        /* Eventos Section */
+        .eventos-card {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            color: #fff;
+        }
+
+        .eventos-card h3 {
+            color: #fff;
+        }
+
+        .evento-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-left: 3px solid var(--accent-color, #C5A059);
+        }
+
+        .evento-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .evento-fecha {
+            font-size: 0.75rem;
+            color: var(--accent-color, #C5A059);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.25rem;
+        }
+
+        .evento-titulo {
+            font-family: 'Merriweather', serif;
+            font-size: 1rem;
+            margin: 0 0 0.25rem 0;
+        }
+
+        .evento-desc {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0;
+        }
+
+        .evento-badge {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            background: rgba(197, 160, 89, 0.2);
+            color: var(--accent-color, #C5A059);
+            font-size: 0.7rem;
+            border-radius: 4px;
+            margin-left: 0.5rem;
+        }
+
+        /* Comentarios Section */
+        .comentarios-section {
+            background: #FCFAF7;
+        }
+
+        .comentario-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid #e8e4df;
+        }
+
+        .comentario-item:last-of-type {
+            border-bottom: none;
+        }
+
+        .comentario-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-color, #C5A059) 0%, #D4AF37 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .comentario-content {
+            flex: 1;
+        }
+
+        .comentario-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .comentario-autor {
+            font-weight: 700;
+            color: #1a1a1a;
+            font-size: 0.95rem;
+        }
+
+        .comentario-fecha {
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .comentario-texto {
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .comentario-rating {
+            color: var(--accent-color, #C5A059);
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Form de comentario */
+        .comentario-form {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid #e8e4df;
+        }
+
+        .comentario-form textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.95rem;
+            resize: vertical;
+            min-height: 100px;
+            margin-bottom: 1rem;
+        }
+
+        .comentario-form textarea:focus {
+            outline: none;
+            border-color: var(--accent-color, #C5A059);
+        }
+
+        .btn-comentar {
+            background: linear-gradient(135deg, var(--accent-color, #C5A059) 0%, #D4AF37 100%);
+            color: #1a1a1a;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-comentar:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.4);
+        }
+
+        /* Related Sites */
+        .related-section {
+            background: #f8f8f8;
+            padding: 3rem 1rem;
+        }
+
+        .related-section h2 {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .related-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .related-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .related-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .related-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .related-card-body {
+            padding: 1.25rem;
+        }
+
+        .related-card h4 {
+            font-family: 'Merriweather', serif;
+            font-size: 1rem;
+            margin: 0 0 0.5rem 0;
+            color: #1a1a1a;
+        }
+
+        .related-card p {
+            font-size: 0.85rem;
+            color: #666;
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .detalle-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-title {
+                font-size: 1.8rem;
+            }
+
+            .galeria-main-img {
+                height: 280px;
+            }
+
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo-area">
+                <h1><a href="index.html">Archivos en Movimiento</a></h1>
+                <p class="subtitle">Patrimonio Vivo de Parral</p>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="relatos.html">Relatos</a></li>
+                    <li><a href="educacion.html">Educación</a></li>
+                    <li><a href="historia.html">Historia</a></li>
+                    <li><a href="mapa.html" class="active">Mapa</a></li>
+                    <li><a href="participa.html" class="btn-nav">¡Participa!</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="detalle-hero">
+        <div class="container">
+            <a href="mapa.html" class="hero-back">← Volver al Mapa</a>
+            <div class="hero-info">
+                <p class="hero-category">Edificio Público</p>
+                <h1 class="hero-title" id="sitioNombre">Teatro Municipal de Parral</h1>
+                <p class="hero-address">
+                    <span>📍</span>
+                    <span id="sitioDireccion">Calle Ignacio Carrera Pinto 123, Parral, Maule</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- LAYOUT PRINCIPAL -->
+    <div class="detalle-layout">
+        <!-- COLUMNA PRINCIPAL -->
+        <div class="detalle-main">
+            <!-- GALERÍA -->
+            <section class="galeria-section">
+                <img src="images/ecos-cultura.jpg" alt="Vista principal" class="galeria-main-img" id="galeriaMain">
+                <div class="galeria-thumbnails">
+                    <img src="images/ecos-cultura.jpg" alt="Foto 1" class="galeria-thumb active"
+                        onclick="cambiarImagen(this, 'images/ecos-cultura.jpg')">
+                    <img src="images/ecos-fiestas.jpg" alt="Foto 2" class="galeria-thumb"
+                        onclick="cambiarImagen(this, 'images/ecos-fiestas.jpg')">
+                    <img src="images/ecos-naturaleza.jpg" alt="Foto 3" class="galeria-thumb"
+                        onclick="cambiarImagen(this, 'images/ecos-naturaleza.jpg')">
+                    <img src="images/ecos-invitacion.jpg" alt="Foto 4" class="galeria-thumb"
+                        onclick="cambiarImagen(this, 'images/ecos-invitacion.jpg')">
+                </div>
+            </section>
+
+            <!-- HISTORIA -->
+            <section class="content-section">
+                <h2>Historia <span class="accent">Arquitectónica</span></h2>
+                <div class="content-text">
+                    <p>Inaugurado en 1921, el Teatro Municipal de Parral ha sido el epicentro de la vida cultural de la
+                        comuna. Su arquitectura neoclásica tardía lo convierte en uno de los edificios más emblemáticos
+                        de la zona, sobreviviendo a múltiples terremotos gracias a sucesivas restauraciones.</p>
+
+                    <p>El teatro fue diseñado por el arquitecto italiano Giovanni Bertolucci, quien también trabajó en
+                        otros edificios públicos de la región. Su fachada presenta columnas dóricas y un frontón
+                        triangular característico del estilo neoclásico.</p>
+
+                    <p>Tras el terremoto de 2010, el edificio sufrió daños significativos pero fue restaurado con fondos
+                        del Ministerio de las Culturas, reabriendo sus puertas en 2015 con un sistema acústico mejorado
+                        y accesibilidad universal.</p>
+                </div>
+            </section>
+
+            <!-- COMENTARIOS -->
+            <section class="content-section comentarios-section">
+                <h2>Comentarios de <span class="accent">Visitantes</span></h2>
+
+                <div class="comentario-item">
+                    <div class="comentario-avatar">👤</div>
+                    <div class="comentario-content">
+                        <div class="comentario-header">
+                            <span class="comentario-autor">María González</span>
+                            <span class="comentario-fecha">Hace 2 semanas</span>
+                        </div>
+                        <p class="comentario-texto">Increíble experiencia ver una obra de teatro en este lugar
+                            histórico. La acústica es perfecta y la restauración mantiene la esencia original.
+                            ¡Recomendado!</p>
+                        <div class="comentario-rating">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+
+                <div class="comentario-item">
+                    <div class="comentario-avatar">👤</div>
+                    <div class="comentario-content">
+                        <div class="comentario-header">
+                            <span class="comentario-autor">Pedro Muñoz</span>
+                            <span class="comentario-fecha">Hace 1 mes</span>
+                        </div>
+                        <p class="comentario-texto">Mi abuelo me contaba que aquí se presentaban las grandes compañías
+                            de teatro de Santiago. Es emocionante estar en el mismo lugar tantos años después.</p>
+                        <div class="comentario-rating">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+
+                <div class="comentario-item">
+                    <div class="comentario-avatar">👤</div>
+                    <div class="comentario-content">
+                        <div class="comentario-header">
+                            <span class="comentario-autor">Carolina Soto</span>
+                            <span class="comentario-fecha">Hace 2 meses</span>
+                        </div>
+                        <p class="comentario-texto">Visita obligada para conocer la historia de Parral. El personal es
+                            muy amable y hay tours guiados muy interesantes.</p>
+                        <div class="comentario-rating">⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+
+                <div class="comentario-form">
+                    <textarea placeholder="Comparte tu experiencia o recuerdo sobre este lugar..."></textarea>
+                    <button class="btn-comentar">Publicar Comentario</button>
+                </div>
+            </section>
+        </div>
+
+        <!-- SIDEBAR -->
+        <div class="detalle-sidebar">
+            <!-- INFO PRÁCTICA -->
+            <div class="info-card">
+                <h3>📋 Información Práctica</h3>
+                <ul class="info-list">
+                    <li>
+                        <span class="label">Año de construcción</span>
+                        <span class="value">1921</span>
+                    </li>
+                    <li>
+                        <span class="label">Estilo arquitectónico</span>
+                        <span class="value">Neoclásico</span>
+                    </li>
+                    <li>
+                        <span class="label">Estado actual</span>
+                        <span class="value">Restaurado</span>
+                    </li>
+                    <li>
+                        <span class="label">Declaratoria</span>
+                        <span class="value">Monumento Nacional</span>
+                    </li>
+                    <li>
+                        <span class="label">Horario visitas</span>
+                        <span class="value">Mar-Dom 10:00-18:00</span>
+                    </li>
+                    <li>
+                        <span class="label">Entrada</span>
+                        <span class="value">Liberada</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- EVENTOS -->
+            <div class="info-card eventos-card">
+                <h3>📅 Próximos Eventos</h3>
+
+                <div class="evento-item">
+                    <p class="evento-fecha">15 Dic 2025</p>
+                    <h4 class="evento-titulo">Concierto de Navidad <span class="evento-badge">Próximo</span></h4>
+                    <p class="evento-desc">Orquesta Sinfónica Juvenil de Parral</p>
+                </div>
+
+                <div class="evento-item">
+                    <p class="evento-fecha">20 Dic 2025</p>
+                    <h4 class="evento-titulo">Obra "El Guatón Loyola"</h4>
+                    <p class="evento-desc">Compañía de Teatro Parralino</p>
+                </div>
+
+                <div class="evento-item">
+                    <p class="evento-fecha">12 Jul 2026</p>
+                    <h4 class="evento-titulo">Homenaje a Neruda</h4>
+                    <p class="evento-desc">Aniversario del nacimiento del poeta</p>
+                </div>
+            </div>
+
+            <!-- EVENTOS PASADOS -->
+            <div class="info-card">
+                <h3>📜 Eventos Históricos</h3>
+                <ul class="info-list">
+                    <li>
+                        <span class="label">1921</span>
+                        <span class="value">Inauguración oficial</span>
+                    </li>
+                    <li>
+                        <span class="label">1945</span>
+                        <span class="value">Visita Gabriela Mistral</span>
+                    </li>
+                    <li>
+                        <span class="label">1971</span>
+                        <span class="value">Homenaje a Neruda (Nobel)</span>
+                    </li>
+                    <li>
+                        <span class="label">2015</span>
+                        <span class="value">Reapertura post-terremoto</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- MAPA PEQUEÑO -->
+            <div class="info-card">
+                <h3>🗺️ Ubicación</h3>
+                <div
+                    style="background: #e5e5e5; height: 150px; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #888;">
+                    <a href="mapa.html"
+                        style="color: var(--accent-color, #C5A059); text-decoration: none; font-weight: 600;">Ver en
+                        mapa grande →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SITIOS RELACIONADOS -->
+    <section class="related-section">
+        <h2>Otros Sitios Patrimoniales</h2>
+        <div class="related-grid">
+            <a href="detalle-edificio.html?id=casa-neruda" class="related-card">
+                <img src="images/ecos-neruda-nace.jpg" alt="Casa Neruda">
+                <div class="related-card-body">
+                    <h4>Casa Natal Pablo Neruda</h4>
+                    <p>Monumento Nacional • A 500m</p>
+                </div>
+            </a>
+            <a href="detalle-edificio.html?id=plaza-armas" class="related-card">
+                <img src="img/plaza-original.jpg" alt="Plaza de Armas">
+                <div class="related-card-body">
+                    <h4>Plaza de Armas</h4>
+                    <p>Espacio Público • A 100m</p>
+                </div>
+            </a>
+            <a href="detalle-edificio.html?id=estacion-ferrocarril" class="related-card">
+                <img src="images/ecos-estacion.jpg" alt="Estación">
+                <div class="related-card-body">
+                    <h4>Antigua Estación de FF.CC.</h4>
+                    <p>Patrimonio Industrial • A 800m</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Archivos en Movimiento. Patrimonio Vivo de Parral.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Cambiar imagen de galería
+        function cambiarImagen(thumb, src) {
+            document.getElementById('galeriaMain').src = src;
+            document.querySelectorAll('.galeria-thumb').forEach(t => t.classList.remove('active'));
+            thumb.classList.add('active');
+        }
+
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+            document.querySelector('.main-nav').classList.toggle('show');
+        });
+
+        // Obtener parámetros de URL para cargar datos dinámicos (futuro)
+        const urlParams = new URLSearchParams(window.location.search);
+        const sitioId = urlParams.get('id');
+        if (sitioId) {
+            console.log('Cargando sitio:', sitioId);
+            // Aquí se podría cargar datos dinámicos según el ID
+        }
+    </script>
+</body>
+
+</html>

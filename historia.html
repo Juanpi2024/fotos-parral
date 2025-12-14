@@ -6,171 +6,303 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ecos de la Tierra y el Tiempo – Archivos en Movimiento</title>
+    <title>Línea de Tiempo Histórica – Archivos en Movimiento</title>
 
     <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
     <!-- CSS Original -->
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* Estilos para la presentación de épocas */
-        .epocas-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-            font-family: 'Merriweather', serif;
-        }
+        /* ============================================
+           LÍNEA DE TIEMPO - ESTILOS
+           ============================================ */
 
-        .slide {
-            display: none;
-            animation: fadeIn 0.5s;
-        }
-
-        .slide.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-
-        .slide img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            margin-bottom: 2rem;
-        }
-
-        /* Navegación de slides */
-        .slide-nav {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 1rem;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-        }
-
-        .slide-nav button {
-            padding: 0.75rem 1.5rem;
-            background: #8c4623;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-family: 'Lato', sans-serif;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .slide-nav button:hover {
-            background: #6b341b;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .slide-nav button:disabled {
-            background: #ccc;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        /* Indicadores de progreso */
-        .progress-dots {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            margin: 1.5rem 0;
-            flex-wrap: wrap;
-        }
-
-        .progress-dots .dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #ddd;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .progress-dots .dot.active {
-            background: #8c4623;
-            transform: scale(1.3);
-        }
-
-        .progress-dots .dot:hover {
-            background: #b35d2d;
-        }
-
-        /* Contador de slides */
-        .slide-counter {
+        .timeline-hero {
+            background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+            padding: 5rem 1rem;
             text-align: center;
-            color: #6b341b;
-            font-family: 'Lato', sans-serif;
-            margin: 1rem 0;
-            font-size: 0.9rem;
+            position: relative;
+            overflow: hidden;
         }
 
-        /* Controles de teclado info */
-        .keyboard-hint {
-            text-align: center;
-            color: #999;
-            font-size: 0.85rem;
+        .timeline-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(197, 160, 89, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .timeline-hero p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
             margin-top: 1rem;
             font-family: 'Lato', sans-serif;
         }
 
-        /* Hero section */
-        .hero-historia {
-            background: linear-gradient(135deg, #fdf6f0 0%, #fce9d7 100%);
-            padding: 3rem 1rem;
-            text-align: center;
-            border-bottom: 3px solid #d17a3a;
+        /* Container Principal */
+        .timeline-section {
+            background: #FCFAF7;
+            padding: 4rem 1rem;
         }
 
-        .hero-historia h1 {
-            font-family: 'Merriweather', serif;
-            color: #4a2313;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero-historia p {
-            font-family: 'Lato', sans-serif;
-            color: #6b341b;
-            font-size: 1.1rem;
-            max-width: 800px;
+        .timeline-container {
+            max-width: 1100px;
             margin: 0 auto;
-            line-height: 1.6;
+            position: relative;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-historia h1 {
-                font-size: 1.8rem;
+        /* Línea Central Vertical */
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(180deg,
+                    #C5A059 0%,
+                    #C5A059 50%,
+                    rgba(197, 160, 89, 0.3) 100%);
+            top: 0;
+            z-index: 1;
+        }
+
+        /* Item de la Línea de Tiempo */
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 4rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Contenedor del Video (Izquierda) */
+        .timeline-video {
+            flex: 1;
+            padding-right: 3rem;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-start;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            max-width: 350px;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-family: 'Lato', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px dashed rgba(197, 160, 89, 0.3);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .video-placeholder:hover {
+            border-color: var(--accent-color, #C5A059);
+            background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%);
+        }
+
+        .video-placeholder .icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.6;
+        }
+
+        .video-placeholder span {
+            font-size: 0.85rem;
+            text-align: center;
+            padding: 0 1rem;
+        }
+
+        /* Video embebido activo */
+        .video-placeholder.has-video {
+            border: none;
+            background: #000;
+        }
+
+        .video-placeholder iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+        }
+
+        /* Punto Central (Marker) */
+        .timeline-marker {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #C5A059 0%, #D4AF37 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            z-index: 3;
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.4);
+            position: relative;
+        }
+
+        .timeline-marker::before {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border: 2px solid rgba(197, 160, 89, 0.3);
+            border-radius: 50%;
+            animation: markerPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes markerPulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
             }
 
-            .slide-nav {
-                gap: 0.5rem;
+            50% {
+                transform: scale(1.1);
+                opacity: 0.5;
+            }
+        }
+
+        .timeline-marker .year-short {
+            font-family: 'Merriweather', serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-align: center;
+            line-height: 1.1;
+        }
+
+        /* Card de Contenido (Derecha) */
+        .timeline-content {
+            flex: 1;
+            padding-left: 3rem;
+        }
+
+        .timeline-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+            max-width: 400px;
+        }
+
+        .timeline-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+            border-color: rgba(197, 160, 89, 0.3);
+        }
+
+        .timeline-card .year {
+            font-family: 'Merriweather', serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--accent-color, #C5A059);
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .timeline-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .timeline-card p {
+            font-family: 'Lato', sans-serif;
+            font-size: 0.95rem;
+            color: #5c5c5c;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 900px) {
+            .timeline-line {
+                left: 30px;
             }
 
-            .slide-nav button {
-                padding: 0.6rem 1rem;
-                font-size: 0.9rem;
+            .timeline-item {
+                flex-direction: column;
+                padding-left: 70px;
+            }
+
+            .timeline-video {
+                order: 2;
+                padding-right: 0;
+                padding-top: 1.5rem;
+                justify-content: flex-start;
+            }
+
+            .video-placeholder {
+                max-width: 100%;
+            }
+
+            .timeline-marker {
+                position: absolute;
+                left: 5px;
+                top: 0;
+            }
+
+            .timeline-content {
+                order: 1;
+                padding-left: 0;
+            }
+
+            .timeline-card {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .timeline-hero {
+                padding: 3rem 1rem;
+            }
+
+            .timeline-section {
+                padding: 2rem 0.5rem;
+            }
+
+            .timeline-item {
+                margin-bottom: 3rem;
+            }
+
+            .timeline-card {
+                padding: 1.5rem;
+            }
+
+            .timeline-card h3 {
+                font-size: 1.2rem;
             }
         }
     </style>
@@ -204,114 +336,232 @@
     </header>
 
     <!-- HERO SECTION -->
-    <section class="hero-historia">
-        <h1>Ecos de la Tierra y el Tiempo</h1>
-        <p>Un viaje por los hitos que forjaron la identidad de Parral<br>
-            Desde la fundación hasta nuestros días</p>
+    <section class="timeline-hero">
+        <h1 class="hero-title-dual">
+            <span class="title-white">Línea de Tiempo</span>
+            <span class="title-gold">Histórica</span>
+        </h1>
+        <p>Hitos que marcaron nuestra identidad cultural</p>
     </section>
 
-    <!-- CONTENEDOR DE ÉPOCAS -->
-    <div class="epocas-container">
+    <!-- LÍNEA DE TIEMPO -->
+    <section class="timeline-section">
+        <div class="timeline-container">
+            <!-- Línea Central -->
+            <div class="timeline-line"></div>
 
-        <!-- Contador de slides -->
-        <div class="slide-counter">
-            <span id="currentSlide">1</span> / <span id="totalSlides">15</span>
+            <!-- 1795 - Fundación de la Villa -->
+            <div class="timeline-item">
+                <div class="timeline-video">
+                    <div class="video-placeholder" data-video-id="video-1795">
+                        <div class="icon">🎬</div>
+                        <span>Agregar video conmemorativo</span>
+                    </div>
+                </div>
+                <div class="timeline-marker">
+                    <span class="year-short">1795</span>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-card">
+                        <div class="year">1795</div>
+                        <h3>Fundación de la Villa</h3>
+                        <p>Fundación oficial de la Villa Reina Luisa del Parral por mandato de Ambrosio O'Higgins,
+                            estableciendo los primeros cimientos urbanos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1823 - Nace una Delegación -->
+            <div class="timeline-item">
+                <div class="timeline-video">
+                    <div class="video-placeholder" data-video-id="video-1823">
+                        <div class="icon">🎬</div>
+                        <span>Agregar video conmemorativo</span>
+                    </div>
+                </div>
+                <div class="timeline-marker">
+                    <span class="year-short">1823</span>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-card">
+                        <div class="year">1823</div>
+                        <h3>Nace una Delegación</h3>
+                        <p>Parral se constituye como delegación administrativa, marcando el inicio de su organización
+                            política formal.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ~1870 - El Ferrocarril -->
+            <div class="timeline-item">
+                <div class="timeline-video">
+                    <div class="video-placeholder" data-video-id="video-1870">
+                        <div class="icon">🎬</div>
+                        <span>Agregar video conmemorativo</span>
+                    </div>
+                </div>
+                <div class="timeline-marker">
+                    <span class="year-short">1870</span>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-card">
+                        <div class="year">Circa 1870</div>
+                        <h3>El Rugido del Progreso</h3>
+                        <p>La llegada del ferrocarril transforma a Parral, conectándolo con el resto del país e
+                            impulsando el desarrollo económico y social.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1896 - Puente Perquilauquén -->
+            <div class="timeline-item">
+                <div class="timeline-video">
+                    <div class="video-placeholder" data-video-id="video-1896">
+                        <div class="icon">🎬</div>
+                        <span>Agregar video conmemorativo</span>
+                    </div>
+                </div>
+                <div class="timeline-marker">
+                    <span class="year-short">1896</span>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-card">
+                        <div class="year">1896</div>
+                        <h3>Puente Perquilauquén</h3>
+                        <p>Inauguración del majestuoso puente de acero sobre el río Perquilauquén, un gigante de la
+                            ingeniería que se convierte en símbolo de la zona.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1904 - Nacimiento de Neruda -->
+            <div class="timeline-item">
+                <div class="timeline-video">
+                    <div class="video-placeholder" data-video-id="video-1904">
+                        <div class="icon">🎬</div>
+                        <span>Agregar video conmemorativo</span>
+                    </div>
+                </div>
+                <div class="timeline-marker">
+                    <span class="year-short">1904</span>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-card">
+                        <div class="year">12 de Julio de 1904</div>
+                        <h3>Nacimiento de Neruda</h3>
+                        <p>El 12 de julio nace Ricardo Eliécer Neftalí Reyes Basoalto, quien se convertiría en Pablo
+                            Neruda, Premio Nobel de Literatura.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1939 - Terremoto de Chillán -->
+            <div class="timeline-item">
+                <div class="timeline-video">
+                    <div class="video-placeholder" data-video-id="video-1939">
+                        <div class="icon">🎬</div>
+                        <span>Agregar video conmemorativo</span>
+                    </div>
+                </div>
+                <div class="timeline-marker">
+                    <span class="year-short">1939</span>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-card">
+                        <div class="year">1939</div>
+                        <h3>Terremoto de Chillán</h3>
+                        <p>Un devastador sismo afecta gravemente la arquitectura colonial de la zona, dando paso a una
+                            reconstrucción moderna.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1961 - Colonia Dignidad -->
+            <div class="timeline-item">
+                <div class="timeline-video">
+                    <div class="video-placeholder" data-video-id="video-1961">
+                        <div class="icon">🎬</div>
+                        <span>Agregar video conmemorativo</span>
+                    </div>
+                </div>
+                <div class="timeline-marker">
+                    <span class="year-short">1961</span>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-card">
+                        <div class="year">1961</div>
+                        <h3>Sombra en la Precordillera</h3>
+                        <p>Instalación de Colonia Dignidad en la precordillera de Parral, un capítulo oscuro que marcó
+                            profundamente la historia regional.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1971 - Premio Nobel de Neruda -->
+            <div class="timeline-item">
+                <div class="timeline-video">
+                    <div class="video-placeholder" data-video-id="video-1971">
+                        <div class="icon">🎬</div>
+                        <span>Agregar video conmemorativo</span>
+                    </div>
+                </div>
+                <div class="timeline-marker">
+                    <span class="year-short">1971</span>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-card">
+                        <div class="year">1971</div>
+                        <h3>El Legado de un Nobel</h3>
+                        <p>Pablo Neruda recibe el Premio Nobel de Literatura, consagrando a Parral como cuna de uno de
+                            los poetas más grandes de la historia.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2010 - Centenario Patrimonial -->
+            <div class="timeline-item">
+                <div class="timeline-video">
+                    <div class="video-placeholder" data-video-id="video-2010">
+                        <div class="icon">🎬</div>
+                        <span>Agregar video conmemorativo</span>
+                    </div>
+                </div>
+                <div class="timeline-marker">
+                    <span class="year-short">2010</span>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-card">
+                        <div class="year">2010</div>
+                        <h3>Centenario Patrimonial</h3>
+                        <p>Celebración de los 200 años de historia republicana con la inauguración de nuevos espacios
+                            culturales en la comuna.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Presente - Cultura Viva -->
+            <div class="timeline-item">
+                <div class="timeline-video">
+                    <div class="video-placeholder" data-video-id="video-presente">
+                        <div class="icon">🎬</div>
+                        <span>Agregar video conmemorativo</span>
+                    </div>
+                </div>
+                <div class="timeline-marker">
+                    <span class="year-short">HOY</span>
+                </div>
+                <div class="timeline-content">
+                    <div class="timeline-card">
+                        <div class="year">Presente</div>
+                        <h3>Parral Vive</h3>
+                        <p>Fiestas, tradiciones, cultura viva y naturaleza. Parral continúa escribiendo su historia,
+                            invitando a descubrir su patrimonio único.</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
-
-        <!-- Indicadores de progreso -->
-        <div class="progress-dots" id="progressDots"></div>
-
-        <!-- Slides -->
-        <div id="slidesContainer">
-            <!-- Slide 1: Portada -->
-            <div class="slide active">
-                <img src="images/ecos-portada.jpg" alt="Cuna de Historias, Tierra de Futuro">
-            </div>
-
-            <!-- Slide 2: 1823 - Delegación -->
-            <div class="slide">
-                <img src="images/ecos-delegacion.jpg" alt="1823: Nace una Delegación">
-            </div>
-
-            <!-- Slide 3: Ferrocarril -->
-            <div class="slide">
-                <img src="images/ecos-ferrocarril.jpg" alt="El Rugido del Progreso: El Ferrocarril">
-            </div>
-
-            <!-- Slide 4: Puente Perquilauquén -->
-            <div class="slide">
-                <img src="images/ecos-puente.jpg" alt="Puente Perquilauquén: Un Gigante de Acero (1896)">
-            </div>
-
-            <!-- Slide 5: Estación y Puente -->
-            <div class="slide">
-                <img src="images/ecos-estacion.jpg" alt="Estación y Puente Perquilauquén: Testigos del Tiempo">
-            </div>
-
-            <!-- Slide 6: Nacimiento de Neruda -->
-            <div class="slide">
-                <img src="images/ecos-neruda-nace.jpg" alt="12 de Julio de 1904: Nace un Poeta">
-            </div>
-
-            <!-- Slide 7: Legado de Neruda -->
-            <div class="slide">
-                <img src="images/ecos-neruda-legado.jpg" alt="El Legado de un Nobel">
-            </div>
-
-            <!-- Slide 8: Colonia Dignidad 1961 -->
-            <div class="slide">
-                <img src="images/ecos-colonia.jpg" alt="1961: Una Sombra en la Precordillera">
-            </div>
-
-            <!-- Slide 9: Sitio de Memoria -->
-            <div class="slide">
-                <img src="images/ecos-sitio-memoria.jpg" alt="Colonia Dignidad y la Dictadura: Sitio de Memoria">
-            </div>
-
-            <!-- Slide 10: Villa Baviera -->
-            <div class="slide">
-                <img src="images/ecos-villa-baviera.jpg" alt="Villa Baviera: Del Dolor a la Apertura">
-            </div>
-
-            <!-- Slide 11: Cultura Viva -->
-            <div class="slide">
-                <img src="images/ecos-cultura.jpg" alt="El Alma de Parral: Cultura Viva">
-            </div>
-
-            <!-- Slide 12: Naturaleza y Aventura -->
-            <div class="slide">
-                <img src="images/ecos-naturaleza.jpg" alt="El Latido de la Tierra: Naturaleza y Aventura">
-            </div>
-
-            <!-- Slide 13: Fiestas y Tradiciones -->
-            <div class="slide">
-                <img src="images/ecos-fiestas.jpg" alt="Fiestas y Tradiciones: El Encuentro de la Comunidad">
-            </div>
-
-            <!-- Slide 14: Invitación -->
-            <div class="slide">
-                <img src="images/ecos-invitacion.jpg" alt="Parral te invita a descubrir su historia">
-            </div>
-
-            <!-- Slide 15: Mosaico -->
-            <div class="slide">
-                <img src="images/ecos-mosaico.jpg" alt="Un Mosaico en Constante Creación">
-            </div>
-        </div>
-
-        <!-- Navegación -->
-        <div class="slide-nav">
-            <button id="prevBtn" onclick="changeSlide(-1)">← Anterior</button>
-            <button id="nextBtn" onclick="changeSlide(1)">Siguiente →</button>
-        </div>
-
-        <div class="keyboard-hint">
-            💡 Usa las flechas del teclado ← → para navegar
-        </div>
-    </div>
-
-    <!-- Back to Top Button -->
-    <button id="backToTopBtn" title="Volver arriba">↑</button>
+    </section>
 
     <footer>
         <div class="container">
@@ -319,115 +569,24 @@
             <p style="font-size: 0.9rem;">Modelo replicable para la gestión cultural municipal.</p>
         </div>
     </footer>
+
     <!-- Main JavaScript File -->
     <script src="js/home.js"></script>
 
-    <!-- JAVASCRIPT -->
     <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        const totalSlides = slides.length;
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const currentSlideSpan = document.getElementById('currentSlide');
-        const totalSlidesSpan = document.getElementById('totalSlides');
-        const progressDotsContainer = document.getElementById('progressDots');
-
-        // Inicializar
-        totalSlidesSpan.textContent = totalSlides;
-
-        // Crear dots de progreso
-        for (let i = 0; i < totalSlides; i++) {
-            const dot = document.createElement('div');
-            dot.className = 'dot';
-            if (i === 0) dot.classList.add('active');
-            dot.onclick = () => goToSlide(i);
-            progressDotsContainer.appendChild(dot);
-        }
-
-        const dots = document.querySelectorAll('.dot');
-
-        function showSlide(n) {
-            // Validar rango
-            if (n >= totalSlides) {
-                currentSlide = totalSlides - 1;
-            } else if (n < 0) {
-                currentSlide = 0;
-            } else {
-                currentSlide = n;
-            }
-
-            // Ocultar todos los slides
-            slides.forEach(slide => slide.classList.remove('active'));
-            dots.forEach(dot => dot.classList.remove('active'));
-
-            // Mostrar slide actual
-            slides[currentSlide].classList.add('active');
-            dots[currentSlide].classList.add('active');
-
-            // Actualizar contador
-            currentSlideSpan.textContent = currentSlide + 1;
-
-            // Actualizar botones
-            prevBtn.disabled = currentSlide === 0;
-            nextBtn.disabled = currentSlide === totalSlides - 1;
-
-            // Scroll suave al inicio del slide
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function changeSlide(direction) {
-            showSlide(currentSlide + direction);
-        }
-
-        function goToSlide(n) {
-            showSlide(n);
-        }
-
-        // Navegación con teclado
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') {
-                changeSlide(-1);
-            } else if (e.key === 'ArrowRight') {
-                changeSlide(1);
-            }
-        });
-
-        // Navegación táctil (swipe)
-        let touchStartX = 0;
-        let touchEndX = 0;
-
-        document.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        });
-
-        document.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        });
-
-        function handleSwipe() {
-            const swipeThreshold = 50;
-            if (touchEndX < touchStartX - swipeThreshold) {
-                // Swipe left
-                changeSlide(1);
-            }
-            if (touchEndX > touchStartX + swipeThreshold) {
-                // Swipe right
-                changeSlide(-1);
-            }
-        }
-
-        // Lógica del menú móvil (original del sitio)
+        // Mobile Menu Toggle
         document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
             document.querySelector('.main-nav').classList.toggle('show');
         });
 
-        // Inicializar primera slide
-        showSlide(0);
+        // Click en placeholders de video para mostrar instrucciones
+        document.querySelectorAll('.video-placeholder').forEach(placeholder => {
+            placeholder.addEventListener('click', function () {
+                const videoId = this.dataset.videoId;
+                alert(`Para agregar un video a "${videoId}":\n\n1. Edita historia.html\n2. Busca el placeholder con data-video-id="${videoId}"\n3. Reemplaza el contenido por un iframe de YouTube o tu video`);
+            });
+        });
     </script>
-    <!-- EXTERNAL SCRIPTS -->
-    <script src="js/slideshow.js"></script>
 </body>
 
 </html>

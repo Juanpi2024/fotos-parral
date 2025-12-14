@@ -249,6 +249,78 @@ header a.active {
     letter-spacing: 2px;
 }
 
+/* ============================================
+   HERO TITLE DUAL - Premium Style
+   Primera palabra: Blanco Serif Elegante
+   Segunda palabra: Oro Antiguo (Accent)
+   ============================================ */
+.hero-title-dual {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.hero-title-dual .title-white {
+    color: #FFFFFF;
+    font-style: italic;
+    font-weight: 400;
+    display: block;
+    margin-bottom: 0.1em;
+}
+
+.hero-title-dual .title-gold {
+    color: var(--accent-color, #C5A059);
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0.25em;
+}
+
+/* Variante inline (ambas palabras en la misma línea) */
+.hero-title-dual.inline .title-white,
+.hero-title-dual.inline .title-gold {
+    display: inline;
+}
+
+.hero-title-dual.inline .title-white {
+    margin-bottom: 0;
+    margin-right: 0.3em;
+}
+
+/* Animación de entrada */
+.hero-title-dual {
+    animation: heroTitleFadeIn 1.2s ease-out;
+}
+
+@keyframes heroTitleFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+        letter-spacing: 0.3em;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        letter-spacing: 0.15em;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-title-dual {
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
+        letter-spacing: 0.1em;
+    }
+    
+    .hero-title-dual .title-gold {
+        letter-spacing: 0.15em;
+    }
+}
+
 .hero p {
     font-size: 1.25rem;
     max-width: 600px;
