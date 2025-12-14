@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turismo y Agenda – Archivos en Movimiento</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Merriweather:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Estilos específicos para Turismo */
+
+        /* Grid de Atractivos */
+        .turismo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .atractivo-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .atractivo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .atractivo-img-container {
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .atractivo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .atractivo-card:hover .atractivo-img {
+            transform: scale(1.1);
+        }
+
+        .atractivo-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(26, 26, 26, 0.9);
+            color: var(--accent-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .atractivo-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .atractivo-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+        }
+
+        .atractivo-desc {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        .atractivo-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: #888;
+            padding-top: 1rem;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        /* Sección Agenda */
+        .agenda-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+
+        .agenda-event {
+            display: flex;
+            gap: 1.5rem;
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--accent-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+            transition: transform 0.2s ease;
+        }
+
+        .agenda-event:hover {
+            transform: translateX(5px);
+        }
+
+        .event-date {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-width: 80px;
+            text-align: center;
+            background: #fcfaf7;
+            padding: 0.5rem;
+            border-radius: 6px;
+        }
+
+        .event-day {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            line-height: 1;
+        }
+
+        .event-month {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: #888;
+            letter-spacing: 1px;
+        }
+
+        .event-details h4 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+        }
+
+        .event-details p {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 0;
+        }
+
+        /* Banner Suscripción */
+        .newsletter-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            border-radius: 16px;
+            padding: 3rem;
+            color: #fff;
+            text-align: center;
+            margin-top: 3rem;
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .newsletter-section::before {
+            content: '✉️';
+            position: absolute;
+            font-size: 15rem;
+            opacity: 0.05;
+            right: -2rem;
+            bottom: -5rem;
+            transform: rotate(-15deg);
+        }
+
+        .newsletter-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+            max-width: 600px;
+            margin: 2rem auto 0;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 1rem;
+            border-radius: 6px;
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-family: 'Lato', sans-serif;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .newsletter-input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .newsletter-input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-subscribe {
+            background: var(--accent-color);
+            color: #1a1a1a;
+            border: none;
+            padding: 0 2rem;
+            border-radius: 6px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-subscribe:hover {
+            background: #fff;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .agenda-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo-area">
+                <h1><a href="index.html">Archivos en Movimiento</a></h1>
+                <p class="subtitle">Patrimonio Vivo de Parral</p>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="relatos.html">Relatos</a></li>
+                    <li><a href="educacion.html">Educación</a></li>
+                    <li><a href="historia.html">Historia</a></li>
+                    <li><a href="mapa.html">Mapa</a></li>
+                    <li><a href="turismo.html" class="active">Turismo</a></li>
+                    <li><a href="participa.html" class="btn-nav">¡Participa!</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Usando el mismo estilo de Hero que las otras secciones -->
+    <section class="hero"
+        style="background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%); padding: 4rem 1rem 3rem; min-height: auto;">
+        <div class="container" style="text-align: center;">
+            <h2 class="hero-title-dual inline">
+                <span class="title-white">Turismo y</span>
+                <span class="title-gold">Agenda</span>
+            </h2>
+            <p style="color: rgba(255,255,255,0.7); margin-top: 1rem;">Descubre los encantos de nuestra zona y no te
+                pierdas ningún evento</p>
+        </div>
+    </section>
+
+    <!-- ATRACTIVOS TURÍSTICOS -->
+    <section class="container" style="padding: 4rem 1rem;">
+        <h3 class="section-title">Destinos Imperdibles</h3>
+        <p class="section-subtitle" style="margin-bottom: 3rem;">Naturaleza, aguas termales y tradiciones rurales.</p>
+
+        <div class="turismo-grid">
+            <!-- Card 1 -->
+            <div class="atractivo-card">
+                <div class="atractivo-img-container">
+                    <img src="images/ecos-naturaleza.jpg" alt="Embalse Digua" class="atractivo-img">
+                    <span class="atractivo-badge">Naturaleza</span>
+                </div>
+                <div class="atractivo-body">
+                    <h4 class="atractivo-title">Embalse Digua</h4>
+                    <p class="atractivo-desc">Un espejo de agua ideal para la pesca deportiva y deportes náuticos.
+                        Rodeado de bosques nativos, ofrece zonas de camping y senderismo familiar.</p>
+                    <div class="atractivo-meta">
+                        <span>📍 A 35 km de Parral</span>
+                        <span>🚗 Acceso todo el año</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="atractivo-card">
+                <div class="atractivo-img-container">
+                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db48e?q=80&w=1000&auto=format&fit=crop"
+                        alt="Termas de Catillo" class="atractivo-img">
+                    <span class="atractivo-badge">Bienestar</span>
+                </div>
+                <div class="atractivo-body">
+                    <h4 class="atractivo-title">Termas de Catillo</h4>
+                    <p class="atractivo-desc">Aguas curativas conocidas desde tiempos precolombinos. Un oasis de relajo
+                        con moderna infraestructura hotelera y un entorno natural privilegiado.</p>
+                    <div class="atractivo-meta">
+                        <span>📍 A 28 km de Parral</span>
+                        <span>🧖‍♂️ Spa & Hotel</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="atractivo-card">
+                <div class="atractivo-img-container">
+                    <img src="images/slider-tren.jpg" alt="Centro Histórico" class="atractivo-img">
+                    <span class="atractivo-badge">Urbano</span>
+                </div>
+                <div class="atractivo-body">
+                    <h4 class="atractivo-title">Ruta Patrimonial Urbana</h4>
+                    <p class="atractivo-desc">Recorre el Casco Histórico de Parral, desde la Plaza de Armas hasta la
+                        Estación de Ferrocarriles, pasando por el Teatro Municipal y la casa de Neruda.</p>
+                    <div class="atractivo-meta">
+                        <span>📍 Centro Ciudad</span>
+                        <span>🚶‍♂️ Recorrido a pie</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- AGENDA Y SUSCRIPCIÓN -->
+        <h3 class="section-title">Calendario de Actividades</h3>
+
+        <div class="agenda-layout">
+
+            <!-- Lista de Eventos -->
+            <div class="agenda-list">
+                <div class="agenda-event">
+                    <div class="event-date">
+                        <span class="event-day">15</span>
+                        <span class="event-month">Feb</span>
+                    </div>
+                    <div class="event-details">
+                        <h4>Semana Parralina 2026</h4>
+                        <p>Plaza de Armas. Música en vivo, feria de artesanos, gastronomía típica y elección de reina.
+                            Entrada liberada.</p>
+                    </div>
+                </div>
+
+                <div class="agenda-event">
+                    <div class="event-date">
+                        <span class="event-day">02</span>
+                        <span class="event-month">Mar</span>
+                    </div>
+                    <div class="event-details">
+                        <h4>Fiesta de la Vendimia</h4>
+                        <p>Sector Rural. Degustación de los mejores vinos de la zona, pisada de uva, juegos
+                            tradicionales y folclore.</p>
+                    </div>
+                </div>
+
+                <div class="agenda-event">
+                    <div class="event-date">
+                        <span class="event-day">12</span>
+                        <span class="event-month">Jul</span>
+                    </div>
+                    <div class="event-details">
+                        <h4>Natalicio de Pablo Neruda</h4>
+                        <p>Teatro Municipal. Acto conmemorativo, lectura de poesía y presentación de la Orquesta
+                            Juvenil.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar / Newsletter -->
+            <div class="turismo-sidebar">
+                <div class="newsletter-section">
+                    <h4 class="newsletter-title">¡Mantente Informado!</h4>
+                    <p>Recibe nuestra cartelera mensual y ofertas turísticas directamente en tu correo. </p>
+
+                    <form class="newsletter-form"
+                        onsubmit="event.preventDefault(); alert('¡Gracias por suscribirte! Te enviaremos el calendario próximamente.');">
+                        <input type="email" class="newsletter-input" placeholder="Tu correo electrónico" required>
+                        <button type="submit" class="btn-subscribe">Suscribirme</button>
+                    </form>
+                    <p style="font-size: 0.8rem; margin-top: 1rem; opacity: 0.6;">Sin spam, solo cultura y panoramas.
+                    </p>
+                </div>
+
+                <div
+                    style="background: #FCFAF7; padding: 2rem; border-radius: 12px; margin-top: 2rem; border: 1px solid #eee;">
+                    <h4 style="font-family: 'Merriweather', serif; color: var(--accent-color); margin-bottom: 1rem;">ℹ️
+                        Oficina de Turismo</h4>
+                    <ul style="list-style: none; padding: 0; font-size: 0.9rem; color: #666;">
+                        <li style="margin-bottom: 0.5rem;">📍 Plaza de Armas s/n</li>
+                        <li style="margin-bottom: 0.5rem;">📞 +56 73 246 XXXX</li>
+                        <li>📧 turismo@parral.cl</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Archivos en Movimiento. Patrimonio Vivo de Parral.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
+            document.querySelector('.main-nav').classList.toggle('show');
+        });
+    </script>
+</body>
+
+</html>
