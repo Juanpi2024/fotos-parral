@@ -47,15 +47,43 @@
                 <span class="title-white">Galería</span>
                 <span class="title-gold">Digital</span>
             </h2>
-            <p style="color: rgba(255,255,255,0.7); margin-top: 1rem;">Revive momentos históricos de Parral</p>
+            <p style="color: rgba(255,255,255,0.7); margin-top: 1rem;">
+                Revive momentos históricos de Parral.
+                <a href="metodologia.html"
+                    style="color: var(--accent-color); text-decoration: underline; margin-left: 0.5rem;">Conoce nuestra
+                    metodología ética.</a>
+            </p>
         </div>
     </section>
 
     <section class="container" style="padding: 4rem 1rem;">
-        <div class="grid-galeria">
+        <!-- Buscador Inteligente -->
+        <div class="search-container" style="margin-bottom: 3rem; text-align: center;">
+            <div style="max-width: 600px; margin: 0 auto; position: relative;">
+                <input type="text" id="smartSearch"
+                    placeholder="Busca por temas (ej: 'desfiles', 'campo', 'iglesia')..."
+                    style="width: 100%; padding: 1rem 3rem 1rem 1.5rem; border: 1px solid var(--border-color); border-radius: 30px; font-family: var(--font-body); font-size: 1rem; box-shadow: var(--card-shadow);">
+                <span
+                    style="position: absolute; right: 1.5rem; top: 50%; transform: translateY(-50%); opacity: 0.5;">🔍</span>
+            </div>
+            <div class="search-tags"
+                style="margin-top: 1rem; display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
+                <span class="search-tag" data-target="tren"
+                    style="background: var(--card-bg-warm); padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; cursor: pointer; border: 1px solid var(--border-color);">#Tren</span>
+                <span class="search-tag" data-target="plaza"
+                    style="background: var(--card-bg-warm); padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; cursor: pointer; border: 1px solid var(--border-color);">#Plaza</span>
+                <span class="search-tag" data-target="comercio"
+                    style="background: var(--card-bg-warm); padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; cursor: pointer; border: 1px solid var(--border-color);">#Comercio</span>
+                <span class="search-tag" data-target="campo"
+                    style="background: var(--card-bg-warm); padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; cursor: pointer; border: 1px solid var(--border-color);">#Campo</span>
+            </div>
+        </div>
+
+        <div class="grid-galeria" id="galleryGrid">
             <!-- Fila 1 -->
-            <div class="card-foto">
+            <div class="card-foto" data-tags="avenida buenos aires calle transito">
                 <div class="card-foto-img-container">
+                    <span class="heritage-badge badge-original">Archivo Original</span>
                     <img src="img/bajada-original.png" alt="Bajada Buenos Aires" loading="lazy" width="600"
                         height="375">
                 </div>
@@ -65,7 +93,7 @@
                     <a href="detalle-bajada.html" class="btn-card">Ver Colección</a>
                 </div>
             </div>
-            <div class="card-foto">
+            <div class="card-foto" data-tags="comercio tienda negocios compras economia">
                 <div class="card-foto-img-container">
                     <img src="img/locales-original.jpg" alt="Locales Comerciales de Siempre" loading="lazy" width="600"
                         height="375">
@@ -76,8 +104,9 @@
                     <a href="detalle-locales.html" class="btn-card">Ver Colección</a>
                 </div>
             </div>
-            <div class="card-foto">
+            <div class="card-foto" data-tags="plaza civico centro monumento desfiles">
                 <div class="card-foto-img-container">
+                    <span class="heritage-badge badge-restored">Restauración IA</span>
                     <img src="img/plaza-original.jpg" alt="Plaza de Armas" loading="lazy" width="600" height="375">
                 </div>
                 <div class="card-foto-content">
@@ -88,6 +117,7 @@
             </div>
             <div class="card-foto">
                 <div class="card-foto-img-container">
+                    <span class="heritage-badge badge-original">Archivo Original</span>
                     <img src="images/parral-bomberos-1.jpg" alt="Bomberos de Parral" loading="lazy" width="600"
                         height="375">
                 </div>
@@ -100,7 +130,7 @@
             <div class="card-foto">
                 <div class="card-foto-img-container">
                     <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80"
-                        alt="Escuela">
+                        alt="Escuela" loading="lazy" width="600" height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Escuela de Niñas</h3>
@@ -133,7 +163,7 @@
             <div class="card-foto">
                 <div class="card-foto-img-container">
                     <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80"
-                        alt="Libro">
+                        alt="Libro" loading="lazy" width="600" height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Historia y Materiales</h3>
@@ -144,7 +174,7 @@
             <div class="card-foto">
                 <div class="card-foto-img-container">
                     <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80"
-                        alt="Retrato">
+                        alt="Retrato" loading="lazy" width="600" height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Don Chaca</h3>
@@ -155,7 +185,7 @@
             <div class="card-foto">
                 <div class="card-foto-img-container">
                     <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=600&q=80"
-                        alt="Acción">
+                        alt="Acción" loading="lazy" width="600" height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Don Chaca en Acción</h3>
@@ -168,7 +198,7 @@
             <div class="card-foto">
                 <div class="card-foto-img-container">
                     <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=600&q=80"
-                        alt="Tren">
+                        alt="Tren" loading="lazy" width="600" height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Estación de Trenes</h3>
@@ -179,7 +209,7 @@
             <div class="card-foto">
                 <div class="card-foto-img-container">
                     <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=600&q=80"
-                        alt="Mercado">
+                        alt="Mercado" loading="lazy" width="600" height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Mercado Municipal</h3>
@@ -190,7 +220,7 @@
             <div class="card-foto">
                 <div class="card-foto-img-container">
                     <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=600&q=80"
-                        alt="Vendimia">
+                        alt="Vendimia" loading="lazy" width="600" height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Fiesta de la Vendimia</h3>
@@ -201,7 +231,7 @@
             <div class="card-foto">
                 <div class="card-foto-img-container">
                     <img src="https://images.unsplash.com/photo-1585822765504-2072381e4289?auto=format&fit=crop&w=600&q=80"
-                        alt="Terremoto">
+                        alt="Terremoto" loading="lazy" width="600" height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Terremoto de 1939</h3>
@@ -214,7 +244,7 @@
             <div class="card-foto">
                 <div class="card-foto-img-container">
                     <img src="https://images.unsplash.com/photo-1594498653385-d5172c532c00?auto=format&fit=crop&w=600&q=80"
-                        alt="Construcción">
+                        alt="Construcción" loading="lazy" width="600" height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Reconstrucción 2010</h3>
@@ -225,7 +255,7 @@
             <div class="card-foto">
                 <div class="card-foto-img-container">
                     <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=600&q=80"
-                        alt="Deportes">
+                        alt="Deportes" loading="lazy" width="600" height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Clubes Deportivos</h3>
@@ -236,7 +266,7 @@
             <div class="card-foto">
                 <div class="card-foto-img-container">
                     <img src="https://images.unsplash.com/photo-1545989253-02cc26577f88?auto=format&fit=crop&w=600&q=80"
-                        alt="Religión">
+                        alt="Religión" loading="lazy" width="600" height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Procesiones</h3>
@@ -247,7 +277,7 @@
             <div class="card-foto">
                 <div class="card-foto-img-container">
                     <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=600&q=80"
-                        alt="Banda">
+                        alt="Banda" loading="lazy" width="600" height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Banda Instrumental</h3>
@@ -260,7 +290,7 @@
             <div class="card-foto">
                 <div class="card-foto-img-container">
                     <img src="https://images.unsplash.com/photo-1532153354457-5fbe1a3bb0b4?auto=format&fit=crop&w=600&q=80"
-                        alt="Desfile">
+                        alt="Desfile" loading="lazy" width="600" height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Desfiles Patrios</h3>
@@ -307,6 +337,11 @@
     <footer>
         <div class="container">
             <p>&copy; 2025 Archivos en Movimiento. Patrimonio Vivo de Parral.</p>
+            <p style="font-size: 0.9rem;">
+                <a href="metodologia.html" style="color: var(--accent-color); text-decoration: none;">Metodología
+                    Ética</a> |
+                Modelo replicable para la gestión cultural municipal.
+            </p>
         </div>
     </footer>
 
@@ -314,6 +349,38 @@
         // Mobile Menu Toggle
         document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
             document.querySelector('.main-nav').classList.toggle('show');
+        });
+
+        // Search Logic
+        const smartSearch = document.getElementById('smartSearch');
+        const cards = document.querySelectorAll('.card-foto');
+        const searchTags = document.querySelectorAll('.search-tag');
+
+        function filterCards(query) {
+            const q = query.toLowerCase();
+            cards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const desc = card.querySelector('p').textContent.toLowerCase();
+                const tags = card.getAttribute('data-tags') || "";
+
+                if (title.includes(q) || desc.includes(q) || tags.includes(q)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        smartSearch.addEventListener('input', (e) => {
+            filterCards(e.target.value);
+        });
+
+        searchTags.forEach(tag => {
+            tag.addEventListener('click', () => {
+                const target = tag.getAttribute('data-target');
+                smartSearch.value = target;
+                filterCards(target);
+            });
         });
     </script>
 </body>

@@ -147,10 +147,46 @@
         </div>
     </section>
 
+    <!-- Chatbot Widget -->
+    <div class="chat-widget">
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <img src="images/ecos-neruda-nace.jpg" alt="Pablo Neruda Avatar" class="chat-avatar">
+                <div class="chat-header-info">
+                    <h4>Pablo Neruda</h4>
+                    <span>Interlocutor Virtual</span>
+                </div>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    Hola, soy Pablo. Nací en esta tierra de trenes y lluvia. ¿Qué te gustaría saber sobre mi infancia en
+                    Parral?
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Pregúntale a Pablo...">
+                <button class="chat-send-btn" id="sendBtn" aria-label="Enviar mensaje">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="chat-bubble" id="chatBubble">
+            <span>✍️</span>
+        </div>
+    </div>
+
     <footer>
         <div class="container">
             <p>&copy; 2025 Archivos en Movimiento. Patrimonio Vivo de Parral.</p>
-            <p style="font-size: 0.9rem;">Modelo replicable para la gestión cultural municipal.</p>
+            <p style="font-size: 0.9rem;">
+                <a href="metodologia.html" style="color: var(--accent-color); text-decoration: none;">Metodología
+                    Ética</a> |
+                Modelo replicable para la gestión cultural municipal.
+            </p>
         </div>
     </footer>
     <!-- Main JavaScript File -->
@@ -160,6 +196,61 @@
         // Mobile Menu Toggle
         document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
             document.querySelector('.main-nav').classList.toggle('show');
+        });
+
+        // Chatbot Logic
+        const chatBubble = document.getElementById('chatBubble');
+        const chatWindow = document.getElementById('chatWindow');
+        const chatMessages = document.getElementById('chatMessages');
+        const chatInput = document.getElementById('chatInput');
+        const sendBtn = document.getElementById('sendBtn');
+
+        chatBubble.addEventListener('click', () => {
+            chatWindow.classList.toggle('show');
+        });
+
+        function addMessage(text, side) {
+            const msg = document.createElement('div');
+            msg.className = `message ${side}`;
+            msg.textContent = text;
+            chatMessages.appendChild(msg);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function handleBotResponse(input) {
+            const query = input.toLowerCase();
+            let response = "Es un misterio que el tiempo guarda... pregúntame sobre mi nacimiento en Parral o mi relación con el sur.";
+
+            if (query.includes("hola") || query.includes("buenos días")) {
+                response = "¡Hola! Mis versos saludan a la gente de mi pueblo natal.";
+            } else if (query.includes("parral")) {
+                response = "Parral es mi cuna olvidada. Nací aquí un 12 de julio de 1904, entre el aroma del trigo y el ruido de las locomotoras.";
+            } else if (query.includes("poema") || query.includes("versos")) {
+                response = "¿Quieres que te recite algo? 'Puedo escribir los versos más tristes esta noche...' aunque prefiero hablar de la luz de mi tierra.";
+            } else if (query.includes("guaton loyola")) {
+                response = "Ah, el Guatón Loyola... un personaje que encarna la fiesta y el rodeo, tan típico de nuestra identidad maulina.";
+            } else if (query.includes("quien eres") || query.includes("nombre")) {
+                response = "Soy Neftalí Reyes, aunque el mundo me conoció como Pablo Neruda. El poeta que siempre vuelve a sus raíces.";
+            }
+
+            setTimeout(() => {
+                addMessage(response, 'bot');
+            }, 800);
+        }
+
+        sendBtn.addEventListener('click', () => {
+            const text = chatInput.value.trim();
+            if (text) {
+                addMessage(text, 'user');
+                chatInput.value = '';
+                handleBotResponse(text);
+            }
+        });
+
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendBtn.click();
+            }
         });
     </script>
 </body>

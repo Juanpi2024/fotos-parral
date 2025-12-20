@@ -56,6 +56,7 @@
             <!-- Foto 1: Plaza Original -->
             <div class="card-foto">
                 <div class="card-foto-img-container">
+                    <span class="heritage-badge badge-original">Archivo Original</span>
                     <img src="img/plaza-original.jpg" alt="Plaza de Armas - Foto Original">
                 </div>
                 <div class="card-foto-content">
@@ -67,6 +68,7 @@
             <!-- Foto 2: Plaza Colorizada -->
             <div class="card-foto">
                 <div class="card-foto-img-container">
+                    <span class="heritage-badge badge-restored">Colorización IA</span>
                     <img src="img/plaza-color.png" alt="Plaza de Armas - Colorizada">
                 </div>
                 <div class="card-foto-content">
@@ -78,6 +80,7 @@
             <!-- Foto 3: Plaza Restaurada -->
             <div class="card-foto">
                 <div class="card-foto-img-container">
+                    <span class="heritage-badge badge-ia">Interpretación IA</span>
                     <img src="img/plaza-restaurada.png" alt="Plaza de Armas - Restaurada">
                 </div>
                 <div class="card-foto-content">
@@ -117,9 +120,41 @@
         </div>
     </section>
 
+    <section class="container" style="padding: 4rem 1rem; border-top: 1px solid var(--border-color);">
+        <div
+            style="background: var(--card-bg-warm); padding: 2rem; border-radius: 12px; display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; border: 1px solid var(--card-border-warm);">
+            <div style="flex: 1; min-width: 300px;">
+                <h3 style="font-family: var(--font-heading); color: var(--accent-warm); margin-bottom: 1rem;">📍
+                    Patrimonio en Terreno</h3>
+                <p>Estás viendo el archivo histórico de la <strong>Plaza de Armas de Parral</strong>. Este punto es
+                    parte fundamental de nuestra ruta de códigos QR instalados en la ciudad.</p>
+                <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="mapa.html" class="btn-card"
+                        style="margin: 0; background: var(--primary-color); color: white;">Ver en el Mapa
+                        Interactivo</a>
+                    <span
+                        style="font-size: 0.85rem; color: var(--text-light); align-self: center;"><strong>Referencia:</strong>
+                        Av. Aníbal Pinto con Dieciocho de Septiembre.</span>
+                </div>
+            </div>
+            <div
+                style="width: 120px; text-align: center; border-left: 1px solid var(--border-color); padding-left: 2rem; display: flex; flex-direction: column; align-items: center;">
+                <div
+                    style="width: 80px; height: 80px; background: #333; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 0.7rem;">
+                    QR-CODE</div>
+                <p style="font-size: 0.7rem; margin-top: 0.5rem; color: var(--text-light);">Cód: PARRAL-01</p>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="container">
             <p>&copy; 2025 Archivos en Movimiento. Patrimonio Vivo de Parral.</p>
+            <p style="font-size: 0.9rem;">
+                <a href="metodologia.html" style="color: var(--accent-color); text-decoration: none;">Metodología
+                    Ética</a> |
+                Modelo replicable para la gestión cultural municipal.
+            </p>
         </div>
     </footer>
 

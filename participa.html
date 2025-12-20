@@ -8,9 +8,75 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Merriweather:wght@300;400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg-warm);
+            padding: 3rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--card-radius);
+            box-shadow: var(--card-shadow);
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            background: var(--white);
+            transition: var(--transition-fast);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.2);
+        }
+
+        .file-upload-zone {
+            border: 2px dashed var(--accent-color);
+            padding: 3rem;
+            text-align: center;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition-fast);
+            background: rgba(197, 160, 89, 0.05);
+        }
+
+        .file-upload-zone:hover {
+            background: rgba(197, 160, 89, 0.1);
+            transform: scale(1.01);
+        }
+
+        .upload-icon {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+    </style>
 </head>
 
 <body>
@@ -40,27 +106,98 @@
         </div>
     </header>
 
-    <section class="hero" style="padding: 4rem 0; min-height: 40vh;">
+    <section class="hero hero-detalle"
+        style="height: 40vh; min-height: 300px; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('img/plaza-original.jpg'); background-size: cover; background-position: center;">
         <div class="container">
             <h2 class="hero-title-dual">
-                <span class="title-white">Comparte con</span>
-                <span class="title-gold">Nosotros</span>
+                <span class="title-white">Comparte tu</span>
+                <span class="title-gold">Memoria</span>
             </h2>
-            <p>Tu memoria es parte de nuestra historia. Envíanos tus aportes.</p>
+            <p style="color: white; opacity: 0.9;">Tu legado es la base de nuestra historia común.</p>
         </div>
     </section>
 
-    <section class="container" style="padding: 4rem 1rem; text-align: center;">
-        <div class="card-testimonio" style="max-width: 600px; margin: 0 auto;">
-            <h3>¿Tienes fotos antiguas o historias?</h3>
-            <p>Estamos recopilando material para preservar el patrimonio de Parral.</p>
-            <a href="mailto:contacto@archivosparral.cl" class="btn-principal">Enviar por Correo</a>
+    <main class="container" style="padding: 4rem 1rem; text-align: center;">
+        <div class="form-container">
+            <h3 style="margin-bottom: 2rem; font-family: var(--font-heading); font-size: 2rem;">Portal de Colaboración
+            </h3>
+            <p style="margin-bottom: 3rem; color: var(--text-light);">Usa este formulario para enviarnos fotografías,
+                documentos o relatos orales. Nuestro equipo curatorial revisará tu aporte para incluirlo en el archivo
+                municipal.</p>
+
+            <form id="crowdsourcingForm">
+                <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div>
+                        <label for="name">Nombre Completo</label>
+                        <input type="text" id="name" name="name" placeholder="Ej: Juan Pérez" required>
+                    </div>
+                    <div>
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="type">Tipo de Aporte</label>
+                    <select id="type" name="type">
+                        <option value="foto">Fotografía Histórica</option>
+                        <option value="relato">Relato Oral / Escrito</option>
+                        <option value="documento">Documento de Época</option>
+                        <option value="multiple">Varios / Colección</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="title">Título del Aporte</label>
+                    <input type="text" id="title" name="title" placeholder="Ej: Mi abuelo en la antigua estación"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="decade">Década Estimada</label>
+                    <select id="decade" name="decade">
+                        <option value="1900">1900 - 1920</option>
+                        <option value="1920">1920 - 1940</option>
+                        <option value="1940">1940 - 1960</option>
+                        <option value="1960">1960 - 1980</option>
+                        <option value="1980">1980 - 2000</option>
+                        <option value="actual">Después de 2000</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="story">La Historia detrás del aporte</label>
+                    <textarea id="story" name="story" rows="4"
+                        placeholder="Cuéntanos el contexto, personajes o lugar..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Archivos (Máx 10MB)</label>
+                    <div class="file-upload-zone" onclick="document.getElementById('fileInput').click()">
+                        <span class="upload-icon">📸</span>
+                        <p>Haz clic para subir o arrastra tus archivos aquí</p>
+                        <input type="file" id="fileInput" style="display: none;" multiple>
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem;">
+                    <button type="submit" class="btn-principal" style="width: 100%; cursor: pointer;">Enviar a
+                        Curaduría</button>
+                    <p style="font-size: 0.8rem; margin-top: 1rem; color: var(--text-light);">Al enviar, aceptas que el
+                        municipio pueda utilizar este material con fines culturales y educativos.</p>
+                </div>
+            </form>
         </div>
-    </section>
+    </main>
 
     <footer>
         <div class="container">
             <p>&copy; 2025 Archivos en Movimiento. Patrimonio Vivo de Parral.</p>
+            <p style="font-size: 0.9rem;">
+                <a href="metodologia.html" style="color: var(--accent-color); text-decoration: none;">Metodología
+                    Ética</a> |
+                Modelo replicable para la gestión cultural municipal.
+            </p>
         </div>
     </footer>
 
@@ -68,6 +205,13 @@
         // Mobile Menu Toggle
         document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
             document.querySelector('.main-nav').classList.toggle('show');
+        });
+
+        // Form Submission Simulation
+        document.getElementById('crowdsourcingForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('¡Gracias por tu aporte! Tu envío ha sido recibido y entrará en proceso de curaduría digital.');
+            this.reset();
         });
     </script>
 </body>
