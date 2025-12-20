@@ -8,5 +8,131 @@
         </p>
     </div>
 </footer>
+
+<!-- Global Chatbot Widget -->
+<div class="chat-widget">
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            <img src="images/ecos-neruda-nace.jpg" alt="Guía Cultural" class="chat-avatar">
+            <div class="chat-header-info">
+                <h4>Guía Cultural Parral</h4>
+                <span>Inteligencia Patrimonial</span>
+            </div>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot">
+                ¡Hola! Soy tu guía digital de Parral. ¿En qué puedo ayudarte hoy? Puedes preguntarme por Neruda, la
+                galería, o lugares para visitar.
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" class="chat-input" id="chatInput" placeholder="Escribe tu pregunta...">
+            <button class="chat-send-btn" id="sendBtn" aria-label="Enviar mensaje">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div class="chat-bubble" id="chatBubble">
+        <span>💬</span>
+    </div>
+</div>
+
 <!-- Main JavaScript File -->
 <script src="{{ '/js/home.js' | relative_url }}"></script>
+
+<script>
+    // Global Chatbot Logic
+    (function () {
+        const chatBubble = document.getElementById('chatBubble');
+        const chatWindow = document.getElementById('chatWindow');
+        const chatMessages = document.getElementById('chatMessages');
+        const chatInput = document.getElementById('chatInput');
+        const sendBtn = document.getElementById('sendBtn');
+
+        if (!chatBubble) return;
+
+        chatBubble.addEventListener('click', () => {
+            chatWindow.classList.toggle('show');
+        });
+
+        function addMessage(text, side, link = null, linkText = null) {
+            const msg = document.createElement('div');
+            msg.className = `message ${side}`;
+            msg.textContent = text;
+
+            if (link) {
+                const a = document.createElement('a');
+                a.href = link;
+                a.className = 'chat-response-link';
+                a.textContent = linkText || 'Saber más';
+                msg.appendChild(a);
+            }
+
+            chatMessages.appendChild(msg);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        const knowledgeBase = [
+            {
+                keys: ['neruda', 'pablo', 'neftalí', 'poeta'],
+                text: 'Pablo Neruda nació en Parral el 12 de julio de 1904. Su legado es el alma de nuestra cultura.',
+                link: 'relatos.html',
+                linkText: 'Ver Relatos de Neruda'
+            },
+            {
+                keys: ['galeria', 'fotos', 'imágenes', 'ia', 'restaurado'],
+                text: 'Nuestra galería digital usa IA para restaurar la memoria visual de Parral.',
+                link: 'galeria.html',
+                linkText: 'Explorar Galería'
+            },
+            {
+                keys: ['mapa', 'donde', 'hitos', 'ubicacion'],
+                text: 'Explora los hitos georreferenciados en nuestro mapa interactivo.',
+                link: 'mapa.html',
+                linkText: 'Ver Mapa'
+            },
+            {
+                keys: ['guatón', 'loyola'],
+                text: 'El Guatón Loyola es un ícono de nuestras tradiciones maulinas.',
+                link: 'relatos.html',
+                linkText: 'Leer historia'
+            },
+            {
+                keys: ['terremoto', '1939'],
+                text: 'El terremoto de 1939 transformó nuestra arquitectura para siempre.',
+                link: 'galeria.html',
+                linkText: 'Ver fotos históricas'
+            }
+        ];
+
+        function handleBotResponse(input) {
+            const query = input.toLowerCase();
+            let match = knowledgeBase.find(item => item.keys.some(key => query.includes(key)));
+
+            setTimeout(() => {
+                if (match) {
+                    addMessage(match.text, 'bot', match.link, match.linkText);
+                } else {
+                    addMessage('No tengo esa información exacta, pero puedes buscar en nuestras secciones principales.', 'bot');
+                }
+            }, 600);
+        }
+
+        sendBtn.addEventListener('click', () => {
+            const text = chatInput.value.trim();
+            if (text) {
+                addMessage(text, 'user');
+                chatInput.value = '';
+                handleBotResponse(text);
+            }
+        });
+
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendBtn.click();
+        });
+    })();
+</script>
