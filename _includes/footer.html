@@ -128,9 +128,15 @@
             }
         ];
 
+        function normalizeText(text) {
+            return text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        }
+
         function handleBotResponse(input) {
-            const query = input.toLowerCase();
-            let match = knowledgeBase.find(item => item.keys.some(key => query.includes(key)));
+            const normalizedQuery = normalizeText(input);
+            let match = knowledgeBase.find(item =>
+                item.keys.some(key => normalizedQuery.includes(normalizeText(key)))
+            );
 
             setTimeout(() => {
                 if (match) {
