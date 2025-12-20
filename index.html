@@ -112,6 +112,26 @@
 
             <hr class="section-divider">
 
+            <!-- Chatbot Cultural Parral -->
+            <section class="chatbot-banner">
+                <div class="chatbot-banner-content">
+                    <h2>Chatbot Cultural Parral</h2>
+                    <p>Soy tu guía digital. Pregúntame sobre la historia, lugares o qué encontrar en este sitio.</p>
+                    <div class="chatbot-banner-input-group">
+                        <input type="text" id="bannerChatInput" class="chatbot-banner-input"
+                            placeholder="Ej: 'Háblame de Neruda' o '¿Dónde está la galería?'">
+                        <button id="bannerChatBtn" class="chatbot-banner-btn">Preguntar</button>
+                    </div>
+                    <div id="bannerChatResponse" class="chatbot-banner-response">
+                        <h4 id="responseTitle">Respuesta del Guía</h4>
+                        <p id="responseText"></p>
+                        <a href="#" id="responseLink">Saber más</a>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="section-divider">
+
             <!-- Tarjetas de navegación estilo museo -->
             <div class="grid-galeria">
                 <div class="card-capsule">
@@ -160,6 +180,107 @@
         </div>
     </footer>
     <script src="js/home.js"></script>
+    <script>
+        // Chatbot Banner Logic
+        const bannerInput = document.getElementById('bannerChatInput');
+        const bannerBtn = document.getElementById('bannerChatBtn');
+        const bannerResponse = document.getElementById('bannerChatResponse');
+        const responseTitle = document.getElementById('responseTitle');
+        const responseText = document.getElementById('responseText');
+        const responseLink = document.getElementById('responseLink');
+
+        const knowledgeBase = [
+            {
+                keys: ['neruda', 'pablo', 'neftalí', 'poeta'],
+                title: 'Pablo Neruda en Parral',
+                text: 'Pablo Neruda (Neftalí Reyes) nació en Parral el 12 de julio de 1904. Su casa natal es un hito fundamental de nuestra ciudad.',
+                link: 'relatos.html',
+                linkText: 'Ver Relatos de Neruda'
+            },
+            {
+                keys: ['galeria', 'fotos', 'imágenes', 'ia', 'restaurado'],
+                title: 'Galería Digital e IA',
+                text: 'Nuestra galería cuenta con procesos de restauración por IA para fotos icónicas como la Plaza de Armas y la antigua Estación.',
+                link: 'galeria.html',
+                linkText: 'Explorar la Galería'
+            },
+            {
+                keys: ['mapa', 'ubicacion', 'donde', 'hitos', 'georeferenciacion'],
+                title: 'Mapa Patrimonial',
+                text: 'Puedes explorar los puntos históricos georreferenciados de Parral, incluyendo monumentos y sitios de interés.',
+                link: 'mapa.html',
+                linkText: 'Abrir Mapa Continental'
+            },
+            {
+                keys: ['historia', 'linea', 'tiempo', 'hitos', 'fundacion'],
+                title: 'Línea de Tiempo Histórica',
+                text: 'Desde su fundación en 1795, Parral ha sido testigo de grandes cambios. Revisa nuestra cronología interactiva.',
+                link: 'historia.html',
+                linkText: 'Ver Cronología'
+            },
+            {
+                keys: ['turismo', 'termas', 'catillo', 'naturaleza', 'achibueno'],
+                title: 'Turismo y Naturaleza',
+                text: 'Parral es puerta de entrada a maravillas naturales como las Termas de Catillo y el Santuario del Achibueno.',
+                link: 'turismo.html',
+                linkText: 'Ver Guía de Turismo'
+            },
+            {
+                keys: ['educacion', 'colegios', 'estudiantes', 'guias', 'material'],
+                title: 'Recursos Educativos',
+                text: 'Ofrecemos guías descargables e infografías para profesores y alumnos interesados en el patrimonio local.',
+                link: 'educacion.html',
+                linkText: 'Descargar Material'
+            },
+            {
+                keys: ['guatón', 'loyola', 'cueca', 'rodeo'],
+                title: 'El Guatón Loyola',
+                text: '¿Sabías que el famoso Guatón Loyola fue un personaje real? Su historia está íntimamente ligada a las tradiciones de nuestra zona central.',
+                link: 'relatos.html',
+                linkText: 'Leer sobre el Guatón Loyola'
+            },
+            {
+                keys: ['terremoto', '1939', 'desastre', 'reconstruccion'],
+                title: 'El Terremoto de 1939',
+                text: 'El gran sismo de 1939 marcó un antes y un después en la arquitectura de Parral. La ciudad se reconstruyó con fuerza y resiliencia.',
+                link: 'galeria.html',
+                linkText: 'Ver fotos post-terremoto'
+            },
+            {
+                keys: ['estacion', 'tren', 'ferrocarril', 'maquina'],
+                title: 'La Época del Ferrocarril',
+                text: 'Parral fue un nodo vital para el ferrocarril en el sur de Chile. El tren trajo progreso, comercio y conectó a nuestra gente.',
+                link: 'galeria.html',
+                linkText: 'Ver fotos del Ferrocarril'
+            }
+        ];
+
+        function handleQuery() {
+            const query = bannerInput.value.toLowerCase();
+            if (!query) return;
+
+            let match = knowledgeBase.find(item => item.keys.some(key => query.includes(key)));
+
+            if (match) {
+                responseTitle.textContent = match.title;
+                responseText.textContent = match.text;
+                responseLink.href = match.link;
+                responseLink.textContent = match.linkText;
+                bannerResponse.classList.add('show');
+            } else {
+                responseTitle.textContent = 'Guía Cultural Parral';
+                responseText.textContent = 'No tengo la respuesta exacta, pero puedes explorar nuestras secciones de Relatos, Galería o el Mapa para encontrar lo que buscas.';
+                responseLink.href = 'index.html';
+                responseLink.textContent = 'Volver al Inicio';
+                bannerResponse.classList.add('show');
+            }
+        }
+
+        bannerBtn.addEventListener('click', handleQuery);
+        bannerInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') handleQuery();
+        });
+    </script>
 </body>
 
 </html>
