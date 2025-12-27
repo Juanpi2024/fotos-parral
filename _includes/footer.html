@@ -1,11 +1,15 @@
 <footer>
     <div class="container">
         <p>&copy; 2025 Archivos en Movimiento. Patrimonio Vivo de Parral.</p>
-        <p style="font-size: 0.9rem;">
-            <a href="metodologia.html" style="color: var(--accent-color); text-decoration: none;">Metodología Ética</a>
-            |
-            Modelo replicable para la gestión cultural municipal.
-        </p>
+        <nav class="footer-nav" aria-label="Enlaces rápidos">
+            <ul>
+                <li><a href="{{ '/index.html' | relative_url }}">Inicio</a></li>
+                <li><a href="{{ '/galeria.html' | relative_url }}">Galería</a></li>
+                <li><a href="{{ '/relatos.html' | relative_url }}">Relatos</a></li>
+                <li><a href="{{ '/mapa.html' | relative_url }}">Mapa</a></li>
+                <li><a href="{{ '/metodologia.html' | relative_url }}">Metodología</a></li>
+            </ul>
+        </nav>
     </div>
 </footer>
 
@@ -42,7 +46,8 @@
     </div>
 </div>
 
-<!-- Main JavaScript File -->
+<!-- Scripts -->
+<script src="{{ '/js/site-nav.js' | relative_url }}"></script>
 <script src="{{ '/js/home.js' | relative_url }}"></script>
 
 <script>

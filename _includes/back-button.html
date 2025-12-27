@@ -1,0 +1,9 @@
+<div class="back-navigation">
+    <div class="container">
+        <a href="#" class="btn-back"
+            onclick="if(history.length > 1) { history.back(); return false; } else { window.location.href='{{ '/galeria.html' | relative_url }}'; return false; }"
+            aria-label="Volver a la página anterior">
+            <span class="icon">←</span> Volver
+        </a>
+    </div>
+</div>

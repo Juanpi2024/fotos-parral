@@ -28,240 +28,244 @@
 <body>
     {% include header.html %}
 
-    <section class="hero hero-detalle">
-        <div class="container">
-            <h2>Colección: Plaza de Armas</h2>
-            <p>Historia viva del corazón de Parral</p>
-        </div>
-    </section>
+    <main id="main-content">
+        {% include breadcrumbs.html %}
+        {% include back-button.html %}
 
-    <section class="container section-detalle">
-        <div class="back-link-container">
-            <a href="galeria.html" class="back-link">← Volver a la Galería</a>
-        </div>
+        <section class="hero hero-detalle">
+            <div class="container">
+                <h2>Colección: Plaza de Armas</h2>
+                <p>Historia viva del corazón de Parral</p>
+            </div>
+        </section>
 
-        <!-- Galería de Fotos -->
-        <div class="grid-galeria">
-            <!-- Foto 1: Plaza Original -->
-            <div class="card-foto">
-                <div class="card-foto-img-container">
-                    <span class="heritage-badge badge-original">Archivo Original</span>
-                    <img src="optimized/img/plaza-original.webp"
-                        alt="Fotografía histórica de la Plaza de Armas de Parral, archivo original" loading="lazy"
-                        width="600" height="375">
-                </div>
-                <div class="card-foto-content">
-                    <h3>Plaza de Armas Original</h3>
-                    <p>Fotografía histórica en blanco y negro.</p>
-                </div>
+        <section class="container section-detalle">
+            <div class="back-link-container">
+                <a href="galeria.html" class="back-link">← Volver a la Galería</a>
             </div>
 
-            <!-- Foto 2: Plaza Colorizada -->
-            <div class="card-foto">
-                <div class="card-foto-img-container">
-                    <span class="heritage-badge badge-restored">Colorización IA</span>
-                    <img src="optimized/img/plaza-color.webp"
-                        alt="Interpretación a color mediante IA de la Plaza de Armas histórica" loading="lazy"
-                        width="600" height="375">
-                </div>
-                <div class="card-foto-content">
-                    <h3>Plaza de Armas Colorizada</h3>
-                    <p>Versión restaurada con color.</p>
-                </div>
-            </div>
-
-            <!-- Foto 3: Plaza Restaurada -->
-            <div class="card-foto">
-                <div class="card-foto-img-container">
-                    <span class="heritage-badge badge-ia">Interpretación IA</span>
-                    <img src="optimized/img/plaza-restaurada.webp"
-                        alt="Restauración digital completa de la Plaza de Armas de Parral" loading="lazy" width="600"
-                        height="375">
-                </div>
-                <div class="card-foto-content">
-                    <h3>Plaza de Armas Restaurada</h3>
-                    <p>Imagen completamente restaurada.</p>
-                </div>
-            </div>
-
-            <!-- Video Placeholder -->
-            <div class="card-foto video-placeholder-card">
-                <div class="card-foto-img-container video-placeholder-container">
-                    <div class="video-placeholder-content">
-                        <span class="video-placeholder-icon">🎬</span>
-                        <p class="video-placeholder-text">Video próximamente</p>
+            <!-- Galería de Fotos -->
+            <div class="grid-galeria">
+                <!-- Foto 1: Plaza Original -->
+                <div class="card-foto">
+                    <div class="card-foto-img-container">
+                        <span class="heritage-badge badge-original">Archivo Original</span>
+                        <img src="optimized/img/plaza-original.webp"
+                            alt="Fotografía histórica de la Plaza de Armas de Parral, archivo original" loading="lazy"
+                            width="600" height="375">
+                    </div>
+                    <div class="card-foto-content">
+                        <h3>Plaza de Armas Original</h3>
+                        <p>Fotografía histórica en blanco y negro.</p>
                     </div>
                 </div>
-                <div class="card-foto-content">
-                    <h3>Video de la Colección</h3>
-                    <p>Experiencia audiovisual.</p>
+
+                <!-- Foto 2: Plaza Colorizada -->
+                <div class="card-foto">
+                    <div class="card-foto-img-container">
+                        <span class="heritage-badge badge-restored">Colorización IA</span>
+                        <img src="optimized/img/plaza-color.webp"
+                            alt="Interpretación a color mediante IA de la Plaza de Armas histórica" loading="lazy"
+                            width="600" height="375">
+                    </div>
+                    <div class="card-foto-content">
+                        <h3>Plaza de Armas Colorizada</h3>
+                        <p>Versión restaurada con color.</p>
+                    </div>
+                </div>
+
+                <!-- Foto 3: Plaza Restaurada -->
+                <div class="card-foto">
+                    <div class="card-foto-img-container">
+                        <span class="heritage-badge badge-ia">Interpretación IA</span>
+                        <img src="optimized/img/plaza-restaurada.webp"
+                            alt="Restauración digital completa de la Plaza de Armas de Parral" loading="lazy"
+                            width="600" height="375">
+                    </div>
+                    <div class="card-foto-content">
+                        <h3>Plaza de Armas Restaurada</h3>
+                        <p>Imagen completamente restaurada.</p>
+                    </div>
+                </div>
+
+                <!-- Video Placeholder -->
+                <div class="card-foto video-placeholder-card">
+                    <div class="card-foto-img-container video-placeholder-container">
+                        <div class="video-placeholder-content">
+                            <span class="video-placeholder-icon">🎬</span>
+                            <p class="video-placeholder-text">Video próximamente</p>
+                        </div>
+                    </div>
+                    <div class="card-foto-content">
+                        <h3>Video de la Colección</h3>
+                        <p>Experiencia audiovisual.</p>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Comparación Antes/Después -->
-        <h3 style="text-align: center; margin-top: 4rem; margin-bottom: 2rem;">Comparación Antes y Después</h3>
-        <div class="img-comp-container" id="plaza-slider">
-            <div class="img-comp-img">
-                <img src="optimized/img/plaza-color.webp" id="foto-modificada" alt="Plaza de Armas - Color"
-                    loading="lazy" width="800" height="500">
-                <span class="img-comp-label after">Después</span>
-            </div>
-            <div class="img-comp-img img-comp-overlay">
-                <img src="optimized/img/plaza-original.webp" id="foto-original" alt="Plaza de Armas - Original"
-                    loading="lazy" width="800" height="500">
-                <span class="img-comp-label before">Antes</span>
-            </div>
-            <div class="img-comp-slider"></div>
-            <div class="img-comp-line"></div>
-        </div>
-    </section>
-
-    <section class="container" style="padding: 4rem 1rem; border-top: 1px solid var(--border-color);">
-        <div
-            style="background: var(--card-bg-warm); padding: 2rem; border-radius: 12px; display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; border: 1px solid var(--card-border-warm);">
-            <div style="flex: 1; min-width: 300px;">
-                <h3 style="font-family: var(--font-heading); color: var(--accent-warm); margin-bottom: 1rem;">📍
-                    Patrimonio en Terreno</h3>
-                <p>Estás viendo el archivo histórico de la <strong>Plaza de Armas de Parral</strong>. Este punto es
-                    parte fundamental de nuestra ruta de códigos QR instalados en la ciudad.</p>
-                <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
-                    <a href="mapa.html" class="btn-card"
-                        style="margin: 0; background: var(--primary-color); color: white;">Ver en el Mapa
-                        Interactivo</a>
-                    <span
-                        style="font-size: 0.85rem; color: var(--text-light); align-self: center;"><strong>Referencia:</strong>
-                        Av. Aníbal Pinto con Dieciocho de Septiembre.</span>
+            <!-- Comparación Antes/Después -->
+            <h3 style="text-align: center; margin-top: 4rem; margin-bottom: 2rem;">Comparación Antes y Después</h3>
+            <div class="img-comp-container" id="plaza-slider">
+                <div class="img-comp-img">
+                    <img src="optimized/img/plaza-color.webp" id="foto-modificada" alt="Plaza de Armas - Color"
+                        loading="lazy" width="800" height="500">
+                    <span class="img-comp-label after">Después</span>
                 </div>
+                <div class="img-comp-img img-comp-overlay">
+                    <img src="optimized/img/plaza-original.webp" id="foto-original" alt="Plaza de Armas - Original"
+                        loading="lazy" width="800" height="500">
+                    <span class="img-comp-label before">Antes</span>
+                </div>
+                <div class="img-comp-slider"></div>
+                <div class="img-comp-line"></div>
             </div>
+        </section>
+
+        <section class="container" style="padding: 4rem 1rem; border-top: 1px solid var(--border-color);">
             <div
-                style="width: 120px; text-align: center; border-left: 1px solid var(--border-color); padding-left: 2rem; display: flex; flex-direction: column; align-items: center;">
+                style="background: var(--card-bg-warm); padding: 2rem; border-radius: 12px; display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; border: 1px solid var(--card-border-warm);">
+                <div style="flex: 1; min-width: 300px;">
+                    <h3 style="font-family: var(--font-heading); color: var(--accent-warm); margin-bottom: 1rem;">📍
+                        Patrimonio en Terreno</h3>
+                    <p>Estás viendo el archivo histórico de la <strong>Plaza de Armas de Parral</strong>. Este punto es
+                        parte fundamental de nuestra ruta de códigos QR instalados en la ciudad.</p>
+                    <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                        <a href="mapa.html" class="btn-card"
+                            style="margin: 0; background: var(--primary-color); color: white;">Ver en el Mapa
+                            Interactivo</a>
+                        <span
+                            style="font-size: 0.85rem; color: var(--text-light); align-self: center;"><strong>Referencia:</strong>
+                            Av. Aníbal Pinto con Dieciocho de Septiembre.</span>
+                    </div>
+                </div>
                 <div
-                    style="width: 80px; height: 80px; background: #333; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 0.7rem;">
-                    QR-CODE</div>
-                <p style="font-size: 0.7rem; margin-top: 0.5rem; color: var(--text-light);">Cód: PARRAL-01</p>
+                    style="width: 120px; text-align: center; border-left: 1px solid var(--border-color); padding-left: 2rem; display: flex; flex-direction: column; align-items: center;">
+                    <div
+                        style="width: 80px; height: 80px; background: #333; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 0.7rem;">
+                        QR-CODE</div>
+                    <p style="font-size: 0.7rem; margin-top: 0.5rem; color: var(--text-light);">Cód: PARRAL-01</p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    {% include footer.html %}
+        {% include footer.html %}
 
-    <button id="toTop" aria-label="Volver arriba">✦</button>
+        <button id="toTop" aria-label="Volver arriba">✦</button>
 
-    {% include footer.html %}
+        {% include footer.html %}
 
-    <script src="js/home.js"></script>
-    <script>
-        // Image Comparison Slider Script
-        function initComparisons() {
-            var x, i;
-            /* Find all elements with an "overlay" class: */
-            x = document.getElementsByClassName("img-comp-overlay");
-            for (i = 0; i < x.length; i++) {
-                /* Once for each "overlay" element:
-                pass the "overlay" element as a parameter when executing the compareImages function: */
-                compareImages(x[i]);
+        <script src="js/home.js"></script>
+        <script>
+            // Image Comparison Slider Script
+            function initComparisons() {
+                var x, i;
+                /* Find all elements with an "overlay" class: */
+                x = document.getElementsByClassName("img-comp-overlay");
+                for (i = 0; i < x.length; i++) {
+                    /* Once for each "overlay" element:
+                    pass the "overlay" element as a parameter when executing the compareImages function: */
+                    compareImages(x[i]);
+                }
+
+                function compareImages(img) {
+                    var slider, clicked = 0, w, h;
+                    /* Get the width and height of the img element */
+                    w = img.offsetWidth;
+                    h = img.offsetHeight;
+
+                    /* Set the width of the img element to 50%: */
+                    // We use clip-path now, so we don't need to set width.
+                    // But we need to update clip-path.
+
+                    /* Get the slider element: */
+                    slider = img.parentElement.querySelector('.img-comp-slider');
+                    var line = img.parentElement.querySelector('.img-comp-line');
+
+                    /* Center the slider: */
+                    // CSS handles initial centering.
+
+                    /* Execute a function when the mouse button is pressed: */
+                    slider.addEventListener("mousedown", slideReady);
+                    /* And another function when the mouse button is released: */
+                    window.addEventListener("mouseup", slideFinish);
+                    /* Or touched (for touch screens): */
+                    slider.addEventListener("touchstart", slideReady);
+                    /* And released (for touch screens): */
+                    window.addEventListener("touchend", slideFinish);
+
+                    function slideReady(e) {
+                        /* Prevent any other actions that may occur when moving over the image: */
+                        e.preventDefault();
+                        /* The slider is now clicked and ready to move: */
+                        clicked = 1;
+                        /* Execute a function when the slider is moved: */
+                        window.addEventListener("mousemove", slideMove);
+                        window.addEventListener("touchmove", slideMove);
+                    }
+
+                    function slideFinish() {
+                        /* The slider is no longer clicked: */
+                        clicked = 0;
+                    }
+
+                    function slideMove(e) {
+                        var pos;
+                        /* If the slider is no longer clicked, exit this function: */
+                        if (clicked == 0) return false;
+                        /* Get the cursor's x position: */
+                        pos = getCursorPos(e);
+                        /* Prevent the slider from being positioned outside the image: */
+                        if (pos < 0) pos = 0;
+                        if (pos > w) pos = w;
+                        /* Execute a function that will resize the overlay image according to the cursor: */
+                        slide(pos);
+                    }
+
+                    function getCursorPos(e) {
+                        var a, x = 0;
+                        e = (e.changedTouches) ? e.changedTouches[0] : e;
+                        /* Get the x positions of the image: */
+                        a = img.getBoundingClientRect();
+                        /* Calculate the cursor's x coordinate, relative to the image: */
+                        x = e.pageX - a.left;
+                        /* Consider any page scrolling: */
+                        x = x - window.pageXOffset;
+                        return x;
+                    }
+
+                    function slide(x) {
+                        /* Resize the image: */
+                        // img.style.width = x + "px"; // Old method
+
+                        // New method using clip-path:
+                        var percentage = (x / w) * 100;
+                        img.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
+
+                        /* Position the slider: */
+                        slider.style.left = percentage + "%";
+                        if (line) line.style.left = percentage + "%";
+                    }
+
+                    // Add click on container to jump
+                    img.parentElement.addEventListener('mousedown', function (e) {
+                        if (e.target.classList.contains('img-comp-slider')) return;
+                        var pos = getCursorPos(e);
+                        var w = img.offsetWidth;
+                        if (pos < 0) pos = 0;
+                        if (pos > w) pos = w;
+                        slide(pos);
+                        // Also start dragging
+                        clicked = 1;
+                        window.addEventListener("mousemove", slideMove);
+                        window.addEventListener("touchmove", slideMove);
+                    });
+                }
             }
 
-            function compareImages(img) {
-                var slider, clicked = 0, w, h;
-                /* Get the width and height of the img element */
-                w = img.offsetWidth;
-                h = img.offsetHeight;
-
-                /* Set the width of the img element to 50%: */
-                // We use clip-path now, so we don't need to set width.
-                // But we need to update clip-path.
-
-                /* Get the slider element: */
-                slider = img.parentElement.querySelector('.img-comp-slider');
-                var line = img.parentElement.querySelector('.img-comp-line');
-
-                /* Center the slider: */
-                // CSS handles initial centering.
-
-                /* Execute a function when the mouse button is pressed: */
-                slider.addEventListener("mousedown", slideReady);
-                /* And another function when the mouse button is released: */
-                window.addEventListener("mouseup", slideFinish);
-                /* Or touched (for touch screens): */
-                slider.addEventListener("touchstart", slideReady);
-                /* And released (for touch screens): */
-                window.addEventListener("touchend", slideFinish);
-
-                function slideReady(e) {
-                    /* Prevent any other actions that may occur when moving over the image: */
-                    e.preventDefault();
-                    /* The slider is now clicked and ready to move: */
-                    clicked = 1;
-                    /* Execute a function when the slider is moved: */
-                    window.addEventListener("mousemove", slideMove);
-                    window.addEventListener("touchmove", slideMove);
-                }
-
-                function slideFinish() {
-                    /* The slider is no longer clicked: */
-                    clicked = 0;
-                }
-
-                function slideMove(e) {
-                    var pos;
-                    /* If the slider is no longer clicked, exit this function: */
-                    if (clicked == 0) return false;
-                    /* Get the cursor's x position: */
-                    pos = getCursorPos(e);
-                    /* Prevent the slider from being positioned outside the image: */
-                    if (pos < 0) pos = 0;
-                    if (pos > w) pos = w;
-                    /* Execute a function that will resize the overlay image according to the cursor: */
-                    slide(pos);
-                }
-
-                function getCursorPos(e) {
-                    var a, x = 0;
-                    e = (e.changedTouches) ? e.changedTouches[0] : e;
-                    /* Get the x positions of the image: */
-                    a = img.getBoundingClientRect();
-                    /* Calculate the cursor's x coordinate, relative to the image: */
-                    x = e.pageX - a.left;
-                    /* Consider any page scrolling: */
-                    x = x - window.pageXOffset;
-                    return x;
-                }
-
-                function slide(x) {
-                    /* Resize the image: */
-                    // img.style.width = x + "px"; // Old method
-
-                    // New method using clip-path:
-                    var percentage = (x / w) * 100;
-                    img.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
-
-                    /* Position the slider: */
-                    slider.style.left = percentage + "%";
-                    if (line) line.style.left = percentage + "%";
-                }
-
-                // Add click on container to jump
-                img.parentElement.addEventListener('mousedown', function (e) {
-                    if (e.target.classList.contains('img-comp-slider')) return;
-                    var pos = getCursorPos(e);
-                    var w = img.offsetWidth;
-                    if (pos < 0) pos = 0;
-                    if (pos > w) pos = w;
-                    slide(pos);
-                    // Also start dragging
-                    clicked = 1;
-                    window.addEventListener("mousemove", slideMove);
-                    window.addEventListener("touchmove", slideMove);
-                });
-            }
-        }
-
-        // Initialize on load
-        window.addEventListener('load', initComparisons);
-        // Also on resize to reset/recalc if needed (though clip-path % handles resize well)
-    </script>
+            // Initialize on load
+            window.addEventListener('load', initComparisons);
+            // Also on resize to reset/recalc if needed (though clip-path % handles resize well)
+        </script>
 </body>
 
 </html>

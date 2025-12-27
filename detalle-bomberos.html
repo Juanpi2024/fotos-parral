@@ -27,81 +27,85 @@
 <body>
     {% include header.html %}
 
-    <section class="hero"
-        style="padding: 4rem 0; min-height: 30vh; background-image: linear-gradient(rgba(44, 82, 130, 0.9), rgba(192, 86, 33, 0.85));">
-        <div class="container">
-            <h2>Colección: Bomberos de Parral</h2>
-            <p>Héroes del Fuego - Historia de valentía y servicio a la comunidad</p>
-        </div>
-    </section>
+    <main id="main-content">
+        {% include breadcrumbs.html %}
+        {% include back-button.html %}
 
-    <section class="container" style="padding: 4rem 1rem;">
-        <div style="margin-bottom: 2rem;">
-            <a href="galeria.html" style="color: var(--color-primary); font-weight: bold;">← Volver a la Galería</a>
-        </div>
+        <section class="hero"
+            style="padding: 4rem 0; min-height: 30vh; background-image: linear-gradient(rgba(44, 82, 130, 0.9), rgba(192, 86, 33, 0.85));">
+            <div class="container">
+                <h2>Colección: Bomberos de Parral</h2>
+                <p>Héroes del Fuego - Historia de valentía y servicio a la comunidad</p>
+            </div>
+        </section>
 
-        <div class="grid-galeria">
-            <!-- Foto Original Sepia -->
-            <div class="card-foto" style="height: auto;">
-                <div class="card-foto-img-container" style="height: 400px;">
-                    <img src="optimized/images/parral-bomberos-1.webp"
-                        alt="Primer carro de bomberos de Parral y su dotación histórica" loading="lazy" width="600"
-                        height="400">
-                </div>
-                <div class="card-foto-content">
-                    <h3>Foto Original</h3>
-                    <p>Imagen histórica sin editar - Bomberos con carro tirado por caballos</p>
-                </div>
+        <section class="container" style="padding: 4rem 1rem;">
+            <div style="margin-bottom: 2rem;">
+                <a href="galeria.html" style="color: var(--color-primary); font-weight: bold;">← Volver a la Galería</a>
             </div>
 
-            <!-- Foto Coloreada -->
-            <div class="card-foto" style="height: auto;">
-                <div class="card-foto-img-container" style="height: 400px;">
-                    <img src="optimized/images/parral-bomberos-2.webp"
-                        alt="Interpretación a color del carro de bomberos y voluntarios de Parral" loading="lazy"
-                        width="600" height="400">
-                </div>
-                <div class="card-foto-content">
-                    <h3>Restaurada en Alta Calidad</h3>
-                    <p>Coloreada digitalmente - Uniformes rojos de época</p>
-                </div>
-            </div>
-
-            <!-- Foto Vintage con Estrella -->
-            <div class="card-foto" style="height: auto;">
-                <div class="card-foto-img-container" style="height: 400px;">
-                    <img src="optimized/images/parral-bomberos-3.webp"
-                        alt="Versión artística vintage de la compañía de bomberos de Parral" loading="lazy" width="600"
-                        height="400">
-                </div>
-                <div class="card-foto-content">
-                    <h3>Versión Vintage Mejorada</h3>
-                    <p>Procesamiento digital con marca de colección</p>
-                </div>
-            </div>
-
-            <!-- Placeholder para Video -->
-            <div class="card-foto" style="height: auto;">
-                <div class="card-foto-img-container"
-                    style="height: 400px; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); display: flex; align-items: center; justify-content: center; color: white; text-align: center;">
-                    <div>
-                        <h3 style="color: white; margin-bottom: 1rem;">Video próximamente</h3>
-                        <p style="color: rgba(255,255,255,0.9);">Experiencia audiovisual en desarrollo</p>
+            <div class="grid-galeria">
+                <!-- Foto Original Sepia -->
+                <div class="card-foto" style="height: auto;">
+                    <div class="card-foto-img-container" style="height: 400px;">
+                        <img src="optimized/images/parral-bomberos-1.webp"
+                            alt="Primer carro de bomberos de Parral y su dotación histórica" loading="lazy" width="600"
+                            height="400">
+                    </div>
+                    <div class="card-foto-content">
+                        <h3>Foto Original</h3>
+                        <p>Imagen histórica sin editar - Bomberos con carro tirado por caballos</p>
                     </div>
                 </div>
-                <div class="card-foto-content">
-                    <h3>Video de la Colección</h3>
-                    <p>Experiencia audiovisual.</p>
+
+                <!-- Foto Coloreada -->
+                <div class="card-foto" style="height: auto;">
+                    <div class="card-foto-img-container" style="height: 400px;">
+                        <img src="optimized/images/parral-bomberos-2.webp"
+                            alt="Interpretación a color del carro de bomberos y voluntarios de Parral" loading="lazy"
+                            width="600" height="400">
+                    </div>
+                    <div class="card-foto-content">
+                        <h3>Restaurada en Alta Calidad</h3>
+                        <p>Coloreada digitalmente - Uniformes rojos de época</p>
+                    </div>
+                </div>
+
+                <!-- Foto Vintage con Estrella -->
+                <div class="card-foto" style="height: auto;">
+                    <div class="card-foto-img-container" style="height: 400px;">
+                        <img src="optimized/images/parral-bomberos-3.webp"
+                            alt="Versión artística vintage de la compañía de bomberos de Parral" loading="lazy"
+                            width="600" height="400">
+                    </div>
+                    <div class="card-foto-content">
+                        <h3>Versión Vintage Mejorada</h3>
+                        <p>Procesamiento digital con marca de colección</p>
+                    </div>
+                </div>
+
+                <!-- Placeholder para Video -->
+                <div class="card-foto" style="height: auto;">
+                    <div class="card-foto-img-container"
+                        style="height: 400px; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); display: flex; align-items: center; justify-content: center; color: white; text-align: center;">
+                        <div>
+                            <h3 style="color: white; margin-bottom: 1rem;">Video próximamente</h3>
+                            <p style="color: rgba(255,255,255,0.9);">Experiencia audiovisual en desarrollo</p>
+                        </div>
+                    </div>
+                    <div class="card-foto-content">
+                        <h3>Video de la Colección</h3>
+                        <p>Experiencia audiovisual.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <button id="toTop" aria-label="Volver arriba">✦</button>
+        <button id="toTop" aria-label="Volver arriba">✦</button>
 
-    {% include footer.html %}
+        {% include footer.html %}
 
-    <script src="js/home.js"></script>
+        <script src="js/home.js"></script>
 </body>
 
 </html>

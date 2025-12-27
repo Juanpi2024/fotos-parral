@@ -28,83 +28,87 @@
 <body>
     {% include header.html %}
 
-    <section class="hero"
-        style="padding: 4rem 0; min-height: 30vh; background-image: linear-gradient(rgba(44, 82, 130, 0.9), rgba(192, 86, 33, 0.85));">
-        <div class="container">
-            <h2>Colección: Bajada Buenos Aires</h2>
-            <p>Vistas históricas de la avenida</p>
-        </div>
-    </section>
+    <main id="main-content">
+        {% include breadcrumbs.html %}
+        {% include back-button.html %}
 
-    <section class="container" style="padding: 4rem 1rem;">
-        <div style="margin-bottom: 2rem;">
-            <a href="galeria.html" style="color: var(--color-primary); font-weight: bold;">← Volver a la Galería</a>
-        </div>
+        <section class="hero"
+            style="padding: 4rem 0; min-height: 30vh; background-image: linear-gradient(rgba(44, 82, 130, 0.9), rgba(192, 86, 33, 0.85));">
+            <div class="container">
+                <h2>Colección: Bajada Buenos Aires</h2>
+                <p>Vistas históricas de la avenida</p>
+            </div>
+        </section>
 
-        <div class="grid-galeria">
-            <!-- Item 1: Original Image -->
-            <div class="card-foto" style="height: auto;">
-                <div class="card-foto-img-container" style="height: 300px;">
-                    <img src="optimized/img/bajada-original.webp"
-                        alt="Fotografía original en blanco y negro de la Bajada Buenos Aires" loading="lazy" width="600"
-                        height="375">
-                </div>
-                <div class="card-foto-content">
-                    <h3>Foto Original</h3>
-                    <p>Imagen histórica sin editar.</p>
-                </div>
+        <section class="container" style="padding: 4rem 1rem;">
+            <div style="margin-bottom: 2rem;">
+                <a href="galeria.html" style="color: var(--color-primary); font-weight: bold;">← Volver a la Galería</a>
             </div>
-            <!-- Item 2: Restored Image -->
-            <div class="card-foto" style="height: auto;">
-                <div class="card-foto-img-container" style="height: 300px;">
-                    <img src="optimized/img/bajada-restaurada.webp"
-                        alt="Versión restaurada digitalmente de la Bajada Buenos Aires" loading="lazy" width="600"
-                        height="375">
-                </div>
-                <div class="card-foto-content">
-                    <h3>Restaurada en Alta Calidad</h3>
-                    <p>Mejorada digitalmente para mayor nitidez.</p>
-                </div>
-            </div>
-            <!-- Item 3: Colorized Image -->
-            <div class="card-foto" style="height: auto;">
-                <div class="card-foto-img-container" style="height: 300px;">
-                    <img src="optimized/img/bajada-color.webp"
-                        alt="Recreación a color mediante IA de la Bajada Buenos Aires" loading="lazy" width="600"
-                        height="375">
-                </div>
-                <div class="card-foto-content">
-                    <h3>Coloreada Digitalmente</h3>
-                    <p>Reconstrucción de color mediante IA.</p>
-                </div>
-            </div>
-            <!-- Item 4: Video Placeholder -->
-            <div class="card-foto" style="height: auto;">
-                <div class="card-foto-img-container"
-                    style="height: 300px; display: flex; align-items: center; justify-content: center; background-color: #f0f0f0; color: #666;">
-                    <div style="text-align: center;">
-                        <span style="font-size: 3rem;" role="img" aria-label="Claqueta de cine">🎬</span>
-                        <p style="font-weight: bold; margin-top: 1rem;">Video próximamente</p>
+
+            <div class="grid-galeria">
+                <!-- Item 1: Original Image -->
+                <div class="card-foto" style="height: auto;">
+                    <div class="card-foto-img-container" style="height: 300px;">
+                        <img src="optimized/img/bajada-original.webp"
+                            alt="Fotografía original en blanco y negro de la Bajada Buenos Aires" loading="lazy"
+                            width="600" height="375">
+                    </div>
+                    <div class="card-foto-content">
+                        <h3>Foto Original</h3>
+                        <p>Imagen histórica sin editar.</p>
                     </div>
                 </div>
-                <div class="card-foto-content">
-                    <h3>Video de la Colección</h3>
-                    <p>Experiencia audiovisual.</p>
+                <!-- Item 2: Restored Image -->
+                <div class="card-foto" style="height: auto;">
+                    <div class="card-foto-img-container" style="height: 300px;">
+                        <img src="optimized/img/bajada-restaurada.webp"
+                            alt="Versión restaurada digitalmente de la Bajada Buenos Aires" loading="lazy" width="600"
+                            height="375">
+                    </div>
+                    <div class="card-foto-content">
+                        <h3>Restaurada en Alta Calidad</h3>
+                        <p>Mejorada digitalmente para mayor nitidez.</p>
+                    </div>
+                </div>
+                <!-- Item 3: Colorized Image -->
+                <div class="card-foto" style="height: auto;">
+                    <div class="card-foto-img-container" style="height: 300px;">
+                        <img src="optimized/img/bajada-color.webp"
+                            alt="Recreación a color mediante IA de la Bajada Buenos Aires" loading="lazy" width="600"
+                            height="375">
+                    </div>
+                    <div class="card-foto-content">
+                        <h3>Coloreada Digitalmente</h3>
+                        <p>Reconstrucción de color mediante IA.</p>
+                    </div>
+                </div>
+                <!-- Item 4: Video Placeholder -->
+                <div class="card-foto" style="height: auto;">
+                    <div class="card-foto-img-container"
+                        style="height: 300px; display: flex; align-items: center; justify-content: center; background-color: #f0f0f0; color: #666;">
+                        <div style="text-align: center;">
+                            <span style="font-size: 3rem;" role="img" aria-label="Claqueta de cine">🎬</span>
+                            <p style="font-weight: bold; margin-top: 1rem;">Video próximamente</p>
+                        </div>
+                    </div>
+                    <div class="card-foto-content">
+                        <h3>Video de la Colección</h3>
+                        <p>Experiencia audiovisual.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Botón Volver Arriba -->
-    <button id="backToTopBtn" aria-label="Volver arriba">
-        <span>↑</span>
-    </button>
+        <!-- Botón Volver Arriba -->
+        <button id="backToTopBtn" aria-label="Volver arriba">
+            <span>↑</span>
+        </button>
 
-    <button id="toTop" aria-label="Volver arriba">✦</button>
+        <button id="toTop" aria-label="Volver arriba">✦</button>
 
-    {% include footer.html %}
+        {% include footer.html %}
 
-    <script src="js/home.js"></script>
+        <script src="js/home.js"></script>
 </body>
 
 </html>

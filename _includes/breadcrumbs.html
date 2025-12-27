@@ -1,0 +1,9 @@
+<nav class="breadcrumbs" aria-label="Miga de pan">
+    <div class="container">
+        <a href="{{ '/index.html' | relative_url }}">Inicio</a>
+        <span class="sep">›</span>
+        <a href="{{ '/galeria.html' | relative_url }}">Galería</a>
+        <span class="sep">›</span>
+        <span class="current" aria-current="page">{{ page.title | default: 'Detalle' }}</span>
+    </div>
+</nav>

@@ -105,30 +105,34 @@
 
     {% include header.html %}
 
-    <!-- Contenido Principal -->
-    <main class="container mx-auto p-4 md:p-8" style="margin-top: 2rem;">
-        <section class="text-center py-10 px-4">
-            <h1 class="text-4xl md:text-5xl font-bold text-amber-900 mb-8">Video Histórico de Parral</h1>
+    <main id="main-content">
+        {% include breadcrumbs.html %}
 
-            <div class="video-container shadow-lg rounded-lg overflow-hidden"
-                style="max-width: 800px; margin: 0 auto; aspect-ratio: 16/9;">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/gAi89JZfXEs?si=N-OuykZ7q6XJg2l_"
-                    title="Video Histórico de Parral" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-            </div>
+        <!-- Contenido Principal -->
+        <main class="container mx-auto p-4 md:p-8" style="margin-top: 2rem;">
+            <section class="text-center py-10 px-4">
+                <h1 class="text-4xl md:text-5xl font-bold text-amber-900 mb-8">Video Histórico de Parral</h1>
 
-            <p class="mt-8 text-lg text-amber-800">
-                Un recorrido audiovisual por nuestra historia.
-            </p>
-        </section>
-    </main>
+                <div class="video-container shadow-lg rounded-lg overflow-hidden"
+                    style="max-width: 800px; margin: 0 auto; aspect-ratio: 16/9;">
+                    <iframe width="100%" height="100%"
+                        src="https://www.youtube.com/embed/gAi89JZfXEs?si=N-OuykZ7q6XJg2l_"
+                        title="Video Histórico de Parral" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </div>
 
-    <button id="toTop" aria-label="Volver arriba">✦</button>
+                <p class="mt-8 text-lg text-amber-800">
+                    Un recorrido audiovisual por nuestra historia.
+                </p>
+            </section>
+        </main>
 
-    {% include footer.html %}
+        <button id="toTop" aria-label="Volver arriba">✦</button>
 
-    <script src="js/home.js"></script>
+        {% include footer.html %}
+
+        <script src="js/home.js"></script>
 </body>
 
 </html>
