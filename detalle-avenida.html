@@ -1,10 +1,21 @@
+---
+---
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avenida Principal – Archivos en Movimiento</title>
+    <title>Colección: Avenida Principal – Archivos en Movimiento</title>
+    <meta name="description"
+        content="Recorre la arteria principal de Parral en distintas épocas, reviviendo el comercio y la vida social que dieron forma a nuestra ciudad.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Avenida Principal: Pulso Urbano de Parral">
+    <meta property="og:description" content="Fotografías históricas del eje comercial y social de nuestra comuna.">
+    <meta property="og:image" content="https://fotos-parral.cl/optimized/images/epoca-portada.webp">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -14,30 +25,7 @@
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <div class="logo-area">
-                <h1><a href="index.html">Archivos en Movimiento</a></h1>
-                <p class="subtitle">Patrimonio Vivo de Parral</p>
-            </div>
-            <button class="mobile-menu-btn" aria-label="Menú">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="galeria.html" class="active">Galería</a></li>
-                    <li><a href="relatos.html">Relatos</a></li>
-                    <li><a href="educacion.html">Educación</a></li>
-                    <li><a href="historia.html">Historia</a></li>
-                    <li><a href="mapa.html">Mapa</a></li>
-                    <li><a href="participa.html" class="btn-nav">¡Participa!</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    {% include header.html %}
 
     <section class="hero"
         style="padding: 4rem 0; min-height: 30vh; background-image: linear-gradient(rgba(44, 82, 130, 0.9), rgba(192, 86, 33, 0.85));">
@@ -56,7 +44,9 @@
             <!-- Item 1: Original Image -->
             <div class="card-foto" style="height: auto;">
                 <div class="card-foto-img-container" style="height: 300px;">
-                    <img src="img/avenida-original.jpg" alt="Avenida Principal - Foto Original">
+                    <img src="optimized/img/avenida-original.webp"
+                        alt="Fotografía histórica de la Avenida Principal de Parral, vista original" loading="lazy"
+                        width="600" height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Foto Original</h3>
@@ -66,7 +56,9 @@
             <!-- Item 2: Restored Image -->
             <div class="card-foto" style="height: auto;">
                 <div class="card-foto-img-container" style="height: 300px;">
-                    <img src="img/avenida-restaurada.png" alt="Avenida Principal - Restaurada">
+                    <img src="optimized/img/avenida-restaurada.webp"
+                        alt="Versión restaurada de la Avenida Principal de Parral" loading="lazy" width="600"
+                        height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Restaurada en Alta Calidad</h3>
@@ -76,7 +68,9 @@
             <!-- Item 3: Colorized Image -->
             <div class="card-foto" style="height: auto;">
                 <div class="card-foto-img-container" style="height: 300px;">
-                    <img src="img/avenida-color.png" alt="Avenida Principal - A Color">
+                    <img src="optimized/img/avenida-color.webp"
+                        alt="Interpretación a color de la vida urbana en la Avenida Principal de Parral" loading="lazy"
+                        width="600" height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Coloreada Digitalmente</h3>
@@ -100,13 +94,12 @@
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Archivos en Movimiento. Patrimonio Vivo de Parral.</p>
-        </div>
-    </footer>
+    <button id="toTop" aria-label="Volver arriba">✦</button>
+
+    {% include footer.html %}
 
     <script src="js/home.js"></script>
 </body>
 
 </html>
+```

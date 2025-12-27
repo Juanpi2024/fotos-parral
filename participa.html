@@ -1,12 +1,19 @@
----
----
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comparte con Nosotros – Archivos en Movimiento</title>
+    <title>Comparte tu Patrimonio – Archivos en Movimiento</title>
+    <meta name="description"
+        content="¿Tienes fotos, relatos o documentos antiguos de Parral? Ayúdanos a preservar nuestra historia compartiendo tu material.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Participa en la Memoria de Parral | Archivos en Movimiento">
+    <meta property="og:description"
+        content="Únete a nuestra red de colaboración ciudadana para el rescate patrimonial.">
+    <meta property="og:image" content="https://fotos-parral.cl/optimized/img/plaza-original.webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -82,34 +89,10 @@
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <div class="logo-area">
-                <h1><a href="index.html">Archivos en Movimiento</a></h1>
-                <p class="subtitle">Patrimonio Vivo de Parral</p>
-            </div>
-            <button class="mobile-menu-btn" aria-label="Menú">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="galeria.html">Galería</a></li>
-                    <li><a href="relatos.html">Relatos</a></li>
-                    <li><a href="educacion.html">Educación</a></li>
-                    <li><a href="historia.html">Historia</a></li>
-                    <li><a href="mapa.html">Mapa</a></li>
-                    <li><a href="turismo.html">Turismo</a></li>
-                    <li><a href="participa.html" class="active btn-nav">¡Participa!</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    {% include header.html %}
 
     <section class="hero hero-detalle"
-        style="height: 40vh; min-height: 300px; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('img/plaza-original.jpg'); background-size: cover; background-position: center;">
+        style="height: 40vh; min-height: 300px; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('optimized/img/plaza-original.webp'); background-size: cover; background-position: center;">
         <div class="container">
             <h2 class="hero-title-dual">
                 <span class="title-white">Comparte tu</span>

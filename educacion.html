@@ -1,12 +1,20 @@
----
----
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Difusión Cultural – Archivos en Movimiento</title>
+    <title>Difusión Cultural y Pedagógica – Archivos en Movimiento</title>
+    <meta name="description"
+        content="Recursos educativos, guías de trabajo y láminas para colorear sobre el patrimonio de Parral. Ideal para profesores y estudiantes.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Educación Patrimonial en Parral | Archivos en Movimiento">
+    <meta property="og:description"
+        content="Accede a guías, infografías y material interactivo para aprender sobre nuestra historia local.">
+    <meta property="og:image" content="https://fotos-parral.cl/optimized/images/epoca-portada.webp">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -18,31 +26,7 @@
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <div class="logo-area">
-                <h1><a href="index.html">Archivos en Movimiento</a></h1>
-                <p class="subtitle">Patrimonio Vivo de Parral</p>
-            </div>
-            <button class="mobile-menu-btn" aria-label="Menú">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="galeria.html">Galería</a></li>
-                    <li><a href="relatos.html">Relatos</a></li>
-                    <li><a href="educacion.html" class="active">Educación</a></li>
-                    <li><a href="historia.html">Historia</a></li>
-                    <li><a href="mapa.html">Mapa</a></li>
-                    <li><a href="turismo.html">Turismo</a></li>
-                    <li><a href="participa.html" class="btn-nav">¡Participa!</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    {% include header.html %}
 
     <section class="hero"
         style="background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%); padding: 4rem 1rem 3rem; min-height: auto;">
@@ -115,11 +99,7 @@
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Archivos en Movimiento. Patrimonio Vivo de Parral.</p>
-        </div>
-    </footer>
+    {% include footer.html %}
 
     <!-- Modal Para Colorear -->
     <div id="colorearModal" class="modal">
@@ -133,41 +113,46 @@
                 <!-- Colorear 1 -->
                 <div class="colorear-item">
                     <div class="colorear-img-container">
-                        <img src="images/colorear-1.png" alt="Lámina para colorear 1" class="colorear-img">
+                        <img src="optimized/images/colorear-1_thumb.webp" alt="Lámina para colorear 1"
+                            class="colorear-img" loading="lazy" width="400" height="280">
                     </div>
-                    <a href="images/colorear-1.png" download="Colorear_Parral_1.png"
+                    <a href="optimized/images/colorear-1.webp" download="Colorear_Parral_1.webp"
                         class="btn-download-sm">Descargar</a>
                 </div>
                 <!-- Colorear 2 -->
                 <div class="colorear-item">
                     <div class="colorear-img-container">
-                        <img src="images/colorear-2.png" alt="Lámina para colorear 2" class="colorear-img">
+                        <img src="optimized/images/colorear-2_thumb.webp" alt="Lámina para colorear 2"
+                            class="colorear-img" loading="lazy" width="400" height="280">
                     </div>
-                    <a href="images/colorear-2.png" download="Colorear_Parral_2.png"
+                    <a href="optimized/images/colorear-2.webp" download="Colorear_Parral_2.webp"
                         class="btn-download-sm">Descargar</a>
                 </div>
                 <!-- Colorear 3 -->
                 <div class="colorear-item">
                     <div class="colorear-img-container">
-                        <img src="images/colorear-3.png" alt="Lámina para colorear 3" class="colorear-img">
+                        <img src="optimized/images/colorear-3_thumb.webp" alt="Lámina para colorear 3"
+                            class="colorear-img" loading="lazy" width="400" height="280">
                     </div>
-                    <a href="images/colorear-3.png" download="Colorear_Parral_3.png"
+                    <a href="optimized/images/colorear-3.webp" download="Colorear_Parral_3.webp"
                         class="btn-download-sm">Descargar</a>
                 </div>
                 <!-- Colorear 4 -->
                 <div class="colorear-item">
                     <div class="colorear-img-container">
-                        <img src="images/colorear-4.png" alt="Lámina para colorear 4" class="colorear-img">
+                        <img src="optimized/images/colorear-4_thumb.webp" alt="Lámina para colorear 4"
+                            class="colorear-img" loading="lazy" width="400" height="280">
                     </div>
-                    <a href="images/colorear-4.png" download="Colorear_Parral_4.png"
+                    <a href="optimized/images/colorear-4.webp" download="Colorear_Parral_4.webp"
                         class="btn-download-sm">Descargar</a>
                 </div>
                 <!-- Colorear 5 -->
                 <div class="colorear-item">
                     <div class="colorear-img-container">
-                        <img src="images/colorear-5.jpg" alt="Lámina para colorear 5" class="colorear-img">
+                        <img src="optimized/images/colorear-5_thumb.webp" alt="Lámina para colorear 5"
+                            class="colorear-img" loading="lazy" width="400" height="280">
                     </div>
-                    <a href="images/colorear-5.jpg" download="Colorear_Parral_5.jpg"
+                    <a href="optimized/images/colorear-5.webp" download="Colorear_Parral_5.webp"
                         class="btn-download-sm">Descargar</a>
                 </div>
             </div>

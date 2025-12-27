@@ -1,12 +1,18 @@
----
----
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mapa Patrimonial Interactivo – Archivos en Movimiento</title>
+    <title>Mapa Patrimonial Interactivo de Parral – Archivos en Movimiento</title>
+    <meta name="description"
+        content="Explora los hitos históricos, monumentos y edificios públicos de Parral a través de nuestro mapa interactivo.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mapa Interactivo de Parral | Archivos en Movimiento">
+    <meta property="og:description" content="Navega por el patrimonio urbano y natural de nuestra comuna.">
+    <meta property="og:image" content="https://fotos-parral.cl/optimized/images/epoca-portada.webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -358,31 +364,7 @@
 
 <body>
 
-    <header>
-        <div class="container">
-            <div class="logo-area">
-                <h1><a href="index.html">Archivos en Movimiento</a></h1>
-                <p class="subtitle">Patrimonio Vivo de Parral</p>
-            </div>
-            <button class="mobile-menu-btn" aria-label="Menú">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="galeria.html">Galería</a></li>
-                    <li><a href="relatos.html">Relatos</a></li>
-                    <li><a href="educacion.html">Educación</a></li>
-                    <li><a href="historia.html">Historia</a></li>
-                    <li><a href="mapa.html" class="active">Mapa</a></li>
-                    <li><a href="turismo.html">Turismo</a></li>
-                    <li><a href="participa.html" class="btn-nav">¡Participa!</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    {% include header.html %}
 
     <!-- HERO -->
     <section class="mapa-hero">
@@ -491,8 +473,8 @@
                 direccion: 'Calle Ignacio Carrera Pinto, Parral',
                 ano: '1921',
                 fotos: 3,
-                imagen: 'images/ecos-cultura.jpg',
-                descripcion: 'Inaugurado en 1921, el Teatro Municipal de Parral ha sido el epicentro de la vida cultural de la comuna. Su arquitectura neoclásica tardía es uno de los pocos edificios originales restaurados tras el terremoto de 2010.',
+                imagen: 'optimized/images/ecos-cultura.webp',
+                descripcion: 'Inaugurado in 1921, el Teatro Municipal de Parral ha sido el epicentro de la vida cultural de la comuna. Su arquitectura neoclásica tardía es uno de los pocos edificios originales restaurados tras el terremoto de 2010.',
                 link: 'detalle-edificio.html?id=teatro-municipal'
             },
             {
@@ -505,7 +487,7 @@
                 direccion: 'Calle Arturo Prat, Parral',
                 ano: '1904',
                 fotos: 8,
-                imagen: 'images/ecos-neruda-nace.jpg',
+                imagen: 'optimized/images/ecos-neruda-nace.webp',
                 descripcion: 'En esta modesta casa de madera nació el 12 de julio de 1904 Ricardo Eliécer Neftalí Reyes Basoalto, quien se convertiría en Pablo Neruda, Premio Nobel de Literatura 1971.',
                 link: 'detalle-edificio.html?id=casa-neruda'
             },
@@ -519,7 +501,7 @@
                 direccion: 'Centro de Parral',
                 ano: '1795',
                 fotos: 12,
-                imagen: 'img/plaza-original.jpg',
+                imagen: 'optimized/img/plaza-original.webp',
                 descripcion: 'Corazón cívico de Parral desde su fundación en 1795. La plaza ha sido testigo de todos los acontecimientos importantes de la ciudad, desde celebraciones patrias hasta manifestaciones ciudadanas.',
                 link: 'detalle-edificio.html?id=plaza-armas'
             },
@@ -533,7 +515,7 @@
                 direccion: 'Av. Ferrocarril, Parral',
                 ano: '1874',
                 fotos: 6,
-                imagen: 'images/ecos-estacion.jpg',
+                imagen: 'optimized/images/ecos-estacion.webp',
                 descripcion: 'La llegada del ferrocarril transformó a Parral conectándolo con el resto del país. Esta estación fue testigo de la partida de cientos de parralinos hacia nuevos destinos.',
                 link: 'detalle-edificio.html?id=estacion-ferrocarril'
             },
@@ -547,7 +529,7 @@
                 direccion: 'Río Perquilauquén, Ruta 5 Sur',
                 ano: '1896',
                 fotos: 4,
-                imagen: 'images/ecos-puente.jpg',
+                imagen: 'optimized/images/ecos-puente.webp',
                 descripcion: 'Majestuoso puente de acero inaugurado en 1896, un gigante de la ingeniería que se convirtió en símbolo de progreso y conectividad de la zona.',
                 link: 'detalle-edificio.html?id=puente-perquilauquen'
             },
@@ -561,7 +543,7 @@
                 direccion: 'Camino a Bullileo, Parral',
                 ano: '1961',
                 fotos: 10,
-                imagen: 'images/ecos-villa-baviera.jpg',
+                imagen: 'optimized/images/ecos-villa-baviera.webp',
                 descripcion: 'Antiguo enclave alemán fundado en 1961, declarado Sitio de Memoria por las graves violaciones a los derechos humanos ocurridas durante la dictadura. Hoy es un espacio de reflexión y turismo.',
                 link: 'detalle-edificio.html?id=villa-baviera'
             },
@@ -575,7 +557,7 @@
                 direccion: 'Calle Manuel Rodríguez, Parral',
                 ano: '1925',
                 fotos: 5,
-                imagen: 'images/parral-bomberos-1.jpg',
+                imagen: 'optimized/images/parral-bomberos-1.webp',
                 descripcion: 'El Cuerpo de Bomberos de Parral, fundado a principios del siglo XX, ha sido pilar fundamental de la comunidad. Su cuartel histórico es testimonio de la solidaridad parralina.',
                 link: 'detalle-edificio.html?id=bomberos'
             },
@@ -589,7 +571,7 @@
                 direccion: 'Plaza de Armas, Parral',
                 ano: '1850',
                 fotos: 7,
-                imagen: 'images/ecos-cultura.jpg',
+                imagen: 'optimized/images/ecos-cultura.webp',
                 descripcion: 'La iglesia parroquial de Parral ha sido el centro espiritual de la comunidad desde mediados del siglo XIX. Su arquitectura refleja la evolución de los estilos tras cada terremoto.',
                 link: 'detalle-edificio.html?id=iglesia-parroquia'
             }

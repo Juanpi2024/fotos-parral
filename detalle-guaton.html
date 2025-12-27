@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="es">
 
@@ -26,10 +28,17 @@
     }
   </script>
 
-  <!-- Metadatos -->
+  <!-- Metadatos SEO -->
   <meta name="description"
     content="Rescate patrimonial de la cueca 'El Guatón Loyola': origen, leyenda en el rodeo de Parral, grabaciones y legado cultural en la Región del Maule." />
   <meta name="theme-color" content="#1e40af" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="El Guatón Loyola: Cueca, Leyenda y Memoria Local">
+  <meta property="og:description"
+    content="Descubre la historia real detrás de la cueca más famosa de Chile, nacida en un rodeo de Parral.">
+  <meta property="og:image" content="https://fotos-parral.cl/optimized/images/epoca-portada.webp">
 
   <!-- JSON-LD para datos estructurados -->
   <script type="application/ld+json">
@@ -111,30 +120,7 @@
 <body class="bg-slate-50 text-slate-800">
 
   <!-- HEADER GLOBAL (Copiado de relatos.html) -->
-  <header>
-    <div class="container">
-      <div class="logo-area">
-        <h1><a href="index.html">Archivos en Movimiento</a></h1>
-        <p class="subtitle">Patrimonio Vivo de Parral</p>
-      </div>
-      <button class="mobile-menu-btn" aria-label="Menú">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <nav class="main-nav">
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="galeria.html">Galería</a></li>
-          <li><a href="relatos.html" class="active">Relatos</a></li>
-          <li><a href="educacion.html">Educación</a></li>
-          <li><a href="historia.html">Historia</a></li>
-          <li><a href="mapa.html">Mapa</a></li>
-          <li><a href="participa.html" class="btn-nav">¡Participa!</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  {% include header.html %}
 
   <!-- Encabezado / Hero del Artículo -->
   <div class="article-content">

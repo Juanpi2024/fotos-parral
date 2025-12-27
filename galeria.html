@@ -6,7 +6,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería Digital – Archivos en Movimiento</title>
+    <title>Galería Histórica – Archivos en Movimiento</title>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Galería Histórica de Parral | Archivos en Movimiento">
+    <meta property="og:description"
+        content="Navega por las colecciones fotográficas de Parral. Imágenes restauradas y coloreadas que cuentan nuestra historia.">
+    <meta property="og:image" content="https://fotos-parral.cl/optimized/images/slider-tren.webp">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -16,31 +24,7 @@
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <div class="logo-area">
-                <h1><a href="index.html">Archivos en Movimiento</a></h1>
-                <p class="subtitle">Patrimonio Vivo de Parral</p>
-            </div>
-            <button class="mobile-menu-btn" aria-label="Menú">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="galeria.html" class="active">Galería</a></li>
-                    <li><a href="relatos.html">Relatos</a></li>
-                    <li><a href="educacion.html">Educación</a></li>
-                    <li><a href="historia.html">Historia</a></li>
-                    <li><a href="mapa.html">Mapa</a></li>
-                    <li><a href="turismo.html">Turismo</a></li>
-                    <li><a href="participa.html" class="btn-nav">¡Participa!</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    {% include header.html %}
 
     <section class="hero"
         style="background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%); padding: 4rem 1rem 3rem; min-height: auto;">
@@ -86,7 +70,8 @@
             <div class="card-foto" data-tags="avenida buenos aires calle transito">
                 <div class="card-foto-img-container">
                     <span class="heritage-badge badge-original">Archivo Original</span>
-                    <img src="img/bajada-original.png" alt="Bajada Buenos Aires" loading="lazy" width="600"
+                    <img src="optimized/img/bajada-original_thumb.webp"
+                        alt="Vista histórica de la Bajada Buenos Aires in Parral" loading="lazy" width="600"
                         height="375">
                 </div>
                 <div class="card-foto-content">
@@ -97,7 +82,8 @@
             </div>
             <div class="card-foto" data-tags="comercio tienda negocios compras economia">
                 <div class="card-foto-img-container">
-                    <img src="img/locales-original.jpg" alt="Locales Comerciales de Siempre" loading="lazy" width="600"
+                    <img src="optimized/img/locales-original_thumb.webp"
+                        alt="Fachadas de locales comerciales históricos de Parral" loading="lazy" width="600"
                         height="375">
                 </div>
                 <div class="card-foto-content">
@@ -109,7 +95,9 @@
             <div class="card-foto" data-tags="plaza civico centro monumento desfiles">
                 <div class="card-foto-img-container">
                     <span class="heritage-badge badge-restored">Restauración IA</span>
-                    <img src="img/plaza-original.jpg" alt="Plaza de Armas" loading="lazy" width="600" height="375">
+                    <img src="optimized/img/plaza-original_thumb.webp"
+                        alt="Plaza de Armas de Parral, recreación histórica con IA" loading="lazy" width="600"
+                        height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Plaza de Armas</h3>
@@ -120,7 +108,8 @@
             <div class="card-foto">
                 <div class="card-foto-img-container">
                     <span class="heritage-badge badge-original">Archivo Original</span>
-                    <img src="images/parral-bomberos-1.jpg" alt="Bomberos de Parral" loading="lazy" width="600"
+                    <img src="optimized/images/parral-bomberos-1_thumb.webp"
+                        alt="Antiguo carro de bomberos de Parral y sus voluntarios" loading="lazy" width="600"
                         height="375">
                 </div>
                 <div class="card-foto-content">
@@ -132,7 +121,8 @@
             <div class="card-foto">
                 <div class="card-foto-img-container">
                     <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80"
-                        alt="Escuela" loading="lazy" width="600" height="375">
+                        alt="Ilustración representativa de una antigua escuela de niñas" loading="lazy" width="600"
+                        height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Escuela de Niñas</h3>
@@ -142,7 +132,8 @@
             </div>
             <div class="card-foto">
                 <div class="card-foto-img-container">
-                    <img src="img/avenida-original.jpg" alt="Avenida Principal" loading="lazy" width="600" height="375">
+                    <img src="optimized/img/avenida-original_thumb.webp" alt="Vista de la Avenida Principal de Parral"
+                        loading="lazy" width="600" height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Avenida Principal</h3>
@@ -152,9 +143,11 @@
             </div>
 
             <!-- Fila 2 -->
-            <div class="card-foto">
+            <div class="card-foto" data-tags="camion transporte carga maquina agricultura">
                 <div class="card-foto-img-container">
-                    <img src="img/arroz-original.jpg" alt="Arroz" loading="lazy" width="600" height="375">
+                    <img src="optimized/img/arroz-original_thumb.webp"
+                        alt="Camión cargado con sacos de arroz en el campo de Parral" loading="lazy" width="600"
+                        height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Hombres en el Arroz</h3>
@@ -165,7 +158,7 @@
             <div class="card-foto">
                 <div class="card-foto-img-container">
                     <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80"
-                        alt="Libro" loading="lazy" width="600" height="375">
+                        alt="Materiales de archivo y documentos históricos" loading="lazy" width="600" height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Historia y Materiales</h3>
@@ -176,7 +169,7 @@
             <div class="card-foto">
                 <div class="card-foto-img-container">
                     <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80"
-                        alt="Retrato" loading="lazy" width="600" height="375">
+                        alt="Retrato de Don Chaca, personaje típico" loading="lazy" width="600" height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Don Chaca</h3>
@@ -187,7 +180,7 @@
             <div class="card-foto">
                 <div class="card-foto-img-container">
                     <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=600&q=80"
-                        alt="Acción" loading="lazy" width="600" height="375">
+                        alt="Don Chaca en una de sus anécdotas populares" loading="lazy" width="600" height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Don Chaca en Acción</h3>
@@ -200,7 +193,8 @@
             <div class="card-foto">
                 <div class="card-foto-img-container">
                     <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=600&q=80"
-                        alt="Tren" loading="lazy" width="600" height="375">
+                        alt="Locomotora antigua en la estación de trenes de Parral" loading="lazy" width="600"
+                        height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Estación de Trenes</h3>
@@ -211,7 +205,7 @@
             <div class="card-foto">
                 <div class="card-foto-img-container">
                     <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=600&q=80"
-                        alt="Mercado" loading="lazy" width="600" height="375">
+                        alt="Puesto de feriantes en el Mercado Municipal" loading="lazy" width="600" height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Mercado Municipal</h3>
@@ -222,7 +216,7 @@
             <div class="card-foto">
                 <div class="card-foto-img-container">
                     <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=600&q=80"
-                        alt="Vendimia" loading="lazy" width="600" height="375">
+                        alt="Celebración tradicional de la vendimia" loading="lazy" width="600" height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Fiesta de la Vendimia</h3>
@@ -233,7 +227,7 @@
             <div class="card-foto">
                 <div class="card-foto-img-container">
                     <img src="https://images.unsplash.com/photo-1585822765504-2072381e4289?auto=format&fit=crop&w=600&q=80"
-                        alt="Terremoto" loading="lazy" width="600" height="375">
+                        alt="Efectos visibles del terremoto de 1939 en la zona" loading="lazy" width="600" height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Terremoto de 1939</h3>
@@ -246,7 +240,7 @@
             <div class="card-foto">
                 <div class="card-foto-img-container">
                     <img src="https://images.unsplash.com/photo-1594498653385-d5172c532c00?auto=format&fit=crop&w=600&q=80"
-                        alt="Construcción" loading="lazy" width="600" height="375">
+                        alt="Proceso de reconstrucción tras el sismo de 2010" loading="lazy" width="600" height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Reconstrucción 2010</h3>
@@ -257,7 +251,8 @@
             <div class="card-foto">
                 <div class="card-foto-img-container">
                     <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=600&q=80"
-                        alt="Deportes" loading="lazy" width="600" height="375">
+                        alt="Escena representativa de clubes deportivos barriales" loading="lazy" width="600"
+                        height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Clubes Deportivos</h3>
@@ -268,7 +263,7 @@
             <div class="card-foto">
                 <div class="card-foto-img-container">
                     <img src="https://images.unsplash.com/photo-1545989253-02cc26577f88?auto=format&fit=crop&w=600&q=80"
-                        alt="Religión" loading="lazy" width="600" height="375">
+                        alt="Procesión religiosa tradicional de Parral" loading="lazy" width="600" height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Procesiones</h3>
@@ -279,7 +274,7 @@
             <div class="card-foto">
                 <div class="card-foto-img-container">
                     <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=600&q=80"
-                        alt="Banda" loading="lazy" width="600" height="375">
+                        alt="Músicos de la banda instrumental en la plaza" loading="lazy" width="600" height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Banda Instrumental</h3>
@@ -292,7 +287,7 @@
             <div class="card-foto">
                 <div class="card-foto-img-container">
                     <img src="https://images.unsplash.com/photo-1532153354457-5fbe1a3bb0b4?auto=format&fit=crop&w=600&q=80"
-                        alt="Desfile" loading="lazy" width="600" height="375">
+                        alt="Desfile patrio por las calles céntricas de Parral" loading="lazy" width="600" height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Desfiles Patrios</h3>
@@ -303,7 +298,7 @@
             <div class="card-foto">
                 <div class="card-foto-img-container">
                     <img src="https://images.unsplash.com/photo-1507676184212-d03ab07a11d0?auto=format&fit=crop&w=600&q=80"
-                        alt="Teatro">
+                        alt="Fachada representativa del Teatro Municipal" loading="lazy" width="600" height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Teatro Municipal</h3>
@@ -314,18 +309,18 @@
             <div class="card-foto">
                 <div class="card-foto-img-container">
                     <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80"
-                        alt="Campo">
+                        alt="Paisaje de la vida rural y campos de Parral" loading="lazy" width="600" height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Vida Rural</h3>
                     <p>Haciendas y Campos</p>
-                    <a href="detalle.html" class="btn-card">Ver Colección</a>
+                    <a href="detalle-bajada.html" class="btn-card">Ver Colección</a>
                 </div>
             </div>
             <div class="card-foto">
                 <div class="card-foto-img-container">
                     <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=600&q=80"
-                        alt="Familia">
+                        alt="Antiguo retrato de una familia parralina" loading="lazy" width="600" height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Retratos de Familia</h3>

@@ -1,10 +1,22 @@
+---
+---
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hombres en el Arroz – Archivos en Movimiento</title>
+    <title>Colección: Hombres en el Arroz – Archivos en Movimiento</title>
+    <meta name="description"
+        content="Explora la identidad agrícola de Parral a través de la colección fotográfica dedicada a los trabajadores del arroz.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Hombres en el Arroz: Identidad Agrícola de Parral">
+    <meta property="og:description"
+        content="Un tributo visual a los trabajadores que forjaron la riqueza agrícola de nuestra zona.">
+    <meta property="og:image" content="https://fotos-parral.cl/optimized/images/epoca-portada.webp">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -14,30 +26,7 @@
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <div class="logo-area">
-                <h1><a href="index.html">Archivos en Movimiento</a></h1>
-                <p class="subtitle">Patrimonio Vivo de Parral</p>
-            </div>
-            <button class="mobile-menu-btn" aria-label="Menú">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="galeria.html" class="active">Galería</a></li>
-                    <li><a href="relatos.html">Relatos</a></li>
-                    <li><a href="educacion.html">Educación</a></li>
-                    <li><a href="historia.html">Historia</a></li>
-                    <li><a href="mapa.html">Mapa</a></li>
-                    <li><a href="participa.html" class="btn-nav">¡Participa!</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    {% include header.html %}
 
     <section class="hero"
         style="padding: 4rem 0; min-height: 30vh; background-image: linear-gradient(rgba(44, 82, 130, 0.9), rgba(192, 86, 33, 0.85));">
@@ -56,7 +45,9 @@
             <!-- Item 1: Original Image -->
             <div class="card-foto" style="height: auto;">
                 <div class="card-foto-img-container" style="height: 300px;">
-                    <img src="img/arroz-original.jpg" alt="Hombres en el Arroz - Foto Original">
+                    <img src="optimized/img/arroz-original.webp"
+                        alt="Fotografía original de trabajadores en el cultivo de arroz en Parral" loading="lazy"
+                        width="600" height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Foto Original</h3>
@@ -66,7 +57,9 @@
             <!-- Item 2: Restored Image -->
             <div class="card-foto" style="height: auto;">
                 <div class="card-foto-img-container" style="height: 300px;">
-                    <img src="img/arroz-restaurada.png" alt="Hombres en el Arroz - Restaurada">
+                    <img src="optimized/img/arroz-restaurada.webp"
+                        alt="Versión restaurada de hombres trabajando en arrozales de Parral" loading="lazy" width="600"
+                        height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Restaurada en Alta Calidad</h3>
@@ -76,7 +69,9 @@
             <!-- Item 3: Colorized Image -->
             <div class="card-foto" style="height: auto;">
                 <div class="card-foto-img-container" style="height: 300px;">
-                    <img src="img/arroz-color.png" alt="Hombres en el Arroz - A Color">
+                    <img src="optimized/img/arroz-color.webp"
+                        alt="Recreación a color de la faena del arroz en el campo de Parral" loading="lazy" width="600"
+                        height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Coloreada Digitalmente</h3>
@@ -100,11 +95,9 @@
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Archivos en Movimiento. Patrimonio Vivo de Parral.</p>
-        </div>
-    </footer>
+    <button id="toTop" aria-label="Volver arriba">✦</button>
+
+    {% include footer.html %}
 
     <script src="js/home.js"></script>
 </body>

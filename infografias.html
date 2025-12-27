@@ -1,12 +1,20 @@
----
----
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infografías – Archivos en Movimiento</title>
+    <title>Infografías Patrimoniales – Archivos en Movimiento</title>
+    <meta name="description"
+        content="Colección de infografías educativas sobre el patrimonio y la historia de Parral. Material descargable para escuelas y la comunidad.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Infografías Patrimoniales de Parral | Archivos en Movimiento">
+    <meta property="og:description"
+        content="Descarga y visualiza material informativo sobre la historia local de Parral, desde sus orígenes hasta hoy.">
+    <meta property="og:image" content="https://fotos-parral.cl/optimized/images/epoca-portada.webp">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -320,30 +328,7 @@
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <div class="logo-area">
-                <h1><a href="index.html">Archivos en Movimiento</a></h1>
-                <p class="subtitle">Patrimonio Vivo de Parral</p>
-            </div>
-            <button class="mobile-menu-btn" aria-label="Menú">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="galeria.html">Galería</a></li>
-                    <li><a href="relatos.html">Relatos</a></li>
-                    <li><a href="educacion.html" class="active">Educación</a></li>
-                    <li><a href="historia.html">Historia</a></li>
-                    <li><a href="mapa.html">Mapa</a></li>
-                    <li><a href="participa.html" class="btn-nav">¡Participa!</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    {% include header.html %}
 
     <section class="hero" style="padding: 4rem 0; min-height: 40vh;">
         <div class="container">
@@ -369,14 +354,16 @@
             <!-- Infografía 1 -->
             <div class="infografia-card">
                 <div class="infografia-image-container" onclick="openLightbox(0)">
-                    <img src="images/infografia-1.png" alt="Infografía sobre el Patrimonio de Parral" loading="lazy">
+                    <img src="optimized/images/infografia-1.webp" alt="Infografía sobre el Patrimonio de Parral"
+                        loading="lazy" width="900" height="1273">
                     <div class="infografia-overlay">
                         <span>Ver en pantalla completa</span>
                     </div>
                 </div>
                 <div class="infografia-actions">
                     <h4 class="infografia-title">Infografía 1 - Patrimonio de Parral</h4>
-                    <a href="images/infografia-1.png" download="Infografia_Parral_1.png" class="btn-download">
+                    <a href="optimized/images/infografia-1.webp" download="Infografia_Parral_1.webp"
+                        class="btn-download">
                         Descargar
                     </a>
                 </div>
@@ -385,14 +372,16 @@
             <!-- Infografía 2 -->
             <div class="infografia-card">
                 <div class="infografia-image-container" onclick="openLightbox(1)">
-                    <img src="images/infografia-2.png" alt="Infografía Histórica" loading="lazy">
+                    <img src="optimized/images/infografia-2.webp" alt="Infografía Histórica" loading="lazy" width="900"
+                        height="1273">
                     <div class="infografia-overlay">
                         <span>Ver en pantalla completa</span>
                     </div>
                 </div>
                 <div class="infografia-actions">
                     <h4 class="infografia-title">Infografía 2 - Historia Local</h4>
-                    <a href="images/infografia-2.png" download="Infografia_Parral_2.png" class="btn-download">
+                    <a href="optimized/images/infografia-2.webp" download="Infografia_Parral_2.webp"
+                        class="btn-download">
                         Descargar
                     </a>
                 </div>
@@ -401,14 +390,16 @@
             <!-- Infografía 3 -->
             <div class="infografia-card">
                 <div class="infografia-image-container" onclick="openLightbox(2)">
-                    <img src="images/infografia-3.png" alt="Infografía Cultural" loading="lazy">
+                    <img src="optimized/images/infografia-3.webp" alt="Infografía Cultural" loading="lazy" width="900"
+                        height="1273">
                     <div class="infografia-overlay">
                         <span>Ver en pantalla completa</span>
                     </div>
                 </div>
                 <div class="infografia-actions">
                     <h4 class="infografia-title">Infografía 3 - Cultura Parralina</h4>
-                    <a href="images/infografia-3.png" download="Infografia_Parral_3.png" class="btn-download">
+                    <a href="optimized/images/infografia-3.webp" download="Infografia_Parral_3.webp"
+                        class="btn-download">
                         Descargar
                     </a>
                 </div>
@@ -417,14 +408,16 @@
             <!-- Infografía 4 -->
             <div class="infografia-card">
                 <div class="infografia-image-container" onclick="openLightbox(3)">
-                    <img src="images/infografia-4.png" alt="Infografía Educativa" loading="lazy">
+                    <img src="optimized/images/infografia-4.webp" alt="Infografía Educativa" loading="lazy" width="900"
+                        height="1273">
                     <div class="infografia-overlay">
                         <span>Ver en pantalla completa</span>
                     </div>
                 </div>
                 <div class="infografia-actions">
                     <h4 class="infografia-title">Infografía 4 - Educación Patrimonial</h4>
-                    <a href="images/infografia-4.png" download="Infografia_Parral_4.png" class="btn-download">
+                    <a href="optimized/images/infografia-4.webp" download="Infografia_Parral_4.webp"
+                        class="btn-download">
                         Descargar
                     </a>
                 </div>
@@ -433,14 +426,16 @@
             <!-- Infografía 5 -->
             <div class="infografia-card">
                 <div class="infografia-image-container" onclick="openLightbox(4)">
-                    <img src="images/infografia-5.png" alt="Infografía Patrimonial" loading="lazy">
+                    <img src="optimized/images/infografia-5.webp" alt="Infografía Patrimonial" loading="lazy"
+                        width="900" height="1273">
                     <div class="infografia-overlay">
                         <span>Ver en pantalla completa</span>
                     </div>
                 </div>
                 <div class="infografia-actions">
                     <h4 class="infografia-title">Infografía 5 - Patrimonio Vivo</h4>
-                    <a href="images/infografia-5.png" download="Infografia_Parral_5.png" class="btn-download">
+                    <a href="optimized/images/infografia-5.webp" download="Infografia_Parral_5.webp"
+                        class="btn-download">
                         Descargar
                     </a>
                 </div>
@@ -449,14 +444,16 @@
             <!-- Infografía 6 -->
             <div class="infografia-card">
                 <div class="infografia-image-container" onclick="openLightbox(5)">
-                    <img src="images/infografia-6.png" alt="Infografía Patrimonial" loading="lazy">
+                    <img src="optimized/images/infografia-6.webp" alt="Infografía Patrimonial" loading="lazy"
+                        width="900" height="1273">
                     <div class="infografia-overlay">
                         <span>Ver en pantalla completa</span>
                     </div>
                 </div>
                 <div class="infografia-actions">
                     <h4 class="infografia-title">Infografía 6 - Patrimonio Vivo</h4>
-                    <a href="images/infografia-6.png" download="Infografia_Parral_6.png" class="btn-download">
+                    <a href="optimized/images/infografia-6.webp" download="Infografia_Parral_6.webp"
+                        class="btn-download">
                         Descargar
                     </a>
                 </div>
@@ -500,12 +497,12 @@
         // ==========================================
 
         const infografias = [
-            { src: 'images/infografia-1.png', title: 'Infografía 1 - Patrimonio de Parral', download: 'Infografia_Parral_1.png' },
-            { src: 'images/infografia-2.png', title: 'Infografía 2 - Historia Local', download: 'Infografia_Parral_2.png' },
-            { src: 'images/infografia-3.png', title: 'Infografía 3 - Cultura Parralina', download: 'Infografia_Parral_3.png' },
-            { src: 'images/infografia-4.png', title: 'Infografía 4 - Educación Patrimonial', download: 'Infografia_Parral_4.png' },
-            { src: 'images/infografia-5.png', title: 'Infografía 5 - Patrimonio Vivo', download: 'Infografia_Parral_5.png' },
-            { src: 'images/infografia-6.png', title: 'Infografía 6 - Patrimonio Vivo', download: 'Infografia_Parral_6.png' }
+            { src: 'optimized/images/infografia-1.webp', title: 'Infografía 1 - Patrimonio de Parral', download: 'Infografia_Parral_1.webp' },
+            { src: 'optimized/images/infografia-2.webp', title: 'Infografía 2 - Historia Local', download: 'Infografia_Parral_2.webp' },
+            { src: 'optimized/images/infografia-3.webp', title: 'Infografía 3 - Cultura Parralina', download: 'Infografia_Parral_3.webp' },
+            { src: 'optimized/images/infografia-4.webp', title: 'Infografía 4 - Educación Patrimonial', download: 'Infografia_Parral_4.webp' },
+            { src: 'optimized/images/infografia-5.webp', title: 'Infografía 5 - Patrimonio Vivo', download: 'Infografia_Parral_5.webp' },
+            { src: 'optimized/images/infografia-6.webp', title: 'Infografía 6 - Patrimonio Vivo', download: 'Infografia_Parral_6.webp' }
         ];
 
         let currentIndex = 0;

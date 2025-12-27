@@ -1,12 +1,19 @@
----
----
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alcaldes de Parral – Archivos en Movimiento</title>
+  <title>Línea de Tiempo: Alcaldes de Parral – Archivos en Movimiento</title>
+  <meta name="description"
+    content="Explora la historia de las autoridades de Parral a través de nuestra línea de tiempo interactiva. Un compendio patrimonial de alcaldes y alcaldesas.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Alcaldes de Parral: Historia y Patrimonio | Archivos en Movimiento">
+  <meta property="og:description"
+    content="Recorrido histórico por las autoridades comunales de Parral. Fichas biográficas e impacto patrimonial.">
+  <meta property="og:image" content="https://fotos-parral.cl/optimized/images/epoca-portada.webp">
 
   <!-- Google Fonts del Sitio -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -170,6 +177,7 @@
     /* Toolbar adaptation */
     .toolbar-section {
       background-color: rgba(255, 255, 255, 0.9);
+      -webkit-backdrop-filter: blur(8px);
       backdrop-filter: blur(8px);
       border-bottom: 1px solid #e2e8f0;
       position: sticky;
@@ -189,30 +197,7 @@
 <body class="alcaldes-container text-slate-900">
 
   <!-- HEADER GLOBAL -->
-  <header>
-    <div class="container">
-      <div class="logo-area">
-        <h1><a href="index.html">Archivos en Movimiento</a></h1>
-        <p class="subtitle">Patrimonio Vivo de Parral</p>
-      </div>
-      <button class="mobile-menu-btn" aria-label="Menú">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <nav class="main-nav">
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="galeria.html">Galería</a></li>
-          <li><a href="relatos.html" class="active">Relatos</a></li>
-          <li><a href="educacion.html">Educación</a></li>
-          <li><a href="historia.html">Historia</a></li>
-          <li><a href="mapa.html">Mapa</a></li>
-          <li><a href="participa.html" class="btn-nav">¡Participa!</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  {% include header.html %}
 
   <!-- Encabezado / Toolbar de la sección Alcaldes -->
   <section id="toolbar" class="toolbar-section">
@@ -261,7 +246,7 @@
 
   <!-- Modal Ficha -->
   <div id="fichaModal"
-    class="fixed inset-0 z-50 hidden flex items-center justify-center bg-slate-900/50 backdrop-blur-sm p-4 print:hidden">
+    class="fixed inset-0 z-50 hidden flex items-center justify-center bg-slate-900/50 -webkit-backdrop-filter: blur(4px); backdrop-blur-sm p-4 print:hidden">
     <div class="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative">
       <button onclick="closeModal()"
         class="absolute top-4 right-4 p-2 bg-slate-100 rounded-full hover:bg-slate-200 transition-colors z-10"
@@ -278,13 +263,7 @@
   </div>
 
   <!-- Pie GLOBAL -->
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Archivos en Movimiento. Patrimonio Vivo de Parral.</p>
-      <p class="text-sm text-slate-400 mt-2">Compilación para fines de rescate cultural. Si cuentas con antecedentes
-        verificables, por favor remitir para su incorporación.</p>
-    </div>
-  </footer>
+  {% include footer.html %}
 
   <script>
     // Header Logic (Mobile Menu)

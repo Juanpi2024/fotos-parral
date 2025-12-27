@@ -129,14 +129,45 @@
         ];
 
         function normalizeText(text) {
-            return text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+            return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
+        }
+
+        function getLevenshteinDistance(a, b) {
+            const matrix = [];
+            for (let i = 0; i <= b.length; i++) matrix[i] = [i];
+            for (let j = 0; j <= a.length; j++) matrix[0][j] = j;
+            for (let i = 1; i <= b.length; i++) {
+                for (let j = 1; j <= a.length; j++) {
+                    if (b.charAt(i - 1) === a.charAt(j - 1)) {
+                        matrix[i][j] = matrix[i - 1][j - 1];
+                    } else {
+                        matrix[i][j] = Math.min(matrix[i - 1][j - 1] + 1, Math.min(matrix[i][j - 1] + 1, matrix[i - 1][j] + 1));
+                    }
+                }
+            }
+            return matrix[b.length][a.length];
         }
 
         function handleBotResponse(input) {
             const normalizedQuery = normalizeText(input);
-            let match = knowledgeBase.find(item =>
-                item.keys.some(key => normalizedQuery.includes(normalizeText(key)))
-            );
+            const queryWords = normalizedQuery.split(/\s+/);
+
+            let match = knowledgeBase.find(item => {
+                return item.keys.some(key => {
+                    const normKey = normalizeText(key);
+                    // 1. Coincidencia exacta o contenida
+                    if (normalizedQuery.includes(normKey)) return true;
+
+                    // 2. Coincidencia difusa por palabra
+                    return queryWords.some(word => {
+                        if (word.length < 4) return false; // Evitar falsos positivos en palabras cortas
+                        const distance = getLevenshteinDistance(word, normKey);
+                        // Permitir 1 error en palabras de 4-6 letras, 2 en más largas
+                        const maxError = normKey.length > 6 ? 2 : 1;
+                        return distance <= maxError;
+                    });
+                });
+            });
 
             setTimeout(() => {
                 if (match) {

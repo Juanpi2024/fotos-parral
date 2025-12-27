@@ -45,109 +45,93 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Merriweather:wght@300;400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <div class="logo-area">
-                <h1><a href="index.html">Archivos en Movimiento</a></h1>
-                <p class="subtitle">Patrimonio Vivo de Parral</p>
+    <!-- Header -->
+    {% include header.html %}
+
+    <!-- Hero Section con Slider -->
+    <section class="hero">
+        <div class="hero-slider">
+            <div class="slide active">
+                <img src="optimized/images/slider-tren.webp" alt="Tren Histórico de Parral en la antigua estación"
+                    loading="lazy" width="1920" height="1080">
             </div>
-            <button class="mobile-menu-btn" aria-label="Menú">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html" class="active">Inicio</a></li>
-                    <li><a href="galeria.html">Galería</a></li>
-                    <li><a href="relatos.html">Relatos</a></li>
-                    <li><a href="educacion.html">Educación</a></li>
-                    <li><a href="historia.html">Historia</a></li>
-                    <li><a href="mapa.html">Mapa</a></li>
-                    <li><a href="turismo.html">Turismo</a></li>
-                    <li><a href="participa.html" class="btn-nav">¡Participa!</a></li>
-                </ul>
-            </nav>
+            <div class="slide">
+                <img src="optimized/images/slider-generic.webp" alt="Vista panorámica histórica de la ciudad de Parral"
+                    loading="lazy" width="1920" height="1080">
+            </div>
         </div>
-    </header>
+        <!-- Overlay to ensure text readability -->
+        <div class="hero-overlay"></div>
+        </div>
 
-    <main>
-        <section class="hero">
-            <!-- Hero Background Slider -->
-            <div class="hero-slider">
-                <div class="slide active">
-                    <img src="images/slider-tren.jpg" alt="Tren Histórico de Parral">
-                </div>
-                <div class="slide">
-                    <img src="images/slider-generic.png" alt="Imagen Histórica de Parral">
-                </div>
-                <!-- Overlay to ensure text readability -->
-                <div class="hero-overlay"></div>
+        <!-- Hero Content -->
+        <div class="container hero-content">
+            <h2 class="hero-title-dual inline">
+                <span class="title-white">Descubre</span>
+                <span class="title-gold">Parral</span>
+            </h2>
+            <p>Un viaje por nuestra historia e identidad</p>
+            <br>
+            <a href="galeria.html" class="btn-principal">Explorar Galería</a>
+        </div>
+    </section>
+
+    <section class="container" style="padding: 3rem 1rem;">
+        <!-- Cita inspiradora -->
+        <div class="pull-quote" style="padding: 1.5rem 2rem;">
+            <p>La memoria de un pueblo es el puente entre su pasado y su futuro.</p>
+            <cite>— Archivos en Movimiento</cite>
+        </div>
+
+        <hr class="section-divider">
+
+        <!-- Tarjetas de navegación estilo museo -->
+        <div class="grid-galeria">
+            <div class="card-capsule">
+                <h3>Galería Digital</h3>
+                <p>IA + Animación: Revive la Plaza de Armas, Bomberos y más.</p>
+                <a href="galeria.html" class="btn-principal">Ver Fotos</a>
             </div>
-
-            <!-- Hero Content -->
-            <div class="container hero-content">
-                <h2 class="hero-title-dual inline">
-                    <span class="title-white">Descubre</span>
-                    <span class="title-gold">Parral</span>
-                </h2>
-                <p>Un viaje por nuestra historia e identidad</p>
-                <br>
-                <a href="galeria.html" class="btn-principal">Explorar Galería</a>
+            <div class="card-capsule">
+                <h3>Relatos y Tradiciones</h3>
+                <p>Personajes como Neruda, oficios y leyendas locales.</p>
+                <a href="relatos.html" class="btn-principal">Leer Historias</a>
             </div>
-        </section>
-
-        <section class="container" style="padding: 3rem 1rem;">
-            <!-- Cita inspiradora -->
-            <div class="pull-quote" style="padding: 1.5rem 2rem;">
-                <p>La memoria de un pueblo es el puente entre su pasado y su futuro.</p>
-                <cite>— Archivos en Movimiento</cite>
+            <div class="card-capsule">
+                <h3>Difusión Cultural</h3>
+                <p>Videos, guías de trabajo y material educativo.</p>
+                <a href="educacion.html" class="btn-principal">Ver Recursos</a>
             </div>
-
-            <hr class="section-divider">
-
-            <!-- Tarjetas de navegación estilo museo -->
-            <div class="grid-galeria">
-                <div class="card-capsule">
-                    <h3>Galería Digital</h3>
-                    <p>IA + Animación: Revive la Plaza de Armas, Bomberos y más.</p>
-                    <a href="galeria.html" class="btn-principal">Ver Fotos</a>
-                </div>
-                <div class="card-capsule">
-                    <h3>Relatos y Tradiciones</h3>
-                    <p>Personajes como Neruda, oficios y leyendas locales.</p>
-                    <a href="relatos.html" class="btn-principal">Leer Historias</a>
-                </div>
-                <div class="card-capsule">
-                    <h3>Difusión Cultural</h3>
-                    <p>Videos, guías de trabajo y material educativo.</p>
-                    <a href="educacion.html" class="btn-principal">Ver Recursos</a>
-                </div>
-                <div class="card-capsule">
-                    <h3>Línea de Tiempo</h3>
-                    <p>Hitos históricos desde 1795 hasta nuestros días.</p>
-                    <a href="historia.html" class="btn-principal">Ver Historia</a>
-                </div>
-                <div class="card-capsule">
-                    <h3>Mapa Patrimonial</h3>
-                    <p>Explora los sitios históricos de Parral en el mapa interactivo.</p>
-                    <a href="mapa.html" class="btn-principal">Ver Mapa</a>
-                </div>
-                <!-- NUEVA TARJETA DE TURISMO -->
-                <div class="card-capsule">
-                    <h3>Turismo y Agenda</h3>
-                    <p>Atractivos naturales, termas y calendario de eventos.</p>
-                    <a href="turismo.html" class="btn-principal">Ver Panoramas</a>
-                </div>
+            <div class="card-capsule">
+                <h3>Línea de Tiempo</h3>
+                <p>Hitos históricos desde 1795 hasta nuestros días.</p>
+                <a href="historia.html" class="btn-principal">Ver Historia</a>
             </div>
-        </section>
+            <div class="card-capsule">
+                <h3>Mapa Patrimonial</h3>
+                <p>Explora los sitios históricos de Parral en el mapa interactivo.</p>
+                <a href="mapa.html" class="btn-principal">Ver Mapa</a>
+            </div>
+            <!-- NUEVA TARJETA DE TURISMO -->
+            <div class="card-capsule">
+                <h3>Turismo y Agenda</h3>
+                <p>Atractivos naturales, termas y calendario de eventos.</p>
+                <a href="turismo.html" class="btn-principal">Ver Panoramas</a>
+            </div>
+        </div>
+    </section>
     </main>
+
+    <!-- Botón Volver Arriba -->
+    <button id="backToTopBtn" aria-label="Volver arriba">
+        <span>↑</span>
+    </button>
 
     {% include footer.html %}
 </body>

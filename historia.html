@@ -1,14 +1,18 @@
----
----
----
----
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Línea de Tiempo Histórica – Archivos en Movimiento</title>
+    <title>Línea de Tiempo Histórica de Parral – Archivos en Movimiento</title>
+    <meta name="description"
+        content="Recorre los hitos más importantes de la historia de Parral, desde su fundación hasta hoy, en nuestra línea de tiempo interactiva.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Historia de Parral: Línea de Tiempo | Archivos en Movimiento">
+    <meta property="og:description" content="Conoce los momentos clave que forjaron la identidad de Parral.">
+    <meta property="og:image" content="https://fotos-parral.cl/optimized/images/epoca-portada.webp">
 
     <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -312,31 +316,7 @@
 
 <body>
 
-    <header>
-        <div class="container">
-            <div class="logo-area">
-                <h1><a href="index.html">Archivos en Movimiento</a></h1>
-                <p class="subtitle">Patrimonio Vivo de Parral</p>
-            </div>
-            <button class="mobile-menu-btn" aria-label="Menú">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="galeria.html">Galería</a></li>
-                    <li><a href="relatos.html">Relatos</a></li>
-                    <li><a href="educacion.html">Educación</a></li>
-                    <li><a href="historia.html" class="active">Historia</a></li>
-                    <li><a href="mapa.html">Mapa</a></li>
-                    <li><a href="turismo.html">Turismo</a></li>
-                    <li><a href="participa.html" class="btn-nav">¡Participa!</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    {% include header.html %}
 
     <!-- HERO SECTION -->
     <section class="timeline-hero">
@@ -566,12 +546,7 @@
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Archivos en Movimiento. Patrimonio Vivo de Parral.</p>
-            <p style="font-size: 0.9rem;">Modelo replicable para la gestión cultural municipal.</p>
-        </div>
-    </footer>
+    {% include footer.html %}
 
     <!-- Main JavaScript File -->
     <script src="js/home.js"></script>

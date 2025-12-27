@@ -6,7 +6,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plaza de Armas – Archivos en Movimiento</title>
+    <title>Colección: Plaza de Armas – Archivos en Movimiento</title>
+    <meta name="description"
+        content="Explora la historia visual de la Plaza de Armas de Parral a través de archivos originales y restauraciones digitales.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Plaza de Armas: Memoria Visual de Parral">
+    <meta property="og:description"
+        content="Registros históricos y restauraciones de la plaza principal de nuestra comuna.">
+    <meta property="og:image" content="https://fotos-parral.cl/optimized/img/plaza-original.webp">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -16,30 +26,7 @@
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <div class="logo-area">
-                <h1><a href="index.html">Archivos en Movimiento</a></h1>
-                <p class="subtitle">Patrimonio Vivo de Parral</p>
-            </div>
-            <button class="mobile-menu-btn" aria-label="Menú">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="galeria.html" class="active">Galería</a></li>
-                    <li><a href="relatos.html">Relatos</a></li>
-                    <li><a href="educacion.html">Educación</a></li>
-                    <li><a href="historia.html">Historia</a></li>
-                    <li><a href="mapa.html">Mapa</a></li>
-                    <li><a href="participa.html" class="btn-nav">¡Participa!</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    {% include header.html %}
 
     <section class="hero hero-detalle">
         <div class="container">
@@ -59,7 +46,9 @@
             <div class="card-foto">
                 <div class="card-foto-img-container">
                     <span class="heritage-badge badge-original">Archivo Original</span>
-                    <img src="img/plaza-original.jpg" alt="Plaza de Armas - Foto Original">
+                    <img src="optimized/img/plaza-original.webp"
+                        alt="Fotografía histórica de la Plaza de Armas de Parral, archivo original" loading="lazy"
+                        width="600" height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Plaza de Armas Original</h3>
@@ -71,7 +60,9 @@
             <div class="card-foto">
                 <div class="card-foto-img-container">
                     <span class="heritage-badge badge-restored">Colorización IA</span>
-                    <img src="img/plaza-color.png" alt="Plaza de Armas - Colorizada">
+                    <img src="optimized/img/plaza-color.webp"
+                        alt="Interpretación a color mediante IA de la Plaza de Armas histórica" loading="lazy"
+                        width="600" height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Plaza de Armas Colorizada</h3>
@@ -83,7 +74,9 @@
             <div class="card-foto">
                 <div class="card-foto-img-container">
                     <span class="heritage-badge badge-ia">Interpretación IA</span>
-                    <img src="img/plaza-restaurada.png" alt="Plaza de Armas - Restaurada">
+                    <img src="optimized/img/plaza-restaurada.webp"
+                        alt="Restauración digital completa de la Plaza de Armas de Parral" loading="lazy" width="600"
+                        height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Plaza de Armas Restaurada</h3>
@@ -110,11 +103,13 @@
         <h3 style="text-align: center; margin-top: 4rem; margin-bottom: 2rem;">Comparación Antes y Después</h3>
         <div class="img-comp-container" id="plaza-slider">
             <div class="img-comp-img">
-                <img src="img/plaza-color.png" id="foto-modificada" alt="Plaza de Armas - Color">
+                <img src="optimized/img/plaza-color.webp" id="foto-modificada" alt="Plaza de Armas - Color"
+                    loading="lazy" width="800" height="500">
                 <span class="img-comp-label after">Después</span>
             </div>
             <div class="img-comp-img img-comp-overlay">
-                <img src="img/plaza-original.jpg" id="foto-original" alt="Plaza de Armas - Original">
+                <img src="optimized/img/plaza-original.webp" id="foto-original" alt="Plaza de Armas - Original"
+                    loading="lazy" width="800" height="500">
                 <span class="img-comp-label before">Antes</span>
             </div>
             <div class="img-comp-slider"></div>
@@ -148,6 +143,10 @@
             </div>
         </div>
     </section>
+
+    {% include footer.html %}
+
+    <button id="toTop" aria-label="Volver arriba">✦</button>
 
     {% include footer.html %}
 
