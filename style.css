@@ -1891,3 +1891,12 @@ html {
         width: 100%;
     }
 }
+/* Debug / fix: asegurar que tarjetas sean clicables */
+.card-foto {
+  position: relative;
+  z-index: 2 !important;
+  pointer-events: auto !important;
+}
+.main-nav, header {
+  z-index: 9999; /* para que navbar quede encima si hace falta */
+}
