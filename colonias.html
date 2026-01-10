@@ -1,0 +1,488 @@
+---
+title: Colonias Históricas
+---
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raíces Europeas: Colonias Italiana y Alemana – Archivos en Movimiento</title>
+    <meta name="description"
+        content="Descubre la fascinante historia de las colonias europea en Parral: la Colonia Italiana de San Manuel (1950) y la llegada de colonos alemanes. Un capítulo crucial de nuestra identidad.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Raíces Europeas: Colonias Italiana y Alemana | Archivos en Movimiento">
+    <meta property="og:description"
+        content="La historia de las colonias italiana y alemana en Parral (1950-1980). Sueños, desarraigo y legado en tierras chilenas.">
+    <meta property="og:image" content="https://fotos-parral.cl/images/colonias/infografia-colonia-italiana.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Merriweather:wght@300;400;700;900&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ==========================================
+           COLONIAS - ESTILOS PREMIUM
+        ========================================== */
+
+        .colonias-hero {
+            background: linear-gradient(135deg, #1a1510 0%, #2d2419 50%, #1a1510 100%);
+            padding: 5rem 1rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .colonias-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('images/colonias/infografia-colonia-italiana.jpg') center/cover no-repeat;
+            opacity: 0.1;
+            filter: sepia(100%);
+        }
+
+        .colonias-hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .colonias-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #f4e9d9;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .colonias-hero h1 .accent {
+            color: #c9a961;
+            font-style: italic;
+        }
+
+        .colonias-hero .tagline {
+            font-family: 'Merriweather', serif;
+            font-size: 1.3rem;
+            color: rgba(244, 233, 217, 0.8);
+            font-style: italic;
+            margin-top: 1rem;
+        }
+
+        .colonias-hero .era-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #c9a961 0%, #8b7355 100%);
+            color: #1a1510;
+            padding: 0.5rem 2rem;
+            border-radius: 30px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-top: 1.5rem;
+            letter-spacing: 2px;
+        }
+
+        /* Sección de Colonias */
+        .colonias-section {
+            padding: 4rem 1rem;
+        }
+
+        .colonia-block {
+            background: #faf8f5;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 3rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .colonia-header {
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .colonia-header.italiana {
+            background: linear-gradient(135deg, #009246 0%, #ffffff 50%, #ce2b37 100%);
+            background-size: 300% 100%;
+        }
+
+        .colonia-header.alemana {
+            background: linear-gradient(135deg, #000000 0%, #dd0000 50%, #ffcc00 100%);
+            background-size: 300% 100%;
+        }
+
+        .colonia-header .flag-icon {
+            font-size: 3rem;
+        }
+
+        .colonia-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin: 0;
+        }
+
+        .colonia-header .subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            margin-top: 0.25rem;
+        }
+
+        .colonia-content {
+            padding: 2rem;
+        }
+
+        .colonia-intro {
+            font-family: 'Merriweather', serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #4a4a4a;
+            margin-bottom: 2rem;
+            border-left: 4px solid #c9a961;
+            padding-left: 1.5rem;
+        }
+
+        /* Infografía destacada */
+        .featured-infographic {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .featured-infographic img {
+            width: 100%;
+            height: auto;
+            display: block;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .featured-infographic img:hover {
+            transform: scale(1.02);
+        }
+
+        .featured-infographic .caption {
+            padding: 1rem 1.5rem;
+            background: #1a1510;
+            color: #f4e9d9;
+            font-family: 'Merriweather', serif;
+            font-style: italic;
+            text-align: center;
+        }
+
+        /* Timeline visual */
+        .timeline-events {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .event-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid #c9a961;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .event-card .year {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #c9a961;
+            margin-bottom: 0.5rem;
+        }
+
+        .event-card h4 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.1rem;
+            color: #1a1510;
+            margin-bottom: 0.5rem;
+        }
+
+        .event-card p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Video section */
+        .video-section {
+            margin-top: 2rem;
+        }
+
+        .video-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #1a1510;
+            margin-bottom: 1rem;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .video-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .video-card .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-card .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-card .video-info {
+            padding: 1rem;
+        }
+
+        .video-card h4 {
+            font-family: 'Merriweather', serif;
+            color: #1a1510;
+            margin-bottom: 0.25rem;
+        }
+
+        /* CTA Section */
+        .colonias-cta {
+            background: linear-gradient(135deg, #1a1510 0%, #2d2419 100%);
+            padding: 3rem 1rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .colonias-cta h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #f4e9d9;
+            margin-bottom: 1rem;
+        }
+
+        .colonias-cta p {
+            color: rgba(244, 233, 217, 0.8);
+            margin-bottom: 1.5rem;
+        }
+
+        .colonias-cta .btn-gold {
+            display: inline-block;
+            background: linear-gradient(135deg, #c9a961 0%, #8b7355 100%);
+            color: #1a1510;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .colonias-cta .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(201, 169, 97, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .colonias-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .colonias-hero .tagline {
+                font-size: 1rem;
+            }
+
+            .colonia-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .colonia-header h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    {% include header.html %}
+
+    <main id="main-content">
+        {% include breadcrumbs.html %}
+
+        <!-- Hero Section -->
+        <section class="colonias-hero">
+            <div class="container">
+                <h1>Raíces <span class="accent">Europeas</span></h1>
+                <p class="tagline">Colonias Italiana y Alemana en Parral: Sueños, Desarraigo y Legado</p>
+                <span class="era-badge">1950 — 1980</span>
+            </div>
+        </section>
+
+        <section class="colonias-section container">
+
+            <!-- Colonia Italiana -->
+            <div class="colonia-block">
+                <div class="colonia-header italiana">
+                    <span class="flag-icon">🇮🇹</span>
+                    <div>
+                        <h2>La Colonia Italiana de San Manuel</h2>
+                        <p class="subtitle">Un proyecto binacional que cambió la historia de Parral</p>
+                    </div>
+                </div>
+
+                <div class="colonia-content">
+                    <p class="colonia-intro">
+                        En 1950, Italia y Chile firmaron un acuerdo para crear una colonia agrícola en el Fundo San
+                        Manuel.
+                        Llegaron 153 colonos desde las regiones de Abruzzi y Trentino, buscando un nuevo comienzo tras
+                        la
+                        devastación de la Segunda Guerra Mundial. Lo que encontraron fue una tierra de promesas
+                        incumplidas,
+                        pero también de profunda resiliencia.
+                    </p>
+
+                    <!-- Infografía Principal -->
+                    <div class="featured-infographic">
+                        <img src="images/colonias/infografia-colonia-italiana.jpg"
+                            alt="Infografía: La Colonia Italiana de San Manuel de Parral - Sueño y Desarraigo"
+                            loading="lazy" onclick="openLightbox(this.src, this.alt)">
+                        <div class="caption">
+                            🌳 Línea de tiempo visual: El sueño y desarraigo de la Colonia Italiana (1950-1991)
+                        </div>
+                    </div>
+
+                    <!-- Eventos clave -->
+                    <div class="timeline-events">
+                        <div class="event-card">
+                            <span class="year">1950</span>
+                            <h4>Nace el Proyecto Binacional</h4>
+                            <p>Italia y Chile compran el Fundo San Manuel para crear una colonia agrícola modelo.</p>
+                        </div>
+                        <div class="event-card">
+                            <span class="year">1952</span>
+                            <h4>Llegan 20 Familias</h4>
+                            <p>153 colonos de Abruzzi y Trentino arriban a Chile para iniciar el proyecto.</p>
+                        </div>
+                        <div class="event-card">
+                            <span class="year">1954</span>
+                            <h4>Éxodo de las Primeras Familias</h4>
+                            <p>15 de 20 familias originales abandonan el fundo por las duras condiciones.</p>
+                        </div>
+                        <div class="event-card">
+                            <span class="year">1961</span>
+                            <h4>Llegan los Alemanes</h4>
+                            <p>Paul Schäfer y sus seguidores se instalan en terrenos vendidos por la administradora
+                                CITAL.</p>
+                        </div>
+                        <div class="event-card">
+                            <span class="year">1970</span>
+                            <h4>Propietarios Tras 18 Años</h4>
+                            <p>Solo 7 familias logran saldar sus deudas y ser dueñas de sus tierras.</p>
+                        </div>
+                        <div class="event-card">
+                            <span class="year">1991</span>
+                            <h4>Un Único Legado</h4>
+                            <p>De los colonos originales, solo la familia de Nunzio Cicchelli permanece en San Manuel.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Videos -->
+                    <div class="video-section">
+                        <h3>📹 Testimonios y Documentales</h3>
+                        <div class="video-grid">
+                            <div class="video-card">
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/PLACEHOLDER_VIDEO_1"
+                                        title="Documental Colonia Italiana" allowfullscreen></iframe>
+                                </div>
+                                <div class="video-info">
+                                    <h4>Documental: Sueños de San Manuel</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Colonia Alemana -->
+            <div class="colonia-block">
+                <div class="colonia-header alemana">
+                    <span class="flag-icon">🇩🇪</span>
+                    <div>
+                        <h2>La Colonia Alemana</h2>
+                        <p class="subtitle">Un capítulo oscuro que marcó la región</p>
+                    </div>
+                </div>
+
+                <div class="colonia-content">
+                    <p class="colonia-intro">
+                        En 1961, un grupo liderado por Paul Schäfer llegó a terrenos vendidos por la administradora
+                        CITAL,
+                        dando origen a lo que se conocería como Colonia Dignidad (hoy Villa Baviera). Este período
+                        representa
+                        uno de los capítulos más complejos y oscuros de la historia local, cuyas heridas aún resuenan
+                        en la comunidad.
+                    </p>
+
+                    <div class="timeline-events">
+                        <div class="event-card">
+                            <span class="year">1961</span>
+                            <h4>Llegada de los Colonos Alemanes</h4>
+                            <p>Paul Schäfer establece la comunidad en terrenos adquiridos de la Colonia Italiana.</p>
+                        </div>
+                        <div class="event-card">
+                            <span class="year">1961-1991</span>
+                            <h4>Hostigamiento y Desplazamiento</h4>
+                            <p>La secta alemana presiona y compra las parcelas de los italianos restantes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- CTA -->
+        <section class="colonias-cta">
+            <div class="container">
+                <h3>¿Tienes fotos o testimonios de esta época?</h3>
+                <p>Ayúdanos a preservar la memoria de las colonias europeas en Parral</p>
+                <a href="participa.html" class="btn-gold">Comparte tu Historia</a>
+            </div>
+        </section>
+    </main>
+
+    {% include footer.html %}
+</body>
+
+</html>
