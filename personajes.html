@@ -1,0 +1,207 @@
+---
+title: Personajes Destacados
+---
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personajes Destacados – Archivos en Movimiento</title>
+    <meta name="description"
+        content="Conoce a los hijos ilustres de Parral: personajes destacados que han marcado la historia de nuestra ciudad desde 1905 hasta 2003.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Personajes Destacados de Parral | Archivos en Movimiento">
+    <meta property="og:description"
+        content="Galería de los hijos ilustres y personajes destacados que han dejado huella en la historia de Parral.">
+    <meta property="og:image" content="https://fotos-parral.cl/images/personajes/optimizado-HIJO-1.webp">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Merriweather:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .personajes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .personaje-card {
+            background: var(--card-bg-warm);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .personaje-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .personaje-card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .personaje-card .card-content {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .personaje-card h3 {
+            font-family: var(--font-heading);
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .personaje-card p {
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .personajes-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .personaje-card img {
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .personajes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    {% include header.html %}
+
+    <main id="main-content">
+        {% include breadcrumbs.html %}
+
+        <section class="hero"
+            style="background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%); padding: 4rem 1rem 3rem; min-height: auto;">
+            <div class="container" style="text-align: center;">
+                <h1 class="hero-title-dual inline">
+                    <span class="title-white">Personajes</span>
+                    <span class="title-gold">Destacados</span>
+                </h1>
+                <p style="color: rgba(255,255,255,0.7); margin-top: 1rem;">
+                    Hijos ilustres de Parral que han dejado huella en nuestra historia (1905-2003)
+                </p>
+            </div>
+        </section>
+
+        <section class="container" style="padding: 4rem 1rem;">
+            <div class="personajes-grid">
+                <!-- Personaje 1 -->
+                <div class="personaje-card">
+                    <img src="images/personajes/optimizado-HIJO-1.webp" alt="Hijo Ilustre de Parral 1" loading="lazy"
+                        onclick="openLightbox(this.src, this.alt)">
+                    <div class="card-content">
+                        <h3>Hijo Ilustre 1</h3>
+                        <p>Personaje destacado de Parral</p>
+                    </div>
+                </div>
+
+                <!-- Personaje 2 -->
+                <div class="personaje-card">
+                    <img src="images/personajes/optimizado-HIJO-2.webp" alt="Hijo Ilustre de Parral 2" loading="lazy"
+                        onclick="openLightbox(this.src, this.alt)">
+                    <div class="card-content">
+                        <h3>Hijo Ilustre 2</h3>
+                        <p>Personaje destacado de Parral</p>
+                    </div>
+                </div>
+
+                <!-- Personaje 3 -->
+                <div class="personaje-card">
+                    <img src="images/personajes/optimizado-HIJO-3.webp" alt="Hijo Ilustre de Parral 3" loading="lazy"
+                        onclick="openLightbox(this.src, this.alt)">
+                    <div class="card-content">
+                        <h3>Hijo Ilustre 3</h3>
+                        <p>Personaje destacado de Parral</p>
+                    </div>
+                </div>
+
+                <!-- Personaje 4 -->
+                <div class="personaje-card">
+                    <img src="images/personajes/optimizado-HIJO-4.webp" alt="Hijo Ilustre de Parral 4" loading="lazy"
+                        onclick="openLightbox(this.src, this.alt)">
+                    <div class="card-content">
+                        <h3>Hijo Ilustre 4</h3>
+                        <p>Personaje destacado de Parral</p>
+                    </div>
+                </div>
+
+                <!-- Personaje 5 -->
+                <div class="personaje-card">
+                    <img src="images/personajes/optimizado-HIJO-5.webp" alt="Hijo Ilustre de Parral 5" loading="lazy"
+                        onclick="openLightbox(this.src, this.alt)">
+                    <div class="card-content">
+                        <h3>Hijo Ilustre 5</h3>
+                        <p>Personaje destacado de Parral</p>
+                    </div>
+                </div>
+
+                <!-- Personaje 6 -->
+                <div class="personaje-card">
+                    <img src="images/personajes/optimizado-HIJO-6.webp" alt="Hijo Ilustre de Parral 6" loading="lazy"
+                        onclick="openLightbox(this.src, this.alt)">
+                    <div class="card-content">
+                        <h3>Hijo Ilustre 6</h3>
+                        <p>Personaje destacado de Parral</p>
+                    </div>
+                </div>
+
+                <!-- Personaje 7 -->
+                <div class="personaje-card">
+                    <img src="images/personajes/optimizado-HIJO-7.webp" alt="Hijo Ilustre de Parral 7" loading="lazy"
+                        onclick="openLightbox(this.src, this.alt)">
+                    <div class="card-content">
+                        <h3>Hijo Ilustre 7</h3>
+                        <p>Personaje destacado de Parral</p>
+                    </div>
+                </div>
+
+                <!-- Personaje 8 -->
+                <div class="personaje-card">
+                    <img src="images/personajes/optimizado-HIJO-8.webp" alt="Hijo Ilustre de Parral 8" loading="lazy"
+                        onclick="openLightbox(this.src, this.alt)">
+                    <div class="card-content">
+                        <h3>Hijo Ilustre 8</h3>
+                        <p>Personaje destacado de Parral</p>
+                    </div>
+                </div>
+
+                <!-- Personaje 9 -->
+                <div class="personaje-card">
+                    <img src="images/personajes/optimizado-HIJO-9.webp" alt="Hijo Ilustre de Parral 9" loading="lazy"
+                        onclick="openLightbox(this.src, this.alt)">
+                    <div class="card-content">
+                        <h3>Hijo Ilustre 9</h3>
+                        <p>Personaje destacado de Parral</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    {% include footer.html %}
+</body>
+
+</html>
