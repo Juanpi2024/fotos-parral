@@ -130,7 +130,7 @@
                     <a href="detalle.html" class="btn-card">Ver Colección</a>
                 </div>
             </div>
-            <div class="card-foto">
+            <div class="card-foto" onclick="openModal('avenidaModal')" style="cursor: pointer;">
                 <div class="card-foto-img-container">
                     <img src="optimized/img/avenida-original_thumb.webp" alt="Vista de la Avenida Principal de Parral"
                         loading="lazy" width="600" height="375">
@@ -138,7 +138,8 @@
                 <div class="card-foto-content">
                     <h3>Avenida Principal</h3>
                     <p>La columna vertebral</p>
-                    <a href="detalle-avenida.html" class="btn-card">Ver Colección</a>
+                    <button onclick="event.stopPropagation(); openModal('avenidaModal')" class="btn-card">Ver
+                        Colección</button>
                 </div>
             </div>
 
@@ -331,6 +332,101 @@
         </div>
     </section>
 
+    <!-- Modal Avenida Principal -->
+    <div id="avenidaModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('avenidaModal')">&times;</span>
+
+            <div class="modal-header">
+                <button onclick="closeModal('avenidaModal')" class="btn-back">
+                    ← Volver a Galería
+                </button>
+                <h2>🏛️ Avenida Principal de Parral</h2>
+                <p>Colección completa de imágenes históricas de la avenida principal</p>
+            </div>
+
+            <div class="modal-grid">
+                <!-- Imagen 1: Original -->
+                <div class="colorear-item">
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('optimized/img/avenida-original.webp', 'Avenida Principal - Original')">
+                        <img src="optimized/img/avenida-original_thumb.webp" alt="Avenida Principal - Original"
+                            class="colorear-img" loading="lazy" width="400" height="280" style="cursor: pointer;">
+                    </div>
+                    <a href="optimized/img/avenida-original.webp" download="Avenida_Parral_Original.webp"
+                        class="btn-download-sm">Descargar</a>
+                </div>
+                <!-- Imagen 2: Restaurada -->
+                <div class="colorear-item">
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('optimized/img/avenida-restaurada.webp', 'Avenida Principal - Restaurada')">
+                        <img src="optimized/img/avenida-restaurada_thumb.webp" alt="Avenida Principal - Restaurada"
+                            class="colorear-img" loading="lazy" width="400" height="280" style="cursor: pointer;">
+                    </div>
+                    <a href="optimized/img/avenida-restaurada.webp" download="Avenida_Parral_Restaurada.webp"
+                        class="btn-download-sm">Descargar</a>
+                </div>
+                <!-- Imagen 3: Coloreada -->
+                <div class="colorear-item">
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('optimized/img/avenida-color.webp', 'Avenida Principal - Coloreada')">
+                        <img src="optimized/img/avenida-color_thumb.webp" alt="Avenida Principal - Coloreada"
+                            class="colorear-img" loading="lazy" width="400" height="280" style="cursor: pointer;">
+                    </div>
+                    <a href="optimized/img/avenida-color.webp" download="Avenida_Parral_Color.webp"
+                        class="btn-download-sm">Descargar</a>
+                </div>
+                <!-- Imagen 4: Parral Avenida 1 -->
+                <div class="colorear-item">
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('optimized/images/parral-avenida-1.webp', 'Avenida Principal - Vista 1')">
+                        <img src="optimized/images/parral-avenida-1_thumb.webp" alt="Avenida Principal - Vista 1"
+                            class="colorear-img" loading="lazy" width="400" height="280" style="cursor: pointer;">
+                    </div>
+                    <a href="optimized/images/parral-avenida-1.webp" download="Avenida_Parral_Vista1.webp"
+                        class="btn-download-sm">Descargar</a>
+                </div>
+                <!-- Imagen 5: Parral Avenida 2 -->
+                <div class="colorear-item">
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('optimized/images/parral-avenida-2.webp', 'Avenida Principal - Vista 2')">
+                        <img src="optimized/images/parral-avenida-2_thumb.webp" alt="Avenida Principal - Vista 2"
+                            class="colorear-img" loading="lazy" width="400" height="280" style="cursor: pointer;">
+                    </div>
+                    <a href="optimized/images/parral-avenida-2.webp" download="Avenida_Parral_Vista2.webp"
+                        class="btn-download-sm">Descargar</a>
+                </div>
+                <!-- Imagen 6: Parral Avenida 3 -->
+                <div class="colorear-item">
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('optimized/images/parral-avenida-3.webp', 'Avenida Principal - Vista 3')">
+                        <img src="optimized/images/parral-avenida-3_thumb.webp" alt="Avenida Principal - Vista 3"
+                            class="colorear-img" loading="lazy" width="400" height="280" style="cursor: pointer;">
+                    </div>
+                    <a href="optimized/images/parral-avenida-3.webp" download="Avenida_Parral_Vista3.webp"
+                        class="btn-download-sm">Descargar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox for enlarged images -->
+    <div id="lightbox" class="modal" style="display: none;">
+        <div class="modal-content"
+            style="max-width: 90%; max-height: 90vh; padding: 0; background: transparent; box-shadow: none;">
+            <span class="close-modal" onclick="closeLightbox()"
+                style="position: absolute; top: 20px; right: 40px; font-size: 3rem; z-index: 1001;">&times;</span>
+            <div style="text-align: center; position: relative;">
+                <img id="lightboxImg" src="" alt=""
+                    style="max-width: 100%; max-height: 85vh; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
+                <div style="margin-top: 1rem;">
+                    <a id="lightboxDownload" href="" download class="btn-download-sm"
+                        style="display: inline-block; padding: 0.75rem 1.5rem; font-size: 1rem;">⬇️ Descargar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     {% include footer.html %}
 
     <script>
@@ -370,6 +466,72 @@
                 filterCards(target);
             });
         });
+
+        // ==========================================
+        // MODAL SYSTEM
+        // ==========================================
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.style.display = "block";
+                setTimeout(() => {
+                    modal.classList.add('show');
+                }, 10);
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            if (modal) {
+                modal.classList.remove('show');
+                setTimeout(() => {
+                    modal.style.display = "none";
+                    document.body.style.overflow = '';
+                }, 300);
+            }
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function (event) {
+            if (event.target.classList.contains('modal')) {
+                const modalId = event.target.id;
+                if (modalId === 'lightbox') {
+                    closeLightbox();
+                } else {
+                    closeModal(modalId);
+                }
+            }
+        }
+
+        // ==========================================
+        // LIGHTBOX FUNCTIONALITY
+        // ==========================================
+        function openLightbox(imgSrc, altText) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const lightboxDownload = document.getElementById('lightboxDownload');
+
+            lightboxImg.src = imgSrc;
+            lightboxImg.alt = altText;
+            lightboxDownload.href = imgSrc;
+            lightboxDownload.download = imgSrc.split('/').pop();
+
+            lightbox.style.display = 'block';
+            setTimeout(() => {
+                lightbox.classList.add('show');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('show');
+            setTimeout(() => {
+                lightbox.style.display = 'none';
+                document.body.style.overflow = '';
+            }, 300);
+        }
     </script>
 </body>
 
