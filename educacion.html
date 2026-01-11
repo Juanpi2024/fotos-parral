@@ -43,14 +43,14 @@
     <section class="container" style="padding: 4rem 1rem;">
         <div class="grid-galeria">
             <div id="cardVideos" class="card-testimonio" style="cursor: pointer;">
-                <h3>Videos y Presentaciones</h3>
+                <h3>Videos</h3>
                 <p>Material audiovisual para clases y charlas.</p>
-                <div class="galeria-placeholder" style="height: 150px; margin-top: 1rem;">🎞️</div>
+                <div class="galeria-placeholder" style="height: 150px; margin-top: 1rem;">🎬</div>
             </div>
-            <div class="card-testimonio">
-                <h3>Guías de Trabajo</h3>
-                <p>Actividades descargables para estudiantes.</p>
-                <div class="galeria-placeholder" style="height: 150px; margin-top: 1rem;">📝</div>
+            <div id="cardPresentaciones" class="card-testimonio" style="cursor: pointer;">
+                <h3>Presentaciones</h3>
+                <p>Material descargable para clases y charlas.</p>
+                <div class="galeria-placeholder" style="height: 150px; margin-top: 1rem;">📚</div>
             </div>
             <div id="cardColorear" class="card-testimonio" style="cursor: pointer;">
                 <h3>Para Colorear</h3>
@@ -111,6 +111,9 @@
                 </button>
                 <button onclick="switchModal('videosModal')" class="quick-nav-btn">
                     🎬 Videos
+                </button>
+                <button onclick="switchModal('presentacionesModal')" class="quick-nav-btn">
+                    📚 Presentaciones
                 </button>
                 <button onclick="switchModal('colorearModal')" class="quick-nav-btn active">
                     🎨 Colorear
@@ -187,6 +190,9 @@
                 <button onclick="switchModal('videosModal')" class="quick-nav-btn active">
                     🎬 Videos
                 </button>
+                <button onclick="switchModal('presentacionesModal')" class="quick-nav-btn">
+                    📚 Presentaciones
+                </button>
                 <button onclick="switchModal('colorearModal')" class="quick-nav-btn">
                     🎨 Colorear
                 </button>
@@ -196,8 +202,8 @@
                 <button onclick="closeModal('videosModal')" class="btn-back">
                     ← Volver a Educación
                 </button>
-                <h2>🎬 Videos y Presentaciones</h2>
-                <p>Material audiovisual y presentaciones educativas para clases y charlas</p>
+                <h2>🎬 Videos Educativos</h2>
+                <p>Material audiovisual para clases y charlas - Todos los videos de la página en un solo lugar</p>
             </div>
 
             <!-- Videos Section -->
@@ -338,10 +344,38 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 
-            <!-- Presentaciones Section -->
-            <h3 style="font-family: 'Merriweather', serif; color: var(--primary-color); margin: 1.5rem 0 1rem;">📚
-                Presentaciones PDF</h3>
+    <!-- Modal Presentaciones -->
+    <div id="presentacionesModal" class="modal">
+        <div class="modal-content" style="max-width: 900px;">
+            <span class="close-modal" onclick="closeModal('presentacionesModal')">&times;</span>
+
+            <!-- Quick Navigation Bar -->
+            <div class="modal-quick-nav">
+                <button onclick="switchModal('infografiasModal')" class="quick-nav-btn">
+                    📊 Infografías
+                </button>
+                <button onclick="switchModal('videosModal')" class="quick-nav-btn">
+                    🎬 Videos
+                </button>
+                <button onclick="switchModal('presentacionesModal')" class="quick-nav-btn active">
+                    📚 Presentaciones
+                </button>
+                <button onclick="switchModal('colorearModal')" class="quick-nav-btn">
+                    🎨 Colorear
+                </button>
+            </div>
+
+            <div class="modal-header">
+                <button onclick="closeModal('presentacionesModal')" class="btn-back">
+                    ← Volver a Educación
+                </button>
+                <h2>📚 Presentaciones PDF</h2>
+                <p>Material descargable para clases y charlas educativas</p>
+            </div>
+
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
                 <!-- PDF 1 -->
                 <div style="background: #f8f8f8; border-radius: 12px; padding: 1.5rem; text-align: center;">
@@ -399,6 +433,9 @@
                 </button>
                 <button onclick="switchModal('videosModal')" class="quick-nav-btn">
                     🎬 Videos
+                </button>
+                <button onclick="switchModal('presentacionesModal')" class="quick-nav-btn">
+                    📚 Presentaciones
                 </button>
                 <button onclick="switchModal('colorearModal')" class="quick-nav-btn">
                     🎨 Colorear
@@ -566,7 +603,7 @@
         }
 
         function closeAllModals() {
-            const modals = ['infografiasModal', 'videosModal', 'colorearModal'];
+            const modals = ['infografiasModal', 'videosModal', 'presentacionesModal', 'colorearModal'];
             modals.forEach(id => {
                 const modal = document.getElementById(id);
                 if (modal) {
@@ -790,6 +827,14 @@
             if (cardInfografias) {
                 cardInfografias.addEventListener('click', function () {
                     openModal('infografiasModal');
+                });
+            }
+
+            // Event listener para el modal de presentaciones
+            const cardPresentaciones = document.getElementById('cardPresentaciones');
+            if (cardPresentaciones) {
+                cardPresentaciones.addEventListener('click', function () {
+                    openModal('presentacionesModal');
                 });
             }
         });
