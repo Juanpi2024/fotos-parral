@@ -103,7 +103,24 @@
     <div id="colorearModal" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal('colorearModal')">&times;</span>
+
+            <!-- Quick Navigation Bar -->
+            <div class="modal-quick-nav">
+                <button onclick="switchModal('infografiasModal')" class="quick-nav-btn">
+                    📊 Infografías
+                </button>
+                <button onclick="switchModal('videosModal')" class="quick-nav-btn">
+                    🎬 Videos
+                </button>
+                <button onclick="switchModal('colorearModal')" class="quick-nav-btn active">
+                    🎨 Colorear
+                </button>
+            </div>
+
             <div class="modal-header">
+                <button onclick="closeModal('colorearModal')" class="btn-back">
+                    ← Volver a Educación
+                </button>
                 <h2>Láminas para Colorear</h2>
                 <p>Descarga estas ilustraciones inspiradas en nuestro patrimonio y dale vida con tus colores.</p>
             </div>
@@ -161,7 +178,24 @@
     <div id="videosModal" class="modal">
         <div class="modal-content" style="max-width: 1100px;">
             <span class="close-modal" onclick="closeModal('videosModal')">&times;</span>
+
+            <!-- Quick Navigation Bar -->
+            <div class="modal-quick-nav">
+                <button onclick="switchModal('infografiasModal')" class="quick-nav-btn">
+                    📊 Infografías
+                </button>
+                <button onclick="switchModal('videosModal')" class="quick-nav-btn active">
+                    🎬 Videos
+                </button>
+                <button onclick="switchModal('colorearModal')" class="quick-nav-btn">
+                    🎨 Colorear
+                </button>
+            </div>
+
             <div class="modal-header">
+                <button onclick="closeModal('videosModal')" class="btn-back">
+                    ← Volver a Educación
+                </button>
                 <h2>🎬 Videos y Presentaciones</h2>
                 <p>Material audiovisual y presentaciones educativas para clases y charlas</p>
             </div>
@@ -250,7 +284,24 @@
     <div id="infografiasModal" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal('infografiasModal')">&times;</span>
+
+            <!-- Quick Navigation Bar -->
+            <div class="modal-quick-nav">
+                <button onclick="switchModal('infografiasModal')" class="quick-nav-btn active">
+                    📊 Infografías
+                </button>
+                <button onclick="switchModal('videosModal')" class="quick-nav-btn">
+                    🎬 Videos
+                </button>
+                <button onclick="switchModal('colorearModal')" class="quick-nav-btn">
+                    🎨 Colorear
+                </button>
+            </div>
+
             <div class="modal-header">
+                <button onclick="closeModal('infografiasModal')" class="btn-back">
+                    ← Volver a Educación
+                </button>
                 <h2>📊 Infografías Educativas</h2>
                 <p>Material visual informativo sobre el patrimonio de Parral. Haz clic en cada imagen para ampliar.</p>
             </div>
@@ -392,6 +443,31 @@
                     document.body.style.overflow = ''; // Restore scrolling
                 }, 300);
             }
+        }
+
+        // ==========================================
+        // MODAL SWITCHING FUNCTIONALITY
+        // ==========================================
+        function switchModal(targetModalId) {
+            // Close all modals first
+            closeAllModals();
+
+            // Small delay for smooth transition
+            setTimeout(() => {
+                openModal(targetModalId);
+            }, 350);
+        }
+
+        function closeAllModals() {
+            const modals = ['infografiasModal', 'videosModal', 'colorearModal'];
+            modals.forEach(id => {
+                const modal = document.getElementById(id);
+                if (modal) {
+                    modal.classList.remove('show');
+                    modal.style.display = 'none';
+                }
+            });
+            document.body.style.overflow = '';
         }
 
         // Close modal when clicking outside
