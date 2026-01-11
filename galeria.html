@@ -345,6 +345,52 @@
                 <p>Colección completa de imágenes históricas de la avenida principal</p>
             </div>
 
+            <!-- Video Section -->
+            <div style="margin-bottom: 2.5rem;">
+                <h3
+                    style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
+                    🎬 Video Histórico
+                </h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/TPjZg1WbqWw"
+                        title="Avenida Principal de Parral - Video Histórico" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Before/After Comparison Section -->
+            <div style="margin-bottom: 2.5rem;">
+                <h3
+                    style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; text-align: center;">
+                    🔄 Compara: Original vs Coloreada
+                </h3>
+                <p style="text-align: center; color: var(--text-light); margin-bottom: 1rem; font-size: 0.9rem;">
+                    Arrastra el control para comparar →
+                </p>
+                <div class="before-after-container" id="beforeAfterContainer">
+                    <div class="before-after-wrapper">
+                        <!-- After Image (Coloreada) - Background -->
+                        <img src="optimized/img/avenida-color.webp" alt="Avenida Coloreada" class="after-image">
+                        <!-- Before Image (Original) - Overlay -->
+                        <div class="before-image-wrapper" id="beforeImageWrapper">
+                            <img src="optimized/img/avenida-original.webp" alt="Avenida Original" class="before-image">
+                        </div>
+                        <!-- Slider Control -->
+                        <div class="slider-control" id="sliderControl">
+                            <div class="slider-button"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image Gallery Section -->
+            <h3
+                style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
+                📸 Galería de Imágenes
+            </h3>
+
             <div class="modal-grid">
                 <!-- Imagen 1: Original -->
                 <div class="colorear-item">
@@ -517,5 +563,148 @@
         }
     </script>
 </body>
+
+<style>
+    /* Before/After Comparison Styles */
+    .before-after-container {
+        max-width: 800px;
+        margin: 0 auto;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .before-after-wrapper {
+        position: relative;
+        width: 100%;
+        padding-bottom: 66.67%;
+        /* 3:2 aspect ratio */
+        overflow: hidden;
+        cursor: ew-resize;
+        user-select: none;
+    }
+
+    .after-image,
+    .before-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .before-image-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 2;
+    }
+
+    .slider-control {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 4px;
+        height: 100%;
+        background: white;
+        z-index: 3;
+        transform: translateX(-50%);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .slider-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 40px;
+        height: 40px;
+        background: white;
+        border-radius: 50%;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .slider-button::before,
+    .slider-button::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+    }
+
+    .slider-button::before {
+        left: 8px;
+        border-width: 6px 8px 6px 0;
+        border-color: transparent var(--primary-color) transparent transparent;
+    }
+
+    .slider-button::after {
+        right: 8px;
+        border-width: 6px 0 6px 8px;
+        border-color: transparent transparent transparent var(--primary-color);
+    }
+
+    @media (max-width: 768px) {
+        .slider-button {
+            width: 50px;
+            height: 50px;
+        }
+    }
+</style>
+
+<script>
+    // Before/After Slider Functionality
+    document.addEventListener('DOMContentLoaded', function () {
+        const container = document.getElementById('beforeAfterContainer');
+        if (!container) return;
+
+        const wrapper = container.querySelector('.before-after-wrapper');
+        const beforeWrapper = document.getElementById('beforeImageWrapper');
+        const sliderControl = document.getElementById('sliderControl');
+        let isDragging = false;
+
+        function updateSlider(e) {
+            const rect = wrapper.getBoundingClientRect();
+            const x = (e.type.includes('touch') ? e.touches[0].clientX : e.clientX) - rect.left;
+            const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
+
+            beforeWrapper.style.width = percentage + '%';
+            sliderControl.style.left = percentage + '%';
+        }
+
+        function startDrag(e) {
+            isDragging = true;
+            updateSlider(e);
+            e.preventDefault();
+        }
+
+        function drag(e) {
+            if (!isDragging) return;
+            updateSlider(e);
+        }
+
+        function stopDrag() {
+            isDragging = false;
+        }
+
+        // Mouse events
+        wrapper.addEventListener('mousedown', startDrag);
+        document.addEventListener('mousemove', drag);
+        document.addEventListener('mouseup', stopDrag);
+
+        // Touch events
+        wrapper.addEventListener('touchstart', startDrag, { passive: false });
+        document.addEventListener('touchmove', drag, { passive: false });
+        document.addEventListener('touchend', stopDrag);
+    });
+</script>
 
 </html>
