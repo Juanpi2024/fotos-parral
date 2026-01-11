@@ -1,5 +1,5 @@
 ---
-title: Personajes Destacados
+title: Personajes y Tradiciones
 ---
 <!DOCTYPE html>
 <html lang="es">
@@ -7,29 +7,103 @@ title: Personajes Destacados
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personajes Destacados – Archivos en Movimiento</title>
+    <title>Personajes y Tradiciones – Archivos en Movimiento</title>
     <meta name="description"
-        content="Conoce a los hijos ilustres de Parral: personajes destacados que han marcado la historia de nuestra ciudad desde 1905 hasta 2003.">
+        content="Conoce a los hijos ilustres de Parral y las tradiciones que forjaron nuestra identidad: personajes destacados, relatos y oficios históricos.">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Personajes Destacados de Parral | Archivos en Movimiento">
+    <meta property="og:title" content="Personajes y Tradiciones de Parral | Archivos en Movimiento">
     <meta property="og:description"
-        content="Galería de los hijos ilustres y personajes destacados que han dejado huella en la historia de Parral.">
+        content="Galería de personajes ilustres, videos testimoniales y tradiciones de la cultura parralina.">
     <meta property="og:image" content="https://fotos-parral.cl/images/personajes/optimizado-HIJO-1.webp">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Merriweather:wght@300;400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Merriweather:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
     <style>
+        /* ==========================================
+           PERSONAJES - ESTILOS PREMIUM (Tipo Colonias)
+        ========================================== */
+
+        .personajes-hero {
+            background: linear-gradient(135deg, #1a1510 0%, #2d2419 50%, #1a1510 100%);
+            padding: 3rem 1rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .personajes-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #f4e9d9;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .personajes-hero h1 .accent {
+            color: #c9a961;
+            font-style: italic;
+        }
+
+        .personajes-hero .tagline {
+            font-family: 'Merriweather', serif;
+            font-size: 1.1rem;
+            color: rgba(244, 233, 217, 0.8);
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+
+        .personajes-hero .era-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #c9a961 0%, #8b7355 100%);
+            color: #1a1510;
+            padding: 0.4rem 1.5rem;
+            border-radius: 30px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+            letter-spacing: 2px;
+        }
+
+        /* Secciones */
+        .personajes-section {
+            padding: 4rem 1rem;
+            background: #FCFAF7;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #1a1510;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            font-family: 'Merriweather', serif;
+            color: #666;
+            font-style: italic;
+        }
+
+        /* Grid de Personajes Ilustres */
         .personajes-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
-            padding: 2rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .personaje-card {
@@ -45,7 +119,6 @@ title: Personajes Destacados
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
         }
 
-        /* Crop to show only the portrait (center), hide blue sides */
         .personaje-card img {
             width: 100%;
             aspect-ratio: 3 / 4;
@@ -55,20 +128,129 @@ title: Personajes Destacados
             cursor: pointer;
         }
 
-        @media (max-width: 992px) {
-            .personajes-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-            }
+        /* Videos de Personajes */
+        .video-block {
+            background: #faf8f5;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        @media (max-width: 576px) {
-            .personajes-grid {
-                grid-template-columns: 1fr;
-            }
+        .video-block-header {
+            background: linear-gradient(135deg, #c9a961 0%, #a08040 100%);
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
 
-        /* Lightbox styles */
+        .video-block-header h3 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.4rem;
+            color: #1a1510;
+            margin: 0;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem;
+        }
+
+        .video-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .video-card .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-card .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-card .video-info {
+            padding: 1rem;
+        }
+
+        .video-card h4 {
+            font-family: 'Merriweather', serif;
+            color: #1a1510;
+            margin-bottom: 0.25rem;
+            font-size: 1rem;
+        }
+
+        .video-card p {
+            font-size: 0.85rem;
+            color: #666;
+            margin: 0;
+        }
+
+        /* Tradiciones Grid */
+        .tradiciones-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tradicion-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            display: block;
+        }
+
+        .tradicion-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .tradicion-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tradicion-card h4 {
+            font-family: 'Merriweather', serif;
+            color: #1a1510;
+            margin-bottom: 0.5rem;
+        }
+
+        .tradicion-card p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .tradicion-card .link-arrow {
+            color: #c9a961;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        /* Lightbox */
         .lightbox-overlay {
             display: none;
             position: fixed;
@@ -109,6 +291,23 @@ title: Personajes Destacados
         .lightbox-close:hover {
             transform: rotate(90deg);
         }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .personajes-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .personajes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .personajes-hero h1 {
+                font-size: 2rem;
+            }
+        }
     </style>
 </head>
 
@@ -118,20 +317,21 @@ title: Personajes Destacados
     <main id="main-content">
         {% include breadcrumbs.html %}
 
-        <section class="hero"
-            style="background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%); padding: 4rem 1rem 3rem; min-height: auto;">
-            <div class="container" style="text-align: center;">
-                <h1 class="hero-title-dual inline">
-                    <span class="title-white">Personajes</span>
-                    <span class="title-gold">Destacados</span>
-                </h1>
-                <p style="color: rgba(255,255,255,0.7); margin-top: 1rem;">
-                    Hijos ilustres de Parral que han dejado huella en nuestra historia (1905-2003)
-                </p>
+        <!-- Hero Section - Estilo Colonias -->
+        <section class="personajes-hero">
+            <div class="container">
+                <h1>Personajes y <span class="accent">Tradiciones</span></h1>
+                <p class="tagline">Hijos ilustres y la voz viva de nuestra gente</p>
+                <span class="era-badge">PARRAL VIVO</span>
             </div>
         </section>
 
-        <section class="container" style="padding: 4rem 1rem;">
+        <!-- Sección: Hijos Ilustres -->
+        <section class="personajes-section">
+            <div class="section-header">
+                <h2>🏛️ Hijos Ilustres de Parral</h2>
+                <p>Personajes destacados que han dejado huella en nuestra historia (1905-2003)</p>
+            </div>
             <div class="personajes-grid">
                 <!-- Personaje 1 -->
                 <div class="personaje-card">
@@ -185,6 +385,129 @@ title: Personajes Destacados
                 <div class="personaje-card">
                     <img src="images/personajes/optimizado-HIJO-9.webp" alt="Hijo Ilustre de Parral" loading="lazy"
                         onclick="openPersonajeLightbox(this.src)">
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Videos de Personajes -->
+        <section class="personajes-section" style="background: #f5f2ed;">
+            <div class="video-block">
+                <div class="video-block-header">
+                    <span style="font-size: 1.5rem;">🎬</span>
+                    <h3>Videos Testimoniales de Personajes Ilustres</h3>
+                </div>
+                <div class="video-grid">
+                    <!-- Pablo Neruda -->
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/ejoaLJy4FkQ"
+                                title="Pablo Neruda - La cuna olvidada del poeta"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>Pablo Neruda</h4>
+                            <p>La cuna olvidada del poeta</p>
+                        </div>
+                    </div>
+
+                    <!-- Profe Maza -->
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/OpSmKTgePek"
+                                title="Profe Maza - Legado educativo y astronómico"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>Profe Maza</h4>
+                            <p>Legado educativo y astronómico</p>
+                        </div>
+                    </div>
+
+                    <!-- Ignacio Urrutia -->
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/Eaj5YyAry7o"
+                                title="Ignacio Urrutia - Don Chanca Maestro del Rodeo"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>Ignacio Urrutia</h4>
+                            <p>Don Chanca, Maestro del Rodeo</p>
+                        </div>
+                    </div>
+
+                    <!-- El Guatón Loyola -->
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/TPGcPPh1F00"
+                                title="El Guatón Loyola - Historia de un mito"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <h4>El Guatón Loyola</h4>
+                            <p>Historia de un mito chileno</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Tradiciones y Oficios -->
+        <section class="personajes-section">
+            <div class="section-header">
+                <h2>📜 Tradiciones y Oficios</h2>
+                <p>Historias, leyendas y el legado de nuestra comunidad</p>
+            </div>
+            <div class="tradiciones-grid">
+                <!-- Historia de Parral -->
+                <a href="detalle-historia.html" class="tradicion-card">
+                    <div class="icon">🏛️</div>
+                    <h4>Historia de Parral</h4>
+                    <p>Un viaje por la historia del trabajo en nuestra comunidad.</p>
+                    <span class="link-arrow">Ver cronología →</span>
+                </a>
+
+                <!-- Video Histórico -->
+                <div class="tradicion-card" style="cursor: default;">
+                    <div class="icon">🎬</div>
+                    <h4>Video Histórico de Parral</h4>
+                    <div style="margin-top: 1rem; border-radius: 8px; overflow: hidden;">
+                        <div style="position: relative; padding-bottom: 56.25%; height: 0;">
+                            <iframe
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                                src="https://www.youtube.com/embed/gAi89JZfXEs" title="Video Histórico de Parral"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- El Guatón Loyola -->
+                <a href="detalle-guaton.html" class="tradicion-card">
+                    <div class="icon">🎵</div>
+                    <h4>El Guatón Loyola</h4>
+                    <p>La verdadera historia de la cueca y su origen en el rodeo de Parral.</p>
+                    <span class="link-arrow">Leer relato →</span>
+                </a>
+
+                <!-- Alcaldes -->
+                <a href="alcaldes.html" class="tradicion-card">
+                    <div class="icon">🏅</div>
+                    <h4>Alcaldes de Parral</h4>
+                    <p>Registro completo de las autoridades comunales desde 1912.</p>
+                    <span class="link-arrow">Ver registro →</span>
+                </a>
+
+                <!-- Historias Locales -->
+                <div class="tradicion-card" style="cursor: default;">
+                    <div class="icon">📖</div>
+                    <h4>Historias Locales</h4>
+                    <p>Mitos, leyendas y anécdotas de los barrios de Parral.</p>
+                    <span style="color: #999; font-size: 0.85rem;">Próximamente...</span>
                 </div>
             </div>
         </section>
