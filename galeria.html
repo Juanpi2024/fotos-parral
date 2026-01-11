@@ -154,7 +154,8 @@
             </div>
 
             <!-- Fila 2 -->
-            <div class="card-foto" data-tags="camion transporte carga maquina agricultura">
+            <div class="card-foto" data-tags="camion transporte carga maquina agricultura"
+                onclick="openModal('arrozModal')" style="cursor: pointer;">
                 <div class="card-foto-img-container">
                     <img src="optimized/img/arroz-original_thumb.webp"
                         alt="Camión cargado con sacos de arroz en el campo de Parral" loading="lazy" width="600"
@@ -163,7 +164,8 @@
                 <div class="card-foto-content">
                     <h3>Hombres en el Arroz</h3>
                     <p>Identidad Agrícola</p>
-                    <a href="detalle-arroz.html" class="btn-card">Ver Colección</a>
+                    <button type="button" onclick="event.stopPropagation(); openModal('arrozModal')"
+                        class="btn-card">Ver Colección</button>
                 </div>
             </div>
             <div class="card-foto">
@@ -897,6 +899,98 @@
                     </div>
                     <a href="optimized/images/parral-bomberos-3.webp" download="Bomberos_Parral_3.webp"
                         class="btn-download-sm">Descargar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Hombres en el Arroz -->
+    <div id="arrozModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('arrozModal')">&times;</span>
+
+            <div class="modal-header">
+                <button type="button" onclick="closeModal('arrozModal')" class="btn-back">
+                    ← Volver a Galería
+                </button>
+                <h2>🌾 Hombres en el Arroz</h2>
+                <p>La identidad agrícola que forjó el carácter de Parral</p>
+            </div>
+
+            <!-- Image Gallery Section -->
+            <h3
+                style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
+                📸 Galería de Imágenes
+            </h3>
+
+            <div class="modal-grid">
+                <!-- Imagen 1: Original -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        📷 Foto Original
+                    </h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('optimized/img/arroz-original.webp', 'Foto Original')">
+                        <img src="optimized/img/arroz-original_thumb.webp" alt="Hombres en el Arroz - Foto Original"
+                            class="colorear-img" loading="lazy" width="400" height="280" style="cursor: pointer;">
+                    </div>
+                    <a href="optimized/img/arroz-original.webp" download="Arroz_Parral_Original.webp"
+                        class="btn-download-sm">Descargar</a>
+                </div>
+                <!-- Imagen 2: Restaurada -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        ✨ Restaurada con IA
+                    </h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('optimized/img/arroz-restaurada.webp', 'Restaurada con IA')">
+                        <img src="optimized/img/arroz-restaurada_thumb.webp"
+                            alt="Hombres en el Arroz - Restaurada con IA" class="colorear-img" loading="lazy"
+                            width="400" height="280" style="cursor: pointer;">
+                    </div>
+                    <a href="optimized/img/arroz-restaurada.webp" download="Arroz_Parral_Restaurada.webp"
+                        class="btn-download-sm">Descargar</a>
+                </div>
+                <!-- Imagen 3: Coloreada -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        🎨 Coloreada con IA
+                    </h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('optimized/img/arroz-color.webp', 'Coloreada con IA')">
+                        <img src="optimized/img/arroz-color_thumb.webp" alt="Hombres en el Arroz - Coloreada con IA"
+                            class="colorear-img" loading="lazy" width="400" height="280" style="cursor: pointer;">
+                    </div>
+                    <a href="optimized/img/arroz-color.webp" download="Arroz_Parral_Color.webp"
+                        class="btn-download-sm">Descargar</a>
+                </div>
+            </div>
+
+            <!-- Before/After Comparison Section -->
+            <div style="margin: 2.5rem 0;">
+                <h3
+                    style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; text-align: center;">
+                    🔄 Compara: Original vs Coloreada
+                </h3>
+                <p style="text-align: center; color: var(--text-light); margin-bottom: 1rem; font-size: 0.9rem;">
+                    Arrastra el control para comparar →
+                </p>
+                <div class="before-after-container">
+                    <div class="before-after-wrapper">
+                        <!-- After Image (Coloreada) - Background -->
+                        <img src="optimized/img/arroz-color.webp" alt="Arroz Coloreada" class="after-image">
+                        <!-- Before Image (Original) - Overlay -->
+                        <div class="before-image-wrapper">
+                            <img src="optimized/img/arroz-original.webp" alt="Arroz Original" class="before-image">
+                        </div>
+                        <!-- Slider Control -->
+                        <div class="slider-control">
+                            <div class="slider-button"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
