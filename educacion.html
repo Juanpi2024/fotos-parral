@@ -57,13 +57,11 @@
                 <p>Láminas patrimoniales para los más pequeños.</p>
                 <div class="galeria-placeholder" style="height: 150px; margin-top: 1rem;">🎨</div>
             </div>
-            <a href="infografias.html" style="text-decoration: none; display: block; color: inherit;">
-                <div class="card-testimonio" style="height: 100%;">
-                    <h3>Infografías</h3>
-                    <p>Material visual informativo y educativo.</p>
-                    <div class="galeria-placeholder" style="height: 150px; margin-top: 1rem;">📊</div>
-                </div>
-            </a>
+            <div id="cardInfografias" class="card-testimonio" style="cursor: pointer;">
+                <h3>Infografías</h3>
+                <p>Material visual informativo y educativo.</p>
+                <div class="galeria-placeholder" style="height: 150px; margin-top: 1rem;">📊</div>
+            </div>
         </div>
     </section>
 
@@ -243,6 +241,126 @@
                         <a href="recursos/presentaciones/Parral_Tierra_de_Contrastes.pdf" download
                             style="flex: 1; padding: 0.5rem; background: #2d3748; color: #fff; text-decoration: none; border-radius: 6px; font-weight: 600;">⬇️</a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Infografías -->
+    <div id="infografiasModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('infografiasModal')">&times;</span>
+            <div class="modal-header">
+                <h2>📊 Infografías Educativas</h2>
+                <p>Material visual informativo sobre el patrimonio de Parral. Haz clic en cada imagen para ampliar.</p>
+            </div>
+            <div class="modal-grid">
+                <!-- Infografía 1 -->
+                <div class="colorear-item">
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('optimized/images/infografia-1.webp', 'Infografía 1')">
+                        <img src="optimized/images/infografia-1_thumb.webp" alt="Infografía 1" class="colorear-img"
+                            loading="lazy" width="400" height="280" style="cursor: pointer;">
+                    </div>
+                    <a href="optimized/images/infografia-1.webp" download="Infografia_Parral_1.webp"
+                        class="btn-download-sm">Descargar</a>
+                </div>
+                <!-- Infografía 2 -->
+                <div class="colorear-item">
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('optimized/images/infografia-2.webp', 'Infografía 2')">
+                        <img src="optimized/images/infografia-2_thumb.webp" alt="Infografía 2" class="colorear-img"
+                            loading="lazy" width="400" height="280" style="cursor: pointer;">
+                    </div>
+                    <a href="optimized/images/infografia-2.webp" download="Infografia_Parral_2.webp"
+                        class="btn-download-sm">Descargar</a>
+                </div>
+                <!-- Infografía 3 -->
+                <div class="colorear-item">
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('optimized/images/infografia-3.webp', 'Infografía 3')">
+                        <img src="optimized/images/infografia-3_thumb.webp" alt="Infografía 3" class="colorear-img"
+                            loading="lazy" width="400" height="280" style="cursor: pointer;">
+                    </div>
+                    <a href="optimized/images/infografia-3.webp" download="Infografia_Parral_3.webp"
+                        class="btn-download-sm">Descargar</a>
+                </div>
+                <!-- Infografía 4 -->
+                <div class="colorear-item">
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('optimized/images/infografia-4.webp', 'Infografía 4')">
+                        <img src="optimized/images/infografia-4_thumb.webp" alt="Infografía 4" class="colorear-img"
+                            loading="lazy" width="400" height="280" style="cursor: pointer;">
+                    </div>
+                    <a href="optimized/images/infografia-4.webp" download="Infografia_Parral_4.webp"
+                        class="btn-download-sm">Descargar</a>
+                </div>
+                <!-- Infografía 5 -->
+                <div class="colorear-item">
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('optimized/images/infografia-5.webp', 'Infografía 5')">
+                        <img src="optimized/images/infografia-5_thumb.webp" alt="Infografía 5" class="colorear-img"
+                            loading="lazy" width="400" height="280" style="cursor: pointer;">
+                    </div>
+                    <a href="optimized/images/infografia-5.webp" download="Infografia_Parral_5.webp"
+                        class="btn-download-sm">Descargar</a>
+                </div>
+                <!-- Infografía 6 -->
+                <div class="colorear-item">
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('optimized/images/infografia-6.webp', 'Infografía 6')">
+                        <img src="optimized/images/infografia-6_thumb.webp" alt="Infografía 6" class="colorear-img"
+                            loading="lazy" width="400" height="280" style="cursor: pointer;">
+                    </div>
+                    <a href="optimized/images/infografia-6.webp" download="Infografia_Parral_6.webp"
+                        class="btn-download-sm">Descargar</a>
+                </div>
+                <!-- Infografía 7 -->
+                <div class="colorear-item">
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/infografias/infografia-parral-1.png', 'Infografía 7 - Fundación y Orígenes')">
+                        <img src="images/infografias/infografia-parral-1.png" alt="Infografía 7" class="colorear-img"
+                            loading="lazy" width="400" height="280" style="cursor: pointer;">
+                    </div>
+                    <a href="images/infografias/infografia-parral-1.png" download="Infografia_Parral_7.png"
+                        class="btn-download-sm">Descargar</a>
+                </div>
+                <!-- Infografía 8 -->
+                <div class="colorear-item">
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/infografias/infografia-2.png', 'Infografía 8 - Desarrollo Histórico')">
+                        <img src="images/infografias/infografia-2.png" alt="Infografía 8" class="colorear-img"
+                            loading="lazy" width="400" height="280" style="cursor: pointer;">
+                    </div>
+                    <a href="images/infografias/infografia-2.png" download="Infografia_Parral_8.png"
+                        class="btn-download-sm">Descargar</a>
+                </div>
+                <!-- Infografía 9 -->
+                <div class="colorear-item">
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/infografias/infografia-parral-3.png', 'Infografía 9 - Parral Contemporáneo')">
+                        <img src="images/infografias/infografia-parral-3.png" alt="Infografía 9" class="colorear-img"
+                            loading="lazy" width="400" height="280" style="cursor: pointer;">
+                    </div>
+                    <a href="images/infografias/infografia-parral-3.png" download="Infografia_Parral_9.png"
+                        class="btn-download-sm">Descargar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox for enlarged images -->
+    <div id="lightbox" class="modal" style="display: none;">
+        <div class="modal-content"
+            style="max-width: 90%; max-height: 90vh; padding: 0; background: transparent; box-shadow: none;">
+            <span class="close-modal" onclick="closeLightbox()"
+                style="position: absolute; top: 20px; right: 40px; font-size: 3rem; z-index: 1001;">&times;</span>
+            <div style="text-align: center; position: relative;">
+                <img id="lightboxImg" src="" alt=""
+                    style="max-width: 100%; max-height: 85vh; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
+                <div style="margin-top: 1rem;">
+                    <a id="lightboxDownload" href="" download class="btn-download-sm"
+                        style="display: inline-block; padding: 0.75rem 1.5rem; font-size: 1rem;">⬇️ Descargar</a>
                 </div>
             </div>
         </div>
@@ -483,7 +601,44 @@
                     openModal('videosModal');
                 });
             }
+
+            // Event listener para el modal de infografías
+            const cardInfografias = document.getElementById('cardInfografias');
+            if (cardInfografias) {
+                cardInfografias.addEventListener('click', function () {
+                    openModal('infografiasModal');
+                });
+            }
         });
+
+        // ==========================================
+        // LIGHTBOX FUNCTIONALITY
+        // ==========================================
+        function openLightbox(imgSrc, altText) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const lightboxDownload = document.getElementById('lightboxDownload');
+
+            lightboxImg.src = imgSrc;
+            lightboxImg.alt = altText;
+            lightboxDownload.href = imgSrc;
+            lightboxDownload.download = imgSrc.split('/').pop();
+
+            lightbox.style.display = 'block';
+            setTimeout(() => {
+                lightbox.classList.add('show');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('show');
+            setTimeout(() => {
+                lightbox.style.display = 'none';
+                document.body.style.overflow = '';
+            }, 300);
+        }
 
         // Mobile Menu Toggle
         document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
