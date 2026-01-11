@@ -98,7 +98,8 @@
                         class="btn-card">Ver Colección</button>
                 </div>
             </div>
-            <div class="card-foto" data-tags="plaza civico centro monumento desfiles">
+            <div class="card-foto" data-tags="plaza civico centro monumento desfiles" onclick="openModal('plazaModal')"
+                style="cursor: pointer;">
                 <div class="card-foto-img-container">
                     <span class="heritage-badge badge-restored">Restauración IA</span>
                     <img src="optimized/img/plaza-original_thumb.webp"
@@ -108,7 +109,8 @@
                 <div class="card-foto-content">
                     <h3>Plaza de Armas</h3>
                     <p>El Corazón Cívico</p>
-                    <a href="detalle-plaza.html" class="btn-card">Ver Colección</a>
+                    <button type="button" onclick="event.stopPropagation(); openModal('plazaModal')"
+                        class="btn-card">Ver Colección</button>
                 </div>
             </div>
             <div class="card-foto">
@@ -731,6 +733,97 @@
                         <!-- Before Image (Original) - Overlay -->
                         <div class="before-image-wrapper">
                             <img src="optimized/img/locales-original.webp" alt="Locales Original" class="before-image">
+                        </div>
+                        <!-- Slider Control -->
+                        <div class="slider-control">
+                            <div class="slider-button"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Plaza de Armas -->
+    <div id="plazaModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('plazaModal')">&times;</span>
+
+            <div class="modal-header">
+                <button type="button" onclick="closeModal('plazaModal')" class="btn-back">
+                    ← Volver a Galería
+                </button>
+                <h2>🏛️ Plaza de Armas</h2>
+                <p>El corazón cívico de Parral a través del tiempo</p>
+            </div>
+
+            <!-- Image Gallery Section -->
+            <h3
+                style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
+                📸 Galería de Imágenes
+            </h3>
+
+            <div class="modal-grid">
+                <!-- Imagen 1: Original -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        📷 Foto Original
+                    </h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('optimized/img/plaza-original.webp', 'Foto Original')">
+                        <img src="optimized/img/plaza-original_thumb.webp" alt="Plaza de Armas - Foto Original"
+                            class="colorear-img" loading="lazy" width="400" height="280" style="cursor: pointer;">
+                    </div>
+                    <a href="optimized/img/plaza-original.webp" download="Plaza_Parral_Original.webp"
+                        class="btn-download-sm">Descargar</a>
+                </div>
+                <!-- Imagen 2: Restaurada -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        ✨ Restaurada con IA
+                    </h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('optimized/img/plaza-restaurada.webp', 'Restaurada con IA')">
+                        <img src="optimized/img/plaza-restaurada_thumb.webp" alt="Plaza de Armas - Restaurada con IA"
+                            class="colorear-img" loading="lazy" width="400" height="280" style="cursor: pointer;">
+                    </div>
+                    <a href="optimized/img/plaza-restaurada.webp" download="Plaza_Parral_Restaurada.webp"
+                        class="btn-download-sm">Descargar</a>
+                </div>
+                <!-- Imagen 3: Coloreada -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        🎨 Coloreada con IA
+                    </h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('optimized/img/plaza-color.webp', 'Coloreada con IA')">
+                        <img src="optimized/img/plaza-color_thumb.webp" alt="Plaza de Armas - Coloreada con IA"
+                            class="colorear-img" loading="lazy" width="400" height="280" style="cursor: pointer;">
+                    </div>
+                    <a href="optimized/img/plaza-color.webp" download="Plaza_Parral_Color.webp"
+                        class="btn-download-sm">Descargar</a>
+                </div>
+            </div>
+
+            <!-- Before/After Comparison Section -->
+            <div style="margin: 2.5rem 0;">
+                <h3
+                    style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; text-align: center;">
+                    🔄 Compara: Original vs Coloreada
+                </h3>
+                <p style="text-align: center; color: var(--text-light); margin-bottom: 1rem; font-size: 0.9rem;">
+                    Arrastra el control para comparar →
+                </p>
+                <div class="before-after-container">
+                    <div class="before-after-wrapper">
+                        <!-- After Image (Coloreada) - Background -->
+                        <img src="optimized/img/plaza-color.webp" alt="Plaza Coloreada" class="after-image">
+                        <!-- Before Image (Original) - Overlay -->
+                        <div class="before-image-wrapper">
+                            <img src="optimized/img/plaza-original.webp" alt="Plaza Original" class="before-image">
                         </div>
                         <!-- Slider Control -->
                         <div class="slider-control">
