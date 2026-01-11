@@ -68,7 +68,8 @@
 
         <div class="grid-galeria" id="galleryGrid">
             <!-- Fila 1 -->
-            <div class="card-foto" data-tags="avenida buenos aires calle transito">
+            <div class="card-foto" data-tags="avenida buenos aires calle transito" onclick="openModal('bajadaModal')"
+                style="cursor: pointer;">
                 <div class="card-foto-img-container">
                     <span class="heritage-badge badge-original">Archivo Original</span>
                     <img src="optimized/img/bajada-original_thumb.webp"
@@ -78,7 +79,8 @@
                 <div class="card-foto-content">
                     <h3>Bajada Buenos Aires</h3>
                     <p>Vistas históricas de la avenida</p>
-                    <a href="detalle-bajada.html" class="btn-card">Ver Colección</a>
+                    <button onclick="event.stopPropagation(); openModal('bajadaModal')" class="btn-card">Ver
+                        Colección</button>
                 </div>
             </div>
             <div class="card-foto" data-tags="comercio tienda negocios compras economia">
@@ -552,6 +554,98 @@
         </div>
     </div>
 
+    <!-- Modal Bajada Buenos Aires -->
+    <div id="bajadaModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('bajadaModal')">&times;</span>
+
+            <div class="modal-header">
+                <button onclick="closeModal('bajadaModal')" class="btn-back">
+                    ← Volver a Galería
+                </button>
+                <h2>🏛️ Bajada Buenos Aires</h2>
+                <p>Vistas históricas de una de las avenidas más emblemáticas de Parral</p>
+            </div>
+
+            <!-- Image Gallery Section -->
+            <h3
+                style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
+                📸 Galería de Imágenes
+            </h3>
+
+            <div class="modal-grid">
+                <!-- Imagen 1: Original -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        📷 Foto Original
+                    </h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('optimized/img/bajada-original.webp', 'Foto Original')">
+                        <img src="optimized/img/bajada-original_thumb.webp" alt="Bajada Buenos Aires - Foto Original"
+                            class="colorear-img" loading="lazy" width="400" height="280" style="cursor: pointer;">
+                    </div>
+                    <a href="optimized/img/bajada-original.webp" download="Bajada_BuenosAires_Original.webp"
+                        class="btn-download-sm">Descargar</a>
+                </div>
+                <!-- Imagen 2: Restaurada -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        ✨ Restaurada con IA
+                    </h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('optimized/img/bajada-restaurada.webp', 'Restaurada con IA')">
+                        <img src="optimized/img/bajada-restaurada_thumb.webp"
+                            alt="Bajada Buenos Aires - Restaurada con IA" class="colorear-img" loading="lazy"
+                            width="400" height="280" style="cursor: pointer;">
+                    </div>
+                    <a href="optimized/img/bajada-restaurada.webp" download="Bajada_BuenosAires_Restaurada.webp"
+                        class="btn-download-sm">Descargar</a>
+                </div>
+                <!-- Imagen 3: Coloreada -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        🎨 Coloreada con IA
+                    </h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('optimized/img/bajada-color.webp', 'Coloreada con IA')">
+                        <img src="optimized/img/bajada-color_thumb.webp" alt="Bajada Buenos Aires - Coloreada con IA"
+                            class="colorear-img" loading="lazy" width="400" height="280" style="cursor: pointer;">
+                    </div>
+                    <a href="optimized/img/bajada-color.webp" download="Bajada_BuenosAires_Color.webp"
+                        class="btn-download-sm">Descargar</a>
+                </div>
+            </div>
+
+            <!-- Before/After Comparison Section -->
+            <div style="margin: 2.5rem 0;">
+                <h3
+                    style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; text-align: center;">
+                    🔄 Compara: Original vs Coloreada
+                </h3>
+                <p style="text-align: center; color: var(--text-light); margin-bottom: 1rem; font-size: 0.9rem;">
+                    Arrastra el control para comparar →
+                </p>
+                <div class="before-after-container" id="bajadaBeforeAfterContainer">
+                    <div class="before-after-wrapper">
+                        <!-- After Image (Coloreada) - Background -->
+                        <img src="optimized/img/bajada-color.webp" alt="Bajada Coloreada" class="after-image">
+                        <!-- Before Image (Original) - Overlay -->
+                        <div class="before-image-wrapper bajada-before-wrapper">
+                            <img src="optimized/img/bajada-original.webp" alt="Bajada Original" class="before-image">
+                        </div>
+                        <!-- Slider Control -->
+                        <div class="slider-control bajada-slider-control">
+                            <div class="slider-button"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Lightbox for enlarged images -->
     <div id="lightbox" class="modal" style="display: none;">
         <div class="modal-content"
@@ -774,49 +868,55 @@
 </style>
 
 <script>
-    // Before/After Slider Functionality
+    // Before/After Slider Functionality - Supports multiple sliders
     document.addEventListener('DOMContentLoaded', function () {
-        const container = document.getElementById('beforeAfterContainer');
-        if (!container) return;
+        // Find all before-after containers
+        const containers = document.querySelectorAll('.before-after-container');
 
-        const wrapper = container.querySelector('.before-after-wrapper');
-        const beforeWrapper = document.getElementById('beforeImageWrapper');
-        const sliderControl = document.getElementById('sliderControl');
-        let isDragging = false;
+        containers.forEach(container => {
+            const wrapper = container.querySelector('.before-after-wrapper');
+            const beforeWrapper = container.querySelector('.before-image-wrapper');
+            const sliderControl = container.querySelector('.slider-control');
 
-        function updateSlider(e) {
-            const rect = wrapper.getBoundingClientRect();
-            const x = (e.type.includes('touch') ? e.touches[0].clientX : e.clientX) - rect.left;
-            const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
+            if (!wrapper || !beforeWrapper || !sliderControl) return;
 
-            beforeWrapper.style.width = percentage + '%';
-            sliderControl.style.left = percentage + '%';
-        }
+            let isDragging = false;
 
-        function startDrag(e) {
-            isDragging = true;
-            updateSlider(e);
-            e.preventDefault();
-        }
+            function updateSlider(e) {
+                const rect = wrapper.getBoundingClientRect();
+                const x = (e.type.includes('touch') ? e.touches[0].clientX : e.clientX) - rect.left;
+                const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
 
-        function drag(e) {
-            if (!isDragging) return;
-            updateSlider(e);
-        }
+                beforeWrapper.style.width = percentage + '%';
+                sliderControl.style.left = percentage + '%';
+            }
 
-        function stopDrag() {
-            isDragging = false;
-        }
+            function startDrag(e) {
+                isDragging = true;
+                updateSlider(e);
+                e.preventDefault();
+            }
 
-        // Mouse events
-        wrapper.addEventListener('mousedown', startDrag);
-        document.addEventListener('mousemove', drag);
-        document.addEventListener('mouseup', stopDrag);
+            function drag(e) {
+                if (!isDragging) return;
+                updateSlider(e);
+            }
 
-        // Touch events
-        wrapper.addEventListener('touchstart', startDrag, { passive: false });
-        document.addEventListener('touchmove', drag, { passive: false });
-        document.addEventListener('touchend', stopDrag);
+            function stopDrag() {
+                isDragging = false;
+            }
+
+            // Mouse events
+            wrapper.addEventListener('mousedown', startDrag);
+            wrapper.addEventListener('mousemove', drag);
+            wrapper.addEventListener('mouseup', stopDrag);
+            wrapper.addEventListener('mouseleave', stopDrag);
+
+            // Touch events
+            wrapper.addEventListener('touchstart', startDrag, { passive: false });
+            wrapper.addEventListener('touchmove', drag, { passive: false });
+            wrapper.addEventListener('touchend', stopDrag);
+        });
     });
 </script>
 
