@@ -42,7 +42,7 @@
 
     <section class="container" style="padding: 4rem 1rem;">
         <div class="grid-galeria">
-            <div class="card-testimonio">
+            <div id="cardVideos" class="card-testimonio" style="cursor: pointer;">
                 <h3>Videos y Presentaciones</h3>
                 <p>Material audiovisual para clases y charlas.</p>
                 <div class="galeria-placeholder" style="height: 150px; margin-top: 1rem;">🎞️</div>
@@ -64,157 +64,6 @@
                     <div class="galeria-placeholder" style="height: 150px; margin-top: 1rem;">📊</div>
                 </div>
             </a>
-        </div>
-    </section>
-
-    <!-- Nueva Sección: Videos Educativos -->
-    <section class="container" style="padding: 2rem 1rem 4rem 1rem; border-top: 1px solid #ddd;">
-        <div style="text-align: center; margin-bottom: 2rem;">
-            <h2 style="font-family: 'Merriweather', serif; color: var(--primary-color);">🎬 Videos Educativos</h2>
-            <p>Material audiovisual sobre la historia y patrimonio de Parral</p>
-        </div>
-
-        <div class="grid-videos"
-            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;">
-
-            <!-- Video 1 -->
-            <div class="video-card"
-                style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
-                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
-                        src="https://www.youtube.com/embed/WRwCIJ5ftR0" title="Video Educativo 1"
-                        allowfullscreen></iframe>
-                </div>
-            </div>
-
-            <!-- Video 2 -->
-            <div class="video-card"
-                style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
-                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
-                        src="https://www.youtube.com/embed/ME4gNYA-Kao" title="Video Educativo 2"
-                        allowfullscreen></iframe>
-                </div>
-            </div>
-
-            <!-- Video 3 -->
-            <div class="video-card"
-                style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
-                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
-                        src="https://www.youtube.com/embed/0Kj7R3N5ZeM" title="Video Educativo 3"
-                        allowfullscreen></iframe>
-                </div>
-            </div>
-
-            <!-- Video 4 -->
-            <div class="video-card"
-                style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
-                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
-                        src="https://www.youtube.com/embed/8EYDxHzEG_Q" title="Video Educativo 4"
-                        allowfullscreen></iframe>
-                </div>
-            </div>
-
-            <!-- Video 5 -->
-            <div class="video-card"
-                style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
-                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
-                        src="https://www.youtube.com/embed/gREfHkWfFO4" title="Video Educativo 5"
-                        allowfullscreen></iframe>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Nueva Sección: Presentaciones Educativas -->
-    <section class="container" style="padding: 2rem 1rem 4rem 1rem; border-top: 1px solid #ddd;">
-        <div style="text-align: center; margin-bottom: 2rem;">
-            <h2 style="font-family: 'Merriweather', serif; color: var(--primary-color);">📚 Presentaciones Educativas
-            </h2>
-            <p>Material en PDF para descargar y utilizar en clases</p>
-        </div>
-
-        <div class="grid-presentaciones"
-            style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
-
-            <!-- Presentación 1: Chile Parral Foundation History -->
-            <div class="presentacion-card"
-                style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: transform 0.3s;">
-                <div
-                    style="background: linear-gradient(135deg, #2c5282 0%, #1a365d 100%); padding: 2rem; text-align: center;">
-                    <span style="font-size: 4rem;">📜</span>
-                </div>
-                <div style="padding: 1.5rem;">
-                    <h4 style="font-family: 'Merriweather', serif; color: #1a365d; margin-bottom: 0.5rem;">Fundación de
-                        Parral</h4>
-                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">Historia: 1541-1795</p>
-                    <div style="display: flex; gap: 0.5rem;">
-                        <a href="recursos/presentaciones/Chile_Parral_Foundation_History_1541-1795 pdf.pdf"
-                            target="_blank"
-                            style="flex: 1; padding: 0.75rem; background: #c9a961; color: #1a1510; text-decoration: none; border-radius: 8px; text-align: center; font-weight: 600; transition: background 0.3s;">
-                            👁️ Ver
-                        </a>
-                        <a href="recursos/presentaciones/Chile_Parral_Foundation_History_1541-1795 pdf.pdf" download
-                            style="flex: 1; padding: 0.75rem; background: #1a365d; color: #fff; text-decoration: none; border-radius: 8px; text-align: center; font-weight: 600; transition: background 0.3s;">
-                            ⬇️ Descargar
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Presentación 2: O'Higgins Visionario -->
-            <div class="presentacion-card"
-                style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: transform 0.3s;">
-                <div
-                    style="background: linear-gradient(135deg, #9b2c2c 0%, #742a2a 100%); padding: 2rem; text-align: center;">
-                    <span style="font-size: 4rem;">🏛️</span>
-                </div>
-                <div style="padding: 1.5rem;">
-                    <h4 style="font-family: 'Merriweather', serif; color: #742a2a; margin-bottom: 0.5rem;">O'Higgins
-                        Visionario</h4>
-                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">Visionario y Constructor</p>
-                    <div style="display: flex; gap: 0.5rem;">
-                        <a href="recursos/presentaciones/O_Higgins_VICIONARIO Y CONSTRUCTOR.pdf" target="_blank"
-                            style="flex: 1; padding: 0.75rem; background: #c9a961; color: #1a1510; text-decoration: none; border-radius: 8px; text-align: center; font-weight: 600; transition: background 0.3s;">
-                            👁️ Ver
-                        </a>
-                        <a href="recursos/presentaciones/O_Higgins_VICIONARIO Y CONSTRUCTOR.pdf" download
-                            style="flex: 1; padding: 0.75rem; background: #742a2a; color: #fff; text-decoration: none; border-radius: 8px; text-align: center; font-weight: 600; transition: background 0.3s;">
-                            ⬇️ Descargar
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Presentación 3: Parral Tierra de Contrastes -->
-            <div class="presentacion-card"
-                style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: transform 0.3s;">
-                <div
-                    style="background: linear-gradient(135deg, #276749 0%, #1c4532 100%); padding: 2rem; text-align: center;">
-                    <span style="font-size: 4rem;">🌄</span>
-                </div>
-                <div style="padding: 1.5rem;">
-                    <h4 style="font-family: 'Merriweather', serif; color: #1c4532; margin-bottom: 0.5rem;">Parral:
-                        Tierra de Contrastes</h4>
-                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem;">Geografía y cultura de nuestra
-                        ciudad</p>
-                    <div style="display: flex; gap: 0.5rem;">
-                        <a href="recursos/presentaciones/Parral_Tierra_de_Contrastes.pdf" target="_blank"
-                            style="flex: 1; padding: 0.75rem; background: #c9a961; color: #1a1510; text-decoration: none; border-radius: 8px; text-align: center; font-weight: 600; transition: background 0.3s;">
-                            👁️ Ver
-                        </a>
-                        <a href="recursos/presentaciones/Parral_Tierra_de_Contrastes.pdf" download
-                            style="flex: 1; padding: 0.75rem; background: #1c4532; color: #fff; text-decoration: none; border-radius: 8px; text-align: center; font-weight: 600; transition: background 0.3s;">
-                            ⬇️ Descargar
-                        </a>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </section>
 
@@ -305,6 +154,95 @@
                     </div>
                     <a href="optimized/images/colorear-5.webp" download="Colorear_Parral_5.webp"
                         class="btn-download-sm">Descargar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Videos y Presentaciones -->
+    <div id="videosModal" class="modal">
+        <div class="modal-content" style="max-width: 1100px;">
+            <span class="close-modal" onclick="closeModal('videosModal')">&times;</span>
+            <div class="modal-header">
+                <h2>🎬 Videos y Presentaciones</h2>
+                <p>Material audiovisual y presentaciones educativas para clases y charlas</p>
+            </div>
+
+            <!-- Videos Section -->
+            <h3 style="font-family: 'Merriweather', serif; color: var(--primary-color); margin: 1.5rem 0 1rem;">📹
+                Videos Educativos</h3>
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+                <div
+                    style="position: relative; padding-bottom: 56.25%; height: 0; border-radius: 8px; overflow: hidden;">
+                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                        src="https://www.youtube.com/embed/WRwCIJ5ftR0" title="Video 1" allowfullscreen></iframe>
+                </div>
+                <div
+                    style="position: relative; padding-bottom: 56.25%; height: 0; border-radius: 8px; overflow: hidden;">
+                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                        src="https://www.youtube.com/embed/ME4gNYA-Kao" title="Video 2" allowfullscreen></iframe>
+                </div>
+                <div
+                    style="position: relative; padding-bottom: 56.25%; height: 0; border-radius: 8px; overflow: hidden;">
+                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                        src="https://www.youtube.com/embed/0Kj7R3N5ZeM" title="Video 3" allowfullscreen></iframe>
+                </div>
+                <div
+                    style="position: relative; padding-bottom: 56.25%; height: 0; border-radius: 8px; overflow: hidden;">
+                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                        src="https://www.youtube.com/embed/8EYDxHzEG_Q" title="Video 4" allowfullscreen></iframe>
+                </div>
+                <div
+                    style="position: relative; padding-bottom: 56.25%; height: 0; border-radius: 8px; overflow: hidden;">
+                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
+                        src="https://www.youtube.com/embed/gREfHkWfFO4" title="Video 5" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Presentaciones Section -->
+            <h3 style="font-family: 'Merriweather', serif; color: var(--primary-color); margin: 1.5rem 0 1rem;">📚
+                Presentaciones PDF</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+                <!-- PDF 1 -->
+                <div style="background: #f8f8f8; border-radius: 12px; padding: 1.5rem; text-align: center;">
+                    <span style="font-size: 3rem;">📜</span>
+                    <h4 style="margin: 0.5rem 0; font-family: 'Merriweather', serif;">Fundación de Parral</h4>
+                    <p style="color: #666; font-size: 0.85rem; margin-bottom: 1rem;">Historia: 1541-1795</p>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <a href="recursos/presentaciones/Chile_Parral_Foundation_History_1541-1795 pdf.pdf"
+                            target="_blank"
+                            style="flex: 1; padding: 0.5rem; background: #c9a961; color: #1a1510; text-decoration: none; border-radius: 6px; font-weight: 600;">👁️
+                            Ver</a>
+                        <a href="recursos/presentaciones/Chile_Parral_Foundation_History_1541-1795 pdf.pdf" download
+                            style="flex: 1; padding: 0.5rem; background: #2d3748; color: #fff; text-decoration: none; border-radius: 6px; font-weight: 600;">⬇️</a>
+                    </div>
+                </div>
+                <!-- PDF 2 -->
+                <div style="background: #f8f8f8; border-radius: 12px; padding: 1.5rem; text-align: center;">
+                    <span style="font-size: 3rem;">🏛️</span>
+                    <h4 style="margin: 0.5rem 0; font-family: 'Merriweather', serif;">O'Higgins Visionario</h4>
+                    <p style="color: #666; font-size: 0.85rem; margin-bottom: 1rem;">Constructor de Chile</p>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <a href="recursos/presentaciones/O_Higgins_VICIONARIO Y CONSTRUCTOR.pdf" target="_blank"
+                            style="flex: 1; padding: 0.5rem; background: #c9a961; color: #1a1510; text-decoration: none; border-radius: 6px; font-weight: 600;">👁️
+                            Ver</a>
+                        <a href="recursos/presentaciones/O_Higgins_VICIONARIO Y CONSTRUCTOR.pdf" download
+                            style="flex: 1; padding: 0.5rem; background: #2d3748; color: #fff; text-decoration: none; border-radius: 6px; font-weight: 600;">⬇️</a>
+                    </div>
+                </div>
+                <!-- PDF 3 -->
+                <div style="background: #f8f8f8; border-radius: 12px; padding: 1.5rem; text-align: center;">
+                    <span style="font-size: 3rem;">🌄</span>
+                    <h4 style="margin: 0.5rem 0; font-family: 'Merriweather', serif;">Parral: Tierra de Contrastes</h4>
+                    <p style="color: #666; font-size: 0.85rem; margin-bottom: 1rem;">Geografía y cultura</p>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <a href="recursos/presentaciones/Parral_Tierra_de_Contrastes.pdf" target="_blank"
+                            style="flex: 1; padding: 0.5rem; background: #c9a961; color: #1a1510; text-decoration: none; border-radius: 6px; font-weight: 600;">👁️
+                            Ver</a>
+                        <a href="recursos/presentaciones/Parral_Tierra_de_Contrastes.pdf" download
+                            style="flex: 1; padding: 0.5rem; background: #2d3748; color: #fff; text-decoration: none; border-radius: 6px; font-weight: 600;">⬇️</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -535,6 +473,14 @@
             if (cardColorear) {
                 cardColorear.addEventListener('click', function () {
                     openModal('colorearModal');
+                });
+            }
+
+            // Event listener para el modal de videos y presentaciones
+            const cardVideos = document.getElementById('cardVideos');
+            if (cardVideos) {
+                cardVideos.addEventListener('click', function () {
+                    openModal('videosModal');
                 });
             }
         });
