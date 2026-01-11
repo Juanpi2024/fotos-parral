@@ -113,7 +113,7 @@
                         class="btn-card">Ver Colección</button>
                 </div>
             </div>
-            <div class="card-foto">
+            <div class="card-foto" onclick="openModal('bomberosModal')" style="cursor: pointer;">
                 <div class="card-foto-img-container">
                     <span class="heritage-badge badge-original">Archivo Original</span>
                     <img src="optimized/images/parral-bomberos-1_thumb.webp"
@@ -123,7 +123,8 @@
                 <div class="card-foto-content">
                     <h3>Bomberos de Parral</h3>
                     <p>Héroes del Fuego</p>
-                    <a href="detalle-bomberos.html" class="btn-card">Ver Colección</a>
+                    <button type="button" onclick="event.stopPropagation(); openModal('bomberosModal')"
+                        class="btn-card">Ver Colección</button>
                 </div>
             </div>
             <div class="card-foto">
@@ -830,6 +831,72 @@
                             <div class="slider-button"></div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Bomberos de Parral -->
+    <div id="bomberosModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('bomberosModal')">&times;</span>
+
+            <div class="modal-header">
+                <button type="button" onclick="closeModal('bomberosModal')" class="btn-back">
+                    ← Volver a Galería
+                </button>
+                <h2>🚒 Bomberos de Parral</h2>
+                <p>Héroes voluntarios que han protegido nuestra ciudad por generaciones</p>
+            </div>
+
+            <!-- Image Gallery Section -->
+            <h3
+                style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
+                📸 Galería de Imágenes Históricas
+            </h3>
+
+            <div class="modal-grid">
+                <!-- Imagen 1 -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        📷 Foto Histórica 1
+                    </h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('optimized/images/parral-bomberos-1.webp', 'Bomberos de Parral 1')">
+                        <img src="optimized/images/parral-bomberos-1_thumb.webp" alt="Bomberos de Parral - Foto 1"
+                            class="colorear-img" loading="lazy" width="400" height="280" style="cursor: pointer;">
+                    </div>
+                    <a href="optimized/images/parral-bomberos-1.webp" download="Bomberos_Parral_1.webp"
+                        class="btn-download-sm">Descargar</a>
+                </div>
+                <!-- Imagen 2 -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        📷 Foto Histórica 2
+                    </h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('optimized/images/parral-bomberos-2.webp', 'Bomberos de Parral 2')">
+                        <img src="optimized/images/parral-bomberos-2_thumb.webp" alt="Bomberos de Parral - Foto 2"
+                            class="colorear-img" loading="lazy" width="400" height="280" style="cursor: pointer;">
+                    </div>
+                    <a href="optimized/images/parral-bomberos-2.webp" download="Bomberos_Parral_2.webp"
+                        class="btn-download-sm">Descargar</a>
+                </div>
+                <!-- Imagen 3 -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        📷 Foto Histórica 3
+                    </h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('optimized/images/parral-bomberos-3.webp', 'Bomberos de Parral 3')">
+                        <img src="optimized/images/parral-bomberos-3_thumb.webp" alt="Bomberos de Parral - Foto 3"
+                            class="colorear-img" loading="lazy" width="400" height="280" style="cursor: pointer;">
+                    </div>
+                    <a href="optimized/images/parral-bomberos-3.webp" download="Bomberos_Parral_3.webp"
+                        class="btn-download-sm">Descargar</a>
                 </div>
             </div>
         </div>
