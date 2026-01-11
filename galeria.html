@@ -343,7 +343,8 @@
             </div>
 
             <!-- Fila 6: Nuevas Colecciones -->
-            <div class="card-foto" data-tags="tren ferrocarril transporte pasajeros estacion">
+            <div class="card-foto" data-tags="tren ferrocarril transporte pasajeros estacion"
+                onclick="openModal('trenModal')" style="cursor: pointer;">
                 <div class="card-foto-img-container">
                     <span class="heritage-badge badge-restored">Restauración IA</span>
                     <img src="images/antigup tren pasajeros/optimizado-restaurada a color.webp"
@@ -352,10 +353,12 @@
                 <div class="card-foto-content">
                     <h3>Tren de Pasajeros</h3>
                     <p>El ferrocarril conectando pueblos</p>
-                    <a href="detalle.html" class="btn-card">Ver Colección</a>
+                    <button type="button" onclick="event.stopPropagation(); openModal('trenModal')" class="btn-card">Ver
+                        Colección</button>
                 </div>
             </div>
-            <div class="card-foto" data-tags="casas entrada arquitectura antigua vivienda">
+            <div class="card-foto" data-tags="casas entrada arquitectura antigua vivienda"
+                onclick="openModal('casasModal')" style="cursor: pointer;">
                 <div class="card-foto-img-container">
                     <span class="heritage-badge badge-restored">Restauración IA</span>
                     <img src="images/casas antiguas entrada/optimizado-antiguas casa entrada restaurada a color.webp"
@@ -364,10 +367,12 @@
                 <div class="card-foto-content">
                     <h3>Casas Antiguas</h3>
                     <p>Arquitectura de otro tiempo</p>
-                    <a href="detalle.html" class="btn-card">Ver Colección</a>
+                    <button type="button" onclick="event.stopPropagation(); openModal('casasModal')"
+                        class="btn-card">Ver Colección</button>
                 </div>
             </div>
-            <div class="card-foto" data-tags="estacion tren terremoto 1939 ferrocarril">
+            <div class="card-foto" data-tags="estacion tren terremoto 1939 ferrocarril"
+                onclick="openModal('estacionModal')" style="cursor: pointer;">
                 <div class="card-foto-img-container">
                     <span class="heritage-badge badge-restored">Restauración IA</span>
                     <img src="images/estacion antes terremoto 39/optimizado-estacion antes del 39 restaurada a color.webp"
@@ -376,10 +381,12 @@
                 <div class="card-foto-content">
                     <h3>Estación Pre-1939</h3>
                     <p>Antes del gran terremoto</p>
-                    <a href="detalle.html" class="btn-card">Ver Colección</a>
+                    <button type="button" onclick="event.stopPropagation(); openModal('estacionModal')"
+                        class="btn-card">Ver Colección</button>
                 </div>
             </div>
-            <div class="card-foto" data-tags="fiesta primavera celebracion 1925 desfile">
+            <div class="card-foto" data-tags="fiesta primavera celebracion 1925 desfile"
+                onclick="openModal('fiestaModal')" style="cursor: pointer;">
                 <div class="card-foto-img-container">
                     <span class="heritage-badge badge-restored">Restauración IA</span>
                     <img src="images/fiesta primavera 1925/optimizado-fiesta primavera  color 1925.webp"
@@ -388,12 +395,14 @@
                 <div class="card-foto-content">
                     <h3>Fiesta de Primavera 1925</h3>
                     <p>Celebración centenaria</p>
-                    <a href="detalle.html" class="btn-card">Ver Colección</a>
+                    <button type="button" onclick="event.stopPropagation(); openModal('fiestaModal')"
+                        class="btn-card">Ver Colección</button>
                 </div>
             </div>
 
             <!-- Fila 7: Más Colecciones -->
-            <div class="card-foto" data-tags="comercio locales tiendas negocios antiguos">
+            <div class="card-foto" data-tags="comercio locales tiendas negocios antiguos"
+                onclick="openModal('localesAntiguosModal')" style="cursor: pointer;">
                 <div class="card-foto-img-container">
                     <span class="heritage-badge badge-restored">Restauración IA</span>
                     <img src="images/locales antiguos/optimizado-antiguos locales comerciales restaurada color.webp"
@@ -402,10 +411,12 @@
                 <div class="card-foto-content">
                     <h3>Locales Antiguos</h3>
                     <p>El comercio de antaño</p>
-                    <a href="detalle.html" class="btn-card">Ver Colección</a>
+                    <button type="button" onclick="event.stopPropagation(); openModal('localesAntiguosModal')"
+                        class="btn-card">Ver Colección</button>
                 </div>
             </div>
-            <div class="card-foto" data-tags="locomotora tren ramal cauquenes ferrocarril">
+            <div class="card-foto" data-tags="locomotora tren ramal cauquenes ferrocarril"
+                onclick="openModal('locomotoraModal')" style="cursor: pointer;">
                 <div class="card-foto-img-container">
                     <span class="heritage-badge badge-restored">Restauración IA</span>
                     <img src="images/locomotora ramal cauquenes/optimizado-locomotora ramal parral - cauquenes restaurada a color.webp"
@@ -414,10 +425,12 @@
                 <div class="card-foto-content">
                     <h3>Ramal Parral-Cauquenes</h3>
                     <p>Locomotora histórica</p>
-                    <a href="detalle.html" class="btn-card">Ver Colección</a>
+                    <button type="button" onclick="event.stopPropagation(); openModal('locomotoraModal')"
+                        class="btn-card">Ver Colección</button>
                 </div>
             </div>
-            <div class="card-foto" data-tags="templo iglesia san francisco religion terremoto">
+            <div class="card-foto" data-tags="templo iglesia san francisco religion terremoto"
+                onclick="openModal('sanFranciscoModal')" style="cursor: pointer;">
                 <div class="card-foto-img-container">
                     <span class="heritage-badge badge-restored">Restauración IA</span>
                     <img src="images/templo antes terr 39 san francisco/optimizado-templo san francisco restaurada color.webp"
@@ -426,10 +439,12 @@
                 <div class="card-foto-content">
                     <h3>Templo San Francisco</h3>
                     <p>Antes del terremoto del 39</p>
-                    <a href="detalle.html" class="btn-card">Ver Colección</a>
+                    <button type="button" onclick="event.stopPropagation(); openModal('sanFranciscoModal')"
+                        class="btn-card">Ver Colección</button>
                 </div>
             </div>
-            <div class="card-foto" data-tags="templo iglesia san jose religion terremoto">
+            <div class="card-foto" data-tags="templo iglesia san jose religion terremoto"
+                onclick="openModal('sanJoseModal')" style="cursor: pointer;">
                 <div class="card-foto-img-container">
                     <span class="heritage-badge badge-restored">Restauración IA</span>
                     <img src="images/templo san jose antes del 39/optimizado-templo san jose antes del 39 restaurada a color.webp"
@@ -438,10 +453,12 @@
                 <div class="card-foto-content">
                     <h3>Templo San José</h3>
                     <p>Antes del terremoto del 39</p>
-                    <a href="detalle.html" class="btn-card">Ver Colección</a>
+                    <button type="button" onclick="event.stopPropagation(); openModal('sanJoseModal')"
+                        class="btn-card">Ver Colección</button>
                 </div>
             </div>
-            <div class="card-foto" data-tags="camino ruta parral cauquenes campo rural">
+            <div class="card-foto" data-tags="camino ruta parral cauquenes campo rural" onclick="openModal('rutaModal')"
+                style="cursor: pointer;">
                 <div class="card-foto-img-container">
                     <span class="heritage-badge badge-restored">Restauración IA</span>
                     <img src="images/entre parral y cauquenes casa/optimizado-entre parral y cauquenea color.webp"
@@ -450,7 +467,8 @@
                 <div class="card-foto-content">
                     <h3>Ruta Parral-Cauquenes</h3>
                     <p>El camino entre dos pueblos</p>
-                    <a href="detalle.html" class="btn-card">Ver Colección</a>
+                    <button type="button" onclick="event.stopPropagation(); openModal('rutaModal')" class="btn-card">Ver
+                        Colección</button>
                 </div>
             </div>
         </div>
@@ -991,6 +1009,443 @@
                             <div class="slider-button"></div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Tren de Pasajeros -->
+    <div id="trenModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('trenModal')">&times;</span>
+            <div class="modal-header">
+                <button type="button" onclick="closeModal('trenModal')" class="btn-back">← Volver a Galería</button>
+                <h2>🚂 Tren de Pasajeros</h2>
+                <p>El ferrocarril que conectó pueblos y familias</p>
+            </div>
+            <h3
+                style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
+                📸 Galería de Imágenes</h3>
+            <div class="modal-grid">
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        📷 Foto Original</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/antigup tren pasajeros/optimizado-original.webp', 'Original')">
+                        <img src="images/antigup tren pasajeros/optimizado-original.webp" alt="Tren - Original"
+                            class="colorear-img" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    <a href="images/antigup tren pasajeros/optimizado-original.webp" download
+                        class="btn-download-sm">Descargar</a>
+                </div>
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        ✨ Restaurada con IA</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/antigup tren pasajeros/optimizado-antiguo tren pasajeros  restaurada.webp', 'Restaurada')">
+                        <img src="images/antigup tren pasajeros/optimizado-antiguo tren pasajeros  restaurada.webp"
+                            alt="Tren - Restaurada" class="colorear-img" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    <a href="images/antigup tren pasajeros/optimizado-antiguo tren pasajeros  restaurada.webp" download
+                        class="btn-download-sm">Descargar</a>
+                </div>
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        🎨 Coloreada con IA</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/antigup tren pasajeros/optimizado-restaurada a color.webp', 'Color')">
+                        <img src="images/antigup tren pasajeros/optimizado-restaurada a color.webp" alt="Tren - Color"
+                            class="colorear-img" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    <a href="images/antigup tren pasajeros/optimizado-restaurada a color.webp" download
+                        class="btn-download-sm">Descargar</a>
+                </div>
+            </div>
+            <div style="margin: 2.5rem 0;">
+                <h3
+                    style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; text-align: center;">
+                    🔄 Compara: Original vs Coloreada</h3>
+                <p style="text-align: center; color: var(--text-light); margin-bottom: 1rem; font-size: 0.9rem;">
+                    Arrastra el control para comparar →</p>
+                <div class="before-after-container">
+                    <div class="before-after-wrapper">
+                        <img src="images/antigup tren pasajeros/optimizado-restaurada a color.webp" alt="Color"
+                            class="after-image">
+                        <div class="before-image-wrapper">
+                            <img src="images/antigup tren pasajeros/optimizado-original.webp" alt="Original"
+                                class="before-image">
+                        </div>
+                        <div class="slider-control">
+                            <div class="slider-button"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Casas Antiguas -->
+    <div id="casasModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('casasModal')">&times;</span>
+            <div class="modal-header">
+                <button type="button" onclick="closeModal('casasModal')" class="btn-back">← Volver a Galería</button>
+                <h2>🏠 Casas Antiguas</h2>
+                <p>Arquitectura de otro tiempo en la entrada de Parral</p>
+            </div>
+            <h3
+                style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
+                📸 Galería de Imágenes</h3>
+            <div class="modal-grid">
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        📷 Foto Original</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/casas antiguas entrada/optimizado-original.webp', 'Original')">
+                        <img src="images/casas antiguas entrada/optimizado-original.webp" alt="Casas - Original"
+                            class="colorear-img" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    <a href="images/casas antiguas entrada/optimizado-original.webp" download
+                        class="btn-download-sm">Descargar</a>
+                </div>
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        ✨ Restaurada con IA</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/casas antiguas entrada/optimizado-antiguas casa entrada restaurada.webp', 'Restaurada')">
+                        <img src="images/casas antiguas entrada/optimizado-antiguas casa entrada restaurada.webp"
+                            alt="Casas - Restaurada" class="colorear-img" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    <a href="images/casas antiguas entrada/optimizado-antiguas casa entrada restaurada.webp" download
+                        class="btn-download-sm">Descargar</a>
+                </div>
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        🎨 Coloreada con IA</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/casas antiguas entrada/optimizado-antiguas casa entrada restaurada a color.webp', 'Color')">
+                        <img src="images/casas antiguas entrada/optimizado-antiguas casa entrada restaurada a color.webp"
+                            alt="Casas - Color" class="colorear-img" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    <a href="images/casas antiguas entrada/optimizado-antiguas casa entrada restaurada a color.webp"
+                        download class="btn-download-sm">Descargar</a>
+                </div>
+            </div>
+            <div style="margin: 2.5rem 0;">
+                <h3
+                    style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; text-align: center;">
+                    🔄 Compara: Original vs Coloreada</h3>
+                <p style="text-align: center; color: var(--text-light); margin-bottom: 1rem; font-size: 0.9rem;">
+                    Arrastra el control para comparar →</p>
+                <div class="before-after-container">
+                    <div class="before-after-wrapper">
+                        <img src="images/casas antiguas entrada/optimizado-antiguas casa entrada restaurada a color.webp"
+                            alt="Color" class="after-image">
+                        <div class="before-image-wrapper">
+                            <img src="images/casas antiguas entrada/optimizado-original.webp" alt="Original"
+                                class="before-image">
+                        </div>
+                        <div class="slider-control">
+                            <div class="slider-button"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Estación Pre-1939 -->
+    <div id="estacionModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('estacionModal')">&times;</span>
+            <div class="modal-header">
+                <button type="button" onclick="closeModal('estacionModal')" class="btn-back">← Volver a Galería</button>
+                <h2>🚉 Estación Pre-1939</h2>
+                <p>La estación de ferrocarril antes del gran terremoto</p>
+            </div>
+            <h3
+                style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
+                📸 Galería de Imágenes</h3>
+            <div class="modal-grid" style="grid-template-columns: repeat(2, 1fr);">
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        ✨ Restaurada con IA</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/estacion antes terremoto 39/optimizado-estacion antes del 39 restaurada.webp', 'Restaurada')">
+                        <img src="images/estacion antes terremoto 39/optimizado-estacion antes del 39 restaurada.webp"
+                            alt="Estación - Restaurada" class="colorear-img" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    <a href="images/estacion antes terremoto 39/optimizado-estacion antes del 39 restaurada.webp"
+                        download class="btn-download-sm">Descargar</a>
+                </div>
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        🎨 Coloreada con IA</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/estacion antes terremoto 39/optimizado-estacion antes del 39 restaurada a color.webp', 'Color')">
+                        <img src="images/estacion antes terremoto 39/optimizado-estacion antes del 39 restaurada a color.webp"
+                            alt="Estación - Color" class="colorear-img" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    <a href="images/estacion antes terremoto 39/optimizado-estacion antes del 39 restaurada a color.webp"
+                        download class="btn-download-sm">Descargar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Fiesta de Primavera 1925 -->
+    <div id="fiestaModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('fiestaModal')">&times;</span>
+            <div class="modal-header">
+                <button type="button" onclick="closeModal('fiestaModal')" class="btn-back">← Volver a Galería</button>
+                <h2>🌸 Fiesta de Primavera 1925</h2>
+                <p>Una celebración histórica hace un siglo</p>
+            </div>
+            <h3
+                style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
+                📸 Galería de Imágenes</h3>
+            <div class="modal-grid" style="grid-template-columns: repeat(2, 1fr);">
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        📷 Foto Original</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/fiesta primavera 1925/optimizado-fiesta de la primavera 1925.webp', 'Original')">
+                        <img src="images/fiesta primavera 1925/optimizado-fiesta de la primavera 1925.webp"
+                            alt="Fiesta - Original" class="colorear-img" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    <a href="images/fiesta primavera 1925/optimizado-fiesta de la primavera 1925.webp" download
+                        class="btn-download-sm">Descargar</a>
+                </div>
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        🎨 Coloreada con IA</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/fiesta primavera 1925/optimizado-fiesta primavera  color 1925.webp', 'Color')">
+                        <img src="images/fiesta primavera 1925/optimizado-fiesta primavera  color 1925.webp"
+                            alt="Fiesta - Color" class="colorear-img" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    <a href="images/fiesta primavera 1925/optimizado-fiesta primavera  color 1925.webp" download
+                        class="btn-download-sm">Descargar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Locales Antiguos -->
+    <div id="localesAntiguosModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('localesAntiguosModal')">&times;</span>
+            <div class="modal-header">
+                <button type="button" onclick="closeModal('localesAntiguosModal')" class="btn-back">← Volver a
+                    Galería</button>
+                <h2>🏪 Locales Antiguos</h2>
+                <p>El comercio de antaño en las calles de Parral</p>
+            </div>
+            <h3
+                style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
+                📸 Galería de Imágenes</h3>
+            <div class="modal-grid" style="grid-template-columns: repeat(2, 1fr);">
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        ✨ Restaurada con IA</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/locales antiguos/optimizado-antiguos locales comerciales restaurada.webp', 'Restaurada')">
+                        <img src="images/locales antiguos/optimizado-antiguos locales comerciales restaurada.webp"
+                            alt="Locales - Restaurada" class="colorear-img" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    <a href="images/locales antiguos/optimizado-antiguos locales comerciales restaurada.webp" download
+                        class="btn-download-sm">Descargar</a>
+                </div>
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        🎨 Coloreada con IA</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/locales antiguos/optimizado-antiguos locales comerciales restaurada color.webp', 'Color')">
+                        <img src="images/locales antiguos/optimizado-antiguos locales comerciales restaurada color.webp"
+                            alt="Locales - Color" class="colorear-img" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    <a href="images/locales antiguos/optimizado-antiguos locales comerciales restaurada color.webp"
+                        download class="btn-download-sm">Descargar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Locomotora Ramal -->
+    <div id="locomotoraModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('locomotoraModal')">&times;</span>
+            <div class="modal-header">
+                <button type="button" onclick="closeModal('locomotoraModal')" class="btn-back">← Volver a
+                    Galería</button>
+                <h2>🚂 Ramal Parral-Cauquenes</h2>
+                <p>La locomotora que unía dos pueblos hermanos</p>
+            </div>
+            <h3
+                style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
+                📸 Galería de Imágenes</h3>
+            <div class="modal-grid" style="grid-template-columns: repeat(2, 1fr);">
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        ✨ Restaurada con IA</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/locomotora ramal cauquenes/optimizado-locomotora ramal parral - cauquenes restaurada.webp', 'Restaurada')">
+                        <img src="images/locomotora ramal cauquenes/optimizado-locomotora ramal parral - cauquenes restaurada.webp"
+                            alt="Locomotora - Restaurada" class="colorear-img" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    <a href="images/locomotora ramal cauquenes/optimizado-locomotora ramal parral - cauquenes restaurada.webp"
+                        download class="btn-download-sm">Descargar</a>
+                </div>
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        🎨 Coloreada con IA</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/locomotora ramal cauquenes/optimizado-locomotora ramal parral - cauquenes restaurada a color.webp', 'Color')">
+                        <img src="images/locomotora ramal cauquenes/optimizado-locomotora ramal parral - cauquenes restaurada a color.webp"
+                            alt="Locomotora - Color" class="colorear-img" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    <a href="images/locomotora ramal cauquenes/optimizado-locomotora ramal parral - cauquenes restaurada a color.webp"
+                        download class="btn-download-sm">Descargar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Templo San Francisco -->
+    <div id="sanFranciscoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('sanFranciscoModal')">&times;</span>
+            <div class="modal-header">
+                <button type="button" onclick="closeModal('sanFranciscoModal')" class="btn-back">← Volver a
+                    Galería</button>
+                <h2>⛪ Templo San Francisco</h2>
+                <p>El templo antes del terremoto de 1939</p>
+            </div>
+            <h3
+                style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
+                📸 Galería de Imágenes</h3>
+            <div class="modal-grid" style="grid-template-columns: repeat(2, 1fr);">
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        ✨ Restaurada con IA</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/templo antes terr 39 san francisco/optimizado-templo san francisco restaurada.webp', 'Restaurada')">
+                        <img src="images/templo antes terr 39 san francisco/optimizado-templo san francisco restaurada.webp"
+                            alt="San Francisco - Restaurada" class="colorear-img" loading="lazy"
+                            style="cursor: pointer;">
+                    </div>
+                    <a href="images/templo antes terr 39 san francisco/optimizado-templo san francisco restaurada.webp"
+                        download class="btn-download-sm">Descargar</a>
+                </div>
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        🎨 Coloreada con IA</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/templo antes terr 39 san francisco/optimizado-templo san francisco restaurada color.webp', 'Color')">
+                        <img src="images/templo antes terr 39 san francisco/optimizado-templo san francisco restaurada color.webp"
+                            alt="San Francisco - Color" class="colorear-img" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    <a href="images/templo antes terr 39 san francisco/optimizado-templo san francisco restaurada color.webp"
+                        download class="btn-download-sm">Descargar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Templo San José -->
+    <div id="sanJoseModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('sanJoseModal')">&times;</span>
+            <div class="modal-header">
+                <button type="button" onclick="closeModal('sanJoseModal')" class="btn-back">← Volver a Galería</button>
+                <h2>⛪ Templo San José</h2>
+                <p>El templo antes del terremoto de 1939</p>
+            </div>
+            <h3
+                style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
+                📸 Galería de Imágenes</h3>
+            <div class="modal-grid" style="grid-template-columns: repeat(2, 1fr);">
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        ✨ Restaurada con IA</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/templo san jose antes del 39/optimizado-templo san jose antes del 39 restaurada.webp', 'Restaurada')">
+                        <img src="images/templo san jose antes del 39/optimizado-templo san jose antes del 39 restaurada.webp"
+                            alt="San José - Restaurada" class="colorear-img" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    <a href="images/templo san jose antes del 39/optimizado-templo san jose antes del 39 restaurada.webp"
+                        download class="btn-download-sm">Descargar</a>
+                </div>
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        🎨 Coloreada con IA</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/templo san jose antes del 39/optimizado-templo san jose antes del 39 restaurada a color.webp', 'Color')">
+                        <img src="images/templo san jose antes del 39/optimizado-templo san jose antes del 39 restaurada a color.webp"
+                            alt="San José - Color" class="colorear-img" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    <a href="images/templo san jose antes del 39/optimizado-templo san jose antes del 39 restaurada a color.webp"
+                        download class="btn-download-sm">Descargar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Ruta Parral-Cauquenes -->
+    <div id="rutaModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('rutaModal')">&times;</span>
+            <div class="modal-header">
+                <button type="button" onclick="closeModal('rutaModal')" class="btn-back">← Volver a Galería</button>
+                <h2>🛤️ Ruta Parral-Cauquenes</h2>
+                <p>El camino que une dos pueblos hermanos</p>
+            </div>
+            <h3
+                style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
+                📸 Galería de Imágenes</h3>
+            <div class="modal-grid" style="grid-template-columns: repeat(2, 1fr);">
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        📷 Foto Original</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/entre parral y cauquenes casa/optimizado-entre parral y cauquenea negro.webp', 'Original')">
+                        <img src="images/entre parral y cauquenes casa/optimizado-entre parral y cauquenea negro.webp"
+                            alt="Ruta - Original" class="colorear-img" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    <a href="images/entre parral y cauquenes casa/optimizado-entre parral y cauquenea negro.webp"
+                        download class="btn-download-sm">Descargar</a>
+                </div>
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        🎨 Coloreada con IA</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/entre parral y cauquenes casa/optimizado-entre parral y cauquenea color.webp', 'Color')">
+                        <img src="images/entre parral y cauquenes casa/optimizado-entre parral y cauquenea color.webp"
+                            alt="Ruta - Color" class="colorear-img" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    <a href="images/entre parral y cauquenes casa/optimizado-entre parral y cauquenea color.webp"
+                        download class="btn-download-sm">Descargar</a>
                 </div>
             </div>
         </div>
