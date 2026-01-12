@@ -84,16 +84,17 @@
                         Colección</button>
                 </div>
             </div>
-            <div class="card-foto" data-tags="comercio tienda negocios compras economia"
+            <div class="card-foto" data-tags="comercio tienda negocios compras economia locales antiguos"
                 onclick="openModal('localesModal')" style="cursor: pointer;">
                 <div class="card-foto-img-container">
+                    <span class="heritage-badge badge-restored">🎬 Video + 5 Fotos</span>
                     <img src="optimized/img/locales-original_thumb.webp"
                         alt="Fachadas de locales comerciales históricos de Parral" loading="lazy" width="600"
                         height="375">
                 </div>
                 <div class="card-foto-content">
-                    <h3>Locales Comerciales de Siempre</h3>
-                    <p>Comercio Histórico</p>
+                    <h3>Locales Comerciales Históricos</h3>
+                    <p>El comercio de antaño en Parral</p>
                     <button type="button" onclick="event.stopPropagation(); openModal('localesModal')"
                         class="btn-card">Ver Colección</button>
                 </div>
@@ -401,20 +402,6 @@
             </div>
 
             <!-- Fila 7: Más Colecciones -->
-            <div class="card-foto" data-tags="comercio locales tiendas negocios antiguos"
-                onclick="openModal('localesAntiguosModal')" style="cursor: pointer;">
-                <div class="card-foto-img-container">
-                    <span class="heritage-badge badge-restored">Restauración IA</span>
-                    <img src="images/locales antiguos/optimizado-antiguos locales comerciales restaurada color.webp"
-                        alt="Locales comerciales antiguos de Parral" loading="lazy" width="600" height="375">
-                </div>
-                <div class="card-foto-content">
-                    <h3>Locales Antiguos</h3>
-                    <p>El comercio de antaño</p>
-                    <button type="button" onclick="event.stopPropagation(); openModal('localesAntiguosModal')"
-                        class="btn-card">Ver Colección</button>
-                </div>
-            </div>
             <div class="card-foto" data-tags="locomotora tren ramal cauquenes ferrocarril"
                 onclick="openModal('locomotoraModal')" style="cursor: pointer;">
                 <div class="card-foto-img-container">
@@ -742,8 +729,23 @@
                 <button type="button" onclick="closeModal('localesModal')" class="btn-back">
                     ← Volver a Galería
                 </button>
-                <h2>🏪 Locales Comerciales de Siempre</h2>
-                <p>El comercio histórico que dio vida a las calles de Parral</p>
+                <h2>🏪 Locales Comerciales Históricos</h2>
+                <p>El comercio que dio vida a las calles de Parral a través de los años</p>
+            </div>
+
+            <!-- Video Section -->
+            <div style="margin-bottom: 2.5rem;">
+                <h3
+                    style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
+                    🎬 Video Histórico
+                </h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/-yNARnMQF4M"
+                        title="Locales Comerciales Históricos de Parral" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
             </div>
 
             <!-- Image Gallery Section -->
@@ -795,6 +797,35 @@
                     </div>
                     <a href="optimized/img/locales-color.webp" download="Locales_Parral_Color.webp"
                         class="btn-download-sm">Descargar</a>
+                </div>
+                <!-- Imagen 4: Locales Antiguos Restaurada -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        ✨ Otra Vista Restaurada
+                    </h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/locales antiguos/optimizado-antiguos locales comerciales restaurada.webp', 'Locales Antiguos - Restaurada')">
+                        <img src="images/locales antiguos/optimizado-antiguos locales comerciales restaurada.webp"
+                            alt="Locales Antiguos - Restaurada" class="colorear-img" loading="lazy"
+                            style="cursor: pointer;">
+                    </div>
+                    <a href="images/locales antiguos/optimizado-antiguos locales comerciales restaurada.webp" download
+                        class="btn-download-sm">Descargar</a>
+                </div>
+                <!-- Imagen 5: Locales Antiguos Color -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        🎨 Otra Vista a Color
+                    </h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/locales antiguos/optimizado-antiguos locales comerciales restaurada color.webp', 'Locales Antiguos - Color')">
+                        <img src="images/locales antiguos/optimizado-antiguos locales comerciales restaurada color.webp"
+                            alt="Locales Antiguos - Color" class="colorear-img" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    <a href="images/locales antiguos/optimizado-antiguos locales comerciales restaurada color.webp"
+                        download class="btn-download-sm">Descargar</a>
                 </div>
             </div>
 
@@ -1253,48 +1284,6 @@
                             <div class="slider-button"></div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal Locales Antiguos -->
-    <div id="localesAntiguosModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('localesAntiguosModal')">&times;</span>
-            <div class="modal-header">
-                <button type="button" onclick="closeModal('localesAntiguosModal')" class="btn-back">← Volver a
-                    Galería</button>
-                <h2>🏪 Locales Antiguos</h2>
-                <p>El comercio de antaño en las calles de Parral</p>
-            </div>
-            <h3
-                style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
-                📸 Galería de Imágenes</h3>
-            <div class="modal-grid" style="grid-template-columns: repeat(2, 1fr);">
-                <div class="colorear-item">
-                    <h4
-                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
-                        ✨ Restaurada con IA</h4>
-                    <div class="colorear-img-container"
-                        onclick="openLightbox('images/locales antiguos/optimizado-antiguos locales comerciales restaurada.webp', 'Restaurada')">
-                        <img src="images/locales antiguos/optimizado-antiguos locales comerciales restaurada.webp"
-                            alt="Locales - Restaurada" class="colorear-img" loading="lazy" style="cursor: pointer;">
-                    </div>
-                    <a href="images/locales antiguos/optimizado-antiguos locales comerciales restaurada.webp" download
-                        class="btn-download-sm">Descargar</a>
-                </div>
-                <div class="colorear-item">
-                    <h4
-                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
-                        🎨 Coloreada con IA</h4>
-                    <div class="colorear-img-container"
-                        onclick="openLightbox('images/locales antiguos/optimizado-antiguos locales comerciales restaurada color.webp', 'Color')">
-                        <img src="images/locales antiguos/optimizado-antiguos locales comerciales restaurada color.webp"
-                            alt="Locales - Color" class="colorear-img" loading="lazy" style="cursor: pointer;">
-                    </div>
-                    <a href="images/locales antiguos/optimizado-antiguos locales comerciales restaurada color.webp"
-                        download class="btn-download-sm">Descargar</a>
                 </div>
             </div>
         </div>
@@ -2088,7 +2077,6 @@
             'casasModal',
             'estacionModal',
             'fiestaModal',
-            'localesAntiguosModal',
             'locomotoraModal',
             'sanFranciscoModal',
             'sanJoseModal',
