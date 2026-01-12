@@ -344,16 +344,16 @@
             </div>
 
             <!-- Fila 6: Nuevas Colecciones -->
-            <div class="card-foto" data-tags="tren ferrocarril transporte pasajeros estacion"
+            <div class="card-foto" data-tags="tren ferrocarril transporte pasajeros estacion locomotora ramal cauquenes"
                 onclick="openModal('trenModal')" style="cursor: pointer;">
                 <div class="card-foto-img-container">
-                    <span class="heritage-badge badge-restored">Restauración IA</span>
+                    <span class="heritage-badge badge-restored">🚂 7 Fotos Ferroviarias</span>
                     <img src="images/antigup tren pasajeros/optimizado-restaurada a color.webp"
-                        alt="Antiguo tren de pasajeros de Parral" loading="lazy" width="600" height="375">
+                        alt="Historia ferroviaria de Parral" loading="lazy" width="600" height="375">
                 </div>
                 <div class="card-foto-content">
-                    <h3>Tren de Pasajeros</h3>
-                    <p>El ferrocarril conectando pueblos</p>
+                    <h3>Historia del Ferrocarril</h3>
+                    <p>Trenes, estación y ramal Parral-Cauquenes</p>
                     <button type="button" onclick="event.stopPropagation(); openModal('trenModal')" class="btn-card">Ver
                         Colección</button>
                 </div>
@@ -369,20 +369,6 @@
                     <h3>Casas Antiguas</h3>
                     <p>Arquitectura de otro tiempo</p>
                     <button type="button" onclick="event.stopPropagation(); openModal('casasModal')"
-                        class="btn-card">Ver Colección</button>
-                </div>
-            </div>
-            <div class="card-foto" data-tags="estacion tren terremoto 1939 ferrocarril"
-                onclick="openModal('estacionModal')" style="cursor: pointer;">
-                <div class="card-foto-img-container">
-                    <span class="heritage-badge badge-restored">Restauración IA</span>
-                    <img src="images/estacion antes terremoto 39/optimizado-estacion antes del 39 restaurada a color.webp"
-                        alt="Estación de Parral antes del terremoto de 1939" loading="lazy" width="600" height="375">
-                </div>
-                <div class="card-foto-content">
-                    <h3>Estación Pre-1939</h3>
-                    <p>Antes del gran terremoto</p>
-                    <button type="button" onclick="event.stopPropagation(); openModal('estacionModal')"
                         class="btn-card">Ver Colección</button>
                 </div>
             </div>
@@ -402,20 +388,6 @@
             </div>
 
             <!-- Fila 7: Más Colecciones -->
-            <div class="card-foto" data-tags="locomotora tren ramal cauquenes ferrocarril"
-                onclick="openModal('locomotoraModal')" style="cursor: pointer;">
-                <div class="card-foto-img-container">
-                    <span class="heritage-badge badge-restored">Restauración IA</span>
-                    <img src="images/locomotora ramal cauquenes/optimizado-locomotora ramal parral - cauquenes restaurada a color.webp"
-                        alt="Locomotora del ramal Parral-Cauquenes" loading="lazy" width="600" height="375">
-                </div>
-                <div class="card-foto-content">
-                    <h3>Ramal Parral-Cauquenes</h3>
-                    <p>Locomotora histórica</p>
-                    <button type="button" onclick="event.stopPropagation(); openModal('locomotoraModal')"
-                        class="btn-card">Ver Colección</button>
-                </div>
-            </div>
             <div class="card-foto" data-tags="templo iglesia san francisco religion terremoto"
                 onclick="openModal('sanFranciscoModal')" style="cursor: pointer;">
                 <div class="card-foto-img-container">
@@ -1080,25 +1052,27 @@
         </div>
     </div>
 
-    <!-- Modal Tren de Pasajeros -->
+    <!-- Modal Historia del Ferrocarril (Fusión de 3 colecciones) -->
     <div id="trenModal" class="modal">
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal('trenModal')">&times;</span>
             <div class="modal-header">
                 <button type="button" onclick="closeModal('trenModal')" class="btn-back">← Volver a Galería</button>
-                <h2>🚂 Tren de Pasajeros</h2>
-                <p>El ferrocarril que conectó pueblos y familias</p>
+                <h2>🚂 Historia del Ferrocarril de Parral</h2>
+                <p>El ferrocarril que conectó pueblos y familias - Trenes, Estación y Ramal</p>
             </div>
+
+            <!-- Sección 1: Tren de Pasajeros -->
             <h3
-                style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
-                📸 Galería de Imágenes</h3>
+                style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center; margin-top: 2rem;">
+                🚃 Tren de Pasajeros</h3>
             <div class="modal-grid">
                 <div class="colorear-item">
                     <h4
                         style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
-                        📷 Foto Original</h4>
+                        📷 Original</h4>
                     <div class="colorear-img-container"
-                        onclick="openLightbox('images/antigup tren pasajeros/optimizado-original.webp', 'Original')">
+                        onclick="openLightbox('images/antigup tren pasajeros/optimizado-original.webp', 'Tren Original')">
                         <img src="images/antigup tren pasajeros/optimizado-original.webp" alt="Tren - Original"
                             class="colorear-img" loading="lazy" style="cursor: pointer;">
                     </div>
@@ -1108,9 +1082,9 @@
                 <div class="colorear-item">
                     <h4
                         style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
-                        ✨ Restaurada con IA</h4>
+                        ✨ Restaurada</h4>
                     <div class="colorear-img-container"
-                        onclick="openLightbox('images/antigup tren pasajeros/optimizado-antiguo tren pasajeros  restaurada.webp', 'Restaurada')">
+                        onclick="openLightbox('images/antigup tren pasajeros/optimizado-antiguo tren pasajeros  restaurada.webp', 'Tren Restaurada')">
                         <img src="images/antigup tren pasajeros/optimizado-antiguo tren pasajeros  restaurada.webp"
                             alt="Tren - Restaurada" class="colorear-img" loading="lazy" style="cursor: pointer;">
                     </div>
@@ -1120,15 +1094,92 @@
                 <div class="colorear-item">
                     <h4
                         style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
-                        🎨 Coloreada con IA</h4>
+                        🎨 Coloreada</h4>
                     <div class="colorear-img-container"
-                        onclick="openLightbox('images/antigup tren pasajeros/optimizado-restaurada a color.webp', 'Color')">
+                        onclick="openLightbox('images/antigup tren pasajeros/optimizado-restaurada a color.webp', 'Tren Color')">
                         <img src="images/antigup tren pasajeros/optimizado-restaurada a color.webp" alt="Tren - Color"
                             class="colorear-img" loading="lazy" style="cursor: pointer;">
                     </div>
                     <a href="images/antigup tren pasajeros/optimizado-restaurada a color.webp" download
                         class="btn-download-sm">Descargar</a>
                 </div>
+            </div>
+
+            <!-- Sección 2: Estación Pre-1939 -->
+            <h3
+                style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center; margin-top: 2.5rem;">
+                🚉 Estación de Parral (Pre-1939)</h3>
+            <div class="modal-grid">
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        ✨ Restaurada</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/estacion antes terremoto 39/optimizado-estacion antes del 39 restaurada.webp', 'Estación Restaurada')">
+                        <img src="images/estacion antes terremoto 39/optimizado-estacion antes del 39 restaurada.webp"
+                            alt="Estación - Restaurada" class="colorear-img" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    <a href="images/estacion antes terremoto 39/optimizado-estacion antes del 39 restaurada.webp"
+                        download class="btn-download-sm">Descargar</a>
+                </div>
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        🎨 Coloreada</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/estacion antes terremoto 39/optimizado-estacion antes del 39 restaurada a color.webp', 'Estación Color')">
+                        <img src="images/estacion antes terremoto 39/optimizado-estacion antes del 39 restaurada a color.webp"
+                            alt="Estación - Color" class="colorear-img" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    <a href="images/estacion antes terremoto 39/optimizado-estacion antes del 39 restaurada a color.webp"
+                        download class="btn-download-sm">Descargar</a>
+                </div>
+            </div>
+
+            <!-- Sección 3: Ramal Parral-Cauquenes -->
+            <h3
+                style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center; margin-top: 2.5rem;">
+                🛤️ Ramal Parral-Cauquenes</h3>
+            <div class="modal-grid">
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        ✨ Restaurada</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/locomotora ramal cauquenes/optimizado-locomotora ramal parral - cauquenes restaurada.webp', 'Locomotora Restaurada')">
+                        <img src="images/locomotora ramal cauquenes/optimizado-locomotora ramal parral - cauquenes restaurada.webp"
+                            alt="Locomotora - Restaurada" class="colorear-img" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    <a href="images/locomotora ramal cauquenes/optimizado-locomotora ramal parral - cauquenes restaurada.webp"
+                        download class="btn-download-sm">Descargar</a>
+                </div>
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        🎨 Coloreada</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/locomotora ramal cauquenes/optimizado-locomotora ramal parral - cauquenes restaurada a color.webp', 'Locomotora Color')">
+                        <img src="images/locomotora ramal cauquenes/optimizado-locomotora ramal parral - cauquenes restaurada a color.webp"
+                            alt="Locomotora - Color" class="colorear-img" loading="lazy" style="cursor: pointer;">
+                    </div>
+                    <a href="images/locomotora ramal cauquenes/optimizado-locomotora ramal parral - cauquenes restaurada a color.webp"
+                        download class="btn-download-sm">Descargar</a>
+                </div>
+            </div>
+
+            <!-- Contexto Histórico -->
+            <div
+                style="margin-top: 2.5rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(139, 115, 85, 0.1) 0%, rgba(201, 169, 97, 0.1) 100%); border-radius: 12px; border-left: 4px solid #8b7355;">
+                <h3 style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.75rem;">
+                    📜 Contexto Histórico
+                </h3>
+                <p style="color: var(--text-color); line-height: 1.7; font-size: 0.95rem;">
+                    El <strong>ferrocarril</strong> llegó a Parral en 1874, transformando la ciudad en un importante
+                    nodo comercial y de transporte. El <strong>Ramal Parral-Cauquenes</strong> conectaba estas dos
+                    ciudades hasta su cierre en 1979. La <strong>estación de ferrocarriles</strong> fue destruida
+                    parcialmente en el terremoto de 1939, pero su legado perdura en la memoria colectiva como símbolo
+                    del progreso de la época.
+                </p>
             </div>
         </div>
     </div>
@@ -1187,47 +1238,6 @@
     </div>
     </div>
 
-    <!-- Modal Estación Pre-1939 -->
-    <div id="estacionModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('estacionModal')">&times;</span>
-            <div class="modal-header">
-                <button type="button" onclick="closeModal('estacionModal')" class="btn-back">← Volver a Galería</button>
-                <h2>🚉 Estación Pre-1939</h2>
-                <p>La estación de ferrocarril antes del gran terremoto</p>
-            </div>
-            <h3
-                style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
-                📸 Galería de Imágenes</h3>
-            <div class="modal-grid" style="grid-template-columns: repeat(2, 1fr);">
-                <div class="colorear-item">
-                    <h4
-                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
-                        ✨ Restaurada con IA</h4>
-                    <div class="colorear-img-container"
-                        onclick="openLightbox('images/estacion antes terremoto 39/optimizado-estacion antes del 39 restaurada.webp', 'Restaurada')">
-                        <img src="images/estacion antes terremoto 39/optimizado-estacion antes del 39 restaurada.webp"
-                            alt="Estación - Restaurada" class="colorear-img" loading="lazy" style="cursor: pointer;">
-                    </div>
-                    <a href="images/estacion antes terremoto 39/optimizado-estacion antes del 39 restaurada.webp"
-                        download class="btn-download-sm">Descargar</a>
-                </div>
-                <div class="colorear-item">
-                    <h4
-                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
-                        🎨 Coloreada con IA</h4>
-                    <div class="colorear-img-container"
-                        onclick="openLightbox('images/estacion antes terremoto 39/optimizado-estacion antes del 39 restaurada a color.webp', 'Color')">
-                        <img src="images/estacion antes terremoto 39/optimizado-estacion antes del 39 restaurada a color.webp"
-                            alt="Estación - Color" class="colorear-img" loading="lazy" style="cursor: pointer;">
-                    </div>
-                    <a href="images/estacion antes terremoto 39/optimizado-estacion antes del 39 restaurada a color.webp"
-                        download class="btn-download-sm">Descargar</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Modal Fiesta de Primavera 1925 -->
     <div id="fiestaModal" class="modal">
         <div class="modal-content">
@@ -1284,48 +1294,6 @@
                             <div class="slider-button"></div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal Locomotora Ramal -->
-    <div id="locomotoraModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('locomotoraModal')">&times;</span>
-            <div class="modal-header">
-                <button type="button" onclick="closeModal('locomotoraModal')" class="btn-back">← Volver a
-                    Galería</button>
-                <h2>🚂 Ramal Parral-Cauquenes</h2>
-                <p>La locomotora que unía dos pueblos hermanos</p>
-            </div>
-            <h3
-                style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
-                📸 Galería de Imágenes</h3>
-            <div class="modal-grid" style="grid-template-columns: repeat(2, 1fr);">
-                <div class="colorear-item">
-                    <h4
-                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
-                        ✨ Restaurada con IA</h4>
-                    <div class="colorear-img-container"
-                        onclick="openLightbox('images/locomotora ramal cauquenes/optimizado-locomotora ramal parral - cauquenes restaurada.webp', 'Restaurada')">
-                        <img src="images/locomotora ramal cauquenes/optimizado-locomotora ramal parral - cauquenes restaurada.webp"
-                            alt="Locomotora - Restaurada" class="colorear-img" loading="lazy" style="cursor: pointer;">
-                    </div>
-                    <a href="images/locomotora ramal cauquenes/optimizado-locomotora ramal parral - cauquenes restaurada.webp"
-                        download class="btn-download-sm">Descargar</a>
-                </div>
-                <div class="colorear-item">
-                    <h4
-                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
-                        🎨 Coloreada con IA</h4>
-                    <div class="colorear-img-container"
-                        onclick="openLightbox('images/locomotora ramal cauquenes/optimizado-locomotora ramal parral - cauquenes restaurada a color.webp', 'Color')">
-                        <img src="images/locomotora ramal cauquenes/optimizado-locomotora ramal parral - cauquenes restaurada a color.webp"
-                            alt="Locomotora - Color" class="colorear-img" loading="lazy" style="cursor: pointer;">
-                    </div>
-                    <a href="images/locomotora ramal cauquenes/optimizado-locomotora ramal parral - cauquenes restaurada a color.webp"
-                        download class="btn-download-sm">Descargar</a>
                 </div>
             </div>
         </div>
@@ -2075,9 +2043,7 @@
             'arrozModal',
             'trenModal',
             'casasModal',
-            'estacionModal',
             'fiestaModal',
-            'locomotoraModal',
             'sanFranciscoModal',
             'sanJoseModal',
             'rutaModal',
