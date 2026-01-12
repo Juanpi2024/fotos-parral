@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Archivos en Movimiento – Patrimonio Vivo de Parral</title>
     <meta name="description"
-        content="Descubre la historia y el patrimonio de Parral a través de Archivos en Movimiento. Galería digital con 19 colecciones, fotos restauradas con IA y turismo cultural en la región del Maule.">
+        content="Descubre la historia y el patrimonio de Parral a través de Archivos en Movimiento. Galería digital con 19 colecciones, videos históricos, personajes ilustres y recursos educativos.">
     <meta name="keywords"
         content="Parral, Maule, Chile, historia de Parral, turismo patrimonial, Pablo Neruda, archivos históricos, patrimonio vivo, fotos antiguas, restauración IA">
 
@@ -17,9 +17,8 @@
     <meta property="og:url" content="https://archivosparral.cl/">
     <meta property="og:title" content="Archivos en Movimiento – Patrimonio Vivo de Parral">
     <meta property="og:description"
-        content="Explora el archivo histórico digital de Parral. 19 colecciones, fotos restauradas con IA y rutas patrimoniales.">
-    <meta property="og:image"
-        content="https://archivosparral.cl/images/italianos en Parral/COLONOS EN TRIGO MEJORADA A COLOR.jpg">
+        content="Explora el archivo histórico digital de Parral. 19 colecciones, videos, personajes y rutas patrimoniales.">
+    <meta property="og:image" content="https://archivosparral.cl/optimized/img/plaza-color.webp">
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -27,7 +26,7 @@
       "@context": "https://schema.org",
       "@type": "CulturalSite",
       "name": "Archivos en Movimiento - Patrimonio Vivo de Parral",
-      "description": "Archivo histórico digital y museo virtual de la ciudad de Parral con 19 colecciones fotográficas.",
+      "description": "Archivo histórico digital y museo virtual de la ciudad de Parral con 19 colecciones fotográficas, videos y recursos educativos.",
       "location": {
         "@type": "Place",
         "address": {
@@ -38,7 +37,7 @@
         }
       },
       "url": "https://archivosparral.cl/",
-      "image": "https://archivosparral.cl/images/italianos en Parral/COLONOS EN TRIGO MEJORADA A COLOR.jpg"
+      "image": "https://archivosparral.cl/optimized/img/plaza-color.webp"
     }
     </script>
 
@@ -52,7 +51,7 @@
 
     <style>
         /* ==========================================
-           ENHANCED HOME PAGE STYLES
+           ENHANCED HOME PAGE STYLES V2
         ========================================== */
 
         /* Hero Slider Enhancement */
@@ -130,6 +129,33 @@
             text-shadow: 1px 2px 10px rgba(0, 0, 0, 0.5);
         }
 
+        /* Slider Dots */
+        .slider-dots {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            gap: 10px;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .slider-dot.active {
+            background: #c9a961;
+            border-color: white;
+            transform: scale(1.2);
+        }
+
         /* Stats Counter Section */
         .stats-section {
             background: linear-gradient(135deg, #1a1510 0%, #2d2419 100%);
@@ -141,9 +167,9 @@
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
             gap: 2rem;
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             text-align: center;
         }
@@ -154,7 +180,7 @@
 
         .stat-number {
             font-family: 'Playfair Display', serif;
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 700;
             color: #c9a961;
             display: block;
@@ -162,19 +188,14 @@
         }
 
         .stat-label {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             opacity: 0.8;
             margin-top: 0.5rem;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        /* Featured Gallery Section */
-        .featured-section {
-            padding: 4rem 1rem;
-            background: linear-gradient(180deg, #f8f5f0 0%, #fff 100%);
-        }
-
+        /* Section Headers */
         .section-header {
             text-align: center;
             margin-bottom: 3rem;
@@ -193,6 +214,11 @@
         }
 
         /* Featured Cards */
+        .featured-section {
+            padding: 4rem 1rem;
+            background: linear-gradient(180deg, #f8f5f0 0%, #fff 100%);
+        }
+
         .featured-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -205,10 +231,11 @@
             position: relative;
             border-radius: 16px;
             overflow: hidden;
-            aspect-ratio: 4/3;
+            aspect-ratio: 16/10;
             cursor: pointer;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
             transition: transform 0.4s ease, box-shadow 0.4s ease;
+            text-decoration: none;
         }
 
         .featured-card:hover {
@@ -262,6 +289,204 @@
             letter-spacing: 0.5px;
         }
 
+        /* Video Section */
+        .video-section {
+            padding: 4rem 1rem;
+            background: #fff;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .video-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .video-thumbnail {
+            position: relative;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+        }
+
+        .video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .play-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70px;
+            height: 70px;
+            background: rgba(201, 169, 97, 0.95);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #1a1510;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-card:hover .play-button {
+            transform: translate(-50%, -50%) scale(1.1);
+            background: #c9a961;
+        }
+
+        .video-info {
+            padding: 1.5rem;
+        }
+
+        .video-info h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .video-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Personajes Section */
+        .personajes-section {
+            padding: 4rem 1rem;
+            background: linear-gradient(135deg, #f8f5f0 0%, #ebe5db 100%);
+        }
+
+        .personajes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .personaje-card {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .personaje-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px rgba(201, 169, 97, 0.2);
+        }
+
+        .personaje-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .personaje-card h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .personaje-card p {
+            color: var(--text-light);
+            font-size: 0.85rem;
+        }
+
+        /* Educación Section */
+        .educacion-section {
+            padding: 4rem 1rem;
+            background: linear-gradient(135deg, #1a1510 0%, #2d2419 100%);
+            color: white;
+        }
+
+        .educacion-section .section-header h2,
+        .educacion-section .section-header p {
+            color: white;
+        }
+
+        .educacion-section .section-header p {
+            opacity: 0.8;
+        }
+
+        .educacion-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .educacion-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(201, 169, 97, 0.3);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: white;
+        }
+
+        .educacion-card:hover {
+            background: rgba(201, 169, 97, 0.1);
+            border-color: #c9a961;
+            transform: translateY(-5px);
+        }
+
+        .educacion-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .educacion-card h3 {
+            font-family: 'Playfair Display', serif;
+            color: #c9a961;
+            margin-bottom: 0.5rem;
+        }
+
+        .educacion-card p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .educacion-card .btn-outline {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border: 1px solid #c9a961;
+            color: #c9a961;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .educacion-card:hover .btn-outline {
+            background: #c9a961;
+            color: #1a1510;
+        }
+
         /* Navigation Cards Section */
         .nav-section {
             padding: 4rem 1rem;
@@ -310,25 +535,37 @@
             line-height: 1.6;
         }
 
-        /* Quote Section Enhanced */
+        /* Quote Section */
         .quote-section {
-            background: linear-gradient(135deg, #1a1510 0%, #2d2419 100%);
-            padding: 4rem 2rem;
+            background: url('optimized/img/plaza-color.webp') center/cover;
+            position: relative;
+            padding: 5rem 2rem;
             text-align: center;
             color: white;
         }
 
+        .quote-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(26, 21, 16, 0.85);
+        }
+
         .quote-section blockquote {
+            position: relative;
             max-width: 800px;
             margin: 0 auto;
             font-family: 'Playfair Display', serif;
             font-size: clamp(1.3rem, 3vw, 1.8rem);
             font-style: italic;
             line-height: 1.6;
-            opacity: 0.95;
         }
 
         .quote-section cite {
+            position: relative;
             display: block;
             margin-top: 1.5rem;
             color: #c9a961;
@@ -386,11 +623,16 @@
             }
 
             .stat-number {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
 
-            .featured-grid {
+            .featured-grid,
+            .video-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .personajes-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
     </style>
@@ -400,34 +642,56 @@
     <!-- Header -->
     {% include header.html %}
 
-    <!-- Hero Section con Slider Mejorado -->
+    <!-- Hero Section con 6 Slides -->
     <section class="hero">
         <div class="hero-slider">
+            <!-- Slide 1: Plaza de Armas coloreada -->
             <div class="slide active">
-                <img src="images/italianos en Parral/COLONOS EN TRIGO MEJORADA A COLOR.jpg"
-                    alt="Colonos italianos en los trigales de Parral - Foto coloreada con IA">
+                <img src="optimized/img/plaza-color.webp" alt="Plaza de Armas de Parral - Coloreada con IA">
             </div>
+            <!-- Slide 2: Avenida Principal -->
             <div class="slide">
-                <img src="images/termas de catillo/optimizado termas a color 1941.webp"
-                    alt="Termas de Catillo en 1941 - Imagen restaurada">
+                <img src="optimized/img/avenida-color.webp" alt="Avenida Principal de Parral - Coloreada con IA">
             </div>
+            <!-- Slide 3: Colonos italianos -->
+            <div class="slide">
+                <img src="images/italianos en Parral/COLONOS EN TRIGO MEJORADA A COLOR.jpg"
+                    alt="Colonos italianos en los trigales de Parral">
+            </div>
+            <!-- Slide 4: Tren antiguo -->
+            <div class="slide">
+                <img src="images/antigup tren pasajeros/optimizado-restaurada a color.webp"
+                    alt="Antiguo tren de pasajeros de Parral">
+            </div>
+            <!-- Slide 5: Fiesta de la Primavera -->
             <div class="slide">
                 <img src="images/fiesta primavera 1925/optimizado-fiesta primavera  color 1925.webp"
                     alt="Fiesta de la Primavera 1925 en Parral">
             </div>
+            <!-- Slide 6: Bajada Buenos Aires -->
             <div class="slide">
-                <img src="optimized/img/avenida-color.webp" alt="Avenida Principal de Parral - Coloreada con IA">
+                <img src="optimized/img/bajada-color.webp" alt="Bajada Buenos Aires de Parral - Coloreada con IA">
             </div>
         </div>
 
         <div class="hero-overlay"></div>
+
+        <!-- Slider Dots -->
+        <div class="slider-dots">
+            <span class="slider-dot active" data-slide="0"></span>
+            <span class="slider-dot" data-slide="1"></span>
+            <span class="slider-dot" data-slide="2"></span>
+            <span class="slider-dot" data-slide="3"></span>
+            <span class="slider-dot" data-slide="4"></span>
+            <span class="slider-dot" data-slide="5"></span>
+        </div>
 
         <div class="container hero-content">
             <h2 class="hero-title-dual">
                 <span class="title-white">Descubre</span>
                 <span class="title-gold">Parral</span>
             </h2>
-            <p>Viaja al pasado a través de fotos restauradas con Inteligencia Artificial</p>
+            <p>Historia, personajes y tradiciones restauradas con Inteligencia Artificial</p>
             <a href="galeria.html" class="btn-principal">Explorar las 19 Colecciones</a>
         </div>
     </section>
@@ -444,13 +708,61 @@
                 <span class="stat-label">Fotografías</span>
             </div>
             <div class="stat-item">
-                <span class="stat-number">1795</span>
-                <span class="stat-label">Año Fundación</span>
+                <span class="stat-number">10+</span>
+                <span class="stat-label">Videos</span>
             </div>
             <div class="stat-item">
-                <span class="stat-number">IA</span>
-                <span class="stat-label">Restauración</span>
+                <span class="stat-number">9</span>
+                <span class="stat-label">Infografías</span>
             </div>
+            <div class="stat-item">
+                <span class="stat-number">1795</span>
+                <span class="stat-label">Fundación</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="section-header">
+            <h2>🎬 Videos Históricos</h2>
+            <p>Documentales y animaciones sobre la historia de Parral</p>
+        </div>
+
+        <div class="video-grid">
+            <a href="galeria.html" class="video-card">
+                <div class="video-thumbnail">
+                    <img src="images/italianos en Parral/COLONOS EN TRIGO MEJORADA A COLOR.jpg"
+                        alt="Video Colonos Italianos">
+                    <div class="play-button">▶</div>
+                </div>
+                <div class="video-info">
+                    <h3>Italianos en Parral</h3>
+                    <p>La historia de la Colonia de San Manuel</p>
+                </div>
+            </a>
+
+            <a href="galeria.html" class="video-card">
+                <div class="video-thumbnail">
+                    <img src="images/inundacion de 1965/optimizado-inundacion 1965.webp" alt="Video Inundación 1965">
+                    <div class="play-button">▶</div>
+                </div>
+                <div class="video-info">
+                    <h3>Inundación de 1965</h3>
+                    <p>La gran crecida del río Perquilauquén</p>
+                </div>
+            </a>
+
+            <a href="galeria.html" class="video-card">
+                <div class="video-thumbnail">
+                    <img src="optimized/img/avenida-color.webp" alt="Video Avenida Principal">
+                    <div class="play-button">▶</div>
+                </div>
+                <div class="video-info">
+                    <h3>Avenida Principal</h3>
+                    <p>Transformación histórica de nuestra arteria principal</p>
+                </div>
+            </a>
         </div>
     </section>
 
@@ -458,32 +770,24 @@
     <section class="featured-section">
         <div class="section-header">
             <h2>✨ Colecciones Destacadas</h2>
-            <p>Explora nuestras restauraciones más impactantes</p>
+            <p>Fotografías restauradas y coloreadas con IA</p>
         </div>
 
         <div class="featured-grid">
             <a href="galeria.html" class="featured-card">
-                <span class="featured-badge">🇮🇹 Nueva</span>
-                <img src="images/italianos en Parral/COLONOS EN TRIGO MEJORADA A COLOR.jpg"
-                    alt="Colonos italianos en los trigales">
+                <span class="featured-badge">⛪ Patrimonio</span>
+                <img src="images/templo san jose antes del 39/optimizado-templo san jose antes del 39 restaurada a color.webp"
+                    alt="Templo San José antes del terremoto">
                 <div class="featured-card-overlay">
-                    <h3>Italianos en Parral</h3>
-                    <p>La Colonia de San Manuel • 6 fotos</p>
-                </div>
-            </a>
-
-            <a href="galeria.html" class="featured-card">
-                <span class="featured-badge">🌊 Histórica</span>
-                <img src="images/inundacion de 1965/optimizado-inundacion 1965.webp" alt="Inundación de 1965 en Parral">
-                <div class="featured-card-overlay">
-                    <h3>Inundación de 1965</h3>
-                    <p>Crecida del río Perquilauquén • 4 fotos</p>
+                    <h3>Templo San José</h3>
+                    <p>Antes del terremoto del 39 • 5 fotos</p>
                 </div>
             </a>
 
             <a href="galeria.html" class="featured-card">
                 <span class="featured-badge">♨️ Turismo</span>
-                <img src="images/termas de catillo/optimizado termas a color 1941.webp" alt="Termas de Catillo 1941">
+                <img src="images/termas de catillo/optimizado-entrada antigua termas catillo.webp"
+                    alt="Termas de Catillo entrada antigua">
                 <div class="featured-card-overlay">
                     <h3>Termas de Catillo</h3>
                     <p>Aguas termales desde 1941 • 4 fotos</p>
@@ -491,13 +795,57 @@
             </a>
 
             <a href="galeria.html" class="featured-card">
-                <span class="featured-badge">⛪ Patrimonio</span>
-                <img src="images/templo san jose antes del 39/optimizado templo a color.webp"
-                    alt="Templo San José antes del terremoto">
+                <span class="featured-badge">🚂 Ferrocarril</span>
+                <img src="images/locomotora ramal cauquenes/optimizado-locomotora ramal parral - cauquenes restaurada a color.webp"
+                    alt="Locomotora del Ramal Parral-Cauquenes">
                 <div class="featured-card-overlay">
-                    <h3>Templo San José</h3>
-                    <p>Antes del terremoto del 39 • 5 fotos</p>
+                    <h3>Locomotora del Ramal</h3>
+                    <p>El tren Parral-Cauquenes • 2 fotos</p>
                 </div>
+            </a>
+
+            <a href="galeria.html" class="featured-card">
+                <span class="featured-badge">🎉 Fiestas</span>
+                <img src="images/fiesta primavera 1925/optimizado-fiesta primavera  color 1925.webp"
+                    alt="Fiesta de la Primavera 1925">
+                <div class="featured-card-overlay">
+                    <h3>Fiesta Primavera 1925</h3>
+                    <p>Tradiciones centenarias • 2 fotos</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Personajes Section -->
+    <section class="personajes-section">
+        <div class="section-header">
+            <h2>👤 Personajes Ilustres</h2>
+            <p>Quienes forjaron la identidad de Parral</p>
+        </div>
+
+        <div class="personajes-grid">
+            <a href="personajes.html" class="personaje-card">
+                <div class="personaje-icon">✍️</div>
+                <h3>Pablo Neruda</h3>
+                <p>Premio Nobel de Literatura 1971</p>
+            </a>
+
+            <a href="personajes.html" class="personaje-card">
+                <div class="personaje-icon">🎭</div>
+                <h3>Violeta Parra</h3>
+                <p>Folclorista y artista chilena</p>
+            </a>
+
+            <a href="personajes.html" class="personaje-card">
+                <div class="personaje-icon">🏛️</div>
+                <h3>Fundadores</h3>
+                <p>Pioneros desde 1795</p>
+            </a>
+
+            <a href="personajes.html" class="personaje-card">
+                <div class="personaje-icon">🌾</div>
+                <h3>Colonos</h3>
+                <p>Italianos, suizos y alemanes</p>
             </a>
         </div>
     </section>
@@ -511,33 +859,50 @@
         <cite>— Archivos en Movimiento</cite>
     </section>
 
+    <!-- Educación Section -->
+    <section class="educacion-section">
+        <div class="section-header">
+            <h2>📚 Recursos Educativos</h2>
+            <p>Material didáctico para escuelas y comunidad</p>
+        </div>
+
+        <div class="educacion-grid">
+            <a href="educacion.html" class="educacion-card">
+                <div class="educacion-icon">🎬</div>
+                <h3>Videos Educativos</h3>
+                <p>Documentales y presentaciones sobre la historia de Parral</p>
+                <span class="btn-outline">Ver Videos</span>
+            </a>
+
+            <a href="educacion.html" class="educacion-card">
+                <div class="educacion-icon">📊</div>
+                <h3>Infografías</h3>
+                <p>9 láminas visuales sobre patrimonio y cultura local</p>
+                <span class="btn-outline">Ver Infografías</span>
+            </a>
+
+            <a href="educacion.html" class="educacion-card">
+                <div class="educacion-icon">📝</div>
+                <h3>Guías de Trabajo</h3>
+                <p>Actividades para el aula sobre historia parralina</p>
+                <span class="btn-outline">Ver Guías</span>
+            </a>
+        </div>
+    </section>
+
     <!-- Navigation Section -->
     <section class="nav-section">
         <div class="section-header">
-            <h2>🗺️ Explora Nuestro Patrimonio</h2>
-            <p>Descubre todas las facetas de la historia de Parral</p>
+            <h2>🗺️ Explora Todo el Sitio</h2>
+            <p>Acceso directo a todas las secciones</p>
         </div>
 
         <div class="nav-grid">
             <div class="nav-card">
                 <div class="nav-card-icon">📸</div>
                 <h3>Galería Digital</h3>
-                <p>19 colecciones con más de 80 fotografías restauradas y coloreadas con IA.</p>
+                <p>19 colecciones con más de 80 fotografías restauradas con IA.</p>
                 <a href="galeria.html" class="btn-principal">Ver Galería</a>
-            </div>
-
-            <div class="nav-card">
-                <div class="nav-card-icon">👤</div>
-                <h3>Personajes y Tradiciones</h3>
-                <p>Neruda, pioneros, oficios tradicionales y leyendas de nuestra tierra.</p>
-                <a href="personajes.html" class="btn-principal">Ver Personajes</a>
-            </div>
-
-            <div class="nav-card">
-                <div class="nav-card-icon">📚</div>
-                <h3>Difusión Cultural</h3>
-                <p>Videos educativos, infografías y material para el aula.</p>
-                <a href="educacion.html" class="btn-principal">Ver Recursos</a>
             </div>
 
             <div class="nav-card">
@@ -557,7 +922,7 @@
             <div class="nav-card">
                 <div class="nav-card-icon">🌄</div>
                 <h3>Turismo y Agenda</h3>
-                <p>Termas, viñedos, rutas y calendario de eventos culturales.</p>
+                <p>Termas, viñedos, rutas y calendario de eventos.</p>
                 <a href="turismo.html" class="btn-principal">Ver Panoramas</a>
             </div>
         </div>
@@ -578,19 +943,40 @@
     {% include footer.html %}
 
     <script>
-        // Hero Slider Auto-rotation
+        // Hero Slider with Dots
         document.addEventListener('DOMContentLoaded', function () {
             const slides = document.querySelectorAll('.hero-slider .slide');
+            const dots = document.querySelectorAll('.slider-dot');
             let currentSlide = 0;
+            let slideInterval;
 
-            function nextSlide() {
+            function goToSlide(index) {
                 slides[currentSlide].classList.remove('active');
-                currentSlide = (currentSlide + 1) % slides.length;
+                dots[currentSlide].classList.remove('active');
+                currentSlide = index;
                 slides[currentSlide].classList.add('active');
+                dots[currentSlide].classList.add('active');
             }
 
-            // Change slide every 5 seconds
-            setInterval(nextSlide, 5000);
+            function nextSlide() {
+                goToSlide((currentSlide + 1) % slides.length);
+            }
+
+            function startSlider() {
+                slideInterval = setInterval(nextSlide, 5000);
+            }
+
+            // Click on dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    clearInterval(slideInterval);
+                    goToSlide(index);
+                    startSlider();
+                });
+            });
+
+            // Start auto-rotation
+            startSlider();
         });
     </script>
 </body>
