@@ -486,6 +486,21 @@
                         class="btn-card">Ver Colección</button>
                 </div>
             </div>
+            <!-- Tarjeta Inundación de 1965 -->
+            <div class="card-foto" data-tags="inundacion desastre rio 1965 temporal lluvia catastrofe"
+                onclick="openModal('inundacionModal')" style="cursor: pointer;">
+                <div class="card-foto-img-container">
+                    <span class="heritage-badge badge-original">🌊 Desastre Natural</span>
+                    <img src="images/inundacion de 1965/optimizado-inundacion 1965.webp"
+                        alt="Inundación de 1965 en Parral" loading="lazy" width="600" height="375">
+                </div>
+                <div class="card-foto-content">
+                    <h3>Inundación de 1965</h3>
+                    <p>La gran crecida del río Perquilauquén</p>
+                    <button type="button" onclick="event.stopPropagation(); openModal('inundacionModal')"
+                        class="btn-card">Ver Colección</button>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1610,6 +1625,119 @@
         </div>
     </div>
 
+    <!-- Modal Inundación de 1965 -->
+    <div id="inundacionModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('inundacionModal')">&times;</span>
+
+            <div class="modal-header">
+                <button type="button" onclick="closeModal('inundacionModal')" class="btn-back">
+                    ← Volver a Galería
+                </button>
+                <h2>🌊 Inundación de 1965</h2>
+                <p>La gran crecida del río Perquilauquén que devastó Parral</p>
+            </div>
+
+            <!-- Video Section -->
+            <div style="margin-bottom: 2.5rem;">
+                <h3
+                    style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
+                    🎬 Video Histórico
+                </h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/4MY2V_mjBKs"
+                        title="Inundación de 1965 en Parral - Video Histórico" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Image Gallery Section -->
+            <h3
+                style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
+                📸 Registro Fotográfico del Desastre
+            </h3>
+
+            <div class="modal-grid">
+                <!-- Imagen 1 -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        📷 Calles Inundadas</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/inundacion de 1965/optimizado-inundacion 1965.webp', 'Calles inundadas de Parral 1965')">
+                        <img src="images/inundacion de 1965/optimizado-inundacion 1965.webp"
+                            alt="Calles inundadas de Parral en 1965" class="colorear-img" loading="lazy"
+                            style="cursor: pointer;">
+                    </div>
+                    <a href="images/inundacion de 1965/optimizado-inundacion 1965.webp" download
+                        class="btn-download-sm">Descargar</a>
+                </div>
+
+                <!-- Imagen 2 -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        📷 Vista de la Inundación</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/inundacion de 1965/optimizado-inundacion 1965 2.webp', 'Vista de la inundación 1965')">
+                        <img src="images/inundacion de 1965/optimizado-inundacion 1965 2.webp"
+                            alt="Vista de la inundación de 1965" class="colorear-img" loading="lazy"
+                            style="cursor: pointer;">
+                    </div>
+                    <a href="images/inundacion de 1965/optimizado-inundacion 1965 2.webp" download
+                        class="btn-download-sm">Descargar</a>
+                </div>
+
+                <!-- Imagen 3 -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        📷 Magnitud del Desastre</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/inundacion de 1965/optimizado-inundacion 1965 3.webp', 'Magnitud del desastre 1965')">
+                        <img src="images/inundacion de 1965/optimizado-inundacion 1965 3.webp"
+                            alt="Magnitud del desastre en Parral 1965" class="colorear-img" loading="lazy"
+                            style="cursor: pointer;">
+                    </div>
+                    <a href="images/inundacion de 1965/optimizado-inundacion 1965 3.webp" download
+                        class="btn-download-sm">Descargar</a>
+                </div>
+
+                <!-- Imagen 4 -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        📷 Otra Perspectiva</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/inundacion de 1965/optimizado-otra.webp', 'Otra perspectiva de la inundación')">
+                        <img src="images/inundacion de 1965/optimizado-otra.webp"
+                            alt="Otra perspectiva de la inundación de 1965" class="colorear-img" loading="lazy"
+                            style="cursor: pointer;">
+                    </div>
+                    <a href="images/inundacion de 1965/optimizado-otra.webp" download
+                        class="btn-download-sm">Descargar</a>
+                </div>
+            </div>
+
+            <!-- Historical Context -->
+            <div
+                style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 119, 182, 0.1) 0%, rgba(0, 180, 216, 0.1) 100%); border-radius: 12px; border-left: 4px solid #0077b6;">
+                <h3 style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.75rem;">
+                    📜 Contexto Histórico
+                </h3>
+                <p style="color: var(--text-color); line-height: 1.7; font-size: 0.95rem;">
+                    En <strong>junio de 1965</strong>, intensas lluvias provocaron el desborde del río Perquilauquén,
+                    causando una de las peores inundaciones en la historia de Parral. Las aguas cubrieron calles
+                    enteras,
+                    destruyendo viviendas, comercios y dejando a cientos de familias damnificadas. Este evento marcó
+                    profundamente la memoria colectiva de la comunidad parralina.
+                </p>
+            </div>
+        </div>
+    </div>
+
     <!-- Lightbox for enlarged images -->
     <div id="lightbox" class="modal" style="display: none;">
         <div class="modal-content"
@@ -1691,7 +1819,8 @@
             'sanFranciscoModal',
             'sanJoseModal',
             'rutaModal',
-            'italianosModal'
+            'italianosModal',
+            'inundacionModal'
         ];
 
         let currentModalIndex = -1;
