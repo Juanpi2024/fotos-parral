@@ -516,6 +516,21 @@
                         class="btn-card">Ver Colección</button>
                 </div>
             </div>
+            <!-- Tarjeta Termas de Catillo -->
+            <div class="card-foto" data-tags="termas catillo turismo aguas termales baños spa relax"
+                onclick="openModal('termasModal')" style="cursor: pointer;">
+                <div class="card-foto-img-container">
+                    <span class="heritage-badge badge-restored">♨️ Turismo Histórico</span>
+                    <img src="images/termas de catillo/optimizado-termas de catillo1941.webp"
+                        alt="Termas de Catillo en 1941" loading="lazy" width="600" height="375">
+                </div>
+                <div class="card-foto-content">
+                    <h3>Termas de Catillo</h3>
+                    <p>Las históricas aguas termales de la zona</p>
+                    <button type="button" onclick="event.stopPropagation(); openModal('termasModal')"
+                        class="btn-card">Ver Colección</button>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1899,6 +1914,89 @@
         </div>
     </div>
 
+    <!-- Modal Termas de Catillo -->
+    <div id="termasModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('termasModal')">&times;</span>
+
+            <div class="modal-header">
+                <button type="button" onclick="closeModal('termasModal')" class="btn-back">
+                    ← Volver a Galería
+                </button>
+                <h2>♨️ Termas de Catillo</h2>
+                <p>Las históricas aguas termales de la zona - Tradición desde 1941</p>
+            </div>
+
+            <!-- Image Gallery Section -->
+            <h3
+                style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
+                📸 Registro Fotográfico Histórico
+            </h3>
+
+            <div class="modal-grid">
+                <!-- Imagen 1: Termas 1941 -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        📷 Termas en 1941</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/termas de catillo/optimizado-termas de catillo1941.webp', 'Termas de Catillo en 1941')">
+                        <img src="images/termas de catillo/optimizado-termas de catillo1941.webp"
+                            alt="Termas de Catillo en 1941" class="colorear-img" loading="lazy"
+                            style="cursor: pointer;">
+                    </div>
+                    <a href="images/termas de catillo/optimizado-termas de catillo1941.webp" download
+                        class="btn-download-sm">Descargar</a>
+                </div>
+
+                <!-- Imagen 2: Entrada Antigua -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        🚪 Entrada Antigua</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/termas de catillo/optimizado-entrada antigua termas catillo.webp', 'Entrada antigua de Termas de Catillo')">
+                        <img src="images/termas de catillo/optimizado-entrada antigua termas catillo.webp"
+                            alt="Entrada antigua de Termas de Catillo" class="colorear-img" loading="lazy"
+                            style="cursor: pointer;">
+                    </div>
+                    <a href="images/termas de catillo/optimizado-entrada antigua termas catillo.webp" download
+                        class="btn-download-sm">Descargar</a>
+                </div>
+
+                <!-- Imagen 3: Entrada Moderna -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        🏨 Entrada Actual</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/termas de catillo/optimizado-entrada moderna termas.webp', 'Entrada moderna de Termas')">
+                        <img src="images/termas de catillo/optimizado-entrada moderna termas.webp"
+                            alt="Entrada moderna de Termas de Catillo" class="colorear-img" loading="lazy"
+                            style="cursor: pointer;">
+                    </div>
+                    <a href="images/termas de catillo/optimizado-entrada moderna termas.webp" download
+                        class="btn-download-sm">Descargar</a>
+                </div>
+            </div>
+
+            <!-- Historical Context -->
+            <div
+                style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(46, 139, 87, 0.1) 0%, rgba(0, 128, 128, 0.1) 100%); border-radius: 12px; border-left: 4px solid #2e8b57;">
+                <h3 style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.75rem;">
+                    📜 Historia de las Termas
+                </h3>
+                <p style="color: var(--text-color); line-height: 1.7; font-size: 0.95rem;">
+                    Las <strong>Termas de Catillo</strong> son un reconocido centro termal ubicado a pocos kilómetros
+                    de Parral. Sus aguas medicinales, conocidas desde tiempos ancestrales por los pueblos originarios,
+                    han atraído a visitantes desde principios del siglo XX. En 1941, el balneario ya era un destino
+                    turístico establecido, y hasta hoy sigue siendo un referente del turismo termal en la Región del
+                    Maule.
+                </p>
+            </div>
+        </div>
+    </div>
+
     <!-- Lightbox for enlarged images -->
     <div id="lightbox" class="modal" style="display: none;">
         <div class="modal-content"
@@ -1982,7 +2080,8 @@
             'rutaModal',
             'italianosModal',
             'inundacionModal',
-            'dignidadModal'
+            'dignidadModal',
+            'termasModal'
         ];
 
         let currentModalIndex = -1;
