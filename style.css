@@ -724,63 +724,70 @@ footer p {
     transform: translateX(4px);
 }
 
-/* ---------------------------------- */
 /* 8. Premium Grid System             */
 /* ---------------------------------- */
 
 .grid-galeria {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.75rem;
-    padding: 0;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     .grid-galeria {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 1rem;
+        padding: 1rem 0;
     }
 }
 
 @media (min-width: 1024px) {
     .grid-galeria {
         grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
     }
 }
 
 /* Legacy Card Support - Enhanced */
 /* Legacy Card Support - Refined for Museo Style */
 .card-foto {
-    background: var(--card-bg);
+    background: var(--card-bg-warm, #FDFBF7);
     border: 1px solid var(--border-color);
-    /* Subtle border */
-    box-shadow: none;
-    /* Flat elegant look initially */
-    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    transition: var(--transition-smooth);
     position: relative;
+    border-radius: var(--card-radius);
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .card-foto:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--card-shadow-hover);
     border-color: var(--accent-color);
 }
 
 .card-foto-img-container {
     position: relative;
     overflow: hidden;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 4 / 3;
     margin: 0;
-    /* No margin */
+    background: transparent !important;
+    /* Force transparency to hide baked-in blue bars if image is cropped */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .card-foto-img-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /* This should hide the baked-in bars by zooming in */
     transition: transform 0.7s ease;
-    filter: sepia(20%) contrast(105%);
-    /* Vintage/Gallery feel */
+    filter: var(--image-filter-default);
 }
 
 .card-foto:hover .card-foto-img-container img {
@@ -789,24 +796,28 @@ footer p {
 }
 
 .card-foto-content {
-    padding: 1.5rem;
+    padding: 1.25rem;
     text-align: center;
-    /* Center align for gallery feel */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .card-foto-content h3 {
     font-family: var(--font-heading);
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     margin-bottom: 0.5rem;
     color: var(--primary-color);
 }
 
 .card-foto-content p {
     font-family: var(--font-body);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--text-light);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     font-style: italic;
+    line-height: 1.4;
 }
 
 
