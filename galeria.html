@@ -169,26 +169,18 @@
                 </div>
             </div>
 
-            <div class="card-foto">
+            <div class="card-foto" data-tags="don chaca personaje arquero futbol leyenda"
+                onclick="openModal('donChacaModal')" style="cursor: pointer;">
                 <div class="card-foto-img-container">
-                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80"
-                        alt="Retrato de Don Chaca, personaje típico" loading="lazy" width="600" height="375">
+                    <span class="heritage-badge badge-restored">⚽ 2 Fotos</span>
+                    <img src="images/don chanca/optimizado-atajando a color.webp"
+                        alt="Don Chaca, personaje icónico de Parral" loading="lazy" width="600" height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Don Chaca</h3>
-                    <p>Personaje Icónico</p>
-                    <a href="detalle.html" class="btn-card">Ver Colección</a>
-                </div>
-            </div>
-            <div class="card-foto">
-                <div class="card-foto-img-container">
-                    <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=600&q=80"
-                        alt="Don Chaca en una de sus anécdotas populares" loading="lazy" width="600" height="375">
-                </div>
-                <div class="card-foto-content">
-                    <h3>Don Chaca en Acción</h3>
-                    <p>Anécdotas Vivas</p>
-                    <a href="detalle.html" class="btn-card">Ver Colección</a>
+                    <p>Personaje legendario de Parral</p>
+                    <button type="button" onclick="event.stopPropagation(); openModal('donChacaModal')"
+                        class="btn-card">Ver Colección</button>
                 </div>
             </div>
 
@@ -951,6 +943,67 @@
         </div>
     </div>
 
+    <!-- Modal Don Chaca -->
+    <div id="donChacaModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('donChacaModal')">&times;</span>
+            <div class="modal-header">
+                <button type="button" onclick="closeModal('donChacaModal')" class="btn-back">← Volver a
+                    Galería</button>
+                <h2>⚽ Don Chaca</h2>
+                <p>El legendario arquero parralino que se convirtió en leyenda popular</p>
+            </div>
+
+            <h3
+                style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
+                📸 Galería de Imágenes</h3>
+            <div class="modal-grid" style="grid-template-columns: repeat(2, 1fr);">
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        ✨ Don Chaca Restaurada</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/don chanca/optimizado-donchancaatajandomejorada.webp', 'Don Chaca - Restaurada')">
+                        <img src="images/don chanca/optimizado-donchancaatajandomejorada.webp"
+                            alt="Don Chaca atajando - Restaurada" class="colorear-img" loading="lazy"
+                            style="cursor: pointer;">
+                    </div>
+                    <a href="images/don chanca/optimizado-donchancaatajandomejorada.webp" download
+                        class="btn-download-sm">Descargar</a>
+                </div>
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        🎨 Don Chaca a Color</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/don chanca/optimizado-atajando a color.webp', 'Don Chaca - Color')">
+                        <img src="images/don chanca/optimizado-atajando a color.webp"
+                            alt="Don Chaca atajando - Coloreada" class="colorear-img" loading="lazy"
+                            style="cursor: pointer;">
+                    </div>
+                    <a href="images/don chanca/optimizado-atajando a color.webp" download
+                        class="btn-download-sm">Descargar</a>
+                </div>
+            </div>
+
+            <!-- Contexto Histórico -->
+            <div
+                style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(139, 115, 85, 0.1) 0%, rgba(201, 169, 97, 0.1) 100%); border-radius: 12px; border-left: 4px solid #8b7355;">
+                <h3 style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.75rem;">
+                    📜 La Leyenda de Don Chaca
+                </h3>
+                <p style="color: var(--text-color); line-height: 1.7; font-size: 0.95rem;">
+                    <strong>Don Chaca</strong> fue un personaje emblemático de Parral, famoso por ser arquero de
+                    fútbol
+                    en los equipos locales. Su carisma y sus legendarias atajadas lo convirtieron en una figura
+                    querida
+                    por toda la comunidad. Hasta hoy, su nombre se recuerda en las historias populares de la ciudad
+                    como símbolo del espíritu deportivo y la identidad parralina.
+                </p>
+            </div>
+        </div>
+    </div>
+
     <!-- Modal Vida Rural -->
     <div id="arrozModal" class="modal">
         <div class="modal-content">
@@ -1143,7 +1196,8 @@
                     El <strong>ferrocarril</strong> llegó a Parral en 1874, transformando la ciudad en un importante
                     nodo comercial y de transporte. El <strong>Ramal Parral-Cauquenes</strong> conectaba estas dos
                     ciudades hasta su cierre en 1979. La <strong>estación de ferrocarriles</strong> fue destruida
-                    parcialmente en el terremoto de 1939, pero su legado perdura en la memoria colectiva como símbolo
+                    parcialmente en el terremoto de 1939, pero su legado perdura en la memoria colectiva como
+                    símbolo
                     del progreso de la época.
                 </p>
             </div>
@@ -1155,7 +1209,8 @@
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal('casasModal')">&times;</span>
             <div class="modal-header">
-                <button type="button" onclick="closeModal('casasModal')" class="btn-back">← Volver a Galería</button>
+                <button type="button" onclick="closeModal('casasModal')" class="btn-back">← Volver a
+                    Galería</button>
                 <h2>🏠 Casas Antiguas</h2>
                 <p>Arquitectura de otro tiempo en la entrada de Parral</p>
             </div>
@@ -2007,6 +2062,7 @@
             'bomberosModal',
             'avenidaModal',
             'arrozModal',
+            'donChacaModal',
             'trenModal',
             'casasModal',
             'fiestaModal',
