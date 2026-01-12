@@ -471,6 +471,21 @@
                         Colección</button>
                 </div>
             </div>
+            <!-- Tarjeta Italianos en Parral -->
+            <div class="card-foto" data-tags="italianos colonia inmigrantes europa san manuel colonos"
+                onclick="openModal('italianosModal')" style="cursor: pointer;">
+                <div class="card-foto-img-container">
+                    <span class="heritage-badge badge-restored">🇮🇹 Colonia Italiana</span>
+                    <img src="images/italianos en Parral/COLONOS EN TRIGO MEJORADA A COLOR.jpg"
+                        alt="Colonos italianos en los trigales de Parral" loading="lazy" width="600" height="375">
+                </div>
+                <div class="card-foto-content">
+                    <h3>Italianos en Parral</h3>
+                    <p>La Colonia Italiana de San Manuel</p>
+                    <button type="button" onclick="event.stopPropagation(); openModal('italianosModal')"
+                        class="btn-card">Ver Colección</button>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1423,6 +1438,174 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Italianos en Parral -->
+    <div id="italianosModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('italianosModal')">&times;</span>
+
+            <div class="modal-header">
+                <button type="button" onclick="closeModal('italianosModal')" class="btn-back">
+                    ← Volver a Galería
+                </button>
+                <h2>🇮🇹 Italianos en Parral</h2>
+                <p>La Colonia Italiana de San Manuel: Sueño y Desarraigo (1950-1991)</p>
+            </div>
+
+            <!-- Video Section -->
+            <div style="margin-bottom: 2.5rem;">
+                <h3
+                    style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
+                    🎬 Documental Histórico
+                </h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/O4UB2dHtBzU"
+                        title="Italianos en Parral - Documental Histórico" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Image Gallery Section -->
+            <h3
+                style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
+                📸 Galería Fotográfica de la Colonia
+            </h3>
+
+            <div class="modal-grid">
+                <!-- Imagen 1: Casa Mejorada -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        🏠 Vivienda de Colonos</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/italianos en Parral/CASA MEJORADA.jpg', 'Casa de colonos italianos')">
+                        <img src="images/italianos en Parral/CASA MEJORADA.jpg"
+                            alt="Casa de colonos italianos en San Manuel" class="colorear-img" loading="lazy"
+                            style="cursor: pointer;">
+                    </div>
+                    <a href="images/italianos en Parral/CASA MEJORADA.jpg" download
+                        class="btn-download-sm">Descargar</a>
+                </div>
+
+                <!-- Imagen 2: Colonos en Trigo B/N -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        📷 Colonos en el Trigo (Original)</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/italianos en Parral/COLONOS EN TRIGO MEJORADA.jpg', 'Colonos italianos en los trigales - Original')">
+                        <img src="images/italianos en Parral/COLONOS EN TRIGO MEJORADA.jpg"
+                            alt="Colonos italianos en los trigales" class="colorear-img" loading="lazy"
+                            style="cursor: pointer;">
+                    </div>
+                    <a href="images/italianos en Parral/COLONOS EN TRIGO MEJORADA.jpg" download
+                        class="btn-download-sm">Descargar</a>
+                </div>
+
+                <!-- Imagen 3: Colonos en Trigo Color -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        🎨 Colonos en el Trigo (Color)</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/italianos en Parral/COLONOS EN TRIGO MEJORADA A COLOR.jpg', 'Colonos italianos en los trigales - Coloreada')">
+                        <img src="images/italianos en Parral/COLONOS EN TRIGO MEJORADA A COLOR.jpg"
+                            alt="Colonos italianos - Versión coloreada" class="colorear-img" loading="lazy"
+                            style="cursor: pointer;">
+                    </div>
+                    <a href="images/italianos en Parral/COLONOS EN TRIGO MEJORADA A COLOR.jpg" download
+                        class="btn-download-sm">Descargar</a>
+                </div>
+
+                <!-- Imagen 4: Grupo de Colonos -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        👥 Grupo de Colonos (Color)</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/italianos en Parral/COLOOS MEJORADA A COLOR.jpg', 'Grupo de colonos italianos')">
+                        <img src="images/italianos en Parral/COLOOS MEJORADA A COLOR.jpg"
+                            alt="Grupo de colonos italianos en San Manuel" class="colorear-img" loading="lazy"
+                            style="cursor: pointer;">
+                    </div>
+                    <a href="images/italianos en Parral/COLOOS MEJORADA A COLOR.jpg" download
+                        class="btn-download-sm">Descargar</a>
+                </div>
+
+                <!-- Imagen 5: Con Acordeón B/N -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        🎵 Tradiciones (Original)</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/italianos en Parral/CON ACORDEON MEJORADA.jpg', 'Colonos con acordeón - Original')">
+                        <img src="images/italianos en Parral/CON ACORDEON MEJORADA.jpg"
+                            alt="Colonos con acordeón - Tradiciones musicales" class="colorear-img" loading="lazy"
+                            style="cursor: pointer;">
+                    </div>
+                    <a href="images/italianos en Parral/CON ACORDEON MEJORADA.jpg" download
+                        class="btn-download-sm">Descargar</a>
+                </div>
+
+                <!-- Imagen 6: Con Acordeón Color -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        🎨 Tradiciones (Color)</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/italianos en Parral/CON ACORDEON MEJORADA A COLOR.jpg', 'Colonos con acordeón - Coloreada')">
+                        <img src="images/italianos en Parral/CON ACORDEON MEJORADA A COLOR.jpg"
+                            alt="Colonos con acordeón - Versión coloreada" class="colorear-img" loading="lazy"
+                            style="cursor: pointer;">
+                    </div>
+                    <a href="images/italianos en Parral/CON ACORDEON MEJORADA A COLOR.jpg" download
+                        class="btn-download-sm">Descargar</a>
+                </div>
+            </div>
+
+            <!-- Before/After Comparison Section -->
+            <div style="margin: 2.5rem 0;">
+                <h3
+                    style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; text-align: center;">
+                    🔄 Compara: Original vs Coloreada</h3>
+                <p style="text-align: center; color: var(--text-light); margin-bottom: 1rem; font-size: 0.9rem;">
+                    Arrastra el control para comparar →</p>
+                <div class="before-after-container">
+                    <div class="before-after-wrapper">
+                        <img src="images/italianos en Parral/COLONOS EN TRIGO MEJORADA A COLOR.jpg"
+                            alt="Colonos Trigo Color" class="after-image">
+                        <div class="before-image-wrapper">
+                            <img src="images/italianos en Parral/COLONOS EN TRIGO MEJORADA.jpg"
+                                alt="Colonos Trigo Original" class="before-image">
+                        </div>
+                        <div class="slider-control">
+                            <div class="slider-button"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Historical Context -->
+            <div
+                style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(0, 146, 70, 0.1) 0%, rgba(206, 43, 55, 0.1) 100%); border-radius: 12px; border-left: 4px solid #009246;">
+                <h3 style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.75rem;">
+                    📜 Contexto Histórico
+                </h3>
+                <p style="color: var(--text-color); line-height: 1.7; font-size: 0.95rem;">
+                    En 1950, Italia y Chile firmaron un acuerdo para crear una colonia agrícola en el Fundo San Manuel.
+                    Llegaron <strong>153 colonos</strong> desde las regiones de Abruzzi y Trentino, buscando un nuevo
+                    comienzo tras la devastación de la Segunda Guerra Mundial. Solo la familia de <strong>Nunzio
+                        Cicchelli</strong> permanece hasta hoy como legado vivo de esa historia.
+                </p>
+                <a href="colonias.html"
+                    style="display: inline-block; margin-top: 1rem; color: #009246; text-decoration: none; font-weight: 600;">
+                    → Ver más sobre las Colonias Europeas en Parral
+                </a>
             </div>
         </div>
     </div>
