@@ -263,15 +263,18 @@
                     <a href="detalle.html" class="btn-card">Ver Colección</a>
                 </div>
             </div>
-            <div class="card-foto">
+            <div class="card-foto" data-tags="procesion ceremonia funeral despedida tradicion fe religion religioso"
+                onclick="openModal('procesionesModal')" style="cursor: pointer;">
                 <div class="card-foto-img-container">
-                    <img src="https://images.unsplash.com/photo-1545989253-02cc26577f88?auto=format&fit=crop&w=600&q=80"
-                        alt="Procesión religiosa tradicional de Parral" loading="lazy" width="600" height="375">
+                    <span class="heritage-badge badge-restored">🕯️ 2 Fotos</span>
+                    <img src="images/procesiones y ceremonias/optimizado-funeral color.webp"
+                        alt="Procesiones y ceremonias fúnebres en Parral" loading="lazy" width="600" height="375">
                 </div>
                 <div class="card-foto-content">
-                    <h3>Procesiones</h3>
-                    <p>Fe y Tradición</p>
-                    <a href="detalle.html" class="btn-card">Ver Colección</a>
+                    <h3>Procesiones y Ceremonias</h3>
+                    <p>Fe, despedidas y tradición comunitaria</p>
+                    <button type="button" onclick="event.stopPropagation(); openModal('procesionesModal')"
+                        class="btn-card">Ver Colección</button>
                 </div>
             </div>
             <div class="card-foto">
@@ -2325,6 +2328,74 @@
         </div>
     </div>
 
+    <!-- Modal Procesiones -->
+    <div id="procesionesModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('procesionesModal')">&times;</span>
+
+            <div class="modal-header">
+                <button type="button" onclick="closeModal('procesionesModal')" class="btn-back">
+                    ← Volver a Galería
+                </button>
+                <h2>⛪ Procesiones y Ceremonias</h2>
+                <p>El registro de la fe y las ceremonias que han marcado a nuestra comunidad</p>
+            </div>
+
+            <!-- Image Gallery Section -->
+            <h3
+                style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
+                📸 Registro Fotográfico
+            </h3>
+
+            <div class="modal-grid">
+                <!-- Imagen 1: Funeral B/N -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        📷 Ceremonia Fúnebre (B/N)</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/procesiones y ceremonias/optimizado-funeral blanco y negro.webp', 'Ceremonia fúnebre - Blanco y Negro')">
+                        <img src="images/procesiones y ceremonias/optimizado-funeral blanco y negro.webp"
+                            alt="Cortejo fúnebre histórico en Parral - B/N" class="colorear-img" loading="lazy"
+                            style="cursor: pointer;">
+                    </div>
+                    <a href="images/procesiones y ceremonias/optimizado-funeral blanco y negro.webp" download
+                        class="btn-download-sm">Descargar</a>
+                </div>
+
+                <!-- Imagen 2: Funeral Color -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        🎨 Ceremonia Fúnebre (Color)</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/procesiones y ceremonias/optimizado-funeral color.webp', 'Ceremonia fúnebre - Color')">
+                        <img src="images/procesiones y ceremonias/optimizado-funeral color.webp"
+                            alt="Cortejo fúnebre histórico en Parral - Color" class="colorear-img" loading="lazy"
+                            style="cursor: pointer;">
+                    </div>
+                    <a href="images/procesiones y ceremonias/optimizado-funeral color.webp" download
+                        class="btn-download-sm">Descargar</a>
+                </div>
+            </div>
+
+            <!-- Historical Context -->
+            <div
+                style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(82, 82, 82, 0.08) 0%, rgba(46, 46, 46, 0.08) 100%); border-radius: 12px; border-left: 4px solid #525252;">
+                <h3 style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.75rem;">
+                    📜 El Sentido de la Despedida
+                </h3>
+                <p style="color: var(--text-color); line-height: 1.7; font-size: 0.95rem;">
+                    Las <strong>procesiones y ceremonias fúnebres</strong> en el Parral de antaño no eran solo actos
+                    privados, sino eventos comunitarios que movilizaban a gran parte de la población. El respeto, el
+                    silencio y el acompañamiento en las calles reflejaban los profundos vínculos sociales y la fuerte
+                    raíz religiosa de nuestra ciudad. Este registro captura la solemnidad de un cortejo recorriendo las
+                    calles que alguna vez fueron testigos de tantas despedidas.
+                </p>
+            </div>
+        </div>
+    </div>
+
     <!-- Lightbox for enlarged images -->
     <div id="lightbox" class="modal" style="display: none;">
         <div class="modal-content"
@@ -2408,7 +2479,8 @@
             'italianosModal',
             'inundacionModal',
             'dignidadModal',
-            'termasModal'
+            'termasModal',
+            'procesionesModal'
         ];
 
         let currentModalIndex = -1;
