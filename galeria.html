@@ -192,7 +192,7 @@
             <div class="card-foto" data-tags="vehiculos autos citroneta transporte antiguo"
                 onclick="openModal('vehiculosModal')" style="cursor: pointer;">
                 <div class="card-foto-img-container">
-                    <span class="heritage-badge badge-restored">🎬 Video + 4 Fotos</span>
+                    <span class="heritage-badge badge-restored">🎬 Video + 6 Fotos</span>
                     <img src="images/vehiculos/optimizado-citroneta a color.webp" alt="Vehículos históricos de Parral"
                         loading="lazy" width="600" height="375">
                 </div>
@@ -205,15 +205,18 @@
             </div>
 
             <!-- Fila 3 -->
-            <div class="card-foto">
+            <div class="card-foto" data-tags="mercado municipal feria libre comercio tradicional sabores"
+                onclick="openModal('feriaModal')" style="cursor: pointer;">
                 <div class="card-foto-img-container">
-                    <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=600&q=80"
-                        alt="Puesto de feriantes en el Mercado Municipal" loading="lazy" width="600" height="375">
+                    <span class="heritage-badge badge-restored">🥖 2 Fotos</span>
+                    <img src="images/feria libre/optimizado-feria a color.webp"
+                        alt="Puesto de feriantes en la Feria de Parral" loading="lazy" width="600" height="375">
                 </div>
                 <div class="card-foto-content">
-                    <h3>Mercado Municipal</h3>
-                    <p>Sabores de la Tierra</p>
-                    <a href="detalle.html" class="btn-card">Ver Colección</a>
+                    <h3>Ferias y Mercado</h3>
+                    <p>Sabores y Tradición de nuestra tierra</p>
+                    <button type="button" onclick="event.stopPropagation(); openModal('feriaModal')"
+                        class="btn-card">Ver Colección</button>
                 </div>
             </div>
             <div class="card-foto">
@@ -266,7 +269,7 @@
             <div class="card-foto" data-tags="procesion ceremonia funeral despedida tradicion fe religion religioso"
                 onclick="openModal('procesionesModal')" style="cursor: pointer;">
                 <div class="card-foto-img-container">
-                    <span class="heritage-badge badge-restored">🕯️ 2 Fotos</span>
+                    <span class="heritage-badge badge-restored">🕯️ 6 Fotos</span>
                     <img src="images/procesiones y ceremonias/optimizado-funeral color.webp"
                         alt="Procesiones y ceremonias fúnebres en Parral" loading="lazy" width="600" height="375">
                 </div>
@@ -342,7 +345,7 @@
             <div class="card-foto" data-tags="casas entrada arquitectura antigua vivienda"
                 onclick="openModal('casasModal')" style="cursor: pointer;">
                 <div class="card-foto-img-container">
-                    <span class="heritage-badge badge-restored">Restauración IA</span>
+                    <span class="heritage-badge badge-restored">🏠 5 Fotos Históricas</span>
                     <img src="images/casas antiguas entrada/optimizado-antiguas casa entrada restaurada a color.webp"
                         alt="Casas antiguas en la entrada de Parral" loading="lazy" width="600" height="375">
                 </div>
@@ -1271,6 +1274,35 @@
                     <a href="images/vehiculos/optimizado-cinta azul a color.webp" download
                         class="btn-download-sm">Descargar</a>
                 </div>
+
+                <!-- Imagen 5: Cruz Roja Sepia -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        📷 Ambulancia Cruz Roja (Sepia)</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/vehiculos/cruz roja sepia.jpg', 'Cruz Roja - Sepia')">
+                        <img src="images/vehiculos/cruz roja sepia.jpg"
+                            alt="Ambulancia de la Cruz Roja de Parral - Sepia" class="colorear-img" loading="lazy"
+                            style="cursor: pointer;">
+                    </div>
+                    <a href="images/vehiculos/cruz roja sepia.jpg" download class="btn-download-sm">Descargar</a>
+                </div>
+
+                <!-- Imagen 6: Cruz Roja a Color -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        🎨 Ambulancia Cruz Roja (Color IA)</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/vehiculos/optimizado-cruzroja a color.webp', 'Cruz Roja - Color IA')">
+                        <img src="images/vehiculos/optimizado-cruzroja a color.webp"
+                            alt="Ambulancia de la Cruz Roja de Parral - Color IA" class="colorear-img" loading="lazy"
+                            style="cursor: pointer;">
+                    </div>
+                    <a href="images/vehiculos/optimizado-cruzroja a color.webp" download
+                        class="btn-download-sm">Descargar</a>
+                </div>
             </div>
 
             <!-- Video Section -->
@@ -1625,9 +1657,41 @@
                     <a href="images/casas antiguas entrada/optimizado-antiguas casa entrada restaurada a color.webp"
                         download class="btn-download-sm">Descargar</a>
                 </div>
+
+                <!-- Sección: Casa de Adobe -->
+                <h3
+                    style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center; margin-top: 2.5rem;">
+                    🏛️ Casa de Adobe</h3>
+                <div class="modal-grid" style="grid-template-columns: repeat(2, 1fr);">
+                    <div class="colorear-item">
+                        <h4
+                            style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                            📷 Original (B/N)</h4>
+                        <div class="colorear-img-container"
+                            onclick="openLightbox('images/casas antiguas entrada/casa adobe original.jpg', 'Casa de Adobe - Original')">
+                            <img src="images/casas antiguas entrada/casa adobe original.jpg"
+                                alt="Casa de adobe antigua - Original" class="colorear-img" loading="lazy"
+                                style="cursor: pointer;">
+                        </div>
+                        <a href="images/casas antiguas entrada/casa adobe original.jpg" download
+                            class="btn-download-sm">Descargar</a>
+                    </div>
+                    <div class="colorear-item">
+                        <h4
+                            style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                            🎨 Color IA</h4>
+                        <div class="colorear-img-container"
+                            onclick="openLightbox('images/casas antiguas entrada/optimizado-casa adobe color ia.webp', 'Casa de Adobe - Color IA')">
+                            <img src="images/casas antiguas entrada/optimizado-casa adobe color ia.webp"
+                                alt="Casa de adobe antigua - Color IA" class="colorear-img" loading="lazy"
+                                style="cursor: pointer;">
+                        </div>
+                        <a href="images/casas antiguas entrada/optimizado-casa adobe color ia.webp" download
+                            class="btn-download-sm">Descargar</a>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
     </div>
 
     <!-- Modal Fiesta de Primavera 1925 -->
@@ -2361,6 +2425,75 @@
         </div>
     </div>
 
+    <!-- Modal Ferias y Mercado -->
+    <div id="feriaModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('feriaModal')">&times;</span>
+
+            <div class="modal-header">
+                <button type="button" onclick="closeModal('feriaModal')" class="btn-back">
+                    ← Volver a Galería
+                </button>
+                <h2>🥖 Ferias y Mercado</h2>
+                <p>El latido comercial y social de Parral: Sabores, aromas y gente de nuestra tierra</p>
+            </div>
+
+            <!-- Image Gallery Section -->
+            <h3
+                style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
+                📸 Galería de Imágenes
+            </h3>
+
+            <div class="modal-grid">
+                <!-- Imagen 1: Feria B/N -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        📷 Feria Libre (Original)</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/feria libre/feria blanco y negro.jpg', 'Feria Libre - Blanco y Negro')">
+                        <img src="images/feria libre/feria blanco y negro.jpg"
+                            alt="Feria libre de Parral en el pasado - Blanco y Negro" class="colorear-img"
+                            loading="lazy" style="cursor: pointer;">
+                    </div>
+                    <a href="images/feria libre/feria blanco y negro.jpg" download class="btn-download-sm">Descargar</a>
+                </div>
+
+                <!-- Imagen 2: Feria a Color IA -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        🎨 Feria Libre (Color IA)</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/feria libre/optimizado-feria a color.webp', 'Feria Libre - Color IA')">
+                        <img src="images/feria libre/optimizado-feria a color.webp"
+                            alt="Feria libre de Parral - Coloreada con IA" class="colorear-img" loading="lazy"
+                            style="cursor: pointer;">
+                    </div>
+                    <a href="images/feria libre/optimizado-feria a color.webp" download
+                        class="btn-download-sm">Descargar</a>
+                </div>
+            </div>
+
+            <!-- Historical Context -->
+            <div
+                style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(139, 69, 19, 0.1) 0%, rgba(205, 133, 63, 0.1) 100%); border-radius: 12px; border-left: 4px solid #8b4513;">
+                <h3 style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.75rem;">
+                    📜 Sabores con Historia
+                </h3>
+                <p style="color: var(--text-color); line-height: 1.7; font-size: 0.95rem;">
+                    El <strong>Mercado Municipal</strong> y las <strong>Ferias Libres</strong> han sido, desde
+                    siempre,
+                    el centro neurálgico del intercambio no solo comercial, sino social en Parral. Lugares donde los
+                    productos del campo se encuentran con los habitantes de la ciudad, creando una atmósfera única
+                    de
+                    olores, colores y tradiciones que definen nuestra identidad maulina. Este registro captura la
+                    vitalidad de esos espacios que siguen siendo el corazón de nuestra comunidad.
+                </p>
+            </div>
+        </div>
+    </div>
+
     <!-- Modal Procesiones -->
     <div id="procesionesModal" class="modal">
         <div class="modal-content">
@@ -2410,6 +2543,66 @@
                     <a href="images/procesiones y ceremonias/optimizado-funeral color.webp" download
                         class="btn-download-sm">Descargar</a>
                 </div>
+
+                <!-- Imagen 3: Funeral Parral Original (PNG) -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        📷 Cortejo Fúnebre (Original)</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/procesiones y ceremonias/funeral parral original.png', 'Cortejo Fúnebre - Original')">
+                        <img src="images/procesiones y ceremonias/funeral parral original.png"
+                            alt="Cortejo fúnebre en Parral - Original" class="colorear-img" loading="lazy"
+                            style="cursor: pointer;">
+                    </div>
+                    <a href="images/procesiones y ceremonias/funeral parral original.png" download
+                        class="btn-download-sm">Descargar</a>
+                </div>
+
+                <!-- Imagen 4: Funeral Parral Color (PNG) -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        🎨 Cortejo Fúnebre (Color IA)</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/procesiones y ceremonias/funeral parral a color.png', 'Cortejo Fúnebre - Color IA')">
+                        <img src="images/procesiones y ceremonias/funeral parral a color.png"
+                            alt="Cortejo fúnebre en Parral - Color IA" class="colorear-img" loading="lazy"
+                            style="cursor: pointer;">
+                    </div>
+                    <a href="images/procesiones y ceremonias/funeral parral a color.png" download
+                        class="btn-download-sm">Descargar</a>
+                </div>
+
+                <!-- Imagen 5: Carroza Funeraria B/N -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        📷 Carroza Funeraria (B/N)</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/procesiones y ceremonias/carroza funeraria blanco y negro.jpg', 'Carroza Funeraria - Blanco y Negro')">
+                        <img src="images/procesiones y ceremonias/carroza funeraria blanco y negro.jpg"
+                            alt="Carroza funeraria antigua en Parral - B/N" class="colorear-img" loading="lazy"
+                            style="cursor: pointer;">
+                    </div>
+                    <a href="images/procesiones y ceremonias/carroza funeraria blanco y negro.jpg" download
+                        class="btn-download-sm">Descargar</a>
+                </div>
+
+                <!-- Imagen 6: Carroza a Color IA -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        🎨 Carroza Funeraria (Color IA)</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/procesiones y ceremonias/optimizado-carroza a color ia.webp', 'Carroza Funeraria - Color IA')">
+                        <img src="images/procesiones y ceremonias/optimizado-carroza a color ia.webp"
+                            alt="Carroza funeraria antigua en Parral - Color IA" class="colorear-img" loading="lazy"
+                            style="cursor: pointer;">
+                    </div>
+                    <a href="images/procesiones y ceremonias/optimizado-carroza a color ia.webp" download
+                        class="btn-download-sm">Descargar</a>
+                </div>
             </div>
 
             <!-- Historical Context -->
@@ -2421,8 +2614,10 @@
                 <p style="color: var(--text-color); line-height: 1.7; font-size: 0.95rem;">
                     Las <strong>procesiones y ceremonias fúnebres</strong> en el Parral de antaño no eran solo actos
                     privados, sino eventos comunitarios que movilizaban a gran parte de la población. El respeto, el
-                    silencio y el acompañamiento en las calles reflejaban los profundos vínculos sociales y la fuerte
-                    raíz religiosa de nuestra ciudad. Este registro captura la solemnidad de un cortejo recorriendo las
+                    silencio y el acompañamiento en las calles reflejaban los profundos vínculos sociales y la
+                    fuerte
+                    raíz religiosa de nuestra ciudad. Este registro captura la solemnidad de un cortejo recorriendo
+                    las
                     calles que alguna vez fueron testigos de tantas despedidas.
                 </p>
             </div>
@@ -2513,6 +2708,7 @@
             'inundacionModal',
             'dignidadModal',
             'termasModal',
+            'feriaModal',
             'procesionesModal'
         ];
 
