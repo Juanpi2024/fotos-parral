@@ -611,6 +611,172 @@
             color: #1a1510;
         }
 
+        /* About Project Section */
+        .about-project-section {
+            padding: 5rem 1rem;
+            background: linear-gradient(180deg, #fff 0%, #f8f5f0 50%, #fff 100%);
+        }
+
+        .about-project-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .about-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(201, 169, 97, 0.15) 0%, rgba(139, 115, 85, 0.15) 100%);
+            color: var(--primary-color);
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(201, 169, 97, 0.3);
+        }
+
+        .about-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .about-header .gold-text {
+            color: #c9a961;
+        }
+
+        .about-subtitle {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .about-main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .about-intro {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+
+        .about-main p {
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .feature-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(201, 169, 97, 0.1);
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(201, 169, 97, 0.15);
+            border-color: rgba(201, 169, 97, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            flex-shrink: 0;
+        }
+
+        .feature-text h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-color);
+            font-size: 1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .feature-text p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+
+        .about-importance {
+            background: linear-gradient(135deg, #1a1510 0%, #2d2419 100%);
+            border-radius: 20px;
+            padding: 2.5rem;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 15px 40px rgba(26, 21, 16, 0.2);
+        }
+
+        .importance-icon {
+            font-size: 4rem;
+            flex-shrink: 0;
+        }
+
+        .importance-content h3 {
+            font-family: 'Playfair Display', serif;
+            color: #c9a961;
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .importance-content p {
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .about-cta {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            background: transparent;
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
         @media (max-width: 768px) {
             .hero {
                 height: 70vh;
@@ -633,6 +799,37 @@
 
             .personajes-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            /* About Project Responsive */
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+
+            .about-importance {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem 1.5rem;
+            }
+
+            .importance-icon {
+                font-size: 3rem;
+            }
+
+            .about-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-cta a {
+                width: 100%;
+                max-width: 280px;
+                text-align: center;
             }
         }
     </style>
@@ -722,47 +919,83 @@
         </div>
     </section>
 
-    <!-- Video Section -->
-    <section class="video-section">
-        <div class="section-header">
-            <h2>🎬 Videos Históricos</h2>
-            <p>Documentales y animaciones sobre la historia de Parral</p>
-        </div>
+    <!-- Sobre el Proyecto -->
+    <section class="about-project-section">
+        <div class="about-project-container">
+            <div class="about-header">
+                <span class="about-badge">📜 Patrimonio Digital</span>
+                <h2>Bienvenido a <span class="gold-text">Archivos en Movimiento</span></h2>
+                <p class="about-subtitle">Un viaje al corazón de la historia parralina</p>
+            </div>
 
-        <div class="video-grid">
-            <a href="galeria.html" class="video-card">
-                <div class="video-thumbnail">
-                    <img src="images/italianos en Parral/COLONOS EN TRIGO MEJORADA A COLOR.jpg"
-                        alt="Video Colonos Italianos">
-                    <div class="play-button">▶</div>
+            <div class="about-content">
+                <div class="about-main">
+                    <p class="about-intro">
+                        <strong>Archivos en Movimiento</strong> es un proyecto de rescate patrimonial que preserva y
+                        difunde
+                        la memoria visual de Parral, ciudad fundada en 1795 y cuna de figuras como Pablo Neruda y
+                        Violeta Parra.
+                    </p>
+                    <p>
+                        Utilizamos <strong>Inteligencia Artificial</strong> para restaurar, colorear y dar nueva vida a
+                        fotografías históricas, creando un puente entre las generaciones pasadas y futuras. Cada imagen
+                        recuperada es un testimonio de quienes construyeron nuestra identidad.
+                    </p>
                 </div>
-                <div class="video-info">
-                    <h3>Italianos en Parral</h3>
-                    <p>La historia de la Colonia de San Manuel</p>
-                </div>
-            </a>
 
-            <a href="galeria.html" class="video-card">
-                <div class="video-thumbnail">
-                    <img src="images/inundacion de 1965/optimizado-inundacion 1965.webp" alt="Video Inundación 1965">
-                    <div class="play-button">▶</div>
-                </div>
-                <div class="video-info">
-                    <h3>Inundación de 1965</h3>
-                    <p>La gran crecida del río Perquilauquén</p>
-                </div>
-            </a>
+                <div class="about-features">
+                    <div class="feature-item">
+                        <span class="feature-icon">📸</span>
+                        <div class="feature-text">
+                            <h4>19 Colecciones</h4>
+                            <p>Más de 80 fotografías restauradas de calles, plazas, colonos y tradiciones de Parral.</p>
+                        </div>
+                    </div>
 
-            <a href="galeria.html" class="video-card">
-                <div class="video-thumbnail">
-                    <img src="optimized/img/avenida-color.webp" alt="Video Avenida Principal">
-                    <div class="play-button">▶</div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🎬</span>
+                        <div class="feature-text">
+                            <h4>Videos y Documentales</h4>
+                            <p>Animaciones históricas que dan vida a las imágenes del pasado.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <span class="feature-icon">📚</span>
+                        <div class="feature-text">
+                            <h4>Recursos Educativos</h4>
+                            <p>Infografías, guías y material didáctico para escuelas y comunidad.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <span class="feature-icon">🗺️</span>
+                        <div class="feature-text">
+                            <h4>Mapa Patrimonial</h4>
+                            <p>Explora los sitios históricos con nuestro mapa interactivo.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="video-info">
-                    <h3>Avenida Principal</h3>
-                    <p>Transformación histórica de nuestra arteria principal</p>
+            </div>
+
+            <div class="about-importance">
+                <div class="importance-icon">🏛️</div>
+                <div class="importance-content">
+                    <h3>¿Por qué preservar nuestra historia?</h3>
+                    <p>
+                        La cultura de un pueblo vive en sus recuerdos. Cada fotografía antigua guarda historias de
+                        familias,
+                        tradiciones y momentos irrepetibles. Al preservar estos archivos, <strong>protegemos la
+                            identidad de Parral</strong>
+                        para las futuras generaciones y honramos a quienes caminaron estas calles antes que nosotros.
+                    </p>
                 </div>
-            </a>
+            </div>
+
+            <div class="about-cta">
+                <a href="galeria.html" class="btn-principal">Explorar la Galería</a>
+                <a href="participa.html" class="btn-secondary">Comparte tu Historia</a>
+            </div>
         </div>
     </section>
 

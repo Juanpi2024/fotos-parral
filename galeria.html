@@ -189,10 +189,11 @@
                 </div>
             </div>
 
-            <div class="card-foto" data-tags="vehiculos autos citroneta transporte antiguo"
+            <div class="card-foto"
+                data-tags="vehiculos autos citroneta transporte antiguo fiesta primavera 1925 celebracion"
                 onclick="openModal('vehiculosModal')" style="cursor: pointer;">
                 <div class="card-foto-img-container">
-                    <span class="heritage-badge badge-restored">🎬 Video + 6 Fotos</span>
+                    <span class="heritage-badge badge-restored">🎬 Video + 8 Fotos</span>
                     <img src="images/vehiculos/optimizado-citroneta a color.webp" alt="Vehículos históricos de Parral"
                         loading="lazy" width="600" height="375">
                 </div>
@@ -309,17 +310,6 @@
             </div>
             <div class="card-foto">
                 <div class="card-foto-img-container">
-                    <img src="https://images.unsplash.com/photo-1507676184212-d03ab07a11d0?auto=format&fit=crop&w=600&q=80"
-                        alt="Fachada representativa del Teatro Municipal" loading="lazy" width="600" height="375">
-                </div>
-                <div class="card-foto-content">
-                    <h3>Teatro Municipal</h3>
-                    <p>Cultura y Arte</p>
-                    <a href="detalle.html" class="btn-card">Ver Colección</a>
-                </div>
-            </div>
-            <div class="card-foto">
-                <div class="card-foto-img-container">
                     <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=600&q=80"
                         alt="Antiguo retrato de una familia parralina" loading="lazy" width="600" height="375">
                 </div>
@@ -359,20 +349,6 @@
                         class="btn-card">Ver Colección</button>
                 </div>
             </div>
-            <div class="card-foto" data-tags="fiesta primavera celebracion 1925 desfile"
-                onclick="openModal('fiestaModal')" style="cursor: pointer;">
-                <div class="card-foto-img-container">
-                    <span class="heritage-badge badge-restored">Restauración IA</span>
-                    <img src="images/fiesta-primavera-1925/optimizado-fiesta primavera  color 1925.webp"
-                        alt="Fiesta de la Primavera de 1925 en Parral" loading="lazy" width="600" height="375">
-                </div>
-                <div class="card-foto-content">
-                    <h3>Fiesta de Primavera 1925</h3>
-                    <p>Celebración centenaria</p>
-                    <button type="button" onclick="event.stopPropagation(); openModal('fiestaModal')"
-                        class="btn-card">Ver Colección</button>
-                </div>
-            </div>
 
             <!-- Fila 7: Más Colecciones -->
             <div class="card-foto" data-tags="templo iglesia san francisco religion terremoto"
@@ -407,7 +383,7 @@
                 style="cursor: pointer;">
                 <div class="card-foto-img-container">
                     <span class="heritage-badge badge-restored">Restauración IA</span>
-                    <img src="images/entre parral y cauquenes casa/optimizado-entre parral y cauquenea color.webp"
+                    <img src="images/ruta-parral-cauquenes/optimizado-entre parral y cauquenea color.webp"
                         alt="Ruta entre Parral y Cauquenes" loading="lazy" width="600" height="375">
                 </div>
                 <div class="card-foto-content">
@@ -1306,6 +1282,45 @@
                 </div>
             </div>
 
+            <!-- Sección Fiesta de Primavera 1925 -->
+            <div style="margin-top: 3rem; padding-top: 2rem; border-top: 2px solid rgba(201, 169, 97, 0.3);">
+                <h3
+                    style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; text-align: center;">
+                    🌸 Fiesta de Primavera 1925
+                </h3>
+                <p style="text-align: center; color: var(--text-light); margin-bottom: 1.5rem; font-style: italic;">
+                    Una celebración histórica hace un siglo en las calles de Parral
+                </p>
+                <div class="modal-grid" style="grid-template-columns: repeat(2, 1fr);">
+                    <div class="colorear-item">
+                        <h4
+                            style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                            📷 Foto Original</h4>
+                        <div class="colorear-img-container"
+                            onclick="openLightbox('images/fiesta-primavera-1925/optimizado-fiesta de la primavera 1925.webp', 'Fiesta Primavera - Original')">
+                            <img src="images/fiesta-primavera-1925/optimizado-fiesta de la primavera 1925.webp"
+                                alt="Fiesta de Primavera 1925 - Original" class="colorear-img" loading="lazy"
+                                style="cursor: pointer;">
+                        </div>
+                        <a href="images/fiesta-primavera-1925/optimizado-fiesta de la primavera 1925.webp" download
+                            class="btn-download-sm">Descargar</a>
+                    </div>
+                    <div class="colorear-item">
+                        <h4
+                            style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                            🎨 Coloreada con IA</h4>
+                        <div class="colorear-img-container"
+                            onclick="openLightbox('images/fiesta-primavera-1925/optimizado-fiesta primavera  color 1925.webp', 'Fiesta Primavera - Color')">
+                            <img src="images/fiesta-primavera-1925/optimizado-fiesta primavera  color 1925.webp"
+                                alt="Fiesta de Primavera 1925 - Color" class="colorear-img" loading="lazy"
+                                style="cursor: pointer;">
+                        </div>
+                        <a href="images/fiesta-primavera-1925/optimizado-fiesta primavera  color 1925.webp" download
+                            class="btn-download-sm">Descargar</a>
+                    </div>
+                </div>
+            </div>
+
             <!-- Video Section -->
             <div style="margin-top: 2.5rem;">
                 <h3
@@ -1695,67 +1710,6 @@
         </div>
     </div>
 
-    <!-- Modal Fiesta de Primavera 1925 -->
-    <div id="fiestaModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closeModal('fiestaModal')">&times;</span>
-            <div class="modal-header">
-                <button type="button" onclick="closeModal('fiestaModal')" class="btn-back">← Volver a Galería</button>
-                <h2>🌸 Fiesta de Primavera 1925</h2>
-                <p>Una celebración histórica hace un siglo</p>
-            </div>
-            <h3
-                style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
-                📸 Galería de Imágenes</h3>
-            <div class="modal-grid" style="grid-template-columns: repeat(2, 1fr);">
-                <div class="colorear-item">
-                    <h4
-                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
-                        📷 Foto Original</h4>
-                    <div class="colorear-img-container"
-                        onclick="openLightbox('images/fiesta-primavera-1925/optimizado-fiesta de la primavera 1925.webp', 'Original')">
-                        <img src="images/fiesta-primavera-1925/optimizado-fiesta de la primavera 1925.webp"
-                            alt="Fiesta - Original" class="colorear-img" loading="lazy" style="cursor: pointer;">
-                    </div>
-                    <a href="images/fiesta-primavera-1925/optimizado-fiesta de la primavera 1925.webp" download
-                        class="btn-download-sm">Descargar</a>
-                </div>
-                <div class="colorear-item">
-                    <h4
-                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
-                        🎨 Coloreada con IA</h4>
-                    <div class="colorear-img-container"
-                        onclick="openLightbox('images/fiesta-primavera-1925/optimizado-fiesta primavera  color 1925.webp', 'Color')">
-                        <img src="images/fiesta-primavera-1925/optimizado-fiesta primavera  color 1925.webp"
-                            alt="Fiesta - Color" class="colorear-img" loading="lazy" style="cursor: pointer;">
-                    </div>
-                    <a href="images/fiesta-primavera-1925/optimizado-fiesta primavera  color 1925.webp" download
-                        class="btn-download-sm">Descargar</a>
-                </div>
-            </div>
-            <div style="margin: 2.5rem 0;">
-                <h3
-                    style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; text-align: center;">
-                    🔄 Compara: Original vs Coloreada</h3>
-                <p style="text-align: center; color: var(--text-light); margin-bottom: 1rem; font-size: 0.9rem;">
-                    Arrastra el control para comparar →</p>
-                <div class="before-after-container">
-                    <div class="before-after-wrapper">
-                        <img src="images/fiesta-primavera-1925/optimizado-fiesta primavera  color 1925.webp"
-                            alt="Fiesta Color" class="after-image">
-                        <div class="before-image-wrapper">
-                            <img src="images/fiesta-primavera-1925/optimizado-fiesta de la primavera 1925.webp"
-                                alt="Fiesta Original" class="before-image">
-                        </div>
-                        <div class="slider-control">
-                            <div class="slider-button"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Modal Templo San Francisco -->
     <div id="sanFranciscoModal" class="modal">
         <div class="modal-content">
@@ -1901,24 +1855,24 @@
                         style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
                         📷 Foto Original</h4>
                     <div class="colorear-img-container"
-                        onclick="openLightbox('images/entre parral y cauquenes casa/optimizado-entre parral y cauquenea negro.webp', 'Original')">
-                        <img src="images/entre parral y cauquenes casa/optimizado-entre parral y cauquenea negro.webp"
+                        onclick="openLightbox('images/ruta-parral-cauquenes/optimizado-entre parral y cauquenea negro.webp', 'Original')">
+                        <img src="images/ruta-parral-cauquenes/optimizado-entre parral y cauquenea negro.webp"
                             alt="Ruta - Original" class="colorear-img" loading="lazy" style="cursor: pointer;">
                     </div>
-                    <a href="images/entre parral y cauquenes casa/optimizado-entre parral y cauquenea negro.webp"
-                        download class="btn-download-sm">Descargar</a>
+                    <a href="images/ruta-parral-cauquenes/optimizado-entre parral y cauquenea negro.webp" download
+                        class="btn-download-sm">Descargar</a>
                 </div>
                 <div class="colorear-item">
                     <h4
                         style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
                         🎨 Coloreada con IA</h4>
                     <div class="colorear-img-container"
-                        onclick="openLightbox('images/entre parral y cauquenes casa/optimizado-entre parral y cauquenea color.webp', 'Color')">
-                        <img src="images/entre parral y cauquenes casa/optimizado-entre parral y cauquenea color.webp"
+                        onclick="openLightbox('images/ruta-parral-cauquenes/optimizado-entre parral y cauquenea color.webp', 'Color')">
+                        <img src="images/ruta-parral-cauquenes/optimizado-entre parral y cauquenea color.webp"
                             alt="Ruta - Color" class="colorear-img" loading="lazy" style="cursor: pointer;">
                     </div>
-                    <a href="images/entre parral y cauquenes casa/optimizado-entre parral y cauquenea color.webp"
-                        download class="btn-download-sm">Descargar</a>
+                    <a href="images/ruta-parral-cauquenes/optimizado-entre parral y cauquenea color.webp" download
+                        class="btn-download-sm">Descargar</a>
                 </div>
             </div>
             <div style="margin: 2.5rem 0;">
@@ -1929,10 +1883,10 @@
                     Arrastra el control para comparar →</p>
                 <div class="before-after-container">
                     <div class="before-after-wrapper">
-                        <img src="images/entre parral y cauquenes casa/optimizado-entre parral y cauquenea color.webp"
+                        <img src="images/ruta-parral-cauquenes/optimizado-entre parral y cauquenea color.webp"
                             alt="Ruta Color" class="after-image">
                         <div class="before-image-wrapper">
-                            <img src="images/entre parral y cauquenes casa/optimizado-entre parral y cauquenea negro.webp"
+                            <img src="images/ruta-parral-cauquenes/optimizado-entre parral y cauquenea negro.webp"
                                 alt="Ruta Original" class="before-image">
                         </div>
                         <div class="slider-control">
@@ -2767,7 +2721,6 @@
             'vehiculosModal',
             'trenModal',
             'casasModal',
-            'fiestaModal',
             'sanFranciscoModal',
             'sanJoseModal',
             'rutaModal',
