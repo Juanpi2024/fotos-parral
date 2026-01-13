@@ -116,7 +116,7 @@
             </div>
             <div class="card-foto" onclick="openModal('bomberosModal')" style="cursor: pointer;">
                 <div class="card-foto-img-container">
-                    <span class="heritage-badge badge-original">Archivo Original</span>
+                    <span class="heritage-badge badge-restored">🎬 Video + 3 Fotos</span>
                     <img src="optimized/images/parral-bomberos-1_thumb.webp"
                         alt="Antiguo carro de bomberos de Parral y sus voluntarios" loading="lazy" width="600"
                         height="375">
@@ -128,15 +128,18 @@
                         class="btn-card">Ver Colección</button>
                 </div>
             </div>
-            <div class="card-foto" data-tags="colegio escuela educacion liceo">
+            <div class="card-foto" data-tags="colegio escuela educacion liceo" onclick="openModal('colegiosModal')"
+                style="cursor: pointer;">
                 <div class="card-foto-img-container">
+                    <span class="heritage-badge badge-restored">🎬 Video + 1 Foto</span>
                     <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80"
                         alt="Colegios históricos de Parral" loading="lazy" width="600" height="375">
                 </div>
                 <div class="card-foto-content">
                     <h3>Colegios de Parral</h3>
                     <p>Historia Educativa</p>
-                    <a href="detalle.html" class="btn-card">Ver Colección</a>
+                    <button type="button" onclick="event.stopPropagation(); openModal('colegiosModal')"
+                        class="btn-card">Ver Colección</button>
                 </div>
             </div>
             <div class="card-foto" onclick="openModal('avenidaModal')" style="cursor: pointer;">
@@ -157,6 +160,7 @@
             <div class="card-foto" data-tags="camion transporte carga maquina agricultura arroz campo rural vida"
                 onclick="openModal('arrozModal')" style="cursor: pointer;">
                 <div class="card-foto-img-container">
+                    <span class="heritage-badge badge-restored">🎬 Video + 3 Fotos</span>
                     <img src="optimized/img/arroz-original_thumb.webp"
                         alt="Vida rural y trabajo agrícola en el campo de Parral" loading="lazy" width="600"
                         height="375">
@@ -985,6 +989,108 @@
                         class="btn-download-sm">Descargar</a>
                 </div>
             </div>
+
+            <!-- Video Section -->
+            <div style="margin-top: 2.5rem;">
+                <h3
+                    style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
+                    🎬 Video Histórico
+                </h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/YVVA8GijG_M" title="Bomberos de Parral - Video Histórico"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <p style="text-align: center; color: var(--text-light); margin-top: 1rem; font-style: italic;">
+                    Registro de la valerosa labor de nuestros bomberos a lo largo de los años.
+                </p>
+            </div>
+
+            <!-- Contexto Histórico -->
+            <div
+                style="margin-top: 2.5rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(139, 115, 85, 0.1) 0%, rgba(201, 169, 97, 0.1) 100%); border-radius: 12px; border-left: 4px solid #8b7355;">
+                <h3 style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.75rem;">
+                    📜 Héroes del Fuego
+                </h3>
+                <p style="color: var(--text-color); line-height: 1.7; font-size: 0.95rem;">
+                    El <strong>Cuerpo de Bomberos de Parral</strong> ha sido pilar fundamental de la seguridad y el
+                    servicio comunitario desde su fundación. A través de este registro visual, honramos a los
+                    voluntarios que, con abnegación y disciplina, han enfrentado incendios, catástrofes naturales y
+                    emergencias, protegiendo la vida y el patrimonio de todos los parralinos durante décadas.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Colegios de Parral -->
+    <div id="colegiosModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('colegiosModal')">&times;</span>
+
+            <div class="modal-header">
+                <button type="button" onclick="closeModal('colegiosModal')" class="btn-back">
+                    ← Volver a Galería
+                </button>
+                <h2>🎓 Colegios de Parral</h2>
+                <p>El legado educativo que formó a las generaciones parralinas</p>
+            </div>
+
+            <!-- Image Gallery Section -->
+            <h3
+                style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
+                📸 Galería de Imágenes
+            </h3>
+
+            <div class="modal-grid" style="grid-template-columns: 1fr; max-width: 600px; margin: 0 auto;">
+                <!-- Imagen 1 -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        📷 Colegios Históricos
+                    </h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80', 'Colegios Históricos')">
+                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80"
+                            alt="Colegios de Parral" class="colorear-img" loading="lazy" width="400" height="280"
+                            style="cursor: pointer;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Section -->
+            <div style="margin-top: 2.5rem;">
+                <h3
+                    style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
+                    🎬 Video Histórico
+                </h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/B5bAj-bmrk4" title="Colegios de Parral - Video Histórico"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <p style="text-align: center; color: var(--text-light); margin-top: 1rem; font-style: italic;">
+                    Un recorrido por las aulas y patios que guardan el eco de nuestra infancia.
+                </p>
+            </div>
+
+            <!-- Contexto Histórico -->
+            <div
+                style="margin-top: 2.5rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(139, 115, 85, 0.1) 0%, rgba(201, 169, 97, 0.1) 100%); border-radius: 12px; border-left: 4px solid #8b7355;">
+                <h3 style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.75rem;">
+                    📜 Tradición Educativa
+                </h3>
+                <p style="color: var(--text-color); line-height: 1.7; font-size: 0.95rem;">
+                    La educación en Parral ha sido históricamente un motor de progreso social. Desde el emblemático
+                    <strong>Liceo de Parral</strong> hasta las antiguas escuelas rurales y urbanas como la
+                    <strong>Escuela No 1</strong>, estos espacios no solo fueron centros de instrucción, sino forjadores
+                    de identidad. Por sus aulas pasaron destacados parralinos que contribuyeron al desarrollo de la
+                    ciudad y del país, manteniendo viva la llama del conocimiento en nuestra comunidad.
+                </p>
+            </div>
         </div>
     </div>
 
@@ -1197,6 +1303,39 @@
                     <a href="optimized/img/arroz-color.webp" download="Arroz_Parral_Color.webp"
                         class="btn-download-sm">Descargar</a>
                 </div>
+            </div>
+
+            <!-- Video Section -->
+            <div style="margin-top: 2.5rem;">
+                <h3
+                    style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
+                    🎬 Video Histórico
+                </h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/O1Gt4x_c63I"
+                        title="Vida Rural en Parral - Video Histórico" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <p style="text-align: center; color: var(--text-light); margin-top: 1rem; font-style: italic;">
+                    Escenas de la vida campesina y las faenas agrícolas que definen nuestra tierra.
+                </p>
+            </div>
+
+            <!-- Contexto Histórico -->
+            <div
+                style="margin-top: 2.5rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(139, 115, 85, 0.1) 0%, rgba(201, 169, 97, 0.1) 100%); border-radius: 12px; border-left: 4px solid #8b7355;">
+                <h3 style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.75rem;">
+                    📜 Identidad del Campo
+                </h3>
+                <p style="color: var(--text-color); line-height: 1.7; font-size: 0.95rem;">
+                    Parral es, en su esencia, una tierra de <strong>agricultores</strong>. La <strong>vida
+                        rural</strong> y el cultivo del arroz han marcado no solo la economía local, sino también las
+                    tradiciones, el habla y el ritmo de vida de nuestra comunidad. Este registro audiovisual rescata la
+                    nobleza del trabajo en el campo y la herencia de esfuerzo que se transmite de generación en
+                    generación en las zonas rurales de nuestra comuna.
+                </p>
             </div>
         </div>
     </div>
