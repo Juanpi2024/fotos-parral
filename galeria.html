@@ -280,15 +280,18 @@
                         class="btn-card">Ver Colección</button>
                 </div>
             </div>
-            <div class="card-foto">
+            <div class="card-foto" data-tags="hospital salud medicina doctores enfermeras sanidad"
+                onclick="openModal('hospitalModal')" style="cursor: pointer;">
                 <div class="card-foto-img-container">
-                    <img src="https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=600&q=80"
-                        alt="Músicos de la banda instrumental en la plaza" loading="lazy" width="600" height="375">
+                    <span class="heritage-badge badge-restored">🏥 2 Fotos</span>
+                    <img src="images/hospital/optimizado-operando a color.webp" alt="Antiguo Hospital de Parral"
+                        loading="lazy" width="600" height="375">
                 </div>
                 <div class="card-foto-content">
-                    <h3>Banda Instrumental</h3>
-                    <p>Música en la Plaza</p>
-                    <a href="detalle.html" class="btn-card">Ver Colección</a>
+                    <h3>Hospital</h3>
+                    <p>Historia de la salud pública</p>
+                    <button type="button" onclick="event.stopPropagation(); openModal('hospitalModal')"
+                        class="btn-card">Ver Colección</button>
                 </div>
             </div>
 
@@ -2494,6 +2497,73 @@
         </div>
     </div>
 
+    <!-- Modal Hospital -->
+    <div id="hospitalModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('hospitalModal')">&times;</span>
+
+            <div class="modal-header">
+                <button type="button" onclick="closeModal('hospitalModal')" class="btn-back">
+                    ← Volver a Galería
+                </button>
+                <h2>🏥 Hospital de Parral</h2>
+                <p>El compromiso con la vida: Historia de la medicina y sanidad en nuestra comuna</p>
+            </div>
+
+            <!-- Image Gallery Section -->
+            <h3
+                style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
+                📸 Registro Fotográfico
+            </h3>
+
+            <div class="modal-grid">
+                <!-- Imagen 1: Operando Original -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        📷 Intervención Quirúrgica (Original)</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/hospital/operando original.jpg', 'Hospital - Cirugía Original')">
+                        <img src="images/hospital/operando original.jpg"
+                            alt="Médicos operando en el antiguo hospital - Original" class="colorear-img" loading="lazy"
+                            style="cursor: pointer;">
+                    </div>
+                    <a href="images/hospital/operando original.jpg" download class="btn-download-sm">Descargar</a>
+                </div>
+
+                <!-- Imagen 2: Operando Color -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1rem; text-align: center;">
+                        🎨 Intervención Quirúrgica (Color IA)</h4>
+                    <div class="colorear-img-container"
+                        onclick="openLightbox('images/hospital/optimizado-operando a color.webp', 'Hospital - Cirugía Color IA')">
+                        <img src="images/hospital/optimizado-operando a color.webp"
+                            alt="Médicos operando en el antiguo hospital - Color IA" class="colorear-img" loading="lazy"
+                            style="cursor: pointer;">
+                    </div>
+                    <a href="images/hospital/optimizado-operando a color.webp" download
+                        class="btn-download-sm">Descargar</a>
+                </div>
+            </div>
+
+            <!-- Historical Context -->
+            <div
+                style="margin-top: 2rem; padding: 1.5rem; background: linear-gradient(135deg, rgba(70, 130, 180, 0.1) 0%, rgba(176, 196, 222, 0.1) 100%); border-radius: 12px; border-left: 4px solid #4682b4;">
+                <h3 style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.75rem;">
+                    📜 Vocación y Salud
+                </h3>
+                <p style="color: var(--text-color); line-height: 1.7; font-size: 0.95rem;">
+                    El <strong>Hospital de Parral</strong> ha sido el baluarte de la salud pública en nuestra zona,
+                    evolucionando desde modestas instalaciones hasta convertirse en un centro de referencia provincial.
+                    Estas imágenes capturan la dedicación de médicos, enfermeras y personal sanitario que, a pesar de
+                    las limitaciones técnicas de la época, brindaron cuidado y esperanza a generaciones de parralinos.
+                    Un homenaje a quienes han dedicado su vida al bienestar de la comunidad.
+                </p>
+            </div>
+        </div>
+    </div>
+
     <!-- Modal Procesiones -->
     <div id="procesionesModal" class="modal">
         <div class="modal-content">
@@ -2709,6 +2779,7 @@
             'dignidadModal',
             'termasModal',
             'feriaModal',
+            'hospitalModal',
             'procesionesModal'
         ];
 
