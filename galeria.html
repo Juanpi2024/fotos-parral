@@ -67,128 +67,7 @@
         </div>
 
         <div class="grid-galeria" id="galleryGrid">
-            <!-- Fila 1 -->
-            <div class="card-foto" data-tags="avenida buenos aires calle transito" onclick="openModal('bajadaModal')"
-                style="cursor: pointer;">
-                <div class="card-foto-img-container">
-                    <span class="heritage-badge badge-original">Archivo Original</span>
-                    <img src="optimized/img/bajada-original_thumb.webp"
-                        alt="Vista histórica de la Bajada Buenos Aires in Parral" loading="lazy" width="600"
-                        height="375">
-                </div>
-                <div class="card-foto-content">
-                    <h3>Bajada Buenos Aires</h3>
-                    <p>Vistas históricas de la avenida</p>
-                    <button type="button" onclick="event.stopPropagation(); openModal('bajadaModal')"
-                        class="btn-card">Ver
-                        Colección</button>
-                </div>
-            </div>
-            <div class="card-foto" data-tags="comercio tienda negocios compras economia locales antiguos"
-                onclick="openModal('localesModal')" style="cursor: pointer;">
-                <div class="card-foto-img-container">
-                    <span class="heritage-badge badge-restored">🎬 Video + 7 Fotos</span>
-                    <img src="optimized/img/locales-original_thumb.webp"
-                        alt="Fachadas de locales comerciales históricos de Parral" loading="lazy" width="600"
-                        height="375">
-                </div>
-                <div class="card-foto-content">
-                    <h3>Locales Comerciales Históricos</h3>
-                    <p>El comercio de antaño en Parral</p>
-                    <button type="button" onclick="event.stopPropagation(); openModal('localesModal')"
-                        class="btn-card">Ver Colección</button>
-                </div>
-            </div>
-            <div class="card-foto" data-tags="plaza civico centro monumento desfiles" onclick="openModal('plazaModal')"
-                style="cursor: pointer;">
-                <div class="card-foto-img-container">
-                    <span class="heritage-badge badge-restored">Restauración IA</span>
-                    <img src="optimized/img/plaza-original_thumb.webp"
-                        alt="Plaza de Armas de Parral, recreación histórica con IA" loading="lazy" width="600"
-                        height="375">
-                </div>
-                <div class="card-foto-content">
-                    <h3>Plaza de Armas</h3>
-                    <p>El Corazón Cívico</p>
-                    <button type="button" onclick="event.stopPropagation(); openModal('plazaModal')"
-                        class="btn-card">Ver Colección</button>
-                </div>
-            </div>
-            <div class="card-foto" onclick="openModal('bomberosModal')" style="cursor: pointer;">
-                <div class="card-foto-img-container">
-                    <span class="heritage-badge badge-restored">🎬 Video + 3 Fotos</span>
-                    <img src="optimized/images/parral-bomberos-1_thumb.webp"
-                        alt="Antiguo carro de bomberos de Parral y sus voluntarios" loading="lazy" width="600"
-                        height="375">
-                </div>
-                <div class="card-foto-content">
-                    <h3>Bomberos de Parral</h3>
-                    <p>Héroes del Fuego</p>
-                    <button type="button" onclick="event.stopPropagation(); openModal('bomberosModal')"
-                        class="btn-card">Ver Colección</button>
-                </div>
-            </div>
-            <div class="card-foto" data-tags="colegio escuela educacion liceo" onclick="openModal('colegiosModal')"
-                style="cursor: pointer;">
-                <div class="card-foto-img-container">
-                    <span class="heritage-badge badge-restored">🎬 Video + 2 Fotos</span>
-                    <img src="images/colegios-parral/optimizado-escuela de niñas.webp"
-                        alt="Escuela de Niñas de Parral - Foto Histórica" loading="lazy" width="600" height="375">
-                </div>
-                <div class="card-foto-content">
-                    <h3>Colegios de Parral</h3>
-                    <p>Historia Educativa</p>
-                    <button type="button" onclick="event.stopPropagation(); openModal('colegiosModal')"
-                        class="btn-card">Ver Colección</button>
-                </div>
-            </div>
-            <div class="card-foto" onclick="openModal('avenidaModal')" style="cursor: pointer;">
-                <div class="card-foto-img-container">
-                    <span class="heritage-badge badge-restored">🎬 Video + 5 Fotos</span>
-                    <img src="optimized/img/avenida-original_thumb.webp" alt="Vista de la Avenida Principal de Parral"
-                        loading="lazy" width="600" height="375">
-                </div>
-                <div class="card-foto-content">
-                    <h3>Avenida Principal</h3>
-                    <p>La columna vertebral</p>
-                    <button type="button" onclick="event.stopPropagation(); openModal('avenidaModal')"
-                        class="btn-card">Ver
-                        Colección</button>
-                </div>
-            </div>
-
-            <!-- Fila 2 -->
-            <div class="card-foto" data-tags="camion transporte carga maquina agricultura arroz campo rural vida"
-                onclick="openModal('arrozModal')" style="cursor: pointer;">
-                <div class="card-foto-img-container">
-                    <span class="heritage-badge badge-restored">🎬 Video + 3 Fotos</span>
-                    <img src="optimized/img/arroz-original_thumb.webp"
-                        alt="Vida rural y trabajo agrícola en el campo de Parral" loading="lazy" width="600"
-                        height="375">
-                </div>
-                <div class="card-foto-content">
-                    <h3>Vida Rural</h3>
-                    <p>Identidad agrícola y trabajo del campo</p>
-                    <button type="button" onclick="event.stopPropagation(); openModal('arrozModal')"
-                        class="btn-card">Ver Colección</button>
-                </div>
-            </div>
-
-            <div class="card-foto" data-tags="don chanca huaso jinete rodeo champion leyenda personaje"
-                onclick="openModal('donChancaModal')" style="cursor: pointer;">
-                <div class="card-foto-img-container">
-                    <span class="heritage-badge badge-restored">🤠 2 Fotos</span>
-                    <img src="images/don-chanca/optimizado-atajando a color.webp"
-                        alt="Don Chanca, legendario huaso parralino" loading="lazy" width="600" height="375">
-                </div>
-                <div class="card-foto-content">
-                    <h3>Don Chanca</h3>
-                    <p>Leyenda del Rodeo Chileno</p>
-                    <button type="button" onclick="event.stopPropagation(); openModal('donChancaModal')"
-                        class="btn-card">Ver Colección</button>
-                </div>
-            </div>
-
+            <!-- 1. Vehículos Históricos: Video + 8 Fotos -->
             <div class="card-foto"
                 data-tags="vehiculos autos citroneta transporte antiguo fiesta primavera 1925 celebracion"
                 onclick="openModal('vehiculosModal')" style="cursor: pointer;">
@@ -205,68 +84,40 @@
                 </div>
             </div>
 
-            <!-- Fila 3 -->
-            <div class="card-foto" data-tags="mercado municipal feria libre comercio tradicional sabores"
-                onclick="openModal('feriaModal')" style="cursor: pointer;">
+            <!-- 2. Historia del Ferrocarril: 9 Fotos -->
+            <div class="card-foto" data-tags="tren ferrocarril transporte pasajeros estacion locomotora ramal cauquenes"
+                onclick="openModal('trenModal')" style="cursor: pointer;">
                 <div class="card-foto-img-container">
-                    <span class="heritage-badge badge-restored">🥖 2 Fotos</span>
-                    <img src="images/feria-libre/optimizado-feria a color.webp"
-                        alt="Puesto de feriantes en la Feria de Parral" loading="lazy" width="600" height="375">
+                    <span class="heritage-badge badge-restored">🚂 9 Fotos</span>
+                    <img src="images/antiguo-tren-pasajeros/optimizado-restaurada a color.webp"
+                        alt="Historia ferroviaria de Parral" loading="lazy" width="600" height="375">
                 </div>
                 <div class="card-foto-content">
-                    <h3>Ferias y Mercado</h3>
-                    <p>Sabores y Tradición de nuestra tierra</p>
-                    <button type="button" onclick="event.stopPropagation(); openModal('feriaModal')"
-                        class="btn-card">Ver Colección</button>
-                </div>
-            </div>
-            <div class="card-foto">
-                <div class="card-foto-img-container">
-                    <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=600&q=80"
-                        alt="Celebración tradicional de la vendimia" loading="lazy" width="600" height="375">
-                </div>
-                <div class="card-foto-content">
-                    <h3>Fiesta de la Vendimia</h3>
-                    <p>Celebración Popular</p>
-                    <a href="detalle.html" class="btn-card">Ver Colección</a>
-                </div>
-            </div>
-            <div class="card-foto">
-                <div class="card-foto-img-container">
-                    <img src="https://images.unsplash.com/photo-1585822765504-2072381e4289?auto=format&fit=crop&w=600&q=80"
-                        alt="Efectos visibles del terremoto de 1939 en la zona" loading="lazy" width="600" height="375">
-                </div>
-                <div class="card-foto-content">
-                    <h3>Terremoto de 1939</h3>
-                    <p>La Gran Prueba</p>
-                    <a href="detalle.html" class="btn-card">Ver Colección</a>
+                    <h3>Historia del Ferrocarril</h3>
+                    <p>Trenes, estación y ramal Parral-Cauquenes</p>
+                    <button type="button" onclick="event.stopPropagation(); openModal('trenModal')" class="btn-card">Ver
+                        Colección</button>
                 </div>
             </div>
 
-            <!-- Fila 4 -->
-            <div class="card-foto">
+            <!-- 3. Locales Comerciales: Video + 7 Fotos -->
+            <div class="card-foto" data-tags="comercio tienda negocios compras economia locales antiguos"
+                onclick="openModal('localesModal')" style="cursor: pointer;">
                 <div class="card-foto-img-container">
-                    <img src="https://images.unsplash.com/photo-1594498653385-d5172c532c00?auto=format&fit=crop&w=600&q=80"
-                        alt="Proceso de reconstrucción tras el sismo de 2010" loading="lazy" width="600" height="375">
-                </div>
-                <div class="card-foto-content">
-                    <h3>Reconstrucción 2010</h3>
-                    <p>Levantando Parral</p>
-                    <a href="detalle.html" class="btn-card">Ver Colección</a>
-                </div>
-            </div>
-            <div class="card-foto">
-                <div class="card-foto-img-container">
-                    <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=600&q=80"
-                        alt="Escena representativa de clubes deportivos barriales" loading="lazy" width="600"
+                    <span class="heritage-badge badge-restored">🎬 Video + 7 Fotos</span>
+                    <img src="optimized/img/locales-original_thumb.webp"
+                        alt="Fachadas de locales comerciales históricos de Parral" loading="lazy" width="600"
                         height="375">
                 </div>
                 <div class="card-foto-content">
-                    <h3>Clubes Deportivos</h3>
-                    <p>Pasión de Barrio</p>
-                    <a href="detalle.html" class="btn-card">Ver Colección</a>
+                    <h3>Locales Comerciales Históricos</h3>
+                    <p>El comercio de antaño en Parral</p>
+                    <button type="button" onclick="event.stopPropagation(); openModal('localesModal')"
+                        class="btn-card">Ver Colección</button>
                 </div>
             </div>
+
+            <!-- 4. Procesiones y Ceremonias: 6 Fotos -->
             <div class="card-foto" data-tags="procesion ceremonia funeral despedida tradicion fe religion religioso"
                 onclick="openModal('procesionesModal')" style="cursor: pointer;">
                 <div class="card-foto-img-container">
@@ -281,64 +132,27 @@
                         class="btn-card">Ver Colección</button>
                 </div>
             </div>
-            <div class="card-foto" data-tags="hospital salud medicina doctores enfermeras sanidad"
-                onclick="openModal('hospitalModal')" style="cursor: pointer;">
+
+            <!-- 5. Avenida Principal: Video + 5 Fotos -->
+            <div class="card-foto" onclick="openModal('avenidaModal')" style="cursor: pointer;">
                 <div class="card-foto-img-container">
-                    <span class="heritage-badge badge-restored">🏥 2 Fotos</span>
-                    <img src="images/hospital/optimizado-operando a color.webp" alt="Antiguo Hospital de Parral"
+                    <span class="heritage-badge badge-restored">🎬 Video + 5 Fotos</span>
+                    <img src="optimized/img/avenida-original_thumb.webp" alt="Vista de la Avenida Principal de Parral"
                         loading="lazy" width="600" height="375">
                 </div>
                 <div class="card-foto-content">
-                    <h3>Hospital</h3>
-                    <p>Historia de la salud pública</p>
-                    <button type="button" onclick="event.stopPropagation(); openModal('hospitalModal')"
+                    <h3>Avenida Principal</h3>
+                    <p>La columna vertebral de Parral</p>
+                    <button type="button" onclick="event.stopPropagation(); openModal('avenidaModal')"
                         class="btn-card">Ver Colección</button>
                 </div>
             </div>
 
-            <!-- Fila 5 -->
-            <div class="card-foto">
-                <div class="card-foto-img-container">
-                    <img src="https://images.unsplash.com/photo-1532153354457-5fbe1a3bb0b4?auto=format&fit=crop&w=600&q=80"
-                        alt="Desfile patrio por las calles céntricas de Parral" loading="lazy" width="600" height="375">
-                </div>
-                <div class="card-foto-content">
-                    <h3>Desfiles Patrios</h3>
-                    <p>Orgullo Comunal</p>
-                    <a href="detalle.html" class="btn-card">Ver Colección</a>
-                </div>
-            </div>
-            <div class="card-foto">
-                <div class="card-foto-img-container">
-                    <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=600&q=80"
-                        alt="Antiguo retrato de una familia parralina" loading="lazy" width="600" height="375">
-                </div>
-                <div class="card-foto-content">
-                    <h3>Retratos de Familia</h3>
-                    <p>Rostros del Pasado</p>
-                    <a href="detalle.html" class="btn-card">Ver Colección</a>
-                </div>
-            </div>
-
-            <!-- Fila 6: Nuevas Colecciones -->
-            <div class="card-foto" data-tags="tren ferrocarril transporte pasajeros estacion locomotora ramal cauquenes"
-                onclick="openModal('trenModal')" style="cursor: pointer;">
-                <div class="card-foto-img-container">
-                    <span class="heritage-badge badge-restored">🚂 9 Fotos Ferroviarias</span>
-                    <img src="images/antiguo-tren-pasajeros/optimizado-restaurada a color.webp"
-                        alt="Historia ferroviaria de Parral" loading="lazy" width="600" height="375">
-                </div>
-                <div class="card-foto-content">
-                    <h3>Historia del Ferrocarril</h3>
-                    <p>Trenes, estación y ramal Parral-Cauquenes</p>
-                    <button type="button" onclick="event.stopPropagation(); openModal('trenModal')" class="btn-card">Ver
-                        Colección</button>
-                </div>
-            </div>
+            <!-- 6. Casas Antiguas: 5 Fotos -->
             <div class="card-foto" data-tags="casas entrada arquitectura antigua vivienda"
                 onclick="openModal('casasModal')" style="cursor: pointer;">
                 <div class="card-foto-img-container">
-                    <span class="heritage-badge badge-restored">🏠 5 Fotos Históricas</span>
+                    <span class="heritage-badge badge-restored">🏠 5 Fotos</span>
                     <img src="images/casas-antiguas-entrada/optimizado-antiguas casa entrada restaurada a color.webp"
                         alt="Casas antiguas en la entrada de Parral" loading="lazy" width="600" height="375">
                 </div>
@@ -350,69 +164,11 @@
                 </div>
             </div>
 
-            <!-- Fila 7: Más Colecciones -->
-            <div class="card-foto" data-tags="templo iglesia san francisco religion terremoto"
-                onclick="openModal('sanFranciscoModal')" style="cursor: pointer;">
-                <div class="card-foto-img-container">
-                    <span class="heritage-badge badge-restored">Restauración IA</span>
-                    <img src="images/templo-san-francisco/optimizado-templo san francisco restaurada color.webp"
-                        alt="Templo San Francisco antes del terremoto de 1939" loading="lazy" width="600" height="375">
-                </div>
-                <div class="card-foto-content">
-                    <h3>Templo San Francisco</h3>
-                    <p>Antes del terremoto del 39</p>
-                    <button type="button" onclick="event.stopPropagation(); openModal('sanFranciscoModal')"
-                        class="btn-card">Ver Colección</button>
-                </div>
-            </div>
-            <div class="card-foto" data-tags="templo iglesia san jose religion terremoto"
-                onclick="openModal('sanJoseModal')" style="cursor: pointer;">
-                <div class="card-foto-img-container">
-                    <span class="heritage-badge badge-restored">Restauración IA</span>
-                    <img src="images/templo-san-jose/optimizado-templo san jose antes del 39 restaurada a color.webp"
-                        alt="Templo San José antes del terremoto de 1939" loading="lazy" width="600" height="375">
-                </div>
-                <div class="card-foto-content">
-                    <h3>Templo San José</h3>
-                    <p>Antes del terremoto del 39</p>
-                    <button type="button" onclick="event.stopPropagation(); openModal('sanJoseModal')"
-                        class="btn-card">Ver Colección</button>
-                </div>
-            </div>
-            <div class="card-foto" data-tags="camino ruta parral cauquenes campo rural" onclick="openModal('rutaModal')"
-                style="cursor: pointer;">
-                <div class="card-foto-img-container">
-                    <span class="heritage-badge badge-restored">Restauración IA</span>
-                    <img src="images/ruta-parral-cauquenes/optimizado-entre parral y cauquenea color.webp"
-                        alt="Ruta entre Parral y Cauquenes" loading="lazy" width="600" height="375">
-                </div>
-                <div class="card-foto-content">
-                    <h3>Ruta Parral-Cauquenes</h3>
-                    <p>El camino entre dos pueblos</p>
-                    <button type="button" onclick="event.stopPropagation(); openModal('rutaModal')" class="btn-card">Ver
-                        Colección</button>
-                </div>
-            </div>
-            <!-- Tarjeta Italianos en Parral -->
-            <div class="card-foto" data-tags="italianos colonia inmigrantes europa san manuel colonos"
-                onclick="openModal('italianosModal')" style="cursor: pointer;">
-                <div class="card-foto-img-container">
-                    <span class="heritage-badge badge-restored">🇮🇹 Colonia Italiana</span>
-                    <img src="images/italianos-en-parral/COLONOS EN TRIGO MEJORADA A COLOR.jpg"
-                        alt="Colonos italianos en los trigales de Parral" loading="lazy" width="600" height="375">
-                </div>
-                <div class="card-foto-content">
-                    <h3>Italianos en Parral</h3>
-                    <p>La Colonia Italiana de San Manuel</p>
-                    <button type="button" onclick="event.stopPropagation(); openModal('italianosModal')"
-                        class="btn-card">Ver Colección</button>
-                </div>
-            </div>
-            <!-- Tarjeta Inundación de 1965 -->
+            <!-- 7. Inundación de 1965: Video + 4 Fotos -->
             <div class="card-foto" data-tags="inundacion desastre rio 1965 temporal lluvia catastrofe"
                 onclick="openModal('inundacionModal')" style="cursor: pointer;">
                 <div class="card-foto-img-container">
-                    <span class="heritage-badge badge-original">🌊 Desastre Natural</span>
+                    <span class="heritage-badge badge-restored">🎬 Video + 4 Fotos</span>
                     <img src="images/inundacion-1965/optimizado-inundacion 1965.webp" alt="Inundación de 1965 en Parral"
                         loading="lazy" width="600" height="375">
                 </div>
@@ -423,11 +179,29 @@
                         class="btn-card">Ver Colección</button>
                 </div>
             </div>
-            <!-- Tarjeta Colonia Dignidad -->
+
+            <!-- 8. Bajada Buenos Aires: 2 Videos + 2 Fotos -->
+            <div class="card-foto" data-tags="avenida buenos aires calle transito" onclick="openModal('bajadaModal')"
+                style="cursor: pointer;">
+                <div class="card-foto-img-container">
+                    <span class="heritage-badge badge-restored">🎬 2 Videos + 2 Fotos</span>
+                    <img src="optimized/img/bajada-original_thumb.webp"
+                        alt="Vista histórica de la Bajada Buenos Aires in Parral" loading="lazy" width="600"
+                        height="375">
+                </div>
+                <div class="card-foto-content">
+                    <h3>Bajada Buenos Aires</h3>
+                    <p>Vistas históricas de la avenida</p>
+                    <button type="button" onclick="event.stopPropagation(); openModal('bajadaModal')"
+                        class="btn-card">Ver Colección</button>
+                </div>
+            </div>
+
+            <!-- 9. Colonia Dignidad: 4 Fotos -->
             <div class="card-foto" data-tags="colonia dignidad alemanes villa baviera schafer secta"
                 onclick="openModal('dignidadModal')" style="cursor: pointer;">
                 <div class="card-foto-img-container">
-                    <span class="heritage-badge badge-original">🇩🇪 Historia Oscura</span>
+                    <span class="heritage-badge badge-restored">🇩🇪 4 Fotos</span>
                     <img src="images/colonia-dignidad/optimizado-colonos dignidad años 70.webp"
                         alt="Colonia Dignidad en los años 70" loading="lazy" width="600" height="375">
                 </div>
@@ -438,11 +212,12 @@
                         class="btn-card">Ver Colección</button>
                 </div>
             </div>
-            <!-- Tarjeta Termas de Catillo -->
+
+            <!-- 10. Termas de Catillo: 4 Fotos -->
             <div class="card-foto" data-tags="termas catillo turismo aguas termales baños spa relax"
                 onclick="openModal('termasModal')" style="cursor: pointer;">
                 <div class="card-foto-img-container">
-                    <span class="heritage-badge badge-restored">♨️ Turismo Histórico</span>
+                    <span class="heritage-badge badge-restored">♨️ 4 Fotos</span>
                     <img src="images/termas-de-catillo/optimizado-termas de catillo1941.webp"
                         alt="Termas de Catillo en 1941" loading="lazy" width="600" height="375">
                 </div>
@@ -451,6 +226,184 @@
                     <p>Las históricas aguas termales de la zona</p>
                     <button type="button" onclick="event.stopPropagation(); openModal('termasModal')"
                         class="btn-card">Ver Colección</button>
+                </div>
+            </div>
+
+            <!-- 11. Vida Rural: Video + 3 Fotos -->
+            <div class="card-foto" data-tags="camion transporte carga maquina agricultura arroz campo rural vida"
+                onclick="openModal('arrozModal')" style="cursor: pointer;">
+                <div class="card-foto-img-container">
+                    <span class="heritage-badge badge-restored">🎬 Video + 3 Fotos</span>
+                    <img src="optimized/img/arroz-original_thumb.webp"
+                        alt="Vida rural y trabajo agrícola en el campo de Parral" loading="lazy" width="600"
+                        height="375">
+                </div>
+                <div class="card-foto-content">
+                    <h3>Vida Rural</h3>
+                    <p>Identidad agrícola y trabajo del campo</p>
+                    <button type="button" onclick="event.stopPropagation(); openModal('arrozModal')"
+                        class="btn-card">Ver Colección</button>
+                </div>
+            </div>
+
+            <!-- 12. Bomberos de Parral: Video + 2 Fotos -->
+            <div class="card-foto" onclick="openModal('bomberosModal')" style="cursor: pointer;">
+                <div class="card-foto-img-container">
+                    <span class="heritage-badge badge-restored">🎬 Video + 2 Fotos</span>
+                    <img src="optimized/images/parral-bomberos-1_thumb.webp"
+                        alt="Antiguo carro de bomberos de Parral y sus voluntarios" loading="lazy" width="600"
+                        height="375">
+                </div>
+                <div class="card-foto-content">
+                    <h3>Bomberos de Parral</h3>
+                    <p>Héroes del Fuego</p>
+                    <button type="button" onclick="event.stopPropagation(); openModal('bomberosModal')"
+                        class="btn-card">Ver Colección</button>
+                </div>
+            </div>
+
+            <!-- 13. Hospital: Video + 2 Fotos -->
+            <div class="card-foto" data-tags="hospital salud medicina doctores enfermeras sanidad"
+                onclick="openModal('hospitalModal')" style="cursor: pointer;">
+                <div class="card-foto-img-container">
+                    <span class="heritage-badge badge-restored">🎬 Video + 2 Fotos</span>
+                    <img src="images/hospital/optimizado-operando a color.webp" alt="Antiguo Hospital de Parral"
+                        loading="lazy" width="600" height="375">
+                </div>
+                <div class="card-foto-content">
+                    <h3>Hospital</h3>
+                    <p>Historia de la salud pública</p>
+                    <button type="button" onclick="event.stopPropagation(); openModal('hospitalModal')"
+                        class="btn-card">Ver Colección</button>
+                </div>
+            </div>
+
+            <!-- 14. Colegios de Parral: Video + 2 Fotos -->
+            <div class="card-foto" data-tags="colegio escuela educacion liceo" onclick="openModal('colegiosModal')"
+                style="cursor: pointer;">
+                <div class="card-foto-img-container">
+                    <span class="heritage-badge badge-restored">🎬 Video + 2 Fotos</span>
+                    <img src="images/colegios-parral/optimizado-escuela de niñas.webp"
+                        alt="Escuela de Niñas de Parral - Foto Histórica" loading="lazy" width="600" height="375">
+                </div>
+                <div class="card-foto-content">
+                    <h3>Colegios de Parral</h3>
+                    <p>Historia Educativa</p>
+                    <button type="button" onclick="event.stopPropagation(); openModal('colegiosModal')"
+                        class="btn-card">Ver Colección</button>
+                </div>
+            </div>
+
+            <!-- 15. Italianos en Parral: 2 Fotos -->
+            <div class="card-foto" data-tags="italianos colonia inmigrantes europa san manuel colonos"
+                onclick="openModal('italianosModal')" style="cursor: pointer;">
+                <div class="card-foto-img-container">
+                    <span class="heritage-badge badge-restored">🇮🇹 2 Fotos</span>
+                    <img src="images/italianos-en-parral/COLONOS EN TRIGO MEJORADA A COLOR.jpg"
+                        alt="Colonos italianos en los trigales de Parral" loading="lazy" width="600" height="375">
+                </div>
+                <div class="card-foto-content">
+                    <h3>Italianos en Parral</h3>
+                    <p>La Colonia Italiana de San Manuel</p>
+                    <button type="button" onclick="event.stopPropagation(); openModal('italianosModal')"
+                        class="btn-card">Ver Colección</button>
+                </div>
+            </div>
+
+            <!-- 16. Plaza de Armas: 2 Fotos -->
+            <div class="card-foto" data-tags="plaza civico centro monumento desfiles" onclick="openModal('plazaModal')"
+                style="cursor: pointer;">
+                <div class="card-foto-img-container">
+                    <span class="heritage-badge badge-restored">🏛️ 2 Fotos</span>
+                    <img src="optimized/img/plaza-original_thumb.webp"
+                        alt="Plaza de Armas de Parral, recreación histórica con IA" loading="lazy" width="600"
+                        height="375">
+                </div>
+                <div class="card-foto-content">
+                    <h3>Plaza de Armas</h3>
+                    <p>El Corazón Cívico</p>
+                    <button type="button" onclick="event.stopPropagation(); openModal('plazaModal')"
+                        class="btn-card">Ver Colección</button>
+                </div>
+            </div>
+
+            <!-- 17. Don Chanca: 2 Fotos -->
+            <div class="card-foto" data-tags="don chanca huaso jinete rodeo champion leyenda personaje"
+                onclick="openModal('donChancaModal')" style="cursor: pointer;">
+                <div class="card-foto-img-container">
+                    <span class="heritage-badge badge-restored">🤠 2 Fotos</span>
+                    <img src="images/don-chanca/optimizado-atajando a color.webp"
+                        alt="Don Chanca, legendario huaso parralino" loading="lazy" width="600" height="375">
+                </div>
+                <div class="card-foto-content">
+                    <h3>Don Chanca</h3>
+                    <p>Leyenda del Rodeo Chileno</p>
+                    <button type="button" onclick="event.stopPropagation(); openModal('donChancaModal')"
+                        class="btn-card">Ver Colección</button>
+                </div>
+            </div>
+
+            <!-- 18. Ferias y Mercado: 2 Fotos -->
+            <div class="card-foto" data-tags="mercado municipal feria libre comercio tradicional sabores"
+                onclick="openModal('feriaModal')" style="cursor: pointer;">
+                <div class="card-foto-img-container">
+                    <span class="heritage-badge badge-restored">🥖 2 Fotos</span>
+                    <img src="images/feria-libre/optimizado-feria a color.webp"
+                        alt="Puesto de feriantes en la Feria de Parral" loading="lazy" width="600" height="375">
+                </div>
+                <div class="card-foto-content">
+                    <h3>Ferias y Mercado</h3>
+                    <p>Sabores y Tradición de nuestra tierra</p>
+                    <button type="button" onclick="event.stopPropagation(); openModal('feriaModal')"
+                        class="btn-card">Ver Colección</button>
+                </div>
+            </div>
+
+            <!-- 19. Templo San Francisco: 2 Fotos -->
+            <div class="card-foto" data-tags="templo iglesia san francisco religion terremoto"
+                onclick="openModal('sanFranciscoModal')" style="cursor: pointer;">
+                <div class="card-foto-img-container">
+                    <span class="heritage-badge badge-restored">⛪ 2 Fotos</span>
+                    <img src="images/templo-san-francisco/optimizado-templo san francisco restaurada color.webp"
+                        alt="Templo San Francisco antes del terremoto de 1939" loading="lazy" width="600" height="375">
+                </div>
+                <div class="card-foto-content">
+                    <h3>Templo San Francisco</h3>
+                    <p>Antes del terremoto del 39</p>
+                    <button type="button" onclick="event.stopPropagation(); openModal('sanFranciscoModal')"
+                        class="btn-card">Ver Colección</button>
+                </div>
+            </div>
+
+            <!-- 20. Templo San José: 2 Fotos -->
+            <div class="card-foto" data-tags="templo iglesia san jose religion terremoto"
+                onclick="openModal('sanJoseModal')" style="cursor: pointer;">
+                <div class="card-foto-img-container">
+                    <span class="heritage-badge badge-restored">⛪ 2 Fotos</span>
+                    <img src="images/templo-san-jose/optimizado-templo san jose antes del 39 restaurada a color.webp"
+                        alt="Templo San José antes del terremoto de 1939" loading="lazy" width="600" height="375">
+                </div>
+                <div class="card-foto-content">
+                    <h3>Templo San José</h3>
+                    <p>Antes del terremoto del 39</p>
+                    <button type="button" onclick="event.stopPropagation(); openModal('sanJoseModal')"
+                        class="btn-card">Ver Colección</button>
+                </div>
+            </div>
+
+            <!-- 21. Ruta Parral-Cauquenes: 2 Fotos -->
+            <div class="card-foto" data-tags="camino ruta parral cauquenes campo rural" onclick="openModal('rutaModal')"
+                style="cursor: pointer;">
+                <div class="card-foto-img-container">
+                    <span class="heritage-badge badge-restored">🛤️ 2 Fotos</span>
+                    <img src="images/ruta-parral-cauquenes/optimizado-entre parral y cauquenea color.webp"
+                        alt="Ruta entre Parral y Cauquenes" loading="lazy" width="600" height="375">
+                </div>
+                <div class="card-foto-content">
+                    <h3>Ruta Parral-Cauquenes</h3>
+                    <p>El camino entre dos pueblos</p>
+                    <button type="button" onclick="event.stopPropagation(); openModal('rutaModal')" class="btn-card">Ver
+                        Colección</button>
                 </div>
             </div>
         </div>
