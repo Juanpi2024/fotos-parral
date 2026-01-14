@@ -1410,6 +1410,39 @@ html {
     color: var(--primary-color);
 }
 
+/* Video Grid System for Modals */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.video-card-ia {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1rem;
+    transition: var(--transition-smooth);
+}
+
+.video-card-ia:hover {
+    border-color: var(--accent-color);
+    background: rgba(197, 160, 89, 0.05);
+}
+
+.video-card-ia h4 {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .video-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
 /* Modal Quick Navigation */
 .modal-quick-nav {
     display: flex;
