@@ -3226,6 +3226,7 @@
 
         let currentModalIndex = -1;
 
+
         function openModal(id) {
             // Cerrar modal actual si existe
             if (currentModalIndex >= 0) {
@@ -3257,6 +3258,19 @@
                 updateNavButtons(id);
             }
         }
+
+        // Check for modal param on load
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const modalId = urlParams.get('modal');
+            if (modalId) {
+                // Small delay to ensure everything is ready
+                setTimeout(() => {
+                    openModal(modalId);
+                }, 100);
+            }
+        });
+
 
         function closeModal(id) {
             const modal = document.getElementById(id);
