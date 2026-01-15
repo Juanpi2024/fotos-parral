@@ -162,7 +162,8 @@
         <h1 class="text-xl md:text-2xl font-extrabold tracking-tight">Alcaldes de Parral – Línea de Tiempo</h1>
         <p class="text-sm text-slate-600">
           Compendio de autoridades comunales (énfasis cultural y patrimonial).
-          <span class="ml-2">Actualizado: <span class="font-semibold">{{ site.time | date: '%d/%m/%Y' }}</span></span>
+          <span class="ml-2">Actualizado: <span id="lastUpdated" class="font-semibold">{{ site.time | date: '%d/%m/%Y'
+              }}</span></span>
         </p>
       </div>
       <div class="flex gap-2">
@@ -191,13 +192,31 @@
 
   {% include footer.html %}
 
+  <!-- Modal para la ficha completa -->
+  <div id="fichaModal"
+    class="fixed inset-0 z-50 hidden overflow-y-auto bg-black bg-opacity-50 flex items-center justify-center p-4">
+    <div class="bg-white rounded-lg shadow-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto relative">
+      <button onclick="closeModal()" aria-label="Cerrar modal"
+        class="absolute top-3 right-3 text-slate-500 hover:text-slate-800">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <div id="modalContent" class="p-6">
+        <!-- Contenido de la ficha se carga aquí -->
+      </div>
+    </div>
+  </div>
+
   <script>
+
     // ===========================
     // 1) Datos (editar según necesidad)
     // ===========================
     const ALCALDES = [
       {
         id: "solar-urrutia-1912", nombre: "Domingo Antonio Solar Urrutia", periodo: "1912–1918", inicio: 1912, fin: 1918, genero: "M",
+        folder: "domingo-solar-1912-1918",
         etiquetas: ["origen"],
         resumen: "Primer alcalde de Parral (1912–1918). Luego diputado por la zona; sin antecedentes formativos verificados.",
         impacto: "Consolidación inicial de la institucionalidad municipal.",
@@ -205,133 +224,159 @@
       },
       {
         id: "benavente-1938", nombre: "Víctor Benavente Tapia", periodo: "1938–1939", inicio: 1938, fin: 1939, genero: "M",
+        folder: "victor-benavente-1938-1939",
         etiquetas: [], resumen: "Ejerció en 1938–1939. No se hallaron antecedentes biográficos adicionales.",
         impacto: "No documentado.", fuentes: ["Listado comunal."]
       },
       {
         id: "urrutia-sotta-1939", nombre: "Ignacio Urrutia de la Sotta", periodo: "1939–1940", inicio: 1939, fin: 1940, genero: "M",
+        folder: "ignacio-urrutia-1939-1940",
         etiquetas: [], resumen: "Contador y agricultor. Alcalde 1939–1940. Luego diputado por varios periodos.",
         impacto: "Proyección a nivel nacional; sin registro patrimonial local específico.", fuentes: ["Biografía parlamentaria."]
       },
       {
         id: "sepulveda-1940", nombre: "José Sepúlveda Cofré", periodo: "1940–1941", inicio: 1940, fin: 1941, genero: "M",
+        folder: "jose-sepulveda-1940-1941",
         etiquetas: [], resumen: "Sin antecedentes biográficos documentados.",
         impacto: "No documentado.", fuentes: ["Listado comunal."]
       },
       {
         id: "spoerer-1953", nombre: "Nieves Spoerer Ferrier", periodo: "1953–1956", inicio: 1953, fin: 1956, genero: "F",
+        folder: "nieves-spoerer-1953-1956",
         etiquetas: ["mujer"], resumen: "Primera mujer alcaldesa de Parral (1953–1956). Liderazgo comunitario recordado.",
         impacto: "Hito de género en la administración local.", fuentes: ["Prensa local; registros comunales."]
       },
       {
         id: "matta-1958", nombre: "José Matta Callejón", periodo: "1958–1960", inicio: 1958, fin: 1960, genero: "M",
+        folder: "jose-matta-1958-1960",
         etiquetas: [], resumen: "Alcalde 1958–1960. Dirigente local; una escuela lleva su nombre.",
         impacto: "Vinculación comunitaria y educativa.", fuentes: ["Archivo escolar local."]
       },
       {
         id: "morales-1960", nombre: "Joaquín Morales Rodríguez", periodo: "1960–1961", inicio: 1960, fin: 1961, genero: "M",
+        folder: "joaquin-morales-1960-1961",
         etiquetas: [], resumen: "Sin antecedentes biográficos documentados.",
         impacto: "No documentado.", fuentes: ["Listado comunal."]
       },
       {
         id: "aqueveque-1961", nombre: "Carolina Aqueveque Castro", periodo: "1961–1962", inicio: 1961, fin: 1962, genero: "F",
+        folder: "carolina-aqueveque-1961-1962",
         etiquetas: ["mujer"], resumen: "Sin antecedentes biográficos documentados.",
         impacto: "No documentado.", fuentes: ["Listado comunal."]
       },
       {
         id: "belmar-1962", nombre: "Guillermo Belmar Hernández", periodo: "1962–1963", inicio: 1962, fin: 1963, genero: "M",
+        folder: "guillermo-belmar-1962-1963",
         etiquetas: [], resumen: "Dirigente local; posteriormente alcalde 1992–1996.",
         impacto: "Gestiones en periodos de transición política.", fuentes: ["Registros municipales."]
       },
       {
         id: "spoerer-1963", nombre: "Nieves Spoerer Ferrier", periodo: "1963–1964", inicio: 1963, fin: 1964, genero: "F",
+        folder: "nieves-spoerer-1953-1956",
         etiquetas: ["mujer"], resumen: "Reelegida por breve periodo; liderazgo cívico.",
         impacto: "Representación femenina sostenida.", fuentes: ["Registros municipales."]
       },
       {
         id: "albornoz-1964", nombre: "Manuel Albornoz Hernández", periodo: "1964–1967", inicio: 1964, fin: 1967, genero: "M",
+        folder: "manuel-albornoz-1964-1967",
         etiquetas: [], resumen: "Sin antecedentes biográficos documentados.",
         impacto: "No documentado.", fuentes: ["Listado comunal."]
       },
       {
         id: "astorga-1967", nombre: "Enrique Astorga Barriga", periodo: "1967–1971", inicio: 1967, fin: 1971, genero: "M",
+        folder: "enrique-astorga-1967-1971",
         etiquetas: [], resumen: "Sin antecedentes biográficos documentados.",
         impacto: "No documentado.", fuentes: ["Listado comunal."]
       },
       {
         id: "zorrilla-1971", nombre: "Enrique Zorrilla Concha", periodo: "1971–1972", inicio: 1971, fin: 1972, genero: "M",
+        folder: "enrique-zorrilla-1971-1972",
         etiquetas: [], resumen: "Sin antecedentes biográficos documentados.",
         impacto: "No documentado.", fuentes: ["Listado comunal."]
       },
       {
         id: "urrutia-silva-1972", nombre: "Arturo Urrutia Silva", periodo: "1972–1973", inicio: 1972, fin: 1973, genero: "M",
+        folder: "arturo-urrutia-1972-1973",
         etiquetas: [], resumen: "Sin antecedentes biográficos documentados.",
         impacto: "No documentado.", fuentes: ["Listado comunal."]
       },
       {
         id: "spoerer-1973", nombre: "Nieves Spoerer Ferrier", periodo: "1973", inicio: 1973, fin: 1973, genero: "F",
+        folder: "nieves-spoerer-1953-1956",
         etiquetas: ["mujer"], resumen: "Gestión muy breve en 1973.",
         impacto: "No documentado.", fuentes: ["Listado comunal."]
       },
       {
         id: "fuentes-1973", nombre: "Enrique Fuentes Vásquez", periodo: "1973–1975", inicio: 1973, fin: 1975, genero: "M",
+        folder: "enrique-fuentes-1973-1975",
         etiquetas: [], resumen: "Alcalde durante régimen militar. Sin más antecedentes.",
         impacto: "No documentado.", fuentes: ["Listado comunal."]
       },
       {
         id: "rojas-1975", nombre: "Eliana Rojas de Baladrón", periodo: "1975–1977", inicio: 1975, fin: 1977, genero: "F",
+        folder: "eliana-rojas-1975-1977",
         etiquetas: ["mujer"], resumen: "Alcaldesa designada. Sin más antecedentes.",
         impacto: "No documentado.", fuentes: ["Listado comunal."]
       },
       {
         id: "opazo-1978", nombre: "Luis Humberto Opazo Rodríguez", periodo: "1978–1981", inicio: 1978, fin: 1981, genero: "M",
+        folder: "luis-opazo-1978-1981",
         etiquetas: [], resumen: "Militar designado. Sin más antecedentes.",
         impacto: "No documentado.", fuentes: ["Listado comunal."]
       },
       {
         id: "villablanca-1981", nombre: "Ernesto Villablanca Hernández", periodo: "1981–1984", inicio: 1981, fin: 1984, genero: "M",
+        folder: "ernesto-villablanca-1981-1984",
         etiquetas: [], resumen: "Renuncia en octubre de 1984. Sin más antecedentes.",
         impacto: "No documentado.", fuentes: ["Listado comunal."]
       },
       {
         id: "gonzalez-1984", nombre: "Gladys del Carmen González Espinoza", periodo: "1984–1986", inicio: 1984, fin: 1986, genero: "F",
+        folder: "gladys-gonzalez-1984-1986",
         etiquetas: ["mujer"], resumen: "Interina 1984–1986. Sin más antecedentes.",
         impacto: "No documentado.", fuentes: ["Listado comunal."]
       },
       {
         id: "rodriguez-1986", nombre: "Alfonso Rodríguez del Río", periodo: "1986–1988", inicio: 1986, fin: 1988, genero: "M",
+        folder: "alfonso-rodriguez-1986-1988",
         etiquetas: [], resumen: "Interino previo a procesos electorales. Sin más antecedentes.",
         impacto: "No documentado.", fuentes: ["Listado comunal."]
       },
       {
         id: "bravo-1988", nombre: "Claudio Bravo Araya", periodo: "1988–1992", inicio: 1988, fin: 1992, genero: "M",
+        folder: "claudio-bravo-1988-2004",
         etiquetas: [], resumen: "Figuración en la transición democrática; luego nuevo periodo 1996–2004.",
         impacto: "Reorganización municipal post-dictadura (sin proyectos patrimoniales especificados).",
         fuentes: ["Registros municipales."]
       },
       {
         id: "belmar-1992", nombre: "Guillermo Belmar Hernández", periodo: "1992–1996", inicio: 1992, fin: 1996, genero: "M",
+        folder: "guillermo-belmar-1992-1996",
         etiquetas: [], resumen: "Alcalde electo en la restauración democrática.",
         impacto: "No documentado.", fuentes: ["Registros municipales."]
       },
       {
         id: "bravo-1996", nombre: "Claudio Bravo Araya", periodo: "1996–2004", inicio: 1996, fin: 2004, genero: "M",
+        folder: "claudio-bravo-1988-2004",
         etiquetas: [], resumen: "Largo periodo hasta 2004.",
         impacto: "No documentado.", fuentes: ["Registros municipales."]
       },
       {
         id: "urrutia-2004", nombre: "Israel Urrutia Escobar", periodo: "2004–2012", inicio: 2004, fin: 2012, genero: "M",
+        folder: "israel-urrutia-2004-2012",
         etiquetas: ["impacto"], resumen: "Impulsó Teatro Municipal (2011) y remodelación de Biblioteca Pública ‘Neftalí Reyes Basoalto’ (2012).",
         impacto: "Infraestructura cultural clave para la comuna.", fuentes: ["Prensa institucional; Biblioredes."]
       },
       {
         id: "retamal-2012", nombre: "Paula Retamal Urrutia", periodo: "2012–2024", inicio: 2012, fin: 2024, genero: "F",
+        folder: "paula-retamal-2012-2024",
         etiquetas: ["mujer"], resumen: "Profesora; programas sociales, mejoramiento de espacios públicos y barrios.",
         impacto: "Continuidad de festividades y fortalecimiento social.",
         fuentes: ["Prensa regional."]
       },
       {
         id: "ojeda-2024", nombre: "Patricio Ojeda Alarcón", periodo: "2024–presente", inicio: 2024, fin: 2025, genero: "M",
+        folder: "patricio-ojeda-2024-presente",
         etiquetas: [], resumen: "Ingeniero; gestión en curso desde dic. 2024.",
         impacto: "A la fecha, sin hitos patrimoniales publicados.", fuentes: ["Municipalidad y prensa local."]
       },
@@ -354,7 +399,7 @@
           <article class="card">
             <div class="flex flex-wrap items-start gap-3 justify-between">
               <div>
-                <h3 class="text-lg font-extrabold">${item.nombre}</h3>
+                <h3 class="text-lg font-extrabold text-slate-900">${item.nombre}</h3>
                 <p class="text-sm text-slate-600">${item.periodo}</p>
               </div>
               <div class="flex flex-wrap gap-2">
@@ -382,7 +427,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                   <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/>
                 </svg>
-                Ver ficha
+                Ver ficha completa
               </button>
               <button class="btn btn-ghost" onclick="descargarFicha('${item.id}')" title="Guardar PDF">
                 <!-- ícono imprimir -->
@@ -401,29 +446,74 @@
     // ===========================
     // 3) Fichas (ver/descargar)
     // ===========================
-    function buildFichaHTML(h) {
+
+    // Función para construir el HTML de la ficha (modal y PDF)
+    function buildFichaHTML(h, isModal = false) {
+      // Estructura para el modal (más rica visualmente)
+      // Intentamos cargar una imagen si existe (Asumimos nombre portada.webp o portada.jpg en la carpeta)
+      // Como no sabemos si existe, ponemos un placeholder visual si falla o mejor aún, un contenedor.
+
+      const folderPath = `images/alcaldes/${h.folder}`;
+      // Placeholder imagen generica si no hay imagen específica
+      const defaultImg = "https://via.placeholder.com/600x400?text=Sin+Imagen+Disponible";
+
+      // Nota: En un entorno estático real, verificar existencia de archivo es difícil sin build step.
+      // Usaremos un truco de 'onerror' para la imagen.
+
+      const updatedDate = document.getElementById('lastUpdated').textContent;
+
+      let mediaSection = '';
+      if (isModal) {
+        mediaSection = `
+            <div class="mb-6 bg-slate-100 rounded-lg overflow-hidden border border-slate-200">
+                <div class="aspect-w-16 aspect-h-9 bg-slate-200 flex items-center justify-center text-slate-400">
+                    <!-- Intentar cargar imagen principal -->
+                    <img src="${folderPath}/portada.webp"
+                         onerror="this.onerror=null; this.src='images/placeholder-alcalde.webp'; this.parentElement.innerHTML='<span class=\\'p-8 text-center\\'>📁 Carpeta de medios vacía<br><span class=\\'text-xs\\'>${folderPath}</span></span>'"
+                         class="object-cover w-full h-full" alt="Imagen de ${h.nombre}">
+                </div>
+                <div class="p-3 text-xs text-center text-slate-500 bg-slate-50">
+                    Galería multimedia (Imágenes y Videos) - Se visualizarán aquí los archivos de la carpeta: <strong>${h.folder}</strong>
+                </div>
+            </div>
+          `;
+      }
+
       return `
-        <div style="max-width:780px;margin:0 auto;padding:32px; font-family: Inter, system-ui; color:#0f172a;">
+        <div style="${isModal ? '' : 'max-width:780px;margin:0 auto;padding:32px;'} font-family: Inter, system-ui; color:#0f172a;">
           <div style="display:flex;justify-content:space-between;align-items:flex-start; gap:16px;">
             <div>
-              <h1 style="font-size:22px; font-weight:800; margin:0;">${h.nombre}</h1>
-              <p style="margin:4px 0 0; color:#334155;">${h.periodo}</p>
+              <h1 style="font-size:22px; font-weight:800; margin:0; line-height: 1.2;">${h.nombre}</h1>
+              <p style="margin:4px 0 0; color:#334155; font-size: 1.1rem; font-weight: 500;">Período: ${h.periodo}</p>
             </div>
             <div style="text-align:right; color:#64748b; font-size:12px;">
-              Ficha patrimonial · Parral <br/> Generado: {{ site.time | date: '%d/%m/%Y' }}
+              Ficha patrimonial · Parral <br/> Generado: ${updatedDate}
             </div>
           </div>
+
           <hr style="margin:16px 0; border:none; border-top:1px solid #e2e8f0;" />
-          <p style="margin:0 0 8px;"><strong>Resumen:</strong> ${h.resumen}</p>
-          <p style="margin:0 0 8px;"><strong>Impacto:</strong> ${h.impacto}</p>
-          <div style="margin:12px 0;">
-            <strong>Fuentes / notas:</strong>
-            <ul style="margin:6px 0 0 18px; color:#475569;">
-              ${h.fuentes.map(f => `<li>${f}</li>`).join("")}
-            </ul>
+
+          ${mediaSection}
+
+          <div class="grid md:grid-cols-1 gap-6">
+              <div>
+                  <h3 style="font-size:1.1rem; font-weight:700; color:#0ea5e9; margin-bottom:0.5rem;">Biografía y Resumen</h3>
+                  <p style="margin:0 0 12px; line-height: 1.6;">${h.resumen}</p>
+
+                  <h3 style="font-size:1.1rem; font-weight:700; color:#0ea5e9; margin-bottom:0.5rem; margin-top: 1.5rem;">Impacto y Legado</h3>
+                  <p style="margin:0 0 12px; line-height: 1.6;">${h.impacto}</p>
+
+                  <div style="margin:24px 0; background: #f8fafc; padding: 1rem; border-radius: 8px; border: 1px solid #e2e8f0;">
+                    <strong style="color: #475569;">Fuentes documentales:</strong>
+                    <ul style="margin:6px 0 0 18px; color:#475569;">
+                      ${h.fuentes.map(f => `<li>${f}</li>`).join("")}
+                    </ul>
+                  </div>
+              </div>
           </div>
-          <div style="margin-top:18px; font-size:12px; color:#64748b;">
-            Uso educativo y de rescate cultural. Si cuenta con antecedentes verificables adicionales, por favor remitir para su incorporación.
+
+          <div style="margin-top:18px; font-size:12px; color:#64748b; border-top: 1px solid #eee; padding-top: 10px;">
+            Uso educativo y de rescate cultural. Si cuenta con antecedentes verificables adicionales, por favor remitir para su incorporación en el archivo <em>${h.folder}</em>.
           </div>
         </div>
       `;
@@ -432,16 +522,34 @@
     function verFicha(id) {
       const h = ALCALDES.find(x => x.id === id);
       if (!h) return;
-      // Create modal logic mostly implicitly or simple alert if no modal HTML present
-      // Wait, previous code had a modal. The user provided code does NOT have a modal, it uses printArea.
-      // But the user code has `verFicha` which sets `printArea.innerHTML` and removes hidden class.
-      const area = document.getElementById('printArea');
-      area.innerHTML = buildFichaHTML(h);
-      area.classList.remove('hidden');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      // Oculta la previsualización después de unos segundos
-      setTimeout(() => { area.classList.add('hidden'); area.innerHTML = ''; }, 3200);
+
+      const modal = document.getElementById('fichaModal');
+      const content = document.getElementById('modalContent');
+
+      // Usar true para isModal para incluir placeholders de multimedia
+      content.innerHTML = buildFichaHTML(h, true);
+
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden'; // Evitar scroll de fondo
     }
+
+    function closeModal() {
+      const modal = document.getElementById('fichaModal');
+      modal.classList.add('hidden');
+      // Limpiar contenido para detener videos si los hubiera en el futuro
+      setTimeout(() => { document.getElementById('modalContent').innerHTML = ''; }, 200);
+      document.body.style.overflow = '';
+    }
+
+    // Close on click outside
+    document.getElementById('fichaModal').addEventListener('click', function (e) {
+      if (e.target === this) closeModal(); // Click en el overlay
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeModal();
+    });
 
     function descargarFicha(id) {
       const h = ALCALDES.find(x => x.id === id);
@@ -451,9 +559,9 @@
         <html><head>
           <meta charset="utf-8"/>
           <title>Ficha – ${h.nombre}</title>
-          <style>@page { size: A4; margin: 16mm; } body{ background:white; }</style>
+          <style>@page { size: A4; margin: 16mm; } body{ background:white; font-family: sans-serif; }</style>
         </head><body>
-          ${buildFichaHTML(h)}
+          ${buildFichaHTML(h, false)}
           <script>window.onload = () => { window.print(); setTimeout(()=>window.close(), 500); }<\/script>
         </body></html>
       `);
@@ -463,8 +571,12 @@
     // Exportar resumen de la lista (sin botones de acción)
     function exportarResumen() {
       const container = document.getElementById('timelineContainer').cloneNode(true);
-      // Eliminar botones de acción en la exportación
+      // Eliminar botones de acción y detalles
       container.querySelectorAll('button').forEach(b => b.remove());
+      container.querySelectorAll('details').forEach(d => d.setAttribute('open', 'true'));
+
+      const updatedDate = document.getElementById('lastUpdated').textContent;
+
       const w = window.open('', '_blank', 'width=900,height=1200');
       w.document.write(`
         <html><head>
@@ -478,10 +590,13 @@
             .relative{ page-break-inside: avoid; }
             .card{ border:1px solid #e5e7eb; border-radius:12px; padding:12px; margin:10px 0; }
             .dot{ display:none; } /* ocultamos puntos en PDF de resumen */
+            .chip { display:inline-block; padding:2px 6px; border:1px solid #ccc; font-size:10px; border-radius:4px; margin-right:4px; }
+            ul { margin-top: 5px; margin-bottom: 5px; }
+            summary { list-style: none; font-weight: bold; margin-bottom: 4px; }
           </style>
         </head><body>
           <h1>Alcaldes de Parral – Resumen</h1>
-          <h2>Generado: {{ site.time | date: '%d/%m/%Y' }}</h2>
+          <h2>Generado: ${updatedDate}</h2>
           ${container.innerHTML}
           <script>window.onload = ()=>{ window.print(); setTimeout(()=>window.close(), 500); }<\/script>
         </body></html>
@@ -494,9 +609,11 @@
     // ===========================
     function init() {
       renderTimeline(ALCALDES);
-      document.getElementById('btnExportResumen')?.addEventListener('click', exportarResumen);
+      const btnExport = document.getElementById('btnExportResumen');
+      if (btnExport) btnExport.addEventListener('click', exportarResumen);
     }
     document.addEventListener('DOMContentLoaded', init);
+
   </script>
 </body>
 
