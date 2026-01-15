@@ -3251,7 +3251,7 @@
         let currentModalIndex = -1;
 
 
-        function openModal(id) {
+        function openModal(id, addToHistory = true) {
             // Cerrar modal actual si existe
             if (currentModalIndex >= 0) {
                 const currentModal = document.getElementById(modalOrder[currentModalIndex]);
@@ -3272,10 +3272,17 @@
                 // Actualizar índice actual
                 currentModalIndex = modalOrder.indexOf(id);
 
-                // Scroll al inicio del modal
+                // Scroll al inicio del modal y dar foco para scroll táctil
                 const modalContent = modal.querySelector('.modal-content');
                 if (modalContent) {
                     modalContent.scrollTop = 0;
+                    modalContent.setAttribute('tabindex', '-1');
+                    modalContent.focus();
+                }
+
+                // Agregar al historial del navegador para botón atrás
+                if (addToHistory) {
+                    history.pushState({ modal: id }, '', `?modal=${id}`);
                 }
 
                 // Actualizar estado de botones de navegación
@@ -3296,7 +3303,7 @@
         });
 
 
-        function closeModal(id) {
+        function closeModal(id, updateUrl = true) {
             const modal = document.getElementById(id);
             if (modal) {
                 modal.classList.remove('show');
@@ -3305,8 +3312,32 @@
                     document.body.style.overflow = '';
                 }, 300);
                 currentModalIndex = -1;
+
+                // Actualizar URL sin parámetro de modal
+                if (updateUrl) {
+                    history.pushState({}, '', window.location.pathname);
+                }
             }
         }
+
+        // Manejar botón atrás del navegador
+        window.addEventListener('popstate', function (event) {
+            if (event.state && event.state.modal) {
+                // Abrir modal sin agregar al historial (ya está ahí)
+                openModal(event.state.modal, false);
+            } else {
+                // Cerrar cualquier modal abierto sin modificar URL
+                if (currentModalIndex >= 0) {
+                    const modal = document.getElementById(modalOrder[currentModalIndex]);
+                    if (modal) {
+                        modal.classList.remove('show');
+                        modal.style.display = "none";
+                        document.body.style.overflow = '';
+                        currentModalIndex = -1;
+                    }
+                }
+            }
+        });
 
         function navigateModal(direction) {
             if (currentModalIndex < 0) return;
