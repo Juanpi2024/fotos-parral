@@ -1574,6 +1574,67 @@
         document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
             document.querySelector('.main-nav').classList.toggle('show');
         });
+
+        // Dynamic Age Badges and Click Handlers for Material Educativo
+        (function () {
+            const materialConfig = {
+                'libro-parvularia': { age: 'Parvularia 4-5 años', cls: 'parvularia', title: 'Mi Primer Libro de Parral' },
+                'memorice-patrimonial': { age: 'Parvularia 4-5 años', cls: 'parvularia', title: 'Memorice Patrimonial' },
+                'lee-dibuja-parral': { age: 'Básica 1-2° (6-7 años)', cls: 'basica-1-2', title: 'Lee y Dibuja Parral' },
+                'sopa-letras': { age: 'Básica 1-2° (6-7 años)', cls: 'basica-1-2', title: 'Sopa de Letras' },
+                'cuento-tren-basica': { age: 'Básica 3-4° (8-9 años)', cls: 'basica-3-4', title: 'El Viaje del Tren' },
+                'crucigrama': { age: 'Básica 3-4° (8-9 años)', cls: 'basica-3-4', title: 'Crucigrama Histórico' },
+                'trivia-patrimonial': { age: 'Básica 3-4° (8-9 años)', cls: 'basica-3-4', title: 'Trivia Patrimonial' },
+                'infografia-historia-parral': { age: 'Básica 5-8° (10-13 años)', cls: 'basica-5-8', title: 'Infografía: Historia de Parral' },
+                'infografia-personajes': { age: 'Básica 5-8° (10-13 años)', cls: 'basica-5-8', title: 'Infografía: Personajes Ilustres' },
+                'infografia-arquitectura': { age: 'Básica 5-8° (10-13 años)', cls: 'basica-5-8', title: 'Infografía: Arquitectura Patrimonial' },
+                'ficha-ferrocarril': { age: 'Básica 5-8° (10-13 años)', cls: 'basica-5-8', title: 'Ficha: El Ferrocarril de Parral' },
+                'ficha-colonos-italianos': { age: 'Básica 5-8° (10-13 años)', cls: 'basica-5-8', title: 'Ficha: Colonos Italianos' },
+                'investigador-patrimonio': { age: 'Básica 5-8° (10-13 años)', cls: 'basica-5-8', title: 'Guía: Investigador del Patrimonio' },
+                'analisis-urbano-media': { age: 'Media (14-17 años)', cls: 'media', title: 'Análisis Crítico: Desarrollo Urbano' },
+                'fuentes-historicas-media': { age: 'Media (14-17 años)', cls: 'media', title: 'Investigación: Fuentes Históricas' },
+                'historia-oral-media': { age: 'Media (14-17 años)', cls: 'media', title: 'Proyecto: Historia Oral' },
+                'guia-autoguiada': { age: 'Adultos / Turismo', cls: 'adultos', title: 'Guía Autoguiada del Patrimonio' }
+            };
+
+            // Apply to Material Educativo modal items
+            const modal = document.getElementById('materialEducativoModal');
+            if (modal) {
+                const items = modal.querySelectorAll('.colorear-item');
+                items.forEach(function (item) {
+                    const img = item.querySelector('img');
+                    if (!img) return;
+
+                    const src = img.getAttribute('src');
+                    if (!src || !src.includes('material-educativo')) return;
+
+                    // Get filename without extension
+                    const filename = src.split('/').pop().replace('.png', '');
+                    const config = materialConfig[filename];
+
+                    if (config) {
+                        // Add age badge after h4
+                        const h4 = item.querySelector('h4');
+                        if (h4 && !item.querySelector('.age-badge')) {
+                            const badge = document.createElement('span');
+                            badge.className = 'age-badge ' + config.cls;
+                            badge.style.cssText = 'display: block; text-align: center; margin-bottom: 0.5rem;';
+                            badge.textContent = config.age;
+                            h4.insertAdjacentElement('afterend', badge);
+                        }
+
+                        // Make image clickable for lightbox
+                        const container = item.querySelector('.colorear-img-container');
+                        if (container && !container.classList.contains('material-clickable')) {
+                            container.classList.add('material-clickable');
+                            container.onclick = function () {
+                                openMaterialLightbox(src, config.title, config.age, config.cls);
+                            };
+                        }
+                    }
+                });
+            }
+        })();
     </script>
 </body>
 
