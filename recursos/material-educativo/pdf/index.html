@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material Educativo PDF - Archivos en Movimiento</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1510 0%, #2d2419 50%, #1a1510 100%);
+            min-height: 100vh;
+            color: #f4e9d9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            padding: 2rem 0 3rem;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: #c9a961;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            color: rgba(244, 233, 217, 0.8);
+            font-size: 1.1rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #c9a961;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid #c9a961;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            background: #c9a961;
+            color: #1a1510;
+        }
+
+        .materials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .material-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(201, 169, 97, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .material-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-header {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(201, 169, 97, 0.2), rgba(139, 115, 85, 0.2));
+            border-bottom: 1px solid rgba(201, 169, 97, 0.3);
+        }
+
+        .card-header h2 {
+            color: #c9a961;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-header .badge {
+            display: inline-block;
+            background: rgba(201, 169, 97, 0.3);
+            color: #f4e9d9;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-body p {
+            color: rgba(244, 233, 217, 0.8);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .card-buttons {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            flex: 1;
+            min-width: 120px;
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+        }
+
+        .btn-student {
+            background: #2e7d32;
+            color: white;
+        }
+
+        .btn-student:hover {
+            background: #1b5e20;
+        }
+
+        .btn-teacher {
+            background: #1565c0;
+            color: white;
+        }
+
+        .btn-teacher:hover {
+            background: #0d47a1;
+        }
+
+        .info-box {
+            background: rgba(201, 169, 97, 0.1);
+            border: 1px solid rgba(201, 169, 97, 0.3);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .info-box h3 {
+            color: #c9a961;
+            margin-bottom: 1rem;
+        }
+
+        .info-box p {
+            color: rgba(244, 233, 217, 0.8);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .emoji {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="educacion.html" class="back-link">← Volver a Educación</a>
+
+        <div class="header">
+            <h1>📄 Material Educativo PDF</h1>
+            <p>Recursos listos para imprimir con pautas docentes incluidas</p>
+        </div>
+
+        <div class="materials-grid">
+            <!-- Sopa de Letras -->
+            <div class="material-card">
+                <div class="card-header">
+                    <span class="emoji">🔤</span>
+                    <h2>Sopa de Letras Patrimonial</h2>
+                    <span class="badge">Básica 5-8°</span>
+                </div>
+                <div class="card-body">
+                    <p>Grilla 15x15 con 10 palabras del patrimonio de Parral. Incluye actividad de relacionar
+                        definiciones.</p>
+                    <div class="card-buttons">
+                        <a href="pdf/sopa-letras-estudiante.html" class="btn btn-student" target="_blank">📋
+                            Estudiante</a>
+                        <a href="pdf/sopa-letras-docente.html" class="btn btn-teacher" target="_blank">📚 Docente</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Crucigrama -->
+            <div class="material-card">
+                <div class="card-header">
+                    <span class="emoji">✏️</span>
+                    <h2>Crucigrama Histórico</h2>
+                    <span class="badge">Básica 5-8°</span>
+                </div>
+                <div class="card-body">
+                    <p>7 palabras clave con pistas históricas sobre Parral. Incluye reflexión sobre patrimonio local.
+                    </p>
+                    <div class="card-buttons">
+                        <a href="pdf/crucigrama-estudiante.html" class="btn btn-student" target="_blank">📋
+                            Estudiante</a>
+                        <a href="pdf/crucigrama-docente.html" class="btn btn-teacher" target="_blank">📚 Docente</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trivia -->
+            <div class="material-card">
+                <div class="card-header">
+                    <span class="emoji">🎯</span>
+                    <h2>Trivia Patrimonial</h2>
+                    <span class="badge">Básica 5-8°</span>
+                </div>
+                <div class="card-body">
+                    <p>20 preguntas de opción múltiple sobre historia y patrimonio. Ideal para competencias grupales.
+                    </p>
+                    <div class="card-buttons">
+                        <a href="pdf/trivia-estudiante.html" class="btn btn-student" target="_blank">📋 Estudiante</a>
+                        <a href="pdf/trivia-docente.html" class="btn btn-teacher" target="_blank">📚 Docente</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ficha de Lectura -->
+            <div class="material-card">
+                <div class="card-header">
+                    <span class="emoji">📖</span>
+                    <h2>El Ferrocarril de Parral</h2>
+                    <span class="badge">Básica 5-8°</span>
+                </div>
+                <div class="card-body">
+                    <p>Lectura histórica sobre la llegada del tren con preguntas de comprensión y vocabulario.</p>
+                    <div class="card-buttons">
+                        <a href="pdf/ficha-ferrocarril-estudiante.html" class="btn btn-student" target="_blank">📋
+                            Estudiante</a>
+                        <a href="pdf/ficha-ferrocarril-docente.html" class="btn btn-teacher" target="_blank">📚
+                            Docente</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <h3>🖨️ ¿Cómo usar estos materiales?</h3>
+            <p>
+                1. Haz clic en el botón del material que necesitas<br>
+                2. Se abrirá en una nueva pestaña<br>
+                3. Pulsa el botón <strong>"Imprimir / Guardar PDF"</strong> en la página<br>
+                4. Elige "Guardar como PDF" o imprime directamente
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
