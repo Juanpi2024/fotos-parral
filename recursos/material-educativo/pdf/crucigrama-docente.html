@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pauta Docente - Crucigrama Histórico</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 15mm;
+            line-height: 1.5;
+        }
+
+        @media print {
+            body {
+                padding: 10mm;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #1565c0;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            color: #1565c0;
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+        }
+
+        .badge-teacher {
+            display: inline-block;
+            background: #ffecb3;
+            color: #f57c00;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            color: #1565c0;
+            font-size: 1.1rem;
+            border-bottom: 2px solid #1565c0;
+            padding-bottom: 5px;
+            margin-bottom: 12px;
+        }
+
+        .info-box {
+            background: #e3f2fd;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border-left: 4px solid #1565c0;
+            margin-bottom: 15px;
+        }
+
+        table.curriculum {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        table.curriculum th,
+        table.curriculum td {
+            border: 1px solid #ddd;
+            padding: 8px 10px;
+            text-align: left;
+        }
+
+        table.curriculum th {
+            background: #1565c0;
+            color: white;
+            width: 30%;
+        }
+
+        .crossword-grid table {
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        .crossword-grid td {
+            width: 30px;
+            height: 30px;
+            border: 2px solid #333;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .crossword-grid td.black {
+            background: #333;
+            border-color: #333;
+        }
+
+        .crossword-grid td.filled {
+            background: #c8e6c9;
+            color: #2e7d32;
+        }
+
+        .answers-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+
+        .answers-table th,
+        .answers-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+
+        .answers-table th {
+            background: #f5f5f5;
+            text-align: left;
+        }
+
+        .answers-table .answer {
+            background: #c8e6c9;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #2e7d32;
+        }
+
+        .tips {
+            background: #fff3e0;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ff9800;
+            margin-top: 10px;
+        }
+
+        .tips ul {
+            padding-left: 20px;
+            margin-top: 8px;
+        }
+
+        .tips li {
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+
+        .btn-print {
+            background: #1565c0;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .footer {
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+            font-size: 0.8rem;
+            color: #666;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn-print no-print" onclick="window.print()">🖨️ Imprimir Pauta Docente</button>
+
+    <div class="header">
+        <h1>📋 Pauta Docente - Crucigrama Histórico</h1>
+        <p style="color: #666;">Solucionario y Guía Pedagógica</p>
+        <span class="badge-teacher">SOLO PARA DOCENTES</span>
+    </div>
+
+    <div class="section">
+        <h2>📚 Información Curricular</h2>
+        <table class="curriculum">
+            <tr>
+                <th>Asignatura</th>
+                <td>Historia, Geografía y Ciencias Sociales</td>
+            </tr>
+            <tr>
+                <th>Nivel</th>
+                <td>5° a 8° Básico (10-13 años)</td>
+            </tr>
+            <tr>
+                <th>Eje</th>
+                <td>Historia / Formación Ciudadana</td>
+            </tr>
+            <tr>
+                <th>OA Relacionados</th>
+                <td>OA 1, OA 2, OA 7 - Reconocer patrimonio histórico local</td>
+            </tr>
+            <tr>
+                <th>Tiempo estimado</th>
+                <td>25-35 minutos</td>
+            </tr>
+            <tr>
+                <th>Habilidades</th>
+                <td>Pensamiento crítico, vocabulario, memoria histórica</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>✅ Solucionario - Crucigrama Resuelto</h2>
+        <div class="crossword-grid">
+            <table>
+                <tr>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="filled">N</td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                </tr>
+                <tr>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="filled">E</td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                </tr>
+                <tr>
+                    <td class="filled">E</td>
+                    <td class="filled">S</td>
+                    <td class="filled">T</td>
+                    <td class="filled">A</td>
+                    <td class="filled">C</td>
+                    <td class="filled">I</td>
+                    <td class="filled">Ó</td>
+                    <td class="filled">N</td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                </tr>
+                <tr>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="filled">U</td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                </tr>
+                <tr>
+                    <td class="filled">T</td>
+                    <td class="filled">E</td>
+                    <td class="filled">M</td>
+                    <td class="filled">P</td>
+                    <td class="filled">L</td>
+                    <td class="filled">O</td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                </tr>
+                <tr>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="filled">D</td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="filled">P</td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                </tr>
+                <tr>
+                    <td class="filled">C</td>
+                    <td class="filled">O</td>
+                    <td class="filled">L</td>
+                    <td class="filled">O</td>
+                    <td class="filled">N</td>
+                    <td class="filled">O</td>
+                    <td class="filled">S</td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                </tr>
+                <tr>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="filled">A</td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="filled">L</td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                </tr>
+                <tr>
+                    <td class="filled">F</td>
+                    <td class="filled">E</td>
+                    <td class="filled">R</td>
+                    <td class="filled">R</td>
+                    <td class="filled">O</td>
+                    <td class="filled">C</td>
+                    <td class="filled">A</td>
+                    <td class="filled">R</td>
+                    <td class="filled">R</td>
+                    <td class="filled">I</td>
+                </tr>
+                <tr>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="filled">A</td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                </tr>
+                <tr>
+                    <td class="filled">P</td>
+                    <td class="filled">A</td>
+                    <td class="filled">T</td>
+                    <td class="filled">R</td>
+                    <td class="filled">I</td>
+                    <td class="filled">M</td>
+                    <td class="filled">O</td>
+                    <td class="filled">N</td>
+                    <td class="filled">I</td>
+                    <td class="filled">O</td>
+                </tr>
+                <tr>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="filled">S</td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                    <td class="black"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📝 Respuestas con Contexto Histórico</h2>
+        <table class="answers-table">
+            <tr>
+                <th>N°</th>
+                <th>Dirección</th>
+                <th>Respuesta</th>
+                <th>Información Histórica</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Vertical ⬇️</td>
+                <td><span class="answer">NERUDA</span></td>
+                <td>Pablo Neruda (1904-1973). Nació en Parral. Premio Nobel 1971. Su casa natal se conserva como sitio
+                    histórico.</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Horizontal →</td>
+                <td><span class="answer">ESTACIÓN</span></td>
+                <td>La Estación de Ferrocarril de Parral fue construida en 1874. Símbolo del progreso y la conexión con
+                    Chile central.</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Horizontal →</td>
+                <td><span class="answer">TEMPLO</span></td>
+                <td>Templo San José, iglesia neogótica inaugurada en 1905, ubicada frente a la Plaza de Armas.</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Vertical ⬇️</td>
+                <td><span class="answer">PLAZA</span></td>
+                <td>Plaza de Armas de Parral, centro cívico desde la fundación de la ciudad. Punto de encuentro
+                    comunitario.</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Horizontal →</td>
+                <td><span class="answer">COLONOS</span></td>
+                <td>Familias italianas llegaron a San Manuel en 1904, aportando técnicas agrícolas y cultura
+                    vitivinícola.</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Horizontal →</td>
+                <td><span class="answer">FERROCARRIL</span></td>
+                <td>El ferrocarril llegó a Parral en 1874, transformando la economía local y facilitando el comercio.
+                </td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Horizontal →</td>
+                <td><span class="answer">PATRIMONIO</span></td>
+                <td>Conjunto de bienes culturales, históricos y naturales heredados que debemos preservar.</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>📊 Criterios de Evaluación</h2>
+        <div class="info-box">
+            <strong>Puntaje:</strong>
+            <ul style="margin-top: 8px; padding-left: 20px;">
+                <li>Cada palabra correcta: <strong>2 puntos</strong></li>
+                <li>Reflexión final completa y pertinente: <strong>2 puntos</strong></li>
+                <li>Puntaje total: <strong>16 puntos</strong></li>
+                <li>Nota 4.0 (60%): <strong>10 puntos</strong></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>💡 Sugerencias Pedagógicas</h2>
+        <div class="tips">
+            <strong>Estrategias de apoyo:</strong>
+            <ul>
+                <li>Permita uso de diccionario o material de apoyo para estudiantes con dificultades</li>
+                <li>Sugiera comenzar por las palabras más largas (FERROCARRIL, PATRIMONIO)</li>
+                <li>Trabaje en parejas para fomentar el aprendizaje colaborativo</li>
+                <li>Proyecte el solucionario para corrección grupal</li>
+            </ul>
+        </div>
+        <div class="tips" style="margin-top: 10px;">
+            <strong>Extensiones posibles:</strong>
+            <ul>
+                <li>Crear un glosario ilustrado con las palabras del crucigrama</li>
+                <li>Investigar en profundidad uno de los conceptos</li>
+                <li>Visitar virtualmente o presencialmente los sitios mencionados</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Archivos en Movimiento - Material Educativo Patrimonial de Parral</p>
+    </div>
+</body>
+
+</html>

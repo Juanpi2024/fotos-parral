@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pauta Docente - Sopa de Letras Patrimonial</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 15mm;
+            line-height: 1.5;
+        }
+
+        @media print {
+            body {
+                padding: 10mm;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .page-break {
+                page-break-before: always;
+            }
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #1565c0;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            color: #1565c0;
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+        }
+
+        .header .subtitle {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .badge-teacher {
+            display: inline-block;
+            background: #ffecb3;
+            color: #f57c00;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section h2 {
+            color: #1565c0;
+            font-size: 1.1rem;
+            border-bottom: 2px solid #1565c0;
+            padding-bottom: 5px;
+            margin-bottom: 12px;
+        }
+
+        .section h3 {
+            color: #333;
+            font-size: 1rem;
+            margin: 10px 0 8px;
+        }
+
+        .info-box {
+            background: #e3f2fd;
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid #1565c0;
+        }
+
+        .info-box strong {
+            color: #1565c0;
+        }
+
+        table.curriculum {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        table.curriculum th,
+        table.curriculum td {
+            border: 1px solid #ddd;
+            padding: 8px 10px;
+            text-align: left;
+        }
+
+        table.curriculum th {
+            background: #1565c0;
+            color: white;
+            font-weight: 600;
+        }
+
+        .grid-container {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .word-search {
+            flex: 1;
+        }
+
+        .word-search table {
+            border-collapse: collapse;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+            font-weight: bold;
+        }
+
+        .word-search td {
+            width: 24px;
+            height: 24px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+
+        .word-search td.highlight {
+            background: #c8e6c9;
+            color: #2e7d32;
+        }
+
+        .solutions {
+            width: 200px;
+        }
+
+        .solutions ul {
+            list-style: none;
+            font-size: 0.9rem;
+        }
+
+        .solutions li {
+            padding: 4px 0;
+            border-bottom: 1px dotted #ddd;
+        }
+
+        .solutions li em {
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        .answers-list {
+            padding-left: 20px;
+        }
+
+        .answers-list li {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .answers-list .answer {
+            background: #c8e6c9;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            color: #2e7d32;
+        }
+
+        .rubric {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+
+        .rubric th,
+        .rubric td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .rubric th {
+            background: #f5f5f5;
+        }
+
+        .tips {
+            background: #fff3e0;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ff9800;
+        }
+
+        .tips ul {
+            padding-left: 20px;
+            margin-top: 8px;
+        }
+
+        .tips li {
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+
+        .btn-print {
+            background: #1565c0;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .footer {
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+            font-size: 0.8rem;
+            color: #666;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn-print no-print" onclick="window.print()">🖨️ Imprimir Pauta Docente</button>
+
+    <div class="header">
+        <h1>📋 Pauta Docente - Sopa de Letras Patrimonial</h1>
+        <p class="subtitle">Solucionario y Guía Pedagógica</p>
+        <span class="badge-teacher">SOLO PARA DOCENTES</span>
+    </div>
+
+    <div class="section">
+        <h2>📚 Información Curricular</h2>
+        <table class="curriculum">
+            <tr>
+                <th>Asignatura</th>
+                <td>Historia, Geografía y Ciencias Sociales</td>
+            </tr>
+            <tr>
+                <th>Nivel</th>
+                <td>5° a 8° Básico (10-13 años)</td>
+            </tr>
+            <tr>
+                <th>Eje</th>
+                <td>Historia / Formación Ciudadana</td>
+            </tr>
+            <tr>
+                <th>OA Relacionados</th>
+                <td>
+                    <strong>5° Básico:</strong> OA 1 - Reconocer el proceso de adaptación y desarrollo de la sociedad
+                    colonial.<br>
+                    <strong>6° Básico:</strong> OA 2 - Comprender la organización del territorio nacional y sus
+                    características.<br>
+                    <strong>7° Básico:</strong> OA 7 - Analizar la construcción de la identidad local y nacional.
+                </td>
+            </tr>
+            <tr>
+                <th>Tiempo estimado</th>
+                <td>30-40 minutos</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>🎯 Objetivos de Aprendizaje</h2>
+        <div class="info-box">
+            <strong>Al finalizar esta actividad, los estudiantes serán capaces de:</strong>
+            <ul style="margin-top: 8px; padding-left: 20px;">
+                <li>Identificar vocabulario relacionado con el patrimonio histórico de Parral</li>
+                <li>Relacionar conceptos patrimoniales con sus definiciones</li>
+                <li>Valorar la importancia de la memoria histórica local</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>✅ Solucionario - Grilla Resuelta</h2>
+        <div class="grid-container">
+            <div class="word-search">
+                <table>
+                    <tr>
+                        <td class="highlight">F</td>
+                        <td class="highlight">E</td>
+                        <td class="highlight">R</td>
+                        <td class="highlight">R</td>
+                        <td class="highlight">O</td>
+                        <td class="highlight">C</td>
+                        <td class="highlight">A</td>
+                        <td class="highlight">R</td>
+                        <td class="highlight">R</td>
+                        <td class="highlight">I</td>
+                        <td class="highlight">L</td>
+                        <td>P</td>
+                        <td>A</td>
+                        <td>T</td>
+                        <td>R</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight">P</td>
+                        <td class="highlight">L</td>
+                        <td class="highlight">A</td>
+                        <td class="highlight">Z</td>
+                        <td class="highlight">A</td>
+                        <td>H</td>
+                        <td>K</td>
+                        <td>M</td>
+                        <td>N</td>
+                        <td>O</td>
+                        <td>P</td>
+                        <td>Q</td>
+                        <td>R</td>
+                        <td>S</td>
+                        <td>I</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight">E</td>
+                        <td class="highlight">S</td>
+                        <td class="highlight">T</td>
+                        <td class="highlight">A</td>
+                        <td class="highlight">C</td>
+                        <td class="highlight">I</td>
+                        <td class="highlight">O</td>
+                        <td class="highlight">N</td>
+                        <td>W</td>
+                        <td>X</td>
+                        <td>Y</td>
+                        <td>Z</td>
+                        <td>A</td>
+                        <td>B</td>
+                        <td>M</td>
+                    </tr>
+                    <tr>
+                        <td>C</td>
+                        <td>D</td>
+                        <td>E</td>
+                        <td>F</td>
+                        <td>G</td>
+                        <td>H</td>
+                        <td>I</td>
+                        <td>J</td>
+                        <td>K</td>
+                        <td>L</td>
+                        <td>M</td>
+                        <td>N</td>
+                        <td>O</td>
+                        <td>P</td>
+                        <td>O</td>
+                    </tr>
+                    <tr>
+                        <td>Q</td>
+                        <td class="highlight">N</td>
+                        <td class="highlight">E</td>
+                        <td class="highlight">R</td>
+                        <td class="highlight">U</td>
+                        <td class="highlight">D</td>
+                        <td class="highlight">A</td>
+                        <td>T</td>
+                        <td>U</td>
+                        <td>V</td>
+                        <td>W</td>
+                        <td>X</td>
+                        <td>Y</td>
+                        <td>Z</td>
+                        <td>N</td>
+                    </tr>
+                    <tr>
+                        <td>A</td>
+                        <td>B</td>
+                        <td>C</td>
+                        <td>D</td>
+                        <td>E</td>
+                        <td>F</td>
+                        <td>G</td>
+                        <td>H</td>
+                        <td>I</td>
+                        <td>J</td>
+                        <td>K</td>
+                        <td>L</td>
+                        <td>M</td>
+                        <td>N</td>
+                        <td>I</td>
+                    </tr>
+                    <tr>
+                        <td class="highlight">T</td>
+                        <td class="highlight">E</td>
+                        <td class="highlight">M</td>
+                        <td class="highlight">P</td>
+                        <td class="highlight">L</td>
+                        <td class="highlight">O</td>
+                        <td>P</td>
+                        <td>Q</td>
+                        <td>R</td>
+                        <td>S</td>
+                        <td>T</td>
+                        <td>U</td>
+                        <td>V</td>
+                        <td>W</td>
+                        <td>O</td>
+                    </tr>
+                    <tr>
+                        <td>X</td>
+                        <td>Y</td>
+                        <td>Z</td>
+                        <td class="highlight">C</td>
+                        <td class="highlight">O</td>
+                        <td class="highlight">L</td>
+                        <td class="highlight">O</td>
+                        <td class="highlight">N</td>
+                        <td class="highlight">O</td>
+                        <td class="highlight">S</td>
+                        <td>A</td>
+                        <td>B</td>
+                        <td>C</td>
+                        <td>D</td>
+                        <td>E</td>
+                    </tr>
+                    <tr>
+                        <td>F</td>
+                        <td>G</td>
+                        <td>H</td>
+                        <td>I</td>
+                        <td>J</td>
+                        <td>K</td>
+                        <td>L</td>
+                        <td>M</td>
+                        <td>N</td>
+                        <td>O</td>
+                        <td>P</td>
+                        <td>Q</td>
+                        <td>R</td>
+                        <td>S</td>
+                        <td>T</td>
+                    </tr>
+                    <tr>
+                        <td>U</td>
+                        <td>V</td>
+                        <td>W</td>
+                        <td>X</td>
+                        <td>Y</td>
+                        <td>Z</td>
+                        <td>A</td>
+                        <td>B</td>
+                        <td>C</td>
+                        <td>D</td>
+                        <td>E</td>
+                        <td>F</td>
+                        <td>G</td>
+                        <td>H</td>
+                        <td>I</td>
+                    </tr>
+                    <tr>
+                        <td>J</td>
+                        <td class="highlight">H</td>
+                        <td class="highlight">U</td>
+                        <td class="highlight">A</td>
+                        <td class="highlight">S</td>
+                        <td class="highlight">O</td>
+                        <td>L</td>
+                        <td>M</td>
+                        <td>N</td>
+                        <td>O</td>
+                        <td>P</td>
+                        <td>Q</td>
+                        <td>R</td>
+                        <td>S</td>
+                        <td>T</td>
+                    </tr>
+                    <tr>
+                        <td>U</td>
+                        <td>V</td>
+                        <td class="highlight">T</td>
+                        <td class="highlight">E</td>
+                        <td class="highlight">R</td>
+                        <td class="highlight">M</td>
+                        <td class="highlight">A</td>
+                        <td class="highlight">S</td>
+                        <td>C</td>
+                        <td>D</td>
+                        <td>E</td>
+                        <td>F</td>
+                        <td>G</td>
+                        <td>H</td>
+                        <td>I</td>
+                    </tr>
+                    <tr>
+                        <td>J</td>
+                        <td>K</td>
+                        <td>L</td>
+                        <td class="highlight">V</td>
+                        <td class="highlight">I</td>
+                        <td class="highlight">N</td>
+                        <td class="highlight">O</td>
+                        <td>N</td>
+                        <td>O</td>
+                        <td>P</td>
+                        <td>Q</td>
+                        <td>R</td>
+                        <td>S</td>
+                        <td>T</td>
+                        <td>U</td>
+                    </tr>
+                    <tr>
+                        <td>V</td>
+                        <td>W</td>
+                        <td>X</td>
+                        <td>Y</td>
+                        <td>Z</td>
+                        <td>A</td>
+                        <td>B</td>
+                        <td>C</td>
+                        <td class="highlight">T</td>
+                        <td class="highlight">R</td>
+                        <td class="highlight">I</td>
+                        <td class="highlight">G</td>
+                        <td class="highlight">O</td>
+                        <td>F</td>
+                        <td>G</td>
+                    </tr>
+                    <tr>
+                        <td>H</td>
+                        <td>I</td>
+                        <td>J</td>
+                        <td>K</td>
+                        <td>L</td>
+                        <td>M</td>
+                        <td>N</td>
+                        <td>O</td>
+                        <td>P</td>
+                        <td>Q</td>
+                        <td>R</td>
+                        <td>S</td>
+                        <td>T</td>
+                        <td>U</td>
+                        <td>V</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="solutions">
+                <h3>Ubicación de Palabras</h3>
+                <ul>
+                    <li><strong>FERROCARRIL</strong><br><em>Fila 1, horizontal →</em></li>
+                    <li><strong>PLAZA</strong><br><em>Fila 2, horizontal →</em></li>
+                    <li><strong>ESTACION</strong><br><em>Fila 3, horizontal →</em></li>
+                    <li><strong>NERUDA</strong><br><em>Fila 5, horizontal →</em></li>
+                    <li><strong>TEMPLO</strong><br><em>Fila 7, horizontal →</em></li>
+                    <li><strong>COLONOS</strong><br><em>Fila 8, horizontal →</em></li>
+                    <li><strong>HUASO</strong><br><em>Fila 11, horizontal →</em></li>
+                    <li><strong>TERMAS</strong><br><em>Fila 12, horizontal →</em></li>
+                    <li><strong>VINO</strong><br><em>Fila 13, horizontal →</em></li>
+                    <li><strong>TRIGO</strong><br><em>Fila 14, horizontal →</em></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📝 Respuestas - Relacionar Definiciones</h2>
+        <ol class="answers-list">
+            <li>Medio de transporte que conectó Parral con Chile central en 1874: <span
+                    class="answer">FERROCARRIL</span></li>
+            <li>Lugar central donde se reúne la comunidad, con fuente y árboles: <span class="answer">PLAZA</span></li>
+            <li>Edificio donde llegaban y salían los trenes: <span class="answer">ESTACIÓN</span></li>
+            <li>Poeta nacido en Parral, Premio Nobel de Literatura 1971: <span class="answer">NERUDA</span></li>
+            <li>Iglesia histórica de San José en el centro de Parral: <span class="answer">TEMPLO</span></li>
+            <li>Familias italianas que llegaron a San Manuel en 1904: <span class="answer">COLONOS</span></li>
+            <li>Hombre de campo chileno, símbolo de tradición rural: <span class="answer">HUASO</span></li>
+            <li>Aguas termales de Catillo, lugar de descanso tradicional: <span class="answer">TERMAS</span></li>
+            <li>Producto agrícola importante de la industria local: <span class="answer">VINO</span></li>
+            <li>Cereal cultivado por los colonos italianos: <span class="answer">TRIGO</span></li>
+        </ol>
+    </div>
+
+    <div class="section page-break">
+        <h2>📊 Rúbrica de Evaluación Sugerida</h2>
+        <table class="rubric">
+            <tr>
+                <th>Criterio</th>
+                <th>Logrado (3)</th>
+                <th>Por lograr (2)</th>
+                <th>Inicial (1)</th>
+            </tr>
+            <tr>
+                <td><strong>Identificación de palabras</strong></td>
+                <td>Encuentra 8-10 palabras</td>
+                <td>Encuentra 5-7 palabras</td>
+                <td>Encuentra menos de 5</td>
+            </tr>
+            <tr>
+                <td><strong>Relación con definiciones</strong></td>
+                <td>8-10 relaciones correctas</td>
+                <td>5-7 relaciones correctas</td>
+                <td>Menos de 5 correctas</td>
+            </tr>
+            <tr>
+                <td><strong>Tiempo de trabajo</strong></td>
+                <td>Termina en tiempo asignado</td>
+                <td>Necesita tiempo adicional</td>
+                <td>No logra completar</td>
+            </tr>
+        </table>
+        <p style="margin-top: 10px; font-size: 0.85rem;"><strong>Puntaje máximo:</strong> 9 puntos | <strong>Nota
+                4.0:</strong> 5 puntos | <strong>Exigencia:</strong> 60%</p>
+    </div>
+
+    <div class="section">
+        <h2>💡 Sugerencias Pedagógicas</h2>
+        <div class="tips">
+            <strong>Antes de la actividad:</strong>
+            <ul>
+                <li>Contextualice brevemente la historia de Parral (5 min)</li>
+                <li>Pregunte qué lugares o personajes conocen los estudiantes</li>
+                <li>Explique las instrucciones y el tiempo disponible</li>
+            </ul>
+        </div>
+        <div class="tips" style="margin-top: 10px;">
+            <strong>Durante la actividad:</strong>
+            <ul>
+                <li>Permita trabajo individual o en parejas</li>
+                <li>Circule por la sala apoyando a quienes tengan dificultades</li>
+                <li>Sugiera buscar primero las palabras más largas (FERROCARRIL)</li>
+            </ul>
+        </div>
+        <div class="tips" style="margin-top: 10px;">
+            <strong>Después de la actividad:</strong>
+            <ul>
+                <li>Corrija en conjunto proyectando el solucionario</li>
+                <li>Profundice en 2-3 conceptos (ej: el ferrocarril, Neruda)</li>
+                <li>Pregunte: ¿Qué otros lugares de Parral conocen?</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🔗 Actividades Complementarias</h2>
+        <div class="info-box">
+            <ul style="padding-left: 20px;">
+                <li><strong>Investigación:</strong> Cada estudiante investiga una palabra y presenta al curso</li>
+                <li><strong>Entrevista:</strong> Preguntar a abuelos/familiares sobre estos lugares</li>
+                <li><strong>Visita:</strong> Recorrido por sitios patrimoniales mencionados</li>
+                <li><strong>Creación:</strong> Estudiantes crean su propia sopa de letras con otros lugares</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Archivos en Movimiento - Material Educativo Patrimonial de Parral</p>
+        <p>Este material es de uso exclusivo docente. No entregar a estudiantes.</p>
+    </div>
+</body>
+
+</html>

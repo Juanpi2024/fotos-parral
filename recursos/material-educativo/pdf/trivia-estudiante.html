@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Patrimonial - Parral</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 12mm;
+            line-height: 1.4;
+            font-size: 0.9rem;
+        }
+
+        @media print {
+            body {
+                padding: 8mm;
+                font-size: 0.85rem;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #ef6c00;
+            padding-bottom: 12px;
+            margin-bottom: 15px;
+        }
+
+        .header h1 {
+            color: #ef6c00;
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #fff3e0;
+            color: #ef6c00;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        .instructions {
+            background: #f5f5f5;
+            padding: 10px 12px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            font-size: 0.85rem;
+        }
+
+        .questions {
+            columns: 2;
+            column-gap: 25px;
+        }
+
+        .question {
+            break-inside: avoid;
+            margin-bottom: 12px;
+            padding: 8px 10px;
+            background: #fafafa;
+            border-radius: 6px;
+            border-left: 3px solid #ef6c00;
+        }
+
+        .question-text {
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #333;
+        }
+
+        .question-number {
+            color: #ef6c00;
+            font-weight: bold;
+        }
+
+        .options {
+            padding-left: 15px;
+        }
+
+        .options label {
+            display: block;
+            margin: 3px 0;
+            cursor: pointer;
+        }
+
+        .options input[type="radio"] {
+            margin-right: 6px;
+        }
+
+        .answer-sheet {
+            margin-top: 20px;
+            padding: 15px;
+            background: #fff3e0;
+            border-radius: 8px;
+        }
+
+        .answer-sheet h3 {
+            color: #ef6c00;
+            margin-bottom: 10px;
+        }
+
+        .answer-grid {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 8px;
+        }
+
+        .answer-box {
+            border: 1px solid #ef6c00;
+            padding: 5px;
+            text-align: center;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .answer-box span {
+            display: block;
+            font-weight: bold;
+            color: #ef6c00;
+        }
+
+        .footer {
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: #666;
+        }
+
+        .btn-print {
+            background: #ef6c00;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 15px auto;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn-print no-print" onclick="window.print()">🖨️ Imprimir / Guardar PDF</button>
+
+    <div class="header">
+        <h1>🎯 Trivia Patrimonial de Parral</h1>
+        <p style="color: #666; font-size: 0.9rem;">20 Preguntas sobre Historia y Patrimonio</p>
+        <span class="badge">Básica 5° a 8° (10-13 años)</span>
+    </div>
+
+    <div class="instructions">
+        <strong>Instrucciones:</strong> Lee cada pregunta y marca con una X la alternativa correcta. Luego, anota tu
+        respuesta en la hoja de respuestas al final.
+    </div>
+
+    <div class="questions">
+        <div class="question">
+            <p class="question-text"><span class="question-number">1.</span> ¿En qué año llegó el ferrocarril a Parral?
+            </p>
+            <div class="options">
+                <label><input type="radio" name="q1"> a) 1850</label>
+                <label><input type="radio" name="q1"> b) 1874</label>
+                <label><input type="radio" name="q1"> c) 1900</label>
+                <label><input type="radio" name="q1"> d) 1920</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p class="question-text"><span class="question-number">2.</span> ¿Quién es el poeta Nobel nacido en Parral?
+            </p>
+            <div class="options">
+                <label><input type="radio" name="q2"> a) Gabriela Mistral</label>
+                <label><input type="radio" name="q2"> b) Pablo Neruda</label>
+                <label><input type="radio" name="q2"> c) Vicente Huidobro</label>
+                <label><input type="radio" name="q2"> d) Nicanor Parra</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p class="question-text"><span class="question-number">3.</span> ¿De qué país vinieron los colonos de San
+                Manuel?</p>
+            <div class="options">
+                <label><input type="radio" name="q3"> a) España</label>
+                <label><input type="radio" name="q3"> b) Alemania</label>
+                <label><input type="radio" name="q3"> c) Italia</label>
+                <label><input type="radio" name="q3"> d) Francia</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p class="question-text"><span class="question-number">4.</span> ¿Cómo se llama la iglesia histórica frente
+                a la plaza?</p>
+            <div class="options">
+                <label><input type="radio" name="q4"> a) Catedral de Parral</label>
+                <label><input type="radio" name="q4"> b) Templo San José</label>
+                <label><input type="radio" name="q4"> c) Iglesia La Merced</label>
+                <label><input type="radio" name="q4"> d) Parroquia San Pedro</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p class="question-text"><span class="question-number">5.</span> ¿Qué son las Termas de Catillo?</p>
+            <div class="options">
+                <label><input type="radio" name="q5"> a) Un río</label>
+                <label><input type="radio" name="q5"> b) Aguas termales naturales</label>
+                <label><input type="radio" name="q5"> c) Una montaña</label>
+                <label><input type="radio" name="q5"> d) Un parque nacional</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p class="question-text"><span class="question-number">6.</span> ¿En qué año llegaron los colonos italianos
+                a San Manuel?</p>
+            <div class="options">
+                <label><input type="radio" name="q6"> a) 1874</label>
+                <label><input type="radio" name="q6"> b) 1890</label>
+                <label><input type="radio" name="q6"> c) 1904</label>
+                <label><input type="radio" name="q6"> d) 1920</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p class="question-text"><span class="question-number">7.</span> ¿Qué cultivo trajeron principalmente los
+                colonos italianos?</p>
+            <div class="options">
+                <label><input type="radio" name="q7"> a) Arroz</label>
+                <label><input type="radio" name="q7"> b) Trigo y vides</label>
+                <label><input type="radio" name="q7"> c) Maíz</label>
+                <label><input type="radio" name="q7"> d) Papas</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p class="question-text"><span class="question-number">8.</span> ¿Qué es el patrimonio cultural?</p>
+            <div class="options">
+                <label><input type="radio" name="q8"> a) Solo edificios antiguos</label>
+                <label><input type="radio" name="q8"> b) Bienes heredados del pasado</label>
+                <label><input type="radio" name="q8"> c) Solo tradiciones orales</label>
+                <label><input type="radio" name="q8"> d) Objetos de museo</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p class="question-text"><span class="question-number">9.</span> ¿Cómo se llama el lugar central de la
+                ciudad con fuente?</p>
+            <div class="options">
+                <label><input type="radio" name="q9"> a) Parque Central</label>
+                <label><input type="radio" name="q9"> b) Plaza de Armas</label>
+                <label><input type="radio" name="q9"> c) Jardín Municipal</label>
+                <label><input type="radio" name="q9"> d) Paseo Público</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p class="question-text"><span class="question-number">10.</span> ¿Qué función cumplía la estación de
+                trenes?</p>
+            <div class="options">
+                <label><input type="radio" name="q10"> a) Solo pasajeros</label>
+                <label><input type="radio" name="q10"> b) Solo carga</label>
+                <label><input type="radio" name="q10"> c) Pasajeros y comercio</label>
+                <label><input type="radio" name="q10"> d) Centro cultural</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p class="question-text"><span class="question-number">11.</span> ¿Qué nombre real tenía Pablo Neruda?</p>
+            <div class="options">
+                <label><input type="radio" name="q11"> a) Ricardo Reyes</label>
+                <label><input type="radio" name="q11"> b) Neftalí Reyes</label>
+                <label><input type="radio" name="q11"> c) Pablo Reyes</label>
+                <label><input type="radio" name="q11"> d) Carlos Neruda</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p class="question-text"><span class="question-number">12.</span> ¿Qué desastre natural afectó a Parral en
+                1939?</p>
+            <div class="options">
+                <label><input type="radio" name="q12"> a) Inundación</label>
+                <label><input type="radio" name="q12"> b) Terremoto</label>
+                <label><input type="radio" name="q12"> c) Incendio</label>
+                <label><input type="radio" name="q12"> d) Sequía</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p class="question-text"><span class="question-number">13.</span> ¿Qué significa el nombre "huaso"?</p>
+            <div class="options">
+                <label><input type="radio" name="q13"> a) Agricultor urbano</label>
+                <label><input type="radio" name="q13"> b) Hombre de campo chileno</label>
+                <label><input type="radio" name="q13"> c) Comerciante</label>
+                <label><input type="radio" name="q13"> d) Minero</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p class="question-text"><span class="question-number">14.</span> ¿En qué región se encuentra Parral?</p>
+            <div class="options">
+                <label><input type="radio" name="q14"> a) O'Higgins</label>
+                <label><input type="radio" name="q14"> b) Maule</label>
+                <label><input type="radio" name="q14"> c) Ñuble</label>
+                <label><input type="radio" name="q14"> d) Biobío</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p class="question-text"><span class="question-number">15.</span> ¿Por qué es importante preservar el
+                patrimonio?</p>
+            <div class="options">
+                <label><input type="radio" name="q15"> a) Solo por turismo</label>
+                <label><input type="radio" name="q15"> b) Para mantener nuestra identidad</label>
+                <label><input type="radio" name="q15"> c) Por obligación legal</label>
+                <label><input type="radio" name="q15"> d) Para vender edificios</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p class="question-text"><span class="question-number">16.</span> ¿Qué tipo de transporte era el ferrocarril
+                de Parral?</p>
+            <div class="options">
+                <label><input type="radio" name="q16"> a) Eléctrico</label>
+                <label><input type="radio" name="q16"> b) A vapor</label>
+                <label><input type="radio" name="q16"> c) A caballo</label>
+                <label><input type="radio" name="q16"> d) Diesel</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p class="question-text"><span class="question-number">17.</span> ¿Qué estilo arquitectónico tiene el Templo
+                San José?</p>
+            <div class="options">
+                <label><input type="radio" name="q17"> a) Colonial</label>
+                <label><input type="radio" name="q17"> b) Neogótico</label>
+                <label><input type="radio" name="q17"> c) Barroco</label>
+                <label><input type="radio" name="q17"> d) Moderno</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p class="question-text"><span class="question-number">18.</span> ¿Qué producto agrícola es tradicional en
+                Parral?</p>
+            <div class="options">
+                <label><input type="radio" name="q18"> a) Cobre</label>
+                <label><input type="radio" name="q18"> b) Vino</label>
+                <label><input type="radio" name="q18"> c) Pescado</label>
+                <label><input type="radio" name="q18"> d) Carbón</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p class="question-text"><span class="question-number">19.</span> ¿Qué año nació Pablo Neruda en Parral?</p>
+            <div class="options">
+                <label><input type="radio" name="q19"> a) 1900</label>
+                <label><input type="radio" name="q19"> b) 1904</label>
+                <label><input type="radio" name="q19"> c) 1910</label>
+                <label><input type="radio" name="q19"> d) 1920</label>
+            </div>
+        </div>
+
+        <div class="question">
+            <p class="question-text"><span class="question-number">20.</span> ¿Qué es la historia oral?</p>
+            <div class="options">
+                <label><input type="radio" name="q20"> a) Libros de historia</label>
+                <label><input type="radio" name="q20"> b) Relatos transmitidos verbalmente</label>
+                <label><input type="radio" name="q20"> c) Documentos oficiales</label>
+                <label><input type="radio" name="q20"> d) Películas históricas</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="answer-sheet">
+        <h3>📝 Hoja de Respuestas</h3>
+        <div class="answer-grid">
+            <div class="answer-box"><span>1</span>___</div>
+            <div class="answer-box"><span>2</span>___</div>
+            <div class="answer-box"><span>3</span>___</div>
+            <div class="answer-box"><span>4</span>___</div>
+            <div class="answer-box"><span>5</span>___</div>
+            <div class="answer-box"><span>6</span>___</div>
+            <div class="answer-box"><span>7</span>___</div>
+            <div class="answer-box"><span>8</span>___</div>
+            <div class="answer-box"><span>9</span>___</div>
+            <div class="answer-box"><span>10</span>___</div>
+            <div class="answer-box"><span>11</span>___</div>
+            <div class="answer-box"><span>12</span>___</div>
+            <div class="answer-box"><span>13</span>___</div>
+            <div class="answer-box"><span>14</span>___</div>
+            <div class="answer-box"><span>15</span>___</div>
+            <div class="answer-box"><span>16</span>___</div>
+            <div class="answer-box"><span>17</span>___</div>
+            <div class="answer-box"><span>18</span>___</div>
+            <div class="answer-box"><span>19</span>___</div>
+            <div class="answer-box"><span>20</span>___</div>
+        </div>
+        <p style="margin-top: 10px; font-size: 0.8rem;">Puntaje: ______ / 20</p>
+    </div>
+
+    <div class="footer">
+        <span>Nombre: _________________________ Curso: _______</span>
+        <span>Archivos en Movimiento - Parral</span>
+    </div>
+</body>
+
+</html>

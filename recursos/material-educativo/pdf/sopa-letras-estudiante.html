@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sopa de Letras Patrimonial - Parral</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 15mm;
+            line-height: 1.4;
+        }
+
+        @media print {
+            body {
+                padding: 10mm;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #2c5530;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            color: #2c5530;
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+
+        .header .subtitle {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        .instructions {
+            background: #f5f5f5;
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        .grid-container {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+
+        .word-search {
+            flex: 1;
+        }
+
+        .word-search table {
+            border-collapse: collapse;
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .word-search td {
+            width: 28px;
+            height: 28px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+
+        .word-list {
+            width: 180px;
+        }
+
+        .word-list h3 {
+            color: #2c5530;
+            margin-bottom: 10px;
+            font-size: 1rem;
+            border-bottom: 2px solid #2c5530;
+            padding-bottom: 5px;
+        }
+
+        .word-list ul {
+            list-style: none;
+        }
+
+        .word-list li {
+            padding: 6px 0;
+            border-bottom: 1px dotted #ddd;
+            font-size: 0.95rem;
+        }
+
+        .word-list li::before {
+            content: "□ ";
+            color: #2c5530;
+        }
+
+        .definitions {
+            margin-top: 25px;
+        }
+
+        .definitions h3 {
+            color: #2c5530;
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+
+        .definitions ol {
+            padding-left: 20px;
+        }
+
+        .definitions li {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .definitions .answer-line {
+            display: inline-block;
+            width: 150px;
+            border-bottom: 1px solid #333;
+            margin-left: 5px;
+        }
+
+        .footer {
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .btn-print {
+            background: #2c5530;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .btn-print:hover {
+            background: #1e3d22;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn-print no-print" onclick="window.print()">🖨️ Imprimir / Guardar PDF</button>
+
+    <div class="header">
+        <h1>🔤 Sopa de Letras Patrimonial</h1>
+        <p class="subtitle">Patrimonio Histórico de Parral</p>
+        <span class="badge">Básica 5° a 8° (10-13 años)</span>
+    </div>
+
+    <div class="instructions">
+        <strong>Instrucciones:</strong> Encuentra las 10 palabras escondidas en la grilla. Las palabras pueden estar en
+        horizontal, vertical o diagonal. Luego, relaciona cada palabra con su definición.
+    </div>
+
+    <div class="grid-container">
+        <div class="word-search">
+            <table>
+                <tr>
+                    <td>F</td>
+                    <td>E</td>
+                    <td>R</td>
+                    <td>R</td>
+                    <td>O</td>
+                    <td>C</td>
+                    <td>A</td>
+                    <td>R</td>
+                    <td>R</td>
+                    <td>I</td>
+                    <td>L</td>
+                    <td>P</td>
+                    <td>A</td>
+                    <td>T</td>
+                    <td>R</td>
+                </tr>
+                <tr>
+                    <td>P</td>
+                    <td>L</td>
+                    <td>A</td>
+                    <td>Z</td>
+                    <td>A</td>
+                    <td>H</td>
+                    <td>K</td>
+                    <td>M</td>
+                    <td>N</td>
+                    <td>O</td>
+                    <td>P</td>
+                    <td>Q</td>
+                    <td>R</td>
+                    <td>S</td>
+                    <td>I</td>
+                </tr>
+                <tr>
+                    <td>E</td>
+                    <td>S</td>
+                    <td>T</td>
+                    <td>A</td>
+                    <td>C</td>
+                    <td>I</td>
+                    <td>O</td>
+                    <td>N</td>
+                    <td>W</td>
+                    <td>X</td>
+                    <td>Y</td>
+                    <td>Z</td>
+                    <td>A</td>
+                    <td>B</td>
+                    <td>M</td>
+                </tr>
+                <tr>
+                    <td>C</td>
+                    <td>D</td>
+                    <td>E</td>
+                    <td>F</td>
+                    <td>G</td>
+                    <td>H</td>
+                    <td>I</td>
+                    <td>J</td>
+                    <td>K</td>
+                    <td>L</td>
+                    <td>M</td>
+                    <td>N</td>
+                    <td>O</td>
+                    <td>P</td>
+                    <td>O</td>
+                </tr>
+                <tr>
+                    <td>Q</td>
+                    <td>N</td>
+                    <td>E</td>
+                    <td>R</td>
+                    <td>U</td>
+                    <td>D</td>
+                    <td>A</td>
+                    <td>T</td>
+                    <td>U</td>
+                    <td>V</td>
+                    <td>W</td>
+                    <td>X</td>
+                    <td>Y</td>
+                    <td>Z</td>
+                    <td>N</td>
+                </tr>
+                <tr>
+                    <td>A</td>
+                    <td>B</td>
+                    <td>C</td>
+                    <td>D</td>
+                    <td>E</td>
+                    <td>F</td>
+                    <td>G</td>
+                    <td>H</td>
+                    <td>I</td>
+                    <td>J</td>
+                    <td>K</td>
+                    <td>L</td>
+                    <td>M</td>
+                    <td>N</td>
+                    <td>I</td>
+                </tr>
+                <tr>
+                    <td>T</td>
+                    <td>E</td>
+                    <td>M</td>
+                    <td>P</td>
+                    <td>L</td>
+                    <td>O</td>
+                    <td>P</td>
+                    <td>Q</td>
+                    <td>R</td>
+                    <td>S</td>
+                    <td>T</td>
+                    <td>U</td>
+                    <td>V</td>
+                    <td>W</td>
+                    <td>O</td>
+                </tr>
+                <tr>
+                    <td>X</td>
+                    <td>Y</td>
+                    <td>Z</td>
+                    <td>C</td>
+                    <td>O</td>
+                    <td>L</td>
+                    <td>O</td>
+                    <td>N</td>
+                    <td>O</td>
+                    <td>S</td>
+                    <td>A</td>
+                    <td>B</td>
+                    <td>C</td>
+                    <td>D</td>
+                    <td>E</td>
+                </tr>
+                <tr>
+                    <td>F</td>
+                    <td>G</td>
+                    <td>H</td>
+                    <td>I</td>
+                    <td>J</td>
+                    <td>K</td>
+                    <td>L</td>
+                    <td>M</td>
+                    <td>N</td>
+                    <td>O</td>
+                    <td>P</td>
+                    <td>Q</td>
+                    <td>R</td>
+                    <td>S</td>
+                    <td>T</td>
+                </tr>
+                <tr>
+                    <td>U</td>
+                    <td>V</td>
+                    <td>W</td>
+                    <td>X</td>
+                    <td>Y</td>
+                    <td>Z</td>
+                    <td>A</td>
+                    <td>B</td>
+                    <td>C</td>
+                    <td>D</td>
+                    <td>E</td>
+                    <td>F</td>
+                    <td>G</td>
+                    <td>H</td>
+                    <td>I</td>
+                </tr>
+                <tr>
+                    <td>J</td>
+                    <td>H</td>
+                    <td>U</td>
+                    <td>A</td>
+                    <td>S</td>
+                    <td>O</td>
+                    <td>L</td>
+                    <td>M</td>
+                    <td>N</td>
+                    <td>O</td>
+                    <td>P</td>
+                    <td>Q</td>
+                    <td>R</td>
+                    <td>S</td>
+                    <td>T</td>
+                </tr>
+                <tr>
+                    <td>U</td>
+                    <td>V</td>
+                    <td>T</td>
+                    <td>E</td>
+                    <td>R</td>
+                    <td>M</td>
+                    <td>A</td>
+                    <td>S</td>
+                    <td>C</td>
+                    <td>D</td>
+                    <td>E</td>
+                    <td>F</td>
+                    <td>G</td>
+                    <td>H</td>
+                    <td>I</td>
+                </tr>
+                <tr>
+                    <td>J</td>
+                    <td>K</td>
+                    <td>L</td>
+                    <td>V</td>
+                    <td>I</td>
+                    <td>N</td>
+                    <td>O</td>
+                    <td>N</td>
+                    <td>O</td>
+                    <td>P</td>
+                    <td>Q</td>
+                    <td>R</td>
+                    <td>S</td>
+                    <td>T</td>
+                    <td>U</td>
+                </tr>
+                <tr>
+                    <td>V</td>
+                    <td>W</td>
+                    <td>X</td>
+                    <td>Y</td>
+                    <td>Z</td>
+                    <td>A</td>
+                    <td>B</td>
+                    <td>C</td>
+                    <td>T</td>
+                    <td>R</td>
+                    <td>I</td>
+                    <td>G</td>
+                    <td>O</td>
+                    <td>F</td>
+                    <td>G</td>
+                </tr>
+                <tr>
+                    <td>H</td>
+                    <td>I</td>
+                    <td>J</td>
+                    <td>K</td>
+                    <td>L</td>
+                    <td>M</td>
+                    <td>N</td>
+                    <td>O</td>
+                    <td>P</td>
+                    <td>Q</td>
+                    <td>R</td>
+                    <td>S</td>
+                    <td>T</td>
+                    <td>U</td>
+                    <td>V</td>
+                </tr>
+            </table>
+        </div>
+        <div class="word-list">
+            <h3>Palabras a Encontrar</h3>
+            <ul>
+                <li>FERROCARRIL</li>
+                <li>PLAZA</li>
+                <li>ESTACION</li>
+                <li>NERUDA</li>
+                <li>TEMPLO</li>
+                <li>COLONOS</li>
+                <li>HUASO</li>
+                <li>TERMAS</li>
+                <li>VINO</li>
+                <li>TRIGO</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="definitions">
+        <h3>📝 Relaciona cada palabra con su significado:</h3>
+        <ol>
+            <li>Medio de transporte que conectó Parral con Chile central en 1874: <span class="answer-line"></span></li>
+            <li>Lugar central donde se reúne la comunidad, con fuente y árboles: <span class="answer-line"></span></li>
+            <li>Edificio donde llegaban y salían los trenes: <span class="answer-line"></span></li>
+            <li>Poeta nacido en Parral, Premio Nobel de Literatura 1971: <span class="answer-line"></span></li>
+            <li>Iglesia histórica de San José en el centro de Parral: <span class="answer-line"></span></li>
+            <li>Familias italianas que llegaron a San Manuel en 1904: <span class="answer-line"></span></li>
+            <li>Hombre de campo chileno, símbolo de tradición rural: <span class="answer-line"></span></li>
+            <li>Aguas termales de Catillo, lugar de descanso tradicional: <span class="answer-line"></span></li>
+            <li>Producto agrícola importante de la industria local: <span class="answer-line"></span></li>
+            <li>Cereal cultivado por los colonos italianos: <span class="answer-line"></span></li>
+        </ol>
+    </div>
+
+    <div class="footer">
+        <span>Nombre: _________________________ Curso: _______</span>
+        <span>Archivos en Movimiento - Parral</span>
+    </div>
+</body>
+
+</html>
