@@ -70,6 +70,11 @@
                 <p>Material visual informativo y educativo.</p>
                 <div class="galeria-placeholder" style="height: 150px; margin-top: 1rem;">📊</div>
             </div>
+            <div id="cardMaterialEducativo" class="card-testimonio" style="cursor: pointer;">
+                <h3>Fichas y Juegos</h3>
+                <p>Material didáctico listo para imprimir.</p>
+                <div class="galeria-placeholder" style="height: 150px; margin-top: 1rem;">📝</div>
+            </div>
         </div>
     </section>
 
@@ -400,6 +405,122 @@
                     </div>
                     <a href="images/colorear/colorear-20.png" download="Colorear_Inundacion_Parral.png"
                         class="btn-download-sm">Descargar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Material Educativo (Fichas y Juegos) -->
+    <div id="materialEducativoModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('materialEducativoModal')">&times;</span>
+            <h2
+                style="font-family: 'Playfair Display', serif; color: var(--primary-color); margin-bottom: 2rem; text-align: center;">
+                📝 Material Educativo
+            </h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem; color: var(--text-color);">
+                Infografías, fichas pedagógicas y juegos educativos listos para imprimir y usar en el aula.
+            </p>
+
+            <div class="modal-grid" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem;">
+                <!-- Infografía: Historia de Parral -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: 'Merriweather', serif; color: var(--primary-color); margin-bottom: 0.5rem; font-size: 0.9rem; text-align: center;">
+                        📊 Historia de Parral
+                    </h4>
+                    <div class="colorear-img-container">
+                        <img src="recursos/material-educativo/infografia-historia-parral.png"
+                            alt="Infografía Historia de Parral" class="colorear-img" loading="lazy" width="400"
+                            height="280">
+                    </div>
+                    <a href="recursos/material-educativo/infografia-historia-parral.png"
+                        download="Infografia_Historia_Parral.png" class="btn-download-sm">Descargar</a>
+                </div>
+
+                <!-- Infografía: Personajes Ilustres -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: 'Merriweather', serif; color: var(--primary-color); margin-bottom: 0.5rem; font-size: 0.9rem; text-align: center;">
+                        📊 Personajes Ilustres
+                    </h4>
+                    <div class="colorear-img-container">
+                        <img src="recursos/material-educativo/infografia-personajes.png"
+                            alt="Infografía Personajes Ilustres" class="colorear-img" loading="lazy" width="400"
+                            height="280">
+                    </div>
+                    <a href="recursos/material-educativo/infografia-personajes.png"
+                        download="Infografia_Personajes_Parral.png" class="btn-download-sm">Descargar</a>
+                </div>
+
+                <!-- Infografía: Arquitectura Patrimonial -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: 'Merriweather', serif; color: var(--primary-color); margin-bottom: 0.5rem; font-size: 0.9rem; text-align: center;">
+                        📊 Arquitectura Patrimonial
+                    </h4>
+                    <div class="colorear-img-container">
+                        <img src="recursos/material-educativo/infografia-arquitectura.png" alt="Infografía Arquitectura"
+                            class="colorear-img" loading="lazy" width="400" height="280">
+                    </div>
+                    <a href="recursos/material-educativo/infografia-arquitectura.png"
+                        download="Infografia_Arquitectura_Parral.png" class="btn-download-sm">Descargar</a>
+                </div>
+
+                <!-- Ficha: El Ferrocarril -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: 'Merriweather', serif; color: var(--primary-color); margin-bottom: 0.5rem; font-size: 0.9rem; text-align: center;">
+                        📝 El Ferrocarril de Parral
+                    </h4>
+                    <div class="colorear-img-container">
+                        <img src="recursos/material-educativo/ficha-ferrocarril.png" alt="Ficha Pedagógica Ferrocarril"
+                            class="colorear-img" loading="lazy" width="400" height="280">
+                    </div>
+                    <a href="recursos/material-educativo/ficha-ferrocarril.png" download="Ficha_Ferrocarril_Parral.png"
+                        class="btn-download-sm">Descargar</a>
+                </div>
+
+                <!-- Ficha: Colonos Italianos -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: 'Merriweather', serif; color: var(--primary-color); margin-bottom: 0.5rem; font-size: 0.9rem; text-align: center;">
+                        📝 Colonos Italianos
+                    </h4>
+                    <div class="colorear-img-container">
+                        <img src="recursos/material-educativo/ficha-colonos-italianos.png"
+                            alt="Ficha Pedagógica Colonos" class="colorear-img" loading="lazy" width="400" height="280">
+                    </div>
+                    <a href="recursos/material-educativo/ficha-colonos-italianos.png"
+                        download="Ficha_Colonos_Italianos_Parral.png" class="btn-download-sm">Descargar</a>
+                </div>
+
+                <!-- Juego: Memorice -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: 'Merriweather', serif; color: var(--primary-color); margin-bottom: 0.5rem; font-size: 0.9rem; text-align: center;">
+                        🎮 Memorice Patrimonial
+                    </h4>
+                    <div class="colorear-img-container">
+                        <img src="recursos/material-educativo/memorice-patrimonial.png" alt="Memorice Patrimonial"
+                            class="colorear-img" loading="lazy" width="400" height="280">
+                    </div>
+                    <a href="recursos/material-educativo/memorice-patrimonial.png"
+                        download="Memorice_Patrimonial_Parral.png" class="btn-download-sm">Descargar</a>
+                </div>
+
+                <!-- Juego: Trivia -->
+                <div class="colorear-item">
+                    <h4
+                        style="font-family: 'Merriweather', serif; color: var(--primary-color); margin-bottom: 0.5rem; font-size: 0.9rem; text-align: center;">
+                        🎮 Trivia Patrimonial
+                    </h4>
+                    <div class="colorear-img-container">
+                        <img src="recursos/material-educativo/trivia-patrimonial.png" alt="Trivia Patrimonial"
+                            class="colorear-img" loading="lazy" width="400" height="280">
+                    </div>
+                    <a href="recursos/material-educativo/trivia-patrimonial.png"
+                        download="Trivia_Patrimonial_Parral.png" class="btn-download-sm">Descargar</a>
                 </div>
             </div>
         </div>
@@ -1105,6 +1226,27 @@
                 document.body.style.overflow = '';
             }, 300);
         }
+
+        // Card click handlers to open modals
+        document.getElementById('cardVideos').addEventListener('click', function () {
+            openModal('videosModal');
+        });
+
+        document.getElementById('cardPresentaciones').addEventListener('click', function () {
+            openModal('presentacionesModal');
+        });
+
+        document.getElementById('cardColorear').addEventListener('click', function () {
+            openModal('colorearModal');
+        });
+
+        document.getElementById('cardInfografias').addEventListener('click', function () {
+            openModal('infografiasModal');
+        });
+
+        document.getElementById('cardMaterialEducativo').addEventListener('click', function () {
+            openModal('materialEducativoModal');
+        });
 
         // Mobile Menu Toggle
         document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
