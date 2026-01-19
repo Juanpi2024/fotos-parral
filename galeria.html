@@ -490,28 +490,51 @@
                 </div>
             </div>
 
-            <!-- Before/After Comparison Section (MIDDLE) -->
-            <div style="margin: 2.5rem 0;">
+            <!-- Floating Compare Button -->
+            <button type="button" class="compare-mode-btn" onclick="toggleCompareMode('avenidaModal')">
+                🔄 Modo Comparación
+            </button>
+
+            <!-- Comparison Sliders Section (hidden by default) -->
+            <div class="compare-section" style="display: none;">
                 <h3
-                    style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; text-align: center;">
-                    🔄 Compara: Original vs Coloreada
+                    style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1.5rem; text-align: center;">
+                    🔄 Desliza para Comparar Antes/Después
                 </h3>
-                <p style="text-align: center; color: var(--text-light); margin-bottom: 1rem; font-size: 0.9rem;">
-                    Arrastra el control para comparar →
-                </p>
-                <div class="before-after-container" id="beforeAfterContainer">
-                    <div class="before-after-wrapper">
-                        <!-- After Image (Coloreada) - Background -->
-                        <img src="images/avenida-principal/avenida-color.webp" alt="Avenida Coloreada"
-                            class="after-image">
-                        <!-- Before Image (Original) - Overlay -->
-                        <div class="before-image-wrapper" id="beforeImageWrapper">
-                            <img src="images/avenida-principal/avenida-original.webp" alt="Avenida Original"
-                                class="before-image">
+
+                <!-- Pair 1: Avenida Las Delicias -->
+                <div class="compare-pair">
+                    <h4 style="text-align: center; margin-bottom: 0.5rem; color: var(--primary-color);">Avenida Las
+                        Delicias</h4>
+                    <div class="before-after-container">
+                        <div class="before-after-wrapper">
+                            <img src="images/avenida-principal/avenida-color.webp" alt="Color" class="after-image">
+                            <div class="before-image-wrapper">
+                                <img src="images/avenida-principal/avenida-original.webp" alt="Original"
+                                    class="before-image">
+                            </div>
+                            <div class="slider-control">
+                                <div class="slider-button"></div>
+                            </div>
                         </div>
-                        <!-- Slider Control -->
-                        <div class="slider-control" id="sliderControl">
-                            <div class="slider-button"></div>
+                    </div>
+                </div>
+
+                <!-- Pair 2: Calle de Parral -->
+                <div class="compare-pair">
+                    <h4 style="text-align: center; margin-bottom: 0.5rem; color: var(--primary-color);">Calle de Parral
+                    </h4>
+                    <div class="before-after-container">
+                        <div class="before-after-wrapper">
+                            <img src="images/calles-de-parral/optimizado-avenida color.webp" alt="Color"
+                                class="after-image">
+                            <div class="before-image-wrapper">
+                                <img src="images/calles-de-parral/optimizado-avenida blanco y negro.webp" alt="Original"
+                                    class="before-image">
+                            </div>
+                            <div class="slider-control">
+                                <div class="slider-button"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -603,27 +626,32 @@
                 </div>
             </div>
 
-            <!-- Before/After Comparison Section -->
-            <div style="margin: 2.5rem 0;">
+            <!-- Floating Compare Button -->
+            <button type="button" class="compare-mode-btn" onclick="toggleCompareMode('bajadaModal')">
+                🔄 Modo Comparación
+            </button>
+
+            <!-- Comparison Sliders Section (hidden by default) -->
+            <div class="compare-section" style="display: none;">
                 <h3
-                    style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; text-align: center;">
-                    🔄 Compara: Original vs Coloreada
+                    style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1.5rem; text-align: center;">
+                    🔄 Desliza para Comparar Antes/Después
                 </h3>
-                <p style="text-align: center; color: var(--text-light); margin-bottom: 1rem; font-size: 0.9rem;">
-                    Arrastra el control para comparar →
-                </p>
-                <div class="before-after-container" id="bajadaBeforeAfterContainer">
-                    <div class="before-after-wrapper">
-                        <!-- After Image (Coloreada) - Background -->
-                        <img src="images/bajada-de-agua/bajada-color.webp" alt="Bajada Coloreada" class="after-image">
-                        <!-- Before Image (Original) - Overlay -->
-                        <div class="before-image-wrapper bajada-before-wrapper">
-                            <img src="images/bajada-de-agua/bajada-original.webp" alt="Bajada Original"
-                                class="before-image">
-                        </div>
-                        <!-- Slider Control -->
-                        <div class="slider-control bajada-slider-control">
-                            <div class="slider-button"></div>
+
+                <!-- Pair 1: Bajada Buenos Aires -->
+                <div class="compare-pair">
+                    <h4 style="text-align: center; margin-bottom: 0.5rem; color: var(--primary-color);">Bajada Buenos
+                        Aires</h4>
+                    <div class="before-after-container">
+                        <div class="before-after-wrapper">
+                            <img src="images/bajada-de-agua/bajada-color.webp" alt="Color" class="after-image">
+                            <div class="before-image-wrapper">
+                                <img src="images/bajada-de-agua/bajada-original.webp" alt="Original"
+                                    class="before-image">
+                            </div>
+                            <div class="slider-control">
+                                <div class="slider-button"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -781,28 +809,69 @@
                 </div>
             </div>
 
-            <!-- Before/After Comparison Section -->
-            <div style="margin: 2.5rem 0;">
+            <!-- Floating Compare Button -->
+            <button type="button" class="compare-mode-btn" onclick="toggleCompareMode('localesModal')">
+                🔄 Modo Comparación
+            </button>
+
+            <!-- Comparison Sliders Section (hidden by default) -->
+            <div class="compare-section" style="display: none;">
                 <h3
-                    style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; text-align: center;">
-                    🔄 Compara: Original vs Coloreada
+                    style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1.5rem; text-align: center;">
+                    🔄 Desliza para Comparar Antes/Después
                 </h3>
-                <p style="text-align: center; color: var(--text-light); margin-bottom: 1rem; font-size: 0.9rem;">
-                    Arrastra el control para comparar →
-                </p>
-                <div class="before-after-container">
-                    <div class="before-after-wrapper">
-                        <!-- After Image (Coloreada) - Background -->
-                        <img src="images/locales-antiguos/locales-color.webp" alt="Locales Coloreada"
-                            class="after-image">
-                        <!-- Before Image (Original) - Overlay -->
-                        <div class="before-image-wrapper">
-                            <img src="images/locales-antiguos/locales-original.webp" alt="Locales Original"
-                                class="before-image">
+
+                <!-- Pair 1: Locales Comerciales -->
+                <div class="compare-pair">
+                    <h4 style="text-align: center; margin-bottom: 0.5rem; color: var(--primary-color);">Locales
+                        Comerciales</h4>
+                    <div class="before-after-container">
+                        <div class="before-after-wrapper">
+                            <img src="images/locales-antiguos/locales-color.webp" alt="Color" class="after-image">
+                            <div class="before-image-wrapper">
+                                <img src="images/locales-antiguos/locales-original.webp" alt="Original"
+                                    class="before-image">
+                            </div>
+                            <div class="slider-control">
+                                <div class="slider-button"></div>
+                            </div>
                         </div>
-                        <!-- Slider Control -->
-                        <div class="slider-control">
-                            <div class="slider-button"></div>
+                    </div>
+                </div>
+
+                <!-- Pair 2: Otra Vista -->
+                <div class="compare-pair">
+                    <h4 style="text-align: center; margin-bottom: 0.5rem; color: var(--primary-color);">Otra Vista</h4>
+                    <div class="before-after-container">
+                        <div class="before-after-wrapper">
+                            <img src="images/locales-antiguos/optimizado-antiguos locales comerciales restaurada color.webp"
+                                alt="Color" class="after-image">
+                            <div class="before-image-wrapper">
+                                <img src="images/locales-antiguos/optimizado-antiguos locales comerciales restaurada.webp"
+                                    alt="Original" class="before-image">
+                            </div>
+                            <div class="slider-control">
+                                <div class="slider-button"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pair 3: Universo -->
+                <div class="compare-pair">
+                    <h4 style="text-align: center; margin-bottom: 0.5rem; color: var(--primary-color);">Local Universo
+                    </h4>
+                    <div class="before-after-container">
+                        <div class="before-after-wrapper">
+                            <img src="images/locales-antiguos/optimizado-universo a color.webp" alt="Color"
+                                class="after-image">
+                            <div class="before-image-wrapper">
+                                <img src="images/locales-antiguos/optimizado-universo original.webp" alt="Original"
+                                    class="before-image">
+                            </div>
+                            <div class="slider-control">
+                                <div class="slider-button"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -905,27 +974,32 @@
                 </div>
             </div>
 
-            <!-- Before/After Comparison Section -->
-            <div style="margin: 2.5rem 0;">
+            <!-- Floating Compare Button -->
+            <button type="button" class="compare-mode-btn" onclick="toggleCompareMode('plazaModal')">
+                🔄 Modo Comparación
+            </button>
+
+            <!-- Comparison Sliders Section (hidden by default) -->
+            <div class="compare-section" style="display: none;">
                 <h3
-                    style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; text-align: center;">
-                    🔄 Compara: Original vs Coloreada
+                    style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1.5rem; text-align: center;">
+                    🔄 Desliza para Comparar Antes/Después
                 </h3>
-                <p style="text-align: center; color: var(--text-light); margin-bottom: 1rem; font-size: 0.9rem;">
-                    Arrastra el control para comparar →
-                </p>
-                <div class="before-after-container">
-                    <div class="before-after-wrapper">
-                        <!-- After Image (Coloreada) - Background -->
-                        <img src="images/plaza-de-armas/plaza-color.webp" alt="Plaza Coloreada" class="after-image">
-                        <!-- Before Image (Original) - Overlay -->
-                        <div class="before-image-wrapper">
-                            <img src="images/plaza-de-armas/plaza-original.webp" alt="Plaza Original"
-                                class="before-image">
-                        </div>
-                        <!-- Slider Control -->
-                        <div class="slider-control">
-                            <div class="slider-button"></div>
+
+                <!-- Pair 1: Plaza de Armas -->
+                <div class="compare-pair">
+                    <h4 style="text-align: center; margin-bottom: 0.5rem; color: var(--primary-color);">Plaza de Armas
+                    </h4>
+                    <div class="before-after-container">
+                        <div class="before-after-wrapper">
+                            <img src="images/plaza-de-armas/plaza-color.webp" alt="Color" class="after-image">
+                            <div class="before-image-wrapper">
+                                <img src="images/plaza-de-armas/plaza-original.webp" alt="Original"
+                                    class="before-image">
+                            </div>
+                            <div class="slider-control">
+                                <div class="slider-button"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -2391,22 +2465,34 @@
                         class="btn-download-sm">Descargar</a>
                 </div>
             </div>
-            <div style="margin: 2.5rem 0;">
+
+            <!-- Floating Compare Button -->
+            <button type="button" class="compare-mode-btn" onclick="toggleCompareMode('rutaModal')">
+                🔄 Modo Comparación
+            </button>
+
+            <!-- Comparison Sliders Section (hidden by default) -->
+            <div class="compare-section" style="display: none;">
                 <h3
-                    style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; text-align: center;">
-                    🔄 Compara: Original vs Coloreada</h3>
-                <p style="text-align: center; color: var(--text-light); margin-bottom: 1rem; font-size: 0.9rem;">
-                    Arrastra el control para comparar →</p>
-                <div class="before-after-container">
-                    <div class="before-after-wrapper">
-                        <img src="images/ruta-parral-cauquenes/optimizado-entre parral y cauquenea color.webp"
-                            alt="Ruta Color" class="after-image">
-                        <div class="before-image-wrapper">
-                            <img src="images/ruta-parral-cauquenes/optimizado-entre parral y cauquenea negro.webp"
-                                alt="Ruta Original" class="before-image">
-                        </div>
-                        <div class="slider-control">
-                            <div class="slider-button"></div>
+                    style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1.5rem; text-align: center;">
+                    🔄 Desliza para Comparar Antes/Después
+                </h3>
+
+                <!-- Pair 1: Ruta Parral-Cauquenes -->
+                <div class="compare-pair">
+                    <h4 style="text-align: center; margin-bottom: 0.5rem; color: var(--primary-color);">Ruta
+                        Parral-Cauquenes</h4>
+                    <div class="before-after-container">
+                        <div class="before-after-wrapper">
+                            <img src="images/ruta-parral-cauquenes/optimizado-entre parral y cauquenea color.webp"
+                                alt="Color" class="after-image">
+                            <div class="before-image-wrapper">
+                                <img src="images/ruta-parral-cauquenes/optimizado-entre parral y cauquenea negro.webp"
+                                    alt="Original" class="before-image">
+                            </div>
+                            <div class="slider-control">
+                                <div class="slider-button"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -2540,23 +2626,52 @@
                 </div>
             </div>
 
-            <!-- Before/After Comparison Section -->
-            <div style="margin: 2.5rem 0;">
+            <!-- Floating Compare Button -->
+            <button type="button" class="compare-mode-btn" onclick="toggleCompareMode('italianosModal')">
+                🔄 Modo Comparación
+            </button>
+
+            <!-- Comparison Sliders Section (hidden by default) -->
+            <div class="compare-section" style="display: none;">
                 <h3
-                    style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 0.5rem; text-align: center;">
-                    🔄 Compara: Original vs Coloreada</h3>
-                <p style="text-align: center; color: var(--text-light); margin-bottom: 1rem; font-size: 0.9rem;">
-                    Arrastra el control para comparar →</p>
-                <div class="before-after-container">
-                    <div class="before-after-wrapper">
-                        <img src="images/italianos-en-parral/COLONOS EN TRIGO MEJORADA A COLOR.jpg"
-                            alt="Colonos Trigo Color" class="after-image">
-                        <div class="before-image-wrapper">
-                            <img src="images/italianos-en-parral/COLONOS EN TRIGO MEJORADA.jpg"
-                                alt="Colonos Trigo Original" class="before-image">
+                    style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1.5rem; text-align: center;">
+                    🔄 Desliza para Comparar Antes/Después
+                </h3>
+
+                <!-- Pair 1: Colonos en Trigo -->
+                <div class="compare-pair">
+                    <h4 style="text-align: center; margin-bottom: 0.5rem; color: var(--primary-color);">Colonos en el
+                        Trigo</h4>
+                    <div class="before-after-container">
+                        <div class="before-after-wrapper">
+                            <img src="images/italianos-en-parral/COLONOS EN TRIGO MEJORADA A COLOR.jpg" alt="Color"
+                                class="after-image">
+                            <div class="before-image-wrapper">
+                                <img src="images/italianos-en-parral/COLONOS EN TRIGO MEJORADA.jpg" alt="Original"
+                                    class="before-image">
+                            </div>
+                            <div class="slider-control">
+                                <div class="slider-button"></div>
+                            </div>
                         </div>
-                        <div class="slider-control">
-                            <div class="slider-button"></div>
+                    </div>
+                </div>
+
+                <!-- Pair 2: Con Acordeón -->
+                <div class="compare-pair">
+                    <h4 style="text-align: center; margin-bottom: 0.5rem; color: var(--primary-color);">Tradiciones
+                        Musicales</h4>
+                    <div class="before-after-container">
+                        <div class="before-after-wrapper">
+                            <img src="images/italianos-en-parral/CON ACORDEON MEJORADA A COLOR.jpg" alt="Color"
+                                class="after-image">
+                            <div class="before-image-wrapper">
+                                <img src="images/italianos-en-parral/CON ACORDEON MEJORADA.jpg" alt="Original"
+                                    class="before-image">
+                            </div>
+                            <div class="slider-control">
+                                <div class="slider-button"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
