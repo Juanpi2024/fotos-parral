@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis de Fuentes Históricas - Parral</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 15mm;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        @media print {
+            body {
+                padding: 10mm;
+                font-size: 0.9rem;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .page-break {
+                page-break-before: always;
+            }
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #5c3d2e;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        .header h1 {
+            color: #5c3d2e;
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+        }
+
+        .header .subtitle {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #f3e5f5;
+            color: #7b1fa2;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section h2 {
+            color: #5c3d2e;
+            font-size: 1.1rem;
+            border-bottom: 1px solid #5c3d2e;
+            padding-bottom: 5px;
+            margin-bottom: 12px;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .intro-box {
+            background: #fdf6e3;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #5c3d2e;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .source-box {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .source-box h3 {
+            color: #5c3d2e;
+            margin-bottom: 10px;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .source-box .source-type {
+            display: inline-block;
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-bottom: 10px;
+        }
+
+        .source-content {
+            background: white;
+            padding: 15px;
+            border: 1px dashed #ccc;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            white-space: pre-wrap;
+        }
+
+        .source-meta {
+            font-size: 0.85rem;
+            color: #666;
+            padding-top: 10px;
+            border-top: 1px dotted #ddd;
+        }
+
+        .questions {
+            background: #fff8e1;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .questions ol {
+            padding-left: 20px;
+        }
+
+        .questions li {
+            margin-bottom: 15px;
+        }
+
+        .answer-space {
+            display: block;
+            border: 1px solid #ddd;
+            min-height: 60px;
+            background: white;
+            border-radius: 4px;
+            margin-top: 8px;
+            padding: 8px;
+        }
+
+        .answer-space.large {
+            min-height: 100px;
+        }
+
+        .concept-box {
+            background: #e3f2fd;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .concept-box h4 {
+            color: #1565c0;
+            margin-bottom: 8px;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .footer {
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .btn-print {
+            background: #5c3d2e;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px auto;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn-print no-print" onclick="window.print()">🖨️ Imprimir / Guardar PDF</button>
+
+    <div class="header">
+        <h1>📊 Análisis de Fuentes Históricas</h1>
+        <p class="subtitle">Metodología de Investigación Histórica - Parral</p>
+        <span class="badge">Enseñanza Media (I° - IV° Medio)</span>
+    </div>
+
+    <div class="intro-box">
+        "La historia no existe sin fuentes. Cada documento, cada fotografía, cada testimonio es una ventana al pasado
+        que debemos saber interpretar críticamente."
+    </div>
+
+    <div class="section">
+        <h2>📚 Conceptos Clave</h2>
+        <div class="concept-box">
+            <h4>Fuente Primaria</h4>
+            <p>Testimonio directo de la época estudiada: documentos originales, fotografías, cartas, diarios personales,
+                objetos materiales.</p>
+        </div>
+        <div class="concept-box">
+            <h4>Fuente Secundaria</h4>
+            <p>Análisis o interpretación posterior de los hechos: libros de historia, artículos académicos,
+                documentales.</p>
+        </div>
+        <div class="concept-box">
+            <h4>Análisis Crítico</h4>
+            <p>Evaluar autor, contexto, intencionalidad, público objetivo y contrastar con otras fuentes.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📄 Fuente 1: Documento Oficial (1904)</h2>
+        <div class="source-box">
+            <span class="source-type">FUENTE PRIMARIA - DOCUMENTO OFICIAL</span>
+            <h3>Decreto de Colonización de San Manuel</h3>
+            <div class="source-content">"Por decreto del Ministerio de Relaciones Exteriores,
+                se autoriza el establecimiento de 50 familias de
+                colonos italianos en el fundo San Manuel, jurisdicción
+                de Parral. Se les otorgará a cada familia una hijuela
+                de 50 hectáreas, aperos de labranza y semillas para
+                el primer año de cultivo..."
+
+                Santiago, 15 de marzo de 1904</div>
+            <div class="source-meta">
+                <strong>Tipo:</strong> Decreto ministerial | <strong>Autor:</strong> Ministerio de RR.EE. |
+                <strong>Fecha:</strong> 1904
+            </div>
+        </div>
+        <div class="questions">
+            <ol>
+                <li>
+                    <strong>¿Qué tipo de fuente es y por qué?</strong>
+                    <span class="answer-space"></span>
+                </li>
+                <li>
+                    <strong>¿Cuál era la intención del Estado chileno al promover esta colonización?</strong>
+                    <span class="answer-space"></span>
+                </li>
+                <li>
+                    <strong>¿Qué beneficios recibían los colonos? ¿Qué se esperaba de ellos a cambio?</strong>
+                    <span class="answer-space large"></span>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="section page-break">
+        <h2>📷 Fuente 2: Fotografía Histórica (c. 1920)</h2>
+        <div class="source-box">
+            <span class="source-type">FUENTE PRIMARIA - IMAGEN</span>
+            <h3>Estación de Ferrocarriles de Parral</h3>
+            <div
+                style="background: #f0f0f0; height: 120px; display: flex; align-items: center; justify-content: center; margin: 15px 0; border: 2px dashed #999;">
+                [Espacio para pegar fotografía histórica de la estación]
+            </div>
+            <div class="source-meta">
+                <strong>Tipo:</strong> Fotografía | <strong>Fecha aproximada:</strong> 1920 | <strong>Archivo:</strong>
+                Municipal de Parral
+            </div>
+        </div>
+        <div class="questions">
+            <ol start="4">
+                <li>
+                    <strong>Describe los elementos visibles en la imagen (edificio, personas, transporte,
+                        vestimenta):</strong>
+                    <span class="answer-space large"></span>
+                </li>
+                <li>
+                    <strong>¿Qué nos dice esta imagen sobre la importancia del ferrocarril para Parral?</strong>
+                    <span class="answer-space"></span>
+                </li>
+                <li>
+                    <strong>¿Qué aspectos de la vida cotidiana de 1920 NO podemos conocer a través de esta
+                        fotografía?</strong>
+                    <span class="answer-space"></span>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🎤 Fuente 3: Testimonio Oral (2020)</h2>
+        <div class="source-box">
+            <span class="source-type">FUENTE PRIMARIA - ORAL</span>
+            <h3>Entrevista a María González (85 años)</h3>
+            <div class="source-content">"Yo me acuerdo cuando era niña, ir a la estación era
+                todo un paseo. Mi padre me llevaba a ver llegar el
+                tren de las cuatro. La gente se vestía elegante para
+                viajar. Después del terremoto del 39 todo cambió,
+                muchos se fueron a Santiago..."
+
+                Entrevista realizada: mayo 2020, Parral.</div>
+            <div class="source-meta">
+                <strong>Tipo:</strong> Historia oral | <strong>Entrevistada:</strong> María González, 85 años |
+                <strong>Tema:</strong> Memoria del ferrocarril
+            </div>
+        </div>
+        <div class="questions">
+            <ol start="7">
+                <li>
+                    <strong>¿Qué ventajas tiene un testimonio oral como fuente histórica?</strong>
+                    <span class="answer-space"></span>
+                </li>
+                <li>
+                    <strong>¿Qué limitaciones o sesgos podría tener este tipo de fuente?</strong>
+                    <span class="answer-space"></span>
+                </li>
+                <li>
+                    <strong>¿Cómo podrías contrastar la información de este testimonio?</strong>
+                    <span class="answer-space"></span>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🔍 Síntesis Crítica</h2>
+        <div class="questions" style="background: #fce4ec;">
+            <ol start="10">
+                <li>
+                    <strong>Compara las tres fuentes: ¿Qué aspectos de la historia de Parral puede aportar cada
+                        una?</strong>
+                    <span class="answer-space large"></span>
+                </li>
+                <li>
+                    <strong>Si tuvieras que investigar la historia del ferrocarril en Parral, ¿qué otras fuentes
+                        buscarías y dónde?</strong>
+                    <span class="answer-space large"></span>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="footer">
+        <span>Nombre: _________________________ Curso: _______</span>
+        <span>Archivos en Movimiento - Parral</span>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pauta Docente - Libro para Colorear</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 15mm;
+            line-height: 1.5;
+        }
+
+        @media print {
+            body {
+                padding: 10mm;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #1565c0;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            color: #1565c0;
+            font-size: 1.5rem;
+        }
+
+        .badge-teacher {
+            display: inline-block;
+            background: #ffecb3;
+            color: #f57c00;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            color: #1565c0;
+            font-size: 1.1rem;
+            border-bottom: 2px solid #1565c0;
+            padding-bottom: 5px;
+            margin-bottom: 12px;
+        }
+
+        table.curriculum {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        table.curriculum th,
+        table.curriculum td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        table.curriculum th {
+            background: #1565c0;
+            color: white;
+            width: 28%;
+        }
+
+        .info-box {
+            background: #e3f2fd;
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 4px solid #1565c0;
+            margin-bottom: 12px;
+        }
+
+        .page-guide {
+            background: #f5f5f5;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .page-guide h3 {
+            color: #2e7d32;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .page-guide ul {
+            padding-left: 20px;
+            font-size: 0.9rem;
+        }
+
+        .page-guide li {
+            margin-bottom: 5px;
+        }
+
+        .tips {
+            background: #fff3e0;
+            padding: 12px;
+            border-radius: 8px;
+            border-left: 4px solid #ff9800;
+        }
+
+        .tips h3 {
+            color: #ef6c00;
+            margin-bottom: 8px;
+        }
+
+        .tips ul {
+            padding-left: 20px;
+            font-size: 0.9rem;
+        }
+
+        .btn-print {
+            background: #1565c0;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .footer {
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+            font-size: 0.8rem;
+            color: #666;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn-print no-print" onclick="window.print()">🖨️ Imprimir Pauta</button>
+
+    <div class="header">
+        <h1>📋 Pauta Docente - Libro para Colorear</h1>
+        <p style="color: #666;">Guía de Aplicación para Parvularia y 1° Básico</p>
+        <span class="badge-teacher">SOLO PARA EDUCADORAS</span>
+    </div>
+
+    <div class="section">
+        <h2>📚 Información Curricular</h2>
+        <table class="curriculum">
+            <tr>
+                <th>Niveles</th>
+                <td>Parvularia (NT1, NT2) y 1° Básico</td>
+            </tr>
+            <tr>
+                <th>Edades</th>
+                <td>4 a 7 años</td>
+            </tr>
+            <tr>
+                <th>Ámbitos BCEP</th>
+                <td>Interacción y Comprensión del Entorno / Comunicación Integral</td>
+            </tr>
+            <tr>
+                <th>Núcleos</th>
+                <td>Exploración del Entorno Natural / Lenguajes Artísticos</td>
+            </tr>
+            <tr>
+                <th>OA 1° Básico</th>
+                <td>Historia OA 5: Reconocer lugares significativos de su entorno</td>
+            </tr>
+            <tr>
+                <th>Tiempo</th>
+                <td>4-5 sesiones de 30-40 minutos</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>🎯 Objetivos de Aprendizaje</h2>
+        <div class="info-box">
+            <ul style="padding-left: 20px;">
+                <li>Reconocer lugares importantes de Parral</li>
+                <li>Desarrollar motricidad fina a través del coloreado</li>
+                <li>Ampliar vocabulario relacionado con el patrimonio local</li>
+                <li>Valorar los lugares históricos de su comunidad</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📖 Guía por Página</h2>
+
+        <div class="page-guide">
+            <h3>Portada - "Mi Libro de Parral"</h3>
+            <ul>
+                <li>Cada niño escribe su nombre y curso</li>
+                <li>Puede decorar la portada con dibujos adicionales</li>
+                <li>Tiempo: 5-10 minutos</li>
+            </ul>
+        </div>
+
+        <div class="page-guide">
+            <h3>Página 1 - La Plaza de Parral 🌳</h3>
+            <ul>
+                <li><strong>Conversación previa:</strong> ¿Han ido a la plaza? ¿Qué hay allí?</li>
+                <li><strong>Actividad:</strong> Dibujar elementos (árboles, fuente, bancas)</li>
+                <li><strong>Pregunta:</strong> Encerrar SÍ o NO sobre si han visitado la plaza</li>
+                <li>Tiempo: 30 minutos</li>
+            </ul>
+        </div>
+
+        <div class="page-guide">
+            <h3>Página 2 - El Antiguo Tren 🚂</h3>
+            <ul>
+                <li><strong>Conversación previa:</strong> ¿Qué es un tren? ¿Han viajado en uno?</li>
+                <li><strong>Actividad:</strong> Dibujar tren con locomotora y vagones</li>
+                <li><strong>Pregunta matemática:</strong> Contar vagones dibujados (números 1-10)</li>
+                <li>Tiempo: 30-35 minutos</li>
+            </ul>
+        </div>
+
+        <div class="page-guide">
+            <h3>Página 3 - El Templo San José ⛪</h3>
+            <ul>
+                <li><strong>Conversación previa:</strong> ¿Conocen la iglesia del centro?</li>
+                <li><strong>Actividad:</strong> Dibujar iglesia con torres, campana, puerta</li>
+                <li><strong>Pregunta:</strong> Escribir color usado para las torres</li>
+                <li>Tiempo: 30 minutos</li>
+            </ul>
+        </div>
+
+        <div class="page-guide">
+            <h3>Página 4 - Pablo Neruda 📚</h3>
+            <ul>
+                <li><strong>Conversación previa:</strong> ¿Saben qué es un poeta? ¿Qué hace?</li>
+                <li><strong>Actividad:</strong> Dibujar poeta escribiendo con libros</li>
+                <li><strong>Actividad adicional:</strong> Dibujar estrella junto al poeta</li>
+                <li>Tiempo: 25-30 minutos</li>
+            </ul>
+        </div>
+
+        <div class="page-guide">
+            <h3>Página Final - Certificado de Logro 🌟</h3>
+            <ul>
+                <li>Revisar los lugares aprendidos en conjunto</li>
+                <li>La educadora firma el certificado de cada niño/a</li>
+                <li>Se puede plastificar para que lo lleven a casa</li>
+                <li>Tiempo: 10 minutos</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📊 Evaluación Cualitativa</h2>
+        <div class="info-box">
+            <strong>Indicadores de observación:</strong>
+            <ul style="margin-top: 8px; padding-left: 20px;">
+                <li>Nombra al menos 2 lugares de Parral</li>
+                <li>Colorea dentro de los límites (motricidad)</li>
+                <li>Participa activamente en conversaciones grupales</li>
+                <li>Muestra interés por conocer su entorno</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>💡 Sugerencias Metodológicas</h2>
+        <div class="tips">
+            <h3>Adaptaciones:</h3>
+            <ul>
+                <li>Para NT1: mayor apoyo en escritura, enfoque en dibujo libre</li>
+                <li>Para 1° Básico: agregar escritura simple de palabras clave</li>
+                <li>Trabajo con ayudantes para niños que necesiten apoyo adicional</li>
+            </ul>
+        </div>
+        <div class="tips" style="margin-top: 10px;">
+            <h3>Extensiones:</h3>
+            <ul>
+                <li>Paseo pedagógico a la Plaza de Armas</li>
+                <li>Ver fotos antiguas de los lugares mencionados</li>
+                <li>Invitar a un abuelo/a a contar recuerdos del tren</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Archivos en Movimiento - Material Educativo Patrimonial de Parral</p>
+    </div>
+</body>
+
+</html>

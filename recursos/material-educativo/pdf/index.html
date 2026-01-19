@@ -27,25 +27,25 @@
 
         .header {
             text-align: center;
-            padding: 2rem 0 3rem;
+            padding: 2rem 0 2rem;
         }
 
         .header h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: #c9a961;
             margin-bottom: 0.5rem;
         }
 
         .header p {
             color: rgba(244, 233, 217, 0.8);
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         .back-link {
             display: inline-block;
             color: #c9a961;
             text-decoration: none;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             padding: 0.5rem 1rem;
             border: 1px solid #c9a961;
             border-radius: 5px;
@@ -57,10 +57,32 @@
             color: #1a1510;
         }
 
+        .level-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .level-title {
+            color: #c9a961;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(201, 169, 97, 0.3);
+        }
+
+        .level-title .badge-level {
+            display: inline-block;
+            background: rgba(201, 169, 97, 0.2);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
         .materials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .material-card {
@@ -77,52 +99,65 @@
         }
 
         .card-header {
-            padding: 1.5rem;
+            padding: 1.2rem;
             background: linear-gradient(135deg, rgba(201, 169, 97, 0.2), rgba(139, 115, 85, 0.2));
             border-bottom: 1px solid rgba(201, 169, 97, 0.3);
         }
 
         .card-header h2 {
             color: #c9a961;
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
         }
 
         .card-header .badge {
             display: inline-block;
-            background: rgba(201, 169, 97, 0.3);
-            color: #f4e9d9;
-            padding: 0.25rem 0.75rem;
-            border-radius: 15px;
-            font-size: 0.8rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.7rem;
+        }
+
+        .badge-parvularia {
+            background: #c8e6c9;
+            color: #2e7d32;
+        }
+
+        .badge-basica {
+            background: #bbdefb;
+            color: #1565c0;
+        }
+
+        .badge-media {
+            background: #e1bee7;
+            color: #7b1fa2;
         }
 
         .card-body {
-            padding: 1.5rem;
+            padding: 1.2rem;
         }
 
         .card-body p {
             color: rgba(244, 233, 217, 0.8);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             margin-bottom: 1rem;
             line-height: 1.5;
         }
 
         .card-buttons {
             display: flex;
-            gap: 0.75rem;
+            gap: 0.5rem;
             flex-wrap: wrap;
         }
 
         .btn {
             flex: 1;
-            min-width: 120px;
-            padding: 0.75rem 1rem;
+            min-width: 100px;
+            padding: 0.6rem 0.8rem;
             border-radius: 6px;
             text-decoration: none;
             text-align: center;
             font-weight: 600;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             transition: all 0.3s;
         }
 
@@ -144,111 +179,199 @@
             background: #0d47a1;
         }
 
+        .emoji {
+            font-size: 1.5rem;
+            margin-right: 8px;
+        }
+
         .info-box {
             background: rgba(201, 169, 97, 0.1);
             border: 1px solid rgba(201, 169, 97, 0.3);
             border-radius: 8px;
             padding: 1.5rem;
-            margin-top: 3rem;
+            margin-top: 2rem;
             text-align: center;
         }
 
         .info-box h3 {
             color: #c9a961;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .info-box p {
             color: rgba(244, 233, 217, 0.8);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             line-height: 1.6;
         }
 
-        .emoji {
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(201, 169, 97, 0.1);
+            border-radius: 10px;
+            min-width: 120px;
+        }
+
+        .stat-item .number {
             font-size: 2rem;
-            display: block;
-            margin-bottom: 0.5rem;
+            color: #c9a961;
+            font-weight: bold;
+        }
+
+        .stat-item .label {
+            font-size: 0.8rem;
+            color: rgba(244, 233, 217, 0.7);
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <a href="educacion.html" class="back-link">← Volver a Educación</a>
+        <a href="../../educacion.html" class="back-link">← Volver a Educación</a>
 
         <div class="header">
             <h1>📄 Material Educativo PDF</h1>
-            <p>Recursos listos para imprimir con pautas docentes incluidas</p>
+            <p>Recursos imprimibles con pautas docentes para todos los niveles</p>
         </div>
 
-        <div class="materials-grid">
-            <!-- Sopa de Letras -->
-            <div class="material-card">
-                <div class="card-header">
-                    <span class="emoji">🔤</span>
-                    <h2>Sopa de Letras Patrimonial</h2>
-                    <span class="badge">Básica 5-8°</span>
-                </div>
-                <div class="card-body">
-                    <p>Grilla 15x15 con 10 palabras del patrimonio de Parral. Incluye actividad de relacionar
-                        definiciones.</p>
-                    <div class="card-buttons">
-                        <a href="pdf/sopa-letras-estudiante.html" class="btn btn-student" target="_blank">📋
-                            Estudiante</a>
-                        <a href="pdf/sopa-letras-docente.html" class="btn btn-teacher" target="_blank">📚 Docente</a>
+        <div class="stats">
+            <div class="stat-item">
+                <div class="number">12</div>
+                <div class="label">Documentos PDF</div>
+            </div>
+            <div class="stat-item">
+                <div class="number">6</div>
+                <div class="label">Materiales</div>
+            </div>
+            <div class="stat-item">
+                <div class="number">3</div>
+                <div class="label">Niveles</div>
+            </div>
+        </div>
+
+        <!-- PARVULARIA -->
+        <div class="level-section">
+            <h2 class="level-title">
+                🧒 Parvularia y 1° Básico
+                <span class="badge-level">4-7 años</span>
+            </h2>
+            <div class="materials-grid">
+                <div class="material-card">
+                    <div class="card-header">
+                        <h2><span class="emoji">🎨</span>Mi Libro de Parral</h2>
+                        <span class="badge badge-parvularia">Parvularia - 1° Básico</span>
+                    </div>
+                    <div class="card-body">
+                        <p>Libro de 5 páginas para colorear con actividades sobre la Plaza, el Tren, la Iglesia y Pablo
+                            Neruda.</p>
+                        <div class="card-buttons">
+                            <a href="libro-colorear-estudiante.html" class="btn btn-student" target="_blank">📋
+                                Estudiante</a>
+                            <a href="libro-colorear-docente.html" class="btn btn-teacher" target="_blank">📚 Docente</a>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Crucigrama -->
-            <div class="material-card">
-                <div class="card-header">
-                    <span class="emoji">✏️</span>
-                    <h2>Crucigrama Histórico</h2>
-                    <span class="badge">Básica 5-8°</span>
+        <!-- BÁSICA 5-8° -->
+        <div class="level-section">
+            <h2 class="level-title">
+                📚 Enseñanza Básica
+                <span class="badge-level">5° a 8° Básico | 10-13 años</span>
+            </h2>
+            <div class="materials-grid">
+                <div class="material-card">
+                    <div class="card-header">
+                        <h2><span class="emoji">🔤</span>Sopa de Letras</h2>
+                        <span class="badge badge-basica">Básica 5-8°</span>
+                    </div>
+                    <div class="card-body">
+                        <p>Grilla 15x15 con 10 palabras patrimoniales. Incluye actividad de relacionar definiciones.</p>
+                        <div class="card-buttons">
+                            <a href="sopa-letras-estudiante.html" class="btn btn-student" target="_blank">📋
+                                Estudiante</a>
+                            <a href="sopa-letras-docente.html" class="btn btn-teacher" target="_blank">📚 Docente</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <p>7 palabras clave con pistas históricas sobre Parral. Incluye reflexión sobre patrimonio local.
-                    </p>
-                    <div class="card-buttons">
-                        <a href="pdf/crucigrama-estudiante.html" class="btn btn-student" target="_blank">📋
-                            Estudiante</a>
-                        <a href="pdf/crucigrama-docente.html" class="btn btn-teacher" target="_blank">📚 Docente</a>
+
+                <div class="material-card">
+                    <div class="card-header">
+                        <h2><span class="emoji">✏️</span>Crucigrama Histórico</h2>
+                        <span class="badge badge-basica">Básica 5-8°</span>
+                    </div>
+                    <div class="card-body">
+                        <p>7 palabras clave con pistas históricas. Incluye reflexión sobre patrimonio local.</p>
+                        <div class="card-buttons">
+                            <a href="crucigrama-estudiante.html" class="btn btn-student" target="_blank">📋
+                                Estudiante</a>
+                            <a href="crucigrama-docente.html" class="btn btn-teacher" target="_blank">📚 Docente</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="material-card">
+                    <div class="card-header">
+                        <h2><span class="emoji">🎯</span>Trivia Patrimonial</h2>
+                        <span class="badge badge-basica">Básica 5-8°</span>
+                    </div>
+                    <div class="card-body">
+                        <p>20 preguntas de opción múltiple. Ideal para competencias grupales o Kahoot.</p>
+                        <div class="card-buttons">
+                            <a href="trivia-estudiante.html" class="btn btn-student" target="_blank">📋 Estudiante</a>
+                            <a href="trivia-docente.html" class="btn btn-teacher" target="_blank">📚 Docente</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="material-card">
+                    <div class="card-header">
+                        <h2><span class="emoji">📖</span>El Ferrocarril de Parral</h2>
+                        <span class="badge badge-basica">Básica 5-8°</span>
+                    </div>
+                    <div class="card-body">
+                        <p>Lectura histórica con preguntas de comprensión, vocabulario y reflexión.</p>
+                        <div class="card-buttons">
+                            <a href="ficha-ferrocarril-estudiante.html" class="btn btn-student" target="_blank">📋
+                                Estudiante</a>
+                            <a href="ficha-ferrocarril-docente.html" class="btn btn-teacher" target="_blank">📚
+                                Docente</a>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Trivia -->
-            <div class="material-card">
-                <div class="card-header">
-                    <span class="emoji">🎯</span>
-                    <h2>Trivia Patrimonial</h2>
-                    <span class="badge">Básica 5-8°</span>
-                </div>
-                <div class="card-body">
-                    <p>20 preguntas de opción múltiple sobre historia y patrimonio. Ideal para competencias grupales.
-                    </p>
-                    <div class="card-buttons">
-                        <a href="pdf/trivia-estudiante.html" class="btn btn-student" target="_blank">📋 Estudiante</a>
-                        <a href="pdf/trivia-docente.html" class="btn btn-teacher" target="_blank">📚 Docente</a>
+        <!-- ENSEÑANZA MEDIA -->
+        <div class="level-section">
+            <h2 class="level-title">
+                🎓 Enseñanza Media
+                <span class="badge-level">I° a IV° Medio | 14-18 años</span>
+            </h2>
+            <div class="materials-grid">
+                <div class="material-card">
+                    <div class="card-header">
+                        <h2><span class="emoji">📊</span>Análisis de Fuentes</h2>
+                        <span class="badge badge-media">Enseñanza Media</span>
                     </div>
-                </div>
-            </div>
-
-            <!-- Ficha de Lectura -->
-            <div class="material-card">
-                <div class="card-header">
-                    <span class="emoji">📖</span>
-                    <h2>El Ferrocarril de Parral</h2>
-                    <span class="badge">Básica 5-8°</span>
-                </div>
-                <div class="card-body">
-                    <p>Lectura histórica sobre la llegada del tren con preguntas de comprensión y vocabulario.</p>
-                    <div class="card-buttons">
-                        <a href="pdf/ficha-ferrocarril-estudiante.html" class="btn btn-student" target="_blank">📋
-                            Estudiante</a>
-                        <a href="pdf/ficha-ferrocarril-docente.html" class="btn btn-teacher" target="_blank">📚
-                            Docente</a>
+                    <div class="card-body">
+                        <p>Trabajo con 3 tipos de fuentes primarias: documento oficial, fotografía y testimonio oral.
+                        </p>
+                        <div class="card-buttons">
+                            <a href="analisis-fuentes-estudiante.html" class="btn btn-student" target="_blank">📋
+                                Estudiante</a>
+                            <a href="analisis-fuentes-docente.html" class="btn btn-teacher" target="_blank">📚
+                                Docente</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -257,10 +380,9 @@
         <div class="info-box">
             <h3>🖨️ ¿Cómo usar estos materiales?</h3>
             <p>
-                1. Haz clic en el botón del material que necesitas<br>
-                2. Se abrirá en una nueva pestaña<br>
-                3. Pulsa el botón <strong>"Imprimir / Guardar PDF"</strong> en la página<br>
-                4. Elige "Guardar como PDF" o imprime directamente
+                1. Haz clic en <strong>"Estudiante"</strong> o <strong>"Docente"</strong><br>
+                2. Pulsa el botón <strong>"Imprimir / Guardar PDF"</strong> en la página<br>
+                3. Elige "Guardar como PDF" o imprime directamente
             </p>
         </div>
     </div>

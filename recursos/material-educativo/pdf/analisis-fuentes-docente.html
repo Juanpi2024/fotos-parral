@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pauta Docente - Análisis de Fuentes Históricas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 12mm;
+            line-height: 1.5;
+            font-size: 0.9rem;
+        }
+
+        @media print {
+            body {
+                padding: 8mm;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #1565c0;
+            padding-bottom: 12px;
+            margin-bottom: 15px;
+        }
+
+        .header h1 {
+            color: #1565c0;
+            font-size: 1.4rem;
+        }
+
+        .badge-teacher {
+            display: inline-block;
+            background: #ffecb3;
+            color: #f57c00;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        .section {
+            margin-bottom: 18px;
+        }
+
+        .section h2 {
+            color: #1565c0;
+            font-size: 1rem;
+            border-bottom: 2px solid #1565c0;
+            padding-bottom: 4px;
+            margin-bottom: 10px;
+        }
+
+        table.curriculum {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+
+        table.curriculum th,
+        table.curriculum td {
+            border: 1px solid #ddd;
+            padding: 6px 8px;
+            text-align: left;
+        }
+
+        table.curriculum th {
+            background: #1565c0;
+            color: white;
+            width: 25%;
+        }
+
+        .answer-item {
+            background: #c8e6c9;
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+        }
+
+        .answer-item strong {
+            color: #2e7d32;
+        }
+
+        .answer-item .response {
+            background: white;
+            padding: 8px;
+            border-radius: 4px;
+            margin-top: 5px;
+            border-left: 3px solid #2e7d32;
+        }
+
+        .info-box {
+            background: #e3f2fd;
+            padding: 10px;
+            border-radius: 6px;
+            border-left: 4px solid #1565c0;
+            margin-bottom: 10px;
+        }
+
+        .rubric {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+            margin-top: 10px;
+        }
+
+        .rubric th,
+        .rubric td {
+            border: 1px solid #ddd;
+            padding: 6px;
+            text-align: left;
+        }
+
+        .rubric th {
+            background: #f5f5f5;
+        }
+
+        .btn-print {
+            background: #1565c0;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 15px auto;
+            display: block;
+        }
+
+        .footer {
+            margin-top: 15px;
+            padding-top: 8px;
+            border-top: 1px solid #ddd;
+            font-size: 0.75rem;
+            color: #666;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn-print no-print" onclick="window.print()">🖨️ Imprimir Pauta</button>
+
+    <div class="header">
+        <h1>📋 Pauta Docente - Análisis de Fuentes Históricas</h1>
+        <p style="color: #666; font-size: 0.85rem;">Solucionario y Criterios de Evaluación</p>
+        <span class="badge-teacher">SOLO PARA DOCENTES</span>
+    </div>
+
+    <div class="section">
+        <h2>📚 Información Curricular</h2>
+        <table class="curriculum">
+            <tr>
+                <th>Asignatura</th>
+                <td>Historia, Geografía y Ciencias Sociales</td>
+            </tr>
+            <tr>
+                <th>Nivel</th>
+                <td>I° a IV° Medio (14-18 años)</td>
+            </tr>
+            <tr>
+                <th>OA Relacionados</th>
+                <td>OA a: Investigar sobre temas del nivel<br>OA d: Analizar y comparar la fiabilidad de fuentes</td>
+            </tr>
+            <tr>
+                <th>Habilidades</th>
+                <td>Pensamiento crítico, análisis de fuentes, síntesis histórica</td>
+            </tr>
+            <tr>
+                <th>Tiempo</th>
+                <td>90 minutos (2 horas pedagógicas)</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>✅ Solucionario - Respuestas Esperadas</h2>
+
+        <h3 style="color: #5c3d2e; margin: 12px 0 8px;">Fuente 1: Decreto de Colonización</h3>
+
+        <div class="answer-item">
+            <strong>1. ¿Qué tipo de fuente es?</strong>
+            <div class="response">Es una <strong>fuente primaria</strong> de tipo documental-oficial porque es un
+                documento original de la época (1904), emanado directamente del Estado chileno.</div>
+        </div>
+
+        <div class="answer-item">
+            <strong>2. Intención del Estado chileno</strong>
+            <div class="response">Poblar zonas rurales con mano de obra calificada europea / Desarrollar la agricultura
+                moderna / Consolidar la ocupación territorial / Modernizar las técnicas agrícolas (cualquiera de estas
+                respuestas es válida).</div>
+        </div>
+
+        <div class="answer-item">
+            <strong>3. Beneficios recibidos por los colonos</strong>
+            <div class="response">50 hectáreas de tierra, aperos de labranza, semillas. A cambio se esperaba que
+                trabajaran la tierra, produjeran cultivos y permanecieran en el territorio.</div>
+        </div>
+
+        <h3 style="color: #5c3d2e; margin: 12px 0 8px;">Fuente 2: Fotografía Histórica</h3>
+
+        <div class="answer-item">
+            <strong>4. Elementos visibles en la imagen</strong>
+            <div class="response">Debe describir: edificio de la estación (arquitectura), presencia de pasajeros,
+                vestimenta de la época, locomotora/vagones si aparece, carga comercial, etc. Valorar nivel de detalle.
+            </div>
+        </div>
+
+        <div class="answer-item">
+            <strong>5. Importancia del ferrocarril</strong>
+            <div class="response">Era centro económico y social / Punto de conexión con otras ciudades / Modernidad y
+                progreso / Comercio de productos locales.</div>
+        </div>
+
+        <div class="answer-item">
+            <strong>6. Aspectos que NO podemos conocer</strong>
+            <div class="response">Sonidos, olores, conversaciones, emociones, vida cotidiana fuera del espacio
+                fotografiado, contexto político-económico, opiniones de las personas, lo que ocurría antes y después.
+            </div>
+        </div>
+
+        <h3 style="color: #5c3d2e; margin: 12px 0 8px;">Fuente 3: Testimonio Oral</h3>
+
+        <div class="answer-item">
+            <strong>7. Ventajas de un testimonio oral</strong>
+            <div class="response">Recupera memorias no documentadas / Perspectiva personal y emocional / Detalles
+                cotidianos / Información de sectores que no dejaron documentos escritos.</div>
+        </div>
+
+        <div class="answer-item">
+            <strong>8. Limitaciones o sesgos</strong>
+            <div class="response">Memoria selectiva / Paso del tiempo / Subjetividad del testigo / Posibles confusiones
+                de fechas o hechos / Influencia del contexto actual.</div>
+        </div>
+
+        <div class="answer-item">
+            <strong>9. Cómo contrastar la información</strong>
+            <div class="response">Buscar otros testimonios de la época / Contrastar con documentos oficiales / Revisar
+                fotografías / Consultar prensa de la época / Investigar en archivos municipales.</div>
+        </div>
+
+        <h3 style="color: #5c3d2e; margin: 12px 0 8px;">Síntesis Crítica</h3>
+
+        <div class="answer-item">
+            <strong>10. Comparación de las tres fuentes</strong>
+            <div class="response">Documento oficial: política estatal, datos formales. Fotografía: evidencia visual,
+                vida material. Testimonio: experiencia vivida, memoria colectiva. Se complementan mutuamente.</div>
+        </div>
+
+        <div class="answer-item">
+            <strong>11. Otras fuentes a buscar</strong>
+            <div class="response">Archivo Nacional (decretos) / Biblioteca Nacional (prensa) / Archivo Municipal / Museo
+                local / Registros civiles / Fotografías familiares / Más testimonios orales. Valorar creatividad y
+                viabilidad.</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📊 Rúbrica de Evaluación</h2>
+        <table class="rubric">
+            <tr>
+                <th>Criterio</th>
+                <th>Excelente (3)</th>
+                <th>Satisfactorio (2)</th>
+                <th>Básico (1)</th>
+            </tr>
+            <tr>
+                <td><strong>Identificación de fuentes</strong></td>
+                <td>Identifica tipo y justifica correctamente</td>
+                <td>Identifica tipo sin justificación completa</td>
+                <td>Confunde tipos de fuentes</td>
+            </tr>
+            <tr>
+                <td><strong>Análisis crítico</strong></td>
+                <td>Identifica ventajas, limitaciones y sesgos</td>
+                <td>Identifica solo ventajas o limitaciones</td>
+                <td>Análisis superficial</td>
+            </tr>
+            <tr>
+                <td><strong>Síntesis comparativa</strong></td>
+                <td>Compara y relaciona las tres fuentes</td>
+                <td>Compara dos fuentes</td>
+                <td>Describe sin comparar</td>
+            </tr>
+            <tr>
+                <td><strong>Propuestas de investigación</strong></td>
+                <td>Propone fuentes viables y diversas</td>
+                <td>Propone algunas fuentes</td>
+                <td>No propone o son inviables</td>
+            </tr>
+        </table>
+        <p style="margin-top: 10px; font-size: 0.8rem;"><strong>Puntaje máximo:</strong> 44 puntos (11 preguntas × 4
+            pts) | <strong>Nota 4.0:</strong> 26 puntos (60%)</p>
+    </div>
+
+    <div class="footer">
+        <p>Archivos en Movimiento - Material Educativo Patrimonial de Parral</p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Libro de Parral para Colorear</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', 'Chalkboard', cursive;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 15mm;
+        }
+
+        @media print {
+            body {
+                padding: 10mm;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .page {
+                page-break-after: always;
+            }
+
+            .page:last-child {
+                page-break-after: auto;
+            }
+        }
+
+        .btn-print {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            margin: 20px auto;
+            display: block;
+            font-family: inherit;
+        }
+
+        .page {
+            min-height: 250mm;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 20px;
+        }
+
+        .cover {
+            text-align: center;
+            border: 8px dashed #4caf50;
+            padding: 40px;
+            border-radius: 20px;
+            background: #f0fff0;
+        }
+
+        .cover h1 {
+            font-size: 2.5rem;
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+
+        .cover h2 {
+            font-size: 1.5rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .cover .emoji {
+            font-size: 4rem;
+            margin: 20px 0;
+        }
+
+        .cover .name-line {
+            font-size: 1.2rem;
+            margin-top: 30px;
+        }
+
+        .cover .name-line span {
+            display: inline-block;
+            border-bottom: 3px solid #2e7d32;
+            width: 200px;
+            margin-left: 10px;
+        }
+
+        .coloring-page h2 {
+            color: #1565c0;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .coloring-area {
+            width: 100%;
+            max-width: 180mm;
+            height: 140mm;
+            border: 4px solid #333;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            background: white;
+        }
+
+        .coloring-area .placeholder {
+            font-size: 1.2rem;
+            color: #999;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .drawing-prompt {
+            font-size: 1.3rem;
+            color: #333;
+            text-align: center;
+            padding: 15px;
+            background: #e3f2fd;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        .simple-text {
+            font-size: 1.4rem;
+            text-align: center;
+            line-height: 2;
+            margin: 20px 0;
+            padding: 20px;
+            background: #fff9c4;
+            border-radius: 10px;
+        }
+
+        .question-box {
+            width: 100%;
+            max-width: 180mm;
+            padding: 20px;
+            background: #e8f5e9;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .question-box h3 {
+            color: #2e7d32;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .circle-answer {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .circle-answer span {
+            padding: 10px 25px;
+            border: 3px solid #333;
+            border-radius: 50px;
+        }
+
+        .badge-age {
+            display: inline-block;
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 1rem;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn-print no-print" onclick="window.print()">🖨️ Imprimir Mi Libro</button>
+
+    <!-- PORTADA -->
+    <div class="page">
+        <div class="cover">
+            <h1>🏠 Mi Libro de Parral</h1>
+            <h2>Para Colorear y Aprender</h2>
+            <div class="emoji">🎨 🚂 ⛪ 🌳</div>
+            <p class="name-line">Mi nombre es: <span></span></p>
+            <p class="name-line">Mi curso: <span></span></p>
+            <span class="badge-age">Parvularia y 1° Básico (4-7 años)</span>
+        </div>
+    </div>
+
+    <!-- PÁGINA 1: La Plaza -->
+    <div class="page coloring-page">
+        <h2>🌳 La Plaza de Parral</h2>
+        <div class="coloring-area">
+            <div class="placeholder">
+                [Espacio para dibujar la Plaza de Armas]<br><br>
+                🌳 Árboles grandes<br>
+                ⛲ Una fuente en el centro<br>
+                🪑 Bancas para sentarse<br>
+                👨‍👩‍👧 Personas paseando
+            </div>
+        </div>
+        <div class="simple-text">
+            La <strong>Plaza de Armas</strong> es el corazón de Parral.<br>
+            Tiene árboles, una fuente y muchas bancas.<br>
+            ¡Es un lugar muy bonito para pasear!
+        </div>
+        <div class="question-box">
+            <h3>🤔 ¿Has ido a la plaza? Encierra tu respuesta:</h3>
+            <div class="circle-answer">
+                <span>😊 SÍ</span>
+                <span>😢 NO</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- PÁGINA 2: El Tren -->
+    <div class="page coloring-page">
+        <h2>🚂 El Antiguo Tren de Parral</h2>
+        <div class="coloring-area">
+            <div class="placeholder">
+                [Espacio para dibujar un tren antiguo]<br><br>
+                🚂 Una locomotora con chimenea<br>
+                💨 Humo saliendo<br>
+                🚃 Vagones para pasajeros<br>
+                🛤️ Rieles del tren
+            </div>
+        </div>
+        <div class="simple-text">
+            Hace muchos años, un <strong>tren</strong> llegaba a Parral.<br>
+            Traía pasajeros y productos del campo.<br>
+            ¡Hacía mucho ruido: CHU CHU! 🚂
+        </div>
+        <div class="question-box">
+            <h3>🔢 ¿Cuántos vagones tiene tu tren? Cuenta y escribe:</h3>
+            <div style="text-align: center; font-size: 2rem; padding: 10px;">
+                _____ vagones
+            </div>
+        </div>
+    </div>
+
+    <!-- PÁGINA 3: La Iglesia -->
+    <div class="page coloring-page">
+        <h2>⛪ El Templo San José</h2>
+        <div class="coloring-area">
+            <div class="placeholder">
+                [Espacio para dibujar la iglesia]<br><br>
+                ⛪ Una iglesia alta con torres<br>
+                🔔 Una campana arriba<br>
+                🚪 Una puerta grande<br>
+                🪟 Ventanas bonitas
+            </div>
+        </div>
+        <div class="simple-text">
+            El <strong>Templo San José</strong> está frente a la plaza.<br>
+            Es una iglesia muy antigua y bonita.<br>
+            Tiene torres altas que llegan al cielo. ⛪
+        </div>
+        <div class="question-box">
+            <h3>🎨 Colorea la iglesia con tus colores favoritos</h3>
+            <p style="text-align: center; font-size: 1.1rem; margin-top: 10px;">
+                ¿De qué color pintaste las torres? _________________
+            </p>
+        </div>
+    </div>
+
+    <!-- PÁGINA 4: Pablo Neruda -->
+    <div class="page coloring-page">
+        <h2>📚 Pablo Neruda, el Poeta</h2>
+        <div class="coloring-area">
+            <div class="placeholder">
+                [Espacio para dibujar a un poeta escribiendo]<br><br>
+                👤 Un señor sentado<br>
+                📝 Escribiendo en un papel<br>
+                📚 Libros a su lado<br>
+                🌟 Estrellas de inspiración
+            </div>
+        </div>
+        <div class="simple-text">
+            <strong>Pablo Neruda</strong> nació en Parral.<br>
+            Era un poeta muy famoso, escribía poesías.<br>
+            ¡Ganó un premio muy importante! 🏆
+        </div>
+        <div class="question-box">
+            <h3>✏️ Dibuja una estrella junto al poeta:</h3>
+            <div style="text-align: center; padding: 20px;">
+                ⭐ ➡️ [ ]
+            </div>
+        </div>
+    </div>
+
+    <!-- PÁGINA FINAL -->
+    <div class="page">
+        <div class="cover" style="border-color: #1565c0; background: #e3f2fd;">
+            <h1>🌟 ¡Muy Bien!</h1>
+            <h2>Terminaste tu libro de Parral</h2>
+            <div class="emoji">🎉 👏 🏆 ⭐</div>
+            <p style="font-size: 1.3rem; margin: 20px 0; color: #1565c0;">
+                Ahora conoces lugares importantes de tu ciudad:
+            </p>
+            <div style="font-size: 1.2rem; line-height: 2;">
+                ✓ La Plaza de Armas 🌳<br>
+                ✓ El Antiguo Tren 🚂<br>
+                ✓ El Templo San José ⛪<br>
+                ✓ Pablo Neruda 📚
+            </div>
+            <p style="margin-top: 30px; font-size: 1.1rem;">
+                Firma de mi profesora: ____________________
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
