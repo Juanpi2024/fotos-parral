@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contando en Parral - Matemáticas y Patrimonio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', 'Chalkboard', cursive;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 15mm;
+        }
+
+        @media print {
+            body {
+                padding: 10mm;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .page {
+                page-break-after: always;
+            }
+
+            .page:last-child {
+                page-break-after: auto;
+            }
+        }
+
+        .btn-print {
+            background: #1565c0;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .page {
+            padding: 20px;
+            min-height: 270mm;
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 4px dashed #1565c0;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            color: #1565c0;
+            font-size: 2rem;
+        }
+
+        .header .emoji {
+            font-size: 2.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #bbdefb;
+            color: #1565c0;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        .activity {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border: 3px solid #ddd;
+        }
+
+        .activity h2 {
+            color: #333;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .counting-row {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+        }
+
+        .icons {
+            font-size: 2rem;
+            flex: 1;
+        }
+
+        .answer-box {
+            width: 60px;
+            height: 60px;
+            border: 3px solid #1565c0;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            background: white;
+        }
+
+        .number-trace {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .trace-box {
+            width: 80px;
+            height: 100px;
+            border: 3px dashed #999;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: white;
+        }
+
+        .trace-box .number {
+            font-size: 3rem;
+            color: #ccc;
+        }
+
+        .trace-box .label {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .shapes-row {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .shape-item {
+            text-align: center;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            width: 100px;
+        }
+
+        .shape-item .shape {
+            font-size: 3rem;
+        }
+
+        .shape-item .name {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .match-exercise {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .match-col {
+            text-align: center;
+        }
+
+        .match-item {
+            padding: 10px 20px;
+            margin: 10px 0;
+            background: white;
+            border-radius: 8px;
+            font-size: 1.3rem;
+        }
+
+        .simple-text {
+            font-size: 1.2rem;
+            text-align: center;
+            padding: 15px;
+            background: #fff9c4;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+
+        .footer {
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 2px solid #ddd;
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn-print no-print" onclick="window.print()">🖨️ Imprimir / Guardar PDF</button>
+
+    <!-- PORTADA -->
+    <div class="page">
+        <div class="header">
+            <div class="emoji">🔢 🚂 ⛪ 🌳</div>
+            <h1>Contando en Parral</h1>
+            <p style="font-size: 1.2rem; color: #666;">Matemáticas y Patrimonio</p>
+            <span class="badge">1° y 2° Básico (6-7 años)</span>
+        </div>
+
+        <div class="activity">
+            <h2>🚂 Cuenta los Vagones del Tren</h2>
+            <div class="simple-text">
+                El tren de Parral llevaba pasajeros y productos del campo.<br>
+                ¡Cuenta cuántos vagones tiene cada tren!
+            </div>
+
+            <div class="counting-row">
+                <div class="icons">🚂 🚃 🚃</div>
+                <div class="answer-box"></div>
+                <span style="font-size: 1.2rem;">vagones</span>
+            </div>
+
+            <div class="counting-row">
+                <div class="icons">🚂 🚃 🚃 🚃 🚃</div>
+                <div class="answer-box"></div>
+                <span style="font-size: 1.2rem;">vagones</span>
+            </div>
+
+            <div class="counting-row">
+                <div class="icons">🚂 🚃 🚃 🚃 🚃 🚃 🚃</div>
+                <div class="answer-box"></div>
+                <span style="font-size: 1.2rem;">vagones</span>
+            </div>
+        </div>
+
+        <div class="activity">
+            <h2>🌳 Cuenta los Árboles de la Plaza</h2>
+            <div class="counting-row">
+                <div class="icons">🌳 🌳 🌳 🌳 🌳</div>
+                <div class="answer-box"></div>
+            </div>
+            <div class="counting-row">
+                <div class="icons">🌳 🌳 🌳 🌳 🌳 🌳 🌳 🌳</div>
+                <div class="answer-box"></div>
+            </div>
+        </div>
+
+        <div class="footer">
+            Nombre: _________________________ Curso: _______
+        </div>
+    </div>
+
+    <!-- PÁGINA 2: Números -->
+    <div class="page">
+        <div class="activity">
+            <h2>✏️ Traza los Números</h2>
+            <div class="simple-text">
+                Practica escribir los números del 1 al 10.<br>
+                ¡Sigue las líneas punteadas!
+            </div>
+            <div class="number-trace">
+                <div class="trace-box"><span class="number">1</span><span class="label">uno</span></div>
+                <div class="trace-box"><span class="number">2</span><span class="label">dos</span></div>
+                <div class="trace-box"><span class="number">3</span><span class="label">tres</span></div>
+                <div class="trace-box"><span class="number">4</span><span class="label">cuatro</span></div>
+                <div class="trace-box"><span class="number">5</span><span class="label">cinco</span></div>
+            </div>
+            <div class="number-trace">
+                <div class="trace-box"><span class="number">6</span><span class="label">seis</span></div>
+                <div class="trace-box"><span class="number">7</span><span class="label">siete</span></div>
+                <div class="trace-box"><span class="number">8</span><span class="label">ocho</span></div>
+                <div class="trace-box"><span class="number">9</span><span class="label">nueve</span></div>
+                <div class="trace-box"><span class="number">10</span><span class="label">diez</span></div>
+            </div>
+        </div>
+
+        <div class="activity">
+            <h2>🔷 Formas en la Ciudad</h2>
+            <div class="simple-text">
+                Mira las formas. ¿Dónde las ves en Parral?
+            </div>
+            <div class="shapes-row">
+                <div class="shape-item">
+                    <div class="shape">⬜</div>
+                    <div class="name">Cuadrado<br>(ventanas)</div>
+                </div>
+                <div class="shape-item">
+                    <div class="shape">🔺</div>
+                    <div class="name">Triángulo<br>(techos)</div>
+                </div>
+                <div class="shape-item">
+                    <div class="shape">⭕</div>
+                    <div class="name">Círculo<br>(fuente)</div>
+                </div>
+                <div class="shape-item">
+                    <div class="shape">▬</div>
+                    <div class="name">Rectángulo<br>(puertas)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="activity">
+            <h2>🔗 Une con una Línea</h2>
+            <div class="match-exercise">
+                <div class="match-col">
+                    <div class="match-item">3</div>
+                    <div class="match-item">5</div>
+                    <div class="match-item">2</div>
+                    <div class="match-item">4</div>
+                </div>
+                <div class="match-col" style="font-size: 2rem;">
+                    ➡️➡️➡️
+                </div>
+                <div class="match-col">
+                    <div class="match-item">🏠🏠</div>
+                    <div class="match-item">🏠🏠🏠🏠</div>
+                    <div class="match-item">🏠🏠🏠🏠🏠</div>
+                    <div class="match-item">🏠🏠🏠</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            Archivos en Movimiento - Parral
+        </div>
+    </div>
+
+    <!-- PÁGINA 3: Sumas -->
+    <div class="page">
+        <div class="activity">
+            <h2>➕ Sumas con el Patrimonio</h2>
+            <div class="simple-text">
+                Resuelve las sumas usando los dibujos de ayuda.
+            </div>
+
+            <div class="counting-row" style="justify-content: center;">
+                <span style="font-size: 2rem;">🚂🚂</span>
+                <span style="font-size: 2rem; margin: 0 10px;">+</span>
+                <span style="font-size: 2rem;">🚂</span>
+                <span style="font-size: 2rem; margin: 0 10px;">=</span>
+                <div class="answer-box"></div>
+            </div>
+
+            <div class="counting-row" style="justify-content: center;">
+                <span style="font-size: 2rem;">🌳🌳🌳</span>
+                <span style="font-size: 2rem; margin: 0 10px;">+</span>
+                <span style="font-size: 2rem;">🌳🌳</span>
+                <span style="font-size: 2rem; margin: 0 10px;">=</span>
+                <div class="answer-box"></div>
+            </div>
+
+            <div class="counting-row" style="justify-content: center;">
+                <span style="font-size: 2rem;">⛪</span>
+                <span style="font-size: 2rem; margin: 0 10px;">+</span>
+                <span style="font-size: 2rem;">⛪⛪⛪</span>
+                <span style="font-size: 2rem; margin: 0 10px;">=</span>
+                <div class="answer-box"></div>
+            </div>
+
+            <div class="counting-row" style="justify-content: center;">
+                <span style="font-size: 2rem;">🏠🏠🏠🏠</span>
+                <span style="font-size: 2rem; margin: 0 10px;">+</span>
+                <span style="font-size: 2rem;">🏠🏠</span>
+                <span style="font-size: 2rem; margin: 0 10px;">=</span>
+                <div class="answer-box"></div>
+            </div>
+        </div>
+
+        <div class="activity">
+            <h2>🌟 ¡Muy Bien!</h2>
+            <div class="simple-text" style="background: #c8e6c9;">
+                Has aprendido a contar con el patrimonio de Parral.<br><br>
+                ✓ Contaste vagones del tren 🚂<br>
+                ✓ Conociste formas en la ciudad 🔷<br>
+                ✓ Hiciste sumas con casas y árboles ➕<br><br>
+                ¡Eres un gran matemático! 🏆
+            </div>
+        </div>
+
+        <div class="footer">
+            Firma del profesor/a: _____________________
+        </div>
+    </div>
+</body>
+
+</html>

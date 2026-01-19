@@ -27,11 +27,11 @@
 
         .header {
             text-align: center;
-            padding: 2rem 0 2rem;
+            padding: 1.5rem 0;
         }
 
         .header h1 {
-            font-size: 2.2rem;
+            font-size: 2rem;
             color: #c9a961;
             margin-bottom: 0.5rem;
         }
@@ -57,13 +57,39 @@
             color: #1a1510;
         }
 
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 0.8rem 1.2rem;
+            background: rgba(201, 169, 97, 0.15);
+            border-radius: 10px;
+        }
+
+        .stat-item .number {
+            font-size: 1.8rem;
+            color: #c9a961;
+            font-weight: bold;
+        }
+
+        .stat-item .label {
+            font-size: 0.75rem;
+            color: rgba(244, 233, 217, 0.7);
+        }
+
         .level-section {
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
         }
 
         .level-title {
             color: #c9a961;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             margin-bottom: 1rem;
             padding-bottom: 0.5rem;
             border-bottom: 2px solid rgba(201, 169, 97, 0.3);
@@ -72,49 +98,46 @@
         .level-title .badge-level {
             display: inline-block;
             background: rgba(201, 169, 97, 0.2);
-            padding: 4px 12px;
-            border-radius: 15px;
-            font-size: 0.75rem;
-            margin-left: 10px;
-            vertical-align: middle;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            margin-left: 8px;
         }
 
         .materials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.2rem;
         }
 
         .material-card {
             background: rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
+            border-radius: 10px;
             overflow: hidden;
             border: 1px solid rgba(201, 169, 97, 0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s;
         }
 
         .material-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transform: translateY(-3px);
         }
 
         .card-header {
-            padding: 1.2rem;
+            padding: 1rem;
             background: linear-gradient(135deg, rgba(201, 169, 97, 0.2), rgba(139, 115, 85, 0.2));
             border-bottom: 1px solid rgba(201, 169, 97, 0.3);
         }
 
         .card-header h2 {
             color: #c9a961;
-            font-size: 1.1rem;
+            font-size: 1rem;
             margin-bottom: 0.3rem;
         }
 
         .card-header .badge {
-            display: inline-block;
-            padding: 0.2rem 0.6rem;
-            border-radius: 12px;
-            font-size: 0.7rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: 10px;
+            font-size: 0.65rem;
         }
 
         .badge-parvularia {
@@ -122,9 +145,19 @@
             color: #2e7d32;
         }
 
-        .badge-basica {
+        .badge-basica12 {
             background: #bbdefb;
-            color: #1565c0;
+            color: #0d47a1;
+        }
+
+        .badge-basica34 {
+            background: #ffe0b2;
+            color: #e65100;
+        }
+
+        .badge-basica58 {
+            background: #f8bbd9;
+            color: #c2185b;
         }
 
         .badge-media {
@@ -133,31 +166,29 @@
         }
 
         .card-body {
-            padding: 1.2rem;
+            padding: 1rem;
         }
 
         .card-body p {
             color: rgba(244, 233, 217, 0.8);
-            font-size: 0.85rem;
-            margin-bottom: 1rem;
-            line-height: 1.5;
+            font-size: 0.8rem;
+            margin-bottom: 0.8rem;
+            line-height: 1.4;
         }
 
         .card-buttons {
             display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
+            gap: 0.4rem;
         }
 
         .btn {
             flex: 1;
-            min-width: 100px;
-            padding: 0.6rem 0.8rem;
-            border-radius: 6px;
+            padding: 0.5rem;
+            border-radius: 5px;
             text-decoration: none;
             text-align: center;
             font-weight: 600;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             transition: all 0.3s;
         }
 
@@ -180,55 +211,29 @@
         }
 
         .emoji {
-            font-size: 1.5rem;
-            margin-right: 8px;
+            font-size: 1.3rem;
+            margin-right: 6px;
         }
 
         .info-box {
             background: rgba(201, 169, 97, 0.1);
             border: 1px solid rgba(201, 169, 97, 0.3);
             border-radius: 8px;
-            padding: 1.5rem;
-            margin-top: 2rem;
+            padding: 1.2rem;
+            margin-top: 1.5rem;
             text-align: center;
         }
 
         .info-box h3 {
             color: #c9a961;
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
         }
 
         .info-box p {
             color: rgba(244, 233, 217, 0.8);
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-        .stats {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 1rem;
-            background: rgba(201, 169, 97, 0.1);
-            border-radius: 10px;
-            min-width: 120px;
-        }
-
-        .stat-item .number {
-            font-size: 2rem;
-            color: #c9a961;
-            font-weight: bold;
-        }
-
-        .stat-item .label {
-            font-size: 0.8rem;
-            color: rgba(244, 233, 217, 0.7);
+            font-size: 0.85rem;
+            line-height: 1.5;
         }
     </style>
 </head>
@@ -244,34 +249,30 @@
 
         <div class="stats">
             <div class="stat-item">
-                <div class="number">12</div>
-                <div class="label">Documentos PDF</div>
+                <div class="number">17</div>
+                <div class="label">Documentos</div>
             </div>
             <div class="stat-item">
-                <div class="number">6</div>
+                <div class="number">8</div>
                 <div class="label">Materiales</div>
             </div>
             <div class="stat-item">
-                <div class="number">3</div>
+                <div class="number">5</div>
                 <div class="label">Niveles</div>
             </div>
         </div>
 
         <!-- PARVULARIA -->
         <div class="level-section">
-            <h2 class="level-title">
-                🧒 Parvularia y 1° Básico
-                <span class="badge-level">4-7 años</span>
-            </h2>
+            <h2 class="level-title">🧒 Parvularia / 1° Básico <span class="badge-level">4-7 años</span></h2>
             <div class="materials-grid">
                 <div class="material-card">
                     <div class="card-header">
                         <h2><span class="emoji">🎨</span>Mi Libro de Parral</h2>
-                        <span class="badge badge-parvularia">Parvularia - 1° Básico</span>
+                        <span class="badge badge-parvularia">Parvularia</span>
                     </div>
                     <div class="card-body">
-                        <p>Libro de 5 páginas para colorear con actividades sobre la Plaza, el Tren, la Iglesia y Pablo
-                            Neruda.</p>
+                        <p>5 páginas para colorear: Plaza, Tren, Iglesia, Neruda y Certificado.</p>
                         <div class="card-buttons">
                             <a href="libro-colorear-estudiante.html" class="btn btn-student" target="_blank">📋
                                 Estudiante</a>
@@ -282,20 +283,60 @@
             </div>
         </div>
 
+        <!-- BÁSICA 1-2° -->
+        <div class="level-section">
+            <h2 class="level-title">📘 Básica 1° - 2° <span class="badge-level">6-7 años</span></h2>
+            <div class="materials-grid">
+                <div class="material-card">
+                    <div class="card-header">
+                        <h2><span class="emoji">🔢</span>Contando en Parral</h2>
+                        <span class="badge badge-basica12">Básica 1-2°</span>
+                    </div>
+                    <div class="card-body">
+                        <p>Conteo, trazado de números, formas geométricas y sumas simples.</p>
+                        <div class="card-buttons">
+                            <a href="contando-parral-estudiante.html" class="btn btn-student" target="_blank">📋
+                                Estudiante</a>
+                            <a href="contando-parral-docente.html" class="btn btn-teacher" target="_blank">📚
+                                Docente</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BÁSICA 3-4° -->
+        <div class="level-section">
+            <h2 class="level-title">📙 Básica 3° - 4° <span class="badge-level">8-9 años</span></h2>
+            <div class="materials-grid">
+                <div class="material-card">
+                    <div class="card-header">
+                        <h2><span class="emoji">🗺️</span>Mapa de Mi Ciudad</h2>
+                        <span class="badge badge-basica34">Básica 3-4°</span>
+                    </div>
+                    <div class="card-body">
+                        <p>Orientación espacial, puntos cardinales y ubicación de lugares importantes.</p>
+                        <div class="card-buttons">
+                            <a href="mapa-ciudad-estudiante.html" class="btn btn-student" target="_blank">📋
+                                Estudiante</a>
+                            <a href="mapa-ciudad-docente.html" class="btn btn-teacher" target="_blank">📚 Docente</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- BÁSICA 5-8° -->
         <div class="level-section">
-            <h2 class="level-title">
-                📚 Enseñanza Básica
-                <span class="badge-level">5° a 8° Básico | 10-13 años</span>
-            </h2>
+            <h2 class="level-title">📕 Básica 5° - 8° <span class="badge-level">10-13 años</span></h2>
             <div class="materials-grid">
                 <div class="material-card">
                     <div class="card-header">
                         <h2><span class="emoji">🔤</span>Sopa de Letras</h2>
-                        <span class="badge badge-basica">Básica 5-8°</span>
+                        <span class="badge badge-basica58">Básica 5-8°</span>
                     </div>
                     <div class="card-body">
-                        <p>Grilla 15x15 con 10 palabras patrimoniales. Incluye actividad de relacionar definiciones.</p>
+                        <p>10 palabras patrimoniales en grilla 15x15 con definiciones.</p>
                         <div class="card-buttons">
                             <a href="sopa-letras-estudiante.html" class="btn btn-student" target="_blank">📋
                                 Estudiante</a>
@@ -303,14 +344,13 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="material-card">
                     <div class="card-header">
                         <h2><span class="emoji">✏️</span>Crucigrama Histórico</h2>
-                        <span class="badge badge-basica">Básica 5-8°</span>
+                        <span class="badge badge-basica58">Básica 5-8°</span>
                     </div>
                     <div class="card-body">
-                        <p>7 palabras clave con pistas históricas. Incluye reflexión sobre patrimonio local.</p>
+                        <p>7 palabras con pistas sobre historia y patrimonio.</p>
                         <div class="card-buttons">
                             <a href="crucigrama-estudiante.html" class="btn btn-student" target="_blank">📋
                                 Estudiante</a>
@@ -318,28 +358,26 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="material-card">
                     <div class="card-header">
                         <h2><span class="emoji">🎯</span>Trivia Patrimonial</h2>
-                        <span class="badge badge-basica">Básica 5-8°</span>
+                        <span class="badge badge-basica58">Básica 5-8°</span>
                     </div>
                     <div class="card-body">
-                        <p>20 preguntas de opción múltiple. Ideal para competencias grupales o Kahoot.</p>
+                        <p>20 preguntas de opción múltiple sobre Parral.</p>
                         <div class="card-buttons">
                             <a href="trivia-estudiante.html" class="btn btn-student" target="_blank">📋 Estudiante</a>
                             <a href="trivia-docente.html" class="btn btn-teacher" target="_blank">📚 Docente</a>
                         </div>
                     </div>
                 </div>
-
                 <div class="material-card">
                     <div class="card-header">
-                        <h2><span class="emoji">📖</span>El Ferrocarril de Parral</h2>
-                        <span class="badge badge-basica">Básica 5-8°</span>
+                        <h2><span class="emoji">📖</span>El Ferrocarril</h2>
+                        <span class="badge badge-basica58">Básica 5-8°</span>
                     </div>
                     <div class="card-body">
-                        <p>Lectura histórica con preguntas de comprensión, vocabulario y reflexión.</p>
+                        <p>Lectura histórica con comprensión y vocabulario.</p>
                         <div class="card-buttons">
                             <a href="ficha-ferrocarril-estudiante.html" class="btn btn-student" target="_blank">📋
                                 Estudiante</a>
@@ -353,19 +391,15 @@
 
         <!-- ENSEÑANZA MEDIA -->
         <div class="level-section">
-            <h2 class="level-title">
-                🎓 Enseñanza Media
-                <span class="badge-level">I° a IV° Medio | 14-18 años</span>
-            </h2>
+            <h2 class="level-title">🎓 Enseñanza Media <span class="badge-level">14-18 años</span></h2>
             <div class="materials-grid">
                 <div class="material-card">
                     <div class="card-header">
                         <h2><span class="emoji">📊</span>Análisis de Fuentes</h2>
-                        <span class="badge badge-media">Enseñanza Media</span>
+                        <span class="badge badge-media">E. Media</span>
                     </div>
                     <div class="card-body">
-                        <p>Trabajo con 3 tipos de fuentes primarias: documento oficial, fotografía y testimonio oral.
-                        </p>
+                        <p>Trabajo con fuentes primarias: documento, foto y testimonio oral.</p>
                         <div class="card-buttons">
                             <a href="analisis-fuentes-estudiante.html" class="btn btn-student" target="_blank">📋
                                 Estudiante</a>
@@ -378,12 +412,8 @@
         </div>
 
         <div class="info-box">
-            <h3>🖨️ ¿Cómo usar estos materiales?</h3>
-            <p>
-                1. Haz clic en <strong>"Estudiante"</strong> o <strong>"Docente"</strong><br>
-                2. Pulsa el botón <strong>"Imprimir / Guardar PDF"</strong> en la página<br>
-                3. Elige "Guardar como PDF" o imprime directamente
-            </p>
+            <h3>🖨️ ¿Cómo usar?</h3>
+            <p>Clic en Estudiante/Docente → Botón "Imprimir" → Guardar como PDF</p>
         </div>
     </div>
 </body>
