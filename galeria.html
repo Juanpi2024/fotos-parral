@@ -1055,6 +1055,11 @@
                 <p>Héroes voluntarios que han protegido nuestra ciudad por generaciones</p>
             </div>
 
+            <!-- Floating Compare Button -->
+            <button type="button" class="compare-mode-btn" onclick="toggleCompareMode('bomberosModal')">
+                🔄 Modo Comparación
+            </button>
+
             <!-- Image Gallery Section -->
             <h3
                 style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
@@ -1091,6 +1096,30 @@
                         class="btn-download-sm">Descargar</a>
                 </div>
 
+            </div>
+
+            <!-- Comparison Sliders Section (hidden by default) -->
+            <div class="compare-section" style="display: none;">
+                <h3
+                    style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1.5rem; text-align: center;">
+                    🔄 Desliza para Comparar Antes/Después
+                </h3>
+
+                <div class="compare-pair">
+                    <h4 style="text-align: center; margin-bottom: 0.5rem; color: var(--primary-color);">Bomberos de
+                        Parral</h4>
+                    <div class="before-after-container">
+                        <div class="before-after-wrapper">
+                            <img src="images/bomberos/parral-bomberos-2.webp" alt="Coloreada" class="after-image">
+                            <div class="before-image-wrapper">
+                                <img src="images/bomberos/parral-bomberos-1.webp" alt="Restaurada" class="before-image">
+                            </div>
+                            <div class="slider-control">
+                                <div class="slider-button"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Video Section -->
@@ -1656,6 +1685,11 @@
                 <p>Los autos y medios de transporte que recorrían las calles de Parral</p>
             </div>
 
+            <!-- Floating Compare Button -->
+            <button type="button" class="compare-mode-btn" onclick="toggleCompareMode('vehiculosModal')">
+                🔄 Modo Comparación
+            </button>
+
             <h3
                 style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
                 📸 Galería de Imágenes</h3>
@@ -1778,6 +1812,91 @@
                         </div>
                         <a href="images/fiesta-primavera-1925/optimizado-fiesta primavera  color 1925.webp" download
                             class="btn-download-sm">Descargar</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comparison Sliders Section (hidden by default) -->
+            <div class="compare-section" style="display: none;">
+                <h3
+                    style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1.5rem; text-align: center;">
+                    🔄 Desliza para Comparar Antes/Después
+                </h3>
+
+                <div style="display: flex; flex-direction: column; gap: 3rem;">
+                    <!-- Pair 1: Citroneta -->
+                    <div class="compare-pair">
+                        <h4 style="text-align: center; margin-bottom: 0.5rem; color: var(--primary-color);">Citroneta
+                        </h4>
+                        <div class="before-after-container">
+                            <div class="before-after-wrapper">
+                                <img src="images/vehiculos/optimizado-citroneta a color.webp" alt="Color"
+                                    class="after-image">
+                                <div class="before-image-wrapper">
+                                    <img src="images/vehiculos/optimizado-citroneta original.webp" alt="Original"
+                                        class="before-image">
+                                </div>
+                                <div class="slider-control">
+                                    <div class="slider-button"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pair 2: Cinta Azul -->
+                    <div class="compare-pair">
+                        <h4 style="text-align: center; margin-bottom: 0.5rem; color: var(--primary-color);">Bus Cinta
+                            Azul</h4>
+                        <div class="before-after-container">
+                            <div class="before-after-wrapper">
+                                <img src="images/vehiculos/optimizado-cinta azul a color.webp" alt="Color"
+                                    class="after-image">
+                                <div class="before-image-wrapper">
+                                    <img src="images/vehiculos/optimizado-cinta azul original.webp" alt="Original"
+                                        class="before-image">
+                                </div>
+                                <div class="slider-control">
+                                    <div class="slider-button"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pair 3: Cruz Roja -->
+                    <div class="compare-pair">
+                        <h4 style="text-align: center; margin-bottom: 0.5rem; color: var(--primary-color);">Ambulancia
+                            Cruz Roja</h4>
+                        <div class="before-after-container">
+                            <div class="before-after-wrapper">
+                                <img src="images/vehiculos/optimizado-cruzroja a color.webp" alt="Color"
+                                    class="after-image">
+                                <div class="before-image-wrapper">
+                                    <img src="images/vehiculos/cruz roja sepia.jpg" alt="Original" class="before-image">
+                                </div>
+                                <div class="slider-control">
+                                    <div class="slider-button"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pair 4: Fiesta de Primavera 1925 -->
+                    <div class="compare-pair">
+                        <h4 style="text-align: center; margin-bottom: 0.5rem; color: var(--primary-color);">Fiesta de
+                            Primavera 1925</h4>
+                        <div class="before-after-container">
+                            <div class="before-after-wrapper">
+                                <img src="images/fiesta-primavera-1925/optimizado-fiesta primavera  color 1925.webp"
+                                    alt="Color" class="after-image">
+                                <div class="before-image-wrapper">
+                                    <img src="images/fiesta-primavera-1925/optimizado-fiesta de la primavera 1925.webp"
+                                        alt="Original" class="before-image">
+                                </div>
+                                <div class="slider-control">
+                                    <div class="slider-button"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -3330,6 +3449,11 @@
                 <p>Aguas curativas desde 1730 - Patrimonio termal de la Región del Maule</p>
             </div>
 
+            <!-- Floating Compare Button -->
+            <button type="button" class="compare-mode-btn" onclick="toggleCompareMode('termasModal')">
+                🔄 Modo Comparación
+            </button>
+
             <!-- Image Gallery Section -->
             <h3
                 style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
@@ -3437,6 +3561,32 @@
                 </div>
             </div>
 
+            <!-- Comparison Sliders Section (hidden by default) -->
+            <div class="compare-section" style="display: none;">
+                <h3
+                    style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1.5rem; text-align: center;">
+                    🔄 Desliza para Comparar Antes/Después
+                </h3>
+
+                <div class="compare-pair">
+                    <h4 style="text-align: center; margin-bottom: 0.5rem; color: var(--primary-color);">Termas de
+                        Catillo 1941</h4>
+                    <div class="before-after-container">
+                        <div class="before-after-wrapper">
+                            <img src="images/termas-de-catillo/optimizado termas a color 1941.webp" alt="Color"
+                                class="after-image">
+                            <div class="before-image-wrapper">
+                                <img src="images/termas-de-catillo/optimizado-termas de catillo1941.webp" alt="Original"
+                                    class="before-image">
+                            </div>
+                            <div class="slider-control">
+                                <div class="slider-button"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Video Section -->
             <div style="margin-top: 2.5rem;">
                 <h3
@@ -3497,6 +3647,11 @@
                 <p>El latido comercial y social de Parral: Sabores, aromas y gente de nuestra tierra</p>
             </div>
 
+            <!-- Floating Compare Button -->
+            <button type="button" class="compare-mode-btn" onclick="toggleCompareMode('feriaModal')">
+                🔄 Modo Comparación
+            </button>
+
             <!-- Image Gallery Section -->
             <h3
                 style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1rem; text-align: center;">
@@ -3531,6 +3686,31 @@
                     </div>
                     <a href="images/feria-libre/optimizado-feria a color.webp" download
                         class="btn-download-sm">Descargar</a>
+                </div>
+            </div>
+
+            <!-- Comparison Sliders Section (hidden by default) -->
+            <div class="compare-section" style="display: none;">
+                <h3
+                    style="font-family: var(--font-heading); color: var(--primary-color); margin-bottom: 1.5rem; text-align: center;">
+                    🔄 Desliza para Comparar Antes/Después
+                </h3>
+
+                <div class="compare-pair">
+                    <h4 style="text-align: center; margin-bottom: 0.5rem; color: var(--primary-color);">Feria Libre de
+                        Parral</h4>
+                    <div class="before-after-container">
+                        <div class="before-after-wrapper">
+                            <img src="images/feria-libre/optimizado-feria a color.webp" alt="Color" class="after-image">
+                            <div class="before-image-wrapper">
+                                <img src="images/feria-libre/feria blanco y negro.jpg" alt="Original"
+                                    class="before-image">
+                            </div>
+                            <div class="slider-control">
+                                <div class="slider-button"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
