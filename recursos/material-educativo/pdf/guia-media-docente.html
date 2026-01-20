@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Docente Educación Media - Patrimonio de Parral</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #9C27B0 0%, #6A1B9A 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .nivel {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        .intro {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .actividad {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #9C27B0;
+        }
+
+        .actividad h3 {
+            color: #6A1B9A;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .actividad h3 .num {
+            background: #9C27B0;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        .meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .meta-item {
+            text-align: center;
+        }
+
+        .meta-item span {
+            display: block;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .meta-item strong {
+            color: #6A1B9A;
+        }
+
+        .descripcion {
+            margin-bottom: 1rem;
+        }
+
+        .materiales,
+        .desarrollo,
+        .evaluacion {
+            margin-top: 1rem;
+        }
+
+        .materiales h4,
+        .desarrollo h4,
+        .evaluacion h4 {
+            color: #555;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.3rem;
+        }
+
+        .materiales ul,
+        .desarrollo ol {
+            padding-left: 1.5rem;
+        }
+
+        .materiales li,
+        .desarrollo li {
+            margin-bottom: 0.3rem;
+        }
+
+        .tip {
+            background: #F3E5F5;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .tip strong {
+            color: #6A1B9A;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .curriculum {
+            background: #EDE7F6;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .btn-print {
+            display: inline-block;
+            background: #9C27B0;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            margin: 1rem 0;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-print:hover {
+            background: #7B1FA2;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            .container {
+                max-width: 100%;
+            }
+
+            .no-print {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📕 Guía Docente: Educación Media</h1>
+            <p>Patrimonio Cultural de Parral</p>
+            <span class="nivel">I° a IV° Medio | 14-17 años</span>
+        </div>
+
+        <div class="intro">
+            <h2>📚 Presentación</h2>
+            <p>Esta guía presenta 5 actividades de alta complejidad para estudiantes de educación media, orientadas al
+                desarrollo del pensamiento histórico, la investigación académica y la participación ciudadana. Las
+                actividades promueven la reflexión crítica sobre el patrimonio como construcción social.</p>
+            <div class="no-print" style="text-align: center; margin-top: 1rem;">
+                <button class="btn-print" onclick="window.print()">🖨️ Imprimir Guía</button>
+            </div>
+        </div>
+
+        <!-- Actividad 1 -->
+        <div class="actividad">
+            <h3><span class="num">1</span> Ensayo: Identidad y Memoria Histórica Local</h3>
+            <div class="meta">
+                <div class="meta-item"><span>⏱️ Duración</span><strong>3 clases + tarea</strong></div>
+                <div class="meta-item"><span>👥 Agrupación</span><strong>Individual</strong></div>
+                <div class="meta-item"><span>📖 Asignatura</span><strong>Historia/Lenguaje</strong></div>
+            </div>
+            <div class="curriculum">
+                <strong>OA:</strong> Desarrollar una argumentación escrita fundamentada sobre un tema histórico.
+            </div>
+            <div class="descripcion">
+                <p><strong>Objetivo:</strong> Escribir un ensayo argumentativo reflexionando sobre la importancia del
+                    patrimonio de Parral en la construcción de identidad local.</p>
+            </div>
+            <div class="materiales">
+                <h4>📦 Materiales</h4>
+                <ul>
+                    <li>Lecturas de apoyo: textos sobre patrimonio e identidad</li>
+                    <li>Recursos digitales de Archivos en Movimiento</li>
+                    <li>Pauta de ensayo académico</li>
+                    <li>Rúbrica de evaluación</li>
+                </ul>
+            </div>
+            <div class="desarrollo">
+                <h4>📝 Desarrollo</h4>
+                <ol>
+                    <li><strong>Clase 1 - Conceptualización:</strong>
+                        <ul>
+                            <li>Discusión: ¿Qué es patrimonio? ¿Quién decide qué es patrimonial?</li>
+                            <li>Lectura de textos teóricos breves</li>
+                            <li>Elección de tema: "¿Por qué importa recordar?" o "El patrimonio de Parral frente a la
+                                modernización"</li>
+                        </ul>
+                    </li>
+                    <li><strong>Clase 2 - Planificación:</strong>
+                        <ul>
+                            <li>Estructura del ensayo: tesis, argumentos, contraargumentos, conclusión</li>
+                            <li>Búsqueda de evidencias en fuentes locales</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tarea:</strong> Redacción del ensayo (1500-2000 palabras)</li>
+                    <li><strong>Clase 3:</strong> Foro de lectura de ensayos destacados</li>
+                </ol>
+            </div>
+            <div class="tip">
+                <strong>💡 Tip:</strong> Los mejores ensayos pueden publicarse en un blog o revista escolar.
+            </div>
+        </div>
+
+        <!-- Actividad 2 -->
+        <div class="actividad">
+            <h3><span class="num">2</span> Historia Oral: Rescatando Testimonios</h3>
+            <div class="meta">
+                <div class="meta-item"><span>⏱️ Duración</span><strong>4 clases</strong></div>
+                <div class="meta-item"><span>👥 Agrupación</span><strong>Parejas</strong></div>
+                <div class="meta-item"><span>📖 Asignatura</span><strong>Historia</strong></div>
+            </div>
+            <div class="curriculum">
+                <strong>OA:</strong> Aplicar metodología de historia oral para la reconstrucción del pasado reciente.
+            </div>
+            <div class="descripcion">
+                <p><strong>Objetivo:</strong> Realizar entrevistas a adultos mayores de Parral, sistematizarlas y crear
+                    un archivo de historia oral.</p>
+            </div>
+            <div class="materiales">
+                <h4>📦 Materiales</h4>
+                <ul>
+                    <li>Guía metodológica de historia oral</li>
+                    <li>Grabadora o celular</li>
+                    <li>Consentimiento informado</li>
+                    <li>Pauta de entrevista semi-estructurada</li>
+                </ul>
+            </div>
+            <div class="desarrollo">
+                <h4>📝 Desarrollo</h4>
+                <ol>
+                    <li><strong>Clase 1 - Metodología:</strong>
+                        <ul>
+                            <li>¿Qué es la historia oral? Importancia de las fuentes orales</li>
+                            <li>Cómo hacer una buena entrevista: técnicas y ética</li>
+                            <li>Elaboración de pauta de preguntas</li>
+                        </ul>
+                    </li>
+                    <li><strong>Clase 2 - Preparación:</strong>
+                        <ul>
+                            <li>Ensayo de entrevistas entre compañeros</li>
+                            <li>Preparación de consentimientos y materiales</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tarea:</strong> Realizar entrevista a un adulto mayor (familiar o vecino)</li>
+                    <li><strong>Clase 3:</strong> Transcripción y análisis de testimonios</li>
+                    <li><strong>Clase 4:</strong> Presentación de hallazgos. Creación de archivo oral del curso</li>
+                </ol>
+            </div>
+            <div class="tip">
+                <strong>💡 Tip:</strong> Coordinar con Archivos en Movimiento para integrar testimonios a su
+                repositorio.
+            </div>
+        </div>
+
+        <!-- Actividad 3 -->
+        <div class="actividad">
+            <h3><span class="num">3</span> Proyecto Ciudadano: Propuesta de Conservación</h3>
+            <div class="meta">
+                <div class="meta-item"><span>⏱️ Duración</span><strong>5 clases</strong></div>
+                <div class="meta-item"><span>👥 Agrupación</span><strong>Grupos de 4</strong></div>
+                <div class="meta-item"><span>📖 Asignatura</span><strong>Ed. Ciudadana</strong></div>
+            </div>
+            <div class="curriculum">
+                <strong>OA:</strong> Elaborar propuestas de acción frente a problemas de la comunidad.
+            </div>
+            <div class="descripcion">
+                <p><strong>Objetivo:</strong> Diseñar una propuesta concreta de conservación o difusión del patrimonio
+                    de Parral dirigida a la municipalidad.</p>
+            </div>
+            <div class="materiales">
+                <h4>📦 Materiales</h4>
+                <ul>
+                    <li>Formato de proyecto ciudadano</li>
+                    <li>Diagnóstico patrimonial de Parral</li>
+                    <li>Ejemplos de proyectos exitosos</li>
+                    <li>Materiales para presentación</li>
+                </ul>
+            </div>
+            <div class="desarrollo">
+                <h4>📝 Desarrollo</h4>
+                <ol>
+                    <li><strong>Clase 1 - Diagnóstico:</strong> Identificar problemas patrimoniales de Parral: edificios
+                        en deterioro, falta de señalética, desconocimiento ciudadano, etc.</li>
+                    <li><strong>Clase 2 - Lluvia de ideas:</strong> Generar posibles soluciones y elegir una viable</li>
+                    <li><strong>Clase 3 - Diseño:</strong> Estructurar propuesta: problema, objetivos, actividades,
+                        recursos, cronograma</li>
+                    <li><strong>Clase 4 - Presentación:</strong> Exponer ante el curso. Votación por la mejor propuesta
+                    </li>
+                    <li><strong>Clase 5 - Acción:</strong> Redactar carta formal a la municipalidad con la propuesta
+                        ganadora</li>
+                </ol>
+            </div>
+            <div class="tip">
+                <strong>💡 Tip:</strong> Invitar a un concejal o funcionario municipal a la presentación final.
+            </div>
+        </div>
+
+        <!-- Actividad 4 -->
+        <div class="actividad">
+            <h3><span class="num">4</span> Seminario: Colonización y Migración en Parral</h3>
+            <div class="meta">
+                <div class="meta-item"><span>⏱️ Duración</span><strong>3 clases</strong></div>
+                <div class="meta-item"><span>👥 Agrupación</span><strong>Grupos de 3</strong></div>
+                <div class="meta-item"><span>📖 Asignatura</span><strong>Historia</strong></div>
+            </div>
+            <div class="curriculum">
+                <strong>OA:</strong> Analizar procesos migratorios y su impacto en la sociedad chilena.
+            </div>
+            <div class="descripcion">
+                <p><strong>Objetivo:</strong> Investigar y exponer sobre las colonias europeas (italiana, alemana,
+                    española) y su legado en Parral.</p>
+            </div>
+            <div class="materiales">
+                <h4>📦 Materiales</h4>
+                <ul>
+                    <li>Fuentes sobre colonización en Chile central</li>
+                    <li>Fotografías de colonos italianos de Parral</li>
+                    <li>Documentos de Archivos en Movimiento</li>
+                    <li>Formato de ponencia académica</li>
+                </ul>
+            </div>
+            <div class="desarrollo">
+                <h4>📝 Desarrollo</h4>
+                <ol>
+                    <li><strong>Clase 1 - Asignación:</strong>
+                        <ul>
+                            <li>Tema 1: Política de colonización en Chile (1880-1920)</li>
+                            <li>Tema 2: La colonia italiana de San Manuel</li>
+                            <li>Tema 3: Legado cultural gastronómico y arquitectónico</li>
+                            <li>Tema 4: Descendientes y memoria</li>
+                        </ul>
+                    </li>
+                    <li><strong>Clase 2:</strong> Investigación guiada y preparación de ponencias</li>
+                    <li><strong>Clase 3 - Seminario:</strong>
+                        <ul>
+                            <li>Cada grupo presenta (10 min)</li>
+                            <li>Mesa redonda: ¿Cómo influyó la migración en la identidad parralina?</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div class="tip">
+                <strong>💡 Tip:</strong> Invitar a un descendiente de colonos a compartir su historia familiar.
+            </div>
+        </div>
+
+        <!-- Actividad 5 -->
+        <div class="actividad">
+            <h3><span class="num">5</span> Podcast: "Voces de Parral"</h3>
+            <div class="meta">
+                <div class="meta-item"><span>⏱️ Duración</span><strong>4 clases</strong></div>
+                <div class="meta-item"><span>👥 Agrupación</span><strong>Grupos de 3-4</strong></div>
+                <div class="meta-item"><span>📖 Asignatura</span><strong>Lenguaje/Historia</strong></div>
+            </div>
+            <div class="curriculum">
+                <strong>OA:</strong> Comunicar información histórica utilizando medios digitales.
+            </div>
+            <div class="descripcion">
+                <p><strong>Objetivo:</strong> Producir un episodio de podcast sobre un tema patrimonial de Parral.</p>
+            </div>
+            <div class="materiales">
+                <h4>📦 Materiales</h4>
+                <ul>
+                    <li>Celular con grabadora</li>
+                    <li>Audacity u otro editor de audio gratuito</li>
+                    <li>Guion base</li>
+                    <li>Música libre de derechos</li>
+                </ul>
+            </div>
+            <div class="desarrollo">
+                <h4>📝 Desarrollo</h4>
+                <ol>
+                    <li><strong>Clase 1 - Planificación:</strong>
+                        <ul>
+                            <li>Escuchar ejemplos de podcasts históricos</li>
+                            <li>Elegir tema: Neruda, El tren, La inundación, Los colonos, etc.</li>
+                            <li>Escribir guion con secciones: intro, desarrollo, entrevista, cierre</li>
+                        </ul>
+                    </li>
+                    <li><strong>Clase 2 - Grabación:</strong> Grabar secciones del podcast</li>
+                    <li><strong>Clase 3 - Edición:</strong> Agregar música, cortar, mezclar</li>
+                    <li><strong>Clase 4 - Lanzamiento:</strong> Escucha colectiva y retroalimentación</li>
+                </ol>
+            </div>
+            <div class="tip">
+                <strong>💡 Tip:</strong> Subir los mejores podcasts a Spotify for Podcasters o YouTube.
+            </div>
+        </div>
+
+        <div class="evaluacion"
+            style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+            <h3 style="color: #6A1B9A; margin-bottom: 1rem;">📊 Instrumentos de Evaluación Sugeridos</h3>
+            <ul style="padding-left: 1.5rem;">
+                <li><strong>Rúbrica de ensayo:</strong> Tesis, argumentación, uso de fuentes, redacción</li>
+                <li><strong>Pauta de proyecto:</strong> Diagnóstico, viabilidad, presentación</li>
+                <li><strong>Rúbrica de podcast:</strong> Contenido, producción, creatividad</li>
+                <li><strong>Portafolio digital:</strong> Recopilación de productos del semestre</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>📍 Guía desarrollada para el proyecto "Archivos en Movimiento" - Parral, Chile</p>
+            <p>Material educativo de libre distribución para uso pedagógico</p>
+        </div>
+    </div>
+</body>
+
+</html>

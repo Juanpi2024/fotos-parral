@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Docente Segundo Ciclo 5°-8° - Patrimonio de Parral</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #FF9800 0%, #E65100 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .nivel {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        .intro {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .actividad {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #FF9800;
+        }
+
+        .actividad h3 {
+            color: #E65100;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .actividad h3 .num {
+            background: #FF9800;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        .meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .meta-item {
+            text-align: center;
+        }
+
+        .meta-item span {
+            display: block;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .meta-item strong {
+            color: #E65100;
+        }
+
+        .descripcion {
+            margin-bottom: 1rem;
+        }
+
+        .materiales,
+        .desarrollo,
+        .evaluacion {
+            margin-top: 1rem;
+        }
+
+        .materiales h4,
+        .desarrollo h4,
+        .evaluacion h4 {
+            color: #555;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.3rem;
+        }
+
+        .materiales ul,
+        .desarrollo ol {
+            padding-left: 1.5rem;
+        }
+
+        .materiales li,
+        .desarrollo li {
+            margin-bottom: 0.3rem;
+        }
+
+        .tip {
+            background: #FFF3E0;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .tip strong {
+            color: #E65100;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .curriculum {
+            background: #FFF8E1;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .btn-print {
+            display: inline-block;
+            background: #FF9800;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            margin: 1rem 0;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-print:hover {
+            background: #F57C00;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            .container {
+                max-width: 100%;
+            }
+
+            .no-print {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📙 Guía Docente: Segundo Ciclo</h1>
+            <p>Patrimonio Cultural de Parral</p>
+            <span class="nivel">5° a 8° Básico | 10-13 años</span>
+        </div>
+
+        <div class="intro">
+            <h2>📚 Presentación</h2>
+            <p>Esta guía presenta 5 actividades de mayor complejidad para estudiantes de segundo ciclo, enfocadas en el
+                desarrollo del pensamiento crítico, la investigación y el análisis de fuentes históricas. Las
+                actividades se articulan con los OA de Historia, Geografía y Ciencias Sociales.</p>
+            <div class="no-print" style="text-align: center; margin-top: 1rem;">
+                <button class="btn-print" onclick="window.print()">🖨️ Imprimir Guía</button>
+            </div>
+        </div>
+
+        <!-- Actividad 1 -->
+        <div class="actividad">
+            <h3><span class="num">1</span> Investigación: Personajes Ilustres de Parral</h3>
+            <div class="meta">
+                <div class="meta-item"><span>⏱️ Duración</span><strong>3 clases</strong></div>
+                <div class="meta-item"><span>👥 Agrupación</span><strong>Parejas</strong></div>
+                <div class="meta-item"><span>📖 Asignatura</span><strong>Historia</strong></div>
+            </div>
+            <div class="curriculum">
+                <strong>OA:</strong> Investigar sobre personas que han contribuido al desarrollo de la comunidad local
+                utilizando diversas fuentes.
+            </div>
+            <div class="descripcion">
+                <p><strong>Objetivo:</strong> Investigar y exponer sobre un personaje ilustre de Parral, analizando su
+                    aporte a la comunidad.</p>
+            </div>
+            <div class="materiales">
+                <h4>📦 Materiales</h4>
+                <ul>
+                    <li>Listado de personajes: Pablo Neruda, José Maza, Ignacio Urrutia (Don Chanca), colonos italianos,
+                        etc.</li>
+                    <li>Acceso a biblioteca/internet</li>
+                    <li>Pauta de investigación</li>
+                    <li>Materiales para presentación (cartulina/digital)</li>
+                </ul>
+            </div>
+            <div class="desarrollo">
+                <h4>📝 Desarrollo</h4>
+                <ol>
+                    <li><strong>Clase 1 - Asignación y planificación:</strong>
+                        <ul>
+                            <li>Sorteo o elección de personajes</li>
+                            <li>Entrega de pauta: Biografía, aportes, legado actual</li>
+                            <li>Búsqueda inicial de fuentes</li>
+                        </ul>
+                    </li>
+                    <li><strong>Clase 2 - Investigación guiada:</strong>
+                        <ul>
+                            <li>Trabajo en biblioteca/sala de computación</li>
+                            <li>Docente guía la búsqueda y selección de información</li>
+                        </ul>
+                    </li>
+                    <li><strong>Clase 3 - Exposiciones:</strong>
+                        <ul>
+                            <li>Presentación de 5 minutos por pareja</li>
+                            <li>Ronda de preguntas</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div class="tip">
+                <strong>💡 Tip:</strong> Crear un "Salón de la Fama Parralino" con las biografías ilustradas.
+            </div>
+        </div>
+
+        <!-- Actividad 2 -->
+        <div class="actividad">
+            <h3><span class="num">2</span> Análisis de Fuentes: La Inundación de 1965</h3>
+            <div class="meta">
+                <div class="meta-item"><span>⏱️ Duración</span><strong>90 min</strong></div>
+                <div class="meta-item"><span>👥 Agrupación</span><strong>Grupos de 4</strong></div>
+                <div class="meta-item"><span>📖 Asignatura</span><strong>Historia</strong></div>
+            </div>
+            <div class="curriculum">
+                <strong>OA:</strong> Analizar fuentes primarias y secundarias para obtener información sobre el pasado.
+            </div>
+            <div class="descripcion">
+                <p><strong>Objetivo:</strong> Desarrollar habilidades de análisis histórico comparando diferentes
+                    fuentes sobre un mismo evento.</p>
+            </div>
+            <div class="materiales">
+                <h4>📦 Materiales</h4>
+                <ul>
+                    <li>Fotografías de la inundación de 1965</li>
+                    <li>Recortes de prensa de la época (copias)</li>
+                    <li>Testimonios escritos de sobrevivientes</li>
+                    <li>Ficha de análisis de fuentes</li>
+                </ul>
+            </div>
+            <div class="desarrollo">
+                <h4>📝 Desarrollo</h4>
+                <ol>
+                    <li><strong>Contextualización (15 min):</strong> Breve introducción sobre la inundación de 1965</li>
+                    <li><strong>Estaciones de análisis (45 min):</strong> Grupos rotan por 3 estaciones:
+                        <ul>
+                            <li>Estación 1: Fotografías - ¿Qué observan? ¿Qué información entregan?</li>
+                            <li>Estación 2: Prensa - ¿Cómo se informó? ¿Qué palabras usan?</li>
+                            <li>Estación 3: Testimonios - ¿Qué emociones expresan? ¿Qué detalles añaden?</li>
+                        </ul>
+                    </li>
+                    <li><strong>Síntesis (20 min):</strong> Comparar fuentes: ¿Coinciden? ¿Se complementan?</li>
+                    <li><strong>Reflexión (10 min):</strong> ¿Por qué es importante conservar estos testimonios?</li>
+                </ol>
+            </div>
+            <div class="tip">
+                <strong>💡 Tip:</strong> Invitar a un adulto mayor que haya vivido la inundación para contrastar fuentes
+                con memoria viva.
+            </div>
+        </div>
+
+        <!-- Actividad 3 -->
+        <div class="actividad">
+            <h3><span class="num">3</span> Proyecto: Documental "Parral Ayer y Hoy"</h3>
+            <div class="meta">
+                <div class="meta-item"><span>⏱️ Duración</span><strong>4 clases</strong></div>
+                <div class="meta-item"><span>👥 Agrupación</span><strong>Grupos de 5</strong></div>
+                <div class="meta-item"><span>📖 Asignatura</span><strong>Historia/Tecnología</strong></div>
+            </div>
+            <div class="curriculum">
+                <strong>OA:</strong> Comunicar los resultados de una investigación utilizando diversos formatos.
+            </div>
+            <div class="descripcion">
+                <p><strong>Objetivo:</strong> Producir un video documental corto comparando el Parral histórico con el
+                    actual.</p>
+            </div>
+            <div class="materiales">
+                <h4>📦 Materiales</h4>
+                <ul>
+                    <li>Celulares para grabar</li>
+                    <li>Fotografías antiguas de lugares específicos</li>
+                    <li>Guion base</li>
+                    <li>App de edición simple (CapCut, iMovie)</li>
+                </ul>
+            </div>
+            <div class="desarrollo">
+                <h4>📝 Desarrollo</h4>
+                <ol>
+                    <li><strong>Clase 1:</strong> Asignar lugares (Plaza, Estación, Templo). Investigar historia.
+                        Escribir guion.</li>
+                    <li><strong>Clase 2:</strong> Salida a terreno (con autorización) para grabar lugar actual y
+                        entrevistar transeúntes.</li>
+                    <li><strong>Clase 3:</strong> Edición del video en sala de computación.</li>
+                    <li><strong>Clase 4:</strong> Estreno del documental. Evaluación entre pares.</li>
+                </ol>
+            </div>
+            <div class="tip">
+                <strong>💡 Tip:</strong> Los mejores documentales pueden publicarse en el sitio web de Archivos en
+                Movimiento.
+            </div>
+        </div>
+
+        <!-- Actividad 4 -->
+        <div class="actividad">
+            <h3><span class="num">4</span> Debate: ¿Cómo Proteger el Patrimonio?</h3>
+            <div class="meta">
+                <div class="meta-item"><span>⏱️ Duración</span><strong>90 min</strong></div>
+                <div class="meta-item"><span>👥 Agrupación</span><strong>Dos equipos</strong></div>
+                <div class="meta-item"><span>📖 Asignatura</span><strong>Formación Ciudadana</strong></div>
+            </div>
+            <div class="curriculum">
+                <strong>OA:</strong> Participar en debates fundamentando sus opiniones con evidencias.
+            </div>
+            <div class="descripcion">
+                <p><strong>Objetivo:</strong> Desarrollar habilidades argumentativas discutiendo sobre la conservación
+                    patrimonial.</p>
+            </div>
+            <div class="materiales">
+                <h4>📦 Materiales</h4>
+                <ul>
+                    <li>Caso ficticio: "Se propone demoler un edificio antiguo para construir un mall"</li>
+                    <li>Fichas con argumentos a favor y en contra</li>
+                    <li>Cronómetro</li>
+                    <li>Rúbrica de debate</li>
+                </ul>
+            </div>
+            <div class="desarrollo">
+                <h4>📝 Desarrollo</h4>
+                <ol>
+                    <li><strong>Preparación (30 min):</strong>
+                        <ul>
+                            <li>Dividir curso en dos equipos: "A favor de conservar" vs "A favor de modernizar"</li>
+                            <li>Cada equipo prepara 4 argumentos</li>
+                        </ul>
+                    </li>
+                    <li><strong>Debate (45 min):</strong>
+                        <ul>
+                            <li>Ronda 1: Argumentos iniciales (3 min c/u)</li>
+                            <li>Ronda 2: Contraargumentos (2 min c/u)</li>
+                            <li>Ronda 3: Conclusiones (2 min c/u)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Cierre (15 min):</strong> Reflexión: ¿Hay un punto medio? ¿Qué propondrían?</li>
+                </ol>
+            </div>
+            <div class="tip">
+                <strong>💡 Tip:</strong> Usar casos reales de Parral (si los hay) para mayor contextualización.
+            </div>
+        </div>
+
+        <!-- Actividad 5 -->
+        <div class="actividad">
+            <h3><span class="num">5</span> Cápsula del Tiempo Parralina</h3>
+            <div class="meta">
+                <div class="meta-item"><span>⏱️ Duración</span><strong>60 min + ceremonia</strong></div>
+                <div class="meta-item"><span>👥 Agrupación</span><strong>Individual + Colectivo</strong></div>
+                <div class="meta-item"><span>📖 Asignatura</span><strong>Historia/Orientación</strong></div>
+            </div>
+            <div class="curriculum">
+                <strong>OA:</strong> Reflexionar sobre la importancia de preservar la memoria histórica.
+            </div>
+            <div class="descripcion">
+                <p><strong>Objetivo:</strong> Crear una cápsula del tiempo que documente el Parral actual para futuras
+                    generaciones.</p>
+            </div>
+            <div class="materiales">
+                <h4>📦 Materiales</h4>
+                <ul>
+                    <li>Caja hermética o tubo PVC con tapa</li>
+                    <li>Bolsas ziploc</li>
+                    <li>Papel para cartas</li>
+                    <li>Objetos significativos pequeños</li>
+                </ul>
+            </div>
+            <div class="desarrollo">
+                <h4>📝 Desarrollo</h4>
+                <ol>
+                    <li><strong>Reflexión inicial (15 min):</strong> ¿Qué querrían que supieran de nosotros en 50 años?
+                    </li>
+                    <li><strong>Preparación de contenidos (30 min):</strong>
+                        <ul>
+                            <li>Cada estudiante escribe una carta al futuro</li>
+                            <li>Selección colectiva de: periódico actual, fotos del curso, dibujos de Parral, lista de
+                                precios, canciones populares</li>
+                        </ul>
+                    </li>
+                    <li><strong>Ceremonia de sellado (15 min):</strong> Sellar la cápsula con fecha de apertura: 2075
+                    </li>
+                    <li><strong>Opcional:</strong> Enterrar en el patio del colegio o guardar en dirección</li>
+                </ol>
+            </div>
+            <div class="tip">
+                <strong>💡 Tip:</strong> Crear un acta firmada por todos indicando ubicación y fecha de apertura.
+            </div>
+        </div>
+
+        <div class="evaluacion"
+            style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+            <h3 style="color: #E65100; margin-bottom: 1rem;">📊 Instrumentos de Evaluación Sugeridos</h3>
+            <ul style="padding-left: 1.5rem;">
+                <li><strong>Rúbrica de investigación:</strong> Uso de fuentes, organización, presentación</li>
+                <li><strong>Pauta de debate:</strong> Argumentación, respeto, uso de evidencias</li>
+                <li><strong>Evaluación de producto:</strong> Documental, cápsula del tiempo</li>
+                <li><strong>Coevaluación:</strong> Trabajo colaborativo del grupo</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>📍 Guía desarrollada para el proyecto "Archivos en Movimiento" - Parral, Chile</p>
+            <p>Material educativo de libre distribución para uso pedagógico</p>
+        </div>
+    </div>
+</body>
+
+</html>

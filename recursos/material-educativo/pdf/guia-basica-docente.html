@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Docente Básica 1°-4° - Patrimonio de Parral</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2196F3 0%, #1565C0 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .nivel {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        .intro {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .actividad {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #2196F3;
+        }
+
+        .actividad h3 {
+            color: #1565C0;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .actividad h3 .num {
+            background: #2196F3;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        .meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .meta-item {
+            text-align: center;
+        }
+
+        .meta-item span {
+            display: block;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .meta-item strong {
+            color: #1565C0;
+        }
+
+        .descripcion {
+            margin-bottom: 1rem;
+        }
+
+        .materiales,
+        .desarrollo,
+        .evaluacion {
+            margin-top: 1rem;
+        }
+
+        .materiales h4,
+        .desarrollo h4,
+        .evaluacion h4 {
+            color: #555;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.3rem;
+        }
+
+        .materiales ul,
+        .desarrollo ol {
+            padding-left: 1.5rem;
+        }
+
+        .materiales li,
+        .desarrollo li {
+            margin-bottom: 0.3rem;
+        }
+
+        .tip {
+            background: #E3F2FD;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .tip strong {
+            color: #1565C0;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            .container {
+                max-width: 100%;
+            }
+        }
+
+        .btn-print {
+            display: inline-block;
+            background: #2196F3;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            margin: 1rem 0;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-print:hover {
+            background: #1976D2;
+        }
+
+        .curriculum {
+            background: #FFF3E0;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        @media print {
+            .no-print {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📘 Guía Docente: Educación Básica</h1>
+            <p>Patrimonio Cultural de Parral</p>
+            <span class="nivel">1° a 4° Básico | 6-9 años</span>
+        </div>
+
+        <div class="intro">
+            <h2>📚 Presentación</h2>
+            <p>Esta guía contiene 5 actividades diseñadas para estudiantes de primer ciclo básico, alineadas con los
+                Objetivos de Aprendizaje de Historia, Geografía y Ciencias Sociales. Las actividades promueven el
+                conocimiento del entorno local y la valoración del patrimonio.</p>
+            <div class="no-print" style="text-align: center; margin-top: 1rem;">
+                <button class="btn-print" onclick="window.print()">🖨️ Imprimir Guía</button>
+            </div>
+        </div>
+
+        <!-- Actividad 1 -->
+        <div class="actividad">
+            <h3><span class="num">1</span> Detective del Patrimonio</h3>
+            <div class="meta">
+                <div class="meta-item"><span>⏱️ Duración</span><strong>60 min</strong></div>
+                <div class="meta-item"><span>👥 Agrupación</span><strong>Grupos de 4</strong></div>
+                <div class="meta-item"><span>📖 Asignatura</span><strong>Historia</strong></div>
+            </div>
+            <div class="curriculum">
+                <strong>OA:</strong> Reconocer diversas expresiones del patrimonio cultural del país y de su región.
+            </div>
+            <div class="descripcion">
+                <p><strong>Objetivo:</strong> Identificar y clasificar elementos del patrimonio material e inmaterial de
+                    Parral.</p>
+            </div>
+            <div class="materiales">
+                <h4>📦 Materiales</h4>
+                <ul>
+                    <li>Fichas con imágenes de patrimonio de Parral</li>
+                    <li>Lupa de cartón (elemento motivador)</li>
+                    <li>Cuaderno de detective (hoja con categorías)</li>
+                    <li>Lápices de colores</li>
+                </ul>
+            </div>
+            <div class="desarrollo">
+                <h4>📝 Desarrollo</h4>
+                <ol>
+                    <li><strong>Motivación (10 min):</strong> Presentar el concepto de "patrimonio" con ejemplos
+                        cercanos</li>
+                    <li><strong>Exploración (20 min):</strong> Entregar fichas con imágenes de Parral. Los "detectives"
+                        deben clasificarlas en: Patrimonio Material (edificios, monumentos) e Inmaterial (tradiciones,
+                        fiestas)</li>
+                    <li><strong>Plenario (15 min):</strong> Cada grupo presenta sus hallazgos</li>
+                    <li><strong>Cierre (15 min):</strong> Completar "Carnet de Detective Patrimonial"</li>
+                </ol>
+            </div>
+            <div class="tip">
+                <strong>💡 Tip:</strong> Crear un "muro del patrimonio" en la sala donde se vayan agregando
+                descubrimientos durante el año.
+            </div>
+        </div>
+
+        <!-- Actividad 2 -->
+        <div class="actividad">
+            <h3><span class="num">2</span> Línea de Tiempo: Historia de Mi Ciudad</h3>
+            <div class="meta">
+                <div class="meta-item"><span>⏱️ Duración</span><strong>90 min</strong></div>
+                <div class="meta-item"><span>👥 Agrupación</span><strong>Parejas</strong></div>
+                <div class="meta-item"><span>📖 Asignatura</span><strong>Historia</strong></div>
+            </div>
+            <div class="curriculum">
+                <strong>OA:</strong> Ubicar personas, lugares y elementos en una representación sencilla del espacio
+                geográfico.
+            </div>
+            <div class="descripcion">
+                <p><strong>Objetivo:</strong> Ordenar cronológicamente eventos importantes de la historia de Parral.</p>
+            </div>
+            <div class="materiales">
+                <h4>📦 Materiales</h4>
+                <ul>
+                    <li>Cinta de papel kraft (3 metros)</li>
+                    <li>Tarjetas con fechas y eventos de Parral</li>
+                    <li>Imágenes históricas impresas</li>
+                    <li>Pegamento, tijeras</li>
+                </ul>
+            </div>
+            <div class="desarrollo">
+                <h4>📝 Desarrollo</h4>
+                <ol>
+                    <li><strong>Introducción (15 min):</strong> Explicar qué es una línea de tiempo y para qué sirve
+                    </li>
+                    <li><strong>Actividad (45 min):</strong> En parejas, ordenar tarjetas con eventos: Fundación (1795),
+                        llegada del ferrocarril, nacimiento de Neruda (1904), inundación de 1965, etc.</li>
+                    <li><strong>Construcción (20 min):</strong> Pegar eventos en la línea de tiempo colectiva</li>
+                    <li><strong>Reflexión (10 min):</strong> ¿Qué evento les pareció más importante? ¿Por qué?</li>
+                </ol>
+            </div>
+            <div class="tip">
+                <strong>💡 Tip:</strong> Incluir un espacio para "eventos futuros" donde los niños escriban sus sueños
+                para Parral.
+            </div>
+        </div>
+
+        <!-- Actividad 3 -->
+        <div class="actividad">
+            <h3><span class="num">3</span> Entrevista a los Abuelos</h3>
+            <div class="meta">
+                <div class="meta-item"><span>⏱️ Duración</span><strong>Tarea + 45 min clase</strong></div>
+                <div class="meta-item"><span>👥 Agrupación</span><strong>Individual + Grupo</strong></div>
+                <div class="meta-item"><span>📖 Asignatura</span><strong>Lenguaje/Historia</strong></div>
+            </div>
+            <div class="curriculum">
+                <strong>OA:</strong> Obtener información sobre el pasado a través de fuentes orales (relatos de
+                familiares).
+            </div>
+            <div class="descripcion">
+                <p><strong>Objetivo:</strong> Recopilar historia oral de Parral a través de entrevistas a adultos
+                    mayores.</p>
+            </div>
+            <div class="materiales">
+                <h4>📦 Materiales</h4>
+                <ul>
+                    <li>Guía de entrevista con preguntas sugeridas</li>
+                    <li>Cuaderno para registrar respuestas</li>
+                    <li>Cámara o celular (opcional, para fotos)</li>
+                </ul>
+            </div>
+            <div class="desarrollo">
+                <h4>📝 Desarrollo</h4>
+                <ol>
+                    <li><strong>Preparación (clase previa):</strong> Entregar guía de entrevista con preguntas: ¿Cómo
+                        era Parral cuando eras niño/a? ¿Qué lugares recuerdas? ¿Qué tradiciones había?</li>
+                    <li><strong>Tarea:</strong> Entrevistar a abuelo/a o adulto mayor de la familia/comunidad</li>
+                    <li><strong>Puesta en común (45 min):</strong> Cada estudiante comparte 2-3 datos interesantes que
+                        descubrió</li>
+                    <li><strong>Producto:</strong> Crear "Libro de los Recuerdos de Parral" con las mejores historias
+                    </li>
+                </ol>
+            </div>
+            <div class="tip">
+                <strong>💡 Tip:</strong> Invitar a un abuelo/a a la sala para una entrevista en vivo como modelaje.
+            </div>
+        </div>
+
+        <!-- Actividad 4 -->
+        <div class="actividad">
+            <h3><span class="num">4</span> Mapa de Mi Barrio Patrimonial</h3>
+            <div class="meta">
+                <div class="meta-item"><span>⏱️ Duración</span><strong>60 min</strong></div>
+                <div class="meta-item"><span>👥 Agrupación</span><strong>Grupos de 3</strong></div>
+                <div class="meta-item"><span>📖 Asignatura</span><strong>Geografía</strong></div>
+            </div>
+            <div class="curriculum">
+                <strong>OA:</strong> Representar, a través de dibujos, el espacio geográfico local.
+            </div>
+            <div class="descripcion">
+                <p><strong>Objetivo:</strong> Crear un mapa ilustrado ubicando lugares patrimoniales de Parral.</p>
+            </div>
+            <div class="materiales">
+                <h4>📦 Materiales</h4>
+                <ul>
+                    <li>Papel kraft o cartulina grande</li>
+                    <li>Mapa simplificado de Parral como base</li>
+                    <li>Íconos recortables de lugares patrimoniales</li>
+                    <li>Lápices, plumones, pegamento</li>
+                </ul>
+            </div>
+            <div class="desarrollo">
+                <h4>📝 Desarrollo</h4>
+                <ol>
+                    <li><strong>Exploración (15 min):</strong> Observar un mapa de Parral y ubicar puntos conocidos</li>
+                    <li><strong>Construcción (30 min):</strong> Cada grupo crea su mapa ubicando: Plaza de Armas,
+                        Estación de Trenes, Templo San José, Casa de Neruda, Termas de Catillo</li>
+                    <li><strong>Decoración (10 min):</strong> Agregar elementos: calles, árboles, personas</li>
+                    <li><strong>Exposición (5 min):</strong> Cada grupo presenta su mapa</li>
+                </ol>
+            </div>
+            <div class="tip">
+                <strong>💡 Tip:</strong> Usar Google Maps proyectado para comparar los mapas de los estudiantes con la
+                realidad.
+            </div>
+        </div>
+
+        <!-- Actividad 5 -->
+        <div class="actividad">
+            <h3><span class="num">5</span> Teatro: "Un Día en el Parral de Antes"</h3>
+            <div class="meta">
+                <div class="meta-item"><span>⏱️ Duración</span><strong>90 min (2 clases)</strong></div>
+                <div class="meta-item"><span>👥 Agrupación</span><strong>Grupos de 5-6</strong></div>
+                <div class="meta-item"><span>📖 Asignatura</span><strong>Artes/Historia</strong></div>
+            </div>
+            <div class="curriculum">
+                <strong>OA:</strong> Expresar emociones e ideas a través de la dramatización.
+            </div>
+            <div class="descripcion">
+                <p><strong>Objetivo:</strong> Representar escenas de la vida cotidiana en el Parral antiguo.</p>
+            </div>
+            <div class="materiales">
+                <h4>📦 Materiales</h4>
+                <ul>
+                    <li>Vestuario simple (pañuelos, sombreros, delantales)</li>
+                    <li>Elementos de utilería reciclados</li>
+                    <li>Guiones cortos con escenas típicas</li>
+                </ul>
+            </div>
+            <div class="desarrollo">
+                <h4>📝 Desarrollo</h4>
+                <ol>
+                    <li><strong>Clase 1 - Preparación (45 min):</strong>
+                        <ul>
+                            <li>Asignar escenas: En la estación de trenes, En la feria, En la plaza, En la escuela
+                                antigua, En el campo</li>
+                            <li>Ensayar diálogos y movimientos</li>
+                        </ul>
+                    </li>
+                    <li><strong>Clase 2 - Presentación (45 min):</strong>
+                        <ul>
+                            <li>Cada grupo presenta su escena (5 min c/u)</li>
+                            <li>Público hace preguntas a los "personajes"</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div class="tip">
+                <strong>💡 Tip:</strong> Grabar las presentaciones para compartir con las familias.
+            </div>
+        </div>
+
+        <div class="evaluacion"
+            style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+            <h3 style="color: #1565C0; margin-bottom: 1rem;">📊 Instrumentos de Evaluación Sugeridos</h3>
+            <ul style="padding-left: 1.5rem;">
+                <li><strong>Rúbrica de trabajo grupal:</strong> Participación, respeto, producto final</li>
+                <li><strong>Lista de cotejo:</strong> Logro de objetivos específicos por actividad</li>
+                <li><strong>Portafolio:</strong> Recopilación de trabajos del estudiante</li>
+                <li><strong>Autoevaluación:</strong> "¿Qué aprendí sobre Parral? ¿Qué me gustó más?"</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>📍 Guía desarrollada para el proyecto "Archivos en Movimiento" - Parral, Chile</p>
+            <p>Material educativo de libre distribución para uso pedagógico</p>
+        </div>
+    </div>
+</body>
+
+</html>

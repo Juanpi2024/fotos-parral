@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Docente Parvularia - Patrimonio de Parral</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header .nivel {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        .intro {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .actividad {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #4CAF50;
+        }
+
+        .actividad h3 {
+            color: #2E7D32;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .actividad h3 .num {
+            background: #4CAF50;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+
+        .meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .meta-item {
+            text-align: center;
+        }
+
+        .meta-item span {
+            display: block;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .meta-item strong {
+            color: #2E7D32;
+        }
+
+        .descripcion {
+            margin-bottom: 1rem;
+        }
+
+        .materiales,
+        .desarrollo,
+        .evaluacion {
+            margin-top: 1rem;
+        }
+
+        .materiales h4,
+        .desarrollo h4,
+        .evaluacion h4 {
+            color: #555;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.3rem;
+        }
+
+        .materiales ul,
+        .desarrollo ol {
+            padding-left: 1.5rem;
+        }
+
+        .materiales li,
+        .desarrollo li {
+            margin-bottom: 0.3rem;
+        }
+
+        .tip {
+            background: #E8F5E9;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .tip strong {
+            color: #2E7D32;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            .container {
+                max-width: 100%;
+            }
+        }
+
+        .btn-print {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            margin: 1rem 0;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-print:hover {
+            background: #388E3C;
+        }
+
+        .no-print {}
+
+        @media print {
+            .no-print {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌱 Guía Docente: Parvularia</h1>
+            <p>Patrimonio Cultural de Parral</p>
+            <span class="nivel">4-5 años | Nivel Transición</span>
+        </div>
+
+        <div class="intro">
+            <h2>📚 Presentación</h2>
+            <p>Esta guía contiene 5 actividades lúdicas diseñadas para introducir a los niños y niñas de nivel
+                parvulario en el conocimiento del patrimonio cultural de Parral. Las actividades privilegian el juego,
+                la exploración sensorial y la expresión artística.</p>
+            <div class="no-print" style="text-align: center; margin-top: 1rem;">
+                <button class="btn-print" onclick="window.print()">🖨️ Imprimir Guía</button>
+            </div>
+        </div>
+
+        <!-- Actividad 1 -->
+        <div class="actividad">
+            <h3><span class="num">1</span> Mi Ciudad en Colores</h3>
+            <div class="meta">
+                <div class="meta-item"><span>⏱️ Duración</span><strong>45 min</strong></div>
+                <div class="meta-item"><span>👥 Agrupación</span><strong>Individual</strong></div>
+                <div class="meta-item"><span>🎯 Ámbito</span><strong>Lenguajes Artísticos</strong></div>
+            </div>
+            <div class="descripcion">
+                <p><strong>Objetivo:</strong> Reconocer lugares emblemáticos de Parral a través del coloreado de láminas
+                    patrimoniales.</p>
+            </div>
+            <div class="materiales">
+                <h4>📦 Materiales</h4>
+                <ul>
+                    <li>Láminas para colorear (Plaza de Armas, Templo San José, Estación de Trenes)</li>
+                    <li>Lápices de colores, crayones o témperas</li>
+                    <li>Delantales plásticos</li>
+                </ul>
+            </div>
+            <div class="desarrollo">
+                <h4>📝 Desarrollo</h4>
+                <ol>
+                    <li>Mostrar fotografías reales de los lugares antes de colorear</li>
+                    <li>Conversar: "¿Han visitado este lugar? ¿Con quién?"</li>
+                    <li>Entregar láminas y materiales para colorear libremente</li>
+                    <li>Exponer trabajos en un "Museo de nuestra ciudad"</li>
+                </ol>
+            </div>
+            <div class="tip">
+                <strong>💡 Tip:</strong> Invitar a los niños a contar historias sobre los lugares mientras colorean.
+            </div>
+        </div>
+
+        <!-- Actividad 2 -->
+        <div class="actividad">
+            <h3><span class="num">2</span> El Tren de los Recuerdos</h3>
+            <div class="meta">
+                <div class="meta-item"><span>⏱️ Duración</span><strong>30 min</strong></div>
+                <div class="meta-item"><span>👥 Agrupación</span><strong>Grupal</strong></div>
+                <div class="meta-item"><span>🎯 Ámbito</span><strong>Interacción y Comprensión</strong></div>
+            </div>
+            <div class="descripcion">
+                <p><strong>Objetivo:</strong> Conocer la historia del ferrocarril de Parral mediante juego dramático.
+                </p>
+            </div>
+            <div class="materiales">
+                <h4>📦 Materiales</h4>
+                <ul>
+                    <li>Cajas de cartón grandes (vagones)</li>
+                    <li>Gorro de maquinista (papel)</li>
+                    <li>Boletos de tren (cartulina)</li>
+                    <li>Imágenes del antiguo tren de Parral</li>
+                </ul>
+            </div>
+            <div class="desarrollo">
+                <h4>📝 Desarrollo</h4>
+                <ol>
+                    <li>Mostrar fotos antiguas del tren de Parral</li>
+                    <li>Armar "vagones" con cajas de cartón</li>
+                    <li>Jugar al tren: un niño es maquinista, otros son pasajeros</li>
+                    <li>El tren "viaja" a diferentes lugares de Parral (nombrarlos)</li>
+                    <li>Cantar: "Corre, corre trenecito, por Parral vas a pasar..."</li>
+                </ol>
+            </div>
+            <div class="tip">
+                <strong>💡 Tip:</strong> Grabar sonidos de tren para ambientar la actividad.
+            </div>
+        </div>
+
+        <!-- Actividad 3 -->
+        <div class="actividad">
+            <h3><span class="num">3</span> Memorice de Lugares</h3>
+            <div class="meta">
+                <div class="meta-item"><span>⏱️ Duración</span><strong>25 min</strong></div>
+                <div class="meta-item"><span>👥 Agrupación</span><strong>Parejas</strong></div>
+                <div class="meta-item"><span>🎯 Ámbito</span><strong>Pensamiento Matemático</strong></div>
+            </div>
+            <div class="descripcion">
+                <p><strong>Objetivo:</strong> Desarrollar memoria visual reconociendo lugares patrimoniales de Parral.
+                </p>
+            </div>
+            <div class="materiales">
+                <h4>📦 Materiales</h4>
+                <ul>
+                    <li>Tarjetas de memorice patrimonial (6-8 pares)</li>
+                    <li>Imágenes plastificadas de lugares de Parral</li>
+                </ul>
+            </div>
+            <div class="desarrollo">
+                <h4>📝 Desarrollo</h4>
+                <ol>
+                    <li>Presentar cada imagen y nombrar el lugar</li>
+                    <li>Explicar reglas del memorice</li>
+                    <li>Jugar en parejas buscando los pares</li>
+                    <li>Al encontrar un par, decir el nombre del lugar</li>
+                </ol>
+            </div>
+            <div class="tip">
+                <strong>💡 Tip:</strong> Comenzar con 4 pares e ir aumentando la dificultad.
+            </div>
+        </div>
+
+        <!-- Actividad 4 -->
+        <div class="actividad">
+            <h3><span class="num">4</span> Modelando mi Parral</h3>
+            <div class="meta">
+                <div class="meta-item"><span>⏱️ Duración</span><strong>40 min</strong></div>
+                <div class="meta-item"><span>👥 Agrupación</span><strong>Individual</strong></div>
+                <div class="meta-item"><span>🎯 Ámbito</span><strong>Lenguajes Artísticos</strong></div>
+            </div>
+            <div class="descripcion">
+                <p><strong>Objetivo:</strong> Representar elementos del patrimonio de Parral mediante modelado.</p>
+            </div>
+            <div class="materiales">
+                <h4>📦 Materiales</h4>
+                <ul>
+                    <li>Plasticina o masa para modelar</li>
+                    <li>Palitos de helado, tapas</li>
+                    <li>Imágenes de referencia</li>
+                </ul>
+            </div>
+            <div class="desarrollo">
+                <h4>📝 Desarrollo</h4>
+                <ol>
+                    <li>Mostrar imágenes: Plaza, iglesia, tren, casas antiguas</li>
+                    <li>Cada niño elige qué quiere modelar</li>
+                    <li>Modelar libremente con plasticina</li>
+                    <li>Crear una "maqueta colectiva" uniendo todas las creaciones</li>
+                </ol>
+            </div>
+            <div class="tip">
+                <strong>💡 Tip:</strong> Fotografiar la maqueta final para enviar a las familias.
+            </div>
+        </div>
+
+        <!-- Actividad 5 -->
+        <div class="actividad">
+            <h3><span class="num">5</span> Cuenta Cuentos: "El Viaje de Nerudita"</h3>
+            <div class="meta">
+                <div class="meta-item"><span>⏱️ Duración</span><strong>35 min</strong></div>
+                <div class="meta-item"><span>👥 Agrupación</span><strong>Grupo completo</strong></div>
+                <div class="meta-item"><span>🎯 Ámbito</span><strong>Comunicación Integral</strong></div>
+            </div>
+            <div class="descripcion">
+                <p><strong>Objetivo:</strong> Conocer a Pablo Neruda como personaje ilustre de Parral a través de un
+                    cuento.</p>
+            </div>
+            <div class="materiales">
+                <h4>📦 Materiales</h4>
+                <ul>
+                    <li>Cuento adaptado sobre Neruda niño</li>
+                    <li>Títeres o imágenes para narrar</li>
+                    <li>Elementos de la naturaleza (hojas, piedras)</li>
+                </ul>
+            </div>
+            <div class="desarrollo">
+                <h4>📝 Desarrollo</h4>
+                <ol>
+                    <li>Crear ambiente: apagar luces, encender velita LED</li>
+                    <li>Narrar cuento: "Había una vez, en Parral, un niño llamado Neftalí que amaba las palabras..."
+                    </li>
+                    <li>Mostrar elementos naturales que Neruda amaba</li>
+                    <li>Invitar a los niños a decir palabras bonitas como el poeta</li>
+                    <li>Dibujar "su palabra favorita"</li>
+                </ol>
+            </div>
+            <div class="tip">
+                <strong>💡 Tip:</strong> Recitar versos sencillos de Neruda adaptados para niños.
+            </div>
+        </div>
+
+        <div class="evaluacion"
+            style="background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+            <h3 style="color: #2E7D32; margin-bottom: 1rem;">📊 Sugerencias de Evaluación</h3>
+            <ul style="padding-left: 1.5rem;">
+                <li><strong>Observación directa:</strong> Participación, interés, respeto por turnos</li>
+                <li><strong>Registro fotográfico:</strong> Documentar procesos y productos</li>
+                <li><strong>Verbalización:</strong> ¿Qué aprendiste sobre Parral?</li>
+                <li><strong>Portafolio:</strong> Recopilar trabajos artísticos</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>📍 Guía desarrollada para el proyecto "Archivos en Movimiento" - Parral, Chile</p>
+            <p>Material educativo de libre distribución para uso pedagógico</p>
+        </div>
+    </div>
+</body>
+
+</html>
