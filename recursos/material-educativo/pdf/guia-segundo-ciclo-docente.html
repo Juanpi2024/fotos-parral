@@ -181,6 +181,24 @@
             background: #F57C00;
         }
 
+        .btn-back {
+            display: inline-block;
+            background: transparent;
+            color: #FF9800;
+            padding: 0.6rem 1.2rem;
+            border: 2px solid #FF9800;
+            border-radius: 30px;
+            text-decoration: none;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-back:hover {
+            background: #FF9800;
+            color: white;
+        }
+
         @media print {
             body {
                 background: white;
@@ -199,6 +217,8 @@
 
 <body>
     <div class="container">
+        <a href="index.html" class="btn-back no-print">← Volver al Índice</a>
+
         <div class="header">
             <h1>📙 Guía Docente: Segundo Ciclo</h1>
             <p>Patrimonio Cultural de Parral</p>
