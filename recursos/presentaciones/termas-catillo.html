@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termas de Catillo | Presentación Educativa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Merriweather:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #8b7355;
+            --accent-color: #c9a961;
+            --bg-dark: #1a1510;
+            --text-light: #f4e9d9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Merriweather', serif;
+            background: linear-gradient(135deg, #1a1510 0%, #2d2419 100%);
+            color: var(--text-light);
+            min-height: 100vh;
+        }
+
+        .slide {
+            min-height: 100vh;
+            padding: 3rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        .slide-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .slide-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            margin-bottom: 2rem;
+        }
+
+        .slide-content {
+            max-width: 900px;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .slide-content ul {
+            text-align: left;
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+
+        .slide-content li {
+            margin-bottom: 0.8rem;
+        }
+
+        .emoji-large {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .highlight {
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        .nav-back {
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            background: var(--accent-color);
+            color: var(--bg-dark);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            z-index: 100;
+        }
+
+        @media print {
+            .slide {
+                page-break-after: always;
+                min-height: auto;
+                padding: 2rem;
+            }
+
+            .nav-back {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="../../educacion.html" class="nav-back">← Volver</a>
+
+    <!-- Slide 1: Portada -->
+    <div class="slide">
+        <div class="emoji-large">♨️</div>
+        <h1 class="slide-title">Termas de Catillo</h1>
+        <p class="slide-subtitle">Aguas curativas desde 1730 - Patrimonio termal del Maule</p>
+        <p style="margin-top: 2rem; opacity: 0.6;">Archivos en Movimiento | Material Educativo</p>
+    </div>
+
+    <!-- Slide 2: Historia -->
+    <div class="slide">
+        <h2 class="slide-title">Historia de las Termas</h2>
+        <div class="slide-content">
+            <p>Las <span class="highlight">Termas de Catillo</span> tienen una historia que se remonta a la época
+                colonial.</p>
+            <ul>
+                <li>📅 <strong>1730:</strong> Primeros registros de uso de las aguas termales</li>
+                <li>🏛️ Los jesuitas reconocieron sus propiedades curativas</li>
+                <li>👑 Visitadas por personajes históricos de Chile</li>
+                <li>🏨 Desarrollo hotelero a partir del siglo XIX</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 3: Propiedades del Agua -->
+    <div class="slide">
+        <h2 class="slide-title">Propiedades del Agua</h2>
+        <div class="slide-content">
+            <p>Las aguas de Catillo son reconocidas por sus <span class="highlight">propiedades terapéuticas</span>.</p>
+            <ul>
+                <li>🌡️ Temperatura natural entre 35°C y 45°C</li>
+                <li>🧪 Ricas en minerales: azufre, calcio, magnesio</li>
+                <li>💆 Beneficios para piel, articulaciones y sistema nervioso</li>
+                <li>🏥 Recomendadas históricamente por médicos</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 4: Ubicación -->
+    <div class="slide">
+        <h2 class="slide-title">Ubicación Privilegiada</h2>
+        <div class="slide-content">
+            <p>Catillo se encuentra en un <span class="highlight">entorno natural</span> excepcional.</p>
+            <ul>
+                <li>📍 A 25 km de Parral, camino a la cordillera</li>
+                <li>🏔️ En las estribaciones de los Andes</li>
+                <li>🌲 Rodeado de bosques nativos</li>
+                <li>🌊 Junto al río Catillo</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 5: Las Termas en 1941 -->
+    <div class="slide">
+        <h2 class="slide-title">Las Termas en 1941</h2>
+        <div class="slide-content">
+            <p>Las fotografías históricas nos muestran cómo eran las <span class="highlight">termas hace más de 80
+                    años</span>.</p>
+            <ul>
+                <li>🏛️ Edificios de arquitectura republicana</li>
+                <li>👗 Visitantes con vestimenta de la época</li>
+                <li>🚂 Acceso por camino de tierra desde Parral</li>
+                <li>💧 Piscinas naturales sin tratamiento</li>
+            </ul>
+            <p style="margin-top: 1.5rem;">Gracias a la IA, podemos ver estas imágenes coloreadas.</p>
+        </div>
+    </div>
+
+    <!-- Slide 6: Turismo -->
+    <div class="slide">
+        <h2 class="slide-title">Destino Turístico</h2>
+        <div class="slide-content">
+            <p>Catillo sigue siendo un <span class="highlight">destino turístico importante</span> de la región.</p>
+            <ul>
+                <li>🏨 Hoteles y servicios modernos</li>
+                <li>🏊 Piscinas termales para todo público</li>
+                <li>🥾 Circuitos de trekking y naturaleza</li>
+                <li>👨‍👩‍👧‍👦 Ideal para visitas familiares</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 7: Cierre -->
+    <div class="slide">
+        <div class="emoji-large">♨️</div>
+        <h2 class="slide-title">¡Gracias!</h2>
+        <p class="slide-subtitle">Las Termas de Catillo: patrimonio natural y turístico de Parral</p>
+        <p style="margin-top: 2rem;">
+            <a href="../../galeria.html" style="color: var(--accent-color);">🖼️ Ver Galería Histórica</a> |
+            <a href="../../educacion.html" style="color: var(--accent-color);">📚 Más Material Educativo</a>
+        </p>
+        <p style="margin-top: 3rem; opacity: 0.5; font-size: 0.9rem;">Archivos en Movimiento | fotos-parral.cl</p>
+    </div>
+</body>
+
+</html>

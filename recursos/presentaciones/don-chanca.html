@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Don Chanca: Leyenda del Rodeo | Presentación Educativa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Merriweather:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #8b7355;
+            --accent-color: #c9a961;
+            --bg-dark: #1a1510;
+            --text-light: #f4e9d9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Merriweather', serif;
+            background: linear-gradient(135deg, #1a1510 0%, #2d2419 100%);
+            color: var(--text-light);
+            min-height: 100vh;
+        }
+
+        .slide {
+            min-height: 100vh;
+            padding: 3rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        .slide-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .slide-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            margin-bottom: 2rem;
+        }
+
+        .slide-content {
+            max-width: 900px;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .slide-content ul {
+            text-align: left;
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+
+        .slide-content li {
+            margin-bottom: 0.8rem;
+        }
+
+        .emoji-large {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .highlight {
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        .nav-back {
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            background: var(--accent-color);
+            color: var(--bg-dark);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            z-index: 100;
+        }
+
+        @media print {
+            .slide {
+                page-break-after: always;
+                min-height: auto;
+                padding: 2rem;
+            }
+
+            .nav-back {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="../../educacion.html" class="nav-back">← Volver</a>
+
+    <!-- Slide 1: Portada -->
+    <div class="slide">
+        <div class="emoji-large">🤠</div>
+        <h1 class="slide-title">Don Chanca</h1>
+        <p class="slide-subtitle">Leyenda del Rodeo Chileno y Orgullo de Parral</p>
+        <p style="margin-top: 2rem; opacity: 0.6;">Archivos en Movimiento | Material Educativo</p>
+    </div>
+
+    <!-- Slide 2: ¿Quién fue Don Chanca? -->
+    <div class="slide">
+        <h2 class="slide-title">¿Quién fue Don Chanca?</h2>
+        <div class="slide-content">
+            <p><span class="highlight">Don Chanca</span> fue un legendario huaso parralino, reconocido como uno de los
+                mejores jinetes de rodeo de la historia de Chile.</p>
+            <ul>
+                <li>🏆 Ganador del <strong>Champion de Chile</strong></li>
+                <li>🐴 Famoso por su destreza en la medialuna</li>
+                <li>👨‍👦 Figura admirada por generaciones</li>
+                <li>🎯 Conocido por su precisión en el ataje</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 3: El Rodeo Chileno -->
+    <div class="slide">
+        <h2 class="slide-title">El Rodeo Chileno</h2>
+        <div class="slide-content">
+            <p>El <span class="highlight">rodeo</span> es el deporte nacional de Chile, con raíces en la época colonial.
+            </p>
+            <ul>
+                <li>📜 Declarado deporte nacional en 1962</li>
+                <li>🏟️ Se practica en la medialuna</li>
+                <li>🐂 Consiste en atajar novillos contra la quincha</li>
+                <li>👥 Parejas de jinetes (collera) compiten juntos</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 4: La Técnica del Ataje -->
+    <div class="slide">
+        <h2 class="slide-title">La Técnica del Ataje</h2>
+        <div class="slide-content">
+            <p>Don Chanca era reconocido por su <span class="highlight">técnica impecable</span> en el ataje.</p>
+            <ul>
+                <li>🎯 El ataje se realiza en la "quincha" (zona acolchada)</li>
+                <li>🐴 Requiere coordinación perfecta caballo-jinete</li>
+                <li>📐 Puntos según dónde se ataje al novillo</li>
+                <li>⭐ "Bueno" en el pecho da máximos puntos</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 5: Vestimenta del Huaso -->
+    <div class="slide">
+        <h2 class="slide-title">La Vestimenta del Huaso</h2>
+        <div class="slide-content">
+            <p>Don Chanca vestía la <span class="highlight">tenida huasa tradicional</span>.</p>
+            <ul>
+                <li>🎩 Sombrero de paño o chupalla</li>
+                <li>🧥 Manta o chamanto de lana</li>
+                <li>👢 Botas de cuero con espuelas</li>
+                <li>🎀 Faja y ojotas en ocasiones formales</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 6: El Champion de Chile -->
+    <div class="slide">
+        <h2 class="slide-title">El Champion de Chile</h2>
+        <div class="slide-content">
+            <p>El <span class="highlight">Champion</span> es el máximo galardón del rodeo chileno.</p>
+            <ul>
+                <li>🏆 Competencia anual más importante del país</li>
+                <li>📍 Se realiza en Rancagua tradicionalmente</li>
+                <li>🥇 Don Chanca lo ganó llevando orgullo a Parral</li>
+                <li>🎖️ Consagración de los mejores jinetes de Chile</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 7: Legado -->
+    <div class="slide">
+        <h2 class="slide-title">Su Legado en Parral</h2>
+        <div class="slide-content">
+            <p>Don Chanca dejó un <span class="highlight">legado imborrable</span> en la cultura de Parral.</p>
+            <ul>
+                <li>💭 Inspiración para nuevas generaciones de jinetes</li>
+                <li>🏛️ Reconocido como héroe local</li>
+                <li>📸 Sus fotografías son tesoro patrimonial</li>
+                <li>🐴 Símbolo del orgullo huaso parralino</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 8: Cierre -->
+    <div class="slide">
+        <div class="emoji-large">🤠</div>
+        <h2 class="slide-title">¡Gracias!</h2>
+        <p class="slide-subtitle">Don Chanca: de Parral para la historia del rodeo chileno</p>
+        <p style="margin-top: 2rem;">
+            <a href="../../galeria.html" style="color: var(--accent-color);">🖼️ Ver Galería de Don Chanca</a> |
+            <a href="../../educacion.html" style="color: var(--accent-color);">📚 Más Material Educativo</a>
+        </p>
+        <p style="margin-top: 3rem; opacity: 0.5; font-size: 0.9rem;">Archivos en Movimiento | fotos-parral.cl</p>
+    </div>
+</body>
+
+</html>

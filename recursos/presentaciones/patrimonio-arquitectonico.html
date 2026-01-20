@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patrimonio Arquitectónico de Parral | Presentación Educativa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Merriweather:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #8b7355;
+            --accent-color: #c9a961;
+            --bg-dark: #1a1510;
+            --text-light: #f4e9d9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Merriweather', serif;
+            background: linear-gradient(135deg, #1a1510 0%, #2d2419 100%);
+            color: var(--text-light);
+            min-height: 100vh;
+        }
+
+        .slide {
+            min-height: 100vh;
+            padding: 3rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        .slide-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .slide-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            margin-bottom: 2rem;
+        }
+
+        .slide-content {
+            max-width: 900px;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .slide-content ul {
+            text-align: left;
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+
+        .slide-content li {
+            margin-bottom: 0.8rem;
+        }
+
+        .emoji-large {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .highlight {
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        .nav-back {
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            background: var(--accent-color);
+            color: var(--bg-dark);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            z-index: 100;
+        }
+
+        @media print {
+            .slide {
+                page-break-after: always;
+                min-height: auto;
+                padding: 2rem;
+            }
+
+            .nav-back {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="../../educacion.html" class="nav-back">← Volver</a>
+
+    <!-- Slide 1: Portada -->
+    <div class="slide">
+        <div class="emoji-large">🏛️</div>
+        <h1 class="slide-title">Patrimonio Arquitectónico</h1>
+        <p class="slide-subtitle">Templos, casas y edificios históricos de Parral</p>
+        <p style="margin-top: 2rem; opacity: 0.6;">Archivos en Movimiento | Material Educativo</p>
+    </div>
+
+    <!-- Slide 2: Arquitectura Colonial -->
+    <div class="slide">
+        <h2 class="slide-title">Herencia Colonial</h2>
+        <div class="slide-content">
+            <p>Parral conserva vestigios de su <span class="highlight">pasado colonial</span> en su arquitectura.</p>
+            <ul>
+                <li>🏠 Casas de adobe con techos de teja</li>
+                <li>🚪 Puertas y ventanas de madera tallada</li>
+                <li>🏛️ Corredores con pilares de madera</li>
+                <li>🌳 Patios interiores con vegetación</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 3: Templo San Francisco -->
+    <div class="slide">
+        <h2 class="slide-title">Templo San Francisco</h2>
+        <div class="slide-content">
+            <p>El <span class="highlight">Templo San Francisco</span> fue una de las iglesias más importantes de Parral.
+            </p>
+            <ul>
+                <li>⛪ Arquitectura religiosa del siglo XIX</li>
+                <li>🕯️ Centro de la vida espiritual parralina</li>
+                <li>🏗️ Convento anexo desde 1900</li>
+                <li>💔 Afectado por el terremoto de 1939</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 4: Templo San José -->
+    <div class="slide">
+        <h2 class="slide-title">Templo San José</h2>
+        <div class="slide-content">
+            <p>El <span class="highlight">Templo San José</span> es otro ícono religioso de la ciudad.</p>
+            <ul>
+                <li>⛪ Estilo neoclásico con influencias europeas</li>
+                <li>🛕 Torre campanario visible desde la plaza</li>
+                <li>🎨 Interior decorado con arte sacro</li>
+                <li>📸 Las fotos históricas muestran su esplendor original</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 5: Casas Antiguas -->
+    <div class="slide">
+        <h2 class="slide-title">Casas Antiguas</h2>
+        <div class="slide-content">
+            <p>Las <span class="highlight">casas antiguas</span> de Parral reflejan diferentes épocas.</p>
+            <ul>
+                <li>🏚️ Casas de adobe: las más antiguas</li>
+                <li>🏠 Casas republicanas: finales del siglo XIX</li>
+                <li>🏡 Casas de estilo chileno-europeo</li>
+                <li>📻 Radio El Roble: ejemplo de arquitectura comercial</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 6: El Terremoto de 1939 -->
+    <div class="slide">
+        <h2 class="slide-title">El Terremoto de 1939</h2>
+        <div class="slide-content">
+            <p>El <span class="highlight">terremoto de Chillán de 1939</span> destruyó gran parte del patrimonio.</p>
+            <ul>
+                <li>💥 24 de enero de 1939, magnitud 8.3</li>
+                <li>🏚️ Destrucción de templos y edificios públicos</li>
+                <li>🏛️ La estación de trenes quedó en ruinas</li>
+                <li>📷 Las fotografías son el único registro de lo perdido</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 7: Preservación -->
+    <div class="slide">
+        <h2 class="slide-title">Preservar la Memoria</h2>
+        <div class="slide-content">
+            <p>Es fundamental <span class="highlight">preservar el patrimonio</span> que aún queda.</p>
+            <ul>
+                <li>🏛️ Valorar los edificios históricos sobrevivientes</li>
+                <li>📸 Documentar con fotografías antes de que se deterioren</li>
+                <li>🎨 Restaurar con técnicas apropiadas</li>
+                <li>📚 Educar a las nuevas generaciones sobre su valor</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 8: Cierre -->
+    <div class="slide">
+        <div class="emoji-large">🏛️</div>
+        <h2 class="slide-title">¡Gracias!</h2>
+        <p class="slide-subtitle">El patrimonio arquitectónico es la memoria física de nuestra historia</p>
+        <p style="margin-top: 2rem;">
+            <a href="../../galeria.html" style="color: var(--accent-color);">🖼️ Ver Galería Histórica</a> |
+            <a href="../../educacion.html" style="color: var(--accent-color);">📚 Más Material Educativo</a>
+        </p>
+        <p style="margin-top: 3rem; opacity: 0.5; font-size: 0.9rem;">Archivos en Movimiento | fotos-parral.cl</p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vida Rural y Tradiciones de Parral | Presentación Educativa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Merriweather:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #8b7355;
+            --accent-color: #c9a961;
+            --bg-dark: #1a1510;
+            --text-light: #f4e9d9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Merriweather', serif;
+            background: linear-gradient(135deg, #1a1510 0%, #2d2419 100%);
+            color: var(--text-light);
+            min-height: 100vh;
+        }
+
+        .slide {
+            min-height: 100vh;
+            padding: 3rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        .slide-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .slide-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            margin-bottom: 2rem;
+        }
+
+        .slide-content {
+            max-width: 900px;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .slide-content ul {
+            text-align: left;
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+
+        .slide-content li {
+            margin-bottom: 0.8rem;
+        }
+
+        .emoji-large {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .highlight {
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        .nav-back {
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            background: var(--accent-color);
+            color: var(--bg-dark);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 600;
+            z-index: 100;
+        }
+
+        @media print {
+            .slide {
+                page-break-after: always;
+                min-height: auto;
+                padding: 2rem;
+            }
+
+            .nav-back {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <a href="../../educacion.html" class="nav-back">← Volver</a>
+
+    <!-- Slide 1: Portada -->
+    <div class="slide">
+        <div class="emoji-large">🌾</div>
+        <h1 class="slide-title">Vida Rural y Tradiciones</h1>
+        <p class="slide-subtitle">La identidad agrícola del campo de Parral</p>
+        <p style="margin-top: 2rem; opacity: 0.6;">Archivos en Movimiento | Material Educativo</p>
+    </div>
+
+    <!-- Slide 2: El Campo Chileno -->
+    <div class="slide">
+        <h2 class="slide-title">El Campo Chileno</h2>
+        <div class="slide-content">
+            <p>Parral ha sido históricamente una ciudad <span class="highlight">agrícola y ganadera</span>, corazón del
+                campo chileno.</p>
+            <ul>
+                <li>🌄 Valle fértil entre la Cordillera y la Costa</li>
+                <li>🌡️ Clima mediterráneo ideal para cultivos</li>
+                <li>💧 Regado por el río Perquilauquén</li>
+                <li>🏡 Haciendas y fundos que marcaron la historia</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 3: El Hacendado -->
+    <div class="slide">
+        <h2 class="slide-title">El Hacendado Chileno</h2>
+        <div class="slide-content">
+            <p>El <span class="highlight">hacendado</span> era la figura central de la vida rural tradicional.</p>
+            <ul>
+                <li>🎩 Vestimenta típica: manta, sombrero y espuelas</li>
+                <li>🐴 Dominio de la equitación y arriería</li>
+                <li>👨‍👩‍👧‍👦 Patrón de los inquilinos del fundo</li>
+                <li>📜 Sistema de haciendas que duró siglos</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 4: La Vendimia -->
+    <div class="slide">
+        <h2 class="slide-title">La Vendimia Tradicional</h2>
+        <div class="slide-content">
+            <p>La <span class="highlight">vendimia</span> era el momento más esperado del año en el campo.</p>
+            <ul>
+                <li>🍇 Cosecha de uvas entre marzo y abril</li>
+                <li>👨‍👩‍👧‍👦 Trabajo colectivo de toda la comunidad</li>
+                <li>🍷 Producción de vino y chicha artesanal</li>
+                <li>🎉 Fiestas y celebraciones tras la cosecha</li>
+            </ul>
+            <p style="margin-top: 1.5rem;">Las fotografías de 1959 nos muestran cómo era esta tradición.</p>
+        </div>
+    </div>
+
+    <!-- Slide 5: La Ramada -->
+    <div class="slide">
+        <h2 class="slide-title">La Ramada Típica</h2>
+        <div class="slide-content">
+            <p>La <span class="highlight">ramada</span> era el corazón de las fiestas y celebraciones rurales.</p>
+            <ul>
+                <li>🏚️ Construcción de ramas y palos de madera</li>
+                <li>🎶 Escenario para cueca y música folclórica</li>
+                <li>🍖 Asados, empanadas y comida tradicional</li>
+                <li>🎆 Fiestas Patrias y celebraciones locales</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 6: El Lechero -->
+    <div class="slide">
+        <h2 class="slide-title">El Lechero del Pueblo</h2>
+        <div class="slide-content">
+            <p>El <span class="highlight">lechero</span> era un personaje cotidiano en el Parral de antaño.</p>
+            <ul>
+                <li>🥛 Repartía leche fresca casa por casa</li>
+                <li>🐄 Traía su producto desde los fundos cercanos</li>
+                <li>⏰ Madrugaba para hacer su recorrido diario</li>
+                <li>🤝 Conocía a todas las familias del pueblo</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 7: Tradiciones Vivas -->
+    <div class="slide">
+        <h2 class="slide-title">Tradiciones que Perduran</h2>
+        <div class="slide-content">
+            <p>Muchas <span class="highlight">tradiciones rurales</span> siguen vivas en Parral.</p>
+            <ul>
+                <li>🐴 El rodeo sigue siendo fiesta nacional</li>
+                <li>🍷 La producción de vino continúa</li>
+                <li>💃 La cueca se baila en cada celebración</li>
+                <li>🌾 La agricultura sigue siendo base económica</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 8: Cierre -->
+    <div class="slide">
+        <div class="emoji-large">🌾</div>
+        <h2 class="slide-title">¡Gracias!</h2>
+        <p class="slide-subtitle">La vida rural es parte esencial de la identidad de Parral</p>
+        <p style="margin-top: 2rem;">
+            <a href="../../galeria.html" style="color: var(--accent-color);">🖼️ Ver Galería Histórica</a> |
+            <a href="../../educacion.html" style="color: var(--accent-color);">📚 Más Material Educativo</a>
+        </p>
+        <p style="margin-top: 3rem; opacity: 0.5; font-size: 0.9rem;">Archivos en Movimiento | fotos-parral.cl</p>
+    </div>
+</body>
+
+</html>
