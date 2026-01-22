@@ -371,6 +371,247 @@ footer p {
 }
 
 /* ---------------------------------- */
+/* Professional Footer Styles         */
+/* ---------------------------------- */
+.site-footer {
+    background: linear-gradient(180deg, #0f0f0f 0%, #1a1510 100%);
+    color: #a0a0a0;
+    margin-top: 4rem;
+}
+
+/* CTA Banner */
+.footer-cta {
+    background: linear-gradient(135deg, #c9a961 0%, #a88b4a 100%);
+    padding: 1rem 0;
+}
+
+.footer-cta .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.footer-cta-text {
+    color: #1a1510;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.footer-cta-btn {
+    background: #1a1510;
+    color: #c9a961;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.footer-cta-btn:hover {
+    background: #2d2419;
+    transform: translateX(3px);
+}
+
+/* Main Footer */
+.footer-main {
+    padding: 3.5rem 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 2.5rem;
+}
+
+/* Brand Column */
+.footer-brand {
+    padding-right: 2rem;
+}
+
+.footer-logo {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: #f4e9d9;
+    margin-bottom: 0.25rem;
+}
+
+.footer-tagline {
+    color: #c9a961;
+    font-size: 0.85rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.footer-description {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #888;
+    margin-bottom: 1.25rem;
+}
+
+.footer-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(201, 169, 97, 0.1);
+    border: 1px solid rgba(201, 169, 97, 0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-size: 0.8rem;
+    color: #c9a961;
+}
+
+/* Navigation Columns */
+.footer-nav-col h4 {
+    color: #f4e9d9;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+}
+
+.footer-nav-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-nav-col li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-nav-col a {
+    color: #888;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.footer-nav-col a:hover {
+    color: #c9a961;
+    padding-left: 5px;
+}
+
+/* Contact Column */
+.footer-contact h4 {
+    color: #f4e9d9;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+}
+
+.footer-email,
+.footer-whatsapp {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #888;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.footer-email:hover,
+.footer-whatsapp:hover {
+    color: #c9a961;
+}
+
+.footer-whatsapp {
+    background: rgba(37, 211, 102, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    display: inline-flex;
+    margin-bottom: 1rem;
+}
+
+.footer-whatsapp:hover {
+    background: rgba(37, 211, 102, 0.2);
+    color: #25D366;
+}
+
+.footer-location {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 1rem;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 1.5rem 0;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0;
+}
+
+.footer-credits {
+    margin-top: 0.5rem !important;
+    font-size: 0.8rem !important;
+    color: #555 !important;
+}
+
+/* Footer Responsive */
+@media (max-width: 992px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .footer-badge {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-nav-col,
+    .footer-contact {
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 1.5rem;
+    }
+
+    .footer-nav-col a:hover {
+        padding-left: 0;
+    }
+
+    .footer-email,
+    .footer-whatsapp,
+    .footer-location {
+        justify-content: center;
+    }
+
+    .footer-cta .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* ---------------------------------- */
 /* 5. RESPONSIVO (Móviles)            */
 /* ---------------------------------- */
 /* Botón Volver Arriba */
