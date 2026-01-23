@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talleres Comunitarios | Archivos en Movimiento</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .talleres-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .talleres-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .talleres-header h1 {
+            font-family: 'Merriweather', serif;
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .talleres-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .talleres-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .taller-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .taller-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .taller-card-header {
+            padding: 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        .taller-card-header.memoria {
+            background: linear-gradient(135deg, #8b7355 0%, #c9a961 100%);
+        }
+
+        .taller-card-header.antes-ahora {
+            background: linear-gradient(135deg, #5d4e37 0%, #8b7355 100%);
+        }
+
+        .taller-card-header.mayores {
+            background: linear-gradient(135deg, #6d4c41 0%, #a1887f 100%);
+        }
+
+        .taller-card-header .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .taller-card-header h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .taller-card-body {
+            padding: 1.5rem;
+        }
+
+        .taller-card-body p {
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .taller-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .meta-tag {
+            background: rgba(201, 169, 97, 0.15);
+            color: var(--primary-color);
+            padding: 0.3rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        .taller-card-footer {
+            padding: 1rem 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .btn-taller {
+            display: inline-block;
+            background: linear-gradient(135deg, #8b7355, #c9a961);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .btn-taller:hover {
+            transform: scale(1.05);
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, rgba(139, 115, 85, 0.1) 0%, rgba(201, 169, 97, 0.1) 100%);
+            border-left: 4px solid #c9a961;
+            padding: 1.5rem;
+            border-radius: 0 12px 12px 0;
+            margin-bottom: 2rem;
+        }
+
+        .info-box h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .info-box ul {
+            margin-left: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .btn-back {
+            display: inline-block;
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+
+<body>
+    {% include header.html %}
+
+    <main class="talleres-container">
+        <!-- Header -->
+        <div class="talleres-header">
+            <h1>🎓 Talleres Comunitarios</h1>
+            <p>Material listo para usar en reuniones de apoderados, juntas de vecinos,
+                centros de adultos mayores y cualquier encuentro comunitario.</p>
+        </div>
+
+        <!-- Info Box -->
+        <div class="info-box">
+            <h3>📋 ¿Cómo usar estos talleres?</h3>
+            <ul>
+                <li><strong>Descarga e imprime</strong> el taller que necesites</li>
+                <li><strong>Adapta</strong> según tu grupo y tiempo disponible</li>
+                <li><strong>No necesitas ser experto</strong> - cada taller tiene instrucciones paso a paso</li>
+                <li><strong>Comparte los resultados</strong> - nos encantaría saber cómo te fue</li>
+            </ul>
+        </div>
+
+        <!-- Grid de Talleres -->
+        <div class="talleres-grid">
+            <!-- Taller 1: Memoria Familiar -->
+            <div class="taller-card">
+                <div class="taller-card-header memoria">
+                    <div class="icon">📸</div>
+                    <h2>Memoria Familiar y Fotografías Antiguas</h2>
+                </div>
+                <div class="taller-card-body">
+                    <p>Los participantes traen fotos antiguas de sus familias y comparten las historias detrás de cada
+                        imagen.</p>
+                    <div class="taller-meta">
+                        <span class="meta-tag">⏱️ 60-90 min</span>
+                        <span class="meta-tag">👥 10-30 personas</span>
+                        <span class="meta-tag">👨‍👩‍👧 Familias</span>
+                    </div>
+                </div>
+                <div class="taller-card-footer">
+                    <a href="taller-memoria-familiar.html" class="btn-taller">Ver Taller</a>
+                </div>
+            </div>
+
+            <!-- Taller 2: Antes y Ahora -->
+            <div class="taller-card">
+                <div class="taller-card-header antes-ahora">
+                    <div class="icon">🔄</div>
+                    <h2>Parral Antes y Ahora</h2>
+                </div>
+                <div class="taller-card-body">
+                    <p>Recorrido visual comparando fotografías históricas con imágenes actuales de los mismos lugares.
+                    </p>
+                    <div class="taller-meta">
+                        <span class="meta-tag">⏱️ 45-60 min</span>
+                        <span class="meta-tag">👥 15-40 personas</span>
+                        <span class="meta-tag">🌐 Todas las edades</span>
+                    </div>
+                </div>
+                <div class="taller-card-footer">
+                    <a href="taller-antes-ahora.html" class="btn-taller">Ver Taller</a>
+                </div>
+            </div>
+
+            <!-- Taller 3: Conversatorio Mayores -->
+            <div class="taller-card">
+                <div class="taller-card-header mayores">
+                    <div class="icon">👴👵</div>
+                    <h2>Conversatorio con Adultos Mayores</h2>
+                </div>
+                <div class="taller-card-body">
+                    <p>Espacio para rescatar testimonios orales usando fotografías como gatilladores de memoria.</p>
+                    <div class="taller-meta">
+                        <span class="meta-tag">⏱️ 60-90 min</span>
+                        <span class="meta-tag">👥 5-15 personas</span>
+                        <span class="meta-tag">👴 Adultos mayores</span>
+                    </div>
+                </div>
+                <div class="taller-card-footer">
+                    <a href="taller-conversatorio-mayores.html" class="btn-taller">Ver Taller</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Próximamente -->
+        <div class="info-box">
+            <h3>🚀 Próximos Talleres</h3>
+            <ul>
+                <li><strong>Taller de Fotografía Patrimonial:</strong> Cómo fotografiar el patrimonio de tu barrio</li>
+                <li><strong>Taller para Niños:</strong> Colorear la historia de Parral</li>
+                <li><strong>Taller de Entrevista:</strong> Cómo entrevistar a los abuelos</li>
+            </ul>
+        </div>
+
+        <!-- Botón Volver -->
+        <div style="text-align: center;">
+            <a href="../../educacion.html" class="btn-back">← Volver a Educación</a>
+        </div>
+    </main>
+
+    {% include footer.html %}
+</body>
+
+</html>

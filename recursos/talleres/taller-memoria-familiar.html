@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller: Memoria Familiar y Fotografías Antiguas | Archivos en Movimiento</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .taller-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .taller-header {
+            background: linear-gradient(135deg, #8b7355 0%, #c9a961 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .taller-header h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .taller-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .meta-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #c9a961;
+        }
+
+        .section h2 {
+            font-family: 'Merriweather', serif;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section ul,
+        .section ol {
+            margin-left: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .materials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .material-card {
+            background: rgba(201, 169, 97, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .material-card .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .activity-box {
+            background: linear-gradient(135deg, rgba(46, 125, 50, 0.1) 0%, rgba(76, 175, 80, 0.1) 100%);
+            border: 2px solid #4caf50;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .activity-box h3 {
+            color: #2e7d32;
+            margin-bottom: 1rem;
+        }
+
+        .time-badge {
+            background: #2e7d32;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+        }
+
+        .tip-box {
+            background: linear-gradient(135deg, rgba(33, 150, 243, 0.1) 0%, rgba(3, 169, 244, 0.1) 100%);
+            border-left: 4px solid #2196f3;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .tip-box::before {
+            content: "💡 ";
+        }
+
+        .btn-print {
+            display: inline-block;
+            background: linear-gradient(135deg, #8b7355, #c9a961);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0.5rem;
+            transition: transform 0.3s;
+        }
+
+        .btn-print:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-back {
+            display: inline-block;
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            margin: 0.5rem;
+        }
+
+        @media print {
+
+            .btn-print,
+            .btn-back,
+            header,
+            footer {
+                display: none !important;
+            }
+
+            .taller-container {
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    {% include header.html %}
+
+    <main class="taller-container">
+        <!-- Header del Taller -->
+        <div class="taller-header">
+            <h1>📸 Taller: Memoria Familiar y Fotografías Antiguas</h1>
+            <p>Recuperando historias a través de las imágenes de nuestros abuelos</p>
+            <div class="taller-meta">
+                <span class="meta-item">⏱️ Duración: 60-90 min</span>
+                <span class="meta-item">👥 Participantes: 10-30 personas</span>
+                <span class="meta-item">🎯 Público: Familias y comunidad</span>
+            </div>
+        </div>
+
+        <!-- Descripción -->
+        <div class="section">
+            <h2>📋 Descripción del Taller</h2>
+            <p>Este taller está diseñado para reuniones de apoderados, juntas de vecinos o encuentros comunitarios.
+                Los participantes traen fotografías antiguas de sus familias y, guiados por el facilitador,
+                comparten las historias detrás de cada imagen, conectando el pasado familiar con la historia de Parral.
+            </p>
+
+            <div class="tip-box">
+                <strong>Ideal para:</strong> Reuniones de apoderados, Día del Patrimonio, Fiestas Patrias,
+                Aniversario de la escuela, Juntas de vecinos, Centros de adultos mayores.
+            </div>
+        </div>
+
+        <!-- Objetivos -->
+        <div class="section">
+            <h2>🎯 Objetivos</h2>
+            <ul>
+                <li>Valorar la memoria familiar como parte del patrimonio local</li>
+                <li>Fortalecer vínculos intergeneracionales (abuelos, padres, hijos)</li>
+                <li>Rescatar historias orales de la comunidad</li>
+                <li>Conectar historias personales con la historia de Parral</li>
+                <li>Fomentar la participación comunitaria</li>
+            </ul>
+        </div>
+
+        <!-- Materiales -->
+        <div class="section">
+            <h2>🧰 Materiales Necesarios</h2>
+            <div class="materials-grid">
+                <div class="material-card">
+                    <div class="icon">📷</div>
+                    <strong>Fotos antiguas</strong>
+                    <p>Cada participante trae 1-2 fotos familiares</p>
+                </div>
+                <div class="material-card">
+                    <div class="icon">📺</div>
+                    <strong>Proyector (opcional)</strong>
+                    <p>Para mostrar fotos del sitio web</p>
+                </div>
+                <div class="material-card">
+                    <div class="icon">📝</div>
+                    <strong>Fichas de registro</strong>
+                    <p>Para documentar las historias</p>
+                </div>
+                <div class="material-card">
+                    <div class="icon">🎤</div>
+                    <strong>Micrófono</strong>
+                    <p>Para grupos grandes (opcional)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desarrollo del Taller -->
+        <div class="section">
+            <h2>📖 Desarrollo del Taller</h2>
+
+            <div class="activity-box">
+                <h3>🔹 Momento 1: Bienvenida y Motivación <span class="time-badge">10 min</span></h3>
+                <ol>
+                    <li>Saludo y presentación del taller</li>
+                    <li>Mostrar 2-3 fotos antiguas de Parral del sitio web</li>
+                    <li>Preguntar: <em>"¿Alguien reconoce este lugar? ¿Conocen alguna historia?"</em></li>
+                    <li>Explicar la importancia de preservar la memoria familiar</li>
+                </ol>
+            </div>
+
+            <div class="activity-box">
+                <h3>🔹 Momento 2: Compartir en Grupos <span class="time-badge">25-30 min</span></h3>
+                <ol>
+                    <li>Formar grupos de 4-5 personas (idealmente mezclando generaciones)</li>
+                    <li>Cada persona muestra su foto y cuenta:
+                        <ul>
+                            <li>¿Quiénes aparecen?</li>
+                            <li>¿Cuándo y dónde fue tomada?</li>
+                            <li>¿Qué historia hay detrás?</li>
+                            <li>¿Qué ha cambiado desde entonces?</li>
+                        </ul>
+                    </li>
+                    <li>Un voluntario de cada grupo toma notas</li>
+                </ol>
+            </div>
+
+            <div class="activity-box">
+                <h3>🔹 Momento 3: Plenario <span class="time-badge">20-25 min</span></h3>
+                <ol>
+                    <li>Cada grupo comparte 1 historia destacada</li>
+                    <li>Si hay proyector, mostrar las fotos mientras se cuenta la historia</li>
+                    <li>El facilitador conecta las historias con la historia de Parral</li>
+                    <li>Preguntar: <em>"¿Qué aprendimos hoy sobre nuestra comunidad?"</em></li>
+                </ol>
+            </div>
+
+            <div class="activity-box">
+                <h3>🔹 Momento 4: Cierre y Compromiso <span class="time-badge">10 min</span></h3>
+                <ol>
+                    <li>Agradecer la participación</li>
+                    <li>Invitar a compartir fotos para el archivo digital</li>
+                    <li>Mostrar el sitio web "Archivos en Movimiento"</li>
+                    <li>Entregar información de contacto para donar fotos</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Ficha de Registro -->
+        <div class="section">
+            <h2>📝 Ficha de Registro de Historia</h2>
+            <p>Usar esta ficha para documentar las historias compartidas:</p>
+            <div
+                style="background: white; border: 2px dashed #8b7355; padding: 1.5rem; border-radius: 8px; margin-top: 1rem;">
+                <p><strong>Nombre del participante:</strong> _______________________________</p>
+                <p><strong>Año aproximado de la foto:</strong> _______________________________</p>
+                <p><strong>Lugar:</strong> _______________________________</p>
+                <p><strong>Personas en la foto:</strong> _______________________________</p>
+                <p><strong>Historia/Anécdota:</strong></p>
+                <p style="border-bottom: 1px solid #ccc; height: 60px;"></p>
+                <p style="border-bottom: 1px solid #ccc; height: 60px;"></p>
+                <p><strong>¿Autoriza compartir esta historia en el archivo digital?</strong> Sí ___ No ___</p>
+                <p><strong>Firma:</strong> _______________________ <strong>Fecha:</strong> _______________</p>
+            </div>
+        </div>
+
+        <!-- Tips para el Facilitador -->
+        <div class="section">
+            <h2>💡 Tips para el Facilitador</h2>
+            <ul>
+                <li><strong>Preparación:</strong> Avisar con anticipación para que traigan fotos</li>
+                <li><strong>Ambiente:</strong> Crear un espacio acogedor, con música suave de la época (opcional)</li>
+                <li><strong>Respeto:</strong> Algunas historias pueden ser emotivas, dar espacio a las emociones</li>
+                <li><strong>Documentar:</strong> Con permiso, tomar fotos del taller para evidencia</li>
+                <li><strong>Seguimiento:</strong> Ofrecer digitalizar fotos antiguas para el archivo</li>
+            </ul>
+        </div>
+
+        <!-- Botones -->
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="javascript:window.print()" class="btn-print">🖨️ Imprimir Taller</a>
+            <a href="../../educacion.html" class="btn-back">← Volver a Educación</a>
+        </div>
+    </main>
+
+    {% include footer.html %}
+</body>
+
+</html>

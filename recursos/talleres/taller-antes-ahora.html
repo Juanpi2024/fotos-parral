@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller: Parral Antes y Ahora - Comparando Épocas | Archivos en Movimiento</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .taller-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .taller-header {
+            background: linear-gradient(135deg, #5d4e37 0%, #8b7355 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .taller-header h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .taller-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .meta-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #8b7355;
+        }
+
+        .section h2 {
+            font-family: 'Merriweather', serif;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section ul,
+        .section ol {
+            margin-left: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .compare-example {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1rem;
+            border-radius: 10px;
+        }
+
+        .compare-example div {
+            text-align: center;
+        }
+
+        .compare-example h4 {
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .activity-box {
+            background: linear-gradient(135deg, rgba(139, 115, 85, 0.1) 0%, rgba(201, 169, 97, 0.1) 100%);
+            border: 2px solid #c9a961;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .activity-box h3 {
+            color: #8b7355;
+            margin-bottom: 1rem;
+        }
+
+        .time-badge {
+            background: #8b7355;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+        }
+
+        .question-card {
+            background: linear-gradient(135deg, rgba(255, 193, 7, 0.1) 0%, rgba(255, 152, 0, 0.1) 100%);
+            border-left: 4px solid #ff9800;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .question-card strong {
+            color: #f57c00;
+        }
+
+        .materials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .material-card {
+            background: rgba(201, 169, 97, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .material-card .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .suggested-places {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .place-tag {
+            background: rgba(139, 115, 85, 0.2);
+            padding: 0.75rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid rgba(201, 169, 97, 0.3);
+        }
+
+        .btn-print {
+            display: inline-block;
+            background: linear-gradient(135deg, #8b7355, #c9a961);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0.5rem;
+            transition: transform 0.3s;
+        }
+
+        .btn-print:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-back {
+            display: inline-block;
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            margin: 0.5rem;
+        }
+
+        @media print {
+
+            .btn-print,
+            .btn-back,
+            header,
+            footer {
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .compare-example {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    {% include header.html %}
+
+    <main class="taller-container">
+        <!-- Header del Taller -->
+        <div class="taller-header">
+            <h1>🔄 Taller: Parral Antes y Ahora</h1>
+            <p>Viaje visual por los cambios de nuestra ciudad</p>
+            <div class="taller-meta">
+                <span class="meta-item">⏱️ Duración: 45-60 min</span>
+                <span class="meta-item">👥 Participantes: 15-40 personas</span>
+                <span class="meta-item">🎯 Público: Todas las edades</span>
+            </div>
+        </div>
+
+        <!-- Descripción -->
+        <div class="section">
+            <h2>📋 Descripción del Taller</h2>
+            <p>Un recorrido visual comparando fotografías históricas de Parral con imágenes actuales de los mismos
+                lugares.
+                Los participantes descubren cómo ha cambiado la ciudad, qué se ha perdido, qué permanece y qué
+                significan estos cambios para la identidad local.</p>
+
+            <div class="compare-example">
+                <div>
+                    <h4>📷 Antes (1940)</h4>
+                    <p>Plaza de Armas con pileta original y árboles jóvenes</p>
+                </div>
+                <div>
+                    <h4>📸 Ahora (2024)</h4>
+                    <p>Plaza renovada post-terremoto con nueva vegetación</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Objetivos -->
+        <div class="section">
+            <h2>🎯 Objetivos</h2>
+            <ul>
+                <li>Reconocer los cambios urbanos de Parral a través del tiempo</li>
+                <li>Valorar el patrimonio arquitectónico perdido y conservado</li>
+                <li>Reflexionar sobre el desarrollo de la ciudad</li>
+                <li>Activar la memoria colectiva de los participantes</li>
+                <li>Generar conversación intergeneracional</li>
+            </ul>
+        </div>
+
+        <!-- Materiales -->
+        <div class="section">
+            <h2>🧰 Materiales Necesarios</h2>
+            <div class="materials-grid">
+                <div class="material-card">
+                    <div class="icon">💻</div>
+                    <strong>Computador + Proyector</strong>
+                </div>
+                <div class="material-card">
+                    <div class="icon">🌐</div>
+                    <strong>Acceso a Internet</strong>
+                </div>
+                <div class="material-card">
+                    <div class="icon">📱</div>
+                    <strong>Sitio web abierto</strong>
+                </div>
+                <div class="material-card">
+                    <div class="icon">📋</div>
+                    <strong>Hojas y lápices</strong>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lugares Sugeridos -->
+        <div class="section">
+            <h2>📍 Lugares Sugeridos para Comparar</h2>
+            <p>Usar las colecciones del sitio web para mostrar:</p>
+            <div class="suggested-places">
+                <div class="place-tag">🏛️ Plaza de Armas</div>
+                <div class="place-tag">🚂 Estación de Trenes</div>
+                <div class="place-tag">🏪 Locales Comerciales</div>
+                <div class="place-tag">⛪ Iglesia San José</div>
+                <div class="place-tag">🛤️ Avenida Principal</div>
+                <div class="place-tag">🚗 Vehículos Históricos</div>
+                <div class="place-tag">♨️ Termas de Catillo</div>
+                <div class="place-tag">🇮🇹 Colonia Italiana</div>
+            </div>
+        </div>
+
+        <!-- Desarrollo del Taller -->
+        <div class="section">
+            <h2>📖 Desarrollo del Taller</h2>
+
+            <div class="activity-box">
+                <h3>🔹 Momento 1: Introducción <span class="time-badge">5-10 min</span></h3>
+                <ol>
+                    <li>Bienvenida y presentación del proyecto "Archivos en Movimiento"</li>
+                    <li>Explicar el objetivo: "Vamos a viajar en el tiempo sin movernos de aquí"</li>
+                    <li>Mostrar el sitio web brevemente</li>
+                </ol>
+            </div>
+
+            <div class="activity-box">
+                <h3>🔹 Momento 2: Recorrido Visual <span class="time-badge">25-30 min</span></h3>
+                <p>Para cada lugar (elegir 4-5 según el tiempo):</p>
+                <ol>
+                    <li><strong>Mostrar foto antigua</strong> - Preguntar: "¿Reconocen este lugar?"</li>
+                    <li><strong>Dar pistas</strong> - Si no reconocen, dar contexto histórico</li>
+                    <li><strong>Escuchar recuerdos</strong> - "¿Quién tiene una historia de este lugar?"</li>
+                    <li><strong>Mostrar foto actual</strong> - Usar el slider de comparación</li>
+                    <li><strong>Reflexionar</strong> - "¿Qué cambió? ¿Qué se perdió? ¿Qué mejoró?"</li>
+                </ol>
+            </div>
+
+            <div class="activity-box">
+                <h3>🔹 Momento 3: Reflexión Grupal <span class="time-badge">10-15 min</span></h3>
+                <p>Preguntas para el diálogo:</p>
+                <div class="question-card">
+                    <strong>💬 "¿Qué lugar les causó más nostalgia?"</strong>
+                </div>
+                <div class="question-card">
+                    <strong>💬 "¿Qué edificio o lugar les gustaría que se hubiera conservado?"</strong>
+                </div>
+                <div class="question-card">
+                    <strong>💬 "¿Qué cambio les parece positivo para la ciudad?"</strong>
+                </div>
+                <div class="question-card">
+                    <strong>💬 "¿Qué deberíamos proteger hoy para el futuro?"</strong>
+                </div>
+            </div>
+
+            <div class="activity-box">
+                <h3>🔹 Momento 4: Cierre <span class="time-badge">5 min</span></h3>
+                <ol>
+                    <li>Agradecer la participación y los recuerdos compartidos</li>
+                    <li>Invitar a visitar el sitio web desde sus casas</li>
+                    <li>Invitar a compartir fotos antiguas para el archivo</li>
+                    <li>Si es posible, tomar foto grupal del taller</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Variantes -->
+        <div class="section">
+            <h2>🎭 Variantes del Taller</h2>
+            <ul>
+                <li><strong>Versión breve (20 min):</strong> Solo 3 lugares, sin actividad grupal</li>
+                <li><strong>Versión extendida (90 min):</strong> Incluir actividad de dibujo "Cómo imagino Parral en 50
+                    años"</li>
+                <li><strong>Versión presencial-recorrido:</strong> Hacer el taller caminando por los lugares reales</li>
+                <li><strong>Versión niños:</strong> Usar las láminas para colorear después de ver las fotos</li>
+            </ul>
+        </div>
+
+        <!-- Botones -->
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="javascript:window.print()" class="btn-print">🖨️ Imprimir Taller</a>
+            <a href="../../educacion.html" class="btn-back">← Volver a Educación</a>
+        </div>
+    </main>
+
+    {% include footer.html %}
+</body>
+
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller: Conversatorio con Adultos Mayores | Archivos en Movimiento</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        .taller-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .taller-header {
+            background: linear-gradient(135deg, #6d4c41 0%, #a1887f 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .taller-header h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .taller-meta {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .meta-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #a1887f;
+        }
+
+        .section h2 {
+            font-family: 'Merriweather', serif;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .section ul,
+        .section ol {
+            margin-left: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .activity-box {
+            background: linear-gradient(135deg, rgba(109, 76, 65, 0.1) 0%, rgba(161, 136, 127, 0.1) 100%);
+            border: 2px solid #a1887f;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .activity-box h3 {
+            color: #6d4c41;
+            margin-bottom: 1rem;
+        }
+
+        .time-badge {
+            background: #6d4c41;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+        }
+
+        .question-box {
+            background: linear-gradient(135deg, rgba(255, 235, 238, 0.3) 0%, rgba(252, 228, 236, 0.3) 100%);
+            border-left: 4px solid #ec407a;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .question-box h4 {
+            color: #c2185b;
+            margin-bottom: 0.5rem;
+        }
+
+        .topic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .topic-card {
+            background: rgba(161, 136, 127, 0.15);
+            padding: 1rem;
+            border-radius: 10px;
+            border: 1px solid rgba(161, 136, 127, 0.3);
+        }
+
+        .topic-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .topic-card ul {
+            font-size: 0.9rem;
+            margin-left: 1rem;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, rgba(255, 243, 224, 0.5) 0%, rgba(255, 224, 178, 0.5) 100%);
+            border-left: 4px solid #ff9800;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .warning-box::before {
+            content: "⚠️ ";
+        }
+
+        .consent-form {
+            background: white;
+            border: 2px dashed #6d4c41;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .consent-form p {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .btn-print {
+            display: inline-block;
+            background: linear-gradient(135deg, #6d4c41, #a1887f);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0.5rem;
+            transition: transform 0.3s;
+        }
+
+        .btn-print:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-back {
+            display: inline-block;
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            margin: 0.5rem;
+        }
+
+        @media print {
+
+            .btn-print,
+            .btn-back,
+            header,
+            footer {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    {% include header.html %}
+
+    <main class="taller-container">
+        <!-- Header del Taller -->
+        <div class="taller-header">
+            <h1>👴👵 Conversatorio: Memorias de Parral</h1>
+            <p>Rescatando historias de quienes vivieron otra época</p>
+            <div class="taller-meta">
+                <span class="meta-item">⏱️ Duración: 60-90 min</span>
+                <span class="meta-item">👥 Participantes: 5-15 adultos mayores</span>
+                <span class="meta-item">🎯 Formato: Conversatorio guiado</span>
+            </div>
+        </div>
+
+        <!-- Descripción -->
+        <div class="section">
+            <h2>📋 ¿Qué es este taller?</h2>
+            <p>Un espacio para que adultos mayores de Parral compartan sus recuerdos y vivencias de la ciudad antigua.
+                Se utilizan fotografías históricas como "gatilladores de memoria" para activar recuerdos y generar
+                conversaciones valiosas que pueden ser documentadas para el archivo.</p>
+
+            <div class="warning-box">
+                <strong>Importante:</strong> Este taller busca <em>escuchar</em> más que enseñar.
+                Los adultos mayores son los protagonistas y expertos de su propia historia.
+            </div>
+        </div>
+
+        <!-- Objetivos -->
+        <div class="section">
+            <h2>🎯 Objetivos</h2>
+            <ul>
+                <li>Rescatar testimonios orales de adultos mayores</li>
+                <li>Valorar a los mayores como "portadores de memoria"</li>
+                <li>Documentar historias para el archivo digital</li>
+                <li>Crear un espacio de encuentro y valoración</li>
+                <li>Conectar generaciones a través de la memoria</li>
+            </ul>
+        </div>
+
+        <!-- Temas Sugeridos -->
+        <div class="section">
+            <h2>💭 Temas para Conversar</h2>
+            <p>Usar las fotografías del sitio web para introducir cada tema:</p>
+
+            <div class="topic-grid">
+                <div class="topic-card">
+                    <h4>🚂 El Ferrocarril</h4>
+                    <ul>
+                        <li>¿Viajó en tren? ¿A dónde?</li>
+                        <li>¿Cómo era la estación?</li>
+                        <li>¿Qué recuerda del último tren?</li>
+                    </ul>
+                </div>
+                <div class="topic-card">
+                    <h4>🏛️ La Plaza</h4>
+                    <ul>
+                        <li>¿Cómo era la plaza antes?</li>
+                        <li>¿Qué hacían los domingos?</li>
+                        <li>¿Recuerda algún evento especial?</li>
+                    </ul>
+                </div>
+                <div class="topic-card">
+                    <h4>🏪 Los Negocios</h4>
+                    <ul>
+                        <li>¿Dónde compraban?</li>
+                        <li>¿Qué tiendas recuerda?</li>
+                        <li>¿Cómo era el trato?</li>
+                    </ul>
+                </div>
+                <div class="topic-card">
+                    <h4>🎉 Fiestas y Tradiciones</h4>
+                    <ul>
+                        <li>¿Cómo se celebraban las Fiestas Patrias?</li>
+                        <li>¿Recuerda procesiones religiosas?</li>
+                        <li>¿Cómo era la vendimia?</li>
+                    </ul>
+                </div>
+                <div class="topic-card">
+                    <h4>🏠 La Vida Cotidiana</h4>
+                    <ul>
+                        <li>¿Cómo era un día normal?</li>
+                        <li>¿Qué juegos jugaban de niños?</li>
+                        <li>¿Cómo era ir a la escuela?</li>
+                    </ul>
+                </div>
+                <div class="topic-card">
+                    <h4>😢 Momentos Difíciles</h4>
+                    <ul>
+                        <li>¿Recuerda el terremoto del 39?</li>
+                        <li>¿Cómo fue la inundación del 65?</li>
+                        <li>¿Cómo se ayudaban entre vecinos?</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desarrollo -->
+        <div class="section">
+            <h2>📖 Desarrollo del Conversatorio</h2>
+
+            <div class="activity-box">
+                <h3>🔹 Preparación <span class="time-badge">antes del taller</span></h3>
+                <ul>
+                    <li>Preparar el espacio: sillas cómodas en círculo o semicírculo</li>
+                    <li>Tener agua, café o té disponible</li>
+                    <li>Preparar 5-6 fotografías impresas en tamaño grande</li>
+                    <li>Tener grabadora o celular para grabar (con permiso)</li>
+                    <li>Preparar formularios de consentimiento</li>
+                </ul>
+            </div>
+
+            <div class="activity-box">
+                <h3>🔹 Bienvenida y Presentación <span class="time-badge">10 min</span></h3>
+                <ol>
+                    <li>Agradecer la asistencia y presentar el proyecto</li>
+                    <li>Explicar: <em>"Ustedes son los expertos. Queremos aprender de ustedes."</em></li>
+                    <li>Cada participante dice su nombre y cuántos años lleva en Parral</li>
+                    <li>Explicar que se grabará (si corresponde) y pedir permiso</li>
+                </ol>
+            </div>
+
+            <div class="activity-box">
+                <h3>🔹 Conversación con Fotografías <span class="time-badge">40-50 min</span></h3>
+                <p>Para cada fotografía:</p>
+                <ol>
+                    <li>Mostrar la imagen y dar tiempo para observar</li>
+                    <li>Preguntar: <em>"¿Qué ven en esta foto? ¿Reconocen el lugar?"</em></li>
+                    <li>Dejar que fluya la conversación, no interrumpir</li>
+                    <li>Hacer preguntas de seguimiento cuando sea apropiado</li>
+                    <li>Anotar nombres, fechas y datos importantes</li>
+                </ol>
+
+                <div class="question-box">
+                    <h4>Preguntas útiles:</h4>
+                    <ul>
+                        <li>"¿Puede contarnos más sobre eso?"</li>
+                        <li>"¿En qué año fue eso aproximadamente?"</li>
+                        <li>"¿Cómo se sentía usted en ese momento?"</li>
+                        <li>"¿Qué pasó después?"</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="activity-box">
+                <h3>🔹 Cierre y Agradecimiento <span class="time-badge">10-15 min</span></h3>
+                <ol>
+                    <li>Agradecer profundamente cada testimonio compartido</li>
+                    <li>Preguntar si tienen fotografías antiguas que quisieran compartir</li>
+                    <li>Explicar cómo sus historias serán usadas (con respeto)</li>
+                    <li>Invitar a futuros encuentros</li>
+                    <li>Tomar foto grupal (si lo desean)</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Formulario de Consentimiento -->
+        <div class="section">
+            <h2>📝 Formulario de Consentimiento</h2>
+            <p>Usar esta ficha para obtener autorización:</p>
+
+            <div class="consent-form">
+                <p style="text-align: center; font-weight: bold; font-size: 1.1rem;">
+                    AUTORIZACIÓN PARA USO DE TESTIMONIO
+                </p>
+                <p style="text-align: center; font-size: 0.9rem; color: #666;">
+                    Proyecto "Archivos en Movimiento" - Parral
+                </p>
+                <hr style="margin: 1rem 0;">
+                <p>Yo, <strong>_________________________________</strong>, RUT <strong>_______________</strong>,</p>
+                <p>autorizo al proyecto "Archivos en Movimiento" a:</p>
+                <p>☐ Grabar mi testimonio en audio</p>
+                <p>☐ Transcribir y publicar mi testimonio en el sitio web</p>
+                <p>☐ Usar mi nombre junto al testimonio</p>
+                <p>☐ Usar solo mi primer nombre</p>
+                <p>☐ Publicar de forma anónima</p>
+                <p style="margin-top: 1rem;">
+                    Entiendo que mi participación es voluntaria y que puedo solicitar la eliminación
+                    de mi testimonio en cualquier momento.
+                </p>
+                <p style="margin-top: 1.5rem;">
+                    <strong>Firma:</strong> _________________________ <strong>Fecha:</strong> _______________
+                </p>
+            </div>
+        </div>
+
+        <!-- Tips -->
+        <div class="section">
+            <h2>💡 Tips para el Facilitador</h2>
+            <ul>
+                <li><strong>Paciencia:</strong> Dar tiempo para que los recuerdos fluyan</li>
+                <li><strong>Respeto:</strong> No corregir ni contradecir, aunque haya inexactitudes</li>
+                <li><strong>Escucha activa:</strong> Asentir, mostrar interés genuino</li>
+                <li><strong>Sensibilidad:</strong> Algunos recuerdos pueden ser dolorosos</li>
+                <li><strong>No forzar:</strong> Si alguien no quiere hablar de algo, respetar</li>
+                <li><strong>Valorar:</strong> Agradecer cada intervención, por pequeña que sea</li>
+            </ul>
+        </div>
+
+        <!-- Botones -->
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="javascript:window.print()" class="btn-print">🖨️ Imprimir Taller</a>
+            <a href="../../educacion.html" class="btn-back">← Volver a Educación</a>
+        </div>
+    </main>
+
+    {% include footer.html %}
+</body>
+
+</html>
