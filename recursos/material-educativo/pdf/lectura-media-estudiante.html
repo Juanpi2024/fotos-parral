@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprensión Lectora Enseñanza Media - Patrimonio de Parral</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: #EDE7F6;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #7B1FA2 0%, #9C27B0 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 1.8rem;
+            font-weight: normal;
+        }
+
+        .header .nivel {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 0.5rem;
+            font-family: sans-serif;
+            font-size: 0.9rem;
+        }
+
+        .lectura {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .lectura-header {
+            border-bottom: 2px solid #E1BEE7;
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .lectura-num {
+            color: #7B1FA2;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: sans-serif;
+        }
+
+        .lectura-title {
+            color: #4A148C;
+            font-size: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .fuente-box {
+            background: #FFFDE7;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            border: 1px solid #FFF59D;
+            font-style: italic;
+        }
+
+        .fuente-label {
+            font-family: sans-serif;
+            font-size: 0.8rem;
+            color: #F57C00;
+            margin-bottom: 0.5rem;
+            font-style: normal;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .texto-lectura {
+            background: #FAFAFA;
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #7B1FA2;
+            text-align: justify;
+        }
+
+        .texto-lectura p {
+            margin-bottom: 1rem;
+            text-indent: 2rem;
+        }
+
+        .texto-lectura p:first-child {
+            text-indent: 0;
+        }
+
+        .vocabulario {
+            background: #E8F5E9;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            font-family: sans-serif;
+            font-size: 0.9rem;
+        }
+
+        .vocabulario h4 {
+            color: #2E7D32;
+            margin-bottom: 0.5rem;
+        }
+
+        .preguntas {
+            background: #E3F2FD;
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-family: sans-serif;
+        }
+
+        .preguntas h4 {
+            color: #1565C0;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .pregunta {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .pregunta-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .pregunta-num {
+            background: #1565C0;
+            color: white;
+            padding: 0.2rem 0.7rem;
+            border-radius: 12px;
+        }
+
+        .pregunta-puntos {
+            color: #666;
+        }
+
+        .pregunta p {
+            font-size: 0.95rem;
+        }
+
+        .lineas {
+            border-bottom: 1px solid #ddd;
+            height: 30px;
+            margin-top: 0.3rem;
+        }
+
+        .btn-back {
+            display: inline-block;
+            background: #7B1FA2;
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            margin-bottom: 1rem;
+            font-family: sans-serif;
+            font-size: 0.9rem;
+        }
+
+        .btn-print {
+            display: inline-block;
+            background: #9C27B0;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 1rem 0;
+            font-family: sans-serif;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-family: sans-serif;
+            font-size: 0.9rem;
+        }
+
+        @media print {
+            .no-print {
+                display: none;
+            }
+
+            .lectura {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="index.html" class="btn-back no-print">← Volver</a>
+
+        <div class="header">
+            <h1>Análisis de Textos Históricos</h1>
+            <p>Patrimonio Cultural de Parral</p>
+            <span class="nivel">🎓 Enseñanza Media</span>
+        </div>
+
+        <div class="no-print" style="text-align: center;">
+            <button class="btn-print" onclick="window.print()">🖨️ Imprimir</button>
+        </div>
+
+        <!-- Texto 1: La Villa Reina Luisa -->
+        <div class="lectura">
+            <div class="lectura-header">
+                <span class="lectura-num">Texto I</span>
+                <h2 class="lectura-title">La Villa Reina Luisa: Contexto Colonial de una Fundación</h2>
+            </div>
+
+            <div class="fuente-box">
+                <div class="fuente-label">Fuente primaria adaptada</div>
+                "Don Ambrosio O'Higgins, Capitán General del Reino de Chile, mandó fundar la Villa de Parral en nombre
+                de Su Majestad, con el título de Villa Reina Luisa, en honor a la esposa del Rey Carlos IV de España..."
+                <p style="text-align: right; margin-top: 0.5rem; font-size: 0.9rem;">— Extracto del acta de fundación,
+                    27 de febrero de 1795</p>
+            </div>
+
+            <div class="texto-lectura">
+                <p>La fundación de la Villa Reina Luisa del Parral en 1795 responde a un contexto específico de la
+                    administración colonial española en Chile. Ambrosio O'Higgins, de origen irlandés y padre del futuro
+                    Libertador, impulsó una política de ordenamiento territorial que buscaba consolidar el control sobre
+                    los territorios al sur del Biobío.</p>
+                <p>El nombre "Parral" deriva de los abundantes viñedos que existían en la zona, reflejo de una economía
+                    agrícola incipiente pero prometedora. La elección del título "Reina Luisa" responde a la práctica
+                    habitual de rendir homenaje a la monarquía española, en este caso a María Luisa de Parma, consorte
+                    de Carlos IV.</p>
+                <p>El trazado urbano siguió el modelo hispanoamericano de damero: calles perpendiculares organizadas en
+                    torno a una plaza central donde se ubicaban la iglesia y los edificios de gobierno. Este diseño,
+                    heredado de las Leyes de Indias, buscaba facilitar el control social y religioso de la población.
+                </p>
+                <p>Con el tiempo, el componente monárquico del nombre ("Reina Luisa") cayó en desuso tras la
+                    independencia, quedando simplemente como "Parral", denominación que perdura hasta nuestros días.</p>
+            </div>
+
+            <div class="vocabulario">
+                <h4>Conceptos clave</h4>
+                <p><strong>Damero:</strong> Trazado urbano en forma de cuadrícula, característico de las ciudades
+                    coloniales hispanoamericanas.</p>
+                <p><strong>Leyes de Indias:</strong> Conjunto de legislación española para gobernar las colonias
+                    americanas.</p>
+            </div>
+
+            <div class="preguntas">
+                <h4>Análisis crítico:</h4>
+                <div class="pregunta">
+                    <div class="pregunta-header">
+                        <span class="pregunta-num">1</span>
+                        <span class="pregunta-puntos">3 puntos</span>
+                    </div>
+                    <p>¿Qué motivaciones políticas y administrativas tuvo O'Higgins para fundar villas en el sur de
+                        Chile?</p>
+                    <div class="lineas"></div>
+                    <div class="lineas"></div>
+                    <div class="lineas"></div>
+                </div>
+                <div class="pregunta">
+                    <div class="pregunta-header">
+                        <span class="pregunta-num">2</span>
+                        <span class="pregunta-puntos">3 puntos</span>
+                    </div>
+                    <p>Analiza la relación entre el trazado urbano en damero y el control social durante el período
+                        colonial.</p>
+                    <div class="lineas"></div>
+                    <div class="lineas"></div>
+                    <div class="lineas"></div>
+                </div>
+                <div class="pregunta">
+                    <div class="pregunta-header">
+                        <span class="pregunta-num">3</span>
+                        <span class="pregunta-puntos">2 puntos</span>
+                    </div>
+                    <p>¿Por qué crees que se abandonó la parte "Reina Luisa" del nombre después de la independencia?</p>
+                    <div class="lineas"></div>
+                    <div class="lineas"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Texto 2: Memoria y Fotografía -->
+        <div class="lectura">
+            <div class="lectura-header">
+                <span class="lectura-num">Texto II</span>
+                <h2 class="lectura-title">Memoria Colectiva y Fotografía Histórica: El Caso de Parral</h2>
+            </div>
+
+            <div class="texto-lectura">
+                <p>La fotografía histórica constituye una fuente primaria de incalculable valor para la reconstrucción
+                    del pasado. En el caso de Parral, los archivos fotográficos permiten acceder a una dimensión visual
+                    de la memoria colectiva que trasciende el relato escrito.</p>
+                <p>Sin embargo, es fundamental aplicar un enfoque crítico al análisis de estas imágenes. Toda fotografía
+                    implica una selección: el fotógrafo decide qué mostrar y qué excluir del encuadre. Las imágenes
+                    históricas de Parral tienden a representar espacios públicos, celebraciones oficiales y figuras de
+                    élite, dejando frecuentemente invisibilizados a sectores populares.</p>
+                <p>La restauración digital de fotografías antiguas mediante inteligencia artificial plantea nuevos
+                    desafíos éticos. Si bien estas técnicas permiten recuperar detalles perdidos y colorizar imágenes en
+                    blanco y negro, también pueden introducir interpretaciones contemporáneas que distorsionen la
+                    realidad histórica.</p>
+                <p>El proyecto "Archivos en Movimiento" ha adoptado el principio de "restauración, no invención",
+                    estableciendo límites claros entre la recuperación técnica de las imágenes y la imaginación
+                    histórica. Esta metodología busca preservar la autenticidad del documento respetando su valor como
+                    fuente.</p>
+            </div>
+
+            <div class="vocabulario">
+                <h4>Conceptos clave</h4>
+                <p><strong>Fuente primaria:</strong> Documento o material creado durante el período histórico estudiado.
+                </p>
+                <p><strong>Memoria colectiva:</strong> Conjunto de recuerdos compartidos por un grupo social sobre su
+                    pasado.</p>
+            </div>
+
+            <div class="preguntas">
+                <h4>Análisis crítico:</h4>
+                <div class="pregunta">
+                    <div class="pregunta-header">
+                        <span class="pregunta-num">1</span>
+                        <span class="pregunta-puntos">3 puntos</span>
+                    </div>
+                    <p>¿Por qué las fotografías históricas no pueden considerarse representaciones objetivas de la
+                        realidad?</p>
+                    <div class="lineas"></div>
+                    <div class="lineas"></div>
+                    <div class="lineas"></div>
+                </div>
+                <div class="pregunta">
+                    <div class="pregunta-header">
+                        <span class="pregunta-num">2</span>
+                        <span class="pregunta-puntos">3 puntos</span>
+                    </div>
+                    <p>Explica los dilemas éticos que presenta la restauración de fotografías con inteligencia
+                        artificial.</p>
+                    <div class="lineas"></div>
+                    <div class="lineas"></div>
+                    <div class="lineas"></div>
+                </div>
+                <div class="pregunta">
+                    <div class="pregunta-header">
+                        <span class="pregunta-num">3</span>
+                        <span class="pregunta-puntos">2 puntos</span>
+                    </div>
+                    <p>¿Qué significa el principio "restauración, no invención" y por qué es importante?</p>
+                    <div class="lineas"></div>
+                    <div class="lineas"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Texto 3: Patrimonio Inmaterial -->
+        <div class="lectura">
+            <div class="lectura-header">
+                <span class="lectura-num">Texto III</span>
+                <h2 class="lectura-title">Patrimonio Inmaterial: Tradiciones Orales de Parral</h2>
+            </div>
+
+            <div class="fuente-box">
+                <div class="fuente-label">Testimonio oral</div>
+                "Mi abuela siempre contaba que el Guatón Loyola había sido un personaje real, un huaso que llegó al
+                rodeo de Parral allá por los años veinte. La cueca que le compusieron se hizo famosa, pero pocos saben
+                que la historia verdadera ocurrió aquí mismo..."
+                <p style="text-align: right; margin-top: 0.5rem; font-size: 0.9rem;">— Testimonio de don Manuel
+                    Sepúlveda, 82 años, recopilado en 2023</p>
+            </div>
+
+            <div class="texto-lectura">
+                <p>El patrimonio cultural no se limita a los monumentos y edificios. La UNESCO reconoce como "patrimonio
+                    cultural inmaterial" a las tradiciones, expresiones orales, prácticas sociales y conocimientos
+                    transmitidos de generación en generación. Parral posee un rico acervo de este tipo de patrimonio.
+                </p>
+                <p>Las tradiciones orales constituyen una forma de memoria histórica que complementa —y a veces
+                    contradice— los registros oficiales. En el caso del Guatón Loyola, personaje inmortalizado en la
+                    cueca más famosa de Chile, la investigación local ha revelado que su historia tendría origen en un
+                    rodeo realizado en Parral, dato que difiere de otras versiones que sitúan el episodio en otras
+                    localidades.</p>
+                <p>La recopilación de testimonios orales presenta desafíos metodológicos específicos. Los recuerdos se
+                    transforman con el tiempo, se mezclan con elementos de ficción y reflejan las perspectivas
+                    subjetivas de los narradores. Sin embargo, estas "distorsiones" también son valiosas, pues revelan
+                    cómo una comunidad interpreta y significa su pasado.</p>
+                <p>Proyectos como "Archivos en Movimiento" combinan la preservación de fuentes materiales (fotografías)
+                    con la documentación de fuentes inmateriales (relatos), construyendo una visión más completa del
+                    patrimonio local.</p>
+            </div>
+
+            <div class="vocabulario">
+                <h4>Conceptos clave</h4>
+                <p><strong>Patrimonio inmaterial:</strong> Prácticas, representaciones y conocimientos transmitidos
+                    entre generaciones.</p>
+                <p><strong>Acervo:</strong> Conjunto de bienes culturales acumulados por una comunidad.</p>
+            </div>
+
+            <div class="preguntas">
+                <h4>Análisis crítico:</h4>
+                <div class="pregunta">
+                    <div class="pregunta-header">
+                        <span class="pregunta-num">1</span>
+                        <span class="pregunta-puntos">3 puntos</span>
+                    </div>
+                    <p>¿Cuál es la diferencia entre patrimonio material e inmaterial? Proporciona ejemplos de cada uno
+                        en el contexto de Parral.</p>
+                    <div class="lineas"></div>
+                    <div class="lineas"></div>
+                    <div class="lineas"></div>
+                </div>
+                <div class="pregunta">
+                    <div class="pregunta-header">
+                        <span class="pregunta-num">2</span>
+                        <span class="pregunta-puntos">3 puntos</span>
+                    </div>
+                    <p>¿Por qué las "distorsiones" en los testimonios orales pueden considerarse valiosas para el
+                        estudio histórico?</p>
+                    <div class="lineas"></div>
+                    <div class="lineas"></div>
+                    <div class="lineas"></div>
+                </div>
+                <div class="pregunta">
+                    <div class="pregunta-header">
+                        <span class="pregunta-num">3</span>
+                        <span class="pregunta-puntos">2 puntos</span>
+                    </div>
+                    <p>Tu familia o comunidad, ¿conserva alguna tradición oral relacionada con la historia de Parral?
+                        Descríbela brevemente.</p>
+                    <div class="lineas"></div>
+                    <div class="lineas"></div>
+                    <div class="lineas"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>📍 Material educativo del proyecto "Archivos en Movimiento" - Parral, Chile</p>
+            <p>Comprensión Lectora - Enseñanza Media</p>
+        </div>
+    </div>
+</body>
+
+</html>

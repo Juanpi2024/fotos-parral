@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprensión Lectora 5°-8° Básico - Patrimonio de Parral</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #FCE4EC;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #C2185B 0%, #E91E63 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 1.8rem;
+        }
+
+        .header .nivel {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        .lectura {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .lectura-header {
+            background: linear-gradient(135deg, #FCE4EC, #F8BBD9);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        .lectura-num {
+            background: #C2185B;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .lectura-title {
+            color: #880E4F;
+            font-size: 1.3rem;
+            margin-top: 0.5rem;
+        }
+
+        .texto-lectura {
+            background: #FAFAFA;
+            padding: 1.5rem;
+            border-radius: 12px;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #C2185B;
+            line-height: 1.9;
+            text-align: justify;
+        }
+
+        .texto-lectura p {
+            margin-bottom: 1rem;
+        }
+
+        .vocabulario {
+            background: #E8F5E9;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .vocabulario h4 {
+            color: #2E7D32;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+        }
+
+        .vocab-item {
+            background: white;
+            padding: 0.5rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        .preguntas {
+            background: #E3F2FD;
+            padding: 1.5rem;
+            border-radius: 12px;
+        }
+
+        .preguntas h4 {
+            color: #1565C0;
+            margin-bottom: 1rem;
+        }
+
+        .pregunta {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .pregunta-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .pregunta-num {
+            background: #1565C0;
+            color: white;
+            padding: 0.2rem 0.7rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+        }
+
+        .pregunta-tipo {
+            background: #BBDEFB;
+            color: #0D47A1;
+            padding: 0.2rem 0.5rem;
+            border-radius: 8px;
+            font-size: 0.75rem;
+        }
+
+        .lineas {
+            border-bottom: 1px solid #ddd;
+            height: 30px;
+            margin-top: 0.3rem;
+        }
+
+        .btn-back {
+            display: inline-block;
+            background: #C2185B;
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            margin-bottom: 1rem;
+        }
+
+        .btn-print {
+            display: inline-block;
+            background: #E91E63;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 1rem 0;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+        }
+
+        @media print {
+            .no-print {
+                display: none;
+            }
+
+            .lectura {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="index.html" class="btn-back no-print">← Volver</a>
+
+        <div class="header">
+            <h1>📖 Textos Históricos de Parral</h1>
+            <p>Análisis y comprensión del patrimonio local</p>
+            <span class="nivel">📕 5° - 8° Básico</span>
+        </div>
+
+        <div class="no-print" style="text-align: center;">
+            <button class="btn-print" onclick="window.print()">🖨️ Imprimir</button>
+        </div>
+
+        <!-- Lectura 1: Terremoto 1939 -->
+        <div class="lectura">
+            <div class="lectura-header">
+                <span class="lectura-num">Texto 1</span>
+                <h2 class="lectura-title">🏚️ El Terremoto de 1939: La Noche que Cambió Parral</h2>
+            </div>
+
+            <div class="texto-lectura">
+                <p>El 24 de enero de 1939, a las 23:32 horas, un violento terremoto de magnitud 8.3 devastó la zona
+                    centro-sur de Chile. La ciudad de Chillán fue prácticamente destruida, pero Parral también sufrió
+                    graves daños que transformaron su fisonomía para siempre.</p>
+                <p>Las construcciones coloniales de adobe, que habían sobrevivido más de un siglo, no resistieron la
+                    fuerza del sismo. Casas, iglesias y edificios públicos se derrumbaron en cuestión de segundos. Se
+                    calcula que en toda la zona murieron cerca de 30.000 personas, siendo una de las catástrofes más
+                    mortíferas de la historia de Chile.</p>
+                <p>La reconstrucción de Parral tomó varios años y significó un cambio radical en la arquitectura de la
+                    ciudad. Se abandonó el adobe tradicional y se adoptaron técnicas más modernas de construcción, como
+                    el hormigón armado.</p>
+                <p>Hoy, al observar el centro de Parral, podemos notar que la mayoría de los edificios datan de la
+                    década de 1940. El terremoto marcó un antes y un después en la historia urbana de nuestra ciudad.
+                </p>
+            </div>
+
+            <div class="vocabulario">
+                <h4>📚 Vocabulario en contexto</h4>
+                <div class="vocab-grid">
+                    <div class="vocab-item"><strong>Magnitud:</strong> medida de la fuerza de un sismo</div>
+                    <div class="vocab-item"><strong>Fisonomía:</strong> aspecto o apariencia general</div>
+                    <div class="vocab-item"><strong>Derrumbar:</strong> caer una construcción</div>
+                    <div class="vocab-item"><strong>Hormigón armado:</strong> mezcla de cemento con barras de acero
+                    </div>
+                </div>
+            </div>
+
+            <div class="preguntas">
+                <h4>✏️ Análisis del texto:</h4>
+                <div class="pregunta">
+                    <div class="pregunta-header">
+                        <span class="pregunta-num">1</span>
+                        <span class="pregunta-tipo">Información explícita</span>
+                    </div>
+                    <p>¿Cuántas personas aproximadamente murieron en el terremoto de 1939?</p>
+                    <div class="lineas"></div>
+                </div>
+                <div class="pregunta">
+                    <div class="pregunta-header">
+                        <span class="pregunta-num">2</span>
+                        <span class="pregunta-tipo">Causa y efecto</span>
+                    </div>
+                    <p>¿Por qué las construcciones de adobe no resistieron el sismo?</p>
+                    <div class="lineas"></div>
+                    <div class="lineas"></div>
+                </div>
+                <div class="pregunta">
+                    <div class="pregunta-header">
+                        <span class="pregunta-num">3</span>
+                        <span class="pregunta-tipo">Inferencia</span>
+                    </div>
+                    <p>Según el texto, ¿qué evidencia actual demuestra el impacto del terremoto en Parral?</p>
+                    <div class="lineas"></div>
+                    <div class="lineas"></div>
+                </div>
+                <div class="pregunta">
+                    <div class="pregunta-header">
+                        <span class="pregunta-num">4</span>
+                        <span class="pregunta-tipo">Reflexión</span>
+                    </div>
+                    <p>¿Por qué crees que es importante conocer eventos históricos como este terremoto?</p>
+                    <div class="lineas"></div>
+                    <div class="lineas"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lectura 2: Colonos Italianos -->
+        <div class="lectura">
+            <div class="lectura-header">
+                <span class="lectura-num">Texto 2</span>
+                <h2 class="lectura-title">🇮🇹 Los Colonos Italianos de San Manuel</h2>
+            </div>
+
+            <div class="texto-lectura">
+                <p>En marzo de 1950, un grupo de 153 colonos italianos llegó a establecerse en el sector de San Manuel,
+                    a pocos kilómetros de Parral. Provenían principalmente de las regiones de Abruzzo y Trentino,
+                    huyendo de las difíciles condiciones económicas de la Italia de posguerra.</p>
+                <p>El gobierno chileno les entregó tierras y materiales para construir sus casas. Los colonos trajeron
+                    consigo sus tradiciones, su gastronomía y su fuerte ética de trabajo. Familias como los Cicchelli,
+                    Di Genova, Orsini y otras muchas echaron raíces en nuestra tierra.</p>
+                <p>Al principio, la adaptación no fue fácil. El idioma, el clima y las costumbres eran diferentes. Sin
+                    embargo, los colonos perseveraron y poco a poco se integraron a la comunidad parralina, aportando
+                    nuevas técnicas agrícolas y enriqueciendo la cultura local.</p>
+                <p>Hoy, los descendientes de aquellos colonos siguen siendo parte fundamental de la identidad de Parral.
+                    La Fiesta de la Primavera Italiana, celebrada cada año, recuerda su legado.</p>
+            </div>
+
+            <div class="vocabulario">
+                <h4>📚 Vocabulario en contexto</h4>
+                <div class="vocab-grid">
+                    <div class="vocab-item"><strong>Colono:</strong> persona que se establece en un territorio nuevo
+                    </div>
+                    <div class="vocab-item"><strong>Posguerra:</strong> período después de una guerra</div>
+                    <div class="vocab-item"><strong>Perseverar:</strong> mantenerse firme a pesar de dificultades</div>
+                    <div class="vocab-item"><strong>Legado:</strong> herencia cultural o histórica</div>
+                </div>
+            </div>
+
+            <div class="preguntas">
+                <h4>✏️ Análisis del texto:</h4>
+                <div class="pregunta">
+                    <div class="pregunta-header">
+                        <span class="pregunta-num">1</span>
+                        <span class="pregunta-tipo">Información explícita</span>
+                    </div>
+                    <p>¿De qué regiones de Italia provenían los colonos?</p>
+                    <div class="lineas"></div>
+                </div>
+                <div class="pregunta">
+                    <div class="pregunta-header">
+                        <span class="pregunta-num">2</span>
+                        <span class="pregunta-tipo">Inferencia</span>
+                    </div>
+                    <p>¿Por qué los colonos italianos decidieron emigrar a Chile?</p>
+                    <div class="lineas"></div>
+                    <div class="lineas"></div>
+                </div>
+                <div class="pregunta">
+                    <div class="pregunta-header">
+                        <span class="pregunta-num">3</span>
+                        <span class="pregunta-tipo">Síntesis</span>
+                    </div>
+                    <p>¿Qué aportes realizaron los colonos italianos a la comunidad de Parral?</p>
+                    <div class="lineas"></div>
+                    <div class="lineas"></div>
+                </div>
+                <div class="pregunta">
+                    <div class="pregunta-header">
+                        <span class="pregunta-num">4</span>
+                        <span class="pregunta-tipo">Conexión</span>
+                    </div>
+                    <p>¿Conoces alguna familia de origen italiano en Parral? ¿Qué costumbres mantienen?</p>
+                    <div class="lineas"></div>
+                    <div class="lineas"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lectura 3: Inundación 1965 -->
+        <div class="lectura">
+            <div class="lectura-header">
+                <span class="lectura-num">Texto 3</span>
+                <h2 class="lectura-title">🌊 La Gran Inundación de 1965</h2>
+            </div>
+
+            <div class="texto-lectura">
+                <p>En julio de 1965, fuertes lluvias provocaron el desborde de los ríos Perquilauquén y Longaví,
+                    inundando extensas zonas de Parral y sus alrededores. Las aguas alcanzaron niveles nunca antes
+                    vistos, convirtiendo calles en verdaderos ríos.</p>
+                <p>La población quedó aislada durante varios días. Muchas familias perdieron sus hogares, animales y
+                    cosechas. Los testimonios de la época relatan cómo los vecinos se ayudaban mutuamente, compartiendo
+                    alimentos y refugio.</p>
+                <p>Las fotografías históricas de aquellos días muestran personas desplazándose en botes por las calles
+                    del centro, casas semisumergidas y una comunidad unida frente a la adversidad.</p>
+                <p>Esta catástrofe impulsó mejoras en las obras de canalización y defensas fluviales. Los parralinos
+                    aprendieron a convivir con la cercanía de los ríos, desarrollando sistemas de alerta y prevención
+                    que perduran hasta hoy.</p>
+            </div>
+
+            <div class="vocabulario">
+                <h4>📚 Vocabulario en contexto</h4>
+                <div class="vocab-grid">
+                    <div class="vocab-item"><strong>Desborde:</strong> cuando el agua sobrepasa los límites del río
+                    </div>
+                    <div class="vocab-item"><strong>Adversidad:</strong> situación difícil o desgraciada</div>
+                    <div class="vocab-item"><strong>Canalización:</strong> obras para dirigir el curso del agua</div>
+                    <div class="vocab-item"><strong>Fluvial:</strong> relacionado con los ríos</div>
+                </div>
+            </div>
+
+            <div class="preguntas">
+                <h4>✏️ Análisis del texto:</h4>
+                <div class="pregunta">
+                    <div class="pregunta-header">
+                        <span class="pregunta-num">1</span>
+                        <span class="pregunta-tipo">Información explícita</span>
+                    </div>
+                    <p>¿Qué ríos se desbordaron y en qué año ocurrió la inundación?</p>
+                    <div class="lineas"></div>
+                </div>
+                <div class="pregunta">
+                    <div class="pregunta-header">
+                        <span class="pregunta-num">2</span>
+                        <span class="pregunta-tipo">Evidencia textual</span>
+                    </div>
+                    <p>¿Qué evidencia menciona el texto sobre la solidaridad de la comunidad?</p>
+                    <div class="lineas"></div>
+                    <div class="lineas"></div>
+                </div>
+                <div class="pregunta">
+                    <div class="pregunta-header">
+                        <span class="pregunta-num">3</span>
+                        <span class="pregunta-tipo">Consecuencias</span>
+                    </div>
+                    <p>¿Qué cambios positivos surgieron después de la inundación?</p>
+                    <div class="lineas"></div>
+                    <div class="lineas"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lectura 4: El Ferrocarril -->
+        <div class="lectura">
+            <div class="lectura-header">
+                <span class="lectura-num">Texto 4</span>
+                <h2 class="lectura-title">🚂 El Ferrocarril y el Progreso de Parral</h2>
+            </div>
+
+            <div class="texto-lectura">
+                <p>La llegada del ferrocarril a Parral, aproximadamente en 1870, marcó el inicio de una era de
+                    transformación económica y social sin precedentes. Antes del tren, el transporte de productos desde
+                    y hacia la ciudad era lento y costoso, limitado a carretas tiradas por bueyes.</p>
+                <p>Con el ferrocarril, los productos agrícolas de la zona —trigo, vino, frutas— podían llegar
+                    rápidamente a los mercados de Santiago y Valparaíso. Esto incentivó la producción y atrajo nuevos
+                    comerciantes e inversiones a la ciudad.</p>
+                <p>La estación de trenes se convirtió en un punto de encuentro social. Las familias iban a recibir a sus
+                    parientes, los comerciantes esperaban sus mercancías y los viajeros partían hacia nuevos destinos.
+                    El silbato del tren marcaba el ritmo de la vida parralina.</p>
+                <p>Lamentablemente, el servicio de pasajeros fue discontinuado en las últimas décadas del siglo XX. Sin
+                    embargo, el recuerdo del ferrocarril permanece vivo en la memoria colectiva de Parral.</p>
+            </div>
+
+            <div class="vocabulario">
+                <h4>📚 Vocabulario en contexto</h4>
+                <div class="vocab-grid">
+                    <div class="vocab-item"><strong>Precedentes:</strong> que no había ocurrido antes</div>
+                    <div class="vocab-item"><strong>Incentivar:</strong> estimular o promover algo</div>
+                    <div class="vocab-item"><strong>Discontinuar:</strong> dejar de hacer o proporcionar algo</div>
+                    <div class="vocab-item"><strong>Memoria colectiva:</strong> recuerdos compartidos por una comunidad
+                    </div>
+                </div>
+            </div>
+
+            <div class="preguntas">
+                <h4>✏️ Análisis del texto:</h4>
+                <div class="pregunta">
+                    <div class="pregunta-header">
+                        <span class="pregunta-num">1</span>
+                        <span class="pregunta-tipo">Comparación</span>
+                    </div>
+                    <p>¿Cómo era el transporte antes y después del ferrocarril?</p>
+                    <div class="lineas"></div>
+                    <div class="lineas"></div>
+                </div>
+                <div class="pregunta">
+                    <div class="pregunta-header">
+                        <span class="pregunta-num">2</span>
+                        <span class="pregunta-tipo">Análisis</span>
+                    </div>
+                    <p>¿Por qué el ferrocarril transformó la economía de Parral?</p>
+                    <div class="lineas"></div>
+                    <div class="lineas"></div>
+                </div>
+                <div class="pregunta">
+                    <div class="pregunta-header">
+                        <span class="pregunta-num">3</span>
+                        <span class="pregunta-tipo">Opinión fundamentada</span>
+                    </div>
+                    <p>¿Crees que debería volver el servicio de trenes a Parral? Justifica tu respuesta.</p>
+                    <div class="lineas"></div>
+                    <div class="lineas"></div>
+                    <div class="lineas"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>📍 Material educativo del proyecto "Archivos en Movimiento" - Parral, Chile</p>
+        </div>
+    </div>
+</body>
+
+</html>

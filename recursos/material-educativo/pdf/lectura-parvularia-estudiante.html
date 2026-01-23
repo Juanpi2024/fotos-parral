@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprensión Lectora Parvularia - Patrimonio de Parral</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Sans MS', 'Segoe UI', sans-serif;
+            background: #f0f7f0;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4CAF50 0%, #81C784 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2rem;
+        }
+
+        .header .nivel {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        .lectura {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 3px solid #81C784;
+        }
+
+        .lectura-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px dashed #81C784;
+        }
+
+        .lectura-num {
+            background: #4CAF50;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .lectura-title {
+            color: #2E7D32;
+            font-size: 1.5rem;
+        }
+
+        .texto-lectura {
+            background: #FFFDE7;
+            padding: 1.5rem;
+            border-radius: 15px;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid #FFC107;
+            line-height: 2;
+        }
+
+        .imagen-container {
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+
+        .imagen-placeholder {
+            background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
+            padding: 3rem;
+            border-radius: 15px;
+            font-size: 4rem;
+        }
+
+        .preguntas {
+            background: #E3F2FD;
+            padding: 1.5rem;
+            border-radius: 15px;
+        }
+
+        .preguntas h4 {
+            color: #1565C0;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .pregunta {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+        }
+
+        .pregunta-num {
+            background: #1565C0;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .respuesta-space {
+            border-bottom: 2px dotted #999;
+            min-height: 30px;
+            margin-top: 0.5rem;
+        }
+
+        .btn-back {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .btn-print {
+            display: inline-block;
+            background: #FF9800;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 1rem 0;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+        }
+
+        @media print {
+            .no-print {
+                display: none;
+            }
+
+            .lectura {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="index.html" class="btn-back no-print">← Volver</a>
+
+        <div class="header">
+            <h1>📖 Mis Primeras Lecturas de Parral</h1>
+            <p>¡Aprende sobre nuestra ciudad!</p>
+            <span class="nivel">🧒 Parvularia / 1° Básico</span>
+        </div>
+
+        <div class="no-print" style="text-align: center;">
+            <button class="btn-print" onclick="window.print()">🖨️ Imprimir</button>
+        </div>
+
+        <!-- Lectura 1: El Tren -->
+        <div class="lectura">
+            <div class="lectura-header">
+                <span class="lectura-num">1</span>
+                <h2 class="lectura-title">🚂 El Tren de Parral</h2>
+            </div>
+
+            <div class="imagen-container">
+                <div class="imagen-placeholder">🚂</div>
+            </div>
+
+            <div class="texto-lectura">
+                <p>Hace muchos años, un tren llegó a Parral.</p>
+                <p>El tren era muy grande y hacía mucho ruido: ¡CHUUU CHUUU!</p>
+                <p>La gente estaba muy feliz. El tren traía cosas de lejos.</p>
+                <p>Hoy ya no hay tren, pero podemos ver fotos antiguas.</p>
+            </div>
+
+            <div class="preguntas">
+                <h4>🤔 ¿Qué entendiste?</h4>
+                <div class="pregunta">
+                    <span class="pregunta-num">1</span>
+                    <div>
+                        <p>¿Qué sonido hacía el tren?</p>
+                        <div class="respuesta-space"></div>
+                    </div>
+                </div>
+                <div class="pregunta">
+                    <span class="pregunta-num">2</span>
+                    <div>
+                        <p>¿La gente estaba triste o feliz cuando llegó el tren?</p>
+                        <div class="respuesta-space"></div>
+                    </div>
+                </div>
+                <div class="pregunta">
+                    <span class="pregunta-num">3</span>
+                    <div>
+                        <p>Dibuja un tren: 🎨</p>
+                        <div style="height: 100px; border: 2px dashed #ccc; border-radius: 10px; margin-top: 0.5rem;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lectura 2: La Plaza -->
+        <div class="lectura">
+            <div class="lectura-header">
+                <span class="lectura-num">2</span>
+                <h2 class="lectura-title">🌳 La Plaza de Parral</h2>
+            </div>
+
+            <div class="imagen-container">
+                <div class="imagen-placeholder">⛲</div>
+            </div>
+
+            <div class="texto-lectura">
+                <p>En el centro de Parral hay una plaza muy bonita.</p>
+                <p>Tiene árboles grandes, bancas y un kiosco.</p>
+                <p>Los niños juegan y los abuelos descansan.</p>
+                <p>La plaza es el corazón de nuestra ciudad.</p>
+            </div>
+
+            <div class="preguntas">
+                <h4>🤔 ¿Qué entendiste?</h4>
+                <div class="pregunta">
+                    <span class="pregunta-num">1</span>
+                    <div>
+                        <p>¿Qué hay en la plaza? (Marca con una ✓)</p>
+                        <p>☐ Árboles &nbsp;&nbsp; ☐ Bancas &nbsp;&nbsp; ☐ Un kiosco &nbsp;&nbsp; ☐ Un cohete</p>
+                    </div>
+                </div>
+                <div class="pregunta">
+                    <span class="pregunta-num">2</span>
+                    <div>
+                        <p>¿Quiénes van a la plaza?</p>
+                        <div class="respuesta-space"></div>
+                    </div>
+                </div>
+                <div class="pregunta">
+                    <span class="pregunta-num">3</span>
+                    <div>
+                        <p>¿Has ido a la plaza de Parral? ¿Con quién?</p>
+                        <div class="respuesta-space"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lectura 3: Neruda niño -->
+        <div class="lectura">
+            <div class="lectura-header">
+                <span class="lectura-num">3</span>
+                <h2 class="lectura-title">✏️ Un Niño que Amaba las Palabras</h2>
+            </div>
+
+            <div class="imagen-container">
+                <div class="imagen-placeholder">👦📝</div>
+            </div>
+
+            <div class="texto-lectura">
+                <p>En Parral nació un niño llamado Neftalí.</p>
+                <p>A Neftalí le gustaba mucho escribir.</p>
+                <p>Escribía sobre la lluvia, los árboles y el mar.</p>
+                <p>Cuando creció, todos conocieron sus poemas. ¡Ganó un premio muy grande!</p>
+            </div>
+
+            <div class="preguntas">
+                <h4>🤔 ¿Qué entendiste?</h4>
+                <div class="pregunta">
+                    <span class="pregunta-num">1</span>
+                    <div>
+                        <p>¿Cómo se llamaba el niño?</p>
+                        <div class="respuesta-space"></div>
+                    </div>
+                </div>
+                <div class="pregunta">
+                    <span class="pregunta-num">2</span>
+                    <div>
+                        <p>¿Qué le gustaba hacer a Neftalí?</p>
+                        <div class="respuesta-space"></div>
+                    </div>
+                </div>
+                <div class="pregunta">
+                    <span class="pregunta-num">3</span>
+                    <div>
+                        <p>Escribe una palabra bonita que te guste:</p>
+                        <div class="respuesta-space"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>📍 Material educativo del proyecto "Archivos en Movimiento" - Parral, Chile</p>
+            <p>Comprensión Lectora - Parvularia / 1° Básico</p>
+        </div>
+    </div>
+</body>
+
+</html>

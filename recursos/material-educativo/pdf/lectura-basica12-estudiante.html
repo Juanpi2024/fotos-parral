@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprensión Lectora 1°-2° Básico - Patrimonio de Parral</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #E3F2FD;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1565C0 0%, #42A5F5 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 1.8rem;
+        }
+
+        .header .nivel {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        .lectura {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #1565C0;
+        }
+
+        .lectura-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .lectura-num {
+            background: #1565C0;
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .lectura-title {
+            color: #0D47A1;
+            font-size: 1.4rem;
+        }
+
+        .texto-lectura {
+            background: #FFF8E1;
+            padding: 1.5rem;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            border: 2px solid #FFE082;
+            line-height: 1.9;
+        }
+
+        .vocabulario {
+            background: #E8F5E9;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .vocabulario h4 {
+            color: #2E7D32;
+            margin-bottom: 0.5rem;
+        }
+
+        .vocabulario span {
+            display: inline-block;
+            background: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            margin: 0.2rem;
+            font-size: 0.9rem;
+        }
+
+        .preguntas {
+            background: #F3E5F5;
+            padding: 1.5rem;
+            border-radius: 12px;
+        }
+
+        .preguntas h4 {
+            color: #7B1FA2;
+            margin-bottom: 1rem;
+        }
+
+        .pregunta {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 0.8rem;
+        }
+
+        .pregunta-num {
+            background: #7B1FA2;
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .linea-respuesta {
+            border-bottom: 1px solid #ccc;
+            height: 25px;
+            margin-top: 0.5rem;
+        }
+
+        .btn-back {
+            display: inline-block;
+            background: #1565C0;
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            margin-bottom: 1rem;
+        }
+
+        .btn-print {
+            display: inline-block;
+            background: #FF9800;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 1rem 0;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+        }
+
+        @media print {
+            .no-print {
+                display: none;
+            }
+
+            .lectura {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="index.html" class="btn-back no-print">← Volver</a>
+
+        <div class="header">
+            <h1>📖 Lecturas de Parral</h1>
+            <p>¡Descubre la historia de tu ciudad!</p>
+            <span class="nivel">📘 1° - 2° Básico</span>
+        </div>
+
+        <div class="no-print" style="text-align: center;">
+            <button class="btn-print" onclick="window.print()">🖨️ Imprimir</button>
+        </div>
+
+        <!-- Lectura 1: El Ferrocarril -->
+        <div class="lectura">
+            <div class="lectura-header">
+                <span class="lectura-num">1</span>
+                <h2 class="lectura-title">🚂 El Tren que Llegó a Parral</h2>
+            </div>
+
+            <div class="texto-lectura">
+                <p>Hace más de cien años, en 1870, llegó el ferrocarril a Parral. Fue un día muy especial para todos los
+                    habitantes.</p>
+                <p>El tren era muy grande y hacía mucho ruido. Echaba humo por su chimenea. La gente corría a verlo
+                    pasar.</p>
+                <p>El ferrocarril trajo muchos cambios. Los productos del campo podían viajar a otras ciudades. También
+                    llegaban cosas nuevas de Santiago.</p>
+                <p>Hoy el tren ya no pasa por Parral, pero su recuerdo sigue vivo en las fotografías antiguas.</p>
+            </div>
+
+            <div class="vocabulario">
+                <h4>📚 Vocabulario</h4>
+                <span><strong>Ferrocarril:</strong> tren que viaja sobre rieles</span>
+                <span><strong>Habitantes:</strong> personas que viven en un lugar</span>
+            </div>
+
+            <div class="preguntas">
+                <h4>✏️ Responde:</h4>
+                <div class="pregunta">
+                    <span class="pregunta-num">1</span> ¿En qué año llegó el tren a Parral?
+                    <div class="linea-respuesta"></div>
+                </div>
+                <div class="pregunta">
+                    <span class="pregunta-num">2</span> ¿Cómo reaccionó la gente cuando vio el tren?
+                    <div class="linea-respuesta"></div>
+                </div>
+                <div class="pregunta">
+                    <span class="pregunta-num">3</span> ¿Qué cosas traía el tren desde Santiago?
+                    <div class="linea-respuesta"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lectura 2: Los Bomberos -->
+        <div class="lectura">
+            <div class="lectura-header">
+                <span class="lectura-num">2</span>
+                <h2 class="lectura-title">🚒 Los Bomberos Valientes</h2>
+            </div>
+
+            <div class="texto-lectura">
+                <p>En Parral hay bomberos desde hace muchos años. Ellos son voluntarios, es decir, ayudan sin recibir
+                    dinero a cambio.</p>
+                <p>Antes, los bomberos usaban carros tirados por caballos. No tenían las sirenas de hoy. Tocaban
+                    campanas para avisar que iban a apagar un incendio.</p>
+                <p>Los bomberos de Parral han salvado muchas vidas. Trabajan de día y de noche para proteger a la
+                    comunidad.</p>
+                <p>Ser bombero es un trabajo muy importante y valiente.</p>
+            </div>
+
+            <div class="vocabulario">
+                <h4>📚 Vocabulario</h4>
+                <span><strong>Voluntarios:</strong> personas que ayudan gratis</span>
+                <span><strong>Comunidad:</strong> todas las personas de un lugar</span>
+            </div>
+
+            <div class="preguntas">
+                <h4>✏️ Responde:</h4>
+                <div class="pregunta">
+                    <span class="pregunta-num">1</span> ¿Qué significa ser voluntario?
+                    <div class="linea-respuesta"></div>
+                </div>
+                <div class="pregunta">
+                    <span class="pregunta-num">2</span> ¿Cómo eran los carros de bomberos antiguos?
+                    <div class="linea-respuesta"></div>
+                </div>
+                <div class="pregunta">
+                    <span class="pregunta-num">3</span> ¿Por qué crees que los bomberos son valientes?
+                    <div class="linea-respuesta"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lectura 3: Neftalí -->
+        <div class="lectura">
+            <div class="lectura-header">
+                <span class="lectura-num">3</span>
+                <h2 class="lectura-title">✏️ Neftalí y las Palabras</h2>
+            </div>
+
+            <div class="texto-lectura">
+                <p>En Parral nació un niño muy especial llamado Neftalí. Desde pequeño le gustaba observar la naturaleza
+                    y escribir.</p>
+                <p>Neftalí escribía sobre la lluvia, los árboles y los pájaros. Sus cuadernos estaban llenos de poemas y
+                    dibujos.</p>
+                <p>Cuando creció, cambió su nombre a Pablo Neruda. Se hizo famoso en todo el mundo por sus bellos
+                    poemas.</p>
+                <p>En 1971, Neruda ganó el Premio Nobel, el premio más importante para un escritor. ¡Parral está muy
+                    orgulloso de él!</p>
+            </div>
+
+            <div class="vocabulario">
+                <h4>📚 Vocabulario</h4>
+                <span><strong>Poemas:</strong> escritos con ritmo y belleza</span>
+                <span><strong>Premio Nobel:</strong> premio muy importante del mundo</span>
+            </div>
+
+            <div class="preguntas">
+                <h4>✏️ Responde:</h4>
+                <div class="pregunta">
+                    <span class="pregunta-num">1</span> ¿Cuál era el nombre real de Pablo Neruda?
+                    <div class="linea-respuesta"></div>
+                </div>
+                <div class="pregunta">
+                    <span class="pregunta-num">2</span> ¿Sobre qué cosas escribía Neftalí?
+                    <div class="linea-respuesta"></div>
+                </div>
+                <div class="pregunta">
+                    <span class="pregunta-num">3</span> ¿Qué premio ganó Pablo Neruda?
+                    <div class="linea-respuesta"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>📍 Material educativo del proyecto "Archivos en Movimiento" - Parral, Chile</p>
+        </div>
+    </div>
+</body>
+
+</html>

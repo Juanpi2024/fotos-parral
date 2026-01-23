@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprensión Lectora 3°-4° Básico - Patrimonio de Parral</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #FFF3E0;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #E65100 0%, #FF9800 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 1.8rem;
+        }
+
+        .header .nivel {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        .lectura {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #E65100;
+        }
+
+        .lectura-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .lectura-num {
+            background: #E65100;
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .lectura-title {
+            color: #BF360C;
+            font-size: 1.4rem;
+        }
+
+        .texto-lectura {
+            background: #FFFDE7;
+            padding: 1.5rem;
+            border-radius: 12px;
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+            border: 2px solid #FFE082;
+            line-height: 1.9;
+            text-align: justify;
+        }
+
+        .vocabulario {
+            background: #E8F5E9;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .vocabulario h4 {
+            color: #2E7D32;
+            margin-bottom: 0.5rem;
+        }
+
+        .vocab-item {
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            margin: 0.3rem 0;
+        }
+
+        .preguntas {
+            background: #FCE4EC;
+            padding: 1.5rem;
+            border-radius: 12px;
+        }
+
+        .preguntas h4 {
+            color: #C2185B;
+            margin-bottom: 1rem;
+        }
+
+        .pregunta {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .pregunta-label {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pregunta-num {
+            background: #C2185B;
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 50%;
+            font-size: 0.9rem;
+        }
+
+        .pregunta-tipo {
+            background: #F8BBD9;
+            color: #880E4F;
+            padding: 0.2rem 0.5rem;
+            border-radius: 10px;
+            font-size: 0.75rem;
+        }
+
+        .lineas-respuesta {
+            border-bottom: 1px solid #ccc;
+            height: 28px;
+            margin-top: 0.3rem;
+        }
+
+        .btn-back {
+            display: inline-block;
+            background: #E65100;
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            margin-bottom: 1rem;
+        }
+
+        .btn-print {
+            display: inline-block;
+            background: #FF9800;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 1rem 0;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+        }
+
+        @media print {
+            .no-print {
+                display: none;
+            }
+
+            .lectura {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <a href="index.html" class="btn-back no-print">← Volver</a>
+
+        <div class="header">
+            <h1>📖 Lecturas Históricas de Parral</h1>
+            <p>Explora el pasado de nuestra ciudad</p>
+            <span class="nivel">📙 3° - 4° Básico</span>
+        </div>
+
+        <div class="no-print" style="text-align: center;">
+            <button class="btn-print" onclick="window.print()">🖨️ Imprimir</button>
+        </div>
+
+        <!-- Lectura 1: Fundación de Parral -->
+        <div class="lectura">
+            <div class="lectura-header">
+                <span class="lectura-num">1</span>
+                <h2 class="lectura-title">🏛️ La Fundación de Parral</h2>
+            </div>
+
+            <div class="texto-lectura">
+                <p>El 27 de febrero de 1795, el gobernador Ambrosio O'Higgins ordenó fundar la Villa Reina Luisa del
+                    Parral. Este nombre fue elegido en honor a la reina de España de esa época.</p>
+                <p>Antes de ser una villa, este lugar era conocido por sus abundantes parronales, que son plantaciones
+                    de uva. De ahí viene el nombre "Parral".</p>
+                <p>La nueva villa fue diseñada con calles rectas y una plaza central, siguiendo el estilo español de la
+                    época colonial. Los primeros habitantes construyeron sus casas de adobe y teja.</p>
+                <p>Con el tiempo, la Villa Reina Luisa creció hasta convertirse en la ciudad de Parral que conocemos
+                    hoy, una de las más importantes de la Región del Maule.</p>
+            </div>
+
+            <div class="vocabulario">
+                <h4>📚 Vocabulario</h4>
+                <div class="vocab-item"><strong>Gobernador:</strong> autoridad que gobierna un territorio</div>
+                <div class="vocab-item"><strong>Colonial:</strong> período cuando Chile era colonia de España</div>
+                <div class="vocab-item"><strong>Adobe:</strong> ladrillo hecho de barro y paja secados al sol</div>
+            </div>
+
+            <div class="preguntas">
+                <h4>✏️ Comprensión de lectura:</h4>
+                <div class="pregunta">
+                    <div class="pregunta-label">
+                        <span class="pregunta-num">1</span>
+                        <span class="pregunta-tipo">Literal</span>
+                    </div>
+                    <p>¿En qué fecha se fundó Parral y quién ordenó su fundación?</p>
+                    <div class="lineas-respuesta"></div>
+                    <div class="lineas-respuesta"></div>
+                </div>
+                <div class="pregunta">
+                    <div class="pregunta-label">
+                        <span class="pregunta-num">2</span>
+                        <span class="pregunta-tipo">Inferencial</span>
+                    </div>
+                    <p>¿Por qué crees que le pusieron "Parral" a nuestra ciudad?</p>
+                    <div class="lineas-respuesta"></div>
+                    <div class="lineas-respuesta"></div>
+                </div>
+                <div class="pregunta">
+                    <div class="pregunta-label">
+                        <span class="pregunta-num">3</span>
+                        <span class="pregunta-tipo">Vocabulario</span>
+                    </div>
+                    <p>Explica con tus palabras qué es el "adobe".</p>
+                    <div class="lineas-respuesta"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lectura 2: El Puente de Hierro -->
+        <div class="lectura">
+            <div class="lectura-header">
+                <span class="lectura-num">2</span>
+                <h2 class="lectura-title">🌉 El Puente de Hierro</h2>
+            </div>
+
+            <div class="texto-lectura">
+                <p>En 1896 se inauguró el puente de hierro sobre el río Perquilauquén. Esta obra de ingeniería fue muy
+                    importante para conectar Parral con otras ciudades del sur.</p>
+                <p>Antes del puente, las personas debían cruzar el río en balsas o esperar que bajara el nivel del agua
+                    en verano. Esto era muy peligroso, especialmente en invierno.</p>
+                <p>El puente fue construido con acero traído desde Europa. Los ingenieros de la época utilizaron
+                    técnicas muy avanzadas para su construcción.</p>
+                <p>Hoy en día, el antiguo puente de hierro es considerado patrimonio histórico de nuestra zona. Aunque
+                    ya no se usa para vehículos, sigue siendo un símbolo de progreso.</p>
+            </div>
+
+            <div class="vocabulario">
+                <h4>📚 Vocabulario</h4>
+                <div class="vocab-item"><strong>Inaugurar:</strong> abrir o comenzar a usar algo oficialmente</div>
+                <div class="vocab-item"><strong>Ingeniería:</strong> ciencia que diseña construcciones y máquinas</div>
+                <div class="vocab-item"><strong>Patrimonio:</strong> bienes valiosos que se heredan del pasado</div>
+            </div>
+
+            <div class="preguntas">
+                <h4>✏️ Comprensión de lectura:</h4>
+                <div class="pregunta">
+                    <div class="pregunta-label">
+                        <span class="pregunta-num">1</span>
+                        <span class="pregunta-tipo">Literal</span>
+                    </div>
+                    <p>¿Sobre qué río se construyó el puente y en qué año?</p>
+                    <div class="lineas-respuesta"></div>
+                </div>
+                <div class="pregunta">
+                    <div class="pregunta-label">
+                        <span class="pregunta-num">2</span>
+                        <span class="pregunta-tipo">Inferencial</span>
+                    </div>
+                    <p>¿Por qué era peligroso cruzar el río antes del puente?</p>
+                    <div class="lineas-respuesta"></div>
+                    <div class="lineas-respuesta"></div>
+                </div>
+                <div class="pregunta">
+                    <div class="pregunta-label">
+                        <span class="pregunta-num">3</span>
+                        <span class="pregunta-tipo">Opinión</span>
+                    </div>
+                    <p>¿Por qué crees que es importante conservar el puente antiguo?</p>
+                    <div class="lineas-respuesta"></div>
+                    <div class="lineas-respuesta"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lectura 3: La Plaza Antes del Terremoto -->
+        <div class="lectura">
+            <div class="lectura-header">
+                <span class="lectura-num">3</span>
+                <h2 class="lectura-title">⛲ La Plaza Antes del Terremoto</h2>
+            </div>
+
+            <div class="texto-lectura">
+                <p>Antes de 1939, la Plaza de Armas de Parral lucía muy diferente a como la conocemos hoy. Estaba
+                    rodeada de hermosos edificios de dos pisos, construidos en estilo colonial.</p>
+                <p>En el centro de la plaza había un kiosco de música donde las bandas tocaban los domingos. Las
+                    familias paseaban, los niños jugaban y los comerciantes vendían sus productos.</p>
+                <p>El 24 de enero de 1939, un terrible terremoto destruyó gran parte de la ciudad. Muchos edificios
+                    históricos cayeron, incluyendo algunos alrededor de la plaza.</p>
+                <p>Después del terremoto, Parral fue reconstruido con un estilo más moderno. Por eso hoy vemos edificios
+                    de otro tipo alrededor de nuestra plaza.</p>
+            </div>
+
+            <div class="vocabulario">
+                <h4>📚 Vocabulario</h4>
+                <div class="vocab-item"><strong>Kiosco:</strong> construcción pequeña para música o venta</div>
+                <div class="vocab-item"><strong>Terremoto:</strong> movimiento fuerte de la tierra</div>
+                <div class="vocab-item"><strong>Reconstruir:</strong> volver a construir algo que se destruyó</div>
+            </div>
+
+            <div class="preguntas">
+                <h4>✏️ Comprensión de lectura:</h4>
+                <div class="pregunta">
+                    <div class="pregunta-label">
+                        <span class="pregunta-num">1</span>
+                        <span class="pregunta-tipo">Literal</span>
+                    </div>
+                    <p>¿Qué había en el centro de la plaza antes del terremoto?</p>
+                    <div class="lineas-respuesta"></div>
+                </div>
+                <div class="pregunta">
+                    <div class="pregunta-label">
+                        <span class="pregunta-num">2</span>
+                        <span class="pregunta-tipo">Secuencia</span>
+                    </div>
+                    <p>Ordena los hechos del 1 al 3:</p>
+                    <p>_____ Parral fue reconstruido con estilo moderno</p>
+                    <p>_____ Un kiosco de música estaba en la plaza</p>
+                    <p>_____ Un terremoto destruyó parte de la ciudad</p>
+                </div>
+                <div class="pregunta">
+                    <div class="pregunta-label">
+                        <span class="pregunta-num">3</span>
+                        <span class="pregunta-tipo">Conexión</span>
+                    </div>
+                    <p>¿Conoces la Plaza de Armas actual? ¿Qué diferencias imaginas con la plaza antigua?</p>
+                    <div class="lineas-respuesta"></div>
+                    <div class="lineas-respuesta"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>📍 Material educativo del proyecto "Archivos en Movimiento" - Parral, Chile</p>
+        </div>
+    </div>
+</body>
+
+</html>
