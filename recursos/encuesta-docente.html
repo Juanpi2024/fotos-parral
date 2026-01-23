@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta de Validación Docente | Archivos en Movimiento</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .survey-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 2.5rem;
+            margin-top: 2rem;
+            border-top: 5px solid #2c3e50;
+        }
+
+        h1 {
+            font-family: 'Merriweather', serif;
+            color: #2c3e50;
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .intro-text {
+            text-align: center;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        select,
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-family: 'Lato', sans-serif;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        .rating-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+            justify-content: space-between;
+        }
+
+        .rating-circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .rating-circle.selected {
+            background: #2c3e50;
+            color: white;
+            border-color: #2c3e50;
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 1rem;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .badge-incentive {
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            text-align: center;
+            border: 1px dashed #2e7d32;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="survey-card">
+            <h1>Encuesta de Validación de Recursos</h1>
+            <p class="intro-text">
+                Ayúdanos a mejorar. Tu opinión como docente es fundamental para seguir desarrollando material
+                patrimonial de calidad para Parral.
+            </p>
+
+            <div class="badge-incentive">
+                🎁 <strong>¡Gracias por colaborar!</strong> Al finalizar esta encuesta recibirás un "Certificado Digital
+                de Colaborador Pedagógico".
+            </div>
+
+            <form id="teacherSurvey">
+                <div class="form-group">
+                    <label for="nivel">Nivel Educativo Principal</label>
+                    <select id="nivel" required>
+                        <option value="">Seleccione...</option>
+                        <option value="Pre-Básica">Educación Parvularia</option>
+                        <option value="Básica">Educación Básica</option>
+                        <option value="Media">Educación Media (Científico-Humanista)</option>
+                        <option value="TP">Educación Media Técnico-Profesional</option>
+                        <option value="EPJA">Educación de Adultos (CEIA)</option>
+                        <option value="Universitario">Educación Superior</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="recurso">¿Qué recurso didáctico utilizó?</label>
+                    <select id="recurso" required>
+                        <option value="">Seleccione...</option>
+                        <option value="GuiaAdultos">Guía EPJA: Oficios y Memoria</option>
+                        <option value="GuiasBasica">Guías de Trabajo Básica</option>
+                        <option value="FotosRestauradas">Fotografías Restauradas</option>
+                        <option value="Videos">Videos Educativos</option>
+                        <option value="Relatos">Relatos Vivos</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Calidad Pedagógica del Material (1 = Malo, 5 = Excelente)</label>
+                    <div class="rating-group" id="ratingQuality">
+                        <div class="rating-circle" onclick="selectRating('quality', 1)">1</div>
+                        <div class="rating-circle" onclick="selectRating('quality', 2)">2</div>
+                        <div class="rating-circle" onclick="selectRating('quality', 3)">3</div>
+                        <div class="rating-circle" onclick="selectRating('quality', 4)">4</div>
+                        <div class="rating-circle" onclick="selectRating('quality', 5)">5</div>
+                    </div>
+                    <input type="hidden" id="calidadInput" value="">
+                </div>
+
+                <div class="form-group">
+                    <label>Relevancia para la Identidad Local (1 = Baja, 5 = Alta)</label>
+                    <div class="rating-group" id="ratingRelevance">
+                        <div class="rating-circle" onclick="selectRating('relevance', 1)">1</div>
+                        <div class="rating-circle" onclick="selectRating('relevance', 2)">2</div>
+                        <div class="rating-circle" onclick="selectRating('relevance', 3)">3</div>
+                        <div class="rating-circle" onclick="selectRating('relevance', 4)">4</div>
+                        <div class="rating-circle" onclick="selectRating('relevance', 5)">5</div>
+                    </div>
+                    <input type="hidden" id="relevanciaInput" value="">
+                </div>
+
+                <div class="form-group">
+                    <label for="comentarios">Comentarios u Observaciones de los Estudiantes</label>
+                    <textarea id="comentarios" rows="4"
+                        placeholder="¿Qué les pareció a los alumnos? ¿Qué aprendizaje observó?"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="establecimiento">Establecimiento Educacional (Opcional)</label>
+                    <input type="text" id="establecimiento" placeholder="Nombre del Colegio / Liceo / CEIA">
+                </div>
+
+                <button type="submit" class="btn-submit">Enviar Evaluación</button>
+            </form>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="../../educacion.html" style="color: #666; text-decoration: none;">← Volver a Material Educativo</a>
+        </div>
+    </div>
+
+    <script>
+        function selectRating(group, value) {
+            // Visual feedback
+            const container = group === 'quality' ? document.getElementById('ratingQuality') : document.getElementById('ratingRelevance');
+            const circles = container.querySelectorAll('.rating-circle');
+
+            circles.forEach(c => c.classList.remove('selected'));
+            circles[value - 1].classList.add('selected');
+
+            // Set value
+            const input = group === 'quality' ? document.getElementById('calidadInput') : document.getElementById('relevanciaInput');
+            input.value = value;
+        }
+
+        document.getElementById('teacherSurvey').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const nivel = document.getElementById('nivel').value;
+            const recurso = document.getElementById('recurso').value;
+            const calidad = document.getElementById('calidadInput').value;
+            const establecimiento = document.getElementById('establecimiento').value;
+
+            if (!calidad) {
+                alert('Por favor califique la calidad pedagógica');
+                return;
+            }
+
+            // Construir mailto
+            const subject = encodeURIComponent(`Evaluación Docente: ${establecimiento} (${nivel})`);
+            const body = encodeURIComponent(`Nivel: ${nivel}\nRecurso: ${recurso}\nCalidad: ${calidad}/5\nEstablecimiento: ${establecimiento}\n\nComentarios:\n${document.getElementById('comentarios').value}`);
+
+            window.location.href = `mailto:profepablo2010@gmail.com?subject=${subject}&body=${body}`;
+
+            alert('¡Gracias! Su evaluación es clave para nuestra postulación a fondos culturales.');
+        });
+    </script>
+</body>
+
+</html>
