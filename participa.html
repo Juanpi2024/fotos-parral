@@ -104,13 +104,68 @@
         </div>
     </section>
 
-    <main class="container" style="padding: 4rem 1rem; text-align: center;">
+    <main class="container" style="padding: 4rem 1rem;">
+
+        <!-- Steps Process -->
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h3
+                style="font-family: 'Merriweather', serif; color: var(--primary-color); font-size: 2rem; margin-bottom: 3rem;">
+                ¿Cómo funciona el proceso?</h3>
+
+            <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem;">
+                <!-- Paso 1 -->
+                <div
+                    style="flex: 1; min-width: 250px; max-width: 300px; padding: 2rem; background: var(--card-bg-warm); border-radius: 15px; border: 1px dashed var(--accent-color);">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">📤</div>
+                    <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">1. Envías tu Aporte</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-light);">Llenas el formulario con tu foto
+                        digitalizada o nos contactas para que la digitalicemos nosotros.</p>
+                </div>
+
+                <!-- Arrow -->
+                <div style="display: flex; align-items: center; color: var(--accent-color); font-size: 2rem;"
+                    class="hide-mobile">→</div>
+
+                <!-- Paso 2 -->
+                <div
+                    style="flex: 1; min-width: 250px; max-width: 300px; padding: 2rem; background: var(--card-bg-warm); border-radius: 15px; border: 1px dashed var(--accent-color);">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">✨</div>
+                    <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">2. Restauramos con IA</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-light);">Nuestro equipo aplica técnicas de
+                        restauración digital para recuperar detalles y, si aplica, colorear.</p>
+                </div>
+
+                <!-- Arrow -->
+                <div style="display: flex; align-items: center; color: var(--accent-color); font-size: 2rem;"
+                    class="hide-mobile">→</div>
+
+                <!-- Paso 3 -->
+                <div
+                    style="flex: 1; min-width: 250px; max-width: 300px; padding: 2rem; background: var(--card-bg-warm); border-radius: 15px; border: 1px dashed var(--accent-color);">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">🖼️</div>
+                    <h4 style="color: var(--primary-color); margin-bottom: 0.5rem;">3. Publicamos</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-light);">Tu aporte se suma a la galería digital y
+                        material educativo, siempre con tus créditos.</p>
+                </div>
+            </div>
+
+            <style>
+                @media (max-width: 768px) {
+                    .hide-mobile {
+                        display: none !important;
+                    }
+                }
+            </style>
+        </div>
+
         <div class="form-container">
-            <h3 style="margin-bottom: 2rem; font-family: var(--font-heading); font-size: 2rem;">Portal de Colaboración
-            </h3>
-            <p style="margin-bottom: 3rem; color: var(--text-light);">Usa este formulario para enviarnos fotografías,
-                documentos o relatos orales. Nuestro equipo curatorial revisará tu aporte para incluirlo en el archivo
-                municipal.</p>
+            <h3 style="margin-bottom: 2rem; font-family: var(--font-heading); font-size: 2rem; text-align: center;">
+                Portal de Colaboración</h3>
+            <p style="margin-bottom: 3rem; color: var(--text-light); text-align: center;">Usa este formulario para
+                enviarnos fotografías,
+                documentos o relatos orales. El equipo de "Archivos en Movimiento" (Agrupación Amigos Parralinos por el
+                CEIA)
+                revisará tu aporte para incluirlo en el archivo histórico digital.</p>
 
             <form id="crowdsourcingForm">
                 <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
@@ -168,10 +223,11 @@
                 </div>
 
                 <div style="margin-top: 3rem;">
-                    <button type="submit" class="btn-principal" style="width: 100%; cursor: pointer;">Enviar a
-                        Curaduría</button>
-                    <p style="font-size: 0.8rem; margin-top: 1rem; color: var(--text-light);">Al enviar, aceptas que el
-                        municipio pueda utilizar este material con fines culturales y educativos.</p>
+                    <button type="submit" class="btn-principal" style="width: 100%; cursor: pointer;">📩 Iniciar
+                        Contacto de Envío</button>
+                    <p style="font-size: 0.8rem; margin-top: 1rem; color: var(--text-light);">Al contactarnos, aceptas
+                        que la Agrupación Amigos Parralinos por el CEIA pueda gestionar este material con fines
+                        estrictamente culturales y educativos.</p>
                 </div>
             </form>
         </div>
@@ -185,11 +241,22 @@
             document.querySelector('.main-nav').classList.toggle('show');
         });
 
-        // Form Submission Simulation
+        // Form Submission Logic
         document.getElementById('crowdsourcingForm').addEventListener('submit', function (e) {
             e.preventDefault();
-            alert('¡Gracias por tu aporte! Tu envío ha sido recibido y entrará en proceso de curaduría digital.');
-            this.reset();
+
+            const name = document.getElementById('name').value;
+            const type = document.getElementById('type').value;
+            const title = document.getElementById('title').value;
+            const story = document.getElementById('story').value;
+
+            // Construir mailto para abrir cliente de correo real
+            const subject = encodeURIComponent(`Nuevo aporte Archivos en Movimiento: ${title} (${type})`);
+            const body = encodeURIComponent(`Hola equipo Archivos en Movimiento,\n\nQuiero aportar el siguiente material:\n\nNombre: ${name}\nTipo: ${type}\nTítulo: ${title}\nHistoria: ${story}\n\n(Adjuntar archivos a este correo)`);
+
+            window.location.href = `mailto:profepablo2010@gmail.com?subject=${subject}&body=${body}`;
+
+            alert('Se abrirá tu cliente de correo para finalizar el envío adjuntando tus fotos o documentos. ¡Gracias por participar!');
         });
     </script>
 </body>
