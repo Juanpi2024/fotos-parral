@@ -197,6 +197,12 @@
                         <span class="author">${story.author || story.autor}</span>
                         <span class="tag">${story.categoria}</span>
                     </div>
+                    <div style="margin-top: 1rem; text-align: right;">
+                        <button onclick="event.stopPropagation(); window.RelatoPlayer.toggle(this.closest('.story-card').querySelector('p').innerText, this)" 
+                                style="background: transparent; border: 1px solid #ddd; color: #666; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; transition: all 0.2s;">
+                            🔊 Escuchar
+                        </button>
+                    </div>
                 `;
                 grid.appendChild(card);
             });

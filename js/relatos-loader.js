@@ -119,6 +119,12 @@ function createRelatoCard(relato) {
                 <span style="font-weight: bold; font-size: 0.85rem; color: var(--primary-color);">${relato.autor}</span>
                 <span style="font-size: 0.75rem; color: #999;">${relato.categoria}</span>
             </div>
+            <div style="margin-top: 1rem; text-align: right;">
+                <button onclick="window.RelatoPlayer.toggle(this.closest('.relato-card').querySelector('p').textContent, this)" 
+                        style="background: transparent; border: 1px solid #ddd; color: #666; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; transition: all 0.2s;">
+                    🔊 Escuchar
+                </button>
+            </div>
         </div>
     `;
 }

@@ -1,0 +1,530 @@
+---
+---
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre el Proyecto | Archivos en Movimiento - Parral</title>
+    <meta name="description"
+        content="Conoce el proyecto Archivos en Movimiento, una iniciativa de la Agrupación Amigos Parralinos por el CEIA para rescatar y difundir el patrimonio histórico de Parral.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .about-hero {
+            background: linear-gradient(135deg, #1a1510 0%, #2d2419 50%, #1a1510 100%);
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+
+        .about-hero h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 2.8rem;
+            color: #f4e9d9;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .about-hero p {
+            font-family: 'Merriweather', serif;
+            font-size: 1.2rem;
+            color: rgba(244, 233, 217, 0.8);
+            font-style: italic;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .about-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        .about-section {
+            margin-bottom: 3rem;
+        }
+
+        .about-section h2 {
+            font-family: 'Merriweather', serif;
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #c9a961;
+            display: inline-block;
+        }
+
+        .about-section p {
+            color: var(--text-color);
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+        }
+
+        .mission-box {
+            background: linear-gradient(135deg, rgba(139, 115, 85, 0.1) 0%, rgba(201, 169, 97, 0.1) 100%);
+            border-left: 5px solid #c9a961;
+            padding: 2rem;
+            border-radius: 0 15px 15px 0;
+            margin: 2rem 0;
+        }
+
+        .mission-box h3 {
+            color: var(--primary-color);
+            font-family: 'Merriweather', serif;
+            margin-bottom: 1rem;
+        }
+
+        .mission-box p {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin: 0;
+        }
+
+        .org-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin: 2rem 0;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(201, 169, 97, 0.2);
+        }
+
+        .org-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .org-logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #c9a961 0%, #8b7355 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            flex-shrink: 0;
+        }
+
+        .org-info h3 {
+            font-family: 'Merriweather', serif;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .org-info p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        .org-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4caf50, #81c784);
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-top: 0.5rem;
+        }
+
+        .org-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .detail-item {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .detail-item .icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .detail-item .label {
+            color: var(--text-light);
+            font-size: 0.8rem;
+            display: block;
+        }
+
+        .detail-item .value {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .team-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s;
+            border: 1px solid rgba(201, 169, 97, 0.1);
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .team-avatar {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #8b7355, #c9a961);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 1rem;
+        }
+
+        .team-card h4 {
+            color: var(--primary-color);
+            font-family: 'Merriweather', serif;
+            margin-bottom: 0.25rem;
+        }
+
+        .team-card .role {
+            color: #c9a961;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-card .bio {
+            color: var(--text-light);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .value-card {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(201, 169, 97, 0.2);
+        }
+
+        .value-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .value-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .value-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #8b7355 0%, #c9a961 100%);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .cta-section h3 {
+            color: #1a1510;
+            font-family: 'Merriweather', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: rgba(26, 21, 16, 0.8);
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-cta {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-cta.primary {
+            background: #1a1510;
+            color: #f4e9d9;
+        }
+
+        .btn-cta.secondary {
+            background: transparent;
+            border: 2px solid #1a1510;
+            color: #1a1510;
+        }
+
+        @media (max-width: 600px) {
+            .about-hero h1 {
+                font-size: 2rem;
+            }
+
+            .org-header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    {% include header.html %}
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <h1>Sobre el Proyecto</h1>
+            <p>Una iniciativa ciudadana para rescatar, preservar y difundir la memoria histórica de Parral</p>
+        </div>
+    </section>
+
+    <div class="about-container">
+        <!-- ¿Qué es? -->
+        <section class="about-section">
+            <h2>📖 ¿Qué es "Archivos en Movimiento"?</h2>
+            <p>
+                <strong>"Archivos en Movimiento"</strong> es un proyecto de rescate patrimonial digital que busca
+                preservar, restaurar y difundir la memoria visual e histórica de la ciudad de Parral y sus alrededores.
+            </p>
+            <p>
+                Utilizando tecnología de <strong>Inteligencia Artificial</strong>, restauramos y coloreamos
+                fotografías antiguas, dándoles nueva vida y permitiendo que las nuevas generaciones conecten
+                con su historia de una manera más cercana y emotiva.
+            </p>
+            <p>
+                El proyecto nació en <strong>2024</strong> con el sueño de hacer visible la educación y la
+                historia local, transformando archivos olvidados en recursos educativos y culturales accesibles
+                para toda la comunidad.
+            </p>
+        </section>
+
+        <!-- Misión -->
+        <section class="about-section">
+            <h2>🎯 Nuestra Misión</h2>
+            <div class="mission-box">
+                <h3>Misión</h3>
+                <p>
+                    "Rescatar, preservar y difundir el patrimonio histórico y visual de Parral, utilizando
+                    tecnología innovadora y metodologías educativas para conectar a las nuevas generaciones
+                    con sus raíces, fortaleciendo la identidad local y el sentido de pertenencia."
+                </p>
+            </div>
+            <div class="mission-box">
+                <h3>Visión</h3>
+                <p>
+                    "Convertirnos en el archivo digital de referencia del patrimonio parralino, donde cada
+                    familia pueda encontrar su historia y cada estudiante pueda aprender sobre su territorio."
+                </p>
+            </div>
+        </section>
+
+        <!-- Organización Ejecutora -->
+        <section class="about-section">
+            <h2>🏛️ Organización Ejecutora</h2>
+
+            <div class="org-card">
+                <div class="org-header">
+                    <div class="org-logo">🎓</div>
+                    <div class="org-info">
+                        <h3>Agrupación Amigos Parralinos por el CEIA</h3>
+                        <p>Apoyando la educación de jóvenes y adultos en Parral</p>
+                        <span class="org-badge">✓ Beneficiaria de Fondos Públicos 2024</span>
+                    </div>
+                </div>
+
+                <p style="color: var(--text-color); line-height: 1.7;">
+                    La <strong>Agrupación Amigos Parralinos por el CEIA</strong> es una organización de apoyo al
+                    Centro de Educación de Adultos de Parral, dedicada a respaldar la educación de jóvenes y adultos
+                    en la comuna. Funciona como una entidad colaboradora para la continuidad de estudios básicos y
+                    medios.
+                </p>
+                <p style="color: var(--text-color); line-height: 1.7;">
+                    La agrupación recibió fondos en la <strong>Cuenta Pública 2024</strong> de la Municipalidad de
+                    Parral,
+                    evidenciando su rol social y educativo en la comunidad.
+                </p>
+
+                <div class="org-details">
+                    <div class="detail-item">
+                        <div class="icon">📋</div>
+                        <span class="label">RUT</span>
+                        <span class="value">65.130.511-K</span>
+                    </div>
+                    <div class="detail-item">
+                        <div class="icon">📍</div>
+                        <span class="label">Ubicación</span>
+                        <span class="value">Parral, Maule</span>
+                    </div>
+                    <div class="detail-item">
+                        <div class="icon">📅</div>
+                        <span class="label">Personalidad Jurídica</span>
+                        <span class="value">N° 1321</span>
+                    </div>
+                    <div class="detail-item">
+                        <div class="icon">🏛️</div>
+                        <span class="label">Otorgada por</span>
+                        <span class="value">I. Municipalidad de Parral</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="color: var(--primary-color); margin-top: 2rem;">¿Qué es el CEIA Parral?</h3>
+            <p style="color: var(--text-color); line-height: 1.7;">
+                El <strong>Centro de Educación Integral de Adultos (CEIA)</strong> de Parral es una entidad
+                educacional que ofrece oportunidades de estudio para adultos y jóvenes que no pudieron
+                completar su educación en la edad regular. Permite terminar la Educación Básica,
+                Media Científico-Humanista y Técnico-Profesional.
+            </p>
+        </section>
+
+        <!-- Equipo -->
+        <section class="about-section">
+            <h2>👥 Equipo del Proyecto</h2>
+            <p>
+                "Archivos en Movimiento" es posible gracias al trabajo colaborativo de profesionales
+                comprometidos con la educación y el patrimonio de Parral.
+            </p>
+
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">💻</div>
+                    <h4>Juan Pablo Ramírez</h4>
+                    <p class="role">Creador y Desarrollador</p>
+                    <p class="bio">
+                        Técnico en Administración de Empresas y Contabilidad.
+                        Product Manager en Inteligencia Artificial.
+                        Responsable del desarrollo tecnológico y restauración de imágenes con IA.
+                    </p>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-avatar">📚</div>
+                    <h4>David Guajardo</h4>
+                    <p class="role">Asesor Histórico</p>
+                    <p class="bio">
+                        Historiador. Encargado de la investigación histórica,
+                        validación de contenidos y contextualización de las fotografías y relatos.
+                    </p>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-avatar">🎓</div>
+                    <h4>Yessica Toledo Albornoz</h4>
+                    <p class="role">Asesora Pedagógica</p>
+                    <p class="bio">
+                        Docente con más de 14 años de servicio. Profesora Experta 1,
+                        Red de Maestros. Correctora de portafolios.
+                        Responsable de alinear el material educativo al currículum y niveles educativos.
+                    </p>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-avatar">🔧</div>
+                    <h4>Equipo de Apoyo Técnico</h4>
+                    <p class="role">Desarrollo e Infraestructura</p>
+                    <p class="bio">
+                        Ingeniero Informático de apoyo en infraestructura web y
+                        mantenimiento técnico de la plataforma.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Valores -->
+        <section class="about-section">
+            <h2>💎 Nuestros Valores</h2>
+
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="icon">🔍</div>
+                    <h4>Rigor Histórico</h4>
+                    <p>Investigamos y validamos cada imagen y relato para asegurar su autenticidad.</p>
+                </div>
+                <div class="value-card">
+                    <div class="icon">🤝</div>
+                    <h4>Participación Comunitaria</h4>
+                    <p>Involucramos a la comunidad en el rescate y preservación de su propia historia.</p>
+                </div>
+                <div class="value-card">
+                    <div class="icon">🌐</div>
+                    <h4>Acceso Libre</h4>
+                    <p>Todo nuestro material es gratuito y de libre acceso para la comunidad.</p>
+                </div>
+                <div class="value-card">
+                    <div class="icon">🚀</div>
+                    <h4>Innovación</h4>
+                    <p>Usamos tecnología de punta para dar nueva vida al patrimonio antiguo.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <h3>¿Quieres ser parte de esta historia?</h3>
+            <p>Comparte tus fotografías antiguas, historias familiares o colabora con el proyecto</p>
+            <div class="cta-buttons">
+                <a href="participa.html" class="btn-cta primary">📷 Donar Fotografías</a>
+                <a href="mailto:profepablo2010@gmail.com" class="btn-cta secondary">✉️ Contactarnos</a>
+            </div>
+        </section>
+    </div>
+
+    {% include footer.html %}
+</body>
+
+</html>
