@@ -1,65 +1,56 @@
-# PLAN DE TRABAJO (CARTA GANTT 2026)
+# PLAN DE TRABAJO REAL (FNDR CULTURA / FONDART)
 
-**Duración Proyecto:** 8 Meses (Ejemplo de Ejecución)
+**Postulación:** Abril 2026
+**Inicio Ejecución Estimado:** Septiembre 2026 (Tras trámite administrativo)
+**Duración:** 8 Meses (Septiembre 2026 - Abril 2027)
 
-Este documento estructura los tiempos. Modifica las "X" según la realidad de tu equipo.
+*Este cronograma es realista considerando los tiempos de firma de convenio y transferencia de recursos del Gobierno Regional.*
 
 ---
 
-### FASE 1: INSTALACIÓN Y PRODUCCIÓN ADMINISTRATIVA (Meses 1-2)
+### FASE 1: INSTALACIÓN Y COMPRAS (Septiembre - Octubre 2026)
 
-*Objetivo: Dejar todo listo antes de salir a público.*
+*Objetivo: Habilitar equipos y agendar con colegios para el año siguiente.*
 
-| Actividad / Hito | Resp. | Mes 1 | Mes 2 | Mes 3 | Mes 4 | Mes 5 | Mes 6 | Mes 7 | Mes 8 |
+| Actividad / Hito | Resp. | Sep | Oct | Nov | Dic | Ene | Feb | Mar | Abr |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Reunión Inicio Equipo** | Dir. | X | | | | | | | |
-| **Compras e Inversión** (PC, Grabadora) | Prod. | X | | | | | | | |
-| **Diseño Gráfico (Afiches/Redes)** | Web | | X | | | | | | |
-| **Impresión Material Educativo** | Prod. | | X | | | | | | |
+| **Firma Convenio / Garantía** | Dir. | X | | | | | | | |
+| **Compra Equipamiento (PC/Audio)** | Prod. | | X | | | | | | |
+| **Contratación Equipo de Trabajo** | Dir. | | X | | | | | | |
 
 ---
 
-### FASE 2: INVESTIGACIÓN Y RECOPILACIÓN (Meses 2-5)
+### FASE 2: PRODUCCIÓN Y RESCATE (Noviembre 2026 - Enero 2027)
 
-*Objetivo: Llenar la plataforma de contenido nuevo.*
+*Objetivo: Generar el contenido fuerte antes de los talleres.*
 
-| Actividad / Hito | Resp. | Mes 1 | Mes 2 | Mes 3 | Mes 4 | Mes 5 | Mes 6 | Mes 7 | Mes 8 |
+| Actividad / Hito | Resp. | Sep | Oct | Nov | Dic | Ene | Feb | Mar | Abr |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Campaña "Envia tu Foto"** | Todos | | X | X | X | | | | |
-| **Entrevistas Relatos Vivos** | David | | | X | X | X | | | |
-| **Restauración/Coloreado IA** | JP | | | X | X | X | X | | |
-| **Carga de Contenido Web** | Web | | | | X | X | X | | |
+| **Campaña Difusión (RRSS/Radio)** | Web | | | X | X | | | | |
+| **Entrevistas Adulto Mayor (Videos)**| David | | | X | X | X | | | |
+| **Digitalización y Coloreado IA** | JP | | | | X | X | X | | |
 
 ---
 
-### FASE 3: TRANSFERENCIA EDUCACIONAL (Meses 4-7)
+### FASE 3: TRANSFERENCIA EN AULA (Marzo - Abril 2027)
 
-*Objetivo: Usar el material con la comunidad (Talleres).*
+*Objetivo: Aprovechar el inicio del año escolar 2027.*
 
-| Actividad / Hito | Resp. | Mes 1 | Mes 2 | Mes 3 | Mes 4 | Mes 5 | Mes 6 | Mes 7 | Mes 8 |
+| Actividad / Hito | Resp. | Sep | Oct | Nov | Dic | Ene | Feb | Mar | Abr |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Coordinación con Colegios/CEIA** | Yessica| | | X | | | | | |
-| **Taller 1: Historia Local (Escolar)** | David | | | | X | X | | | |
-| **Taller 2: Memoria Adulto Mayor** | Yessica| | | | | X | X | | |
-| **Validación Docente (Encuesta)** | JP | | | | | | X | X | |
+| **Coordinación DAEM/Colegios** | Yessica| | | | | | X | X | |
+| **Ejecución Talleres Escolares** | David | | | | | | | X | X |
+| **Receso Verano (Planificación)** | Todos | | | | | | X | | |
 
 ---
 
-### FASE 4: CIERRE Y EVALUACIÓN (Mes 8)
+### FASE 4: CIERRE Y EVALUACIÓN (Abril - Mayo 2027)
 
-*Objetivo: Rendir cuentas y cerrar el ciclo.*
+*Objetivo: Rendición final impecable.*
 
-| Actividad / Hito | Resp. | Mes 1 | Mes 2 | Mes 3 | Mes 4 | Mes 5 | Mes 6 | Mes 7 | Mes 8 |
+| Actividad / Hito | Resp. | Sep | Oct | Nov | Dic | Ene | Feb | Mar | Abr |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Exposición Final / Cierre** | Todos | | | | | | | | X |
-| **Informe de Impacto (Analytics)** | JP | | | | | | | | X |
-| **Rendición Financiera** | Contad.| | | | | | | | X |
+| **Lanzamiento Web Final** | Todos | | | | | | | | X |
+| **Informe Final y Rendición** | Contad.| | | | | | | | X |
 
----
-
-### ENTREGABLES POR FASE
-
-1. **Inicio:** Facturas de compras, contratos de equipo firmados.
-2. **Producción:** 50 nuevas fotos restauradas, 20 relatos grabados.
-3. **Educación:** Listas de asistencia a talleres (mínimo 50 beneficiarios).
-4. **Cierre:** Informe Final al Ministerio/Gore + Web 100% operativa.
+> **NOTA CLAVE:** Se deja Enero/Febrero como meses de "Producción interna" y planificación, ya que los colegios están cerrados. Los talleres se tiran a Marzo 2027 para asegurar asistencia.
