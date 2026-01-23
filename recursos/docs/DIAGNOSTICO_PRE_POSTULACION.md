@@ -1,6 +1,6 @@
 # DIAGNÓSTICO PRE-POSTULACIÓN: FONDOS DE CULTURA (2026)
 
-**Proyecto:** Archivos en Movimiento (Plataforma de Memoria e Identidad)
+**Proyecto:** Programa de Reactivación de la Memoria e Identidad Parralina (Plataforma Archivos en Movimiento)
 **Agrupación:** Amigos Parralinos por el CEIA
 
 Este documento evalúa el estado actual del proyecto frente a los criterios estándar de evaluación del **FONDART Regional** (Línea Patrimonio) y el **FNDR 8% de Cultura** (Gobierno Regional del Maule).

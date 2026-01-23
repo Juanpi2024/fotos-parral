@@ -9,11 +9,11 @@
 
 ---
 
-**REF: CARTA DE COMPROMISO Y APOYO AL PROYECTO "ARCHIVOS EN MOVIMIENTO"**
+**REF: CARTA DE COMPROMISO Y APOYO AL "PROGRAMA DE REACTIVACIÓN DE LA MEMORIA E IDENTIDAD PARRALINA"**
 
 Estimados Señores:
 
-Por intermedio de la presente, manifiesto mi total apoyo y compromiso institucional con el proyecto **"Archivos en Movimiento: Rescate Patrimonial Digital de Parral"**, iniciativa impulsada por la **Agrupación Amigos Parralinos por el CEIA**.
+Por intermedio de la presente, manifiesto mi total apoyo y compromiso institucional con el **"Programa de Reactivación de la Memoria e Identidad Parralina: Tecnología y Comunidad para el Encuentro Intergeneracional"**, conocido como **"Archivos en Movimiento"**, iniciativa impulsada por la **Agrupación Amigos Parralinos por el CEIA**.
 
 Como [CARGO DE LA INSTITUCIÓN], considero que esta iniciativa es de vital importancia para nuestra comunidad educativa y local, ya que:
 
