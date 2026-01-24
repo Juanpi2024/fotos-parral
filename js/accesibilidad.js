@@ -15,7 +15,7 @@ function createAccessWidget() {
     btn.ariaLabel = 'Opciones de Accesibilidad';
     btn.style.cssText = `
         position: fixed;
-        bottom: 20px;
+        bottom: 80px;
         right: 20px;
         width: 50px;
         height: 50px;
@@ -38,7 +38,7 @@ function createAccessWidget() {
     panel.id = 'access-panel';
     panel.style.cssText = `
         position: fixed;
-        bottom: 80px;
+        bottom: 140px;
         right: 20px;
         width: 250px;
         background: white;
