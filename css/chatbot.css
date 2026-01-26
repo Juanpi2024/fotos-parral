@@ -205,33 +205,7 @@
     transform: scale(1.1);
 }
 
-.chat-donate-btn {
-    position: absolute;
-    bottom: 110px;
-    right: 30px;
-    /* Aligned with FAB, appears above it */
-    background: #ff4081;
-    /* Pink from reference image */
-    color: white;
-    padding: 10px 20px;
-    border-radius: 30px;
-    font-weight: bold;
-    text-decoration: none;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    z-index: 9998;
-    /* Below chat window, above content */
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transform: translateY(0);
-    transition: opacity 0.3s, pointer-events 0.3s;
-}
-
-/* Hide donate button when chat is open */
-.chat-window.active~.chat-donate-btn {
-    opacity: 0;
-    pointer-events: none;
-}
+/* Donate button removed per user request */
 
 @keyframes pulse {
     0% {
