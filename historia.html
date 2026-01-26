@@ -318,7 +318,30 @@
 
 <body>
 
-    {% include header.html %}
+    <header>
+        <div class="container">
+            <div class="logo-area">
+                <h1><a href="index.html">Archivos en Movimiento</a></h1>
+                <p class="subtitle">Patrimonio Vivo de Parral</p>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="relatos.html">Relatos</a></li>
+                    <li><a href="educacion.html">Educación</a></li>
+                    <li><a href="historia.html" class="active">Historia</a></li>
+                    <li><a href="mapa.html">Mapa</a></li>
+                    <li><a href="participa.html" class="btn-nav">¡Participa!</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
     <!-- HERO SECTION -->
     <section class="timeline-hero">
@@ -587,7 +610,16 @@
         </div>
     </section>
 
-    {% include footer.html %}
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Archivos en Movimiento. Patrimonio Vivo de Parral.</p>
+            <p style="font-size: 0.9rem;">
+                <a href="metodologia.html" style="color: var(--accent-color); text-decoration: none;">Metodología Ética</a>
+                |
+                Modelo replicable para la gestión cultural municipal.
+            </p>
+        </div>
+    </footer>
 
     <!-- Main JavaScript File -->
     <script src="js/home.js"></script>

@@ -167,8 +167,7 @@ header a.active {
 .btn-principal {
     display: inline-block;
     background: var(--accent-color);
-    color: var(--white);
-    /* Contrast fix */
+    color: var(--primary-color);
     padding: 12px 28px;
     text-decoration: none;
     border-radius: 2px;
@@ -183,9 +182,9 @@ header a.active {
 }
 
 .btn-principal:hover {
-    background: transparent;
-    border-color: var(--accent-color);
-    color: var(--accent-color);
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
+    color: var(--primary-color);
 }
 
 /* ---------------------------------- */
@@ -2291,4 +2290,13 @@ html {
     .lightbox-content {
         width: 100%;
     }
+}
+/* Debug / fix: asegurar que tarjetas sean clicables */
+.card-foto {
+  position: relative;
+  z-index: 2 !important;
+  pointer-events: auto !important;
+}
+.main-nav, header {
+  z-index: 9999; /* para que navbar quede encima si hace falta */
 }
