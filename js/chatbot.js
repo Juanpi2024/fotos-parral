@@ -4,11 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const chatContainer = document.createElement('div');
         chatContainer.id = 'chat-widget-container';
         chatContainer.innerHTML = `
-            <!-- Donate Button (Floating) -->
-            <a href="#" class="chat-donate-btn">
-                <span>♥</span> Dona aquí
-            </a>
-
             <!-- Chat Window -->
             <div class="chat-window" id="chatWindow">
                 <div class="chat-header">
