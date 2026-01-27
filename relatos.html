@@ -72,78 +72,161 @@
         }
 
         .story-card {
-            background: #fffdf5;
-            border-radius: 12px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
-            padding: 2rem;
-            border: 1px solid rgba(201, 169, 97, 0.2);
-            transition: transform 0.3s;
+            background: #fff;
+            border-radius: 1px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+            padding: 2.5rem;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
             position: relative;
             cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .story-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            border-color: rgba(201, 169, 97, 0.4);
         }
 
-        .story-card::before {
-            content: "“";
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 5rem;
-            color: rgba(201, 169, 97, 0.15);
-            font-family: serif;
-            line-height: 1;
+        .story-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 1rem;
+        }
+
+        .story-date {
+            font-family: 'Lato', sans-serif;
+            font-size: 0.85rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .story-emotion {
+            font-size: 0.75rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 30px;
+            background: #fcfbf8;
+            color: #c9a961;
+            border: 1px solid rgba(201, 169, 97, 0.3);
+            font-weight: bold;
         }
 
         .story-card h3 {
             font-family: 'Merriweather', serif;
-            color: var(--primary-color);
-            font-size: 1.2rem;
+            color: #2c2c2c;
+            font-size: 1.6rem;
             margin-bottom: 1rem;
-            padding-right: 2rem;
+            line-height: 1.3;
         }
 
         .story-card p {
             color: #555;
-            line-height: 1.7;
-            font-style: italic;
-            font-size: 0.95rem;
-            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-family: 'Merriweather', serif;
+            font-style: normal;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            flex-grow: 1;
         }
 
-        .story-meta {
+        .story-footer {
+            margin-top: auto;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            border-top: 1px solid rgba(0, 0, 0, 0.05);
-            padding-top: 1rem;
+            justify-content: space-between;
+            padding-top: 1.5rem;
+            border-top: 1px dotted #e0e0e0;
         }
 
-        .author {
+        .author-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .author-avatar {
+            width: 40px;
+            height: 40px;
+            background: #f0f0f0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #c9a961;
+        }
+
+        .author-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .author-name {
             font-weight: bold;
-            color: var(--primary-color);
+            color: #333;
             font-size: 0.9rem;
         }
 
-        .tag {
-            background: #f0f0f0;
-            color: #666;
-            padding: 0.2rem 0.6rem;
-            border-radius: 10px;
+        .read-time {
             font-size: 0.75rem;
+            color: #999;
         }
 
-        .cta-box {
-            background: var(--card-bg);
-            border-radius: 12px;
-            padding: 2rem;
-            text-align: center;
-            max-width: 800px;
-            margin: 4rem auto;
-            border: 2px dashed #c9a961;
+        .stats-box {
+            display: flex;
+            gap: 15px;
+            color: #999;
+            font-size: 0.8rem;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .btn-listen {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            color: #555;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-listen:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        .story-tags {
+            margin-top: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag-pill {
+            background: #f5f5f5;
+            color: #666;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
         }
     </style>
 </head>
@@ -229,21 +312,59 @@
             stories.forEach(story => {
                 const card = document.createElement('div');
                 card.className = 'story-card';
+                // Animación de entrada escalonada
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+
+                const authorInitial = story.autor ? story.autor.charAt(0) : '?';
+
+                let tagsHtml = '';
+                if (story.tags && story.tags.length > 0) {
+                    tagsHtml = `<div class="story-tags">
+                        ${story.tags.slice(0, 3).map(tag => `<span class="tag-pill">#${tag}</span>`).join('')}
+                     </div>`;
+                }
+
                 card.innerHTML = `
-                    <h3>${story.titulo}</h3>
-                    <p>"${story.texto.substring(0, 150)}..."</p>
-                    <div class="story-meta">
-                        <span class="author">${story.author || story.autor}</span>
-                        <span class="tag">${story.categoria}</span>
+                    <div class="story-header">
+                        <span class="story-date">${story.formattedDate || story.fecha}</span>
+                        <span class="story-emotion">${story.emotion || 'Relato'}</span>
                     </div>
-                    <div style="margin-top: 1rem; text-align: right;">
-                        <button onclick="event.stopPropagation(); window.RelatoPlayer.toggle(this.closest('.story-card').querySelector('p').innerText, this)" 
-                                style="background: transparent; border: 1px solid #ddd; color: #666; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; transition: all 0.2s;">
-                            🔊 Escuchar
-                        </button>
+                    
+                    <h3>${story.titulo}</h3>
+                    <p>"${story.texto.substring(0, 180)}..."</p>
+                    
+                    ${tagsHtml}
+
+                    <div class="story-footer">
+                        <div class="author-box">
+                            <div class="author-avatar">${authorInitial}</div>
+                            <div class="author-info">
+                                <span class="author-name">${story.autor.split(',')[0]}</span>
+                                <span class="read-time">${story.readingTime || '1 min'} de lectura</span>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <div class="stats-box">
+                                <div class="stat-item" title="Vistas">
+                                    👁️ ${story.views || 0}
+                                </div>
+                            </div>
+                            <button class="btn-listen" title="Escuchar relato"
+                                onclick="event.stopPropagation(); window.RelatoPlayer.toggle(this.closest('.story-card').querySelector('p').innerText, this)">
+                                🔊
+                            </button>
+                        </div>
                     </div>
                 `;
                 grid.appendChild(card);
+
+                // Animate entry
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100 * grid.children.length);
             });
         }
 

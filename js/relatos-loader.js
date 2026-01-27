@@ -108,21 +108,39 @@ function initRelatosSystem() {
 }
 
 function createRelatoCard(relato) {
+    // Initial letter for avatar
+    const authorInitial = relato.autor ? relato.autor.charAt(0) : '?';
+
     return `
-        <div class="relato-card" style="background: #fffdf5; padding: 1.5rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 4px solid #c9a961; position: relative;">
-            <div class="quote-icon" style="position: absolute; top: 10px; right: 15px; font-size: 3rem; color: rgba(201, 169, 97, 0.2); font-family: serif;">"</div>
-            <h4 style="font-family: 'Merriweather', serif; color: var(--primary-color); margin-bottom: 0.5rem; padding-right: 20px;">${relato.titulo}</h4>
-            <p style="font-style: italic; color: #555; line-height: 1.6; font-size: 0.95rem; margin-bottom: 1rem;">
+        <div class="relato-card" style="background: #fff; padding: 1.5rem; border-radius: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); border: 1px solid rgba(0,0,0,0.08); display: flex; flex-direction: column;">
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; border-bottom: 1px solid #f0f0f0; padding-bottom: 0.5rem;">
+                <span style="font-family: 'Lato', sans-serif; font-size: 0.75rem; color: #888; text-transform: uppercase;">${relato.formattedDate || relato.fecha}</span>
+                <span style="font-size: 0.7rem; padding: 0.2rem 0.6rem; border-radius: 20px; background: #fcfbf8; color: #c9a961; border: 1px solid rgba(201, 169, 97, 0.3); font-weight: bold;">
+                    ${relato.emotion || 'Relato'}
+                </span>
+            </div>
+
+            <h4 style="font-family: 'Merriweather', serif; color: #333; margin: 0 0 0.8rem 0; font-size: 1.2rem; line-height: 1.3;">${relato.titulo}</h4>
+            
+            <p style="font-style: normal; font-family: 'Merriweather', serif; color: #555; line-height: 1.7; font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1;">
                 "${relato.texto}"
             </p>
-            <div class="relato-footer" style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 0.8rem;">
-                <span style="font-weight: bold; font-size: 0.85rem; color: var(--primary-color);">${relato.autor}</span>
-                <span style="font-size: 0.75rem; color: #999;">${relato.categoria}</span>
-            </div>
-            <div style="margin-top: 1rem; text-align: right;">
-                <button onclick="window.RelatoPlayer.toggle(this.closest('.relato-card').querySelector('p').textContent, this)" 
-                        style="background: transparent; border: 1px solid #ddd; color: #666; padding: 0.4rem 1rem; border-radius: 20px; font-size: 0.85rem; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; transition: all 0.2s;">
-                    🔊 Escuchar
+            
+            <div style="margin-top: auto; display: flex; align-items: center; justify-content: space-between; padding-top: 1rem; border-top: 1px dotted #e0e0e0;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <div style="width: 32px; height: 32px; background: #f0f0f0; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #c9a961; font-weight: bold; font-size: 0.9rem;">
+                        ${authorInitial}
+                    </div>
+                    <div style="display: flex; flex-direction: column;">
+                         <span style="font-weight: bold; font-size: 0.8rem; color: #333;">${relato.autor.split(',')[0]}</span>
+                    </div>
+                </div>
+
+                <button onclick="event.stopPropagation(); window.RelatoPlayer.toggle(this.closest('.relato-card').querySelector('p').textContent, this)" 
+                        style="background: #fff; border: 1px solid #ddd; color: #555; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; transition: all 0.2s;"
+                        title="Escuchar relato">
+                    🔊
                 </button>
             </div>
         </div>
@@ -133,13 +151,10 @@ function addRelatosStyles() {
     const style = document.createElement('style');
     style.textContent = `
         .relato-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1) !important;
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.08) !important;
+            border-color: rgba(201, 169, 97, 0.4) !important;
             transition: all 0.3s ease;
-        }
-        .btn-relato:hover {
-            background: var(--primary-color) !important;
-            color: white !important;
         }
     `;
     document.head.appendChild(style);
