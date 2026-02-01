@@ -10,6 +10,13 @@
     --chat-bubble-bot: #3e3224;
 }
 
+/* Container to fix stacking context */
+#chat-widget-container {
+    position: fixed;
+    z-index: 999999;
+    isolation: isolate;
+}
+
 /* Floating Action Button (FAB) */
 .chat-fab {
     position: fixed;
