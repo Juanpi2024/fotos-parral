@@ -2046,7 +2046,7 @@ html {
     position: fixed;
     bottom: 2rem;
     right: 2rem;
-    z-index: 2000;
+    z-index: 999999;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -2372,12 +2372,16 @@ html {
         width: 100%;
     }
 }
+
 /* Debug / fix: asegurar que tarjetas sean clicables */
 .card-foto {
-  position: relative;
-  z-index: 2 !important;
-  pointer-events: auto !important;
+    position: relative;
+    z-index: 2 !important;
+    pointer-events: auto !important;
 }
-.main-nav, header {
-  z-index: 9999; /* para que navbar quede encima si hace falta */
+
+.main-nav,
+header {
+    z-index: 9999;
+    /* para que navbar quede encima si hace falta */
 }
