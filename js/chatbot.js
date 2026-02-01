@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             <!-- Floating Action Button -->
             <div class="chat-fab" id="chatToggle">
-                <div class="chat-fab-icon">🧠</div>
+                <div class="chat-fab-icon">💬</div>
             </div>
         `;
         document.body.appendChild(chatContainer);
