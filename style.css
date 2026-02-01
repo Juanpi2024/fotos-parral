@@ -2385,3 +2385,59 @@ header {
     z-index: 9999;
     /* para que navbar quede encima si hace falta */
 }
+
+/* ---------------------------------- */
+/* ACCESSIBILITY: Focus-Visible       */
+/* ---------------------------------- */
+/* Solo muestra outline cuando se usa teclado, no con mouse */
+*:focus {
+    outline: none;
+}
+
+*:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Links and buttons */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 3px;
+}
+
+/* Form inputs */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 1px;
+    border-color: var(--accent-color);
+}
+
+/* Cards and interactive elements */
+.card-foto:focus-visible,
+.card-testimonio:focus-visible,
+.nav-card:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 4px;
+    box-shadow: 0 0 0 6px rgba(197, 160, 89, 0.2);
+}
+
+/* Skip link for accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--accent-color);
+    color: var(--primary-color);
+    padding: 8px 16px;
+    z-index: 100000;
+    font-weight: 600;
+    transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+    top: 0;
+}
