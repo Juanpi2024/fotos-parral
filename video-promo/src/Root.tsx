@@ -1,6 +1,7 @@
 import { Composition } from 'remotion';
 import { VideoPromo } from './VideoPromo';
 import { TeamPromo } from './TeamPromo';
+import { OrchestraPromo } from './OrchestraPromo';
 
 export const RemotionRoot: React.FC = () => {
     return (
@@ -21,6 +22,14 @@ export const RemotionRoot: React.FC = () => {
                 id="TeamPromo"
                 component={TeamPromo}
                 durationInFrames={660} // 22 segundos a 30fps
+                fps={30}
+                width={1920}
+                height={1080}
+            />
+            <Composition
+                id="OrchestraPromo"
+                component={OrchestraPromo}
+                durationInFrames={795} // ~26.5 segundos a 30fps
                 fps={30}
                 width={1920}
                 height={1080}
