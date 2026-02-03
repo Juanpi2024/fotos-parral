@@ -1,5 +1,5 @@
 title: Archivos en Movimiento
 description: Patrimonio Vivo de Parral
-baseurl: "/fotos-parral"
-url: "https://Juanpi2024.github.io"
+baseurl: ""
+url: "https://archivosenmovimiento.cl" # Reemplazar con el dominio real si es diferente
 markdown: kramdown
