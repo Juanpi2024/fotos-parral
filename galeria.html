@@ -5256,7 +5256,7 @@
         });
 
         // ==========================================
-        // MODAL SYSTEM WITH NAVIGATION
+        // MODAL SYSTEM WITH NAVIGATION (OPTIMIZADO)
         // ==========================================
 
         // Array ordenado de modales para navegación
@@ -5285,12 +5285,12 @@
 
         let currentModalIndex = -1;
 
-
-        function openModal(id, addToHistory = true) {
-            // Cerrar modal actual si existe
+        // historyMode: 'push' (default), 'replace', 'none'
+        function openModal(id, historyMode = 'push') {
+            // Cerrar modal actual si existe (visual solamente)
             if (currentModalIndex >= 0) {
                 const currentModal = document.getElementById(modalOrder[currentModalIndex]);
-                if (currentModal) {
+                if (currentModal && currentModal.id !== id) {
                     currentModal.style.display = "none";
                     currentModal.classList.remove('show');
                 }
@@ -5315,9 +5315,11 @@
                     modalContent.focus();
                 }
 
-                // Agregar al historial del navegador para botón atrás
-                if (addToHistory) {
+                // Manejo del Historial
+                if (historyMode === 'push') {
                     history.pushState({ modal: id }, '', `?modal=${id}`);
+                } else if (historyMode === 'replace') {
+                    history.replaceState({ modal: id }, '', `?modal=${id}`);
                 }
 
                 // Actualizar estado de botones de navegación
@@ -5332,13 +5334,14 @@
             if (modalId) {
                 // Small delay to ensure everything is ready
                 setTimeout(() => {
-                    openModal(modalId);
+                    // Usamos 'replace' para no ensuciar el historial en la carga inicial
+                    openModal(modalId, 'replace');
                 }, 100);
             }
         });
 
 
-        function closeModal(id, updateUrl = true) {
+        function closeModal(id) {
             const modal = document.getElementById(id);
             if (modal) {
                 modal.classList.remove('show');
@@ -5346,32 +5349,37 @@
                     modal.style.display = "none";
                     document.body.style.overflow = '';
                 }, 300);
-                currentModalIndex = -1;
 
-                // Actualizar URL sin parámetro de modal
-                if (updateUrl) {
-                    history.pushState({}, '', window.location.pathname);
+                // Si el estado actual del historial es este modal, volvemos atrás
+                if (history.state && history.state.modal === id) {
+                    history.back();
+                } else {
+                    // Si no ("limpieza manual"), reemplazamos para quitar el param
+                    history.replaceState(null, '', window.location.pathname);
                 }
+
+                currentModalIndex = -1;
             }
         }
 
         // Manejar botón atrás del navegador
         window.addEventListener('popstate', function (event) {
-            if (event.state && event.state.modal) {
-                // Abrir modal sin agregar al historial (ya está ahí)
-                openModal(event.state.modal, false);
-            } else {
-                // Cerrar cualquier modal abierto sin modificar URL
-                if (currentModalIndex >= 0) {
-                    const modal = document.getElementById(modalOrder[currentModalIndex]);
-                    if (modal) {
-                        modal.classList.remove('show');
-                        modal.style.display = "none";
-                        document.body.style.overflow = '';
-                        currentModalIndex = -1;
-                    }
+            // Primero cerramos cualquier modal abierto visualmente
+            if (currentModalIndex >= 0) {
+                const modal = document.getElementById(modalOrder[currentModalIndex]);
+                if (modal) {
+                    modal.classList.remove('show');
+                    modal.style.display = "none";
                 }
+                document.body.style.overflow = '';
+                currentModalIndex = -1;
             }
+
+            if (event.state && event.state.modal) {
+                // Abrir modal sin tocar el historial (ya estamos ahí)
+                openModal(event.state.modal, 'none');
+            }
+            // Si no hay estado de modal, ya cerramos todo arriba, así que listo.
         });
 
         function navigateModal(direction) {
@@ -5383,7 +5391,8 @@
             if (newIndex < 0) newIndex = modalOrder.length - 1;
             if (newIndex >= modalOrder.length) newIndex = 0;
 
-            openModal(modalOrder[newIndex]);
+            // Navegar reemplazando el estado actual para no crear una pila infinita
+            openModal(modalOrder[newIndex], 'replace');
         }
 
         function updateNavButtons(modalId) {
