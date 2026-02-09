@@ -1056,44 +1056,19 @@ footer p {
 /* 8. Premium Grid System             */
 /* ---------------------------------- */
 
-/* === MASONRY GALLERY SYSTEM === */
+/* === GALLERY GRID - Stable & Uniform === */
 .grid-galeria {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    grid-auto-rows: 10px;
     gap: 1.5rem;
     padding: 1.5rem 0;
 }
 
-/* Masonry Height Variants */
-.card-foto.masonry-tall {
-    grid-row: span 32;
-}
-
-.card-foto.masonry-medium {
-    grid-row: span 26;
-}
-
-.card-foto.masonry-short {
-    grid-row: span 22;
-}
-
-/* Featured Card - Spans 2 columns on large screens */
-.card-foto.masonry-featured {
-    grid-row: span 30;
-}
-
-@media (min-width: 768px) {
-    .card-foto.masonry-featured {
-        grid-column: span 2;
-    }
-}
-
-/* Masonry Animations */
-@keyframes fadeInMasonry {
+/* Animation on load */
+@keyframes fadeInCard {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(15px);
     }
 
     to {
@@ -1104,7 +1079,7 @@ footer p {
 
 .grid-galeria .card-foto {
     opacity: 0;
-    animation: fadeInMasonry 0.5s ease forwards;
+    animation: fadeInCard 0.4s ease forwards;
 }
 
 .grid-galeria .card-foto:nth-child(1) {
@@ -1116,71 +1091,37 @@ footer p {
 }
 
 .grid-galeria .card-foto:nth-child(3) {
-    animation-delay: 0.15s;
+    animation-delay: 0.12s;
 }
 
 .grid-galeria .card-foto:nth-child(4) {
-    animation-delay: 0.2s;
+    animation-delay: 0.15s;
 }
 
 .grid-galeria .card-foto:nth-child(5) {
-    animation-delay: 0.25s;
+    animation-delay: 0.18s;
 }
 
 .grid-galeria .card-foto:nth-child(6) {
-    animation-delay: 0.3s;
+    animation-delay: 0.2s;
 }
 
-.grid-galeria .card-foto:nth-child(7) {
-    animation-delay: 0.35s;
-}
-
-.grid-galeria .card-foto:nth-child(8) {
-    animation-delay: 0.4s;
-}
-
-.grid-galeria .card-foto:nth-child(n+9) {
-    animation-delay: 0.45s;
+.grid-galeria .card-foto:nth-child(n+7) {
+    animation-delay: 0.22s;
 }
 
 @media (max-width: 768px) {
     .grid-galeria {
         grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: 8px;
         gap: 0.75rem;
         padding: 1rem 0;
-    }
-
-    .card-foto.masonry-tall {
-        grid-row: span 28;
-    }
-
-    .card-foto.masonry-medium {
-        grid-row: span 24;
-    }
-
-    .card-foto.masonry-short {
-        grid-row: span 20;
-    }
-
-    .card-foto.masonry-featured {
-        grid-column: span 1;
-        grid-row: span 26;
     }
 }
 
 @media (max-width: 480px) {
     .grid-galeria {
         grid-template-columns: 1fr;
-        grid-auto-rows: auto;
         gap: 1rem;
-    }
-
-    .card-foto.masonry-tall,
-    .card-foto.masonry-medium,
-    .card-foto.masonry-short,
-    .card-foto.masonry-featured {
-        grid-row: auto;
     }
 }
 
