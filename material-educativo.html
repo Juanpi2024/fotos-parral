@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="es">
 
@@ -44,21 +46,7 @@
 </head>
 
 <body>
-    <!-- Simulación de Header (en Jekyll sería un include) -->
-    <header>
-        <div class="container">
-            <h1 style="font-size: 1.5rem; font-family: 'Cinzel';"><a href="index.html"
-                    style="color: var(--edu-gold); text-decoration: none;">Archivos en Movimiento</a></h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="galeria.html">Galería AI</a></li>
-                    <li><a href="relatos.html">Relatos</a></li>
-                    <li><a href="material-educativo.html" class="active">Educación</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    {% include header.html %}
 
     <main class="edu-section">
         <div class="container">
@@ -119,13 +107,7 @@
         </div>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Archivos en Movimiento - Parral, Chile.</p>
-            <p style="font-size: 0.8rem; opacity: 0.6;">Proyecto financiado por recursos municipales para el fomento del
-                patrimonio educativo.</p>
-        </div>
-    </footer>
+    {% include footer.html %}
 
     <script>
         // Efecto sutil de seguimiento de mouse para las tarjetas (opcional para premium feel)
