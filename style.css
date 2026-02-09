@@ -60,6 +60,14 @@
     /* Museo Gallery Filters */
     --image-filter-default: sepia(15%) contrast(102%);
     --image-filter-hover: sepia(0%) contrast(100%);
+
+    /* Material Educativo Premium Styles (Stitch) */
+    --edu-navy: #0A192F;
+    --edu-gold: #C9A961;
+    --edu-cream: #F8F5F2;
+    --edu-glass: rgba(255, 255, 255, 0.1);
+    --edu-glass-border: rgba(255, 255, 255, 0.2);
+    --edu-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
 }
 
 * {
@@ -2440,4 +2448,155 @@ select:focus-visible {
 
 .skip-link:focus {
     top: 0;
+}
+
+/* ---------------------------------------------------- */
+/* 30. Material Educativo Premium (Diseño de Stitch)    */
+/* ---------------------------------------------------- */
+
+.edu-section {
+    padding: 6rem 0;
+    background: radial-gradient(circle at top right, #1a2a44, var(--edu-navy));
+    color: var(--edu-cream);
+    min-height: 80vh;
+}
+
+.edu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+.edu-card {
+    background: var(--edu-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--edu-glass-border);
+    border-radius: var(--card-radius);
+    padding: 2.5rem;
+    transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: var(--edu-shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.edu-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.05),
+            transparent);
+    transition: 0.5s;
+}
+
+.edu-card:hover::before {
+    left: 100%;
+}
+
+.edu-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--edu-gold);
+}
+
+.edu-card-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--edu-gold);
+}
+
+.edu-card h3 {
+    color: var(--white);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--edu-gold);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.edu-card p {
+    color: rgba(248, 245, 242, 0.8);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.edu-card-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-edu {
+    padding: 0.8rem 1.5rem;
+    border-radius: 2px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition-fast);
+}
+
+.btn-edu-primary {
+    background: var(--edu-gold);
+    color: var(--edu-navy);
+}
+
+.btn-edu-primary:hover {
+    background: var(--white);
+    color: var(--edu-navy);
+}
+
+.btn-edu-secondary {
+    border: 1px solid var(--edu-gold);
+    color: var(--edu-gold);
+}
+
+.btn-edu-secondary:hover {
+    background: var(--edu-gold);
+    color: var(--edu-navy);
+}
+
+/* Animación de entrada para las tarjetas */
+@keyframes cardEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.edu-card {
+    animation: cardEntrance 0.8s ease-out forwards;
+}
+
+.edu-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.edu-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@media (max-width: 768px) {
+    .edu-section {
+        padding: 4rem 1rem;
+    }
+
+    .edu-grid {
+        gap: 2rem;
+    }
 }

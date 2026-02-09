@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Material Educativo – Archivos en Movimiento</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lexend:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--edu-navy);
+        }
+
+        .page-header-premium {
+            padding: 4rem 1rem;
+            text-align: center;
+            background: linear-gradient(to bottom, rgba(10, 25, 47, 0.8), var(--edu-navy));
+        }
+
+        .premium-title {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            color: var(--edu-gold);
+            margin-bottom: 1rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .premium-tagline {
+            font-family: 'Lexend', sans-serif;
+            font-size: 1.2rem;
+            color: var(--edu-cream);
+            opacity: 0.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Simulación de Header (en Jekyll sería un include) -->
+    <header>
+        <div class="container">
+            <h1 style="font-size: 1.5rem; font-family: 'Cinzel';"><a href="index.html"
+                    style="color: var(--edu-gold); text-decoration: none;">Archivos en Movimiento</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="galeria.html">Galería AI</a></li>
+                    <li><a href="relatos.html">Relatos</a></li>
+                    <li><a href="material-educativo.html" class="active">Educación</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="edu-section">
+        <div class="container">
+            <div class="page-header-premium">
+                <h1 class="premium-title">Material Educativo</h1>
+                <p class="premium-tagline">Recursos pedagógicos diseñados para explorar la historia y el patrimonio de
+                    Parral de una manera interactiva y creativa.</p>
+            </div>
+
+            <div class="edu-grid">
+                <!-- Tarjeta 1: Mapa Ciudad Estudiante -->
+                <div class="edu-card">
+                    <div>
+                        <div class="edu-card-icon">🗺️</div>
+                        <h3>Mapa Ciudad</h3>
+                        <p>Descubre los hitos históricos de Parral en un mapa interactivo diseñado para estudiantes.
+                            Explora la ciudad desde tu pantalla.</p>
+                    </div>
+                    <div class="edu-card-actions">
+                        <a href="recursos/material-educativo/pdf/mapa-ciudad-estudiante.html"
+                            class="btn-edu btn-edu-primary" target="_blank">Explorar Mapa</a>
+                        <a href="recursos/material-educativo/pdf/mapa-ciudad-estudiante.pdf"
+                            class="btn-edu btn-edu-secondary" download>Descargar PDF</a>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2: Libro para Colorear -->
+                <div class="edu-card">
+                    <div>
+                        <div class="edu-card-icon">🎨</div>
+                        <h3>Libro Colorear</h3>
+                        <p>Dale vida al patrimonio parralino con tus propios colores. Un recurso artístico que conecta a
+                            los más jóvenes con su historia.</p>
+                    </div>
+                    <div class="edu-card-actions">
+                        <a href="recursos/material-educativo/pdf/libro-colorear-estudiante.html"
+                            class="btn-edu btn-edu-primary" target="_blank">Ver Libro</a>
+                        <a href="recursos/material-educativo/pdf/libro-colorear-estudiante.pdf"
+                            class="btn-edu btn-edu-secondary" download>Descargar PDF</a>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 3: Trivia Estudiante -->
+                <div class="edu-card">
+                    <div>
+                        <div class="edu-card-icon">🧩</div>
+                        <h3>Trivia Histórica</h3>
+                        <p>¿Cuánto sabes sobre Parral? Pon a prueba tus conocimientos en nuestro juego de trivia
+                            interactivo sobre personajes y lugares locales.</p>
+                    </div>
+                    <div class="edu-card-actions">
+                        <a href="recursos/material-educativo/pdf/trivia-estudiante.html" class="btn-edu btn-edu-primary"
+                            target="_blank">Jugar Ahora</a>
+                        <a href="#" class="btn-edu btn-edu-secondary">Ver Ranking</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Archivos en Movimiento - Parral, Chile.</p>
+            <p style="font-size: 0.8rem; opacity: 0.6;">Proyecto financiado por recursos municipales para el fomento del
+                patrimonio educativo.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Efecto sutil de seguimiento de mouse para las tarjetas (opcional para premium feel)
+        document.querySelectorAll('.edu-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+    </script>
+</body>
+
+</html>
