@@ -228,6 +228,32 @@
             font-size: 0.7rem;
             text-transform: uppercase;
         }
+
+        .demo-notice {
+            background: rgba(231, 76, 60, 0.05);
+            border: 2px dashed #e74c3c;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem auto;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .demo-notice h4 {
+            color: #e74c3c;
+            font-family: 'Merriweather', serif;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .demo-notice p {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
     </style>
 </head>
 
@@ -260,9 +286,25 @@
     <section class="page-hero">
         <div class="container">
             <h1>Biblioteca de <span class="accent">Memorias</span></h1>
-            <p class="tagline">Voces vivas de Parral: Testimonios que conectan el pasado con el presente</p>
+            <p class="tagline">PROTOTIPO: Un espacio para los relatos de las futuras "Mateadas Patrimoniales"</p>
         </div>
     </section>
+
+    <div class="container">
+        <div class="demo-notice">
+            <h4>⚠️ AVISO DE EXPERIMENTACIÓN / MAQUETA</h4>
+            <p>
+                Los relatos, nombres y voces presentados en esta página son <strong>ejemplos recreados
+                    (ficticios)</strong>
+                con el fin de demostrar el funcionamiento de este repositorio digital.
+            </p>
+            <p style="margin-top: 0.5rem; font-style: italic;">
+                Este es el formato que buscamos conseguir mediante las <strong>Mateadas Patrimoniales</strong>:
+                encuentros comunitarios donde vecinos reales podrán compartir sus historias para ser grabadas y
+                preservadas profesionalmente.
+            </p>
+        </div>
+    </div>
 
     <div class="filters-container">
         <button class="filter-btn active" onclick="filterStories('all')">Todas</button>
@@ -282,52 +324,50 @@
         <a href="participa.html" class="btn-nav" style="margin-top: 1rem; display: inline-block;">Contar mi Historia</a>
     </div>
 
-<<<<<<< HEAD
-    {% include footer.html %}
+    <<<<<<< HEAD {% include footer.html %} <!-- Cargar Datos y Lógica -->
+        <script src="js/relatos-data.js"></script>
+        =======
+        <footer>
+            <div class="container">
+                <p>&copy; 2025 Archivos en Movimiento. Patrimonio Vivo de Parral.</p>
+                <p style="font-size: 0.9rem;">
+                    <a href="metodologia.html" style="color: var(--accent-color); text-decoration: none;">Metodología
+                        Ética</a>
+                    |
+                    Modelo replicable para la gestión cultural municipal.
+                </p>
+            </div>
+        </footer>
 
-    <!-- Cargar Datos y Lógica -->
-    <script src="js/relatos-data.js"></script>
-=======
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Archivos en Movimiento. Patrimonio Vivo de Parral.</p>
-            <p style="font-size: 0.9rem;">
-                <a href="metodologia.html" style="color: var(--accent-color); text-decoration: none;">Metodología Ética</a>
-                |
-                Modelo replicable para la gestión cultural municipal.
-            </p>
-        </div>
-    </footer>
+        <!-- Main JavaScript File -->
+        <script src="js/home.js"></script>
+        >>>>>>> 9815712d0d4ba4a53276ca41aa5732510b970f3e
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                renderStories(window.relatosData);
+            });
 
-    <!-- Main JavaScript File -->
-    <script src="js/home.js"></script>
->>>>>>> 9815712d0d4ba4a53276ca41aa5732510b970f3e
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            renderStories(window.relatosData);
-        });
+            function renderStories(stories) {
+                const grid = document.getElementById('stories-grid');
+                grid.innerHTML = '';
 
-        function renderStories(stories) {
-            const grid = document.getElementById('stories-grid');
-            grid.innerHTML = '';
+                stories.forEach(story => {
+                    const card = document.createElement('div');
+                    card.className = 'story-card';
+                    // Animación de entrada escalonada
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
 
-            stories.forEach(story => {
-                const card = document.createElement('div');
-                card.className = 'story-card';
-                // Animación de entrada escalonada
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
+                    const authorInitial = story.autor ? story.autor.charAt(0) : '?';
 
-                const authorInitial = story.autor ? story.autor.charAt(0) : '?';
-
-                let tagsHtml = '';
-                if (story.tags && story.tags.length > 0) {
-                    tagsHtml = `<div class="story-tags">
+                    let tagsHtml = '';
+                    if (story.tags && story.tags.length > 0) {
+                        tagsHtml = `<div class="story-tags">
                         ${story.tags.slice(0, 3).map(tag => `<span class="tag-pill">#${tag}</span>`).join('')}
                      </div>`;
-                }
+                    }
 
-                card.innerHTML = `
+                    card.innerHTML = `
                     <div class="story-header">
                         <span class="story-date">${story.formattedDate || story.fecha}</span>
                         <span class="story-emotion">${story.emotion || 'Relato'}</span>
@@ -360,29 +400,29 @@
                         </div>
                     </div>
                 `;
-                grid.appendChild(card);
+                    grid.appendChild(card);
 
-                // Animate entry
-                setTimeout(() => {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, 100 * grid.children.length);
-            });
-        }
-
-        function filterStories(category) {
-            // Actualizar botones
-            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-
-            if (category === 'all') {
-                renderStories(window.relatosData);
-            } else {
-                const filtered = window.relatosData.filter(s => s.categoria === category || s.tags.includes(category));
-                renderStories(filtered);
+                    // Animate entry
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 100 * grid.children.length);
+                });
             }
-        }
-    </script>
+
+            function filterStories(category) {
+                // Actualizar botones
+                document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+                event.target.classList.add('active');
+
+                if (category === 'all') {
+                    renderStories(window.relatosData);
+                } else {
+                    const filtered = window.relatosData.filter(s => s.categoria === category || s.tags.includes(category));
+                    renderStories(filtered);
+                }
+            }
+        </script>
 </body>
 
 </html>

@@ -1156,10 +1156,9 @@ footer p {
 .card-foto-img-container {
     position: relative;
     overflow: hidden;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 3 / 2;
     margin: 0;
-    background: transparent !important;
-    /* Force transparency to hide baked-in blue bars if image is cropped */
+    background: #1a1510 !important;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1756,11 +1755,11 @@ html {
 }
 
 .colorear-img-container {
-    height: 250px;
+    aspect-ratio: 4 / 3;
     overflow: hidden;
     margin-bottom: 1rem;
     border-radius: var(--card-radius-sm);
-    background: transparent;
+    background: #f5f0eb;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1769,7 +1768,7 @@ html {
 .colorear-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     transition: transform 0.5s ease;
 }
 
@@ -1919,7 +1918,7 @@ html {
     }
 
     .colorear-img-container {
-        height: 160px;
+        aspect-ratio: 4 / 3;
     }
 
     .close-modal {

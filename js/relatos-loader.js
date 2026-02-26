@@ -42,8 +42,11 @@ function initRelatosSystem() {
                 <h3 style="font-family: 'Merriweather', serif; color: var(--primary-color); font-size: 1.5rem;">
                     🗣️ Memoria Viva: Relatos de la Comunidad
                 </h3>
-                <p style="color: var(--text-light); font-style: italic; font-size: 0.9rem;">
-                    Historias y recuerdos compartidos por vecinos de Parral
+                <p style="color: #4a3b32; font-style: italic; font-size: 0.95rem; font-weight: 500;">
+                    (Maqueta de ejemplo para futuras Mateadas Patrimoniales)
+                </p>
+                <p style="color: #666; font-size: 0.8rem; margin-top: 0.5rem; max-width: 500px; margin-left: auto; margin-right: auto;">
+                    Los testimonios presentados son demostrativos para ilustrar el sistema de memoria oral.
                 </p>
             </div>
             
@@ -58,9 +61,9 @@ function initRelatosSystem() {
         } else {
             // Mensaje si no hay relatos aún
             htmlContent += `
-                <div class="empty-relatos" style="grid-column: 1/-1; text-align: center; padding: 2rem; background: rgba(201, 169, 97, 0.1); border-radius: 12px; border: 1px dashed #c9a961;">
-                    <p style="color: var(--text-color); margin-bottom: 0.5rem;">Aún no hay historias registradas para esta colección.</p>
-                    <p style="font-weight: bold; color: var(--primary-color);">¿Tienes un recuerdo de este lugar?</p>
+                <div class="empty-relatos" style="grid-column: 1/-1; text-align: center; padding: 2rem; background: rgba(201, 169, 97, 0.15); border-radius: 12px; border: 1px dashed #c9a961;">
+                    <p style="color: #3a3a3a; margin-bottom: 0.5rem; font-size: 1rem;">Aún no hay historias registradas para esta colección.</p>
+                    <p style="font-weight: bold; color: #1a1a1a; font-size: 1.05rem;">¿Tienes un recuerdo de este lugar?</p>
                 </div>
             `;
         }
@@ -115,15 +118,15 @@ function createRelatoCard(relato) {
         <div class="relato-card" style="background: #fff; padding: 1.5rem; border-radius: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); border: 1px solid rgba(0,0,0,0.08); display: flex; flex-direction: column;">
             
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; border-bottom: 1px solid #f0f0f0; padding-bottom: 0.5rem;">
-                <span style="font-family: 'Lato', sans-serif; font-size: 0.75rem; color: #888; text-transform: uppercase;">${relato.formattedDate || relato.fecha}</span>
+                <span style="font-family: 'Lato', sans-serif; font-size: 0.75rem; color: #6b5a50; text-transform: uppercase; font-weight: 600;">${relato.formattedDate || relato.fecha}</span>
                 <span style="font-size: 0.7rem; padding: 0.2rem 0.6rem; border-radius: 20px; background: #fcfbf8; color: #c9a961; border: 1px solid rgba(201, 169, 97, 0.3); font-weight: bold;">
                     ${relato.emotion || 'Relato'}
                 </span>
             </div>
 
-            <h4 style="font-family: 'Merriweather', serif; color: #333; margin: 0 0 0.8rem 0; font-size: 1.2rem; line-height: 1.3;">${relato.titulo}</h4>
+            <h4 style="font-family: 'Merriweather', serif; color: #1a1a1a; margin: 0 0 0.8rem 0; font-size: 1.2rem; line-height: 1.3;">${relato.titulo}</h4>
             
-            <p style="font-style: normal; font-family: 'Merriweather', serif; color: #555; line-height: 1.7; font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1;">
+            <p style="font-style: normal; font-family: 'Merriweather', serif; color: #3a3a3a; line-height: 1.7; font-size: 0.95rem; margin-bottom: 1.5rem; flex-grow: 1;">
                 "${relato.texto}"
             </p>
             
